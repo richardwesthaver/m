@@ -79,41 +79,41 @@ well as platform/domain-specific features.
 **** Features
 **** Modules
 ***** obj
-- [[https://docs.rwest.io/obj][API docs]]
+- [[https://docs.rwest.io/rlib/doc/obj][API docs]]
 ***** cfg
-- [[https://docs.rwest.io/cfg][API docs]]
+- [[https://docs.rwest.io/rlib/doc/cfg][API docs]]
 ***** ctx
-- [[https://docs.rwest.io/ctx][API docs]]
+- [[https://docs.rwest.io/rlib/doc/ctx][API docs]]
 ***** eve
-- [[https://docs.rwest.io/eve][API docs]]
+- [[https://docs.rwest.io/rlib/doc/eve][API docs]]
 ***** net
-- [[https://docs.rwest.io/net][API docs]]
+- [[https://docs.rwest.io/rlib/doc/net][API docs]]
 ***** db
-- [[https://docs.rwest.io/db][API docs]]
+- [[https://docs.rwest.io/rlib/doc/db][API docs]]
 ***** alch
-- [[https://docs.rwest.io/alch][API docs]]
+- [[https://docs.rwest.io/rlib/doc/alch][API docs]]
 ***** hash
-- [[https://docs.rwest.io/hash][API docs]]
+- [[https://docs.rwest.io/rlib/doc/hash][API docs]]
 ***** logger
-- [[https://docs.rwest.io/logger][API docs]]
+- [[https://docs.rwest.io/rlib/doc/logger][API docs]]
 ***** math
-- [[https://docs.rwest.io/math][API docs]]
+- [[https://docs.rwest.io/rlib/doc/math][API docs]]
 ***** flate
-- [[https://docs.rwest.io/flate][API docs]]
+- [[https://docs.rwest.io/rlib/doc/flate][API docs]]
 ***** crypto
-- [[https://docs.rwest.io/crypto][API docs]]
+- [[https://docs.rwest.io/rlib/doc/crypto][API docs]]
 ***** audio
-- [[https://docs.rwest.io/audio][API docs]]
+- [[https://docs.rwest.io/rlib/doc/audio][API docs]]
 ***** kala
-- [[https://docs.rwest.io/kala][API docs]]
+- [[https://docs.rwest.io/rlib/doc/kala][API docs]]
 ***** dmc
-- [[https://docs.rwest.io/dmc][API docs]]
+- [[https://docs.rwest.io/rlib/doc/dmc][API docs]]
 ***** dts
-- [[https://docs.rwest.io/dts][API docs]]
+- [[https://docs.rwest.io/rlib/doc/dts][API docs]]
 ***** ui
-- [[https://docs.rwest.io/ui][API docs]]
+- [[https://docs.rwest.io/rlib/doc/ui][API docs]]
 ***** util
-- [[https://docs.rwest.io/util][API docs]]
+- [[https://docs.rwest.io/rlib/doc/util][API docs]]
 
 *** tenex
 :PROPERTIES:
