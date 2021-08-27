@@ -1,0 +1,56 @@
+#+title: Lua
+#+roam_tags: lua lang
+#+roam_key: http://www.lua.org/
+
+A high-level, multi-paradigm scripting language. Used widely in the
+video game industry and elsewhere, an excellent choice for embedded
+use, especially as a configuration language or DSL.
+
+- To install Lua on GNU Linux, use your [[file:operating-system.org][os]]'s package manager, or run the script below (v5.4.0).
+  #+name: lua-install
+  #+begin_src bash
+#!/usr/bin/bash
+# installs Lua v5.4.3
+curl -R -O http://www.lua.org/ftp/lua-5.4.3.tar.gz
+tar zxf lua-5.4.3.tar.gz
+cd lua-5.4.3
+make all test
+  #+end_src
+  Take a look at [[http://lua-users.org/wiki/LuaDistributions][lua-users wiki: Lua Distributions]] for other platforms.
+- [[https://www.lua.org/pil/][Programming in Lua]] (PIL) is the original book for the Lua
+  programming language, written by the author [[http://www.inf.puc-rio.br/~roberto/][Roberto
+  Ierusalimschy]]. It has a bunch of useful tips, but is not free. The
+  first edition (out of four) is available online at [[https://www.lua.org/pil/contents.html][Programming in
+  Lua (first edition)]] and covers up to Lua 5.0, but is still
+  relevant. The fourth edition covers up to Lua 5.3.
+  
+* Examples
+** copas tcp echo
+Copas (or Coroutine Oriented Portable Asynchronous Services, if you
+prefer) is to Lua what [[file:tokio.org][tokio.rs]] is to Rust - asynchronous networking that
+gives you client/server APIs.  This lil' guy provides a simple tcp
+server that listens on port 8888 and responds to peers with a very
+heart-warming welcome.  A slightly more advanced example is provided
+[[http://lua-users.org/wiki/CopasExample][here]].
+#+name: copas-tcp-echo
+#+begin_src lua
+  require "copas"
+  function handler(c, host, port)
+    local peer = host .. ":" .. port
+    print("connection from", peer)
+    c:send("Get in loser, we're going shopping.\r\n")
+    print("data from", peer, (c:receive"*l"))
+  end
+  copas.addserver(assert(socket.bind("*",8888)),
+                  function(c) return handler(copas.wrap(c), c:getpeername()) end
+  )
+  copas.loop()
+#+end_src
+** AwesomeWM rc.lua
+=rc.lua= is the main configuration file for the Awesome window
+manager. The configuration API is destributed across several Lua
+libraries and implements a declarative layout system that is very
+flexible and supports features of the Lua language.
+
+The default configuration can be found at [[https://awesomewm.org/doc/api/sample%20files/rc.lua.html][Script rc.lua - awesome API
+documentation]].

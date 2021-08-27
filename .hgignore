@@ -1,0 +1,8 @@
+^log/
+glob:archive.org
+glob:todo.org
+glob:.#*
+glob:*.*~
+glob:*.html
+glob:*.tex
+glob:*.txt

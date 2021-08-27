@@ -1,0 +1,23 @@
+#+title: Object-oriented Programming
+- https://en.wikipedia.org/wiki/Object-oriented_programming
+Object-oriented Programming (OOP for short) is a programming model
+that organizes code around /objects/, and emphasizes the focus on
+objects that we want to manipulate, rather than the functions and
+logic necessary to manipulate them.
+
+* Object
+Objects can be definied as data fields that have /unique attributes
+and behavior/. They are most often identified through [[https://en.wikipedia.org/wiki/Data_modeling][data modeling]],
+which is the practice of organizing an Information system by applying
+a variety of formal techniques.
+
+* Principles of OOP
+
+** Encapsulation
+
+** Abstraction
+
+** Ineritance
+
+** Polymorphism
+

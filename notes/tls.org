@@ -1,0 +1,4 @@
+#+title: Transport Layer Security
+- https://www.internetsociety.org/deploy360/tls/basics/
+* [[https://tools.ietf.org/html/rfc5246][TLS 1.2]]
+* [[https://tools.ietf.org/html/rfc8446][TLS 1.3]]

@@ -1,0 +1,11 @@
+#+title: You Need A Budget
+- https://www.youneedabudget.com
+The core principles of the [[https://www.youneedabudget.com/the-four-rules/][YNAB system]] are:
+- Give every dollar a job
+- Embrace your true expenses
+- Roll with the punches
+- Age your money
+
+Posts on YNAB:
+- https://emacs.cafe/ledger/emacs/ynab/budgeting/2018/06/12/elbank-ynab.html
+- https://sachachua.com/blog/tag/ledger/

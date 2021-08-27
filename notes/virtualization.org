@@ -1,0 +1,17 @@
+#+title: Virtualization
+- http://www.virtualizationsoftwares.com/what-is-hardware-virtualization/
+
+Virtualization (or more specifically, hardware virtualization) is a
+method of sharing hardware components across individual /virtual
+machines/ (VMs).
+
+In software development, the host computer shares its resources with
+individual VMs by using a /hypervisor/ or /virtual machine manager/
+(VMM).
+
+Virtualization technology is constanty evolving, and we likely have a
+long way to go before we get it right, but the increase in popularity
+that is likely due to the use of virtualization in microservice/web
+based apps has made it more approachable in the tech community, and
+accepted as a core components of DevOps.
+

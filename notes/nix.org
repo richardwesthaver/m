@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       6f670ab4-bf9a-4475-8f41-b08e16021074
+:END:
+#+TITLE: Nix
+
+- [[https://nixos.org/learn.html][Learning Resources]]
+- [[https://nix.dev/][nix.dev]]
+
+Nix is a package manager for Unix systems. It is designed around a
+custom DSL call NixExpr, which can be used to create reliable and
+reproducible package builds.  NixOS is a Linux distribution built on
+top of Nix with a completely declarative configuration.  There are
+many other cool features contained in the Nix ecosystem, such as
+NixOps node2nix crate2nix Disnix and Home-manager.
+* What I think I can find in Nix                                    :opinion:
+:PROPERTIES:
+:ID:       d768181a-d4f2-49f4-828a-988ed12be2b5
+:END:
+The draw of Nix to me is consistency. I want to tinker with spinning
+up a loooot of machines in a controlled environment, and this is quite
+difficult to accomplish in an experimental setting, due to either lack
+of utility or lack of time to manually edit Linux config files.
+The core functions we want:
+- configure - modify params (done via NixExpr)
+- deploy - deploy configuration to target machines (NixOps/Disnix)
+- build - build a configuration
+- run - run a package (nix-shell run)
+- monitor
+- ssh

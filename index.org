@@ -1,0 +1,52 @@
+#+TITLE: rwest.io
+#+TODO: OFFLINE | ONLINE
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.rwest.io/css/page.css"/>
+#+OPTIONS: toc:nil num:nil
+This site was created by ~Richard~ (aka ~ellis~), a programmer, arm-chair philosopher,
+pianist and wanna-be artist from New London, CT.
+
+#+begin_src text
+ ^  ^  ^   ^      ___I_      ^  ^   ^  ^  ^
+/|\/|\/|\ /|\    /\-_--\    /|\/|\ /|\/|\/|\
+/|\/|\/|\ /|\   /  \_-__\   /|\/|\ /|\/|\/|\
+/|\/|\/|\ /|\   |[]| [] |   /|\/|\ /|\/|\/|\
+_|__|__|___|____|__|____|___ |__|___|__|__|__
+
+_|___|___|___|___|___|___|___|___|___|___|___
+___|___|___|___|___|___|___|___|___|___|___|_
+_|___|___|___|___|___|___|___|___|___|___|___
+#+end_src
+
+#+name: pages
+| name    | description  | status |
+|---------+--------------+--------|
+| [[https://rwest.io/meta][meta]]    | project info | UP     |
+| [[https://rwest.io/rambles][rambles]] | short posts  | UP     |
+| [[https://rwest.io/notes][notes]]   | public notes | DOWN   |
+
+#+name: services
+| name | description                 | status |
+|------+-----------------------------+--------|
+| [[https://hg.rwest.io][hg]]   | Mercurial server            | UP     |
+| [[https://docs.rwest.io][docs]] | API Documentation server    | UP     |
+| [[https://pkg.rwest.io][pkg]]  | Package distribution server | UP     |
+| [[https://cdn.rwest.io][cdn]]  | Web content server          | UP     |
+| [[https://q.rwest.io][q]]    | RESTful API server          | DOWN   |
+
+* About
+I've always loved tinkering, though it wasn't until late in high
+school that I started understanding computing and at UConn that I knew
+I would be programming for the rest of my life. Since then I've worked
+with some great development teams and spent most of my time perfecting
+my craft and coming up with new ideas. I'm currently focused on
+building some libraries with the Rust programming language which
+enable future projects I have planned.
+
+Music also plays an important role in my life. I haven't made any
+serious music recently, but love to play Piano and am always looking
+for new tunes to add to my library. I like Ambient/Drone, Techno,
+Metal, Jazz, Classical, and pretty much anything else.
+
+** Contact
+If you are a human, feel free to get in touch via email
+[[mailto:ellis@rwest.io][ellis@rwest.io]]. If not, please use [[mailto:demon@rwest.io][demon@rwest.io]].

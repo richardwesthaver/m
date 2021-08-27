@@ -1,0 +1,4 @@
+#+title: Economics
+#+roam_tags: econ
+
+- [[file:behavioral_economics.org][Behavioral Economics]]

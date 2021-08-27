@@ -1,0 +1,2 @@
+#+title: Functional Programming
+- https://en.wikipedia.org/wiki/Functional_programming

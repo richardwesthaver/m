@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       57eb884b-b22f-47f2-b6cb-e06ff59adb00
+:ROAM_ALIASES: JS
+:END:
+#+title: Javascript
+

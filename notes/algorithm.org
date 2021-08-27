@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       74f3683c-e4e8-4d8c-8eea-7b3bb52b41ff
+:END:
+#+title: Algorithm
+* [[https://en.wikipedia.org/wiki/Lubachevsky%E2%80%93Stillinger_algorithm][Lubachevsky–Stillinger algorithm]]                            :granular_flow:
+  :PROPERTIES:
+  :ID:       7e986f85-e6ca-4f76-b667-bea7fe128b8b
+  :END:
+#+begin_quote
+Lubachevsky-Stillinger (compression) algorithm (LS algorithm, LSA, or
+LS protocol) is a numerical procedure suggested by F. H. Stillinger
+and B.D. Lubachevsky that simulates or imitates a physical process of
+compressing an assembly of hard particles. As the LSA may need
+thousands of arithmetic operations even for a few particles, it is
+usually carried out on a computer.
+#+end_quote
+
+An acoustic phenomena of interest: [[https://en.wikipedia.org/wiki/Singing_sand][Singing sand]]

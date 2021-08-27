@@ -1,0 +1,9 @@
+#+title: Computational Linguistics
+#+roam_key: https://plato.stanford.edu/entries/computational-linguistics/
+#+roam_tags: philosophy comp-sci
+#+begin_quote
+Human knowledge is expressed in language. So computational linguistics is very important.
+#+end_quote
+#+begin_center
+-- Mark Steedman, ACL Presidential Address (2007)
+#+end_center

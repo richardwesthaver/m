@@ -1,0 +1,31 @@
+#+title: Art
+
+Art, in my mind, is one of the crowning achievements of humanic
+exploitation. Like olives or wine, a taste for it is acquired with
+time, and although /works/ of Art are often consumed by our senses,
+they are compelling for reasons which are much harder to define.
+
+It has been a fruitless effort, attempting to break down the
+underlying /algorithm/ of which Art is composed. Some of the oldest
+western definitions can be found in the works of Plato, specifically
+Book X of [[https://en.wikipedia.org/wiki/Republic_(Plato)][The Republic]], where Socrates argues that art is /imitation/
+(a representation of something else). This limited definition has
+naturally developed, and today there is a vast cluster of
+'definitions', which tends to complicate everyone's understanding of
+what it is that they are talking about, more than anything else.
+
+Leaving the realm of [[file:philosophy-art.org][Philosophy of Art]] now.. This document is in
+regard to all the different things in this world (and otherwise) that
+can be regarded as art.
+
+* Types
+Note: this is by no means a complete list, just the ones that I've
+found the time to write about.
+** [[file:music.org][Music]]
+** Painting
+** 3D (Digital)
+** 2D (Digital)
+** Poetry
+** Sculpture
+** Photography
+** Film

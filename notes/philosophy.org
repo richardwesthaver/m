@@ -1,0 +1,6 @@
+#+title: Philosophy
+#+roam_tags: philosophy
+- [[file:metaphysics.org][Metaphysics]]
+- [[file:aesthetics.org][Aesthetics]]
+- [[file:computational-linguistics.org][Computational Linguistics]]
+- [[file:philosophy-art.org][Philosophy of Art]]

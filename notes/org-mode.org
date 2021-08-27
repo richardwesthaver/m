@@ -1,0 +1,27 @@
+#+title: Org Mode
+
+https://orgmode.org/
+
+Org-mode is a flexible text-based note-taking system built for [[file:emacs.org][Emacs]].
+
+It's one of the best packages available in the Emacs ecosystem and
+really pushes the boundaries of what simple 'text-files' are capable
+of. It can be intimidating at first look, but if you keep diving down
+the rabbit-hole it feels like a whole new world is opened up to
+you.
+
+My usage of org-mode revolves around the following principles:
+- /Documentation is highly valuable/ - There is no religion without a
+  prophet.
+- /Workflows are not stable/ - There is no one-size-fits-all solution
+  to workflow management. Org-mode configurations will change over
+  time, and that's ok. It also allows us to keep with the latest
+  trends in the community 87).
+- /Inspect and Adapt/ - I have weekly review seshes to take a glimpse
+  at my current workflow from afar, and jot down a list of things that
+  work, and things that don't. Good habit to get into for serious
+  usage.
+
+* Tutorials
+** Getting Started with Org Mode - Harry Schwartz
+[[yt:SzA2YODtgK4][Getting Started With Org Mode]]
