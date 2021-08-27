@@ -12,10 +12,9 @@
 =Highly motivated software developer and product manager seeking a new role in Tech. I thrive in fast-paced environments and have a passion for innovation in complex systems.=
 #+end_quote
 :info:
-| location: | New London, CT              |
-| phone:   | 860-449-3564                |
-| email:   | [[mailto:ellis@rwest.io][ellis@rwest.io]]              |
-| links:   | [ [[https://rwest.io][blog]], [[https://github.com/richardwesthaver][GitHub]],  [[https://linkedin.com/my/richardwesthaver][LinkedIn]] ] |
+| location: | New London, CT                 |
+| email:    | [[mailto:ellis@rwest.io][ellis@rwest.io]]                 |
+| links:    | [ [[https://rwest.io][website]], [[https://github.com/richardwesthaver][GitHub]],  [[https://linkedin.com/my/richardwesthaver][LinkedIn]] ] |
 *Education*: Bachelor's Degrees in Philosophy; Economics
   - /University of Connecticut – Class of 2016/
 :end:
