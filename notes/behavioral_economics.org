@@ -1,0 +1,3 @@
+#+title: Behavioral Economics
+Daniel Kahneman - Thinking, Fast and Slow
+Conway's Game of Life

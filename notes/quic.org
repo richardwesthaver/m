@@ -1,0 +1,19 @@
+#+title: QUIC
+- https://www.chromium.org/quic
+
+ Transport-layer network protocol, part of the Chromium project.
+ - Leverages the benefits of building on top of UDP instead of TCP
+ - Designed as a re-implementation of TCP+TLS+HTTP/2
+ - Great documentation (ty Mr. Google) + has Rust implementations
+   (yay!) which leads us to:
+ - [[https://crates.io/crates/quinn][Quinn]]
+   - Rust implementation of the QUIC protocol.
+   - Super awesome-cool
+   - provides an API built with tokio
+   - provides the core /deterministic state machine/ of the protocol
+     via [[https://github.com/djc/quinn/tree/master/quinn-proto][=quinn-proto=]]
+ - [[https://www.chromium.org/quic/playing-with-quic][Playing With QUIC]] provides documentation on how to set up a test
+   client/server from the chromium source, a bit verbose for our needs
+   but relevant
+
+

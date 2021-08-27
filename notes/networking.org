@@ -1,0 +1,12 @@
+#+title: Networking
+#+roam_alias: networks
+#+roam_tags: net comp-sci
+* Models
+- [[file:client-server-model.org][Client-server Model]]
+- [[file:p2p.org][P2P]]
+* Protocols
+- [[file:tcp.org][TCP]]
+- [[file:udp.org][UDP]]
+- [[file:http.org][HTTP]]
+- [[file:tls.org][TLS]]
+- [[file:quic.org][QUIC]]

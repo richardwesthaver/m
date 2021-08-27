@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       5ef92cfb-d87a-47a6-8e1a-4a5cc1f48f66
+:END:
+#+title: Software
+* Free Software
+:PROPERTIES:
+:ID:       1304abf5-3760-4f8e-919b-1ea0ed353140
+:END:
+* Freeware
+:PROPERTIES:
+:ID:       29bd2367-1771-4633-8a9d-42e544f74ad3
+:END:
+Freeware is software that is /free to use/, NOT to be confused with
+[[id:1304abf5-3760-4f8e-919b-1ea0ed353140][Free Software]]. It is important to distinguish Freeware from truly Free
+Software, as the terms carry very different connotations. All Free
+Software is also Freeware, but not all Freeware is Free Software.
+* Proprietary Software
+:PROPERTIES:
+:ID:       ab28c699-cb83-47e6-87d0-7e7e806d07aa
+:END:

@@ -1,0 +1,66 @@
+#+title: Version Control
+- https://en.wikipedia.org/wiki/Version_control
+Version Control (or revision control, source control, source code
+management..) most commonly refers to the practice of /managing
+changes/ to computer programs, documents, or other collections of
+information.
+
+The 'Version' in Version Control refers to a specific state of the
+/repository/, often represented as a [[file:hash.org][hash]] key. This key is used to
+identify these 'Versions' in a given Version Control System.
+
+
+* Mercurial
+:PROPERTIES:
+:ID:       4e71c4b3-d55d-437b-af0b-79797f091418
+:END:
+** Mercurial <--> Git interop
+  :PROPERTIES:
+  :ID:       e8b605d5-8642-401f-bd8e-b84591e261ed
+  :END:
+  - Two different plugins - [[https://www.mercurial-scm.org/wiki/GitExtension][git]] and [[https://www.mercurial-scm.org/wiki/HgGit][hggit]], different features
+  - 'git' usage will treat a cloned repo as a git repo and just pull
+    branch heads into mercurial (.git directory and .hg directory present at root)
+  - 'hggit' will convert all changesets, branches, etc (.hg directory only)
+     - pulling changesets can be incredibly slow at times
+     - unlike vanilla hg, pulling from a git repo with hggit does NOT
+       support revision CLI flag ('-r 100' will not work), so the
+       standard method of doing an incremental pull is not possible
+     - expect unexpected behaviors. always have backups.
+  - hggit will often pull the 'github-pages' branch from repos using
+    GitHub Sites and treat it as the default branch in the resulting
+    clone. To make the repo usable you need to update to the 'master'
+    bookmark, and use that as default
+** HgWeb
+:PROPERTIES:
+:ID:       855028ee-b28b-433d-a5bb-016fe72cefe2
+:END:
+** [[https://www.mercurial-scm.org/guide][Mercurial Guide]]
+:PROPERTIES:
+:ID:       6abd2991-b6f0-4686-9620-93185ea19b1d
+:END:
+** [[https://www.mercurial-scm.org/wiki/RepositoryCorruption][Dealing with Repository and Dirstate Corruption]]
+:PROPERTIES:
+:ID:       99282960-dc18-4db3-ae06-6a293914d0ec
+:END:
+** [[https://mozilla-version-control-tools.readthedocs.io/en/latest/index.html][Mozilla’s Version Control Tools]]
+:PROPERTIES:
+:ID:       9f2b607c-0c3a-4fed-8c56-f42f1f42651c
+:END:
+* Git
+:PROPERTIES:
+:ID:       cd04e50c-1de3-46d7-b0ab-47f36962fc0a
+:END:
+The preferred choice for most developers. Git is widely used in
+academia as well as in the software industry, making it a necessary
+skill for collaborating with others, and sharing code on the internet.
+
+* Darcs
+:PROPERTIES:
+:ID:       cad6c8cf-1cd4-462b-8270-28d0ec4497c8
+:END:
+
+* Eden
+A new SCM attempt by Facebook, with the goal of improving on the
+Mercurial platform, and optimizing for use with Monolithic code bases.
+* SVN

@@ -1,0 +1,6 @@
+#+title: GNU/Linux
+- https://en.wikipedia.org/wiki/Linux
+
+* Distros
+- [[file:archlinux.org][Archlinux]]
+- [[https://www.pentoo.ch/][Pentoo]]

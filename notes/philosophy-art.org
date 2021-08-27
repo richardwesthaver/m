@@ -1,0 +1,6 @@
+#+title: Philosophy of Art
+- https://plato.stanford.edu/entries/art-definition/
+This document pertains to the /philosophy/ of Art. To see info on the
+broader context, see [[file:art.org][Art]].
+
+* Defining Art

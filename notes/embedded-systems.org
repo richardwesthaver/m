@@ -1,0 +1,7 @@
+#+title: Embedded Systems
+
+- [[file:sdr.org][SDR]]
+- [[file:qemu.org][QEMU]]
+
+* Resources
+- [[https://elinux.org/Main_Page][Embedded Linux Wiki]]

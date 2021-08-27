@@ -1,0 +1,54 @@
+#+title: Richard Westhaver
+#+email: ellis@rwest.io
+#+options: toc:nil author:nil date:nil toc:nil timestamp:nil email:nil title:nil num:nil
+#+export_file_name: Richard_Westhaver
+#+LATEX_HEADER: \usepackage[a4paper,text={6.25in,9in}, truedimen]{geometry}
+#+LATEX_HEADER: \usepackage{nopageno}
+#+LATEX_HEADER: \renewcommand{\large}{\normalsize}
+#+begin_center
+*_=Richard Westhaver=_*
+#+end_center
+#+begin_quote
+=Highly motivated software developer and product manager seeking a new role in Tech. I thrive in fast-paced environments and have a passion for innovation in complex systems.=
+#+end_quote
+:info:
+| location: | New London, CT              |
+| phone:   | 860-449-3564                |
+| email:   | [[mailto:ellis@rwest.io][ellis@rwest.io]]              |
+| links:   | [ [[https://rwest.io][blog]], [[https://github.com/richardwesthaver][GitHub]],  [[https://linkedin.com/my/richardwesthaver][LinkedIn]] ] |
+*Education*: Bachelor's Degrees in Philosophy; Economics
+  - /University of Connecticut – Class of 2016/
+:end:
+* *Projects*
+** [[https://www.virtuosofestival.com][Virtuoso Festivals]]                                                   :js:
+- Live event streaming startup
+- Group/private viewing, chat, social media integrations, and more on an in-house streaming platform (no Zoom!)
+- Multiple music festivals hosted this year
+- Backend platform developer since inception in early 2020
+** =shed=, =stash= and =store=                              :rust:python:cpp:
+- =shed= is a DevOps service I have been developing which provides collections of source code as Mercurial repositories. My shed currently includes over 280 repositories and millions of changesets
+- =stash= / =store= are the client/server implementations of my distributed storage system. It is still young but is designed to support any platform, operate in real-time environments, and scale well with federated networks
+* *Research*
+For the past year I have invested my time towards researching specific technologies that have the potential to drastically change the nature of computer interaction within the next 10 years. Below are some of the topics I've covered.
+** Network Protocols
+- Spent many months researching the QUIC protocol which was [[https://datatracker.ietf.org/doc/html/rfc9000][recently standardized]] by the IETF and adopted as the next major HTTP version (HTTP/3)
+- Experimented with small UDP-based message protocols
+** Natural Language Processing
+- Familiar with GPT-3, GPT-J, and the OpenAI beta API
+- Currently contributing to [[https://github.com/semiosis/pen.el][pen.el]], an Emacs package for interacting with language models
+** Embedded Systems
+- Researched and experimented with RISC-V, an open-source instruction set architecture for CPUs
+- Built a tiny x86 OS from scratch
+- Experience with Arduino boards, soldering, and programming a variety of digital sensors
+
+* *Professional Experience*
+** *Product Owner* @ [[https://www.communitybrands.com/][Community Brands]] - [2017 - 2020] 
+- Ensured successful delivery of Learning Management System for our top client (Intel), resulting in a reinforced relationship and negotiation of a new multi-year platform development project
+- SAFe certified Product Owner, assisting in development of the product roadmap, internal process improvement, and management of a group of 20+ software engineers
+- Developed Python programs for automation of various tasks including release notes, QA testing, and reporting
+- Facilitated Scrum meetings, analytics, feature demos, and client discovery calls
+- Lead R&D discussions with core developers on topics such as Machine Learning, Progressive Web Apps, and performance optimization at scale
+** *Launch Operator* @ [[http://dodsonboatyard.com/][Dodson's Boatyard]] - [2011 - 2016]
+- Coast Guard licensed Merchant Marine Master responsible for the operation of passenger vessels in Eastern Point Bay and Stonington Harbor
+** *Finance Internship* @ [[http://www.gdeb.com/][Electric Boat]] - [2014]
+- Responsible for reporting and management of large internal datasets for the Ohio Replacement Program

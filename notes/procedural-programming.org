@@ -1,0 +1,7 @@
+#+title: Procedural Programming
+- https://en.wikipedia.org/wiki/Procedural_programming
+
+a paradigm type of Imperative programming
+
+* Languages
+** [[file:c.org][C]]

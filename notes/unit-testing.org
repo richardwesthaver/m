@@ -1,0 +1,31 @@
+#+title: Unit Testing
+- https://en.wikipedia.org/wiki/Unit_testing
+
+Nowadays it is often useful to write unit tests which accompany core
+source code. A unit test is a /language-agnostic/ module that is
+responsible for determing whether or not a piece of source code is fit
+for use. They are often written in the same directories, or even the
+same files that source code is written in, although this depends on
+the given programming language.
+
+The piece of source code that is tested can be referred to as a
+=unit=, which is a neutral enough term. Another way to think of it is
+as the =scope= that is given to the unit test, or the code that is
+=executed= by a unit test.
+
+When tech guys chatter about [[https://en.wikipedia.org/wiki/Code_coverage][code coverage]], I understand it as the
+relative amount of code that is "covered" by unit tests compared to
+the amount of code that is not (but I've also heard it referred to as
+a measure of documentation?  meh).
+
+Naturally we like to shoot for perfection, and have every snippet of
+code we write be covered by a unit test, but this isn't always
+practical. Software deployments consisting of hand-made code are
+increasing in frequency at a rapid rate (which is /awesome/). Amazon,
+for example, was deploying new code to production every 11.7 seconds
+on average [[https://blog.newrelic.com/technology/data-culture-survey-results-faster-deployment/][as early as 2016]]. How are we supposed to keep up?? There's
+no way we can demand that developers maintain an up-to-date branch of
+the production code base after all..
+
+In my opinion, the most scaleable solution, which is also employed at
+many companies with a strong web presence, is through [[https://en.wikipedia.org/wiki/Systems_architecture][system architecture]].

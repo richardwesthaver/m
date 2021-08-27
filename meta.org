@@ -1,0 +1,173 @@
+#+TITLE: META
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.rwest.io/css/page.css"/>
+#+OPTIONS: toc:nil num:nil
+This is a system for /documenting/, /describing/, and /sharing/ my
+personal projects.
+* Intro
+Instead of having a README file at the root of every public project as
+is standard development practice, I write all =meta= content in a
+single document. A program then parses this document and updates my
+project META files with any changes found.
+
+This approach has some advantages:
+- Great for single contributor operations
+- Bulk-updates for sets of projects
+- (optional) auto-commits
+- Easy to catch mistakes
+
+And some disadvantages:
+- Disaster for multiple contributor operations
+- Non-standard
+- Easy to make mistakes
+
+The most important point to make is that the utility of this system
+decreases exponentially with the number of /contributors/ you
+have. It's designed to provide common formatting, terminology, media,
+and references for all my project docs and ease the pain involved with
+making arbitrary changes. It is a single 'source of truth', so there
+should be only one soothsayer.
+
+* Services
+** [[https://rwest.io][rwest.io]]
+The service that returns this page, and all other prose written by the
+author. Most pages are generated from [[https://orgmode.org/][Org Mode]] files and compiled to
+JS/WASM using [[https://yew.rs/][Yew]] and [[https://bulma.io/][Bulma]] CSS.
+*** [[https://rwest.io/rambles][rambles]]
+short posts, snippets, examples and thoughts
+*** [[https://rwest.io/notes][notes]]
+public notes
+*** [[https://rwest.io/meta][meta]]
+project info
+** [[https://docs.rwest.io][docs.rwest.io]]
+API docs for Rust libraries
+** [[https://hg.rwest.io][hg.rwest.io]]
+Mercurial VC service
+** [[https://pkg.rwest.io][pkg.rwest.io]]
+Package distribution service
+** [[https://cdn.rwest.io][cdn.rwest.io]]
+CDN for shared static web content
+** [[https://q.rwest.io][q.rwest.io]]
+Beacon API endpoint for use with webhooks
+
+* Code
+** Development Notes
+- All code is hosted at [[https://hg.rwest.io]] as Mercurial repos.
+- Clonebundles are hosted at https://pkg.rwest.io/hg in all supported
+  formats.
+  - Clonebundles are generated daily and fetched by hg clients
+    automatically via the =hg clone= command, which will bootstrap a
+    local repo using an advertised bundle from https://pkg.rwest.io/hg
+    and pick up any missing changesets directly from the upstream
+    server repository.
+- The default target platform is x86_64 GNU Linux for all programs and
+  libraries, but static program binaries for all supported platforms are
+  provided at [[https://pkg.rwest.io/bin/dist]]. Target-specific builds are
+  documented on a per-project basis.
+- Code is FOSS, copy-left licensed under WTFPL. feel free to use
+  without condition.
+
+** Repos
+*** rlib
+:PROPERTIES:
+:ID:       7e0d54ee-d3f7-468a-b0cf-664bba4df675
+:END:
+Rlib is a mid-level library for systems programmingin Rust. It
+provides common APIs and functionality used in my other projects. The
+goal of this library is to provide a collection of modules for Rust
+development on any platform. It includes primitive types and traits as
+well as platform/domain-specific features.
+**** Features
+**** Modules
+***** obj
+- [[https://docs.rwest.io/obj][API docs]]
+***** cfg
+- [[https://docs.rwest.io/cfg][API docs]]
+***** ctx
+- [[https://docs.rwest.io/ctx][API docs]]
+***** eve
+- [[https://docs.rwest.io/eve][API docs]]
+***** net
+- [[https://docs.rwest.io/net][API docs]]
+***** db
+- [[https://docs.rwest.io/db][API docs]]
+***** alch
+- [[https://docs.rwest.io/alch][API docs]]
+***** hash
+- [[https://docs.rwest.io/hash][API docs]]
+***** logger
+- [[https://docs.rwest.io/logger][API docs]]
+***** math
+- [[https://docs.rwest.io/math][API docs]]
+***** flate
+- [[https://docs.rwest.io/flate][API docs]]
+***** crypto
+- [[https://docs.rwest.io/crypto][API docs]]
+***** audio
+- [[https://docs.rwest.io/audio][API docs]]
+***** kala
+- [[https://docs.rwest.io/kala][API docs]]
+***** dmc
+- [[https://docs.rwest.io/dmc][API docs]]
+***** dts
+- [[https://docs.rwest.io/dts][API docs]]
+***** ui
+- [[https://docs.rwest.io/ui][API docs]]
+***** util
+- [[https://docs.rwest.io/util][API docs]]
+
+*** tenex
+:PROPERTIES:
+:ID:       0480aced-777f-4f30-ae05-189500fb6903
+:END:
+*** shed
+:PROPERTIES:
+:ID:       205131fc-ff48-4e0b-a3e8-ab52d5b6ca19
+:END:
+**** Features
+**** Programs
+***** shed
+***** stash
+***** store
+***** lab
+*** demo
+:PROPERTIES:
+:ID:       5f492bd0-986e-4146-a7cc-d4a1e667b95f
+:END:
+**** Examples
+*** crater
+:PROPERTIES:
+:ID:       ec9ee448-7fd9-4045-a506-28882a90b0a8
+:END:
+*** config/emacs
+:PROPERTIES:
+:ID:       f0d26731-d14d-4fd6-b8c7-1bf7f55ef527
+:END:
+*** config/home
+:PROPERTIES:
+:ID:       8b82210f-5532-45c4-aeb7-dfafe8738d7b
+:END:
+*** config/etc
+:PROPERTIES:
+:ID:       7f835b1b-3500-4d1d-a6a7-82db69f19ad8
+:END:
+*** config/nix
+:PROPERTIES:
+:ID:       d0185022-4cfd-4c73-a683-26cb7b4d58f1
+:END:
+*** babel
+*** meta
+*** contrib
+* Prose
+** Repos
+*** org/notes
+*** org/rambles
+*** org/portfolio
+* Music
+- [[https://soundcloud.com/ellisaudio][soundcloud1]] | [[https://soundcloud.com/2pldn][soundcloud2]]
+- [[https://cdn.rwest.io/media/audio][audio loops]]
+- piano clips
+   - [[https://cdn.rwest.io/media/video/joined_video_971d629fa80c4660b1e8b8abf89b1015.mp4][light rhodes jam]]
+   - [[https://cdn.rwest.io/media/video/20170704_204759_1.mp4][electro rhodes jam]]
+   - [[https://cdn.rwest.io/media/video/20170706_213623.mp4][classical practice]]
+- [[https://cdn.rwest.io/media/video/shader_example.mp4][Main Thing (Remix) shader demo]]
+  GLSL shader in Max/MSP + House Music

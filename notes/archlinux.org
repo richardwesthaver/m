@@ -1,0 +1,6 @@
+#+title: Archlinux
+#+begin_quote
+A lightweight and flexible Linux distribution that tries to Keep It
+Simple.
+#+end_quote
+- [[file:archlinux-install.org][Archlinux Installation]]

@@ -1,0 +1,32 @@
+#+title: User Datagram Protocol
+- https://tools.ietf.org/html/rfc768
+
+** *UDP vs TCP*
+   - *UDP and TCP share the same space* in a network stack and operate
+     on top of the IP protocol.
+   - *UDP has no built-in notion of State*, TCP does. However,
+     stateless protocols can be built on lower-level stateful
+     ones.. and vice-versa. It's just a matter of abstraction.
+	 - for example =HTTP= is a /stateless/ protocol, built
+       on TCP (/stateful/), which is built on IP (/stateless/)
+   - *TCP provides connection guarantees* that a client receives
+     packets IN ORDER and exactly in the condition they were sent
+     (thanks to checksums in headers), at the cost of some performance
+     (to ensure packet sequencing, checking headers, establishing
+     connection, etc)
+     - *UDP does NOT provide connection guarantees*.
+       - UDP does have checksums though, and thus
+         ensures packets are received in same
+         condition that they were sent.
+     - Packets can be sent and lost, it doesn't intrinsically matter
+       in UDP that the client didn't receive them.
+     - The loss of built-in guarantees does come with a performance
+       boost though, as well as a network protocol that is quite
+       flexible in its simplicity.
+
+*** *The need for speed*
+	 UDP is on the rise in networks due to the usage of P2P
+	 services, and the need for more /immediate/ methods of
+	 streaming media data at scale.[fn:0]
+
+[fn:0] [[https://www.caida.org/research/traffic-analysis/tcpudpratio/][Analyzing UDP usage in Internet traffic]]

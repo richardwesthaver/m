@@ -1,0 +1,9 @@
+#+title: QEMU
+- https://www.qemu.org/
+
+#+begin_quote
+QEMU is a generic and open source machine emulator and virtualizer.
+#+end_quote
+#+begin_center
+-- [[https://www.qemu.org/][QEMU homepage]]
+#+end_center

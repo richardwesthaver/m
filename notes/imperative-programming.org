@@ -1,0 +1,6 @@
+#+title: Imperative Programming
+- https://en.wikipedia.org/wiki/Imperative_programming
+
+- [[file:oop.org][Object-oriented Programming]]
+
+- [[file:procedural-programming.org][Procedural Programming]]

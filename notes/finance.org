@@ -1,0 +1,5 @@
+#+title: Finance
+- https://en.wikipedia.org/wiki/Finance
+
+* Methods
+- [[file:ynab.org][YNAB]]

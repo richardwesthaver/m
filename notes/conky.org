@@ -1,0 +1,6 @@
+#+title: Conky
+- A lightweight system monitor for X.
+- Runs on most Unix systems.
+- Built with C++.
+- [[https://wiki.archlinux.org/title/conky][Conky - ArchWiki]]
+- [[https://github.com/brndnmtthws/conky][GitHub - brndnmtthws/conky: Light-weight system monitor for X.]]

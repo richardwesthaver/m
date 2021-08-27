@@ -1,0 +1,5 @@
+#+title: The Mess We're In
+
+A presentation given by Joe Armstrong at [[https://www.thestrangeloop.com/][Strange Loop]] 2014.
+
+[[yt:lKXe3HUG2l4][The Mess We're In]]
