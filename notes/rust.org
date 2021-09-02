@@ -5,16 +5,11 @@
 
 A multi-paradign systems programming language, and a personal
 favorite.
-- https://doc.rust-lang.org/book/
+- [[https://doc.rust-lang.org/book/][The Rust Book]]
+- [[https://doc.rust-lang.org/rust-by-example/][Rust By Example]]
 - [[file:ml.org][ML]]
-
 ** tutorials
-*** DONE tokio tutorial                                             :async:
-CLOSED: [2020-11-21 Sat 01:07] SCHEDULED: <2020-11-02 Mon>
-:LOGBOOK:
-- state "DONE"       from "READ"       [2020-11-21 Sat 01:07]
-- state "READ"       from              [2020-10-31 Sat 20:47]
-:END:
+*** [[https://tokio.rs/tokio/tutorial][tokio tutorial]]                                                  :async:
 mini-redis implementation
 - tasks take up a single allocation and 64 bytes of memory
 - the #[tokio:main] macro turns async fn main -> fn main with a default tokio runtime build inserted
@@ -35,12 +30,7 @@ roughly an Arc<Vec<u8>> but with some added capabilities.
 
 - parking_lot::Mutex is a faster alternative to std::sync::Mutex.
 
-*** DONE [[https://os.phil-opp.com/][Writing an OS in Rust]]                                         :os:
-CLOSED: [2020-11-27 Fri 18:49]
-:LOGBOOK:
-- state "DONE"       from "RESEARCH"   [2020-11-27 Fri 18:49]
-- state "RESEARCH"   from              [2020-11-19 Thu 15:41]
-:END:
+*** [[https://os.phil-opp.com/][Writing an OS in Rust]]                                              :os:
 - A Freestanding Rust Binary
   The first step is to create a binary that is independent of the Rust std library, since =std= links to the OS.
   EZPZ: =  #![no_std]  =
@@ -279,7 +269,6 @@ Secondary ATA ----> |____________|   Parallel Port 1----> |____________|
   - /Recursive Page Tables/ - Another interesting approach, that requires no additional page tables at all, is to map the page table recursively. The idea behind this approach is to map some entry of the level 4 page table to the level 4 table itself. By doing this, we effectively reserve a part of the virtual address space and map all current and future page table frames to that space. This is tricky and not implemented in this tutorial, but we should check out the Address Calculation section for more details.
 
   After all this we do some implementation, end up being able to set up fresh page table with a correct allocator.
-
 - Heap Allocation
   At this point we just copied the tutorial code into our src, just to align with the conventions used. At the end of this post all the allocation and collection types of the built-in [[https://doc.rust-lang.org/alloc/index.html][alloc]] crate will be available in our kernel.
 
@@ -309,7 +298,6 @@ Secondary ATA ----> |____________|   Parallel Port 1----> |____________|
   #+end_src
 
   - we use the linked_list_allocator crate, but will dive into different heap allocation designs in the next chapter. In the remainder, we implement some tests and show usage of the alloc collections.
-
 - Allocator Designs
   The responsibility of an allocator is to manage the available heap memory.
   - Bump Allocator
@@ -323,7 +311,6 @@ Secondary ATA ----> |____________|   Parallel Port 1----> |____________|
     variations:
     - [[https://en.wikipedia.org/wiki/Slab_allocation][slab allocator]] - this is the first design that came to mind, should definitely investigate, often combined with other allocators. the basic idea is that you map block sizes that correspond directly to selected types in the Kernel - [[https://en.wikipedia.org/wiki/Object_pool_pattern][object pool pattern]]
     - [[https://en.wikipedia.org/wiki/Buddy_memory_allocation][buddy allocator]] - instead of a linked-list, uses a binary-tree data structure with power-of-2 block sizes. often combined with slab allocator.
-
 - Async/Await
   in this post we explore multitasking. worth noting that every system starts with 1 CPU core (before initializing the others).
   - /Preemptive Multitasking/ - uses OS functionality to switch threads at arbitrary points by forcibly pausing them
@@ -349,20 +336,13 @@ pub trait Future {
     The Waker is initialized by the executor and used by the task to notify the executor that its task has completed. In essence, this system provides a type of cooperative multitasking.
   - Implementation
     Futures and async/await are no_std compatible, so nothing special to be done in the src.
-----------
 
-*** DONE [[https://doc.redox-os.org/book/][redox-os book]] and compare to Linux Kernel                     :os:
-CLOSED: [2020-11-21 Sat 00:47]
-:LOGBOOK:
-- state "DONE"       from "RESEARCH"   [2020-11-21 Sat 00:47]
-- state "RESEARCH"   from              [2020-11-17 Tue 19:56]
-:END:
-our primary curiosities lay within architecture
-- Boot process
+*** [[https://doc.redox-os.org/book/][redox-os book]]                                                      :os:
+- Boot process \\
 the first code executed is the bootloader in =bootloader/ARCH/bootsector.asm=. This code is responsible for finding and loading the kernel at address 0x100000, as well as initializing the memory map and VESA display mode
-  - Kernel
+  - Kernel \\
 The kernel is entered through the interrupt table at 0XFF. Using this method, kernel entry can be contained to a single function =kernel= in =kernel/main.rs= which serves as the entrypoint for the kernel.bin executable file
-  - Init
+  - Init \\
 first process spawned is initfs:/bin/init
 
 The overall design follows the "Everything is a URL" principle, where a URL is simply an identifier for a Scheme and a Resource. 
@@ -389,8 +369,6 @@ Kernel space <                 | Resolve |
              \
 #+end_src
 The kernel is micro-kernel based, which uses the principle of least authority, preferring code to be ran in user space instead of kernel space. This architecture /usually/ leads to a variable level of performance degradation due to the additional context switches between the kernel and user handlers. My current thinking is that there are some clever solutions to the problem of context switching, but I need to further understand where and how often (during which syscalls) they occur, and what the impact is. Anyways in short this 'micro-kernel' is slow, but it is only 16k lines which is insane compared to Linux's 25MILLION
-
-had some TODO sections, may be worth revisiting this in the next few months or even offering to contribute.
 
 ** crates
    :PROPERTIES:
@@ -448,4 +426,4 @@ curl --unix-socket /tmp/firecracker.socket -i \
 
 *** Tokio
 asynchronous runtime and building blocks for writing network
-  applications.
+applications.

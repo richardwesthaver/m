@@ -1,0 +1,40 @@
+#+TITLE: Collections
+#+ID: 0x0004
+#+FILETAGS: :music:weather:
+#+DATE: [2021-06-04]
+#+INCLUDE: setup.org
+#+STARTUP: overview
+
+#+BEGIN_abstract
+0x0004 :: SuperTypes and High-level Behavior
+#+END_abstract
+
+* Overview
+* Concrete Collections
+** Packages and Repos
+   - version control systems
+     - git
+     - hg
+   - package managers
+     - pacman
+     - brew
+     - melpa
+     - pip
+     - cabal
+     - cargo
+       - sccache
+       - home
+       - registry
+** Documents and Media
+* Collection Behaviors
+** Copies and Clones
+   Immutable Collections &[T]
+** Mutations and Permutations
+   Mutable Collections, Ord, &mut, .*
+** Garbage Collection
+** Associations
+* Collectors
+  trait Collector<[T]> {
+  type Output = T;
+  }
+** shed
