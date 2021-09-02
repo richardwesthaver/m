@@ -1,7 +1,7 @@
 #+title: Richard Westhaver
 #+email: ellis@rwest.io
-#+options: toc:nil author:nil date:nil toc:nil timestamp:nil email:nil title:nil num:nil
-#+export_file_name: Richard_Westhaver
+#+SETUPFILE: setup.org
+#+export_file_name: resume
 #+LATEX_HEADER: \usepackage[a4paper,text={6.25in,9in}, truedimen]{geometry}
 #+LATEX_HEADER: \usepackage{nopageno}
 #+LATEX_HEADER: \renewcommand{\large}{\normalsize}
@@ -11,38 +11,19 @@
 #+begin_quote
 =Highly motivated software developer and product manager seeking a new role in Tech. I thrive in fast-paced environments and have a passion for innovation in complex systems.=
 #+end_quote
-:info:
-| location: | New London, CT                 |
-| email:    | [[mailto:ellis@rwest.io][ellis@rwest.io]]                 |
-| links:    | [ [[https://rwest.io][website]], [[https://github.com/richardwesthaver][GitHub]],  [[https://linkedin.com/my/richardwesthaver][LinkedIn]] ] |
-*Education*: Bachelor's Degrees in Philosophy; Economics
+
+| location: | New London, CT |
+| website:  | [[https://rwest.io][rwest.io]]       |
+| email:    | [[mailto:ellis@rwest.io][ellis@rwest.io]] |
+
+
+*Education*: Bachelor's Degrees in Philosophy/Economics
   - /University of Connecticut – Class of 2016/
-:end:
-* *Projects*
-** [[https://www.virtuosofestival.com][Virtuoso Festivals]]                                                   :js:
-- Live event streaming startup
-- Group/private viewing, chat, social media integrations, and more on an in-house streaming platform (no Zoom!)
-- Multiple music festivals hosted this year
-- Backend platform developer since inception in early 2020
-** =shed=, =stash= and =store=                              :rust:python:cpp:
-- =shed= is a DevOps service I have been developing which provides collections of source code as Mercurial repositories. My shed currently includes over 280 repositories and millions of changesets
-- =stash= / =store= are the client/server implementations of my distributed storage system. It is still young but is designed to support any platform, operate in real-time environments, and scale well with federated networks
-* *Research*
-For the past year I have invested my time towards researching specific technologies that have the potential to drastically change the nature of computer interaction within the next 10 years. Below are some of the topics I've covered.
-** Network Protocols
-- Spent many months researching the QUIC protocol which was [[https://datatracker.ietf.org/doc/html/rfc9000][recently standardized]] by the IETF and adopted as the next major HTTP version (HTTP/3)
-- Experimented with small UDP-based message protocols
-** Natural Language Processing
-- Familiar with GPT-3, GPT-J, and the OpenAI beta API
-- Currently contributing to [[https://github.com/semiosis/pen.el][pen.el]], an Emacs package for interacting with language models
-** Embedded Systems
-- Researched and experimented with RISC-V, an open-source instruction set architecture for CPUs
-- Built a tiny x86 OS from scratch
-- Experience with Arduino boards, soldering, and programming a variety of digital sensors
+
 
 * *Professional Experience*
 ** *Product Owner* @ [[https://www.communitybrands.com/][Community Brands]] - [2017 - 2020] 
-- Ensured successful delivery of Learning Management System for our top client (Intel), resulting in a reinforced relationship and negotiation of a new multi-year platform development project
+- Ensured successful delivery of Learning Management System for top clients, resulting in a reinforced relationship and negotiation of a new multi-year platform development project
 - SAFe certified Product Owner, assisting in development of the product roadmap, internal process improvement, and management of a group of 20+ software engineers
 - Developed Python programs for automation of various tasks including release notes, QA testing, and reporting
 - Facilitated Scrum meetings, analytics, feature demos, and client discovery calls
@@ -51,3 +32,32 @@ For the past year I have invested my time towards researching specific technolog
 - Coast Guard licensed Merchant Marine Master responsible for the operation of passenger vessels in Eastern Point Bay and Stonington Harbor
 ** *Finance Internship* @ [[http://www.gdeb.com/][Electric Boat]] - [2014]
 - Responsible for reporting and management of large internal datasets for the Ohio Replacement Program
+* *Projects*
+** [[https://www.virtuosofestival.com][Virtuoso Festivals]]
+A live event streaming startup with group/private viewing, chat, social media integrations, and more on an in-house streaming platform.
+- Multiple music festivals hosted this year
+- Backend developer and AWS guru since inception in early 2020
+** Home Lab
+I host a collection of services from a small cluster of laptops as opposed to the cloud. The public frontends for these services are optimized for my own use, thus they are quite simple, and perhaps a bit retro.
+- [[https://rwest.io][blog]] - home website built from Emacs org-mode documents
+- [[https://hg.rwest.io][code]] - mercurial repositories
+- [[https://pkg.rwest.io][packages]] - package distribution server
+- [[https://docs.rwest.io][docs]] - API docs for my Rust libraries
+** Rust Libraries
+I love the Rust programming language and have been building several libraries over the past few months. These libraries are the cornerstone for other programs I develop and use in my home lab environment.
+- *[[https://hg.rwest.io/rlib][rlib]]* - a mid-level library providing a framework and shared API for systems programming
+   - wrappers for low-level system modules such as cryptography, IO, and compression
+   - logging facade, utilities, and ui components
+   - concrete type system for 'objects' and 'configs' which can be serialized to json, ron, or bincode (binary)
+- *[[https://hg.rwest.io/tenex][tenex]]* - a high-level library for RESTful API clients
+   - provides access to web APIs such as Google, Discord, AWS
+   - authentication and proxy support (coming soon)
+* *Research*
+For the past year I've spent time researching specific technologies that have the potential to drastically change the nature of computer interaction within the next 10 years. Below are some of the topics I'm invested in.
+- HTTP/3, TLS1.3, QUIC, and the move from TCP to UDP in general
+- SDR, software-defined radios
+- IPFS, libp2p, and distributed services
+- io_uring, the new async IO interface for Linux
+- GPT-3, GPT-J, and the OpenAI beta API
+- RISC-V, an open-source instruction set architecture for CPUs
+- RocksDB, an embedded key-value storage engine built by Facebook

@@ -1,13 +1,10 @@
 #+TITLE: META
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.rwest.io/css/page.css"/>
-#+OPTIONS: toc:nil num:nil
-This is a system for /documenting/, /describing/, and /sharing/ my
-personal projects.
-* Intro
-Instead of having a README file at the root of every public project as
-is standard development practice, I write all =meta= content in a
-single document. A program then parses this document and updates my
-project META files with any changes found.
+#+SETUPFILE: setup.org
+* Overview
+=meta= is basically a /doc generator/. The idea is to write
+information about my personal projects in a single place for easy
+distribution. For example, text or markdown can be generated for
+repo READMEs, and html or pdf for web content.
 
 This approach has some advantages:
 - Great for single contributor operations
@@ -16,17 +13,33 @@ This approach has some advantages:
 - Easy to catch mistakes
 
 And some disadvantages:
-- Disaster for multiple contributor operations
+- Can be a disaster for multiple contributor operations
 - Non-standard
 - Easy to make mistakes
 
-The most important point to make is that the utility of this system
-decreases exponentially with the number of /contributors/ you
-have. It's designed to provide common formatting, terminology, media,
-and references for all my project docs and ease the pain involved with
-making arbitrary changes. It is a single 'source of truth', so there
-should be only one soothsayer.
+This process is much easier than creating readmes and license files
+individually for each project, and I find that it helps expose an
+underlying /modus vivendi/ for my libraries and programs - the way in
+which they interact and can coexist in a development environment.
 
+* Usage
+
+* Dev Notes
+- All code is hosted on [[https://hg.rwest.io]] as Mercurial repos.
+- Clonebundles are hosted at https://pkg.rwest.io/hg in all supported
+  formats.
+  - Clonebundles can be fetched by hg clients automatically via the
+    =hg clone= command, which will bootstrap a local repo using an
+    advertised bundle from https://pkg.rwest.io/hg and pick up any
+    missing changesets directly from the upstream server repository.
+- The /default/ target platform is x86 GNU Linux for all programs and
+  libraries, but static program binaries are also provided at
+  [[https://pkg.rwest.io/bin/dist]]. Target-specific builds are documented
+  on a per-project basis.
+- Code is FOSS, copy-left licensed under WTFPL. feel free to use
+  without condition.
+
+* Libraries
 * Services
 ** [[https://rwest.io][rwest.io]]
 The service that returns this page, and all other prose written by the
@@ -49,117 +62,49 @@ CDN for shared static web content
 ** [[https://q.rwest.io][q.rwest.io]]
 Beacon API endpoint for use with webhooks
 
-* Code
-** Development
-- All code is hosted at [[https://hg.rwest.io]] as Mercurial repos.
-- Clonebundles are hosted at https://pkg.rwest.io/hg in all supported
-  formats.
-  - Clonebundles are generated daily and fetched by hg clients
-    automatically via the =hg clone= command, which will bootstrap a
-    local repo using an advertised bundle from https://pkg.rwest.io/hg
-    and pick up any missing changesets directly from the upstream
-    server repository.
-- The default target platform is x86_64 GNU Linux for all programs and
-  libraries, but static program binaries for all supported platforms are
-  provided at [[https://pkg.rwest.io/bin/dist]]. Target-specific builds are
-  documented on a per-project basis.
-- Code is FOSS, copy-left licensed under WTFPL. feel free to use
-  without condition.
-
-** Repos
-*** [[https://hg.rwest.io/rlib][rlib]]
-:PROPERTIES:
-:ID:       7e0d54ee-d3f7-468a-b0cf-664bba4df675
-:END:
-Rlib is a mid-level library for systems programmingin Rust. It
-provides common APIs and functionality used in my other projects. The
-goal of this library is to provide a collection of modules for Rust
-development on any platform. It includes primitive types and traits as
-well as platform/domain-specific features.
-**** Features
-**** Modules
-***** obj
-- [[https://docs.rwest.io/rlib/doc/obj][API docs]]
-***** cfg
-- [[https://docs.rwest.io/rlib/doc/cfg][API docs]]
-***** ctx
-- [[https://docs.rwest.io/rlib/doc/ctx][API docs]]
-***** eve
-- [[https://docs.rwest.io/rlib/doc/eve][API docs]]
-***** net
-- [[https://docs.rwest.io/rlib/doc/net][API docs]]
-***** db
-- [[https://docs.rwest.io/rlib/doc/db][API docs]]
-***** alch
-- [[https://docs.rwest.io/rlib/doc/alch][API docs]]
-***** hash
-- [[https://docs.rwest.io/rlib/doc/hash][API docs]]
-***** logger
-- [[https://docs.rwest.io/rlib/doc/logger][API docs]]
-***** math
-- [[https://docs.rwest.io/rlib/doc/math][API docs]]
-***** flate
-- [[https://docs.rwest.io/rlib/doc/flate][API docs]]
-***** crypto
-- [[https://docs.rwest.io/rlib/doc/crypto][API docs]]
-***** audio
-- [[https://docs.rwest.io/rlib/doc/audio][API docs]]
-***** kala
-- [[https://docs.rwest.io/rlib/doc/kala][API docs]]
-***** dmc
-- [[https://docs.rwest.io/rlib/doc/dmc][API docs]]
-***** dts
-- [[https://docs.rwest.io/rlib/doc/dts][API docs]]
-***** ui
-- [[https://docs.rwest.io/rlib/doc/ui][API docs]]
-***** util
-- [[https://docs.rwest.io/rlib/doc/util][API docs]]
-
-*** [[https://hg.rwest.io/tenex][tenex]]
-:PROPERTIES:
-:ID:       0480aced-777f-4f30-ae05-189500fb6903
-:END:
-*** [[https://hg.rwest.io/shed][shed]]
-:PROPERTIES:
-:ID:       205131fc-ff48-4e0b-a3e8-ab52d5b6ca19
-:END:
-**** Features
-**** Programs
-***** shed
-***** stash
-***** store
-***** lab
-*** [[https://hg.rwest.io/demo][demo]]
-:PROPERTIES:
-:ID:       5f492bd0-986e-4146-a7cc-d4a1e667b95f
-:END:
-**** Examples
-*** [[https://hg.rwest.io/crater][crater]]
+* Programs
+** [[https://hg.rwest.io/crater][crater]]
 :PROPERTIES:
 :ID:       ec9ee448-7fd9-4045-a506-28882a90b0a8
 :END:
-*** [[https://hg.rwest.io/config/emacs][config/emacs]]
+** [[https://hg.rwest.io/config/emacs][config/emacs]]
 :PROPERTIES:
 :ID:       f0d26731-d14d-4fd6-b8c7-1bf7f55ef527
 :END:
-*** [[https://hg.rwest.io/config/home][config/home]]
+** [[https://hg.rwest.io/config/home][config/home]]
 :PROPERTIES:
 :ID:       8b82210f-5532-45c4-aeb7-dfafe8738d7b
 :END:
-*** [[https://hg.rwest.io/config/etc][config/etc]]
+** [[https://hg.rwest.io/config/etc][config/etc]]
 :PROPERTIES:
 :ID:       7f835b1b-3500-4d1d-a6a7-82db69f19ad8
 :END:
-*** [[https://hg.rwest.io/config/nix][config/nix]]
+** [[https://hg.rwest.io/config/nix][config/nix]]
 :PROPERTIES:
 :ID:       d0185022-4cfd-4c73-a683-26cb7b4d58f1
 :END:
-*** [[https://hg.rwest.io/babel][babel]]
-*** [[https://hg.rwest.io/meta][meta]]
-*** [[https://hg.rwest.io/contrib][contrib]]
-* Writing
-Notes, Rambles, Metas, and my portfolio are kept under version control
-at https://hg.rwest.io/org.
+** [[https://hg.rwest.io/babel][babel]]
+** [[https://hg.rwest.io/meta][meta]]
+** [[https://hg.rwest.io/contrib][contrib]]
+* Org
+My notes and meta docs are kept under version control at
+https://hg.rwest.io/org. They are written in Org-mode but exported to
+a variety of formats.
+
+Emacs is my IDE and text-editor of choice, so Org-mode is a natural
+fit for all types of writing I do. The problem with Org is that it is
+difficult to parse /outside of Emacs/. in =elisp=, the [[https://orgmode.org/worg/dev/org-element-api.html][org-element api]]
+fully supports the specification, but it is a monster task to
+re-implement in another language. This is one of the few strong
+arguments against Org-mode - but only when talking about the /full/
+spec. It is quite feasible, with enough understanding of your own
+workflow and Org-element internals, to design a subset for personal
+use.
+
+While I slowly work out a /small/ portable parser for a subset of the
+spec, I have been using the built-in exporters with some scripts to
+generate static content.
+
 * Music
 I make music sometimes, because I enjoy the process. There are so many
 things to appreciate in sound and it's easy to let yourself become
@@ -167,7 +112,6 @@ absorbed.
 
 Most of the time I just jam with my synths and drum machines and hit
 the record button. It's a good time.
-
 - [[https://soundcloud.com/ellisaudio][soundcloud1]] | [[https://soundcloud.com/2pldn][soundcloud2]]
 - [[https://cdn.rwest.io/media/audio][audio loops]] \\
   I have a bunch of loops and other soundbytes I've created over the
@@ -180,3 +124,21 @@ the record button. It's a good time.
      working out Resignation by Brad Mehldau
 - [[https://cdn.rwest.io/media/video/shader_example.mp4][Main Thing (Remix) shader demo]]
   GLSL shader in Max/MSP + House Music
+
+* License
+#+begin_src text
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+
+ Copyright (C) 2021 Richard Westhaver <ellis@rwest.io>
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+#+end_src
+

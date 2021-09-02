@@ -1,0 +1,219 @@
+#+TITLE: Hello World
+#+ID: 0x0000
+#+FILETAGS: intro:shed:lab:store:stash:meta
+#+DATE: [2021-04-22]
+#+INCLUDE: setup.org
+#+BEGIN_abstract
+0x0000 :: Hello World
+#+END_abstract
+* Future projects
+
+  The primary goal for the next few months is to build some Things.
+
+** store
+
+   #+begin_src dot :file media/00/store.png
+digraph {
+  rankdir=LR;
+  subgraph cluster_0 {
+    node [ shape=square ];
+    edge [ dir=both ];
+    Documents -> "Data<T>" [color=purple,penwidth=0.5,style=dotted];
+    Files -> "Data<T>" [color=purple,penwidth=0.5,style=dotted];
+    Resources -> "Data<T>" [color=purple,penwidth=0.5,style=dotted];
+    Blobs -> "Data<T>" [color=purple,penwidth=0.5,style=dotted];
+    "Data<T>" -> "T<([u8], [u8])>" [color=maroon,penwidth=2.0,style=dotted];
+  }
+
+  subgraph cluster_1 {
+    label="*store*";
+    Engine -> MemTable -> PhysDisk;
+  }
+
+  "T<([u8], [u8])>" -> "(key: [u8], val: [u8])" [color=red,penwidth=3.0,label="iter()"];
+  "(key: [u8], val: [u8])" -> Engine [color=red,penwidth=3.0,label="write()"];
+
+}
+   #+end_src
+
+   #+RESULTS:
+   [[file:media/00/store.png]]
+
+   Ultimately we are building a database that holds arrays of /rows/
+   in an in-memory table. Each row is a =[Key<K> -> Value<V>]= pair
+   where both =K= and =V= are *arbitrary chunks of binary
+   data*[fn:1]. When the database detects that any MemTable is getting
+   full, it schedules it to be flushed from memory to another
+   location, most likely a directory that the database owns, at which
+   point the MemTable is empty and can accept additional (K,V) pairs.
+
+   By starting with a small, embedded storage engine *library*, like
+  [[https://rocksdb.org/][RocksDB]], we can implement specific DB engine configurations for
+  specialized use-cases, and wrap them in an API for sharing data with
+  other Peer database hosts. Some of the goal I have for our API are:
+
+   - Distributed 
+
+     - Encrypted =multi-cast= streaming transport
+     - Connection-less RPC, handshake, and pub/sub protocol
+     - Public, Local, Leader modes available
+
+   - Fast
+
+     - C++ core Engine library for extreme performance
+     - 100% API built in a modular Rust environment
+     - Async-aware implementation with concurrent worker threads
+
+   - Flexible
+
+     - Fully Configurable via ron json or cli
+     - Embeddable in other applications
+     - Runs on many platforms including iOS and Android
+     - Can store any blob of binary data including entire files and directories.
+     
+*** stash
+    #+begin_src dot :file media/00/stash.png
+digraph {
+  rankdir=LR;
+  subgraph cluster_1 {
+    label="*stash*";
+    Engine -> MemTable;
+    MemTable -> Disk;
+  }
+
+  "*store*" -> "Cache<T>" -> Engine;
+}
+    #+end_src
+
+    #+RESULTS:
+    [[file:media/00/stash.png]]
+
+    =stash= is the local/client-side/cache implementation of
+    =store=. There can be an unlimited number of stashes, and each one
+    can be mangled by the user in a variety of ways {encrypt,
+    compress, clear, pull, push}.
+
+** shed
+    #+begin_src dot :file media/00/shed.png
+graph {
+  label="*shed*";
+  pkg [ label="Package<T>" ];
+
+  src_pkg -- pkg;
+  ext_pkg -- pkg;
+
+  subgraph cluster_1 {
+    label=src;  
+    {libshed, libstore, libstash} -- lib;
+    {shedctl, storectl, stashctl} -- bin;
+    {sys, user} -- cfg;
+    docs;
+  }
+
+  subgraph cluster_2 {
+    label=contrib;
+    {git, mercurial} -- "src";
+  }
+
+  subgraph cluster_3 {
+    label=ext;
+
+    "*stash*";
+    {pacman, brew, winget} -- registry;
+  }
+
+  "src" -- ext_pkg;
+  registry -- ext_pkg;
+  lib -- src_pkg;
+  bin -- src_pkg;
+  cfg -- src_pkg;
+  docs -- src_pkg;
+  pkg_config -- pkg;
+  "*store*" -- "*stash*";
+  "*stash*" -- ext_pkg;
+}
+    #+end_src
+
+    #+RESULTS:
+    [[file:media/00/shed.png]]
+
+   The name =shed= is derived from Facebook's [[https://github.com/facebookexperimental/rust-shed][rust-shed]][fn:2] which is a
+   collection of Rust crates common between their other open source
+   projects. I think of it as a sort of standard library add-on, and
+   our intention is to extend this idea with a simple package
+   manager.
+
+   In this iteration, we are not starting with a framework
+   per-se. Instead we will treat the project as a /collection/ and add
+   useful traits later. The goal right now is to provision the
+   collection.
+
+   The eventual purpose of =shed= is to generate packages. These
+   packages can be customized and built on-demand. Once the package is
+   built, it is up to the client to retrieve, unpack, and deploy it as
+   they choose.
+
+** lab
+   =lab= is a project management tool. In addition to installing
+   packages from =shed= it provides an abstraction over any
+   given /project/. Each =project= is a top-level user defined entity.
+   The simplest example is a directory on the file system, but unlike
+   the conventional notion of a 'project' in the Programmer's World,
+   this directory doesn't /need/ to have any specific contents like
+   VCS files (=.hg=, =.git=) or build scripts (=Makefile=). It also
+   doesn't need to be on the file system, or be a directory for that
+   matter. 
+   
+   
+
+** extracirricular activities
+
+   These are a few of the topics that I want to continue researching,
+   but are too general to apply to a specific project or concrete
+   task.
+	
+   - Learn some C/C++
+     
+     We can make things just fine, but a significant focus of ours
+     moving forward will be C/C++ programming. It's the industry
+     paradigm for a reason and there isn't a production OS out there
+     that doesn't rely on libc. We're far past the point of needing to
+     learn it intimately, and have accepted our fate.
+		
+   - DSP and SDR
+
+     After taking another shot at working with the Hack RF1 and GNU
+     Radio we were actually able to dial into FM signals. I want to
+     freshen up my DSP skills and start interacting more directly with
+     the hardware without GNU Radio.
+		
+   - Deep-dive crypto
+
+     As we've been using more primitive crypto libraries, we've
+     realized how little we know. I want to develop a rock solid
+     understanding of exactly how ciphers and hashers work and best
+     practices for implementing and testing them.
+
+
+* Logging
+  We're going to log our progress through a series of posts. There is
+  no posting schedule, no deadlines. Each post is a single .org
+  file available in multiple formats (html, txt, pdf, ron).  Posts have the
+  following properties:
+
+  - Title
+  - Description
+  - Tags
+  - Date
+
+  Every series has its own subdirectory and assigned a sequential 2
+  digit hexcode. Posts are ID'd in the exact same manner.  This file
+  is the first post in our first series. - 0x0000 :)
+
+* Footnotes
+
+[fn:1] In Rust we usually see these as =let k: Vec<u8>=, =let v:
+Vec<u8>=, or =[u8]=, =&[u8]=, etc.
+
+[fn:2]  Also inspired by [[https://github.com/facebook/folly][folly]]
+

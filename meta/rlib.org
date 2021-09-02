@@ -1,0 +1,104 @@
+#+TITLE: rlib
+#+ID: 7e0d54ee-d3f7-468a-b0cf-664bba4df675
+#+CATEGORY: lib
+#+FILETAGS: rust
+A mid-level library for systems programming in Rust. Provides common
+API used in my other Rust projects.
+
+* Status
+*EXPERIMENTAL*
+
+- many things work, many things don't.
+- =kala=, =obj=, =cfg=, =ctx=, =logger= and =flate= are somewhat usable
+- =math=, =alch=, =dts=, and =ui= are placeholders
+
+* Modules
+The =rlib= API is currently split into separate crates with a single
+[[https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html][workspace]]. As of [[https://hg.rwest.io/rlib/rev/96eadefcf4e6][rev:96eadefcf4e6]] a placeholder =lib.rs= has been
+added to the repository root which will eventually re-export all
+modules and their features. This update won't break existing
+integrations with my other projects (since each module is imported
+directly), and will make our [[https://docs.rwest.io/rlib/doc/][docs]] very easy to build. The main blocker
+to this task is defining the features of the modules themselves.
+
+** obj
+=Objects= are pre-defined Rust structs that can easily encode to RON,
+JSON or Bincode, and tagged with metadata such as an =Id=, for easy
+insertion into a HashMap. They implement a few traits, namely =Objective= and
+=Identity= which define common functions.
+
+Objects can be initialized using the =Objective= methods, which allows
+all fields in their type definition to be decoded from a JSON or RON
+string. Some Objects also provide methods used to parse the underlying
+type itself, such as =Wav= for .wav audio files and =Org= for .org
+text files.
+
+- [[https://docs.rwest.io/rlib/doc/obj][API docs]]
+
+** cfg
+=Configs= are similar in structure to =Objects=, but differ in their
+purpose - software configuration.
+
+Generic types are provided the same way =Objects= are, with a
+=Configure= trait and =Config= struct. They are used in other =rlib=
+modules such as =kala=, and will likely be involved with most of the
+other modules in the future. For example, =NetworkConfig= will be used
+to configure client/server from the =net= module, =DatabaseConfig=
+will be used with the =db= module.
+
+- [[https://docs.rwest.io/rlib/doc/cfg][API docs]]
+
+** ctx
+Async runtime context(s).
+- [[https://docs.rwest.io/rlib/doc/ctx][API docs]]
+** eve
+Async event queue (io_uring). Linux only and v. experimental
+- [[https://docs.rwest.io/rlib/doc/eve][API docs]]
+** net
+Network module for building clients/servers.
+- [[https://docs.rwest.io/rlib/doc/net][API docs]]
+** db
+Database module built primarily for key-value storage with RocksDB.
+- [[https://docs.rwest.io/rlib/doc/db][API docs]]
+** alch
+Allocator implementations for the niche.
+- [[https://docs.rwest.io/rlib/doc/alch][API docs]]
+** hash
+Hash algorithms. (re-exported in =crypto= too)
+- [[https://docs.rwest.io/rlib/doc/hash][API docs]]
+** logger
+Logging essentials including a runtime context and macros from the =log= crate
+- [[https://docs.rwest.io/rlib/doc/logger][API docs]]
+** math
+TBD
+- [[https://docs.rwest.io/rlib/doc/math][API docs]]
+** flate
+Compression module swiss-army knife built around =zstd=.
+- [[https://docs.rwest.io/rlib/doc/flate][API docs]]
+** crypto
+Crypto /primitives/.
+- [[https://ed25519.cr.yp.to/][ed25519]] and [[https://github.com/dalek-cryptography/ed25519-dalek][ed25519-dalek]] public-key signatures
+- [[https://cr.yp.to/snuffle.html][Salsa20]] stream cipher + [[https://cr.yp.to/snuffle/xsalsa-20081128.pdf][XSalsa20]]
+- [[https://nacl.cr.yp.to/secretbox.html][NaCl]] (TBD)
+- [[https://docs.rwest.io/rlib/doc/crypto][API docs]]
+** audio
+Cross-platform audio device detection and playback.
+- [[https://docs.rwest.io/rlib/doc/audio][API docs]]
+** kala
+Handy /offline/ functions.
+- [[https://docs.rwest.io/rlib/doc/kala][API docs]]
+** dmc
+TBD
+- [[https://docs.rwest.io/rlib/doc/dmc][API docs]]
+** dts
+Experimental types (Monads and GATs and such)
+- [[https://docs.rwest.io/rlib/doc/dts][API docs]]
+** ui
+TBD (egui)
+- [[https://docs.rwest.io/rlib/doc/ui][API docs]]
+** util
+Utilities and development tools designed to reduce boilerplate code
+for build scripts and binaries. Includes wrappers for =anyhow=,
+=clap=, =chrono=, and some other useful things.
+- [[https://docs.rwest.io/rlib/doc/util][API docs]]
+

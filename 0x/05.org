@@ -1,0 +1,80 @@
+#+TITLE: Emacs Cheatcodes
+#+ID: 0x0005
+#+FILETAGS: :cfg:emacs:
+#+DATE: [2021-05-18]
+#+INCLUDE: setup.org
+#+STARTUP: overview
+
+#+BEGIN_abstract
+0x0005 :: Livin' La Vida Emacs
+#+END_abstract
+
+* Emacs Install
+
+  - refer to the INSTALL file in the root of the emacs repo for an
+    overview of install options
+  - releases are hosted at [[https://ftp.gnu.org/gnu/emacs/]], but we're
+    mostly interested in version 28.* which is NOT released
+
+** Releases
+
+   For sanity checking, it's helpful to have access to older versions
+   of Emacs. We can download and verify a version like this:
+
+   #+begin_src shell :results silent
+#aria2c https://ftp.gnu.org/gnu/gnu-keyring.gpg -d /tmp/
+#gpg --import /tmp/gnu-keyring.gpg
+VERSION=24.2
+aria2c https://ftp.gnu.org/gnu/emacs/emacs-${VERSION}.tar.xz.sig -d /tmp/
+gpg --verify /tmp/emacs-${VERSION}.tar.xz.sig
+aria2c https://ftp.gnu.org/gnu/emacs/emacs-${VERSION}.tar.xz -d /tmp/
+tar -xf emacs-VERSION.tar.xz
+   #+end_src
+
+** Building from Source
+
+   First, clone the repo:
+     #+begin_src shell :results silent
+git clone https://git.savannah.gnu.org/git/emacs.git /tmp/emacs
+     #+end_src
+
+   Once the source is in hand, I stronly recommend making a separate
+   build directory and calling the configure script from there.
+
+   #+begin_src shell
+mkdir /tmp/emacs-build && cd /tmp/emacs-build
+../emacs/configure --with-mailutils --with-imagemagick --with-x-toolkit=athena --without-pop --without-sound --with-json --enable-link-time-optimization --with-native-compilation
+NATIVE_FULL_AOT=1 make -j8
+# test the build with './src/emacs' (location of output binary)
+# install emacs binaries on current system
+make install
+   #+end_src
+
+   The =configure= script takes a bunch of different flags that
+   customize the build, and generate a build-specific Makefile.
+
+   The next line compiles the source. Install with =make install= and
+   you're done! A custom Emacs binary with all the fixings has just
+   been installed for your current user. :)
+
+   Here are some of the other configuration flags worth investigating:
+
+   - --without-all
+   - --with-x-toolkit=no
+   - --without-x
+   - --without-dbus --without-gconf --without-gsettings
+
+* Org-mode
+** src blocks and babel
+** log-file
+
+* Using Macros
+
+  - =C-x (= [DO STUFF] =C-x )= =C-x e=
+
+* Registers & Bookmarks
+  Registers are one of those easy-to-overlook features, but they are SO useful.
+
+* Packages
+* Projects
+* Tabs

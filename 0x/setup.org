@@ -1,0 +1,2 @@
+#+OPTIONS: ^:nil H:3
+#+infojs_opt: view:showall ltoc:nil home:https://rwest.io toc:t up:.

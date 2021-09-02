@@ -1,4 +1,6 @@
 ^log/
+glob:target
+glob:Cargo.lock
 glob:archive.org
 glob:todo.org
 glob:.#*
