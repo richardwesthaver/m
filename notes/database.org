@@ -1,5 +1,5 @@
-#+title: Database
-
+#+TITLE: Database
+#+ID: 737cd881-0f1e-4390-b604-9acc5720dac9
 - [[https://en.wikipedia.org/wiki/Extract,_transform,_load][ETL]]
 - [[https://en.wikipedia.org/wiki/Extract,_load,_transform][ELT]]
   

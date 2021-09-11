@@ -1,7 +1,5 @@
-#+title: C++
-
-- [[https://en.cppreference.com/w/][Documentation]]
-
+#+TITLE: C++
+- [[https://en.cppreference.com/w/][cppreference.com]]
 * [[https://www.reddit.com/r/rust/comments/bya8k6/programming_with_rust_vs_c_c/eqfcu0s?utm_source=share&utm_medium=web2x][Redditor comment regarding the C++ ecosystem]]
 This Redditor with 12y of XP writing C++ talks about all the
 complexities involved with coding in C++. OP is asking about some of

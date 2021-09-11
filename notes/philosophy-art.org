@@ -1,6 +1,9 @@
-#+title: Philosophy of Art
+#+TITLE: Philosophy of Art
+#+ID: fb919b7b-57ed-4962-b9e9-6a0fbe30c02c
 - https://plato.stanford.edu/entries/art-definition/
 This document pertains to the /philosophy/ of Art. To see info on the
-broader context, see [[file:art.org][Art]].
+broader context, see [[file:art.org][Art]]. 
 
-* Defining Art
+* Aesthetics
+- https://en.wikipedia.org/wiki/Aesthetics
+- [[https://aesthetics.fandom.com/wiki/List_of_Aesthetics][aesthetics wiki]]

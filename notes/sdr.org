@@ -1,4 +1,5 @@
 #+TITLE: Software Defined Radio
+#+ID: de73cf8a-d39f-4bdb-8ec9-009288e77d19
 - https://en.wikipedia.org/wiki/Software-defined_radio
 
 * [[https://www.wikiwand.com/en/Cognitive_radio?fbclid=IwAR2ix1x1HHC9rimSUr_NkdRQERtKKm4_IBvH25Vb05Oh6svQ3mKegV0bKz0][Cognitive Radio]]

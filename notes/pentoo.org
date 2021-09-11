@@ -1,4 +1,7 @@
-#+title: Pentoo
+* Pentoo
+:PROPERTIES:
+:ID: 8db0a4c6-b265-4d92-83ff-095899ca72e6
+:END:
 - https://www.pentoo.ch/
 
 Pentoo is a Linux distro based on Gentoo, provisioned as a 32 or

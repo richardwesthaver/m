@@ -1,7 +1,6 @@
-#+title: Hardware
-
-* Computer
-
+#+TITLE: Hardware
+#+ID: 040cb38f-923e-47e7-8cbb-dec452878a6f
+* Desktop Computer
 ** Disk
 Disk storage (also sometimes called drive storage) is a general
 category of storage mechanisms where data is recorded by various
@@ -19,7 +18,6 @@ drive (HDD) containing a non-removable disk, the floppy disk drive
 - HFS+
 - B-Tree
 - XFS
-
 
 ** Firmware
 https://en.wikipedia.org/wiki/Firmware

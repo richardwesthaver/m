@@ -1,5 +1,5 @@
-#+title: Org Mode
-
+#+TITLE: Org Mode
+#+ID: 0b4c27b4-3c1a-41c3-afcd-048f2cf15030
 https://orgmode.org/
 
 Org-mode is a flexible text-based note-taking system built for [[file:emacs.org][Emacs]].

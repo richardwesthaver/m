@@ -1,4 +1,5 @@
-#+title: Hypertext Transfer Protocol
+#+TITLE: Hypertext Transfer Protocol
+#+ID: 049defda-3ac2-4cf1-86ec-060f0a77a5cf
 - https://developer.mozilla.org/en-US/docs/Web/HTTP
 
 #+begin_quote

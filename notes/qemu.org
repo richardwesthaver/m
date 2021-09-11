@@ -1,4 +1,5 @@
-#+title: QEMU
+#+TITLE: QEMU
+#+ID: 9f374d07-e188-4b40-8109-9253e6c88a6a
 - https://www.qemu.org/
 
 #+begin_quote

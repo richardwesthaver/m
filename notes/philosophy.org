@@ -1,5 +1,5 @@
-#+title: Philosophy
-#+roam_tags: philosophy
+#+TITLE: Philosophy
+#+ID: 022b63ff-b010-44dc-bb21-89498769d3e0
 - [[file:metaphysics.org][Metaphysics]]
 - [[file:aesthetics.org][Aesthetics]]
 - [[file:computational-linguistics.org][Computational Linguistics]]

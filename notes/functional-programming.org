@@ -1,2 +1,5 @@
-#+title: Functional Programming
+* Functional Programming
+:PROPERTIES:
+:ID: f0816d6c-91c4-4aad-a25b-8d699772fd4f
+:END:
 - https://en.wikipedia.org/wiki/Functional_programming

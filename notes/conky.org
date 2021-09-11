@@ -1,11 +1,17 @@
-#+title: Conky
-#+ID: ee68a953-f9b3-447d-a531-ef301ca1e0d9
+* Conky                                                             :lua:cpp:
+:PROPERTIES:
+:ID: ee68a953-f9b3-447d-a531-ef301ca1e0d9
+:CATEGORY: bin
+:END:
 [[https://github.com/brndnmtthws/conky][Conky]] is a lightweight system monitor program for X that generates nice little desktop
 widgets from Lua config files.
 - Built with C++.
 - [[https://wiki.archlinux.org/title/conky][Conky - ArchWiki]]
 - [[https://github.com/brndnmtthws/conky][GitHub - brndnmtthws/conky: Light-weight system monitor for X.]]
-* Arch Linux desktop example
+** Arch Linux desktop example
+:PROPERTIES:
+:ID:       4898be7c-465f-4f17-b451-8ec451f70399
+:END:
 Here's a few widgets I set up - they stay on the desktop behind all my other windows, so
 when I want to see some quick stats I can just switch to an empty tag in AwesomeWM
 (which is also configured via Lua).

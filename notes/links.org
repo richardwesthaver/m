@@ -1,0 +1,720 @@
+#+TITLE: Links
+#+ID: d3afbac9-69d0-428b-aac1-b29e50f94bff
+* [[https://tools.ietf.org/html/rfc8439][RFC 8439 - ChaCha20 and Poly1305 for IETF Protocols]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 03:07]
+	 :ID:       org:395390b0-f920-4e6e-8a1a-21743538036d
+	 :END:
+
+* [[https://en.wikipedia.org/wiki/Salsa20#ChaCha_variant][Salsa20 - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:59]
+	 :ID:       org:f81e6d23-1196-4277-9fac-46ff07ab7c07
+	 :END:
+	 - ChaCha variant - most common stream cipher nowadays.
+* [[https://en.wikipedia.org/wiki/Stream_cipher][Stream cipher - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:48]
+	 :ID:       org:28828afb-9e9b-4b64-a958-2d8bd72dd559
+	 :END:
+
+* [[https://dalek.rs/][dalek cryptography]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:28]
+	 :ID:       org:b08792ce-1926-49fe-9975-786294d90d73
+	 :END:
+	 love this site design
+* [[https://github.com/dalek-cryptography/bulletproofs][GitHub - dalek-cryptography/bulletproofs: A pure-Rust implementation of Bulle...]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:28]
+	 :ID:       org:dde2daf8-522b-45c5-aaa5-37a5c980f53e
+	 :END:
+
+* [[https://docs.rs/crate/frank_jwt/2.1.0][frank_jwt 2.1.0 - Docs.rs]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:27]
+	 :ID:       org:6b385d69-0b64-47b2-b80d-435a26384482
+	 :END:
+
+* [[https://blog.logrocket.com/rust-cryptography-libraries-a-comprehensive-list/][Rust cryptography libraries: A comprehensive list - LogRocket Blog]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:21]
+	 :ID:       org:32677679-502e-44d5-93a9-f76ab5face2d
+	 :END:
+
+* [[https://en.wikipedia.org/wiki/Exclusive_or][Exclusive or - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 01:01]
+	 :ID:       org:801b2499-d1cb-4c37-87b4-c009eff70bd7
+	 :END:
+
+* [[https://docs.rs/salsa20/0.7.2/salsa20/][salsa20 - Rust]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 00:09]
+	 :ID:       org:4b0377c3-1cf5-4107-8562-dafe07ff34b3
+	 :END:
+
+* [[https://docs.rs/ipnet/2.3.0/ipnet/][ipnet - Rust]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 00:04]
+	 :ID:       org:90e047b2-0deb-448b-97fc-b6b03e43664c
+	 :END:
+
+* [[https://io808.com/][iO-808]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-07 Sun 23:28]
+	 :ID:       org:c33cdfcf-393e-4ca7-941f-9d4e5fa88c77
+	 :END:
+	 JS-based TR-808 web app
+* [[https://crates.io/crates/proc-macro2][proc-macro2]]
+CREATED: [2021-02-07 Sun 05:18]
+A superset of proc-macro
+* [[https://doc.rust-lang.org/reference/procedural-macros.html][proc macros -- Rust Docs]]
+CREATED: [2021-02-07 Sun 05:17]
+* [[https://github.com/dtolnay/syn/tree/master/examples/lazy-static][lazy-static! - syn example]]
+CREATED: [2021-02-07 Sun 05:16]
+* [[https://github.com/dtolnay/syn/tree/master/examples/heapsize][heapsize - syn proc_macro example]] 
+CREATED: [2021-02-07 Sun 05:15]
+* [[https://www.emacswiki.org/emacs/BookmarkPlus][bookmark+ docs]]
+CREATED: [2021-02-06 Sat 03:02]
+* [[https://github.com/mersinvald/aquamarine][aquamarine]]
+CREATED: [2021-01-31 Sun 23:51]
+ - mermaid.js-powered inline dots
+* [[https://www.emacswiki.org/emacs/Icicles][Icicles - EmacsWiki]]
+CREATED: [2021-01-39 Sat 11:01]
+Emacs lib for enhancing minibuffer completion
+* [[http://pd-tutorial.com/english/ch04s02.html][PureData Sequencer Tutorial]]
+CREATED: [2021-01-27 Wed 15:09]
+where we left off in researching Max alternatives
+* [[http://cachestocaches.com/2016/9/my-workflow-org-agenda/][My Workflow with Org-Agenda]]
+CREATED: [2021-01-26 Tue 18:49]
+A classic emacs beginner read
+[[https://demon.rwest.io/media/www/org-mode-features_display.png]]
+* [[https://www.csee.umbc.edu/courses/pub/WWW/courses/undergraduate/CMSC331/fall08/0101/notes/02/02history.pdf][The History of Programming Languages]]                                 :deck:
+CREATED: [2021-01-26 Tue 16:24]
+A wonderful visual history reference
+* [[https://docs.google.com/document/d/1xbHW7aOMLT_NUOguLViHgt6xOCitxVxBtuDtbTcVHRU][Open platforms, hundred of millions-level computing power, spatio-temporal data: with the arrival of the epidemic, what is AI doing]] :ai:
+CREATED: [2021-01-26 Tue 15:29]
+* [[https://docs.google.com/document/d/1gY9-YNDNAB1eip-RTPbqphgySwSNSDHLq9D5Bty4FSU][QUIC at 10,000 feet]]                                                   :net:
+CREATED: [2021-01-26 Tue 15:28]
+from old research pile
+* [[https://docs.google.com/presentation/d/1F-_tgU27l6mgH8MY2zUIKPnTz8ZfcSrE][Edge Weight Prediction in Weighted Sign Networks - Srijan Kumar]]      :deck:
+CREATED: [2021-01-26 Tue 15:26]
+Good intro to managing "Goodness" and "Fairness" amongst nodes in distributed systems
+* [[https://github.com/stripe-samples/checkout-one-time-payments][Stripe - one-time example]]
+CREATED: [2021-01-25 Mon 15:09]
+* [[https://stripe.com/docs/api][Stripe API Reference]]
+CREATED: [2021-01-25 Mon 15:10]
+* [[https://github.com/obsproject/obs-studio/blob/master/plugins/rtmp-services/data/services.json][OBS RTMP Services]]                                                    :json:
+CREATED: [2021-01-23 Sat 14:45]
+* [[https://nakedsecurity.sophos.com/2016/11/29/the-tor-phone-prototype-a-truly-private-smartphone/][Tor Phone Prototype 2016]]
+CREATED: [2021-01-23 Sat 14:40]
+Likely not in-line with what we're searching for, but maybe a fun read
+* [[https://vcvrack.com/][VCV Rack]]                                                      :audio:synth:
+CREATED: [2021-01-23 Sat 09:20]
+Cross-platform Virtual Eurorack.
+- Does it run on web?
+- [[https://github.com/VCVRack][github project]]
+- Core engine is C++
+- 1843 opensource modules :) - [[https://library.vcvrack.com/?page=1&limit=50&query=&tag=&sort=creationTimestamp&brand=&license=open][free mods]]
+* [[https://www.researchgate.net/publication/221494064_Emergent_Rhythms_through_Multi-agency_in_MaxMSP][Emergent Rhythms through Multi-agency in Max/MSP | researchgate]]
+CREATED: [2021-01-22 Fri 02:20]
+* [[https://blog.securityevaluators.com/reverse-engineering-bumbles-api-a2a0d39b3a87][Reverse Engineering Bumble's API - ISE]]
+CREATED: [2021-01-22 Fri 02:39]
+* [[https://en.wikipedia.org/wiki/Public_key_infrastructure][Public Key Infrastructure - Wikipedia]]
+CREATED: [2021-01-22 Fri 04:20]
+#+CAPTION: PKI
+#+ATTR_HTML: :alt PKI image
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Public-Key-Infrastructure.svg/450px-Public-Key-Infrastructure.svg.png]]
+* [[https://crates.io/crates/dropbox-sdk][dropbox-sdk]]
+CREATED: [2021-01-21 Thu 00:14]
+* [[https://en.wikipedia.org/wiki/Hardware_code_page][Hardware code page - Wikipedia]]
+CREATED: [2021-01-20 Wed 19:12]
+* [[https://book.hacktricks.xyz/][HackTricks]]
+CREATED: [2021-01-20 Wed 21:38]
+* [[https://orgmode.org/manual/HTML-Export.html#HTML-Export][Emacs Org HTML Export]]
+CREATED: [2021-01-20 Wed 22:47]
+* [[https://developer.okta.com/blog/2019/10/23/dangers-of-self-signed-certs][The Dangers of Self-Signed Certificates | Okta Developer]]
+CREATED: [2020-08-05 Wed 18:27]
+* [[https://en.wikipedia.org/wiki/Rope_(data_structure)][Rope (data structure) - Wikipedia]]                                 :compsci:
+CREATED: [2020-08-03 Mon 15:41]
+* [[https://tools.ietf.org/html/rfc7748][RFC 7748 - Elliptic Curves for Security]]
+CREATED: [2020-08-01 Sat 00:04]
+defines some familiar elliptical curves for practical security,
+including in TLS. They work at ~128-bit and ~224-bit security levels.
+* [[https://tools.ietf.org/html/rfc5116][RFC 5116 - An Interface and Algorithms for Authenticated Encryption]]
+CREATED: [2020-08-01 Sat 16:55]
+AEAD descriptions - we're usually going for a form of this approach
+with MAC+Encrypt
+* [[https://doc.rust-lang.org/std/macro.todo.html][std::todo - Rust]]
+CREATED: [2020-08-01 Sat 15:15]
+todo macros for code that is /not yet written/ - =unimplemented!=
+makes no such claims.
+* [[https://en.wikipedia.org/wiki/Waveguide][Waveguide - Wikipedia]]
+CREATED: [2020-08-01 Sat 16:58]
+* [[https://tools.ietf.org/html/draft-tsvwg-quic-protocol-02][draft-tsvwg-quic-protocol-02 - QUIC: A UDP-Based Secure and Reliable Transport for HTTP/2]]
+CREATED: [2020-07-31 Fri 00:36]
+* [[https://tools.ietf.org/html/rfc2104][RFC 2104 - HMAC: Keyed-Hashing for Message Authentication]]
+CREATED: [2020-07-31 Fri 23:52]
+HMAC - often used with MD5, SHA-1, etc, plus a secret shared key.
+Key Hashing
+* [[https://opensource.com/article/20/3/blog-emacs][How to blog with Emacs Org mode | Opensource.com]]              :org:publish:
+CREATED: [2020-07-30 Thu 22:26]
+uses =ox-publish= to create a sitemap in =publish.el=, and executes
+that code with a Makefile.
+* [[https://www.gnu.org/software/emacs/manual/html_mono/widget.html][The Emacs Widget Library]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-24 Fri]
+	 :END:
+* [[https://protesilaos.com/fables-on-systems/][Fables on Systems | Protesilaos Stavrou]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+		
+* [[https://protesilaos.com/dotemacs/#h:847477fe-ef86-4e12-a2da-6c431528da99][GNU Emacs integrated computing environment | Protesilaos Stavrou]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[https://orgmode.org/worg/dev/org-element-api.html][Org Element API]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[http://ergoemacs.org/emacs/elisp_parse_org_mode.html][Elisp: Parse Org Mode]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[https://orgmode.org/worg/org-tutorials/weaving-a-budget.html][Weaving a budget with Org & ledger]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[https://orgmode.org/worg/org-tutorials/tracking-habits.html][Tracking Habits with Org-mode]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[https://emacs.stackexchange.com/questions/9674/customize-startup-screen-text][start up - Customize startup screen text - Emacs Stack Exchange]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[https://github.com/rse-standrewscs/shallow-water][GitHub - rse-standrewscs/shallow-water: 3D shallow water code]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[https://en.wikipedia.org/wiki/Amdahl%27s_law][Amdahl's law - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[https://github.com/google/tarpc][GitHub - google/tarpc]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[https://opencensus.io/tracing/][OpenCensus - Tracing]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[https://doc.rust-lang.org/nightly/std/pin/index.html][std::pin - Rust]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+** https://crates.io/crates/pin-project
+* [[https://tools.ietf.org/html/rfc6815][RFC 6815 - Applicability Statement for RFC 2544: Use on Production Networks Considered Harmful]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+* [[https://www.freesoft.org/CIE/index.htm][Connected: An Internet Encyclopedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+** [[https://www.freesoft.org/CIE/RFC/1831/index.htm][RFC 1831]]
+* [[https://www.johndcook.com/blog/2016/06/15/ascii-art-diagrams-in-emacs-org-mode/][Emacs org-mode ASCII diagrams]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+	 :END:
+	 use ditaa n00bz
+* [[https://www.johndcook.com/blog/2012/02/09/python-org-mode/][Running Python and R inside Emacs]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+	 :END:
+
+* [[https://www.ietf.org/rfc/rfc1014.txt][XDR: External Data Representation Standard]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+	 :END:
+- seems bulky, but very useful reference due to the breakdown of different types and their definitions.
+* [[http://www.linfo.org/osi_model.html][OSI reference model definition by The Linux Information Project]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+	 :END:
+
+* [[https://www.svenstaro.org/][CV of Sven-Hendrik Haase]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+	 :END:		
+good lookin CV, wonder if we should be more wordy with ours? I hate sticking with lists :(
+* [[https://git.suckless.org/][suckless Repositories]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:		
+* [[http://w3m.sourceforge.net/][W3M Homepage]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:
+* [[https://github.com/browsh-org/browsh][GitHub - browsh-org/browsh: A fully-modern text-based browser, rendering to TTY and browsers]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:
+* [[https://gitlab.redox-os.org/redox-os][redox-os · GitLab]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:
+* [[https://docs.rust-embedded.org/][Embedded Rust documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:
+* [[https://github.com/rust-embedded/wg][GitHub - rust-embedded/wg: Coordination repository of the embedded devices Working Group]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:
+* [[https://dystroy.org/broot/][Broot]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:
+* [[http://core.dpdk.org/doc/][DPDK]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:
+** [[https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9730-packet-processing-on-gpu-at-100gbe-line-rate.pdf][NVIDIA - GPU-accelerated packet-processing]]
+		they yoinked from DPDK and optimized for GPU
+* [[http://www3.cs.stonybrook.edu/~mikepo/][Michalis Polychronakis]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:		
+	 cool d00d - interesting research
+
+* http://an.kaist.ac.kr/~shinae/paper/2016-netsoft.pdf
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:		
+	 Exploiting Integrated GPUs for Network Packet Processing Workloads
+	 - netsoft 2016
+* [[https://doc-kurento.readthedocs.io/en/6.9.0/knowledge/rtp_streaming.html][RTP Streaming Commands — Kurento 6.9.0 documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:		
+* [[https://en.wikipedia.org/wiki/Bit_numbering#Most_significant_byte][Bit numbering - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://quicwg.org/base-drafts/draft-ietf-quic-transport.html][QUIC: A UDP-Based Multiplexed and Secure Transport]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+** [[https://tools.ietf.org/html/draft-ietf-quic-transport-29][draft-ietf-quic-transport-29 - QUIC: A UDP-Based Multiplexed and Secure Transport]]
+** [[https://tools.ietf.org/html/draft-ietf-quic-invariants-09][draft-ietf-quic-invariants-09 - Version-Independent Properties of QUIC]]
+** [[https://tools.ietf.org/html/draft-iyengar-quic-delayed-ack-00][draft-iyengar-quic-delayed-ack-00 - Sender Control of Acknowledgement Delays in QUIC]]
+* [[https://tools.ietf.org/html/rfc2119][RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://tools.ietf.org/html/rfc8174][RFC 8174 - Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://tools.ietf.org/html/rfc768][RFC 768 - User Datagram Protocol]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Ephemeral_port][Ephemeral port - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Multiplexing][Multiplexing - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+** [[https://en.wikipedia.org/wiki/Frequency-division_multiplexing][Frequency-division multiplexing - Wikipedia]]
+** [[https://en.wikipedia.org/wiki/Wavelength-division_multiplexing][Wavelength-division multiplexing - Wikipedia]]
+** [[https://en.wikipedia.org/wiki/Polarization-division_multiplexing][Polarization-division multiplexing - Wikipedia]]
+** [[https://en.wikipedia.org/wiki/Time-division_multiplexing][Time-division multiplexing - Wikipedia]]
+*** [[https://en.wikipedia.org/wiki/Orbital_angular_momentum_multiplexing][Orbital angular momentum multiplexing - Wikipedia]]
+* [[https://en.wikipedia.org/wiki/Fiber-optic_communication#Background][Fiber-optic communication - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+** [[https://en.wikipedia.org/wiki/Photophone][Photophone - Wikipedia]]
+* [[https://en.wikipedia.org/wiki/Routing_Information_Protocol][Routing Information Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Satellite_navigation][Satellite navigation - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+	 Position, Navigation, and Timing
+** [[https://en.wikipedia.org/wiki/Time_signal][Time signal - Wikipedia]]
+* [[https://en.wikipedia.org/wiki/Precision_Time_Protocol][Precision Time Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+** [[https://1.ieee802.org/tsn/802-1as-rev/][P802.1AS-Rev – Timing and Synchronization for Time-Sensitive Applications |]]
+* [[https://en.wikipedia.org/wiki/Network_speaker][Network speaker - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Spanning_tree][Spanning tree - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://en.wikipedia.org/wiki/InfiniBand][InfiniBand - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Anycast][Anycast - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+		+ unicast, broadcast, multicast, anycast, geocast
+** [[https://en.wikipedia.org/wiki/Multicast][Multicast - Wikipedia]]
+* [[https://en.wikipedia.org/wiki/TCP_delayed_acknowledgment][TCP delayed acknowledgment - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://gstreamer.freedesktop.org/documentation/additional/design/element-sink.html?gi-language=c][Sink elements]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+* [[https://letsencrypt.org/2018/04/04/sct-encoding.html][Engineering deep dive: Encoding of SCTs in certificates - Let's Encrypt - Free SSL/TLS Certificates]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-14 Tue]
+	 :END:
+* [[https://blogs.akamai.com/sitr/2019/07/anatomy-of-a-syn-ack-attack.html][Anatomy of a SYN-ACK attack - Akamai Security Intelligence and Threat Research Blog]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://opencorporates.com/][open-corp DB]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Cisco_Meraki][Cisco Meraki - Wikipedia]]
+	 find out what they're currently implementing
+	 :PROPERTIES:
+	 :CREATED: [2020-07-12 Sun]
+	 :END:
+* [[https://books.google.com/books?id=5CaDBAAAQBAJ&pg=PT103&lpg=PT103&dq=cambridgematrix&source=bl&ots=IPFEA0mP5u&sig=ACfU3U2CZwA9H2nrhLxg3B91ZR5raSS7AQ&hl=en&sa=X&ved=2ahUKEwiV7YTA18jqAhUkoXIEHQQvC9MQ6AEwA3oECAwQAQ#v=onepage&q=cambridgematrix&f=false][brief mention of CambridgeMatrix - hunt this down]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 - Everything I've found on the Strawberry Fair is unvalidated, online articles discussing the implementation of custom mesh network on June 3rd, 2006 are just copy/pasting the Wiki.
+	 - original article is here (DNS broked) http://www.cambridgeshiretouristguide.com/Articles/Article_55.asp - trying to find it on web.archive, will search YouTube later
+	 - CambridgeMatrix sounds like a lead, would be surprised if there is no connection to the Strawberry Fair
+
+* [[https://offshoreleaks.icij.org/pages/database][panama papers graph DB - magnet links]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://www.icij.org/investigations/panama-papers/what-happened-after-the-panama-papers/][What happened after the Panama Papers? - ICIJ]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://www.researchgate.net/publication/42795002_Consuming_the_entrepreneurial_city_Image_memory_spectacle][Consuming the entrepreneurial city: Image, memory, spectacle | Researchgate]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Hazy_Sighted_Link_State_Routing_Protocol][Hazy Sighted Link State Routing Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 link-state algorithm at CUWiN
+
+* [[https://en.wikipedia.org/wiki/Expected_transmission_count][Expected transmission count - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[http://www.dsn.jhu.edu/software.html][Software: Distributed Systems and Networks Lab]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 C src from the lads over at JHU
+* [[https://www.wing-project.org/][WING - Wireless Mesh Network for Next-Generation Internet]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 from da Italians
+* [[https://en.wikipedia.org/wiki/Optical_mesh_network][Optical mesh network - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Free-space_optical_communication][Free-space optical communication - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[http://www.vlcc.net/modules/xpage0/?ml_lang=en][Visible Light Communications Consotium (VLCC) - What's Visible Light Communications?]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://www.researchgate.net/profile/Volker_Jungnickel/publication/264595391_High-Speed_Visible_Light_Communication_Systems/links/55202e000cf2a2d9e1433634/High-Speed-Visible-Light-Communication-Systems.pdf][High Speed Visible Light Communication Systems - pdf researchgate]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Visible_light_communication][Visible light communication - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://www.reddit.com/r/archlinux/comments/20q0s0/awesome_wm_vs_i3/#:~:text=Another%20really%20major%20difference%20between,one%20screen%20to%20the%20next.][Awesome WM vs i3 : archlinux]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://awesomewm.org/apidoc/][awesome API documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://quicwg.org/][QUIC Working Group]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://github.com/lcpz/awesome-copycats][GitHub - lcpz/awesome-copycats: Awesome WM themes]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 ready-to-ship awesomewm configs
+
+* [[https://www.navy.mil/submit/display.asp?story_id=109773][SPAWAR Changes Name to Naval Information Warfare Systems Command -- Aligns Identity with Mission]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Mesh_networking][Mesh networking - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://wiki.gnuradio.org/index.php/Main_Page][GNU Radio]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://www.youtube.com/watch?v=ZuNOD3XWp4A][All Your RFz Are Belong to Me - Defcon 21 - Youtube]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 [[yt:ZuNOD3XWp4A]]
+
+* [[https://www.youtube.com/watch?v=vQtLms02PFM][Bill Swearingen - HAKC THE POLICE - Defcon 27 - Youtube]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 [[yt:vQtLms02PFM]]
+
+* [[https://github.com/esp8266/Arduino][GitHub - esp8266/Arduino: ESP8266 core for Arduino]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 is there a rust crate tho? - yeeee
+
+* [[https://en.wikipedia.org/wiki/ESP32][ESP32 - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://github.com/MabezDev/xtensa-rust-quickstart][GitHub - MabezDev/xtensa-rust-quickstart: A demo crate for the xtensa uC's (ESP32, ESP8266)]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* https://crates.io/crates/esp32
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://github.com/MabezDev/xtensa-rust-quickstart/blob/master/src/main.rs][xtensa-rust-quickstart/main.rs at master · MabezDev/xtensa-rust-quickstart · GitHub]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+* [[https://github.com/MabezDev/idf2svd][GitHub - MabezDev/idf2svd]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 generates SVD files for ESP32 based devices.. rather messy
+* [[http://www.dcs.ed.ac.uk/home/lego/][The LEGO Proof Assistant]] - lol
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-11 Sat]
+	 :END:
+* [[https://orgmode.org/manual/Creating-Footnotes.html][Creating Footnotes (The Org Manual)]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-11 Sat]
+	 :END:
+* [[https://docs.rs/svd2rust/0.17.0/svd2rust/][svd2rust - Rust]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-11 Sat]
+	 :END:
+* [[https://www.analog.com/en/analog-dialogue/articles/high-definition-low-delay-sdr-based-video-transmission-in-uav-applications.html#][High Definition, Low Delay, SDR-Based Video Transmission in UAV Applications | Analog Devices]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-11 Sat]
+	 :END:
+* [[https://github.com/nodiscc/awesome-linuxaudio][GitHub - nodiscc/awesome-linuxaudio]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-06 Mon]
+	 :END:
+* [[https://github.com/tokio-rs/tracing][tracing - github]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+	 :END:
+* [[https://www.nongnu.org/ratpoison/inspiration.html][SCWM, Pot and the GPL]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+	 :END:
+* [[https://registry.opendata.aws/][Registry of Open Data on AWS]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+	 :END:
+* [[https://commoncrawl.org/][Common Crawl]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+	 :END:
+* [[https://stackoverflow.com/questions/16365130/what-is-the-difference-between-usr-bin-env-bash-and-usr-bin-bash/16365367#16365367][linux - What is the difference between "#!/usr/bin/env bash" and "#!/usr/bin/bash"? - Stack Overflow]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+	 :END:
+* https://crates.io/crates/petgraph
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+	 :END:
+* [[https://github.com/rust-lang/rust/blob/master/src/bootstrap/config.rs][rust/config.rs . github]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+	 :END:
+* [[https://liquidsdr.org/][liquidsdr.org]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+	 :END:
+* [[https://jakearchibald.com/2017/async-iterators-and-generators/][Async iterators and generators - JakeArchibald.com]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+* [[https://crates.io/crates/nannou_osc][nannou_osc - crates.io]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+* [[https://crates.io/crates/rosc][rosc - crates.io]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+- [[https://git.klingt.net/alinz/rosc/src/branch/master/examples/sender.rs][alinz/rosc - examples/sender.rs at master - rosc - Gitea]]
+* [[https://docs.rs/tokio/0.2.21/tokio/runtime/index.html][tokio::runtime - Rust]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+* [[https://remexre.xyz/][remexre.xyz]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Unified_Modeling_Language][Unified Modeling Language - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+* [[https://hpbn.co/building-blocks-of-udp/][Networking 101: Building Blocks of UDP - High Performance Browser Networking (O'Reilly)]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+* [[https://hpbn.co/webrtc/][Browser APIs and Protocols: WebRTC - High Performance Browser Networking (O'Reilly)]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+* [[https://www.researchgate.net/publication/322419379_Fault_Localization_in_Service-Based_Systems_hosted_in_Mobile_Ad_Hoc_Networks][(PDF) Fault Localization in Service-Based Systems hosted in Mobile Ad Hoc Networks]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Maximum_transmission_unit][Maximum transmission unit - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+* [[https://www.reddit.com/prefs/feeds/][reddit.com: prefs/feeds]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+* [[https://www.rfc-editor.org/rfc/rfc7854.txt][BGP Monitoring Protocol (BMP)]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-01 Wed]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol#:~:text=Border%20Gateway%20Protocol%20(BGP)%20is,(AS)%20on%20the%20Internet.][Border Gateway Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-01 Wed]
+	 :END:
+* [[https://tools.ietf.org/html/rfc5424][RFC 5424 - The Syslog Protocol]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-01 Wed]
+	 :END:
+* [[https://en.wikipedia.org/wiki/Asterisk_(PBX)][Asterisk (PBX) - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-01 Wed]
+	 :END:
+* [[https://books.google.com/books?id=8wsdxBzyV48C&printsec=frontcover#v=onepage&q&f=false][Asterisk Hacking - Joshua Brashars - Google Books]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-01 Wed]
+	 :END:
+* [[https://www.gartner.com/imagesrv/media-products/pdf/radware/Radware-1-2Y7FR0I.pdf][Gartner: Protecting from a Growing Attack Vector: Encrypted Attacks]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+	 :END:
+* [[https://blogs.infoblox.com/community/dns-data-exfiltration-how-it-works/?_ga=2.5464179.1967257259.1592815237-1124357645.1592815237][DNS Data Exfiltration - How it works]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+	 :END:
+* [[https://rustwasm.github.io/book/introduction.html][Introduction - Rust and WebAssembly]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+	 :END:
+* [[https://caddyserver.com/docs/][Welcome — Caddy Documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+	 :END:
+	 v2 caddy docs for API
+* [[https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md][ripgrep/GUIDE.md at master · BurntSushi/ripgrep · GitHub]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-26 Fri]
+	 :END:
+* [[https://www.youtube.com/watch?v=lKXe3HUG2l4]["The Mess We're In" by Joe Armstrong - YouTube]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-24 Wed]
+	 :END:
+	 [[yt:lKXe3HUG2l4]]
+
+* [[https://silvia-odwyer.github.io/photon/demo.html][Photon WASM Demo]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-24 Wed]
+	 :END:
+* [[https://academictorrents.com/details/defa6184c98663c94de97cb7e0952a54677e4aac/collections][Enabling Factorized Piano Music Modeling and Generation with the {MAESTRO} Dataset - Collections - Academic Torrents]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-24 Wed]
+	 :END:
+* [[https://www.youtube.com/watch?v=bo5WL5IQAd0][How we program multicores - Joe Armstrong]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-24 Wed]
+	 :END:
+* [[https://gitlab.freedesktop.org/gstreamer/gstreamer-rs][GStreamer / gstreamer-rs · GitLab]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-19 Fri]
+	 :END:
+* [[https://www.geeksforgeeks.org/piping-in-unix-or-linux/][Piping in Unix or Linux - GeeksforGeeks]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-19 Fri]
+	 :END:
+* [[https://www.youtube.com/watch?v=vpM0IoRawu4][Robot Wrestling is for Real Men]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-18 Thu]
+	 :END:
+* [[https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm][sintel trailer webm 480p]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-18 Thu]
+	 :END:
+* [[https://github.com/joncardasis/ultimate-api][ultimate guitar api 2017]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-17 Wed]
+	 :END:
+

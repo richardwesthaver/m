@@ -1,6 +1,6 @@
 #+TITLE: rwest.io
 #+TODO: OFFLINE | ONLINE
-#+SETUPFILE: setup.org
+#+SETUPFILE: ox.setup
 This site was created by ~Richard~ (aka ~ellis~), a programmer, arm-chair philosopher,
 pianist and wanna-be artist from New London, CT.
 

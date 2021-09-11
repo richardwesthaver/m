@@ -1,4 +1,5 @@
-#+title: Finance
+#+TITLE: Finance
+#+ID: e6cf4dca-f6ce-45e0-9504-1c3ad2b238da
 - https://en.wikipedia.org/wiki/Finance
 
 * Methods

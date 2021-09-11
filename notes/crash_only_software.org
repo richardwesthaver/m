@@ -1,3 +1,4 @@
 #+TITLE: Crash-only Software
-#+AUTHOR: ellis
-
+#+ID: 9ecad969-9cfe-4bf9-b2b9-37f48ba301fc
+- [[https://en.wikipedia.org/wiki/Crash-only_software][Crash-only software - Wikipedia]]
+- [[https://www.usenix.org/legacy/events/hotos03/tech/full_papers/candea/candea.pdf][Crash-only Software - George Candea, Armando Fox]]

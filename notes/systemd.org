@@ -1,5 +1,5 @@
-#+title: Systemd
-#+ID:       a2c2925f-960d-43b5-b0cd-da5a86d4a744
+#+TITLE: Systemd
+#+ID: a2c2925f-960d-43b5-b0cd-da5a86d4a744
 
 * systemd-nspawn
 

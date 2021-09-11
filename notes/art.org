@@ -1,9 +1,9 @@
-#+title: Art
-
-Art, in my mind, is one of the crowning achievements of humanic
-exploitation. Like olives or wine, a taste for it is acquired with
-time, and although /works/ of Art are often consumed by our senses,
-they are compelling for reasons which are much harder to define.
+#+TITLE: Art
+#+ID: a556be07-555e-4cc1-83d1-eaac2b7c4871
+Art, in my mind, is one of the crowning achievements of humanity. Like
+olives or wine, a taste for it is acquired with time, and although
+/works/ of Art are often consumed by our senses, they are compelling
+for reasons which are much harder to define.
 
 It has been a fruitless effort, attempting to break down the
 underlying /algorithm/ of which Art is composed. Some of the oldest
@@ -29,3 +29,4 @@ found the time to write about.
 ** Sculpture
 ** Photography
 ** Film
+** Dance

@@ -1,3 +1,4 @@
-#+title: Common Business Oriented Language
+#+TITLE: Common Business Oriented Language
+#+ID: 82eae0d0-bec2-4c70-b003-f43c1ca1c781
 AKA COBOL
 - https://en.wikipedia.org/wiki/COBOL

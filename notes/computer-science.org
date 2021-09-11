@@ -1,4 +1,5 @@
-#+title: Computer Science
+#+TITLE: Computer Science
+#+ID: c372df0f-3e2e-4e84-95b3-15716a20a0f0
 - [[file:embedded-systems.org][Embedded Systems]]
 - [[file:networking.org][Networking]]
 - [[file:data.org][Data]]

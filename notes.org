@@ -1,4 +1,3 @@
 #+TITLE: Notes
-#+SETUPFILE: setup.org
-This is where I keep all my public notes on topics that interest
-me.
+#+SETUPFILE: ox.setup
+This is where I keep all my public notes on topics that interest me.

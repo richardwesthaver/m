@@ -1,0 +1,2 @@
+* JSON
+- [[https://developer.mozilla.org/en-US/docs/Glossary/JSON][JSON - MDN Web Docs Glossary: Definitions of Web-related terms | MDN]]
