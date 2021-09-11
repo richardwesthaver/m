@@ -1,3 +1,4 @@
-#+title: Behavioral Economics
+#+TITLE: Behavioral Economics
+#+ID: ef331026-8c91-4eeb-91fb-32b9d74164f7
 Daniel Kahneman - Thinking, Fast and Slow
 Conway's Game of Life

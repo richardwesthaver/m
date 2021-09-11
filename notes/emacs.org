@@ -1,0 +1,34 @@
+* Emacs
+** [[src:config/emacs][my emacs config]]
+** Building from Source
+First, clone the repo:
+#+begin_src shell :results silent
+git clone https://git.savannah.gnu.org/git/emacs.git /tmp/emacs
+#+end_src
+
+Once the source is in hand, I stronly recommend making a separate
+build directory and calling the configure script from there.
+
+#+begin_src shell
+mkdir /tmp/emacs-build && cd /tmp/emacs-build
+../emacs/configure --with-mailutils --with-imagemagick --with-x-toolkit=athena --without-pop --without-sound --with-json --enable-link-time-optimization --with-native-compilation
+NATIVE_FULL_AOT=1 make -j8
+# test the build with './src/emacs' (location of output binary)
+# install emacs binaries on current system
+make install
+#+end_src
+
+The =configure= script takes a bunch of different flags that
+customize the build, and generate a build-specific Makefile.
+
+The next line compiles the source. Install with =make install= and
+you're done! A custom Emacs binary with all the fixings has just
+been installed for your current user. :)
+
+Here are some of the other configuration flags worth investigating:
+
+- --without-all
+- --with-x-toolkit=no
+- --without-x
+- --without-dbus --without-gconf --without-gsettings
+

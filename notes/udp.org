@@ -1,7 +1,7 @@
-#+title: User Datagram Protocol
+#+TITLE: User Datagram Protocol
+#+ID: ed2c78ea-8935-4f05-b1be-8d9af0ff045f
 - https://tools.ietf.org/html/rfc768
-
-** *UDP vs TCP*
+* *UDP vs TCP*
    - *UDP and TCP share the same space* in a network stack and operate
      on top of the IP protocol.
    - *UDP has no built-in notion of State*, TCP does. However,
@@ -24,7 +24,7 @@
        boost though, as well as a network protocol that is quite
        flexible in its simplicity.
 
-*** *The need for speed*
+** *The need for speed*
 	 UDP is on the rise in networks due to the usage of P2P
 	 services, and the need for more /immediate/ methods of
 	 streaming media data at scale.[fn:0]

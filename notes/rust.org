@@ -1,39 +1,17 @@
-* Rust                                                              :pl:rust:
-  :PROPERTIES:
-  :ID:       b46de918-896e-420d-8cde-09c21ae93ecd
-  :END:
-
+* Rust
+:PROPERTIES:
+:ID: b46de918-896e-420d-8cde-09c21ae93ecd
+:END:
 A multi-paradign systems programming language, and a personal
-favorite.
+favorite of mine.
 - [[https://doc.rust-lang.org/book/][The Rust Book]]
 - [[https://doc.rust-lang.org/rust-by-example/][Rust By Example]]
 - [[file:ml.org][ML]]
 ** tutorials
-*** [[https://tokio.rs/tokio/tutorial][tokio tutorial]]                                                  :async:
-mini-redis implementation
-- tasks take up a single allocation and 64 bytes of memory
-- the #[tokio:main] macro turns async fn main -> fn main with a default tokio runtime build inserted
-- strategies for sharing state:
-- Guard the shared state with a Mutex.
-- Spawn a task to manage the state and use message passing to operate on it.
-first approach is in shared state, second approach is in channels
-
-#+CAPTION: Bytes vs Vec<u8>
-#+BEGIN_QUOTE 
-The goal of Bytes is to provide a robust byte array structure for
-network programming. The biggest feature it adds over Vec<u8> is
-shallow cloning. In other words, calling clone() on a Bytes instance
-does not copy the underlying data. Instead, a Bytes instance is a
-reference-counted handle to some underlying data. The Bytes type is
-roughly an Arc<Vec<u8>> but with some added capabilities.
-#+END_QUOTE
-
-- parking_lot::Mutex is a faster alternative to std::sync::Mutex.
-
-*** [[https://os.phil-opp.com/][Writing an OS in Rust]]                                              :os:
+*** [[https://os.phil-opp.com/][Writing an OS in Rust]]                :os:
 - A Freestanding Rust Binary
   The first step is to create a binary that is independent of the Rust std library, since =std= links to the OS.
-  EZPZ: =  #![no_std]  =
+  EZPZ: =#![no_std]=
   Still need panic_handler and =eh_personality= language item which marks a function used for [[https://www.bogotobogo.com/cplusplus/stackunwinding.php][stack unwinding]]. Stack unwinding is rather complex, and is typically provided by OS (Windows structured exception handling and Linux libunwind).
 
   The following in =Cargo.toml= will enable abort on panic, which effectively disables stack unwinding.
@@ -337,7 +315,7 @@ pub trait Future {
   - Implementation
     Futures and async/await are no_std compatible, so nothing special to be done in the src.
 
-*** [[https://doc.redox-os.org/book/][redox-os book]]                                                      :os:
+*** [[https://doc.redox-os.org/book/][redox-os book]]                  :os:
 - Boot process \\
 the first code executed is the bootloader in =bootloader/ARCH/bootsector.asm=. This code is responsible for finding and loading the kernel at address 0x100000, as well as initializing the memory map and VESA display mode
   - Kernel \\
@@ -371,9 +349,9 @@ Kernel space <                 | Resolve |
 The kernel is micro-kernel based, which uses the principle of least authority, preferring code to be ran in user space instead of kernel space. This architecture /usually/ leads to a variable level of performance degradation due to the additional context switches between the kernel and user handlers. My current thinking is that there are some clever solutions to the problem of context switching, but I need to further understand where and how often (during which syscalls) they occur, and what the impact is. Anyways in short this 'micro-kernel' is slow, but it is only 16k lines which is insane compared to Linux's 25MILLION
 
 ** crates
-   :PROPERTIES:
-   :ID:       3e36db85-ae02-4bf7-bc2e-3ca044f85d67
-   :END:
+:PROPERTIES:
+:ID:       3e36db85-ae02-4bf7-bc2e-3ca044f85d67
+:END:
 A /Crate/ is just a bundle of Rust code which is often made available
 on [[https://crates.io][crates.io]] for use by the community. In other words, crates = packages.
 *** Firecracker                                                       :vmm:
@@ -424,6 +402,110 @@ curl --unix-socket /tmp/firecracker.socket -i \
 }'
 #+end_src
 
-*** Tokio
+*** Tokio                                                           :async:
+:PROPERTIES:
+:ID:       cebd5c3f-80a4-485f-aef6-046dce661382
+:END:
 asynchronous runtime and building blocks for writing network
 applications.
+
+- https://tokio.rs/
+#+begin_quote
+Tokio is an asynchronous runtime for the Rust programming language. It
+provides the building blocks needed for writing network
+applications. It gives the flexibility to target a wide range of
+systems, from large servers with dozens of cores to small embedded
+devices.
+#+end_quote
+**** working with UDP
+:LOGBOOK:
+- noted [2021-08-25 Wed 18:46] \\
+  this is for tokio v0.2.0
+:END:
+UDP connections are handled similarly to TCP in tokio.
+  - =tokio::net::UdpSocket= provides core functionality for
+    communicating over UDP, in contrast to =TcpListener= and
+    =TcpStream=
+  - =tokio::net::udp= provides UDP utility types
+  - =tokio_util::codec= provides codec utilities to go from a stream
+    of bytes to a /Framed/ stream of bytes (AKA a transport)
+  - connecting to Socket example:
+    [[https://github.com/tokio-rs/tokio/blob/master/examples/connect.rs][tokio/connect.rs at master · tokio-rs/tokio · GitHub]]
+    we just care about the =udp= module which reads and writes from
+    stdin to a UDP Frame.
+
+**** [[https://tokio.rs/tokio/tutorial][tokio tutorial]]
+mini-redis implementation
+- tasks take up a single allocation and 64 bytes of memory
+- the #[tokio:main] macro turns async fn main -> fn main with a default tokio runtime build inserted
+- strategies for sharing state:
+- Guard the shared state with a Mutex.
+- Spawn a task to manage the state and use message passing to operate on it.
+first approach is in shared state, second approach is in channels
+
+#+CAPTION: Bytes vs Vec<u8>
+#+BEGIN_QUOTE 
+The goal of Bytes is to provide a robust byte array structure for
+network programming. The biggest feature it adds over Vec<u8> is
+shallow cloning. In other words, calling clone() on a Bytes instance
+does not copy the underlying data. Instead, a Bytes instance is a
+reference-counted handle to some underlying data. The Bytes type is
+roughly an Arc<Vec<u8>> but with some added capabilities.
+#+END_QUOTE
+
+- parking_lot::Mutex is a faster alternative to std::sync::Mutex.
+
+*** Yew                                                              :wasm:
+:PROPERTIES:
+:ID:       cec91739-c70c-4b89-838d-7bc7857aa60e
+:END:
+Component-based framework for web UIs. Very similar to React or Elm
+- [[https://yew.rs/][Introduction | Yew]]
+  #+begin_quote
+  Yew is a modern Rust framework for creating multi-threaded front-end
+  web apps using WebAssembly.
+  #+end_quote
+- Always use =web-sys= package for new projects. =stdweb= isn't
+  maintained and Yew has frozen support for this feature as of v0.18.0
+- [[https://yew.rs/concepts/components][Components]] are the building block of a Yew application and created
+  by implementing the =Component= trait for a type.
+- The =Component= trait provides the Lifecycle methods used to control
+  state of components.
+   - Methods
+      - create
+      - view
+      - rendered
+      - update
+      - change
+      - destroy
+   - Associated Types
+     The =Component= trait has two associated types: =Message= and =Properties=.
+      - The Message type is often an enum, where each variant is
+        associated with a specific event
+      - Properties represent information that is passed down to a
+        child component from its parent. It's usually a struct, used
+        while creating and updating a component, and can specify sets
+        of required or optional fields.
+- [[https://yew.rs/concepts/components/callbacks][Callbacks]]
+  Components are able to create callbacks and self-update via the component "link".
+   - ComponentLink API
+      - send_message
+      - send_message_batch
+      - callback
+      - batch_callback
+- [[https://yew.rs/concepts/components/properties][Properties]]
+- [[https://yew.rs/concepts/components/children][Children]]
+- [[https://yew.rs/concepts/components/refs][Refs]]
+- [[https://yew.rs/concepts/services][Services]]
+- [[https://yew.rs/concepts/services][Router]]
+- [[https://yew.rs/concepts/html][HTML Integration]]
+- [[https://yew.rs/more/css][CSS Integration]]
+  see the [[https://github.com/yewstack/yew/discussions/2003][current discussion]] on GitHub for Community thoughts on the topic.
+   - css-in-rust isn't maintained (much at least), forks are coming out
+   - there are many yew 'component libraries' for popular CSS frameworks.
+      - I use [[https://crates.io/crates/ybc][ybc]] (BulmaCSS) for my website, for example.
+- In my opinion, the future state of UI is not in web-specific
+  frameworks. This will be more apparent once native WebAssembly is
+  fully supported in browsers without JS APIs, and developers can
+  confidently write WASM bindings without interop concerns with
+  different platforms.

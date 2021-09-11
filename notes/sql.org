@@ -1,4 +1,5 @@
-#+title: Structured Query Language
+#+TITLE: Structured Query Language
+#+ID: a0e844c9-ec8d-4f27-b9fd-7c7dfb88df7f
 - http://www.sqlcourse.com/intro.html
 
 The ANSI standard language for relational [[file:database.org][Database]] management systems.

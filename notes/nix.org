@@ -1,8 +1,5 @@
-:PROPERTIES:
-:ID:       6f670ab4-bf9a-4475-8f41-b08e16021074
-:END:
 #+TITLE: Nix
-
+#+ID: 6f670ab4-bf9a-4475-8f41-b08e16021074
 - [[https://nixos.org/learn.html][Learning Resources]]
 - [[https://nix.dev/][nix.dev]]
 

@@ -1,6 +1,9 @@
 #+TITLE: META
-#+SETUPFILE: setup.org
-* Overview
+#+SETUPFILE: ox.setup
+* Introduction
+:PROPERTIES:
+:CUSTOM_ID: 84ad8954-3833-475b-95d9-b6f7665b1cf5
+:END:
 =meta= is basically a /doc generator/. The idea is to write
 information about my personal projects in a single place for easy
 distribution. For example, text or markdown can be generated for
@@ -23,8 +26,21 @@ underlying /modus vivendi/ for my libraries and programs - the way in
 which they interact and can coexist in a development environment.
 
 * Usage
+:PROPERTIES:
+:CUSTOM_ID: 7d7126b0-aef1-4160-b362-a938174826b9
+:END:
+These docs can be viewed online at [[https://rwest.io/meta][rwest.io/meta]] and downloaded at
+[[https://pkg.rwest.io/org][pkg.rwest.io/org]] which includes tar.zst archives for the following formats:
+- HTML
+- MD
+- PDF
+- TXT
+
 
 * Dev Notes
+:PROPERTIES:
+:CUSTOM_ID: c934b090-3df7-4fad-9b85-201084174a22
+:END:
 - All code is hosted on [[https://hg.rwest.io]] as Mercurial repos.
 - Clonebundles are hosted at https://pkg.rwest.io/hg in all supported
   formats.
@@ -39,57 +55,53 @@ which they interact and can coexist in a development environment.
 - Code is FOSS, copy-left licensed under WTFPL. feel free to use
   without condition.
 
-* Libraries
 * Services
-** [[https://rwest.io][rwest.io]]
-The service that returns this page, and all other prose written by the
-author. Most pages are generated from [[https://orgmode.org/][Org Mode]] files and compiled to
-JS/WASM using [[https://yew.rs/][Yew]] and [[https://bulma.io/][Bulma]] CSS.
-*** [[https://rwest.io/rambles][rambles]]
-short posts, snippets, examples and thoughts
-*** [[https://rwest.io/notes][notes]]
-public notes
-*** [[https://rwest.io/meta][meta]]
-project info
-** [[https://docs.rwest.io][docs.rwest.io]]
-API docs for Rust libraries
-** [[https://hg.rwest.io][hg.rwest.io]]
-Mercurial VC service
-** [[https://pkg.rwest.io][pkg.rwest.io]]
-Package distribution service
-** [[https://cdn.rwest.io][cdn.rwest.io]]
-CDN for shared static web content
-** [[https://q.rwest.io][q.rwest.io]]
-Beacon API endpoint for use with webhooks
+:PROPERTIES:
+:ID: 7c2a72f3-703d-4e08-baf5-da5f118ba0a8
+:CATEGORY: srv
+:END:
+The following services are hosted from a tiny cluster of laptops via Nginx.
+- [[https://rwest.io][rwest.io]] :: The service that returns this page. It's a WebAssembly SPA built with
+Rust, [[https://yew.rs/][Yew]] and [[https://bulma.io/][BulmaCSS]].
+- [[https://docs.rwest.io][docs.rwest.io]] :: API docs for Rust libraries
+- [[https://hg.rwest.io][hg.rwest.io]] :: Mercurial VC service
+- [[https://pkg.rwest.io][pkg.rwest.io]] :: Package distribution service
+- [[https://cdn.rwest.io][cdn.rwest.io]] :: CDN for shared static web content. This is used to serve fonts, css,
+images, and other media types from a single location.
+- [[https://q.rwest.io][q.rwest.io]] :: Beacon API endpoint for use with webhooks
+
+* Libraries
+:PROPERTIES:
+:ID:       27e50936-03a2-499d-a0d8-1ef896b04b4b
+:CATEGORY: lib
+:END:
+- [[https://hg.rwest.io/babel][babel]]
 
 * Programs
-** [[https://hg.rwest.io/crater][crater]]
 :PROPERTIES:
-:ID:       ec9ee448-7fd9-4045-a506-28882a90b0a8
+:ID: 560ea39e-00e4-4dbd-a839-9fb0360c23e2
+:CATEGORY: bin
 :END:
-** [[https://hg.rwest.io/config/emacs][config/emacs]]
+- [[https://hg.rwest.io/meta][meta]] :: static website generator
+- [[src:shed][shed]] :: development tool
+- [[src:demo][demo]] :: examples and system demo
+* Config
 :PROPERTIES:
-:ID:       f0d26731-d14d-4fd6-b8c7-1bf7f55ef527
+:ID:       e0c1d097-2b5b-4e5b-a9a9-e41cd70b9f82
+:CATEGORY: cfg
 :END:
-** [[https://hg.rwest.io/config/home][config/home]]
-:PROPERTIES:
-:ID:       8b82210f-5532-45c4-aeb7-dfafe8738d7b
-:END:
-** [[https://hg.rwest.io/config/etc][config/etc]]
-:PROPERTIES:
-:ID:       7f835b1b-3500-4d1d-a6a7-82db69f19ad8
-:END:
-** [[https://hg.rwest.io/config/nix][config/nix]]
-:PROPERTIES:
-:ID:       d0185022-4cfd-4c73-a683-26cb7b4d58f1
-:END:
-** [[https://hg.rwest.io/babel][babel]]
-** [[https://hg.rwest.io/meta][meta]]
-** [[https://hg.rwest.io/contrib][contrib]]
+- [[src:config/emacs][emacs]]
+- [[src:config/home][home]]
+- [[src:config/etc][etc]]
+- [[src:config/nix][nix]]
+
 * Org
+:PROPERTIES:
+:ID: 7d5d1a5a-4080-4bee-893f-8d80a5e47160
+:CATEGORY: org
+:END:
 My notes and meta docs are kept under version control at
-https://hg.rwest.io/org. They are written in Org-mode but exported to
-a variety of formats.
+https://hg.rwest.io/org.
 
 Emacs is my IDE and text-editor of choice, so Org-mode is a natural
 fit for all types of writing I do. The problem with Org is that it is
@@ -106,6 +118,10 @@ spec, I have been using the built-in exporters with some scripts to
 generate static content.
 
 * Music
+:PROPERTIES:
+:ID: 29e8cd23-f49c-47a8-b685-e96b3fbe36e3
+:CATEGORY: art
+:END:
 I make music sometimes, because I enjoy the process. There are so many
 things to appreciate in sound and it's easy to let yourself become
 absorbed.
@@ -126,6 +142,10 @@ the record button. It's a good time.
   GLSL shader in Max/MSP + House Music
 
 * License
+:PROPERTIES:
+:CUSTOM_ID: ea7f314b-f22a-476b-968e-b16ee0571003
+:CATEGORY: legal
+:END:
 #+begin_src text
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 2, December 2004

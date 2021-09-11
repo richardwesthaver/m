@@ -1,0 +1,6 @@
+#+TITLE: Org
+#+CATEGORY: org
+The repo found at [[src:org][hg.rwest.io/org]] contains all words I write that are
+available for public consumption and nothing else. It serves as a
+dependency that can easily be packaged and shipped to my other
+services that generate content.

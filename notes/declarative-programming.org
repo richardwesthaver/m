@@ -1,4 +1,5 @@
-#+title: Declarative Programming
+#+TITLE: Declarative Programming
+#+ID: 0df5feca-9539-4593-8000-fea3ae88f630
 -  https://en.wikipedia.org/wiki/Declarative_programming
 
 - [[file:functional-programming.org][Functional Programming]]

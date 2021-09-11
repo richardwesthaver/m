@@ -1,4 +1,5 @@
-#+title: Transport Layer Security
+#+TITLE: Transport Layer Security
+#+ID: fd5ea91a-a6aa-4947-9640-c0bf81c85cb0
 - https://www.internetsociety.org/deploy360/tls/basics/
 * [[https://tools.ietf.org/html/rfc5246][TLS 1.2]]
 * [[https://tools.ietf.org/html/rfc8446][TLS 1.3]]

@@ -1,6 +1,12 @@
-#+title: GNU/Linux
+* GNU/Linux                                                           :linux:
+:PROPERTIES:
+:ID: 134e2505-cc34-4dc2-b7a4-b3b71c331f07
+:CATEGORY: os
+:END:
+- [[https://www.kernel.org/][The Linux Kernel Archives]]
 - https://en.wikipedia.org/wiki/Linux
+- [[https://sysprog21.github.io/lkmpg/][The Linux Kernel Module Programming Guide]]
 
-* Distros
+** Distros
 - [[file:archlinux.org][Archlinux]]
 - [[https://www.pentoo.ch/][Pentoo]]
