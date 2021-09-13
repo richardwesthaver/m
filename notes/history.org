@@ -1,5 +1,7 @@
-#+TITLE: History
-#+ID: 57fbaf47-0e20-4f48-8402-6163bac5b90b
+* History
+:PROPERTIES:
+:ID: 57fbaf47-0e20-4f48-8402-6163bac5b90b
+:END:
 #+begin_quote
 Progress, far from consisting in change, depends on
 retentiveness. When change is absolute there remains no being to

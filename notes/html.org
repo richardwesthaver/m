@@ -1,5 +1,7 @@
-#+TITLE: HTML
-#+ID: 36551370-964b-40cf-834b-72d23228fc4f
+* HTML
+:PROPERTIES:
+:ID: 36551370-964b-40cf-834b-72d23228fc4f
+:END:
 HyperText Markup Language
 - [[https://html.spec.whatwg.org/][HTML Standard]]
 - [[https://en.wikipedia.org/wiki/HTML][HTML - Wikipedia]]

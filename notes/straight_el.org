@@ -1,5 +1,7 @@
-#+TITLE: straight.el
-#+ID: 9711fba3-2682-400e-9c72-54bdc07a15d5
+* straight.el
+:PROPERTIES:
+:ID: 9711fba3-2682-400e-9c72-54bdc07a15d5
+:END:
 - https://github.com/raxod502/straight.el
 
 =straight.el= is a modern replacement for [[file:package_el.org][package.el]] with a built-in

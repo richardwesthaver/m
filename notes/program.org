@@ -1,3 +1,5 @@
-#+TITLE: Program
-#+ID: 279e2f53-ca83-44f4-b679-165fd8aabd24
+* Program
+:PROPERTIES:
+:ID: 279e2f53-ca83-44f4-b679-165fd8aabd24
+:END:
 - https://en.wikipedia.org/wiki/Computer_program

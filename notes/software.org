@@ -1,10 +1,12 @@
-#+TITLE: Software
-#+ID: 375d49a0-05c9-4937-9efe-7385f354f8ac
-* Free Software
+* Software
+:PROPERTIES:
+:ID: 375d49a0-05c9-4937-9efe-7385f354f8ac
+:END:
+** Free Software
 :PROPERTIES:
 :ID:       1304abf5-3760-4f8e-919b-1ea0ed353140
 :END:
-* Freeware
+** Freeware
 :PROPERTIES:
 :ID:       29bd2367-1771-4633-8a9d-42e544f74ad3
 :END:
@@ -12,7 +14,7 @@ Freeware is software that is /free to use/, NOT to be confused with
 [[* Free Software][Free Software]]. It is important to distinguish Freeware from truly Free
 Software, as the terms carry very different connotations. All Free
 Software is also Freeware, but not all Freeware is Free Software.
-* Proprietary Software
+** Proprietary Software
 :PROPERTIES:
 :ID:       ab28c699-cb83-47e6-87d0-7e7e806d07aa
 :END:

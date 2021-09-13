@@ -1,5 +1,7 @@
-#+TITLE: Org Mode
-#+ID: 0b4c27b4-3c1a-41c3-afcd-048f2cf15030
+* Org Mode
+:PROPERTIES:
+:ID: 0b4c27b4-3c1a-41c3-afcd-048f2cf15030
+:END:
 https://orgmode.org/
 
 Org-mode is a flexible text-based note-taking system built for [[file:emacs.org][Emacs]].
@@ -22,6 +24,6 @@ My usage of org-mode revolves around the following principles:
   work, and things that don't. Good habit to get into for serious
   usage.
 
-* Tutorials
-** Getting Started with Org Mode - Harry Schwartz
+** Tutorials
+*** Getting Started with Org Mode - Harry Schwartz
 [[yt:SzA2YODtgK4][Getting Started With Org Mode]]

@@ -1,5 +1,6 @@
-#+TITLE: Operating System
-#+ID: 3bf219b5-6ad8-4355-8d68-29bd483f2671
-
+* Operating System
+:PROPERTIES:
+:ID: 3bf219b5-6ad8-4355-8d68-29bd483f2671
+:END:
 An Operating System or "OS" is software that communicates with
 Applications and interacts with computer hardware.

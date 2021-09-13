@@ -1,5 +1,7 @@
-#+TITLE: Hypertext Transfer Protocol
-#+ID: 049defda-3ac2-4cf1-86ec-060f0a77a5cf
+* Hypertext Transfer Protocol
+:PROPERTIES:
+:ID: 049defda-3ac2-4cf1-86ec-060f0a77a5cf
+:END:
 - https://developer.mozilla.org/en-US/docs/Web/HTTP
 
 #+begin_quote
@@ -19,9 +21,9 @@ update of UDP — is a suitable alternative.
 -- [[https://developer.mozilla.org/en-US/docs/Web/HTTP][MDN web docs]]
 #+end_center
 
-* HTTPS
+** HTTPS
 HTTPS consists of HTTP with the addition of [[file:../../../../Z/core/notes/tls.org][TLS]].
 
-* HTTP/S
+** HTTP/S
 HTTP/S is often used as a blanket statement for both HTTP and HTTPS.
 

@@ -1,9 +1,11 @@
-#+TITLE: Networking
-#+ID: 34a71a0e-2a43-4b35-9e4c-983f0df2d04d
-* Models
+* Networking
+:PROPERTIES:
+:ID: 34a71a0e-2a43-4b35-9e4c-983f0df2d04d
+:END:
+** Models
 - [[file:client-server-model.org][Client-server Model]]
 - [[file:p2p.org][P2P]]
-* Protocols
+** Protocols
 - [[file:tcp.org][TCP]]
 - [[file:udp.org][UDP]]
 - [[file:http.org][HTTP]]

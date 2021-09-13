@@ -1,5 +1,7 @@
-#+TITLE: Declarative Programming
-#+ID: 0df5feca-9539-4593-8000-fea3ae88f630
+* Declarative Programming
+:PROPERTIES:
+:ID: 0df5feca-9539-4593-8000-fea3ae88f630
+:END:
 -  https://en.wikipedia.org/wiki/Declarative_programming
 
 - [[file:functional-programming.org][Functional Programming]]

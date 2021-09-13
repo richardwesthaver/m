@@ -1,6 +1,24 @@
-#+TITLE: Org
-#+CATEGORY: org
-The repo found at [[src:org][hg.rwest.io/org]] contains all words I write that are
-available for public consumption and nothing else. It serves as a
-dependency that can easily be packaged and shipped to my other
-services that generate content.
+* org
+:PROPERTIES:
+:ID:       8adf8bc0-3a2f-47ae-860b-1e71e93fc339
+:END:
+The repo found at [[src:org][hg.rwest.io/org]] contains some words I've written in
+plaintext. It is packaged and shipped to my other services that
+generate content.
+
+Emacs is my IDE and text-editor of choice, so Org-mode is a natural
+fit for all types of writing I do. The problem with Org is that it is
+difficult to parse /outside of Emacs/. in =elisp=, the [[https://orgmode.org/worg/dev/org-element-api.html][org-element api]]
+fully supports the specification, but it is a monster task to
+re-implement in another language.
+
+While I slowly work out a parser, I have been using the built-in
+exporters with some scripts to generate static content.
+
+All docs can be viewed online at [[https://rwest.io/meta][rwest.io/meta]] and downloaded at
+[[https://pkg.rwest.io/org][pkg.rwest.io/org]] which includes tar.zst archives for the following
+formats:
+- HTML
+- MD
+- PDF
+- TXT

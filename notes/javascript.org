@@ -1,5 +1,8 @@
-#+TITLE: Javascript
-#+ID: 57eb884b-b22f-47f2-b6cb-e06ff59adb00
+* Javascript
+:PROPERTIES:
+:ID: 57eb884b-b22f-47f2-b6cb-e06ff59adb00
+:AKA: JS
+:END:
 Javascript is an interpreted or JIT ([[https://en.wikipedia.org/wiki/Just-in-time_compilation][just-in-time]]) compiled language
 with [[https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function][first-class functions]].
 

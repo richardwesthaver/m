@@ -1,151 +1,88 @@
 #+TITLE: META
 #+SETUPFILE: ox.setup
-* Introduction
+#+OPTIONS: prop:t toc:t
+* *meta*
 :PROPERTIES:
-:CUSTOM_ID: 84ad8954-3833-475b-95d9-b6f7665b1cf5
+:ID:       54a8cda3-de08-468a-ad70-f402a56db1e6
 :END:
-=meta= is basically a /doc generator/. The idea is to write
-information about my personal projects in a single place for easy
-distribution. For example, text or markdown can be generated for
-repo READMEs, and html or pdf for web content.
 
-This approach has some advantages:
-- Great for single contributor operations
-- Bulk-updates for sets of projects
-- (optional) auto-commits
-- Easy to catch mistakes
+*meta* is a collection of documents written in plaintext. All
+information about my projects and various pursuits can be viewed
+here.
 
-And some disadvantages:
-- Can be a disaster for multiple contributor operations
-- Non-standard
-- Easy to make mistakes
+- status: *EXPERIMENTAL*
 
-This process is much easier than creating readmes and license files
-individually for each project, and I find that it helps expose an
-underlying /modus vivendi/ for my libraries and programs - the way in
-which they interact and can coexist in a development environment.
-
-* Usage
+** Roadmap
+*** TODO v0.1.0 [0/3]
 :PROPERTIES:
-:CUSTOM_ID: 7d7126b0-aef1-4160-b362-a938174826b9
+:ID:       a0eba1fc-5239-4cbd-a3f4-cd24410fb206
 :END:
-These docs can be viewed online at [[https://rwest.io/meta][rwest.io/meta]] and downloaded at
-[[https://pkg.rwest.io/org][pkg.rwest.io/org]] which includes tar.zst archives for the following formats:
-- HTML
-- MD
-- PDF
-- TXT
+alpha release
+- [ ] finalize templates & formatting
+   - headlines
+   - properties
+   - links
+- [ ] make script for export in [[id:205131fc-ff48-4e0b-a3e8-ab52d5b6ca19][shed]]
+- [ ] test
 
-
-* Dev Notes
+** *services*
 :PROPERTIES:
-:CUSTOM_ID: c934b090-3df7-4fad-9b85-201084174a22
+:ID:       44c854e1-feff-4d7f-940c-b8ff7ce934d6
 :END:
-- All code is hosted on [[https://hg.rwest.io]] as Mercurial repos.
-- Clonebundles are hosted at https://pkg.rwest.io/hg in all supported
-  formats.
-  - Clonebundles can be fetched by hg clients automatically via the
-    =hg clone= command, which will bootstrap a local repo using an
-    advertised bundle from https://pkg.rwest.io/hg and pick up any
-    missing changesets directly from the upstream server repository.
-- The /default/ target platform is x86 GNU Linux for all programs and
-  libraries, but static program binaries are also provided at
-  [[https://pkg.rwest.io/bin/dist]]. Target-specific builds are documented
-  on a per-project basis.
-- Code is FOSS, copy-left licensed under WTFPL. feel free to use
-  without condition.
 
-* Services
-:PROPERTIES:
-:ID: 7c2a72f3-703d-4e08-baf5-da5f118ba0a8
-:CATEGORY: srv
-:END:
-The following services are hosted from a tiny cluster of laptops via Nginx.
-- [[https://rwest.io][rwest.io]] :: The service that returns this page. It's a WebAssembly SPA built with
-Rust, [[https://yew.rs/][Yew]] and [[https://bulma.io/][BulmaCSS]].
-- [[https://docs.rwest.io][docs.rwest.io]] :: API docs for Rust libraries
-- [[https://hg.rwest.io][hg.rwest.io]] :: Mercurial VC service
-- [[https://pkg.rwest.io][pkg.rwest.io]] :: Package distribution service
+Generally speaking, my stuff can be found at the following URLs. Services
+are hosted using Nginx.
+- [[https://rwest.io][rwest.io]] :: The service that returns this page. It's a WebAssembly SPA/[[id:ef3ecaf7-ff7c-49c1-a915-c034a7bfeb5a][PWA]] built with
+  [[https://yew.rs/][Yew]] and [[https://bulma.io/][BulmaCSS]].
+- [[https://docs.rwest.io][docs.rwest.io]] :: Rust API Docs
+- [[https://hg.rwest.io][hg.rwest.io]] :: Source code
+- [[https://pkg.rwest.io][pkg.rwest.io]] :: Packages
 - [[https://cdn.rwest.io][cdn.rwest.io]] :: CDN for shared static web content. This is used to serve fonts, css,
-images, and other media types from a single location.
-- [[https://q.rwest.io][q.rwest.io]] :: Beacon API endpoint for use with webhooks
+  images, and other media types on the web.
+- [[https://q.rwest.io][q.rwest.io]] :: Beacon API endpoint for SSR and hooks (WIP).
 
-* Libraries
+** *source code*
 :PROPERTIES:
-:ID:       27e50936-03a2-499d-a0d8-1ef896b04b4b
-:CATEGORY: lib
+:ID:       fbdab8ef-85c5-4adf-822b-16e237b518d6
 :END:
-- [[https://hg.rwest.io/babel][babel]]
+All source code is available on [[https://hg.rwest.io][hg.rwest.io]]. 
 
-* Programs
-:PROPERTIES:
-:ID: 560ea39e-00e4-4dbd-a839-9fb0360c23e2
-:CATEGORY: bin
-:END:
-- [[https://hg.rwest.io/meta][meta]] :: static website generator
-- [[src:shed][shed]] :: development tool
-- [[src:demo][demo]] :: examples and system demo
-* Config
-:PROPERTIES:
-:ID:       e0c1d097-2b5b-4e5b-a9a9-e41cd70b9f82
-:CATEGORY: cfg
-:END:
-- [[src:config/emacs][emacs]]
-- [[src:config/home][home]]
-- [[src:config/etc][etc]]
-- [[src:config/nix][nix]]
+- Libraries
+   - [[src:rlib][rlib]] - systems programming toolkit
+   - [[src:tenex][tenex]] - external API wrappers
+   - [[src:babel][babel]] - script collection
 
-* Org
-:PROPERTIES:
-:ID: 7d5d1a5a-4080-4bee-893f-8d80a5e47160
-:CATEGORY: org
-:END:
-My notes and meta docs are kept under version control at
-https://hg.rwest.io/org.
+- Programs
+   - [[src:rwest-io][rwest-io]] - homepage
+   - [[src:shed][shed]] - development toolbox
+   - [[src:demo][demo]] - examples
 
-Emacs is my IDE and text-editor of choice, so Org-mode is a natural
-fit for all types of writing I do. The problem with Org is that it is
-difficult to parse /outside of Emacs/. in =elisp=, the [[https://orgmode.org/worg/dev/org-element-api.html][org-element api]]
-fully supports the specification, but it is a monster task to
-re-implement in another language. This is one of the few strong
-arguments against Org-mode - but only when talking about the /full/
-spec. It is quite feasible, with enough understanding of your own
-workflow and Org-element internals, to design a subset for personal
-use.
+- Configs
+   - [[src:config/emacs][emacs]]
+   - [[src:config/hgweb][hgweb]]
+   - [[src:config/home][home]]
+   - [[src:config/etc][etc]]
+   - [[src:config/nix][nix]]
 
-While I slowly work out a /small/ portable parser for a subset of the
-spec, I have been using the built-in exporters with some scripts to
-generate static content.
+- Prose
+   - [[src:org][org]]
 
-* Music
-:PROPERTIES:
-:ID: 29e8cd23-f49c-47a8-b685-e96b3fbe36e3
-:CATEGORY: art
-:END:
-I make music sometimes, because I enjoy the process. There are so many
-things to appreciate in sound and it's easy to let yourself become
-absorbed.
+- Third-party
+   - [[src:crater][crater]]
+   - [[src:contrib][contrib]]
+     - [[src:contrib/el][emacs-lisp]]
+     - [[src:contrib/rust][rust]]
 
-Most of the time I just jam with my synths and drum machines and hit
-the record button. It's a good time.
-- [[https://soundcloud.com/ellisaudio][soundcloud1]] | [[https://soundcloud.com/2pldn][soundcloud2]]
-- [[https://cdn.rwest.io/media/audio][audio loops]] \\
-  I have a bunch of loops and other soundbytes I've created over the
-  years - they're all in an Ableton project so that I can mix and
-  arrange them for on-the-fly jam seshes.
-- keyboard clips
-   - [[https://cdn.rwest.io/media/video/joined_video_971d629fa80c4660b1e8b8abf89b1015.mp4][light rhodes jam]]
-   - [[https://cdn.rwest.io/media/video/20170704_204759_1.mp4][electro rhodes jam]]
-   - [[https://cdn.rwest.io/media/video/20170706_213623.mp4][classical practice]]
-     working out Resignation by Brad Mehldau
-- [[https://cdn.rwest.io/media/video/shader_example.mp4][Main Thing (Remix) shader demo]]
-  GLSL shader in Max/MSP + House Music
-
-* License
+** *copying*
 :PROPERTIES:
 :CUSTOM_ID: ea7f314b-f22a-476b-968e-b16ee0571003
 :CATEGORY: legal
 :END:
+
+This license applies to any digital content that I create. Third-party
+content such as the [[src:contrib][contrib]] mirrored repos are not subject to this
+license and include their own individual terms of use.
+
 #+begin_src text
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 2, December 2004
@@ -162,3 +99,31 @@ the record button. It's a good time.
   0. You just DO WHAT THE FUCK YOU WANT TO.
 #+end_src
 
+
+* *software*
+:PROPERTIES:
+:ID:       48e7bab2-e7e4-4762-8425-6f45424c99d5
+:END:
+
+#+INCLUDE: meta/babel.org
+#+INCLUDE: meta/config.org
+#+INCLUDE: meta/config/emacs.org
+#+INCLUDE: meta/config/etc.org
+#+INCLUDE: meta/config/hgweb.org
+#+INCLUDE: meta/config/home.org
+#+INCLUDE: meta/config/nix.org
+#+INCLUDE: meta/contrib.org
+#+INCLUDE: meta/crater.org
+#+INCLUDE: meta/demo.org
+#+INCLUDE: meta/org.org
+#+INCLUDE: meta/rlib.org
+#+INCLUDE: meta/rwest_io.org
+#+INCLUDE: meta/shed.org
+#+INCLUDE: meta/tenex.org
+
+* *media*
+:PROPERTIES:
+:ID:       aa780344-71d4-4b90-b977-5ecc77d8e908
+:END:
+
+#+INCLUDE: meta/music.org

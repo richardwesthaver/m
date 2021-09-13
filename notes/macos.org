@@ -1,3 +1,5 @@
-#+TITLE: MacOS
-#+ID: 80928580-61a4-489d-885b-0f273070fd91
+* MacOS
+:PROPERTIES:
+:ID: 80928580-61a4-489d-885b-0f273070fd91
+:END:
 - https://en.wikipedia.org/wiki/MacOS

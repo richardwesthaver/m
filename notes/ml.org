@@ -1,3 +1,5 @@
-#+TITLE: Meta Language
-#+ID: 041b902b-3032-400e-bd42-53a0253f0839
+* Meta Language
+:PROPERTIES:
+:ID: 041b902b-3032-400e-bd42-53a0253f0839
+:END:
 "Lisp with types"

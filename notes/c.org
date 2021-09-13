@@ -1,5 +1,7 @@
-#+TITLE: C
-#+ID: 22928e28-f482-40c8-a5ef-0f6857fbd994
+* C
+:PROPERTIES:
+:ID: 22928e28-f482-40c8-a5ef-0f6857fbd994
+:END:
 - https://en.wikipedia.org/wiki/C_(programming_language)
 - [[https://docs.microsoft.com/en-us/cpp/c-language/c-language-reference?view=msvc-160][C Language Reference | Microsoft Docs]]
 - [[https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html][The GNU C Reference Manual]]
