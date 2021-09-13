@@ -1,7 +1,8 @@
-#+TITLE: shed
-#+ID: 205131fc-ff48-4e0b-a3e8-ab52d5b6ca19
-#+CATEGORY: bin
-#+FILETAGS: rust
+* shed
+:PROPERTIES:
+:ID: 205131fc-ff48-4e0b-a3e8-ab52d5b6ca19
+:CATEGORY: bin
+:END:
 =shed= is a set of tools and services I'm building for dev project
 management. It provides version control, package distribution, project
 templates, scripts, and everything else I need to get stuff done.
@@ -11,12 +12,12 @@ configuration is controlled by =UserConfig= and per-project
 configuration can be enabled with =ProjectConfig=. The specification
 of these types cover all options that can be customized.
 
-* Status
+** Status
 *TODO*
 - this doesn't work quite yet
 - some features are available, but disjointed
 
-* Features
+** Features
 - Mercurial VCS
    - Pullbundles and Clonebundles
    - Subrepos
@@ -29,7 +30,7 @@ of these types cover all options that can be customized.
 - async compression and archiving
 - Fully configurable via RON or JSON files
 
-* Overview
+** Overview
 The name =shed= was originally derived from [[https://github.com/facebookexperimental/rust-shed][rust-shed]], a set of common
 Rust crates used internally by Facebook. I first wrote about it in
 April, in a post where I introduced some projects and goals
@@ -39,26 +40,26 @@ significantly[fn:1] as I've found the time to do further testing. Our
 provide a public API, and resembles =rust-shed= in name
 only[fn:2].
 
-* Usage
+** Usage
 Once the binary is installed it can be executed to bootstrap a
 =UserConfig= via CLI prompts or download one remotely. A user
 configuration file needs to be available and accessible by the current
 user. The default path is ~$HOME/.config/shed.ron~ but can be
 overridden by ~$SHED_CONFIG~ environment variable.
 
-** TODO Configuration
+*** TODO Configuration
 
-** TODO Version Control
+*** TODO Version Control
 
-** TODO Dependency Management
+*** TODO Dependency Management
 
-** TODO Build tools
+*** TODO Build tools
 
-** TODO Distribution
+*** TODO Distribution
 
-** TODO Templates
+*** TODO Templates
 
-* Footnotes
+** Footnotes
 [fn:1]  =shed= is not based on a single concrete type like a
 =package=, and fully encompasses the =lab= project management tool
 initially introduced.

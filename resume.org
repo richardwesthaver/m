@@ -38,7 +38,6 @@ A live event streaming startup with group/private viewing, chat, social media in
 - Multiple music festivals hosted this year
 - Backend developer and AWS guru since inception in early 2020
 ** Home Lab
-I host a collection of services from a small cluster of laptops as opposed to the cloud. The public frontends for these services are optimized for my own use, thus they are quite simple, and perhaps a bit retro.
 - [[https://rwest.io][blog]] - home website built from Emacs org-mode documents
 - [[https://hg.rwest.io][code]] - mercurial repositories
 - [[https://pkg.rwest.io][packages]] - package distribution server

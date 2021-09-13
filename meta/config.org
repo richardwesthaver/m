@@ -1,0 +1,8 @@
+* config
+:PROPERTIES:
+:ID:       3bd7dfef-f616-4d63-a0f0-db65407a9b82
+:END:
+** emacs
+** etc
+** home
+** nix

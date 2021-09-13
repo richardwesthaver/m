@@ -1,5 +1,7 @@
-#+TITLE: Art
-#+ID: a556be07-555e-4cc1-83d1-eaac2b7c4871
+* Art
+:PROPERTIES:
+:ID: a556be07-555e-4cc1-83d1-eaac2b7c4871
+:END:
 Art, in my mind, is one of the crowning achievements of humanity. Like
 olives or wine, a taste for it is acquired with time, and although
 /works/ of Art are often consumed by our senses, they are compelling
@@ -18,15 +20,15 @@ Leaving the realm of [[file:philosophy-art.org][Philosophy of Art]] now.. This d
 regard to all the different things in this world (and otherwise) that
 can be regarded as art.
 
-* Types
+** Types
 Note: this is by no means a complete list, just the ones that I've
 found the time to write about.
-** [[file:music.org][Music]]
-** Painting
-** 3D (Digital)
-** 2D (Digital)
-** Poetry
-** Sculpture
-** Photography
-** Film
-** Dance
+*** [[file:music.org][Music]]
+*** Painting
+*** 3D (Digital)
+*** 2D (Digital)
+*** Poetry
+*** Sculpture
+*** Photography
+*** Film
+*** Dance

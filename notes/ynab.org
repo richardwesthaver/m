@@ -1,5 +1,8 @@
-#+TITLE: You Need A Budget
-#+ID: b762bc91-9ff8-4a90-b7af-dbb8b1a7d2ad
+* You Need A Budget
+:PROPERTIES:
+:ID: b762bc91-9ff8-4a90-b7af-dbb8b1a7d2ad
+:AKA: YNAB
+:END:
 - https://www.youneedabudget.com
 The core principles of the [[https://www.youneedabudget.com/the-four-rules/][YNAB system]] are:
 - Give every dollar a job

@@ -1,9 +1,12 @@
-#+TITLE: Software Defined Radio
-#+ID: de73cf8a-d39f-4bdb-8ec9-009288e77d19
+* Software Defined Radio
+:PROPERTIES:
+:ID: de73cf8a-d39f-4bdb-8ec9-009288e77d19
+:AKA: SDR
+:END:
 - https://en.wikipedia.org/wiki/Software-defined_radio
 
-* [[https://www.wikiwand.com/en/Cognitive_radio?fbclid=IwAR2ix1x1HHC9rimSUr_NkdRQERtKKm4_IBvH25Vb05Oh6svQ3mKegV0bKz0][Cognitive Radio]]
-* [[https://www.wikiwand.com/en/RF_front_end][RF Front End]]
+** [[https://www.wikiwand.com/en/Cognitive_radio?fbclid=IwAR2ix1x1HHC9rimSUr_NkdRQERtKKm4_IBvH25Vb05Oh6svQ3mKegV0bKz0][Cognitive Radio]]
+** [[https://www.wikiwand.com/en/RF_front_end][RF Front End]]
 #+BEGIN_QUOTE
 In a radio receiver circuit, the RF front end is a generic term for all the circuitry between a receiver's antenna input up to and including the mixer stage.[1] It consists of all the components in the receiver that process the signal at the original incoming radio frequency (RF), before it is converted to a lower intermediate frequency (IF). In microwave and satellite receivers it is often called the low-noise block (LNB) or low-noise downconverter (LND) and is often located at the antenna, so that the signal from the antenna can be transferred to the rest of the receiver at the more easily handled intermediate frequency.
 
@@ -18,11 +21,11 @@ The mixer, which mixes the incoming signal with the signal from the local oscill
 + imagine fx processing on radio signals. SDR plguins. encryption, ids, etc
 
 
-** [[https://www.wikiwand.com/en/Band-pass_filter][band-pass filter]]
-** [[https://www.wikiwand.com/en/Amplifier][RF amplifier]]
-** [[https://www.wikiwand.com/en/Local_oscillator][local oscillator]]
-** [[https://www.wikiwand.com/en/Frequency_mixer][mixer]]
-*** [[https://www.wikiwand.com/en/Heterodyne][Heterodyne]]
+*** [[https://www.wikiwand.com/en/Band-pass_filter][band-pass filter]]
+*** [[https://www.wikiwand.com/en/Amplifier][RF amplifier]]
+*** [[https://www.wikiwand.com/en/Local_oscillator][local oscillator]]
+*** [[https://www.wikiwand.com/en/Frequency_mixer][mixer]]
+**** [[https://www.wikiwand.com/en/Heterodyne][Heterodyne]]
 creates new frequencies by combining or mixing two frequencies.
 
-* Antennai
+** Antennai

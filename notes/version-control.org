@@ -1,5 +1,8 @@
-#+TITLE: Version Control
-#+ID: 8ebdc53e-37cf-4f9a-8b4a-ad2e834f5ed3
+* Version Control
+:PROPERTIES:
+:ID: 8ebdc53e-37cf-4f9a-8b4a-ad2e834f5ed3
+:AKA: VC
+:END:
 - https://en.wikipedia.org/wiki/Version_control
 Version Control (or revision control, source control, source code
 management..) most commonly refers to the practice of /managing
@@ -11,9 +14,10 @@ The 'Version' in Version Control refers to a specific state of the
 identify these 'Versions' in a given Version Control System.
 
 
-* Mercurial
+** Mercurial
 :PROPERTIES:
 :ID:       4e71c4b3-d55d-437b-af0b-79797f091418
+:AKA: hg
 :END:
 - https://www.mercurial-scm.org/
 
@@ -22,7 +26,7 @@ Mercurial is a free, distributed source control management tool. It
 efficiently handles projects of any size and offers an easy and
 intuitive interface.
 #+end_quote
-** Mercurial <--> Git interop
+*** Mercurial <--> Git interop
   :PROPERTIES:
   :ID:       e8b605d5-8642-401f-bd8e-b84591e261ed
   :END:
@@ -39,29 +43,29 @@ intuitive interface.
     GitHub Sites and treat it as the default branch in the resulting
     clone. To make the repo usable you need to update to the 'master'
     bookmark, and use that as default
-** HgWeb
+*** HgWeb
 :PROPERTIES:
 :ID:       855028ee-b28b-433d-a5bb-016fe72cefe2
 :END:
-** [[https://www.mercurial-scm.org/guide][Mercurial Guide]]
+*** [[https://www.mercurial-scm.org/guide][Mercurial Guide]]
 :PROPERTIES:
 :ID:       6abd2991-b6f0-4686-9620-93185ea19b1d
 :END:
-** [[https://www.mercurial-scm.org/wiki/RepositoryCorruption][Dealing with Repository and Dirstate Corruption]]
+*** [[https://www.mercurial-scm.org/wiki/RepositoryCorruption][Dealing with Repository and Dirstate Corruption]]
 :PROPERTIES:
 :ID:       99282960-dc18-4db3-ae06-6a293914d0ec
 :END:
-** [[https://mozilla-version-control-tools.readthedocs.io/en/latest/index.html][Mozilla’s Version Control Tools]]
+*** [[https://mozilla-version-control-tools.readthedocs.io/en/latest/index.html][Mozilla’s Version Control Tools]]
 :PROPERTIES:
 :ID:       9f2b607c-0c3a-4fed-8c56-f42f1f42651c
 :END:
 
-** Mercurialology
+*** Mercurialology
 :PROPERTIES:
 :created:  <2021-08-14 Sat 23:49>
 :ID:       ecc1f606-b6c2-4431-9bfe-adfe75ca3437
 :END:
-*** Why Mercurial?
+**** Why Mercurial?
 [[https://git-scm.com/][Git]] and [[https://www.mercurial-scm.org/][Mercurial]] are two different tools with the same job, it has just been my
 experience that Mercurial does them a little bit better for my workflow, and I am able
 to build things faster using it.
@@ -86,7 +90,7 @@ to build things faster using it.
   there were less rules to follow with Mercurial. This is a far-cry from my first
   experience with it, where I felt the complete opposite.
 
-*** Web Hosting
+**** Web Hosting
 Hosting with vanilla Mercurial is quite similar to vanilla Git. =hg serve= is basically
 the equivalent to =git instaweb=. Where they differ is in the out-of-box solutions - Git
 has cgit, GitLab, Gitolite, git.sr.ht, etc. Mercurial has hg.sr.ht, and just recently
@@ -226,7 +230,7 @@ you plan on exposing a Mercurial server to the public.
     #+caption: hgweb browser view
     #+attr_html: :width 600
     https://cdn.rwest.io/img/hgweb-browse-frontend.png
-*** Bundles
+**** Bundles
 Hg Bundles are a more powerful version of [[https://git-scm.com/docs/git-bundle/2.8.6][git bundles]] and come in two flavors:
 Clonebundles and Pullbundles. They share a common format, support the =bundle= and
 =unbundle= commands, but are also used to provision their own commands: =hg clone= and
@@ -244,7 +248,7 @@ value specified in manifest.
   - manifest.json
 - Hosting
   - https://pkg.rwest.io/hg/
-*** Scripts
+**** Scripts
 - hg-pull.sh
   #+begin_src shell
 #!/bin/bash
@@ -325,11 +329,11 @@ tar -xvf $WD/$BUNDLE_NAME.tar -C $PKG_DIR
 rm -rf $WD/$BUNDLE_NAME.tar.zst $WD/$BUNDLE_NAME.tar
 echo "Done."
   #+end_src
-*** Further Reading
+**** Further Reading
 - [[https://blog.nrwl.io/misconceptions-about-monorepos-monorepo-monolith-df1250d4b03c][Misconceptions about Monorepos: Monorepo != Monolith]] - Victor Savkin 2019
 - [[https://research.google/pubs/pub45424/][Why Google Stores Billions of Lines of Code in a Single Repository]] - Josh Levenberg, 2016
 
-* Git
+** Git
 :PROPERTIES:
 :ID:       cd04e50c-1de3-46d7-b0ab-47f36962fc0a
 :END:
@@ -337,12 +341,18 @@ The preferred choice for most developers. Git is widely used in
 academia as well as in the software industry, making it a necessary
 skill for collaborating with others, and sharing code on the internet.
 
-* Darcs
+** Darcs
 :PROPERTIES:
 :ID:       cad6c8cf-1cd4-462b-8270-28d0ec4497c8
 :END:
-
-* Eden
+** Eden
+:PROPERTIES:
+:ID:       5905558f-eddb-4eb4-988b-70a0a0452716
+:END:
 A new SCM attempt by Facebook, with the goal of improving on the
 Mercurial platform, and optimizing for use with Monolithic code bases.
-* SVN
+** Subversion
+:PROPERTIES:
+:ID:       545af3a6-f096-46a2-a053-1795b0972535
+:AKA: svn
+:END:

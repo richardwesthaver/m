@@ -1,5 +1,7 @@
-#+TITLE: Philosophy
-#+ID: 022b63ff-b010-44dc-bb21-89498769d3e0
+* Philosophy
+:PROPERTIES:
+:ID: 022b63ff-b010-44dc-bb21-89498769d3e0
+:END:
 - [[file:metaphysics.org][Metaphysics]]
 - [[file:aesthetics.org][Aesthetics]]
 - [[file:computational-linguistics.org][Computational Linguistics]]

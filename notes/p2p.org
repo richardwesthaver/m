@@ -1,6 +1,7 @@
 * Peer-to-peer Networking
 :PROPERTIES:
 :ID: 7bdea7d7-9596-4bf3-938d-b6e6f21fff53
+:AKA: p2p
 :END:
 - [[https://en.wikipedia.org/wiki/Peer-to-peer][Peer-to-peer - Wikipedia]]
 #+begin_quote

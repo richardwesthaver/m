@@ -1,5 +1,7 @@
-#+TITLE: Natural Language Processing
-#+ID: f2ad645e-902f-4ec5-abf0-97314022a4f1
+* Natural Language Processing
+:PROPERTIES:
+:ID: f2ad645e-902f-4ec5-abf0-97314022a4f1
+:END:
 - https://becominghuman.ai/a-simple-introduction-to-natural-language-processing-ea66a1747b32
 
 Natural Language Processing (NLP) is the study of /interactions/

@@ -1,3 +1,5 @@
-#+TITLE: Metaphysics
-#+ID: 3f27a782-c8e8-4794-b641-f46d49b7036a
+* Metaphysics
+:PROPERTIES:
+:ID: 3f27a782-c8e8-4794-b641-f46d49b7036a
+:END:
 - https://plato.stanford.edu/entries/metaphysics/

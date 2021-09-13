@@ -1,5 +1,3 @@
-#+TITLE: Python
-#+ID: f24b54bf-85f7-40fb-a325-7c6b18544c16
 * Python
 :PROPERTIES:
 :ID:       249c2d3e-9d59-4f1f-9f6f-ad68ab04d1d3
@@ -22,7 +20,7 @@ prefer it for precisely this reason.
   non-programmers are involved, as source code snippets can be
   included in your work with minimal explanation.
 
-* Libraries
+** Libraries
 - [[https://mutagen.readthedocs.io/en/latest/][mutagen]] - module for handling audio metadata. Supports ASF, FLAC,
   MP4, Monkey’s Audio, MP3, Musepack, Ogg Opus, Ogg FLAC, Ogg Speex,
   Ogg Theora, Ogg Vorbis, True Audio, WavPack, OptimFROG, and AIFF

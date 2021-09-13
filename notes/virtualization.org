@@ -1,5 +1,7 @@
-#+TITLE: Virtualization
-#+ID: 045133dd-0b52-47bb-b982-6fc586c8fbcd
+* Virtualization
+:PROPERTIES:
+:ID: 045133dd-0b52-47bb-b982-6fc586c8fbcd
+:END:
 - http://www.virtualizationsoftwares.com/what-is-hardware-virtualization/
 
 Virtualization (or more specifically, hardware virtualization) is a

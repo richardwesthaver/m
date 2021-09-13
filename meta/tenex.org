@@ -1,15 +1,16 @@
-#+TITLE: tenex
-#+ID: 0480aced-777f-4f30-ae05-189500fb6903
-#+CATEGORY: lib
-#+FILETAGS: rust
+* tenex                                                                :rust:
+:PROPERTIES:
+:ID: 0480aced-777f-4f30-ae05-189500fb6903
+:CATEGORY: lib
+:END:
 A library for working with popular HTTP/S APIs in Rust.
 
-* Status
+** Status
 *EXPERIMENTAL*
 - most things don't work out-of-box, if at all
 - NWS, ipapi, and SMTPS are most functional (see =demo=)
 
-* Features
+** Features
 - Clients
    - [X] NWS (US Weather)
    - [X] ipapi (public IP lookup)
@@ -21,4 +22,4 @@ A library for working with popular HTTP/S APIs in Rust.
    - [ ] JWT
    - [ ] OAuth
 
-* Modules
+** Modules

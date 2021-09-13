@@ -1,5 +1,7 @@
-#+TITLE: Nix
-#+ID: 6f670ab4-bf9a-4475-8f41-b08e16021074
+* Nix
+:PROPERTIES:
+:ID: 6f670ab4-bf9a-4475-8f41-b08e16021074
+:END:
 - [[https://nixos.org/learn.html][Learning Resources]]
 - [[https://nix.dev/][nix.dev]]
 
@@ -9,7 +11,7 @@ reproducible package builds.  NixOS is a Linux distribution built on
 top of Nix with a completely declarative configuration.  There are
 many other cool features contained in the Nix ecosystem, such as
 NixOps node2nix crate2nix Disnix and Home-manager.
-* What I think I can find in Nix                                    :opinion:
+** What I think I can find in Nix                                  :opinion:
 :PROPERTIES:
 :ID:       d768181a-d4f2-49f4-828a-988ed12be2b5
 :END:

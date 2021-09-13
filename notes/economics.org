@@ -1,3 +1,5 @@
-#+TITLE: Economics
-#+ID: fba82c1e-94d9-45ce-84d6-144268803965
+* Economics
+:PROPERTIES:
+:ID: fba82c1e-94d9-45ce-84d6-144268803965
+:END:
 - [[file:behavioral_economics.org][Behavioral Economics]]

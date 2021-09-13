@@ -1,4 +1,7 @@
 * Emacs
+:PROPERTIES:
+:ID:       0f13e326-614c-4df9-8344-e257eb165d8c
+:END:
 ** [[src:config/emacs][my emacs config]]
 ** Building from Source
 First, clone the repo:

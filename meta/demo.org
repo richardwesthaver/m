@@ -1,13 +1,13 @@
-#+TITLE: demo
-#+ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
-#+CATEGORY: bin
-#+FILETAGS: rust rlib tenex
+* demo                                                      :rust:rlib:tenex:
+:PROPERTIES:
+:ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
+:CATEGORY: bin
+:END:
 Project demos for =rlib= and =tenex=.
-
-* Examples
-** hgsub-sort.rs
+** Examples
+*** hgsub-sort.rs
 Sorts a Mercurial Subrepos file (=.hgsub=) alphabetically.
-** hi.rs
+*** hi.rs
 A startup script I run after logging in to my desktop. It does a few things:
 - print my public IP
 - print a weather report
