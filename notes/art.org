@@ -16,19 +16,6 @@ naturally developed, and today there is a vast cluster of
 'definitions', which tends to complicate everyone's understanding of
 what it is that they are talking about, more than anything else.
 
-Leaving the realm of [[file:philosophy-art.org][Philosophy of Art]] now.. This document is in
+Leaving the realm of [[id:fb919b7b-57ed-4962-b9e9-6a0fbe30c02c][Philosophy of Art]] now.. This document is in
 regard to all the different things in this world (and otherwise) that
-can be regarded as art.
-
-** Types
-Note: this is by no means a complete list, just the ones that I've
-found the time to write about.
-*** [[file:music.org][Music]]
-*** Painting
-*** 3D (Digital)
-*** 2D (Digital)
-*** Poetry
-*** Sculpture
-*** Photography
-*** Film
-*** Dance
+are Art.

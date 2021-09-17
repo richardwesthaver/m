@@ -1,0 +1,9 @@
+* Operating System
+:PROPERTIES:
+:ID: 3bf219b5-6ad8-4355-8d68-29bd483f2671
+:END:
+An Operating System or "OS" is software that communicates with
+Applications and interacts with computer hardware.
+- [[id:134e2505-cc34-4dc2-b7a4-b3b71c331f07][GNU/Linux]]
+- [[id:63c71a03-6f35-476f-b58b-8c6f3f52e485][Microsoft Windows]]
+- [[id:80928580-61a4-489d-885b-0f273070fd91][MacOS]]

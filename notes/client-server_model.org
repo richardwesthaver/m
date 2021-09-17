@@ -1,0 +1,24 @@
+* Client-Server Model
+:PROPERTIES:
+:ID: 5dd75b6f-6245-465e-87f5-e944c4b836f6
+:END:
+- https://en.wikipedia.org/wiki/Client%E2%80%93server_model
+- A distributed application architecture model
+- usually used to describe a networked service where multiple Clients
+  communicate with a single Server
+- The term 'work' is used to describe the inputs and outputs of such a
+  model. The 'work' performed is strictly scoped.
+   - For example, consider the architecture for an MMO video game. The
+     client-server model applies to the design of Players (=Clients=)
+     connecting to a match, which is hosted on the game server
+     (=Server=). The 'work' performed here may include updates to a
+     Player's in-game position based on control input, chat messages,
+     connection status, etc.
+   - In addition to communicating with the game server, Players may
+     establish direct connection to other Players in their match in a
+     /client-to-client/ or /decentralized/ manner, where 'work' is
+     shared and managed between the =Clients= themselves, under
+     authority of the =Server=. This is where terminology begins to
+     miss the point, as these features share a likeness to [[id:7bdea7d7-9596-4bf3-938d-b6e6f21fff53][p2p networking]].
+
+     

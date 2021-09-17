@@ -7,7 +7,7 @@ favorite of mine.
 - [[https://doc.rust-lang.org/book/][The Rust Book]]
 - [[https://doc.rust-lang.org/rust-by-example/][Rust By Example]]
 - [[file:ml.org][ML]]
-** tutorials
+** resources
 *** [[https://os.phil-opp.com/][Writing an OS in Rust]]                :os:
 - A Freestanding Rust Binary
   The first step is to create a binary that is independent of the Rust std library, since =std= links to the OS.
@@ -347,7 +347,80 @@ Kernel space <                 | Resolve |
              \
 #+end_src
 The kernel is micro-kernel based, which uses the principle of least authority, preferring code to be ran in user space instead of kernel space. This architecture /usually/ leads to a variable level of performance degradation due to the additional context switches between the kernel and user handlers. My current thinking is that there are some clever solutions to the problem of context switching, but I need to further understand where and how often (during which syscalls) they occur, and what the impact is. Anyways in short this 'micro-kernel' is slow, but it is only 16k lines which is insane compared to Linux's 25MILLION
+*** [[https://blog.logrocket.com/rust-cryptography-libraries-a-comprehensive-list/][Rust cryptography libraries: A comprehensive list - LogRocket Blog]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:21]
+	 :ID:       org:32677679-502e-44d5-93a9-f76ab5face2d
+	 :END:
 
+*** [[https://github.com/dalek-cryptography/bulletproofs][GitHub - dalek-cryptography/bulletproofs: A pure-Rust implementation of Bulle...]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:28]
+	 :ID:       org:dde2daf8-522b-45c5-aaa5-37a5c980f53e
+	 :END:
+*** [[https://github.com/dtolnay/syn/tree/master/examples/heapsize][heapsize - syn proc_macro example]] 
+CREATED: [2021-02-07 Sun 05:15]
+
+*** [[https://gitlab.redox-os.org/redox-os][redox-os · GitLab]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:
+*** [[https://docs.rust-embedded.org/][Embedded Rust documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:
+*** [[https://github.com/rust-embedded/wg][GitHub - rust-embedded/wg: Coordination repository of the embedded devices Working Group]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+	 :END:
+*** [[https://github.com/MabezDev/xtensa-rust-quickstart/blob/master/src/main.rs][xtensa-rust-quickstart/main.rs at master · MabezDev/xtensa-rust-quickstart · GitHub]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+*** [[https://github.com/rust-lang/rust/blob/master/src/bootstrap/config.rs][rust/config.rs . github]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+	 :END:
+*** [[https://jakearchibald.com/2017/async-iterators-and-generators/][Async iterators and generators - JakeArchibald.com]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+*** [[https://rustwasm.github.io/book/introduction.html][Introduction - Rust and WebAssembly]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+	 :END:
+*** [[https://gitlab.freedesktop.org/gstreamer/gstreamer-rs][GStreamer / gstreamer-rs · GitLab]]
+:PROPERTIES:
+:CREATED:  [2020-06-19 Fri]
+:END:
+*** [[https://smallcultfollowing.com/babysteps/blog/2019/10/26/async-fn-in-traits-are-hard/][why async fn in traits are hard]]
+:PROPERTIES:
+:ID:       01bb06e9-781e-41c9-b3c4-6122e44ddd8d
+:END:
+*** [[https://github.com/mersinvald/aquamarine][aquamarine]]                                                       :docs:
+:PROPERTIES:
+:CREATED: [2021-01-31 Sun 23:51]
+:ID:       1f83ca18-8219-4a7c-bafa-764e4af686a8
+:END:
+ - mermaid.js-powered inline dot
+
+*** [[https://doc.rust-lang.org/nightly/std/pin/index.html][std::pin - Rust]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+	 :END:
+
+*** https://crates.io/crates/pin-project
+*** [[https://doc.rust-lang.org/std/macro.todo.html][std::todo - Rust]]
+CREATED: [2020-08-01 Sat 15:15]
+todo macros for code that is /not yet written/ - =unimplemented!=
+makes no such claims.
+
+*** [[https://internals.rust-lang.org/t/traits-that-should-be-in-std-but-arent/3002][Traits that should be in std, but aren't - libs - Rust Internals]]
+:PROPERTIES:
+:ID:       c25b7cd5-b641-48fc-8f0c-3187d5568eab
+:END:
+
+*** [[https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples][Macros in Rust: A tutorial with examples - LogRocket Blog]]
 ** crates
 :PROPERTIES:
 :ID:       3e36db85-ae02-4bf7-bc2e-3ca044f85d67
@@ -509,3 +582,68 @@ Component-based framework for web UIs. Very similar to React or Elm
   fully supported in browsers without JS APIs, and developers can
   confidently write WASM bindings without interop concerns with
   different platforms.
+
+*** Amethyst
+- [[https://github.com/amethyst/amethyst][source code]]
+- [[https://book.amethyst.rs/book/stable/][the book]]
+- [[https://book.amethyst.rs/api/stable/amethyst/][docs]]
+**** features
+- Massively parallel architecture.
+- Powered by a correct Entity Component System model.
+- Rapid prototyping with RON files for prefabs and an abstract scripting API.
+- Strong focus on encouraging reusability and clean interfaces.
+
+*** [[https://docs.rs/salsa20/0.7.2/salsa20/][salsa20 - Rust]]                                                 :cipher:
+:PROPERTIES:
+:CREATED:  [2021-02-13 Sat 00:09]
+:ID:       org:4b0377c3-1cf5-4107-8562-dafe07ff34b3
+:END:
+
+*** [[https://docs.rs/ipnet/2.3.0/ipnet/][ipnet - Rust]]                                                      :net:
+:PROPERTIES:
+:CREATED:  [2021-02-13 Sat 00:04]
+:ID:       org:90e047b2-0deb-448b-97fc-b6b03e43664c
+:END:
+
+*** [[https://crates.io/crates/proc-macro2][proc-macro2]]                                                     :macro:
+CREATED: [2021-02-07 Sun 05:18]
+A superset of proc-macro
+*** [[https://doc.rust-lang.org/reference/procedural-macros.html][proc macros -- Rust Docs]]                                        :macro:
+CREATED: [2021-02-07 Sun 05:17]
+*** [[https://github.com/dtolnay/syn/tree/master/examples/lazy-static][lazy-static! - syn example]]                                      :macro:
+CREATED: [2021-02-07 Sun 05:16]
+*** https://crates.io/crates/esp32                               :embedded:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+*** [[https://github.com/tokio-rs/tracing][tracing - github]]                                              :logging:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+	 :END:
+*** https://crates.io/crates/petgraph                               :graph:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+	 :END:
+*** [[https://crates.io/crates/nannou_osc][nannou_osc - crates.io]]                                            :art:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+*** [[https://crates.io/crates/rosc][rosc - crates.io]]                                                  :net:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:
+- [[https://git.klingt.net/alinz/rosc/src/branch/master/examples/sender.rs][alinz/rosc - examples/sender.rs at master - rosc - Gitea]]
+
+*** [[https://docs.rs/crate/frank_jwt/2.1.0][frank_jwt 2.1.0 - Docs.rs]]
+:PROPERTIES:
+:CREATED:  [2021-02-13 Sat 02:27]
+:ID:       org:6b385d69-0b64-47b2-b80d-435a26384482
+:END:
+
+
+*** rust_pcg
+:PROPERTIES:
+:ID:       b3c62763-9335-40eb-8f92-efdbf0e3b80d
+:END:
+- [[https://docs.rs/rand_pcg/0.3.1/rand_pcg/][docs.rs]]
+- see [[id:1b56e9c3-d63c-4c87-be67-b8a35dd66729][PCG]]

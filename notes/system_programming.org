@@ -1,0 +1,23 @@
+* System Programming
+:PROPERTIES:
+:ID:       2b291c78-676c-4cae-bf17-3e76ca3541ae
+:AKA: systems programming
+:END:
+#+begin_quote
+[...] System programming is the practice of
+writing system software. System software lives at a low level,
+interfacing directly with the kernel and core system libraries. Your
+shell and your text editor, your compiler and your debugger, your core
+utilities and system daemons are all system software. But so are the
+network server, the web server, and the database. These components are
+entirely system software, primarily if not exclusively interfacing
+with the kernel and the C library. Other software (such as high-level
+GUI applications) lives at a higher level, delving into the low level
+only on occasion. Some programmers spend all day every day writing
+system software; others spend only part of their time on this
+task. There is no programmer, however, who does not benefit from an
+understanding of system programming. Whether it is the programmer’s
+raison d'être, or merely a foundation for higher-level concepts,
+system programming is at the heart of all software that we write.
+-- [[https://www.oreilly.com/library/view/linux-system-programming/9781449341527/ch01.html][Linux System Programming, 2nd Edition [Book]​]]
+#+end_quote
