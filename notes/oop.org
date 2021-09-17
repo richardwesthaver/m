@@ -23,4 +23,9 @@ a variety of formal techniques.
 *** Ineritance
 
 *** Polymorphism
-
+** Design
+*** Builder Pattern
+:PROPERTIES:
+:ID:       f81d600b-f5c5-43c1-bde9-cef476de4a04
+:END:
+- [[https://en.wikipedia.org/wiki/Builder_pattern][wikipedia]]

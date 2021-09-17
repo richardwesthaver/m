@@ -1,6 +1,7 @@
 * Progressive Web Apps
 :PROPERTIES:
 :ID: ef3ecaf7-ff7c-49c1-a915-c034a7bfeb5a
+:AKA: PWA
 :END:
 ** PWAs Today - 
 *** [[https://blog.bitsrc.io/what-is-a-pwa-and-why-should-you-care-388afb6c0bad][What is a PWA and Why Should You Care?]]
@@ -23,19 +24,4 @@
    #+begin_quote
    Because the service worker is not blocking (it's designed to be fully asynchronous) synchronous XHR and localStorage cannot be used in a service worker.
    #+end_quote
-**** two schools of thought on asynchronous vs synchronous
-***** make everything asynchronous - (how our react/GQL frontend operates today)
-****** independent workers for each job 
-****** slower than synchronous, but generally much improved UX
-***** only use asynchronous when necessary - (not possible with PWAs)
-****** seems like a small thing, but has significant impact on product vision
-****** members of this club tend to optimize for [[https://news.ycombinator.com/news][this]] experience, compared to [[https://www.elektronauts.com/news][this]] one (consider site load time) 
-****** PWAs are a standard now, but one could say that it's a result of echo-chamber type practices at Google HQ and extreme over-engineering
-***** just something to keep in mind - at a high level - 
-****** do we want to be a fully-featured, generalized LMS? or a slimmed down, specialized LMS?
-****** How do we position ourselves in this industry over the next 5 years?
-******* Are our competitors going to try to specialize? or generalize? 
-******* How will our competitors react to the product decision that we choose ourselves?
-
-** General Arch Thoughts
-*** this is our QA Automation checklist: [[https://developers.google.com/web/progressive-web-apps/checklist][PWA Checklist]]
+** QA Automation checklist: [[https://developers.google.com/web/progressive-web-apps/checklist][PWA Checklist]]

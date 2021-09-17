@@ -1,0 +1,9 @@
+* Logic
+:PROPERTIES:
+:ID:       699e4731-8fd8-46f7-877f-cf6e13a98f9a
+:END:
+** [[https://en.wikipedia.org/wiki/Exclusive_or][Exclusive or - Wikipedia]]
+:PROPERTIES:
+:CREATED:  [2021-02-13 Sat 01:01]
+:ID:       org:801b2499-d1cb-4c37-87b4-c009eff70bd7
+:END:

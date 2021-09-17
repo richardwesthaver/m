@@ -2,7 +2,27 @@
 :PROPERTIES:
 :ID: 022b63ff-b010-44dc-bb21-89498769d3e0
 :END:
+
 - [[file:metaphysics.org][Metaphysics]]
-- [[file:aesthetics.org][Aesthetics]]
 - [[file:computational-linguistics.org][Computational Linguistics]]
-- [[file:philosophy-art.org][Philosophy of Art]]
+
+** Philosophy of Art
+:PROPERTIES:
+:ID: fb919b7b-57ed-4962-b9e9-6a0fbe30c02c
+:END:
+- https://plato.stanford.edu/entries/art-definition/
+This document pertains to the /philosophy/ of Art. To see info on the
+broader context, see [[id:a556be07-555e-4cc1-83d1-eaac2b7c4871][Art]]. 
+
+** Aesthetics
+:PROPERTIES:
+:ID:       d5eb5c00-f2f4-449a-bd99-ada562f96d9c
+:END:
+- https://en.wikipedia.org/wiki/Aesthetics
+- [[https://aesthetics.fandom.com/wiki/List_of_Aesthetics][aesthetics wiki]]
+
+** Metaphysics
+:PROPERTIES:
+:ID: 3f27a782-c8e8-4794-b641-f46d49b7036a
+:END:
+- https://plato.stanford.edu/entries/metaphysics/

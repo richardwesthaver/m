@@ -1,11 +1,11 @@
 #+TITLE: Notes
 #+SETUPFILE: ox.setup
 #+OPTIONS: toc:t prop:t
-This is where I keep all my public notes on topics that interest me.
 
 #+INCLUDE: notes/algorithm.org
 #+INCLUDE: notes/archlinux.org
 #+INCLUDE: notes/art.org
+#+INCLUDE: notes/bash.org
 #+INCLUDE: notes/behavioral_economics.org
 #+INCLUDE: notes/client-server-model.org
 #+INCLUDE: notes/cobol.org
@@ -14,6 +14,7 @@ This is where I keep all my public notes on topics that interest me.
 #+INCLUDE: notes/c.org
 #+INCLUDE: notes/cpp.org
 #+INCLUDE: notes/crash_only_software.org
+#+INCLUDE: notes/cryptography.org
 #+INCLUDE: notes/database.org
 #+INCLUDE: notes/declarative-programming.org
 #+INCLUDE: notes/ebnf.org
@@ -33,22 +34,22 @@ This is where I keep all my public notes on topics that interest me.
 #+INCLUDE: notes/json.org
 #+INCLUDE: notes/links.org
 #+INCLUDE: notes/linux.org
+#+INCLUDE: notes/logic.org
 #+INCLUDE: notes/lua.org
 #+INCLUDE: notes/machine-learning.org
 #+INCLUDE: notes/macos.org
 #+INCLUDE: notes/make.org
-#+INCLUDE: notes/metaphysics.org
+#+INCLUDE: notes/maude.org
 #+INCLUDE: notes/ml.org
 #+INCLUDE: notes/networking.org
 #+INCLUDE: notes/nix.org
 #+INCLUDE: notes/nlp.org
 #+INCLUDE: notes/oop.org
 #+INCLUDE: notes/operating-system.org
-#+INCLUDE: notes/org-mode.org
 #+INCLUDE: notes/p2p.org
 #+INCLUDE: notes/pentoo.org
-#+INCLUDE: notes/philosophy-art.org
 #+INCLUDE: notes/philosophy.org
+#+INCLUDE: notes/posix.org
 #+INCLUDE: notes/procedural-programming.org
 #+INCLUDE: notes/program.org
 #+INCLUDE: notes/pwa.org
@@ -56,8 +57,6 @@ This is where I keep all my public notes on topics that interest me.
 #+INCLUDE: notes/qemu.org
 #+INCLUDE: notes/quic.org
 #+INCLUDE: notes/react.org
-#+INCLUDE: notes/refs.bib
-#+INCLUDE: notes/refs.tex
 #+INCLUDE: notes/roam.org
 #+INCLUDE: notes/rocksdb.org
 #+INCLUDE: notes/rust.org

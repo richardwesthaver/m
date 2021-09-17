@@ -2,12 +2,13 @@
 :PROPERTIES:
 :ID: 212133b4-f2dc-4735-b383-b0fda10833af
 :END:
+
 #+begin_quote
 A lightweight and flexible Linux distribution that tries to Keep It
 Simple.
 #+end_quote
 
-** Installation
+** Installation Notes
 *** VERIFY
 we should verify image signatures and md5 sums on pre-install.
 **** Pre-boot verify
@@ -88,3 +89,8 @@ hwclock --systohc --utc
 pacman -Sy
 #+END_SRC
 
+** Links
+*** [[https://wiki.archlinux.org/title/Dual_boot_with_Windows][Dual boot with Windows - ArchWiki]]
+:PROPERTIES:
+:ID:       0278d93e-d254-4494-b401-aa38277ad838
+:END:

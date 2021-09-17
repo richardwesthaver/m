@@ -33,3 +33,12 @@
 	 streaming media data at scale.[fn:0]
 
 [fn:0] [[https://www.caida.org/research/traffic-analysis/tcpudpratio/][Analyzing UDP usage in Internet traffic]]
+** resources
+*** [[https://tools.ietf.org/html/rfc768][RFC 768 - User Datagram Protocol]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:
+*** [[https://hpbn.co/building-blocks-of-udp/][Networking 101: Building Blocks of UDP - High Performance Browser Networking (O'Reilly)]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+	 :END:

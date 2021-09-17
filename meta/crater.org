@@ -2,3 +2,20 @@
 :PROPERTIES:
 :ID:       39a1d49f-b477-4e19-8b54-d223168c5703
 :END:
+This is a private crate registry for the Rust programming
+language.
+
+The [[https://crates.io][crates.io]] package registry provides a number of excellent crates,
+integrates well with the =cargo= development tool, and should be
+preferred in all cases. I use =crater= when I need to:
+- import my unpublished crates
+- import the master branch of a published crate
+- import a local or patched version of a published crate
+- import a non-git crate (hg)
+
+=crater= also works well in intranet/local environments, and can be
+deployed for use in the following ways:
+- remote :: same as crates.io, registry index is publicly hosted on GitHub (default)
+- local :: registry index is stored locally, crates are retrieved remotely
+- static :: registry index and crate sources are stored locally, no
+  network requests are required

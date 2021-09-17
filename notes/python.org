@@ -20,6 +20,10 @@ prefer it for precisely this reason.
   non-programmers are involved, as source code snippets can be
   included in your work with minimal explanation.
 
+** [[https://docs.python.org/3/library/ast.html][ast — Abstract Syntax Trees — Python 3.9.7 documentation]]
+:PROPERTIES:
+:ID:       cf7cfdf2-8899-4f04-94f6-a6cc110b29b9
+:END:
 ** Libraries
 - [[https://mutagen.readthedocs.io/en/latest/][mutagen]] - module for handling audio metadata. Supports ASF, FLAC,
   MP4, Monkey’s Audio, MP3, Musepack, Ogg Opus, Ogg FLAC, Ogg Speex,

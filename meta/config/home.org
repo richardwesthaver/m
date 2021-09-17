@@ -2,3 +2,6 @@
 :PROPERTIES:
 :ID:       ce071cdb-15e2-4fa6-ab06-f96ef88df22a
 :END:
+Unix system user configuration. Similar in spirit to [[id:5bd7664e-6f6e-436e-9f28-f7961ca8c724][etc/skel]]. This
+doesn't do much right now, but will serve as a template for
+bootstrapping new users with sensible defaults.

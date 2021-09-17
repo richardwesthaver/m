@@ -2,7 +2,18 @@
 :PROPERTIES:
 :ID: 040cb38f-923e-47e7-8cbb-dec452878a6f
 :END:
-** Desktop Computer
+- [[https://en.wikipedia.org/wiki/Hardware_code_page][Hardware code page - Wikipedia]]
+
+** Gadgets
+- interesting gadgets found on the web and beyond
+*** [[https://nakedsecurity.sophos.com/2016/11/29/the-tor-phone-prototype-a-truly-private-smartphone/][Tor Phone Prototype 2016]]
+:PROPERTIES:
+:ID:       84393347-ad8b-411b-9de9-04e7aecf18da
+:CREATED: [2021-01-23 Sat 14:40]
+:END:
+Likely not in-line with what we're searching for, but maybe a fun read
+
+** Computer
 *** Disk
 Disk storage (also sometimes called drive storage) is a general
 category of storage mechanisms where data is recorded by various
@@ -23,3 +34,10 @@ drive (HDD) containing a non-removable disk, the floppy disk drive
 
 *** Firmware
 https://en.wikipedia.org/wiki/Firmware
+
+** Keyboard
+*** Layouts
+**** [[https://en.wikipedia.org/wiki/JCUKEN][JCUKEN]]
+:LOGBOOK:
+- refiled on [2021-09-11 Sat 03:57]
+:END:

@@ -29,3 +29,25 @@ The mixer, which mixes the incoming signal with the signal from the local oscill
 creates new frequencies by combining or mixing two frequencies.
 
 ** Antennai
+** [[https://wiki.gnuradio.org/index.php/Main_Page][GNU Radio]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+** [[https://www.youtube.com/watch?v=ZuNOD3XWp4A][All Your RFz Are Belong to Me - Defcon 21 - Youtube]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 [[yt:ZuNOD3XWp4A]]
+** [[https://www.youtube.com/watch?v=vQtLms02PFM][Bill Swearingen - HAKC THE POLICE - Defcon 27 - Youtube]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+	 :END:
+	 [[yt:vQtLms02PFM]]
+** [[https://www.analog.com/en/analog-dialogue/articles/high-definition-low-delay-sdr-based-video-transmission-in-uav-applications.html#][High Definition, Low Delay, SDR-Based Video Transmission in UAV Applications | Analog Devices]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-11 Sat]
+	 :END:
+** [[https://liquidsdr.org/][liquidsdr.org]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+	 :END:

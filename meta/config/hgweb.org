@@ -2,7 +2,6 @@
 :PROPERTIES:
 :ID:       f6e3e514-7bec-496c-9d36-3af7d13c0462
 :END:
-
 The files in this project can be used to bootstrap a Mercurial public
 server configuration. The theme is a bit messy and will be remedied
 some time in the future, likely following styles similiar to [[src:rwest_io][rwest_io]]

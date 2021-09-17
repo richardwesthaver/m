@@ -4,3 +4,7 @@
 :AKA: TCP
 :END:
 - https://tools.ietf.org/html/rfc793
+** [[https://en.wikipedia.org/wiki/TCP_delayed_acknowledgment][TCP delayed acknowledgment - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+	 :END:

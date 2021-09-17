@@ -3,3 +3,7 @@
 :ID: 63c71a03-6f35-476f-b58b-8c6f3f52e485
 :END:
 - https://en.wikipedia.org/wiki/Microsoft_Windows
+** [[https://docs.microsoft.com/en-us/windows/deployment/mbr-to-gpt][MBR2GPT - Windows Deployment | Microsoft Docs]]
+:PROPERTIES:
+:ID:       1b58ee7d-4aac-4a43-bb25-a9ff80d2ffa1
+:END:

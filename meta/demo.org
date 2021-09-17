@@ -3,7 +3,9 @@
 :ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
 :CATEGORY: bin
 :END:
-Project demos for =rlib= and =tenex=.
+
+Project demos and examples relating to =rlib= and =tenex=.
+
 ** Examples
 *** hgsub-sort.rs
 Sorts a Mercurial Subrepos file (=.hgsub=) alphabetically.

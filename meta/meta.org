@@ -1,0 +1,71 @@
+* meta
+:PROPERTIES:
+:ID:       54a8cda3-de08-468a-ad70-f402a56db1e6
+:END:
+A *meta* is a document written in plaintext that provides contextual
+information about some /thing/. This /thing/ may be an idea, some
+software, a work of art, or any other product of the author's
+creation. This =meta= formalizes the *meta* documentation strategy and
+describes my implementation.
+- status: *EXPERIMENTAL*
+** TODO the spec
+:PROPERTIES:
+:ID:       b8cf3d80-fa2b-40b5-8c12-09ab922658a8
+:END:
+This specification defines the abstract grammar of a =meta= document
+and serves as a general formatting reference. 
+
+All components are firmly grounded in [[id:0b4c27b4-3c1a-41c3-afcd-048f2cf15030][org-mode]], but are generic enough
+to apply to most markdown-type formats.
+
+- headlines ::
+  A =meta= is a tree-like structure, spanning from a single =headline=
+  (the /root/, or parent). The parent can have any number of /nested/
+  or child headlines, which in turn can have children.. and so on. The
+  headline is a fully self-contained, top-level object that shares the
+  same API as any other headline.
+- properties ::
+  Each =headline= can have zero or more =properties=, which store
+  additional data. A =property= takes the form =KEY: VALUE= where
+  =KEY= is a property type listed below.
+   - =property types= ::
+      - ID
+      - CREATED
+      - CATEGORY
+      - TAGS
+- contents ::
+  
+- links :: 
+   - internal ::
+   - external :: 
+   - attachments ::
+
+** Roadmap
+*** TODO v0.1.0 [0/3]
+:PROPERTIES:
+:ID:       a0eba1fc-5239-4cbd-a3f4-cd24410fb206
+:END:
+alpha release
+- [ ] finalize templates & formatting
+   - sections
+      - abstract
+      - overview
+      - introduction
+      - usage
+      - commentary
+   - headlines
+      - level
+   - properties
+      - category
+      - todo state
+      - tags
+      - id
+   - links
+      - notes
+      - external
+      - bibtex
+   - attachments
+- [ ] meta export commands in [[id:205131fc-ff48-4e0b-a3e8-ab52d5b6ca19][shed]]
+   - [ ] MetaConfig
+   - [ ] NoteConfig
+- [ ] test

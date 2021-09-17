@@ -40,7 +40,7 @@ pub fn conky(cfg: &str) -> CmdResult {
 - screenshot
   #+caption: conky desktop widgets
   #+attr_html: :width 600
-  [[https://cdn.rwest.io/img/conky_desktop.png]]
+  [[https://cdn.rwest.io/img/conky_desktop.png][https://cdn.rwest.io/img/conky_desktop.png]]
 
 Next thing I want to do is mess with [[https://github.com/varingst/awesome-conky][awesome-conky]] to get an idea of how to better
 integrate with AwesomeWM, then make some better widgets. :)

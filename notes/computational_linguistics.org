@@ -1,0 +1,11 @@
+* Computational Linguistics
+:PROPERTIES:
+:ID: d614429d-6f19-46e5-87af-91eb591f4307
+:END:
+
+- [[https://plato.stanford.edu/entries/computational-linguistics/][Computational Linguistics (Stanford Encyclopedia of Philosophy)]]
+
+#+begin_quote
+Human knowledge is expressed in language. So computational linguistics is very important.
+-- Mark Steedman, ACL Presidential Address (2007)
+#+end_quote
