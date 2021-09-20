@@ -1,0 +1,24 @@
+* C++
+:PROPERTIES:
+:ID:       b3d70401-020f-4ae8-bc48-ceee1489bc7c
+:END:
+- [[https://en.cppreference.com/w/][cppreference.com]]
+
+** [[https://www.reddit.com/r/rust/comments/bya8k6/programming_with_rust_vs_c_c/eqfcu0s?utm_source=share&utm_medium=web2x][Redditor comment regarding the C++ ecosystem]]
+:PROPERTIES:
+:ID:       2e71d133-1492-4718-a2fe-42c4883ec727
+:END:
+This Redditor with 12y of XP writing C++ talks about all the
+complexities involved with coding in C++. OP is asking about some of
+the nuances of [[file:rust.org][Rust]] vs. C++, and our Redditor avoids regurgitating the
+common arguments that are given for Rust in favor of C++ - namely
+Memory Safety and Data Races. A fitting quote from Nietszche is given
+as explanation for not addressing those issues:
+
+#+begin_quote
+Whoever fights with monsters should see to it that he does not become
+a monster in the process. And when you gaze long into an abyss the
+abyss also gazes into you
+
+-- Friedrich Nietzsche
+#+end_quote

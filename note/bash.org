@@ -1,0 +1,27 @@
+* Bourne Again SHell
+:PROPERTIES:
+:ID:       52d04515-6aeb-4a23-8ca3-31fa5f3a85e0
+:AKA: bash
+:END:
+#+begin_quote
+Bash is the GNU Project's shell—the Bourne Again SHell. This is an
+sh-compatible shell that incorporates useful features from the Korn
+shell (ksh) and the C shell (csh). It is intended to conform to the
+IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard. It offers
+functional improvements over sh for both programming and interactive
+use. In addition, most sh scripts can be run by Bash without
+modification.
+-- [[https://www.gnu.org/software/bash/][GNU Project - Free Software Foundation]]
+#+end_quote
+
+** [[https://tiswww.case.edu/php/chet/bash/bashtop.html][The GNU Bourne-Again Shell]]
+:PROPERTIES:
+:ID:       216df359-d37e-42d4-9172-fa43e7b95585
+:END:
+- [[https://tiswww.case.edu/php/chet/bash/FAQ][FAQ]]
+
+** [[https://stackoverflow.com/questions/16365130/what-is-the-difference-between-usr-bin-env-bash-and-usr-bin-bash/16365367#16365367][linux - What is the difference between "#!/usr/bin/env bash" and "#!/usr/bin/bash"? - Stack Overflow]]
+:PROPERTIES:
+:CREATED:  [2020-07-05 Sun]
+:ID:       49984c0c-a553-4c62-a921-07a4259aee73
+:END:

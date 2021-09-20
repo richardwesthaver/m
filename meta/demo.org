@@ -7,9 +7,18 @@
 Project demos and examples relating to =rlib= and =tenex=.
 
 ** Examples
+:PROPERTIES:
+:ID:       04580557-8e76-49b6-ad36-731464a527dd
+:END:
 *** hgsub-sort.rs
+:PROPERTIES:
+:ID:       c313a484-e72b-4f41-b9ab-44c3d69727c1
+:END:
 Sorts a Mercurial Subrepos file (=.hgsub=) alphabetically.
 *** hi.rs
+:PROPERTIES:
+:ID:       01bf673a-4179-43bc-9281-00d01be97bfd
+:END:
 A startup script I run after logging in to my desktop. It does a few things:
 - print my public IP
 - print a weather report

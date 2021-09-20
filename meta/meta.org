@@ -7,65 +7,161 @@ information about some /thing/. This /thing/ may be an idea, some
 software, a work of art, or any other product of the author's
 creation. This =meta= formalizes the *meta* documentation strategy and
 describes my implementation.
-- status: *EXPERIMENTAL*
-** TODO the spec
+
++ status :: EXPERIMENTAL
++ source :: [[src:org][hg.rwest.io/org]]
+** Specification
 :PROPERTIES:
 :ID:       b8cf3d80-fa2b-40b5-8c12-09ab922658a8
+:TASK: a0eba1fc-5239-4cbd-a3f4-cd24410fb206
 :END:
-This specification defines the abstract grammar of a =meta= document
-and serves as a general formatting reference. 
+This specification defines the abstract grammar of =meta= documents
+and serves as a general formatting reference.
 
 All components are firmly grounded in [[id:0b4c27b4-3c1a-41c3-afcd-048f2cf15030][org-mode]], but are generic enough
 to apply to most markdown-type formats.
 
-- headlines ::
-  A =meta= is a tree-like structure, spanning from a single =headline=
-  (the /root/, or parent). The parent can have any number of /nested/
-  or child headlines, which in turn can have children.. and so on. The
-  headline is a fully self-contained, top-level object that shares the
-  same API as any other headline.
+*** Components
+:PROPERTIES:
+:ID:       5bb66822-777d-47d9-b874-c2ddb0638132
+:END:
+A =meta= is a tree-like structure, spanning from a single =headline=
+(the /root/, or parent). The parent can have any number of nested
+headlines or =children=, which in turn can have children.. and so
+on.
+
+A =component= is simply a piece of a headline. They are used by the
+parent headline in a =meta= as well as all of its children.
+
+- headline :: (AKA heading, node)
+  The headline is a top-level object that shares the same API as any
+  other headline. In org-mode, a new heading is denoted by a new-line
+  followed by one or more stars (=*=), in markdown, it's one or more
+  =#=.
+
+  The number of stars determines the =level= of a headline. As a rule,
+  any top-level headline (with a single star) is considered a =parent=
+  (level 0).
+
 - properties ::
-  Each =headline= can have zero or more =properties=, which store
-  additional data. A =property= takes the form =KEY: VALUE= where
+  Each =headline= has one or more =properties=, which store
+  additional metadata. A =property= takes the form =KEY : VALUE= where
   =KEY= is a property type listed below.
-   - =property types= ::
-      - ID
+   - property types \\
+      - ID (required)
+      - CUSTOM_ID
       - CREATED
       - CATEGORY
-      - TAGS
-- contents ::
-  
-- links :: 
-   - internal ::
-   - external :: 
-   - attachments ::
+      - AKA
+      - TASK
 
-** Roadmap
-*** TODO v0.1.0 [0/3]
+- tags ::
+  Each =headline= has zero or more tags. Tags are simple no-space
+  strings that provide additional context for indexing. 
+
+- contents ::
+  Each =headline= may also store arbitrary =contents= as text. In a
+  meta, the contents is /formatting-agnostic/ - it is just a
+  chunk of data that is sent to another program to be rendered. The
+  renderer needs to either know AOT or be able to determine the
+  contents format (org-mode, markdown, html, etc).
+
+- links :: 
+   - *internal links* refer to links between headlines using the ID property
+   - *external links* refer to any resource hosted on a service not
+     maintained by the author
+   - *attachment links* refer to media resources hosted by the
+     author. Media not created by the author is separated and
+     ownership should be made apparent.
+   - *references* are links to a formal document or research paper
+     listed as a bibtex entry. This is used to reference specific text
+     and in cases where the full document source can't be self-hosted
+     for legal reasons.
+
+*** Node Types
 :PROPERTIES:
-:ID:       a0eba1fc-5239-4cbd-a3f4-cd24410fb206
+:ID:       8fa7b334-fee9-472a-a644-5e5faafe8ade
 :END:
-alpha release
-- [ ] finalize templates & formatting
-   - sections
-      - abstract
-      - overview
-      - introduction
-      - usage
-      - commentary
-   - headlines
-      - level
-   - properties
-      - category
-      - todo state
-      - tags
-      - id
-   - links
-      - notes
-      - external
-      - bibtex
-   - attachments
-- [ ] meta export commands in [[id:205131fc-ff48-4e0b-a3e8-ab52d5b6ca19][shed]]
-   - [ ] MetaConfig
-   - [ ] NoteConfig
-- [ ] test
+The root node in a =meta= tree can have only one type - the =Meta=
+type (~type_of(meta[0]) == Meta~). The /immediate/ children of the
+root can have any type selected from a non-exhaustive list of types,
+/except/ for the =Meta= type (~type_of(meta[1:]) != Meta~). Level 2
+(children of children) headings do not have a type.
+
+Types loosely represent sections and are determined by the
+=headline=. For example, =** Abstract= is a level 2 heading in
+org-mode, with a headline of 'Abstract' which corresponds to the
+=Abstract= type.
+
+- Meta :: the root node type
+   - Abstract ::
+   - Introduction ::
+   - Usage ::
+   - Commentary ::
+   - Context ::
+   - Specification ::
+   - Protocols :: 
+   - Deployment ::
+   - Implementation ::
+   - Contributing ::
+   - Examples ::
+   - Features ::
+   - Configuration ::
+   - API ::
+   - Glossary ::
+   - References :: 
+   - Footnotes ::
+   - Copying :: copyright license info
+**** Template elements
+:PROPERTIES:
+:ID:       1ad2abd9-41cd-4c4e-8620-d5e8d7024738
+:END:
+Each node type comes with user-defined template elements that can be
+inserted anywhere in the =contents= component. Templates can be shared
+across different node types and can be recursive, to apply to all
+descendents of a typed heading.
+** Implementation
+:PROPERTIES:
+:ID:       c2b8509a-4e0b-4158-b8ae-8cddf1b91c6b
+:END:
+My implementation starts with org-mode documents in Emacs, where
+=metas= are created and updated. A directory, =~/org/meta= stores all
+my meta files in a single location (including this one).
+
+#+name: ~/org/meta
+#+begin_src sh :eval never-export
+ls ~/org/meta | head -n 5
+#+end_src
+#+RESULTS: ~/org/meta
+| babel.org   |
+| crater.org  |
+| demo.org    |
+| meta.org    |
+| music.org   |
+
+
+** Copying
+:PROPERTIES:
+:CATEGORY: legal
+:ID:       7fa7875e-7533-4d0a-8b55-fef4345d9771
+:END:
+
+This license applies to any digital content that I create. Third-party
+content such as the [[src:contrib][contrib]] mirrored repos are not subject to this
+license and include their own individual terms of use.
+
+#+begin_src text
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+
+ Copyright (C) 2021 Richard Westhaver <ellis@rwest.io>
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+#+end_src

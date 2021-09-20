@@ -1,0 +1,35 @@
+* Programs
+:PROPERTIES:
+:ID: 279e2f53-ca83-44f4-b679-165fd8aabd24
+:END:
+- https://en.wikipedia.org/wiki/Computer_program
+** Links
+:PROPERTIES:
+:ID:       512510b9-6bcc-4f38-8cc9-059111d25cfe
+:END:
+*** [[https://git.suckless.org/][suckless Repositories]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       b28d2ab8-2331-4626-9185-d797bf70b01e
+	 :END:		
+*** [[https://github.com/browsh-org/browsh][GitHub - browsh-org/browsh: A fully-modern text-based browser, rendering to TTY and browsers]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       471a7170-e0a8-4417-b333-ee130b085953
+	 :END:
+*** [[https://dystroy.org/broot/][Broot]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       62b5db76-f5c2-49f7-bcf5-04faa17ea087
+	 :END:
+*** [[https://caddyserver.com/docs/][Welcome — Caddy Documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+   :ID:       45ddcdf7-c9b7-4ff1-8d41-dbdd21198e43
+	 :END:
+	 v2 caddy docs for API
+*** [[https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md][ripgrep/GUIDE.md at master · BurntSushi/ripgrep · GitHub]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-26 Fri]
+   :ID:       2f96c91e-d79a-4663-bc45-9f56ff6da29f
+	 :END:

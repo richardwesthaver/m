@@ -1,0 +1,220 @@
+* Networks
+:PROPERTIES:
+:ID: 34a71a0e-2a43-4b35-9e4c-983f0df2d04d
+:END:
+** Concepts
+:PROPERTIES:
+:ID:       23ae950a-45a5-4bd8-b343-02a4d5fe5812
+:END:
+*** The Wire
+:PROPERTIES:
+:ID:       0b95a79e-bb8e-4371-b088-4a0a75a572b2
+:END:
+** Models
+:PROPERTIES:
+:ID:       eac5946e-aa20-4152-92a8-61ff49194b5b
+:END:
+- [[id:5dd75b6f-6245-465e-87f5-e944c4b836f6][Client-server Model]]
+- [[id:7bdea7d7-9596-4bf3-938d-b6e6f21fff53][P2P]]
+** Protocols
+:PROPERTIES:
+:ID:       368acc88-b789-4a4e-9c90-72c5e37bd35b
+:END:
+- [[id:4b1299e8-73db-4e8c-b854-5a9eea1d50c7][TCP]]
+- [[id:ed2c78ea-8935-4f05-b1be-8d9af0ff045f][UDP]]
+- [[id:049defda-3ac2-4cf1-86ec-060f0a77a5cf][HTTP]]
+- [[id:fd5ea91a-a6aa-4947-9640-c0bf81c85cb0][TLS]]
+- [[id:bf08b5d0-5745-4fa1-bb2e-7715b9f29a22][QUIC]]
+
+** Links
+:PROPERTIES:
+:ID:       f5fabb7c-c8c1-416d-bfc8-ce1659ab6866
+:END:
+*** [[https://tools.ietf.org/html/rfc6815][RFC 6815 - Applicability Statement for RFC 2544: Use on Production Networks Considered Harmful]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       a09fab63-927b-4e38-8940-0ac629905a03
+	 :END:
+*** [[https://www.freesoft.org/CIE/index.htm][Connected: An Internet Encyclopedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       35231223-5328-4cb9-9ce8-4266c5745020
+	 :END:
+
+*** [[https://www.freesoft.org/CIE/RFC/1831/index.htm][RFC 1831]]
+:PROPERTIES:
+:ID:       a228fc82-467a-4256-aacf-89fad7439318
+:END:
+*** [[https://www.ietf.org/rfc/rfc1014.txt][XDR: External Data Representation Standard]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+   :ID:       bb8b86e2-58b5-4fc4-b6da-46e1fca74680
+	 :END:
+- seems bulky, but very useful reference due to the breakdown of different types and their definitions.
+*** [[http://www3.cs.stonybrook.edu/~mikepo/][Michalis Polychronakis]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       6efb6988-b4d8-4b7a-9fed-07e456a2159f
+	 :END:		
+	 cool d00d - interesting research
+*** http://an.kaist.ac.kr/~shinae/paper/2016-netsoft.pdf
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       f9edd112-4079-4741-94b3-6de5b0bae87e
+	 :END:		
+	 Exploiting Integrated GPUs for Network Packet Processing Workloads
+	 - netsoft 2016
+*** [[https://doc-kurento.readthedocs.io/en/6.9.0/knowledge/rtp_streaming.html][RTP Streaming Commands — Kurento 6.9.0 documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       59f6401f-e7f0-44c9-8c84-c654786bb373
+	 :END:		
+*** [[https://en.wikipedia.org/wiki/Ephemeral_port][Ephemeral port - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       53f90dd5-5f2e-4d1e-abab-f7d0b991106e
+	 :END:
+*** [[https://en.wikipedia.org/wiki/Multiplexing][Multiplexing - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       c26ab509-d23f-4416-9967-a199c503e487
+	 :END:
+*** [[https://en.wikipedia.org/wiki/Frequency-division_multiplexing][Frequency-division multiplexing - Wikipedia]]
+:PROPERTIES:
+:ID:       898fe6e1-1503-4e48-a883-824a80583a95
+:END:
+*** [[https://en.wikipedia.org/wiki/Wavelength-division_multiplexing][Wavelength-division multiplexing - Wikipedia]]
+:PROPERTIES:
+:ID:       46bf6102-5afd-4079-8ec6-754f6cf1a913
+:END:
+*** [[https://en.wikipedia.org/wiki/Polarization-division_multiplexing][Polarization-division multiplexing - Wikipedia]]
+:PROPERTIES:
+:ID:       1cb61d46-57a4-45d4-942a-27a73c39ce3d
+:END:
+*** [[https://en.wikipedia.org/wiki/Time-division_multiplexing][Time-division multiplexing - Wikipedia]]
+:PROPERTIES:
+:ID:       77e12e3d-c7ab-4c59-b24b-6002b2aefc32
+:END:
+**** [[https://en.wikipedia.org/wiki/Orbital_angular_momentum_multiplexing][Orbital angular momentum multiplexing - Wikipedia]]
+:PROPERTIES:
+:ID:       7b77c3c4-c5d8-4e56-8f08-57df978c5368
+:END:
+*** [[https://en.wikipedia.org/wiki/Fiber-optic_communication#Background][Fiber-optic communication - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       0dba484e-63ea-4748-8701-858586fa9372
+	 :END:
+*** [[https://en.wikipedia.org/wiki/Photophone][Photophone - Wikipedia]]
+:PROPERTIES:
+:ID:       edab300e-381d-489a-b838-290fe109dfea
+:END:
+*** [[https://en.wikipedia.org/wiki/Routing_Information_Protocol][Routing Information Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       40fd019a-9db5-41f1-8b1f-6bbe3fb9cf5e
+	 :END:
+*** [[https://en.wikipedia.org/wiki/Satellite_navigation][Satellite navigation - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       ebc95af5-4747-4e3c-9374-4badfa5235fd
+	 :END:
+	 Position, Navigation, and Timing
+*** [[https://en.wikipedia.org/wiki/Time_signal][Time signal - Wikipedia]]
+:PROPERTIES:
+:ID:       dfb3fb95-67f0-4fca-86f5-3eef56e5d07e
+:END:
+*** [[https://en.wikipedia.org/wiki/Precision_Time_Protocol][Precision Time Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       9c6fbb5c-eda1-4eec-9c93-02514f948f3b
+	 :END:
+*** [[https://1.ieee802.org/tsn/802-1as-rev/][P802.1AS-Rev – Timing and Synchronization for Time-Sensitive Applications |]]
+:PROPERTIES:
+:ID:       409d013a-bcfb-415f-a377-6985017ee76b
+:END:
+*** [[https://en.wikipedia.org/wiki/Network_speaker][Network speaker - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       30ff6304-15c7-4f66-ac2e-e79422011373
+	 :END:
+*** [[https://books.google.com/books?id=5CaDBAAAQBAJ&pg=PT103&lpg=PT103&dq=cambridgematrix&source=bl&ots=IPFEA0mP5u&sig=ACfU3U2CZwA9H2nrhLxg3B91ZR5raSS7AQ&hl=en&sa=X&ved=2ahUKEwiV7YTA18jqAhUkoXIEHQQvC9MQ6AEwA3oECAwQAQ#v=onepage&q=cambridgematrix&f=false][brief mention of CambridgeMatrix - hunt this down]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       2a075ffd-3d17-4061-bf6e-c840d65a7eee
+	 :END:
+	 - Everything I've found on the Strawberry Fair is unvalidated, online articles discussing the implementation of custom mesh network on June 3rd, 2006 are just copy/pasting the Wiki.
+	 - original article is here (DNS broked) http://www.cambridgeshiretouristguide.com/Articles/Article_55.asp - trying to find it on web.archive, will search YouTube later
+	 - CambridgeMatrix sounds like a lead, would be surprised if there is no connection to the Strawberry Fair
+*** [[https://en.wikipedia.org/wiki/Hazy_Sighted_Link_State_Routing_Protocol][Hazy Sighted Link State Routing Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       3f12c30e-2a2a-4268-9af0-4138f353ef89
+	 :END:
+	 link-state algorithm at CUWiN
+*** [[https://en.wikipedia.org/wiki/Expected_transmission_count][Expected transmission count - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       6adab270-917c-4c56-9379-76f997f65d31
+	 :END:
+*** [[http://www.dsn.jhu.edu/software.html][Software: Distributed Systems and Networks Lab]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       7e0486fd-043a-4fc5-b7b9-dbee77baba76
+	 :END:
+	 C src from the lads over at JHU
+*** [[https://www.wing-project.org/][WING - Wireless Mesh Network for Next-Generation Internet]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       db02eaa1-52dc-4b6b-a7c9-6be047253a6a
+	 :END:
+	 from da Italians
+*** [[https://en.wikipedia.org/wiki/Optical_mesh_network][Optical mesh network - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       c6dd18ae-4705-4c43-a003-a68e9d9bf07e
+	 :END:
+*** [[https://en.wikipedia.org/wiki/Free-space_optical_communication][Free-space optical communication - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       3587740b-bb84-4322-9927-dcb3babdc450
+	 :END:
+*** [[http://www.vlcc.net/modules/xpage0/?ml_lang=en][Visible Light Communications Consotium (VLCC) - What's Visible Light Communications?]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       9feed501-c735-4455-b662-614f1b8476d4
+	 :END:
+*** [[https://www.researchgate.net/profile/Volker_Jungnickel/publication/264595391_High-Speed_Visible_Light_Communication_Systems/links/55202e000cf2a2d9e1433634/High-Speed-Visible-Light-Communication-Systems.pdf][High Speed Visible Light Communication Systems - pdf researchgate]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       79639f6b-7d65-4533-89f6-8a10a0f4c633
+	 :END:
+*** [[https://en.wikipedia.org/wiki/Visible_light_communication][Visible light communication - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       e5197687-8df9-4da5-a5dd-69fb563499cb
+	 :END:
+*** [[https://en.wikipedia.org/wiki/Mesh_networking][Mesh networking - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       86afebd1-8344-4fb4-9227-a15312696be9
+	 :END:
+*** [[https://en.wikipedia.org/wiki/InfiniBand][InfiniBand - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       f55d9a6c-683b-41ab-b0a4-23f15ab55400
+	 :END:
+*** [[https://en.wikipedia.org/wiki/Anycast][Anycast - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       864a23ae-1a5d-4a46-b72b-fea3fc545a7e
+	 :END:
+		+ unicast, broadcast, multicast, anycast, geocast
+*** [[https://en.wikipedia.org/wiki/Multicast][Multicast - Wikipedia]]
+:PROPERTIES:
+:ID:       c1476578-210d-4674-918f-014e65c06ff6
+:END:
+*** [[https://blogs.akamai.com/sitr/2019/07/anatomy-of-a-syn-ack-attack.html][Anatomy of a SYN-ACK attack - Akamai Security Intelligence and Threat Research Blog]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       739b0bd3-86a2-43b5-be45-e9340db140ce
+	 :END:

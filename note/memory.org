@@ -1,0 +1,52 @@
+* Memory                                                     :memory:
+:PROPERTIES:
+:ID:       4c339c03-33be-48cf-95d3-85a0054c1efd
+:AKA: mem
+:CATEGORY: programming
+:END:
+** Allocation
+:PROPERTIES:
+:ID:       4100b13e-69f4-437a-ab41-63340878049d
+:END:
+*** Arenas
+:PROPERTIES:
+:ID:       bada6142-c741-4d7a-8533-19022eb1ae0b
+:END:
+#+begin_quote
+Arena allocation is a memory management technique where a set of
+objects have the same lifetime and can be deallocated at the same
+time. An arena is an object responsible for allocating and
+deallocating the memory. Since large chunks of memory are allocated
+and deallocated at once (rather than allocating individual objects),
+arena allocation is very efficient. Usually, all the objects are
+allocated from a contiguous chunk of memory, that improves cache
+coherency when you are traversing the graph.
+-- [[https://aminb.gitbooks.io/rust-for-c/content/graphs/][Rust for C++ Programmers]]
+#+end_quote
+** Security                                                        :security:
+   :PROPERTIES:
+   :ID:       f5ac5bbe-a18d-4cd7-ae33-85782cbae46e
+   :END:
+*** Address Space Layout Randomization
+    :PROPERTIES:
+    :ID:       0a438ddb-49ba-47e8-bca0-149de48d7bdc
+    :AKA: ASLR
+    :END:
+    #+begin_quote
+    ASLR is a runtime security measure that randomizes the memory addresses that programs load data and code into. Usually implemented at the Operating System level, this will change the location of loaded code at each boot for libraries that are nx compliant. ASLR Bypass is typically achieved by exploiting a non nx compliant library in the context of an nx compliant operating system.
+    [[https://nets.ec/ASLR][ASLR]]
+    #+end_quote
+*** Executable-space Protection
+    :PROPERTIES:
+    :ID:       5d4796b9-ff44-4553-98bc-bacdfc296740
+    :END:
+    #+begin_quote
+    In computer security, executable-space protection marks memory regions as non-executable, such that an attempt to execute machine code in these regions will cause an exception. 
+    -- [[https://en.wikipedia.org/wiki/Executable_space_protection][Wikipedia]]
+    #+end_quote
+**** Data Execution Prevention                                      :windows:
+     :PROPERTIES:
+     :ID:       b9c33f21-6389-40bc-8cf2-82bc1135a84f
+     :AKA: DEP
+     :END:
+     - the name for executable-space protection in Windows systems

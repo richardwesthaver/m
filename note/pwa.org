@@ -1,0 +1,51 @@
+* Progressive Web Apps
+:PROPERTIES:
+:ID: ef3ecaf7-ff7c-49c1-a915-c034a7bfeb5a
+:AKA: PWA
+:END:
+** PWAs Today - 
+:PROPERTIES:
+:ID:       1ecb433e-f44b-4ec1-a2d5-e3507dab72fa
+:END:
+*** [[https://blog.bitsrc.io/what-is-a-pwa-and-why-should-you-care-388afb6c0bad][What is a PWA and Why Should You Care?]]
+:PROPERTIES:
+:ID:       dc6ac195-2534-403c-874c-a0d3bd28d85b
+:END:
+   - gives the basic highlights
+    - read "Why we need PWAs and what are their features?" section for tl;dr
+   - DemoTime: [[https://www.fidgetspin.xyz/][Fidget Spinner]] --> F12 goto 'Applications' tab
+*** [[https://developers.google.com/web/progressive-web-apps/][PWAs - Google Dev]]
+:PROPERTIES:
+:ID:       789d2efc-0b29-4b24-be52-8a669227970e
+:END:
+   - need manifest.json, service worker with offline capabilities
+   - to trigger install-prompt in chrome - need to have some kind of initial engagment with the app
+*** Connecting the dots - [[https://uxdesign.cc/pwas-are-the-future-d51aae1f3af7][UX Perspective]]
+:PROPERTIES:
+:ID:       e4572f0b-6a89-4f69-ac95-562d57c65b24
+:END:
+
+** PWAs Tomorrow
+:PROPERTIES:
+:ID:       4df30bd9-e834-4a65-8414-c15ce796f6c6
+:END:
+  - some of this might get rather technical
+*** [[https://blog.chromium.org/2016/08/from-chrome-apps-to-web.html][PWAs have dependencies]]
+:PROPERTIES:
+:ID:       bd2b322e-88c5-4447-adc1-6c00c2dde4ed
+:END:
+   - this is an old post so nothing to worry about in the short term, but the PWA ecosystem is highly dependent on gatekeepers
+     * Google, Apple, Microsoft
+   - gatekeepers make the rules and set prescribed tech through the manifest.json approval process
+   - potential for support for systems tech to be dropped - large tech debt to overcome
+*** [[https://developers.google.com/web/ilt/pwa/introduction-to-service-worker][Service Workers]] - quick note on this article
+:PROPERTIES:
+:ID:       9fa067ce-4835-4901-9d47-728771e08319
+:END:
+   #+begin_quote
+   Because the service worker is not blocking (it's designed to be fully asynchronous) synchronous XHR and localStorage cannot be used in a service worker.
+   #+end_quote
+** QA Automation checklist: [[https://developers.google.com/web/progressive-web-apps/checklist][PWA Checklist]]
+:PROPERTIES:
+:ID:       ba2f1962-ae85-4576-8b3b-9b55cb8f1529
+:END:

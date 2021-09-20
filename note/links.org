@@ -1,0 +1,63 @@
+* Links
+:PROPERTIES:
+:ID: d3afbac9-69d0-428b-aac1-b29e50f94bff
+:END:
+** [[https://vcvrack.com/][VCV Rack]]                          :audio:synth:
+:PROPERTIES:
+:ID:       a81bece2-4169-4033-b888-8e21b303187f
+:END:
+CREATED: [2021-01-23 Sat 09:20]
+Cross-platform Virtual Eurorack.
+- Does it run on web?
+- [[https://github.com/VCVRack][github project]]
+- Core engine is C++
+- 1843 opensource modules :) - [[https://library.vcvrack.com/?page=1&limit=50&query=&tag=&sort=creationTimestamp&brand=&license=open][free mods]]
+** [[https://en.wikipedia.org/wiki/Waveguide][Waveguide - Wikipedia]]
+:PROPERTIES:
+:ID:       e68f684a-1609-4cce-b034-579c06ba668b
+:END:
+CREATED: [2020-08-01 Sat 16:58]
+** [[https://github.com/rse-standrewscs/shallow-water][GitHub - rse-standrewscs/shallow-water: 3D shallow water code]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       2830c1ce-836e-4b15-9f02-fd683189ff93
+	 :END:
+
+** [[https://github.com/google/tarpc][GitHub - google/tarpc]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       802071cb-c4c2-4c93-89a4-dcd112a6a5b5
+	 :END:
+
+** [[https://opencensus.io/tracing/][OpenCensus - Tracing]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       50a05f08-638b-4d6d-bd60-fa846eadd252
+	 :END:
+
+** [[https://www.svenstaro.org/][CV of Sven-Hendrik Haase]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+   :ID:       7aeb0542-469c-4f69-a766-7c47ab4c02d3
+	 :END:		
+good lookin CV, wonder if we should be more wordy with ours? I hate sticking with lists :(
+** [[https://offshoreleaks.icij.org/pages/database][panama papers graph DB - magnet links]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       623bfbf8-b266-45c7-9b78-4f4a5d58b03a
+	 :END:
+** [[https://www.icij.org/investigations/panama-papers/what-happened-after-the-panama-papers/][What happened after the Panama Papers? - ICIJ]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       cdd21bff-04a6-456d-9602-3f8a92cde807
+	 :END:
+** [[https://www.youtube.com/watch?v=vpM0IoRawu4][Robot Wrestling is for Real Men]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-18 Thu]
+   :ID:       a92cd6ec-7da2-49bf-a0d2-54f286d2806c
+	 :END:
+** [[https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm][sintel trailer webm 480p]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-18 Thu]
+   :ID:       f743aa5a-8491-4a59-af71-f449060f4a2f
+	 :END:

@@ -1,0 +1,18 @@
+* Artificial Intelligence
+:PROPERTIES:
+:ID:       6651eea3-117f-47fc-9abf-ecf8f6d033d4
+:AKA: AI
+:END:
+** Artificial General Intelligence
+:PROPERTIES:
+:ID:       759d1c0f-1e38-42c1-ba5e-867796dfca89
+:AKA: ALG, full AI, general intelligent action
+:END:
+#+begin_quote
+Artificial general intelligence (AGI) is the hypothetical ability of an intelligent agent to understand or learn any intellectual task that a human being can.
+- [[https://en.wikipedia.org/wiki/Artificial_general_intelligence][Wikipedia]]
+#+end_quote
+** Weak AI
+:PROPERTIES:
+:ID:       07595fdf-1f96-4097-912d-c852b427be4b
+:END:

@@ -1,0 +1,93 @@
+* Algorithms
+:PROPERTIES:
+:ID: 74f3683c-e4e8-4d8c-8eea-7b3bb52b41ff
+:END:
+
+#+begin_quote
+a process or set of rules to be followed in calculations or other
+problem-solving operations, especially by a computer.
+#+end_quote
+
+** RNGs                                                               :rand:
+:PROPERTIES:
+:ID:       0cfb87f8-abc7-4922-a3d7-5383b18add12
+:AKA: Random Number Generator
+:END:
+*** Permuted Congruential Generator
+:PROPERTIES:
+:ID:       1b56e9c3-d63c-4c87-be67-b8a35dd66729
+:AKA: PCG
+:END:
+- [[https://en.wikipedia.org/wiki/Permuted_congruential_generator][wikipedia]]
+** [[https://en.wikipedia.org/wiki/Binary_search_algorithm][Binary Search]]                                                    :search:
+:PROPERTIES:
+:ID:       c963428d-b5b5-4a9b-9912-ab8b17e3cf46
+:END:
+- A very common algorithm used to find the index of a specific item in a
+/sorted/ array.
+- Array must be sorted
+- Executes in logarithmic time
+- Faster than linear search (except for very small arrays)
+- Can be applied easily in many situations
+- There are many variations of binary search such as fractional
+  cascading and exponential search
+- Many data structures provide a better overall design for fast
+  optimal searches, such as Hash Tables
+- [[https://www.hackerearth.com/practice/algorithms/searching/binary-search/tutorial/][Binary Search Tutorials & Notes | Algorithms | HackerEarth]]
+
+** [[https://en.wikipedia.org/wiki/Merge_sort][Merge sort]]                                                         :sort:
+:PROPERTIES:
+:ID:       9319d0fc-ace5-401c-97b2-a3aea287421a
+:END:
+A divide and conquer algorithm for sorting an array. The array is
+split into immutable chunks and then all chunks are merged in sorted
+order.
+- Invented by John von Neumann in 1945
+** [[https://en.wikipedia.org/wiki/Lubachevsky%E2%80%93Stillinger_algorithm][Lubachevsky–Stillinger algorithm]]                          :granular_flow:
+  :PROPERTIES:
+  :ID:       7e986f85-e6ca-4f76-b667-bea7fe128b8b
+  :END:
+#+begin_quote
+Lubachevsky-Stillinger (compression) algorithm (LS algorithm, LSA, or
+LS protocol) is a numerical procedure suggested by F. H. Stillinger
+and B.D. Lubachevsky that simulates or imitates a physical process of
+compressing an assembly of hard particles. As the LSA may need
+thousands of arithmetic operations even for a few particles, it is
+usually carried out on a computer.
+#+end_quote
+
+An acoustic phenomena of interest: [[https://en.wikipedia.org/wiki/Singing_sand][Singing sand]]
+
+** [[https://github.com/apple/swift/pull/39143][An optimal algorithm for bounded random integers]]                    :rng:
+:PROPERTIES:
+:ID:       e87c8899-f70f-46f5-ab3c-ace0eabe9ff7
+:END:
+** [[https://en.wikipedia.org/wiki/ROT13][ROT13]]                                                            :cipher:
+:PROPERTIES:
+:ID:       f45bc97b-fe13-44db-95ba-f3c9f877e568
+:END:
+A very simple, symmetrical substition cipher that shifts a character
+by 13 positions. Since the standard alphabet has 26 characters, this
+operation is its own inverse.
+- The canonical example of weak encryption.
+
+** [[https://en.wikipedia.org/wiki/Selection_algorithm][Selection algorithm - Wikipedia]]
+:PROPERTIES:
+:ID:       4193b561-27c7-4fe4-a3e4-7a61b8c659ce
+:END:
+*** [[https://en.wikipedia.org/wiki/Quickselect][Quickselect - Wikipedia]]
+:PROPERTIES:
+:ID:       2761e5d3-df1d-43ff-91b2-a8e60ff0469c
+:END:
+** [[https://en.wikipedia.org/wiki/Sorting_algorithm][Sorting algorithm - Wikipedia]]
+:PROPERTIES:
+:ID:       a4805e40-ccdc-4f64-9581-6c80561b0dfc
+:END:
+*** [[https://en.wikipedia.org/wiki/Quicksort][Quicksort - Wikipedia]]
+:PROPERTIES:
+:ID:       5a7a0e4b-2444-4010-861f-35c7711d7a14
+:END:
+** [[https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm][Divide-and-conquer algorithm - Wikipedia]]
+:PROPERTIES:
+:ID:       17baa61c-0dfa-41d4-be69-1541929fcccc
+:END:

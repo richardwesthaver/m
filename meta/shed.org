@@ -12,11 +12,17 @@ Global configuration is controlled by the =Config= type (=RON= or
 by the user.
 
 ** Status
+:PROPERTIES:
+:ID:       e43636af-2815-485b-913e-a06bbb364fb7
+:END:
    *IN PROGRESS*
   - this doesn't work quite yet
   - some features are available, but disjointed
 
 ** Features
+:PROPERTIES:
+:ID:       83a9750a-bb30-4272-b1f3-23d85806cbb8
+:END:
 - Mercurial VCS
    - Pullbundles and Clonebundles
    - Subrepos
@@ -28,6 +34,9 @@ by the user.
 - Fully configurable via RON or JSON files
 
 ** Abstract
+:PROPERTIES:
+:ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0
+:END:
 The name =shed= was originally derived from [[https://github.com/facebookexperimental/rust-shed][rust-shed]], a set of common
 Rust crates used internally by Facebook. I first wrote about it in
 April, in a post where I introduced some projects and goals
@@ -38,12 +47,18 @@ provide a public API, and resembles =rust-shed= in name
 only[fn:2].
 
 ** Usage
+:PROPERTIES:
+:ID:       ecb7c923-6329-4e13-af72-84482bdbcb1e
+:END:
 Once the binary is installed run =shed init= to bootstrap a
 =Config= via CLI prompts or download one remotely. A user
 configuration file needs to be available and accessible by the current
 user. The default config path is determined by the ~$SHED_CFG~
 environment variable or =./cfg.ron= as a fallback.
 *** TODO Configuration
+:PROPERTIES:
+:ID:       0fa1c99b-6452-4b60-be05-6801803600cf
+:END:
 This tool can be configured via a single RON or JSON file. The
 =Config= object
 #+begin_src ron
@@ -71,10 +86,68 @@ This tool can be configured via a single RON or JSON file. The
 )
 #+end_src
 *** TODO Commands
+:PROPERTIES:
+:ID:       a0f0f72d-475a-49a1-a21f-5d8a604099fd
+:END:
 - serve :: serve a *Collection* over HTTP[fn:3]
 - stash :: add/remove objects in the *stash*
 - store :: add/remove objects in the *store*
+** API
+:PROPERTIES:
+:ID:       9c126f39-90d3-414b-a248-a5202ae898a3
+:END:
+*** Services
+:PROPERTIES:
+:ID:       44c854e1-feff-4d7f-940c-b8ff7ce934d6
+:END:
+Generally speaking, my stuff can be found at the following URLs. Services
+are hosted using Nginx.
+- [[https://rwest.io][rwest.io]] :: The service that returns this page. It's a WebAssembly SPA/PWA built with
+  [[https://yew.rs/][Yew]] and [[https://bulma.io/][BulmaCSS]].
+- [[https://docs.rwest.io][docs.rwest.io]] :: Rust API Docs
+- [[https://hg.rwest.io][hg.rwest.io]] :: Source code
+- [[https://pkg.rwest.io][pkg.rwest.io]] :: Packages
+- [[https://cdn.rwest.io][cdn.rwest.io]] :: CDN for shared static web content. This is used to serve fonts, css,
+  images, and other media types on the web.
+- [[https://q.rwest.io][q.rwest.io]] :: Signal API endpoint for SSR, webhooks, and messages (WIP).
+
+**** source code
+:PROPERTIES:
+:ID:       fbdab8ef-85c5-4adf-822b-16e237b518d6
+:END:
+Source code is available on [[https://hg.rwest.io][hg.rwest.io]] in Mercurial repositories. You
+can clone a repo with =hg clone https://hg.rwest.io/{REPO_NAME}=.
+
+- Libraries
+   - [[src:rlib][rlib]] - system programming toolkit
+   - [[src:tenex][tenex]] - external API wrappers
+   - [[src:babel][babel]] - script collection
+
+- Programs
+   - [[src:rwest-io][rwest-io]] - homepage
+   - [[src:shed][shed]] - development toolbox
+   - [[src:demo][demo]] - examples
+
+- Configs
+   - [[src:config/emacs][emacs]]
+   - [[src:config/hgweb][hgweb]]
+   - [[src:config/home][home]]
+   - [[src:config/etc][etc]]
+   - [[src:config/nix][nix]]
+
+- Prose
+   - [[src:org][org]]
+
+- Third-party
+   - [[src:crater][crater]]
+   - [[src:contrib][contrib]]
+     - [[src:contrib/el][emacs-lisp]]
+     - [[src:contrib/rust][rust]]
+
 ** Footnotes
+:PROPERTIES:
+:ID:       eabd06fd-762c-43ef-b8bd-a4d3683ea1c4
+:END:
 
 [fn:1]  =shed= is not based on a single concrete type like a
 =package=, and fully encompasses the =lab= project management tool

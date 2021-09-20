@@ -1,0 +1,11 @@
+* Finance
+:PROPERTIES:
+:ID: e6cf4dca-f6ce-45e0-9504-1c3ad2b238da
+:END:
+- https://en.wikipedia.org/wiki/Finance
+
+** Methods
+:PROPERTIES:
+:ID:       e372386f-de12-4162-ad4e-bf0ade0f684f
+:END:
+- [[file:ynab.org][YNAB]]
