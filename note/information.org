@@ -1,0 +1,19 @@
+* Information
+:PROPERTIES:
+:ID:       0463a92e-99d0-4bd1-aa6d-b8ebba4207d7
+:AKA: info
+:END:
+** Disinformation
+:PROPERTIES:
+:ID:       10ec6938-67dc-4075-a0f5-d2de09eb9197
+:END:
+false information which is intended to mislead
+** Misinformation
+:PROPERTIES:
+:ID:       10a7ef9e-4339-40b9-8921-e1fdf08be481
+:END:
+#+begin_quote
+Misinformation is false, inaccurate, or misleading information that is communicated regardless of an intention to deceive.
+
+-- [[https://en.wikipedia.org/wiki/Misinformation][Wikipedia]]
+#+end_quote

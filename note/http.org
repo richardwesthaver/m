@@ -1,0 +1,35 @@
+* Hypertext Transfer Protocol
+:PROPERTIES:
+:ID: 049defda-3ac2-4cf1-86ec-060f0a77a5cf
+:END:
+- https://developer.mozilla.org/en-US/docs/Web/HTTP
+
+#+begin_quote
+Hypertext Transfer Protocol (HTTP) is an application-layer protocol
+for transmitting hypermedia documents, such as HTML. It was designed
+for communication between web browsers and web servers, but it can
+also be used for other purposes. HTTP follows a classical
+client-server model, with a client opening a connection to make a
+request, then waiting until it receives a response. HTTP is a
+stateless protocol, meaning that the server does not keep any data
+(state) between two requests. Though often based on a TCP/IP layer, it
+can be used on any reliable transport layer, that is, a protocol that
+doesn't lose messages silently like UDP does. RUDP — the reliable
+update of UDP — is a suitable alternative.
+#+end_quote
+#+begin_center
+-- [[https://developer.mozilla.org/en-US/docs/Web/HTTP][MDN web docs]]
+#+end_center
+
+** HTTPS
+:PROPERTIES:
+:ID:       fb05567a-224f-4492-b30c-f4718a854da8
+:END:
+HTTPS consists of HTTP with the addition of [[file:../../../../Z/core/notes/tls.org][TLS]].
+
+** HTTP/S
+:PROPERTIES:
+:ID:       289c6f90-86fb-4b7b-aed6-4ca8ce27894e
+:END:
+HTTP/S is often used as a blanket statement for both HTTP and HTTPS.
+

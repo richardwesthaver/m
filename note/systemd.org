@@ -1,0 +1,12 @@
+* Systemd
+:PROPERTIES:
+:ID: a2c2925f-960d-43b5-b0cd-da5a86d4a744
+:END:
+** systemd-nspawn
+:PROPERTIES:
+:ID:       e5232eb5-854c-416c-a25d-190bfa794d10
+:END:
+*** machinectl
+:PROPERTIES:
+:ID:       fdaaa759-73f0-4cf6-b2f4-99c4bd836acd
+:END:

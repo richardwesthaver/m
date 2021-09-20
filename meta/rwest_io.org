@@ -3,3 +3,24 @@
 :ID:       d8f17fe2-00f1-4cd2-af58-7984e53c4033
 :END:
 Static blog built with Yew and BulmaCSS
++ status :: ALPHA
++ source :: [[src:rwest_io][hg.rwest.io/rwest_io]]
++ version :: 0.0.1
+
+** Features
+:PROPERTIES:
+:ID:       63c0fe84-d9c1-4dba-8401-67e0f830a7f1
+:END:
+Road to v0.1.0:
+- [X] WebAssemly core application (src/main.rs)
+- [X] SPA with internal router
+- [X] PWA + full offline compatible (sw.js, manifest.json)
+- [X] SCSS styling with Bulma, htmlize.js, custom org.js (index.scss)
+- [X] python-based Org-mode parser
+- [ ] search and filter content
+- [ ] build script
+- [ ] auto-deploy
+
+Next:
+- [ ] css color highlights based on current weather (tenex)
+- [ ] auto-vc-fetch for generating repo info client-side

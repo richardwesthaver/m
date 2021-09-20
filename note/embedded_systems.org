@@ -1,0 +1,31 @@
+* Embedded Systems
+:PROPERTIES:
+:ID: 8162fa8b-f79d-4a87-8d4e-82ef993e08f2
+:END:
+- [[file:sdr.org][SDR]]
+- [[file:qemu.org][QEMU]]
+
+** [[https://elinux.org/Main_Page][Embedded Linux Wiki]]
+:PROPERTIES:
+:ID:       cf94b668-613d-4b18-9474-1b88e73ae749
+:END:
+** [[https://github.com/esp8266/Arduino][GitHub - esp8266/Arduino: ESP8266 core for Arduino]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       a0db425f-6f46-4e21-9226-49f3a2a47b28
+	 :END:
+	 is there a rust crate tho? - yeeee
+
+** [[https://github.com/MabezDev/idf2svd][GitHub - MabezDev/idf2svd]]
+:PROPERTIES:
+:CREATED:  [2020-07-12 Sun]
+:ID:       311f5f16-2cfe-4575-9009-9183e4bd5850
+:END:
+generates SVD files for ESP32 based devices.. rather messy
+
+
+** [[https://en.wikipedia.org/wiki/ESP32][ESP32 - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       bf168556-e19c-44e7-84fe-7752da708d87
+	 :END:

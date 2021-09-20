@@ -1,0 +1,35 @@
+* Python
+:PROPERTIES:
+:ID:       249c2d3e-9d59-4f1f-9f6f-ad68ab04d1d3
+:END:
+Python is one of the most popular programming languages out there
+coming in at [[https://statisticstimes.com/tech/top-computer-languages.php][#2 in popularity and growing as of 2021]]. It is a
+dynamically-typed, garbage-collected language with simple, very
+readable syntax. It is well-maintained with a vast community of
+developers.
+
+It is an [[file:oop.org][OOP]]-based interpretted programming language based on C.
+
+- One of the draws of Python is the ease in which you can just 'get
+something done' quickly. CTFers and other types of competitive hackers
+prefer it for precisely this reason. 
+
+- Another advantage is the ease in which Python can be understood by
+  humans, making it a great beginner language for anyone. This also
+  makes it a great choice for Research and Academic fields where
+  non-programmers are involved, as source code snippets can be
+  included in your work with minimal explanation.
+
+** [[https://docs.python.org/3/library/ast.html][ast — Abstract Syntax Trees — Python 3.9.7 documentation]]
+:PROPERTIES:
+:ID:       cf7cfdf2-8899-4f04-94f6-a6cc110b29b9
+:END:
+** Libraries
+:PROPERTIES:
+:ID:       cbfa6dbe-f578-446a-bb2c-4fc0c49d131b
+:END:
+- [[https://mutagen.readthedocs.io/en/latest/][mutagen]] - module for handling audio metadata. Supports ASF, FLAC,
+  MP4, Monkey’s Audio, MP3, Musepack, Ogg Opus, Ogg FLAC, Ogg Speex,
+  Ogg Theora, Ogg Vorbis, True Audio, WavPack, OptimFROG, and AIFF
+  audio files.
+- [[https://www.psycopg.org/docs/][psycopg2]] - PostgreSQL database adapter.

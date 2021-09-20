@@ -1,9 +1,0 @@
-* Imperative Programming
-:PROPERTIES:
-:ID: 6199a3af-7f64-4acc-892d-0f3d81231640
-:END:
-- https://en.wikipedia.org/wiki/Imperative_programming
-
-- [[file:oop.org][Object-oriented Programming]]
-
-- [[id:aab54e8b-7547-4f2c-a8a4-4a4b29b1647c][Procedural Programming]]

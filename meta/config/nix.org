@@ -4,4 +4,4 @@
 :END:
 My poorman's distributed =nix= config has fallen into disrepair, but I
 keep it around for old-time's sake. It might come in handy in the
-future, depending on how the [[id:6f670ab4-bf9a-4475-8f41-b08e16021074][Nix]] ecosystem progresses.
+future, depending on how the Nix ecosystem progresses.

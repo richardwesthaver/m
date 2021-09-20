@@ -1,0 +1,28 @@
+* Hacking                                                              :hack:
+:PROPERTIES:
+:ID:       c57e016c-cfa4-40f2-a5b5-a4dbacd12fce
+:END:
+** Buffer Overflows                                                     :ram:
+   :PROPERTIES:
+   :ID:       3b3d3abb-a401-4bc9-abd0-24b0fe7e4b02
+   :AKA: buffer overrun
+   :END:
+   #+begin_quote
+   Buffer overflow, or Buffer Overrun is a software error triggered when a program does not adequately control the amount of data that is copied over the buffer, if this amount exceeds the preassigned capacity, remaining bytes are stored in adjacent memory areas by overwriting its original content. This can be exploited by overwriting a fuction's return address to cause arbitrary code execution and allow access to a vulnerable system. 
+   -- [[https://nets.ec/Buffer_overflow][n3t2.3c]]
+   #+end_quote
+   - security measure considerations
+      - [[id:0a438ddb-49ba-47e8-bca0-149de48d7bdc][ASLR]]
+      - [[id:5d4796b9-ff44-4553-98bc-bacdfc296740][Executable-space Protection]]
+        - [[id:b9c33f21-6389-40bc-8cf2-82bc1135a84f][DEP]]
+
+** Return-oriented Programming
+   :PROPERTIES:
+   :ID:       d795cbc0-50e9-45da-8309-b90830951ec4
+   :AKA: ROP
+   :END:
+   #+begin_quote
+   Return-oriented programming (ROP) is a computer security exploit technique that allows an attacker to execute code in the presence of security defenses such as executable space protection and code signing.   
+   -- [[https://en.wikipedia.org/wiki/Return-oriented_programming][Wikipedia]]
+   #+end_quote
+   - go go gadget =pop rdi; ret;=!

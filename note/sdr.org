@@ -1,0 +1,82 @@
+* Software Defined Radio
+:PROPERTIES:
+:ID: de73cf8a-d39f-4bdb-8ec9-009288e77d19
+:AKA: SDR
+:END:
+- https://en.wikipedia.org/wiki/Software-defined_radio
+
+** [[https://www.wikiwand.com/en/Cognitive_radio?fbclid=IwAR2ix1x1HHC9rimSUr_NkdRQERtKKm4_IBvH25Vb05Oh6svQ3mKegV0bKz0][Cognitive Radio]]
+:PROPERTIES:
+:ID:       8d69e21e-cc67-42cb-a048-098d6dd4545f
+:END:
+** [[https://www.wikiwand.com/en/RF_front_end][RF Front End]]
+:PROPERTIES:
+:ID:       04dc64b3-40cb-4903-af15-8d4f495cf61d
+:END:
+#+BEGIN_QUOTE
+In a radio receiver circuit, the RF front end is a generic term for all the circuitry between a receiver's antenna input up to and including the mixer stage.[1] It consists of all the components in the receiver that process the signal at the original incoming radio frequency (RF), before it is converted to a lower intermediate frequency (IF). In microwave and satellite receivers it is often called the low-noise block (LNB) or low-noise downconverter (LND) and is often located at the antenna, so that the signal from the antenna can be transferred to the rest of the receiver at the more easily handled intermediate frequency.
+
+For most superheterodyne architectures, the RF front end consists of:[2]
+
+A band-pass filter (BPF) to reduce image response. This removes any signals at the image frequency, which would otherwise interfere with the desired signal. It also prevents strong out-of-band signals from saturating the input stages.
+An RF amplifier, often called the low-noise amplifier (LNA). Its primary responsibility is to increase the sensitivity of the receiver by amplifying weak signals without contaminating them with noise, so that they can stay above the noise level in succeeding stages. It must have a very low noise figure (NF). The RF amplifier may not be needed and is often omitted (or switched off) for frequencies below 30 MHz, where the signal-to-noise ratio is defined by atmospheric and man-made noise.
+A local oscillator (LO) which generates a radio frequency signal at an offset from the incoming signal, which is mixed with the incoming signal.
+The mixer, which mixes the incoming signal with the signal from the local oscillator to convert the signal to the intermediate frequency (IF).#+END_QUOTE
+#+END_QUOTE
+
++ imagine fx processing on radio signals. SDR plguins. encryption, ids, etc
+
+
+*** [[https://www.wikiwand.com/en/Band-pass_filter][band-pass filter]]
+:PROPERTIES:
+:ID:       23edba57-5a45-4dcc-9ef7-5f84fe795269
+:END:
+*** [[https://www.wikiwand.com/en/Amplifier][RF amplifier]]
+:PROPERTIES:
+:ID:       cf0c0033-3f95-4ffd-b262-7680350bead9
+:END:
+*** [[https://www.wikiwand.com/en/Local_oscillator][local oscillator]]
+:PROPERTIES:
+:ID:       cf102eb2-dfc0-4309-a0cf-bb8525276382
+:END:
+*** [[https://www.wikiwand.com/en/Frequency_mixer][mixer]]
+:PROPERTIES:
+:ID:       7a669da9-7a06-47f4-bfd2-c569d7f8baeb
+:END:
+**** [[https://www.wikiwand.com/en/Heterodyne][Heterodyne]]
+:PROPERTIES:
+:ID:       840586af-2bfa-46ca-b8c6-82903d5a7bc7
+:END:
+creates new frequencies by combining or mixing two frequencies.
+
+** Antennai
+:PROPERTIES:
+:ID:       97113225-512b-4760-bfbc-cb8592557c27
+:END:
+** [[https://wiki.gnuradio.org/index.php/Main_Page][GNU Radio]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       95565d55-a94f-44c9-9dc4-58a6922c095c
+	 :END:
+** [[https://www.youtube.com/watch?v=ZuNOD3XWp4A][All Your RFz Are Belong to Me - Defcon 21 - Youtube]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       4a650272-ddc4-4c90-b0b7-1f5abbf89b0b
+	 :END:
+	 [[yt:ZuNOD3XWp4A]]
+** [[https://www.youtube.com/watch?v=vQtLms02PFM][Bill Swearingen - HAKC THE POLICE - Defcon 27 - Youtube]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       47d4f565-34c6-4e2c-9a6a-f3fd66cd0f06
+	 :END:
+	 [[yt:vQtLms02PFM]]
+** [[https://www.analog.com/en/analog-dialogue/articles/high-definition-low-delay-sdr-based-video-transmission-in-uav-applications.html#][High Definition, Low Delay, SDR-Based Video Transmission in UAV Applications | Analog Devices]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-11 Sat]
+   :ID:       65f3f7cb-3ee3-411f-b26b-39a00b70d6c3
+	 :END:
+** [[https://liquidsdr.org/][liquidsdr.org]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+   :ID:       3bb50626-f1a4-4565-8c01-89a6f254f233
+	 :END:

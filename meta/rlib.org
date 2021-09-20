@@ -7,14 +7,19 @@
 A mid-level library for systems programming in Rust. Provides common
 API used in my other Rust projects.
 
-** Status
-*EXPERIMENTAL*
-
-- many things work, many things don't.
-- =kala=, =obj=, =cfg=, =ctx=, =logger= and =flate= are somewhat usable
-- =math=, =alch=, =dts=, and =ui= are placeholders
-
-** Modules
++ status :: EXPERIMENTAL
+  - many things work, many things don't.
+  - =kala=, =obj=, =cfg=, =ctx=, =logger= and =flate= are somewhat usable
+  - =math=, =alch=, =dts=, and =ui= are placeholders
++ source :: [[src:rlib][hg.rwest.io/rlib]]
+** API
+:PROPERTIES:
+:ID:       ac4cccab-beaa-4726-ab88-d0857681c414
+:END:
+*** Modules
+:PROPERTIES:
+:ID:       bb740861-e7b9-4730-bd34-622f7ae53ce8
+:END:
 The =rlib= API is currently split into separate crates with a single
 [[https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html][workspace]]. As of [[https://hg.rwest.io/rlib/rev/96eadefcf4e6][rev:96eadefcf4e6]] a placeholder =lib.rs= has been
 added to the repository root which will eventually re-export all
@@ -23,7 +28,10 @@ integrations with my other projects (since each module is imported
 directly), and will make our [[https://docs.rwest.io/rlib/doc/][docs]] very easy to build. The main blocker
 to this task is defining the features of the modules themselves.
 
-*** obj
+**** obj
+:PROPERTIES:
+:ID:       054af1ef-5509-40e6-a90d-baebf2be734f
+:END:
 =Objects= are pre-defined Rust structs that can easily encode to RON,
 JSON or Bincode, and tagged with metadata such as an =Id=, for easy
 insertion into a HashMap. They implement a few traits, namely =Objective= and
@@ -37,7 +45,10 @@ text files.
 
 - [[https://docs.rwest.io/rlib/doc/obj][API docs]]
 
-*** cfg
+**** cfg
+:PROPERTIES:
+:ID:       047bc111-a028-4010-965e-b6672316fcf5
+:END:
 =Configs= are similar in structure to =Objects=, but differ in their
 purpose - software configuration.
 
@@ -50,55 +61,103 @@ will be used with the =db= module.
 
 - [[https://docs.rwest.io/rlib/doc/cfg][API docs]]
 
-*** ctx
+**** ctx
+:PROPERTIES:
+:ID:       25689a72-7546-4152-8951-f171ad8e3448
+:END:
 Async runtime context(s).
 - [[https://docs.rwest.io/rlib/doc/ctx][API docs]]
-*** eve
+**** eve
+:PROPERTIES:
+:ID:       d2db0890-b28e-43c3-b59b-6c640f864286
+:END:
 Async event queue (io_uring). Linux only and v. experimental
 - [[https://docs.rwest.io/rlib/doc/eve][API docs]]
-*** net
+**** net
+:PROPERTIES:
+:ID:       30bdad00-5a51-42f2-b977-a8e4e0971aa7
+:END:
 Network module for building clients/servers.
 - [[https://docs.rwest.io/rlib/doc/net][API docs]]
-*** db
+**** db
+:PROPERTIES:
+:ID:       1ea27e0c-356c-4a79-bcbc-4a26cfc5800a
+:END:
 Database module built primarily for key-value storage with RocksDB.
 - [[https://docs.rwest.io/rlib/doc/db][API docs]]
-*** alch
+**** alch
+:PROPERTIES:
+:ID:       7d36d335-50d2-496d-95a5-ddf4e7c57cb1
+:END:
 Allocator implementations for the niche.
 - [[https://docs.rwest.io/rlib/doc/alch][API docs]]
-*** hash
+**** hash
+:PROPERTIES:
+:ID:       e4b5fc88-ef37-4cf9-bc5a-69e90ad91574
+:END:
 Hash algorithms. (re-exported in =crypto= too)
 - [[https://docs.rwest.io/rlib/doc/hash][API docs]]
-*** logger
+**** logger
+:PROPERTIES:
+:ID:       98e27951-c267-4df2-b53d-13efc604d555
+:END:
 Logging essentials including a runtime context and macros from the =log= crate
 - [[https://docs.rwest.io/rlib/doc/logger][API docs]]
-*** math
+**** math
+:PROPERTIES:
+:ID:       489eca8b-6279-4cfb-8bb9-c139304c4ebf
+:END:
 TBD
 - [[https://docs.rwest.io/rlib/doc/math][API docs]]
-*** flate
+**** flate
+:PROPERTIES:
+:ID:       daaaf900-9582-4496-a2cd-f4179664a20e
+:END:
 Compression module swiss-army knife built around =zstd=.
 - [[https://docs.rwest.io/rlib/doc/flate][API docs]]
-*** crypto
+**** crypto
+:PROPERTIES:
+:ID:       b0babd64-18e0-4d11-83a0-6e287e683d73
+:END:
 Crypto /primitives/.
 - [[https://ed25519.cr.yp.to/][ed25519]] and [[https://github.com/dalek-cryptography/ed25519-dalek][ed25519-dalek]] public-key signatures
 - [[https://cr.yp.to/snuffle.html][Salsa20]] stream cipher + [[https://cr.yp.to/snuffle/xsalsa-20081128.pdf][XSalsa20]]
 - [[https://nacl.cr.yp.to/secretbox.html][NaCl]] (TBD)
 - [[https://docs.rwest.io/rlib/doc/crypto][API docs]]
-*** audio
+**** audio
+:PROPERTIES:
+:ID:       c52796cc-b9d6-4dfb-9844-883332036aac
+:END:
 Cross-platform audio device detection and playback.
 - [[https://docs.rwest.io/rlib/doc/audio][API docs]]
-*** kala
+**** kala
+:PROPERTIES:
+:ID:       2cd79d58-a97e-4192-9ec2-8bbc99b79219
+:END:
 Handy /offline/ functions.
 - [[https://docs.rwest.io/rlib/doc/kala][API docs]]
-*** dmc
+**** dmc
+:PROPERTIES:
+:ID:       544a1e32-7892-451a-8ebe-cebed9ee4529
+:END:
 TBD
 - [[https://docs.rwest.io/rlib/doc/dmc][API docs]]
-*** dts
+**** dts
+:PROPERTIES:
+:ID:       62a41f8b-046b-43f7-9e20-392034419cc5
+:END:
 Experimental types (Monads and GATs and such)
 - [[https://docs.rwest.io/rlib/doc/dts][API docs]]
-*** ui
+**** ui
+:PROPERTIES:
+:ID:       ef0039a8-b018-4f60-9b0f-472f02091b81
+:END:
 TBD (egui)
 - [[https://docs.rwest.io/rlib/doc/ui][API docs]]
-*** util
+**** util
+:PROPERTIES:
+:ID:       0c7a109d-d46b-4ee3-95e2-a52930227cd7
+:END:
 Utilities and development tools designed to reduce boilerplate code
 for build scripts and binaries. Includes wrappers for =anyhow=,
 =clap=, =chrono=, and some other useful things.

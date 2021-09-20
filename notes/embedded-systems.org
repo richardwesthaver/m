@@ -1,9 +1,0 @@
-* Embedded Systems
-:PROPERTIES:
-:ID: 8162fa8b-f79d-4a87-8d4e-82ef993e08f2
-:END:
-- [[file:sdr.org][SDR]]
-- [[file:qemu.org][QEMU]]
-
-** Resources
-- [[https://elinux.org/Main_Page][Embedded Linux Wiki]]

@@ -1,0 +1,90 @@
+* Language                                                         :language:
+:PROPERTIES:
+:ID:       53f722e8-178b-44bc-934c-b646f1892b90
+:END:
+** Lexicon                                                           :vocab:
+:PROPERTIES:
+:ID:       470a1282-e0ed-4eac-8093-05ceef9c0e39
+:END:
++ field :: lexicography
+*** Lexeme
+:PROPERTIES:
+:ID:       33ffdfb7-3796-4454-bf03-b2b2a1865d74
+:END:
+#+begin_quote
+A lexeme is a unit of lexical meaning that underlies a set of words that are
+related through inflection. It is a basic abstract unit of meaning.
+-- [[https://en.wikipedia.org/wiki/Lexeme][Wikipedia]]
+#+end_quote
+*** Lexical Items
+:PROPERTIES:
+:ID:       0b7420f6-bd85-4fdc-bbf8-ed96f81e3277
+:END:
+#+begin_quote
+In lexicography, a lexical item (or lexical unit / LU, lexical entry)
+is a single word, a part of a word, or a chain of words (catena) that
+forms the basic elements of a language's lexicon (≈ vocabulary).
+-- [[https://en.wikipedia.org/wiki/Lexical_item][Wikipedia]]
+#+end_quote
+**** Morpheme
+:PROPERTIES:
+:ID:       dcc2746c-8524-4583-85d5-b539e22a49fc
+:END:
+#+begin_quote
+A morpheme is the smallest meaningful lexical item in a language. A
+morpheme is not necessarily the same as a word. The main difference
+between a morpheme and a word is that a morpheme sometimes does not
+stand alone, but a word, by definition, always stands alone.
+-- [[https://en.wikipedia.org/wiki/Morpheme][Wikipedia]]
+#+end_quote
+
+** Grammar                                                         :grammar:
+:PROPERTIES:
+:ID:       4b49fb65-c265-4cb2-919a-2e80b6bc3f4f
+:CATEGORY: language
+:END:
+*** Punctuation
+:PROPERTIES:
+:ID:       c34be150-2d92-4150-a2de-a9f91b18246a
+:END:
+**** [[https://getpocket.com/explore/item/the-commas-that-cost-companies-millions][The Commas That Cost Companies Millions]]
+:PROPERTIES:
+:ID:       d3bcaf89-ed5f-48f6-92a0-11de0ee05ecc
+:END:
+
+** Natural Language
+:PROPERTIES:
+:ID:       e73aa96e-dce4-482e-928e-c91de7f3a80f
+:AKA: ordinary language
+:END:
+** Russian                                                        :language:
+:PROPERTIES:
+:ID:       72d5fa25-d1d9-477a-be75-3451bfdeb2ea
+:AKA: русский
+:END:
+*** Slang
+:PROPERTIES:
+:ID:       fe9947e7-002c-4762-8c3d-b417dddc1302
+:END:
+**** Tech Slang and Humour
+:PROPERTIES:
+:ID:       7c2985f1-0359-4f00-b6b0-a39d5a148d81
+:END:
+- quotes courtesy of slidercrank on ##russkij
+  - device is a girl :) why? the Latin 'c' is pronounced 'ц'
+    in Russian. So if you transliterate device, you'll get девице
+    which sounds close to девица (girl)
+    - how can it be a boy if you get 'abort/retry'? you girls
+      can abort
+  - someone who writes in C (пишет на С) is called насильник
+    (С is pronounced СИ, so it's на СИ + льник. ник means the same
+    as 'er' or 'ist' in English). насильник = raper
+  - sometimes программировать is jokingly said/written as
+    погроммировать (from the word 'pogrom'). basically "to cause a
+    mess"
+    - pogrom - An organized massacre of a particular ethnic group, in
+      particular that of Jewish people in Russia or eastern Europe in
+      the late 19th and early 20th centuries.
+  - Погромисты is partially sounds like routers in Russian
+  - someone who writes in ALGOL (Алго́л) is an alcoholic
+    (алкого́лик)

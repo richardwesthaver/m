@@ -1,0 +1,21 @@
+* Hash                                                          :crypto:hash:
+  :PROPERTIES:
+  :ID: 99330f0c-bd45-4dc6-942f-4f4c270a0bcf
+  :END:
+  - https://www.educative.io/edpresso/what-is-hashing
+
+** Digital Signatures
+   :PROPERTIES:
+   :ID:       c68f1319-7d04-434a-b334-1fb27e9b9fec
+   :END:
+   - [[https://www.ibm.com/docs/en/SSB23S_1.1.0.14/gtps7/ssldig18.gif][https://www.ibm.com/docs/en/SSB23S_1.1.0.14/gtps7/ssldig18.gif]]
+     - [[https://www.ibm.com/docs/en/ztpf/1.1.0.14?topic=concepts-digital-signatures][Digital Signatures - IBM]]
+   
+*** Code Signing
+    :PROPERTIES:
+    :ID:       1eb81c2f-9716-412a-ba8c-ed8929fab340
+    :END:
+    #+begin_quote
+    Code signing is the process of digitally signing executables and scripts to confirm the software author and guarantee that the code has not been altered or corrupted since it was signed. The process employs the use of a cryptographic hash to validate authenticity and integrity.
+    -- [[https://en.wikipedia.org/wiki/Code_signing][Wikipedia]]
+    #+end_quote

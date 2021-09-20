@@ -1,0 +1,723 @@
+* Rust
+:PROPERTIES:
+:ID: b46de918-896e-420d-8cde-09c21ae93ecd
+:END:
+A multi-paradign systems programming language, and a personal
+favorite of mine.
+- [[https://doc.rust-lang.org/book/][The Rust Book]]
+- [[https://doc.rust-lang.org/rust-by-example/][Rust By Example]]
+- [[file:ml.org][ML]]
+** resources
+:PROPERTIES:
+:ID:       fc5f460d-dd9e-41f5-8d2b-737d15dcf249
+:END:
+*** [[https://os.phil-opp.com/][Writing an OS in Rust]]                :os:
+:PROPERTIES:
+:ID:       2312fc0a-0948-43e4-b403-b3c21add34d5
+:END:
+- A Freestanding Rust Binary
+  The first step is to create a binary that is independent of the Rust std library, since =std= links to the OS.
+  EZPZ: =#![no_std]=
+  Still need panic_handler and =eh_personality= language item which marks a function used for [[https://www.bogotobogo.com/cplusplus/stackunwinding.php][stack unwinding]]. Stack unwinding is rather complex, and is typically provided by OS (Windows structured exception handling and Linux libunwind).
+
+  The following in =Cargo.toml= will enable abort on panic, which effectively disables stack unwinding.
+  #+begin_src toml
+  [profile.dev]
+  panic = "abort"
+
+  [profile.release]
+  panic = "abort"
+  #+end_src
+
+  At this point in the guide we are getting yet another error =error: requires `start` lang_item=
+
+  start is the marker for the entry point of the program, for typical std rust apps this involves the =crt0= library "C Runtime zero". We need to overwrite the crt0 entry point directly.
+  Another attribute is needed: #![no_main]
+
+  The next step involves resolving a linker error - which happens because of the rust compiler target (usually a C runtime like Windows Mac Linux). What we want is a bare metal target with /none/ for a runtime value. We will be building a [[https://doc.rust-lang.org/rustc/targets/custom.html][custom target]] instead of the example value below, which is actually for an embedded ARM system.
+
+  #+begin_src sh
+  rustup target add thumbv7em-none-eabihf
+
+  cargo build --target thumbv7em-none-eabihf
+  #+end_src
+- A Minimal Rust Kernel
+  The implementation in this tutorial uses BIOS, which has since been proceeded by UEFI. The benefit of BIOS is that it is 'simpler' and runs on almost every machine on the market today, but UEFI is the new fad, and faster. The gh issue is [[https://github.com/phil-opp/blog_os/issues/349][here]].
+
+  -- Side note - check out this [[https://github.com/rust-osdev/uefi-rs/blob/master/uefi-test-runner/build.py][build.py]] used in the uefi-rs crate test-runner
+
+  [[https://github.com/rust-osdev/bootimage][bootimage]] provides a tool that automatically prepends a bootloader to our kernel.
+
+  - So far we've added all the boiler plate needed to get a Hello World! message in QEMU via =cargo run=
+- VGA Text Mode
+  A typical VGA text buffer is 25x80
+  It is available at memory register 0xb8000 via [[https://en.wikipedia.org/wiki/Memory-mapped_I/O][memory-mapped I/O]]
+  volatile crate ensures that our read and writes in vga_buffer::Writer aren't optimized away by the compiler
+  - intro to spinlocks
+    spin provides a spinning mutex (Mutex primitive for OS-less environments)
+- Testing
+  added a basic test runner with a Qemu wrapper to properly exit the kernel once test complete
+  - next step is to print to the host console - to do this we need an interface to send the data over, there are many ways that we could do this, TCP, UDP, etc.. but these all require significant configuration, especially on a bare-metal machine. In this tutorial we're going to use a serial port, more specifically UART16550 in =serial.rs=.
+    For this to work as a console printer, we need to specify the /first/ serial port number, from which the other UART ports can be implicitly defined. 0x3F8 is the standard first port in x86. We add =serial_print!= and =serial_println!= macros for usability in serial.rs.
+
+    We also added a custom panic handler for tests that uses serial_print instead of print, plus removed the GUI so that we can run without opening a QEMU display
+
+    started a /tests/ directory specifically for /integration tests/. see basic_boot for example, basically it's like a separate executable where you need to link to the modules you want to test
+
+    Also began refactoring into a lib.rs :^O bout time
+
+    We now have a decent test framework!
+- Exceptions
+  The CPU throws exceptions when rules are broken with the current instruction. For example when dividing by zero. Our goal in this tutorial is to be able to create [[https://wiki.osdev.org/Exceptions#Breakpoint][breakpoints]] and resume execution of the OS after handling them.
+  There are about 20 exception types in x86 but the most important are:
+  #+begin_quote
+  
+    - Page Fault: A page fault occurs on illegal memory accesses. For
+      example, if the current instruction tries to read from an
+      unmapped page or tries to write to a read-only page.
+    - Invalid Opcode: This exception occurs when the current
+      instruction is invalid, for example when we try to use newer SSE
+      instructions on an old CPU that does not support them.
+    - General Protection Fault: This is the exception with the
+      broadest range of causes. It occurs on various kinds of access
+      violations such as trying to execute a privileged instruction in
+      user level code or writing reserved fields in configuration
+      registers.
+    - Double Fault: When an exception occurs, the CPU tries to call
+      the corresponding handler function. If another exception occurs
+      while calling the exception handler, the CPU raises a double
+      fault exception. This exception also occurs when there is no
+      handler function registered for an exception.
+    - Triple Fault: If an exception occurs while the CPU tries to call
+      the double fault handler function, it issues a fatal triple
+      fault. We can't catch or handle a triple fault. Most processors
+      react by resetting themselves and rebooting the operating
+      system.
+
+  #+end_quote
+  - To handle exceptions, we need to create an Interrupt Descriptor Table (IDT). The hardware uses this table, so we need to use a pre-defined format.
+    Each entry must have the following 16-byte structure:
+
+    #+TBLNAME: IDT Entry
+    |---------+----------------------------------+-----------------------------------------------------------------------------------------------------------------|
+    | type    | name                             | description                                                                                                     |
+    |---------+----------------------------------+-----------------------------------------------------------------------------------------------------------------|
+    | u16     | Function Pointer [0:15]          | The lower bits of the pointer to the handler function.                                                          |
+    | u16     | GDT selector                     | Selector of a code segment in the global descriptor table.                                                      |
+    | u16     | Options                          | (see below)                                                                                                     |
+    | u16     | Function Pointer [16:31]         | The middle bits of the pointer to the handler function.                                                         |
+    | u32     | Function Pointer [32:63]         | The remaining bits of the pointer to the handler function.                                                      |
+    | u32     | Reserved                         |                                                                                                                 |
+    |---------+----------------------------------+-----------------------------------------------------------------------------------------------------------------|
+    | OPTIONS | ----                             | ----                                                                                                            |
+    | Bits    | Name                             | Description                                                                                                     |
+    | 0-2     | Interrupt Stack Table Index      | 0: Don't switch stacks, 1-7: Switch to the n-th stack in the Interrupt Stack Table when this handler is called. |
+    | 3-7     | Reserved                         |                                                                                                                 |
+    | 8       | 0: Interrupt Gate, 1: Trap Gate  | If this bit is 0, interrupts are disabled when this handler is called.                                          |
+    | 9-11    | must be one                      |                                                                                                                 |
+    | 12      | must be zero                     |                                                                                                                 |
+    | 13-14   | Descriptor Privilege Level (DPL) | The minimal privilege level required for calling this handler.                                                  |
+    | 15      | Present                          |                                                                                                                 |
+    |---------+----------------------------------+-----------------------------------------------------------------------------------------------------------------|
+
+    List of all exceptions: https://wiki.osdev.org/Exceptions
+
+  When an exception occurs, the CPU roughly does the folowing:
+  #+begin_quote
+    1. Push some registers on the stack, including the instruction pointer and the RFLAGS register. (We will use these values later in this post.)
+    2. Read the corresponding entry from the Interrupt Descriptor Table (IDT). For example, the CPU reads the 14-th entry when a page fault occurs.
+    3. Check if the entry is present. Raise a double fault if not.
+    4. Disable hardware interrupts if the entry is an interrupt gate (bit 40 not set).
+    5. Load the specified GDT selector into the CS segment.
+    6. Jump to the specified handler function.
+  #+end_quote
+- The Interrupt Stack Frame
+  #+DOWNLOADED: https://os.phil-opp.com/cpu-exceptions/function-stack-frame.svg @ 2020-11-22 12:15:34
+  [[file:media/2020-11-22_12-15-34_function-stack-frame.svg]]
+- Double Faults
+  #+begin_src rust
+// in src/main.rs
+// trigger a page fault
+unsafe {
+    ,*(0xdeadbeef as *mut u64) = 42;
+};
+#+end_src
+  When this code is ran, the QEMU will enter a boot loop. Why? because a Triple Fault is triggered, since no Double Fault Handler has yet been defined. The double fault is triggered when no page fault handler is found :).
+  NOTE: Double fault functions are [[https://doc.rust-lang.org/stable/rust-by-example/fn/diverging.html][Diverging]].
+
+  - cause of double faults
+    for later: [[https://www.amd.com/system/files/TechDocs/24593.pdf][AMD64 manual]]
+    definition of double fault, (sum): “double fault exception can occur when a second exception occurs during the handling of a prior (first) exception handler”. The can is important. The exact combinations of first and second exception handlers are defined as:
+    #+TBLNAME: Exception Combos
+    | First Exception                                                                                 | Second Exception                                                                            |
+    |-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------|
+    | Divide by zero, Invalid TSS, Segment Not Present, Stack-Segment Fault, General Protection Fault | Invalid TSS, Segment Not Present, Stack-Segment Fault, General Protection Fault             |
+    | Page Fault                                                                                      | Page Fault, Invalid TSS, Segment Not Present, Stack-Segment Fault, General Protection Fault |
+    |-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------|
+    
+  So [[https://en.wikipedia.org/wiki/Task_state_segment][TSS]] does need to be implemented - in x86_64 TSS doesn't hold any task-related information. Instead it holds the Privilege Stack Table [u64; 3], Interrupt Stack Table [u64; 7], I/O Map Base Address u16.
+  - At this stage we ignore the PST since we don't have any user programs yet.
+  we will implement a TSS in gdt.rs.
+  - keep in mind - stacks in x86 grow downwards.
+
+  - GDT = [[https://web.archive.org/web/20190217233448/https://www.flingos.co.uk/docs/reference/Global-Descriptor-Table/][Global Descriptor Table]]
+    It is mostly used for two things: Switching between kernel space and user space, and loading a TSS structure.
+  - [[http://pages.cs.wisc.edu/%7Eremzi/OSTEP/][OSTEP]] - free book
+  - The Final Steps
+    #+begin_quote
+    In summary, we need to do the following:
+    1. Reload code segment register: We changed our GDT, so we should reload cs, the code segment register. This is required since the old segment selector could point a different GDT descriptor now (e.g. a TSS descriptor).
+    2. Load the TSS : We loaded a GDT that contains a TSS selector, but we still need to tell the CPU that it should use that TSS.
+    3. Update the IDT entry: As soon as our TSS is loaded, the CPU has access to a valid interrupt stack table (IST). Then we can tell the CPU that it should use our new double fault stack by modifying our double fault IDT entry.
+    #+end_quote
+    - Stack Overflow Test
+    in tests/stack_overflow.rs. we now have exception handling for all cases that would cause a triple fault.
+- Hardware Interrupts
+    getting input from keyboard, setting up a Programmable Interrupt Controller (PIC) to correctly forward hardware interrupts to the CPU
+    #+begin_src text
+                                        ____________             _____
+               Timer ------------> |            |           |     |
+               Keyboard ---------> | Interrupt  |---------> | CPU |
+               Other Hardware ---> | Controller |           |_____|
+               Etc. -------------> |____________|
+
+    #+end_src
+    The [[https://en.wikipedia.org/wiki/Intel_8259][Intel 8259]] is a programmable interrupt controller (PIC) introduced in 1976. It has long been replaced by the newer APIC, but its interface is still supported on current systems for backwards compatibility reasons.
+    The 8259 PIC is significantly easier to set up than the APIC so it's used in this guide.
+
+    8259 diagram:
+    #+begin_src text
+                         ____________                          ____________
+Real Time Clock --> |            |   Timer -------------> |            |
+ACPI -------------> |            |   Keyboard-----------> |            |      _____
+Available --------> | Secondary  |----------------------> | Primary    |     |     |
+Available --------> | Interrupt  |   Serial Port 2 -----> | Interrupt  |---> | CPU |
+Mouse ------------> | Controller |   Serial Port 1 -----> | Controller |     |_____|
+Co-Processor -----> |            |   Parallel Port 2/3 -> |            |
+Primary ATA ------> |            |   Floppy disk -------> |            |
+Secondary ATA ----> |____________|   Parallel Port 1----> |____________|
+
+
+    #+end_src
+    ^^^
+    Each controller can be configured through two I/O ports, one “command” port and one “data” port. For the primary controller these ports are 0x20 (command) and 0x21 (data). For the secondary controller they are 0xa0 (command) and 0xa1 (data).
+    
+    pic8259_simple = "0.2.0" - crate used for initializing via sending config values to command and data ports
+  - Keyboard interrupts
+    In this section we set up a keyboard event handler which accepts a keycode, and translates that using a few utility crates.
+- Paging
+  Memory protection is one of the primary tasks of an operating system. The system should use hardware functionality to make sure program A can not access the memory registers of program B. x86 supports two different approaches to memory protection: [[https://en.wikipedia.org/wiki/X86_memory_segmentation][segmentation]] and [[https://en.wikipedia.org/wiki/Virtual_memory#Paged_virtual_memory][paging]]
+  - segmentation was introduced in 1978 to increase the amount of effective memory a system could use, via /virtual memory/ - which was implemented via offset registers.
+    
+    The idea behind virtual memory is to abstract away the memory addresses from the underlying physical storage device. The virtual memory is /before/ translation, the physical memory is /after/ translation.
+    using a single offset can cause fragmentation - where there is not enough /continuous/ memory available to create a virtual memory register. This could be fixed by pausing and moving the pre-existing virtual memory registers closer together, then adding the next. This causes v bad performance though due to all the copies, and thus isn't even supported in 64_bit mode of x86. Paging is used instead which completely avoids the problem of fragmentation.
+  - paging
+
+    paging involves dividing memory into smaller chunks, where the block in virtual memory are called /pages/ and the blocks in physical memory are called /frames/. Internal fragmentation can still occur (as opposed to /external/ fragmentation, which occurs in segmentation), for example if we set a page size of 50 bytes, and a program of size 101, we would still need 3 pages and thus 49 unused bytes.
+    #+DOWNLOADED: https://os.phil-opp.com/paging-introduction/paging-fragmentation.svg @ 2020-11-23 15:33:33
+    [[file:media/2020-11-23_15-33-33_paging-fragmentation.svg]]
+  - pagetables are a data structure that stores mapping information
+    each program instance has its own pagetable which maps pages to frames
+    we can also have multi-level nested pagetables, where we simply add table pointers to optimize path to physical memory
+  - x86_64 used a 4-level page table and a page size of 4KiB. each page table, regardless of level, has a fixed size of 512 entries. each entry has a size of 8 bytes (512*8B = 4KiB).
+    bytes need to be discarded and left alone to ensure uniqueness of memory address. This is called /sign-extension/ and allows for future extensions like 5-level page tables (which is an optional feature of the recent "Ice Lake" Intel CPUs). NOTE: all page table entries are on physical memory to avoid infinite recursion.
+  - the Translation Lookaside Buffer (TLB) is used to store the last few memory address translations. This allows us to skip the translation if the result is already cached. The TLB needs to be manually managed by the kernel whenever it modifies a page table. There is a special CPU instruction called =invlpg= (invalidate page) that removes a translation from the TLB. The TLB can also be flushed completely by reloading the CR3
+  - Implementation - we actually already have paging implemented at this stage, via our bootloader.
+    first we add a page fault handler, to be thrown instead of generic double fault.
+- Paging Implementation
+  in this post we implement paging support in our kernel. As of last post, we were unable to access page tables because they are in physical memory frames.
+  
+  there are many ways to implement page table mappings:
+  - /Identity Mapping/ - a 1:1 mapping from virtual to physical
+
+  - /Map at fixed offset/ - for example Physical address = 4KiB, virtual = 4KiB + 1TiB
+    Note that the virtual address space needs to be larger than PhysicalMem+Offset, which isn't a problem on x86_64 with 48-bit address space = 256 TiB large
+
+  - /Map the complete physical memory/ - instead of only page table frames
+    #+begin_quote
+    This approach allows our kernel to access arbitrary physical memory, including page table frames of other address spaces. The reserved virtual memory range has the same size as before, with the difference that it no longer contains unmapped pages.
+
+    The disadvantage of this approach is that additional page tables are needed for storing the mapping of the physical memory. These page tables need to be stored somewhere, so they use up a part of physical memory, which can be a problem on devices with a small amount of memory.
+
+    On x86_64, however, we can use huge pages with size 2MiB for the mapping, instead of the default 4KiB pages. This way, mapping 32 GiB of physical memory only requires 132 KiB for page tables since only one level 3 table and 32 level 2 tables are needed. Huge pages are also more cache efficient since they use fewer entries in the translation lookaside buffer (TLB).
+    #+end_quote
+
+  - /Temporary Mapping/ - reuses a single page table of 512 bytes, so only required 4KiB, but can be cumbersome since each new mapping might require modifications of multiple table levels
+    #+begin_quote
+    - Search for a free entry in the identity-mapped level 1 table.
+    - Map that entry to the physical frame of the page table that we want to access.
+    - Access the target frame through the virtual page that maps to the entry.
+    - Set the entry back to unused thereby removing the temporary mapping again.
+    #+end_quote
+
+  - /Recursive Page Tables/ - Another interesting approach, that requires no additional page tables at all, is to map the page table recursively. The idea behind this approach is to map some entry of the level 4 page table to the level 4 table itself. By doing this, we effectively reserve a part of the virtual address space and map all current and future page table frames to that space. This is tricky and not implemented in this tutorial, but we should check out the Address Calculation section for more details.
+
+  After all this we do some implementation, end up being able to set up fresh page table with a correct allocator.
+- Heap Allocation
+  At this point we just copied the tutorial code into our src, just to align with the conventions used. At the end of this post all the allocation and collection types of the built-in [[https://doc.rust-lang.org/alloc/index.html][alloc]] crate will be available in our kernel.
+
+  Our kernel currently uses two types of variables, static and local. Static variables are stored at a fixed memory location and are available for the lifetime of our kernel. Local variables are stored on the
+  [[https://en.wikipedia.org/wiki/Call_stack][call stack]] = [[https://en.wikipedia.org/wiki/Stack_(abstract_data_type)][stack data structure]] that supports =push= and =pop= operations.
+  
+  static variables are encoded directly into the executable and are read only by default. We can modify it using a Mutex though, which allows for a single =&mut= reference to use the variable at a time, passing it around like hot potato. We already use a =Mutex= for our static VGA buffer Writer for example.
+  in addition to static and local:
+  #+begin_quote
+  programming languages often support a third memory region for storing variables called the heap. The heap supports dynamic memory allocation at runtime through two functions called allocate and deallocate. It works in the following way: The allocate function returns a free chunk of memory of the specified size that can be used to store a variable. This variable then lives until it is freed by calling the deallocate function with a reference to the variable.
+  #+end_quote
+
+  The alloc crate which is bundled with the Rust compiler requires some annotations, such as for a static that implements the =GlobalAlloc= trait which is declared as:
+  #+begin_src rust
+  pub unsafe trait GlobalAlloc {
+    unsafe fn alloc(&self, layout: Layout) -> *mut u8;
+    unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout);
+
+    unsafe fn alloc_zeroed(&self, layout: Layout) -> *mut u8 { ... }
+    unsafe fn realloc(
+        &self,
+        ptr: *mut u8,
+        layout: Layout,
+        new_size: usize
+    ) -> *mut u8 { ... }
+  }
+  #+end_src
+
+  - we use the linked_list_allocator crate, but will dive into different heap allocation designs in the next chapter. In the remainder, we implement some tests and show usage of the alloc collections.
+- Allocator Designs
+  The responsibility of an allocator is to manage the available heap memory.
+  - Bump Allocator
+    most simple design - known as a /stack allocator/. It allocates linearly and only keeps track of the number of allocated bytes and the number of allocations.
+    The main advantage of bump allocators is /performance/. It's used in things like Virtual DOMs, but is rarely used in kernel memory allocation. [[https://mgravell.github.io/Pipelines.Sockets.Unofficial/docs/arenas.html][Arena Allocation]] does borrow the concept though, so it's useful to consider. This is a Rust-based arena allocator: [[https://docs.rs/toolshed/0.8.1/toolshed/index.html][toolshed]]
+    The downside is of course that we can't re-use previously allocated registers without clearing all memory from the heap.
+  - Linked List Allocator
+    This is the approach used in the linked_list_allocator crate, also called /pool allocation/. In this approach we store information about the freed region in the region itself. An unbound list can be built by adding a pointer to the next node of freed memory. In this approach we only need a pointer to the first unused region. The resulting data structure is often called a /free list/.
+  - Fixed-Size Block Allocator
+    Similar to Linked List approach, but uses a separate list for each block size (for example 16, 64 and 512). The problem with this approach is it causes unutilized memory due to the need to round up upon allocation.
+    variations:
+    - [[https://en.wikipedia.org/wiki/Slab_allocation][slab allocator]] - this is the first design that came to mind, should definitely investigate, often combined with other allocators. the basic idea is that you map block sizes that correspond directly to selected types in the Kernel - [[https://en.wikipedia.org/wiki/Object_pool_pattern][object pool pattern]]
+    - [[https://en.wikipedia.org/wiki/Buddy_memory_allocation][buddy allocator]] - instead of a linked-list, uses a binary-tree data structure with power-of-2 block sizes. often combined with slab allocator.
+- Async/Await
+  in this post we explore multitasking. worth noting that every system starts with 1 CPU core (before initializing the others).
+  - /Preemptive Multitasking/ - uses OS functionality to switch threads at arbitrary points by forcibly pausing them
+    Guarantees each task gets a fair share of the CPU time, without the need to trust tasks to cooperate.
+    The issue is that each task requires its own stack. This concept is still important because it make it possible to run untrusted userspace programs.  In this post we focus on cooperative multitasking.
+  - /Cooperative Multitasking/ - requires tasks to regularly give up control of the CPU to allow other tasks to make progress.
+    often used at the language level in the form of async/await and coroutines, and in combination with async operations. The issue with these is the possibility of uncooperative tasks that abuse their consumption. They do have strong performance and are a good approach /within/ a program.
+
+  - in Rust
+    - Futures
+      a future represents a value that might not be ready yet. Futures make it possible to continue execution until the value is needed.
+      #+begin_src rust
+pub trait Future {
+    type Output;
+    fn poll(self: Pin<&mut Self>, cx: &mut Context) -> Poll<Self::Output>;
+}
+      #+end_src
+
+    We go into the problems of self-referrential structs and present some solutions. Rust uses the only zero-cost option: /Forbid moving the struct/ - this isolates handling to the type system, but leaves the burden of performing move operations on potentially self-referrential structs to the programmer. Because of this, the pinning API was proposed in [[https://github.com/rust-lang/rfcs/blob/master/text/2349-pin.md][RFC 2349]].
+
+    Pinning is important because most Futures are self-referrential and they take a Pin<&mut Self> parameter. This ensures that the futures are not moved in memory in between =poll= calls. Running many Futures in a system is often managed by an Executor, optionally with a =thread pool= that uses =work stealing= to balance load between the CPU cores. To avoid the overhead of polling futures executors typically take advantage of the =Waker= API supported by Rust's Futures.
+
+    The Waker is initialized by the executor and used by the task to notify the executor that its task has completed. In essence, this system provides a type of cooperative multitasking.
+  - Implementation
+    Futures and async/await are no_std compatible, so nothing special to be done in the src.
+
+*** [[https://doc.redox-os.org/book/][redox-os book]]                  :os:
+:PROPERTIES:
+:ID:       a57e76bb-3888-466d-a34e-fc56085f6120
+:END:
+- Boot process \\
+the first code executed is the bootloader in =bootloader/ARCH/bootsector.asm=. This code is responsible for finding and loading the kernel at address 0x100000, as well as initializing the memory map and VESA display mode
+  - Kernel \\
+The kernel is entered through the interrupt table at 0XFF. Using this method, kernel entry can be contained to a single function =kernel= in =kernel/main.rs= which serves as the entrypoint for the kernel.bin executable file
+  - Init \\
+first process spawned is initfs:/bin/init
+
+The overall design follows the "Everything is a URL" principle, where a URL is simply an identifier for a Scheme and a Resource. 
+#+begin_src text
+             /
+             |                                                          +=========+
+             |                                                          | Program |
+             |                                                          +=========+
+             |               +--------------------------------------+      ^   | write
+             |               |                                      |      |   |
+  User space <  +----- URL -----+                                   | read |   v
+             |  | +-----------+ |       open    +---------+  open   |   +----------+
+             |  | |  Scheme   |-|---+  +------->| Scheme  |------------>| Resource |
+             |  | +-----------+ |   |  |        +---------+             +----------+
+             |  | +-----------+ |   |  |
+             |  | | Reference | |   |  |
+             |  | +-----------+ |   |  |
+             \  +---------------+   |  |
+                            resolve |  |
+             /                      v  |
+             |                 +=========+
+Kernel space <                 | Resolve |
+             |                 +=========+
+             \
+#+end_src
+The kernel is micro-kernel based, which uses the principle of least authority, preferring code to be ran in user space instead of kernel space. This architecture /usually/ leads to a variable level of performance degradation due to the additional context switches between the kernel and user handlers. My current thinking is that there are some clever solutions to the problem of context switching, but I need to further understand where and how often (during which syscalls) they occur, and what the impact is. Anyways in short this 'micro-kernel' is slow, but it is only 16k lines which is insane compared to Linux's 25MILLION
+*** [[https://blog.logrocket.com/rust-cryptography-libraries-a-comprehensive-list/][Rust cryptography libraries: A comprehensive list - LogRocket Blog]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:21]
+	 :ID:       32677679-502e-44d5-93a9-f76ab5face2d
+	 :END:
+
+*** [[https://github.com/dalek-cryptography/bulletproofs][GitHub - dalek-cryptography/bulletproofs: A pure-Rust implementation of Bulle...]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:28]
+	 :ID:       dde2daf8-522b-45c5-aaa5-37a5c980f53e
+	 :END:
+*** [[https://github.com/dtolnay/syn/tree/master/examples/heapsize][heapsize - syn proc_macro example]] 
+:PROPERTIES:
+:ID:       04d794d2-e0b6-4bf5-ba3d-57113d3e51ea
+:END:
+CREATED: [2021-02-07 Sun 05:15]
+
+*** [[https://gitlab.redox-os.org/redox-os][redox-os · GitLab]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       3372baf3-9ea9-4c82-aeac-95d0b1754d0b
+	 :END:
+*** [[https://docs.rust-embedded.org/][Embedded Rust documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       1e0fd71f-2e7d-458c-b21f-c5dd464606b1
+	 :END:
+*** [[https://github.com/rust-embedded/wg][GitHub - rust-embedded/wg: Coordination repository of the embedded devices Working Group]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       54ae450d-e7e9-4761-a45b-f606994b6aae
+	 :END:
+*** [[https://github.com/MabezDev/xtensa-rust-quickstart/blob/master/src/main.rs][xtensa-rust-quickstart/main.rs at master · MabezDev/xtensa-rust-quickstart · GitHub]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       0595cca6-682e-46b6-86b1-431882655daf
+	 :END:
+*** [[https://github.com/rust-lang/rust/blob/master/src/bootstrap/config.rs][rust/config.rs . github]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+   :ID:       602b9a3c-9733-4031-92db-79db530f97f4
+	 :END:
+*** [[https://jakearchibald.com/2017/async-iterators-and-generators/][Async iterators and generators - JakeArchibald.com]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       3fff1915-2081-4d62-bbc0-22438e9bc2d5
+	 :END:
+*** [[https://rustwasm.github.io/book/introduction.html][Introduction - Rust and WebAssembly]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+   :ID:       093df427-e9b3-47e6-a3d0-47b53cbc1564
+	 :END:
+*** [[https://gitlab.freedesktop.org/gstreamer/gstreamer-rs][GStreamer / gstreamer-rs · GitLab]]
+:PROPERTIES:
+:CREATED:  [2020-06-19 Fri]
+:ID:       d9d8e1f8-9d99-40d4-a396-ea5c4953fea3
+:END:
+*** [[https://smallcultfollowing.com/babysteps/blog/2019/10/26/async-fn-in-traits-are-hard/][why async fn in traits are hard]]
+:PROPERTIES:
+:ID:       01bb06e9-781e-41c9-b3c4-6122e44ddd8d
+:END:
+*** [[https://github.com/mersinvald/aquamarine][aquamarine]]                                                       :docs:
+:PROPERTIES:
+:CREATED: [2021-01-31 Sun 23:51]
+:ID:       1f83ca18-8219-4a7c-bafa-764e4af686a8
+:END:
+ - mermaid.js-powered inline dot
+
+*** [[https://doc.rust-lang.org/nightly/std/pin/index.html][std::pin - Rust]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       9c0a6958-3615-4522-9d7f-ccf267c30131
+	 :END:
+
+*** https://crates.io/crates/pin-project
+:PROPERTIES:
+:ID:       92cacdef-1b7c-40f0-8bbc-d237f074585c
+:END:
+*** [[https://doc.rust-lang.org/std/macro.todo.html][std::todo - Rust]]
+:PROPERTIES:
+:ID:       7d69878b-3681-41e8-a548-9bcfd2ba2bd6
+:END:
+CREATED: [2020-08-01 Sat 15:15]
+todo macros for code that is /not yet written/ - =unimplemented!=
+makes no such claims.
+
+*** [[https://internals.rust-lang.org/t/traits-that-should-be-in-std-but-arent/3002][Traits that should be in std, but aren't - libs - Rust Internals]]
+:PROPERTIES:
+:ID:       c25b7cd5-b641-48fc-8f0c-3187d5568eab
+:END:
+
+*** [[https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples][Macros in Rust: A tutorial with examples - LogRocket Blog]]
+:PROPERTIES:
+:ID:       552b810a-490c-4649-9088-84bf9a0529cb
+:END:
+
+*** 
+:PROPERTIES:
+:ID:       1d0b563a-e356-47eb-a3bc-87e8bd2e10d6
+:END:
+
+** crates
+:PROPERTIES:
+:ID:       3e36db85-ae02-4bf7-bc2e-3ca044f85d67
+:END:
+A /Crate/ is just a bundle of Rust code which is often made available
+on [[https://crates.io][crates.io]] for use by the community. In other words, crates = packages.
+*** Firecracker                                                       :vmm:
+:PROPERTIES:
+:ID:       f169f36c-3cf8-4763-bd88-1d3c10f51ee7
+:END:
+**** API                                                            :http:
+:PROPERTIES:
+:ID:       51e90da5-d98d-4d63-86aa-90c718c4802c
+:END:
+***** Requests
+:PROPERTIES:
+:ID:       c4b1fecf-d6a1-478f-9189-92f827ca0aec
+:END:
+- clear the existing socket (fd?), designate a fresh one
+#+begin_src shell
+# start the shell
+rm -f /tmp/firecracker.socket
+firecracker --api-sock /tmp/firecracker.socket
+#+end_src
+- mount kernel image
+#+begin_src shell
+curl --unix-socket /tmp/firecracker.socket -i \
+-X PUT 'http://localhost/boot-source'   \
+-H 'Accept: application/json'           \
+-H 'Content-Type: application/json'     \
+-d "{
+\"kernel_image_path\": \"${kernel_path}\",
+\"boot_args\": \"console=ttyS0 reboot=k panic=1 pci=off\"
+}"
+#+end_src
+- mount rootfs
+#+begin_src shell
+rootfs_path=$(pwd)"/hello-rootfs.ext4"
+curl --unix-socket /tmp/firecracker.socket -i \
+-X PUT 'http://localhost/drives/rootfs' \
+-H 'Accept: application/json'           \
+-H 'Content-Type: application/json'     \
+-d "{
+\"drive_id\": \"rootfs\",
+\"path_on_host\": \"${rootfs_path}\",
+\"is_root_device\": true,
+\"is_read_only\": false
+}"
+#+end_src
+- Start the instance
+#+begin_src shell
+curl --unix-socket /tmp/firecracker.socket -i \
+-X PUT 'http://localhost/actions'       \
+-H  'Accept: application/json'          \
+-H  'Content-Type: application/json'    \
+-d '{
+"action_type": "InstanceStart"
+}'
+#+end_src
+
+*** Tokio                                                           :async:
+:PROPERTIES:
+:ID:       cebd5c3f-80a4-485f-aef6-046dce661382
+:END:
+asynchronous runtime and building blocks for writing network
+applications.
+
+- https://tokio.rs/
+#+begin_quote
+Tokio is an asynchronous runtime for the Rust programming language. It
+provides the building blocks needed for writing network
+applications. It gives the flexibility to target a wide range of
+systems, from large servers with dozens of cores to small embedded
+devices.
+#+end_quote
+**** working with UDP
+:PROPERTIES:
+:ID:       f2d3095b-4df4-4b1c-8d39-1122ae8b1e05
+:END:
+:LOGBOOK:
+- noted [2021-08-25 Wed 18:46] \\
+  this is for tokio v0.2.0
+:END:
+UDP connections are handled similarly to TCP in tokio.
+  - =tokio::net::UdpSocket= provides core functionality for
+    communicating over UDP, in contrast to =TcpListener= and
+    =TcpStream=
+  - =tokio::net::udp= provides UDP utility types
+  - =tokio_util::codec= provides codec utilities to go from a stream
+    of bytes to a /Framed/ stream of bytes (AKA a transport)
+  - connecting to Socket example:
+    [[https://github.com/tokio-rs/tokio/blob/master/examples/connect.rs][tokio/connect.rs at master · tokio-rs/tokio · GitHub]]
+    we just care about the =udp= module which reads and writes from
+    stdin to a UDP Frame.
+
+**** [[https://tokio.rs/tokio/tutorial][tokio tutorial]]
+:PROPERTIES:
+:ID:       f2a14b9c-167e-4e65-a2d4-c55b0f38446d
+:END:
+mini-redis implementation
+- tasks take up a single allocation and 64 bytes of memory
+- the #[tokio:main] macro turns async fn main -> fn main with a default tokio runtime build inserted
+- strategies for sharing state:
+- Guard the shared state with a Mutex.
+- Spawn a task to manage the state and use message passing to operate on it.
+first approach is in shared state, second approach is in channels
+
+#+CAPTION: Bytes vs Vec<u8>
+#+BEGIN_QUOTE 
+The goal of Bytes is to provide a robust byte array structure for
+network programming. The biggest feature it adds over Vec<u8> is
+shallow cloning. In other words, calling clone() on a Bytes instance
+does not copy the underlying data. Instead, a Bytes instance is a
+reference-counted handle to some underlying data. The Bytes type is
+roughly an Arc<Vec<u8>> but with some added capabilities.
+#+END_QUOTE
+
+- parking_lot::Mutex is a faster alternative to std::sync::Mutex.
+
+*** Yew                                                              :wasm:
+:PROPERTIES:
+:ID:       cec91739-c70c-4b89-838d-7bc7857aa60e
+:END:
+Component-based framework for web UIs. Very similar to React or Elm
+- [[https://yew.rs/][Introduction | Yew]]
+  #+begin_quote
+  Yew is a modern Rust framework for creating multi-threaded front-end
+  web apps using WebAssembly.
+  #+end_quote
+- Always use =web-sys= package for new projects. =stdweb= isn't
+  maintained and Yew has frozen support for this feature as of v0.18.0
+- [[https://yew.rs/concepts/components][Components]] are the building block of a Yew application and created
+  by implementing the =Component= trait for a type.
+- The =Component= trait provides the Lifecycle methods used to control
+  state of components.
+   - Methods
+      - create
+      - view
+      - rendered
+      - update
+      - change
+      - destroy
+   - Associated Types
+     The =Component= trait has two associated types: =Message= and =Properties=.
+      - The Message type is often an enum, where each variant is
+        associated with a specific event
+      - Properties represent information that is passed down to a
+        child component from its parent. It's usually a struct, used
+        while creating and updating a component, and can specify sets
+        of required or optional fields.
+- [[https://yew.rs/concepts/components/callbacks][Callbacks]]
+  Components are able to create callbacks and self-update via the component "link".
+   - ComponentLink API
+      - send_message
+      - send_message_batch
+      - callback
+      - batch_callback
+- [[https://yew.rs/concepts/components/properties][Properties]]
+- [[https://yew.rs/concepts/components/children][Children]]
+- [[https://yew.rs/concepts/components/refs][Refs]]
+- [[https://yew.rs/concepts/services][Services]]
+- [[https://yew.rs/concepts/services][Router]]
+- [[https://yew.rs/concepts/html][HTML Integration]]
+- [[https://yew.rs/more/css][CSS Integration]]
+  see the [[https://github.com/yewstack/yew/discussions/2003][current discussion]] on GitHub for Community thoughts on the topic.
+   - css-in-rust isn't maintained (much at least), forks are coming out
+   - there are many yew 'component libraries' for popular CSS frameworks.
+      - I use [[https://crates.io/crates/ybc][ybc]] (BulmaCSS) for my website, for example.
+- In my opinion, the future state of UI is not in web-specific
+  frameworks. This will be more apparent once native WebAssembly is
+  fully supported in browsers without JS APIs, and developers can
+  confidently write WASM bindings without interop concerns with
+  different platforms.
+
+*** Amethyst
+:PROPERTIES:
+:ID:       79d51eed-bb65-4bdd-98e0-7cf166564a6b
+:END:
+- [[https://github.com/amethyst/amethyst][source code]]
+- [[https://book.amethyst.rs/book/stable/][the book]]
+- [[https://book.amethyst.rs/api/stable/amethyst/][docs]]
+**** features
+:PROPERTIES:
+:ID:       e62b4c82-9da0-469e-95d4-b270d7b380d8
+:END:
+- Massively parallel architecture.
+- Powered by a correct Entity Component System model.
+- Rapid prototyping with RON files for prefabs and an abstract scripting API.
+- Strong focus on encouraging reusability and clean interfaces.
+
+*** [[https://docs.rs/salsa20/0.7.2/salsa20/][salsa20 - Rust]]                                                 :cipher:
+:PROPERTIES:
+:CREATED:  [2021-02-13 Sat 00:09]
+:ID:       4b0377c3-1cf5-4107-8562-dafe07ff34b3
+:END:
+
+*** [[https://docs.rs/ipnet/2.3.0/ipnet/][ipnet - Rust]]                                                      :net:
+:PROPERTIES:
+:CREATED:  [2021-02-13 Sat 00:04]
+:ID:       90e047b2-0deb-448b-97fc-b6b03e43664c
+:END:
+
+*** [[https://crates.io/crates/proc-macro2][proc-macro2]]                                                     :macro:
+:PROPERTIES:
+:ID:       be6af7f1-5941-479f-91a6-745b86de910b
+:END:
+CREATED: [2021-02-07 Sun 05:18]
+A superset of proc-macro
+*** [[https://doc.rust-lang.org/reference/procedural-macros.html][proc macros -- Rust Docs]]                                        :macro:
+:PROPERTIES:
+:ID:       4ca937c1-c026-48c4-8e75-3f4a21d088b4
+:END:
+CREATED: [2021-02-07 Sun 05:17]
+*** [[https://github.com/dtolnay/syn/tree/master/examples/lazy-static][lazy-static! - syn example]]                                      :macro:
+:PROPERTIES:
+:ID:       9701251c-887d-4021-8c5c-d4a581a3a4d4
+:END:
+CREATED: [2021-02-07 Sun 05:16]
+*** https://crates.io/crates/esp32                               :embedded:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       402f1181-378d-480c-896c-cd235ecdedbf
+	 :END:
+*** [[https://github.com/tokio-rs/tracing][tracing - github]]                                              :logging:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+   :ID:       720a87d1-7894-4894-9ca5-f21568e374ae
+	 :END:
+*** https://crates.io/crates/petgraph                               :graph:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+   :ID:       202884a2-2f06-4ca0-b9ac-2ca234f075a2
+	 :END:
+*** [[https://crates.io/crates/nannou_osc][nannou_osc - crates.io]]                                            :art:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       16122d4e-e7dd-4413-bc19-6be2a5472aab
+	 :END:
+*** [[https://crates.io/crates/rosc][rosc - crates.io]]                                                  :net:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       59fdfbec-15ce-4bb6-adf8-5ce1d1429f78
+	 :END:
+- [[https://git.klingt.net/alinz/rosc/src/branch/master/examples/sender.rs][alinz/rosc - examples/sender.rs at master - rosc - Gitea]]
+
+*** [[https://docs.rs/crate/frank_jwt/2.1.0][frank_jwt 2.1.0 - Docs.rs]]
+:PROPERTIES:
+:CREATED:  [2021-02-13 Sat 02:27]
+:ID:       6b385d69-0b64-47b2-b80d-435a26384482
+:END:
+
+
+*** rust_pcg
+:PROPERTIES:
+:ID:       b3c62763-9335-40eb-8f92-efdbf0e3b80d
+:END:
+- [[https://docs.rs/rand_pcg/0.3.1/rand_pcg/][docs.rs]]
+- see PCG
+
+*** axum
+:PROPERTIES:
+:ID:       31610939-ae15-426c-87f9-dd8fdf601c3a
+:END:
+web framework by the [[id:cebd5c3f-80a4-485f-aef6-046dce661382][tokio]] team - thin wrapper around =hyper=.

@@ -1,0 +1,21 @@
+* History
+:PROPERTIES:
+:ID: 57fbaf47-0e20-4f48-8402-6163bac5b90b
+:END:
+#+begin_quote
+Progress, far from consisting in change, depends on
+retentiveness. When change is absolute there remains no being to
+improve and no direction is set for possible improvement: and when
+experience is not retained, as among savages, infancy is perpetual.
+Those who cannot remember the past are condemned to repeat it.
+-- /George Santayana, 1905/
+#+end_quote
+#+name: infoHistory
+| event                                         | date        | link |
+|-----------------------------------------------+-------------+------|
+| Signing of the US Declaration of Independence | 1776-07-04  |      |
+| Birth of Albert Einstein                      | 1879-03-14  |      |
+| Victorian Era                                 | 1837 ~ 1901 |      |
+| Romantic Era                                  | 1800 ~ 1890 |      |
+| Industrial Revolution                         | 1760 ~ 1840 |      |
+| Renaissance                                   | 1300 ~ 1600 |      |

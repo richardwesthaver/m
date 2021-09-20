@@ -1,0 +1,13 @@
+* Math
+:PROPERTIES:
+:ID: 4aaf7257-3900-46ca-8f2b-f284bce6d4d0
+:END:
+ - Note :: I'm bad at math
+** Links
+:PROPERTIES:
+:ID:       e81fae72-c07b-41e1-9c49-43c97217ab9b
+:END:
+*** [[https://en.wikipedia.org/wiki/Haversine_formula][Haversine formula - Wikipedia]]
+:PROPERTIES:
+:ID: 6d0b5076-98c6-45c0-9b95-6e9b540d5796
+:END:

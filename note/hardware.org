@@ -1,0 +1,67 @@
+* Hardware
+:PROPERTIES:
+:ID: 040cb38f-923e-47e7-8cbb-dec452878a6f
+:END:
+- [[https://en.wikipedia.org/wiki/Hardware_code_page][Hardware code page - Wikipedia]]
+
+** Gadgets
+:PROPERTIES:
+:ID:       82dbbc73-1154-4426-8685-0b7d5e4d1b71
+:END:
+- interesting gadgets found on the web and beyond
+*** [[https://nakedsecurity.sophos.com/2016/11/29/the-tor-phone-prototype-a-truly-private-smartphone/][Tor Phone Prototype 2016]]
+:PROPERTIES:
+:ID:       84393347-ad8b-411b-9de9-04e7aecf18da
+:CREATED: [2021-01-23 Sat 14:40]
+:END:
+Likely not in-line with what we're searching for, but maybe a fun read
+
+** Computer
+:PROPERTIES:
+:ID:       81fc0153-bfeb-4412-b882-1dcdf563f900
+:END:
+*** Disk
+:PROPERTIES:
+:ID:       7ffff96b-8a79-4233-a062-c4e4764201b2
+:END:
+Disk storage (also sometimes called drive storage) is a general
+category of storage mechanisms where data is recorded by various
+electronic, magnetic, optical, or mechanical changes to a surface
+layer of one or more rotating disks. A disk drive is a device
+implementing such a storage mechanism. Notable types are the hard disk
+drive (HDD) containing a non-removable disk, the floppy disk drive
+(FDD) and its removable floppy disk, and various optical disc drives
+(ODD) and associated optical disc media.
+-- https://en.wikipedia.org/wiki/Disk_storage
+
+**** Filesystems
+:PROPERTIES:
+:ID:       f79e915e-ab9b-47a9-8846-5b9d94d416bb
+:END:
+- Ext4 - https://wiki.archlinux.org/index.php/Ext4
+- ReiserFS
+- HFS+
+- B-Tree
+- XFS
+
+*** Firmware
+:PROPERTIES:
+:ID:       d0f45516-04f4-4da4-84e9-05cc29df51e1
+:END:
+https://en.wikipedia.org/wiki/Firmware
+
+** Keyboard
+:PROPERTIES:
+:ID:       f8b2d415-ab09-4405-957e-0b697fbce1c2
+:END:
+*** Layouts
+:PROPERTIES:
+:ID:       559216d8-fcb8-45d8-ab46-c3e2f880b93d
+:END:
+**** [[https://en.wikipedia.org/wiki/JCUKEN][JCUKEN]]
+:PROPERTIES:
+:ID:       94b061b0-9fd1-4491-bfd5-76688f226f32
+:END:
+:LOGBOOK:
+- refiled on [2021-09-11 Sat 03:57]
+:END:

@@ -1,0 +1,378 @@
+* CONSUME [[https://docs.rs/fst/0.4.6/fst/raw/struct.Fst.html][raw::Fst]]
+
+  :LOGBOOK:
+  - state "CONSUME"    from              [2021-05-23 Sun 06:17] \\
+    gonna use this for fuzzy search :) looks awexome.
+    raw::Fst = acyclic deterministic Finite State Transducer
+  :END:
+
+
+
+
+* CONSUME [[https://iterm2.com/documentation-tmux-integration.html][iterm2 tmux docs]]
+  :LOGBOOK:
+  - state "CONSUME"    from              [2021-07-18 Sun 17:43] \\
+    tmux + iterm2
+  :END:
+
+
+* TODO Configuration
+:PROPERTIES:
+:ID:       0fa1c99b-6452-4b60-be05-6801803600cf
+:END:
+This tool can be configured via a single RON or JSON file. The
+=Config= object
+#+begin_src ron
+// cfg.ron
+#![enable(implicit_some)]
+(
+  path: "/home/ellis/.config/shed.ron",
+  owner: "ellis",
+  src: [],
+  network: (
+    socket: "127.0.0.1:0",
+    transport: "udp",
+    tunnel: None,
+    engine: None,
+    peers: None,
+  ),
+  hgrc: (
+    name: "",
+    contact: "",
+    description: "",
+    extensions: [],
+    sock: "0.0.0.0:0",
+    paths: {},
+  ),
+)
+#+end_src
+* TODO Commands
+:PROPERTIES:
+:ID:       a0f0f72d-475a-49a1-a21f-5d8a604099fd
+:END:
+- serve :: serve a *Collection* over HTTP[fn:3]
+- stash :: add/remove objects in the *stash*
+- store :: add/remove objects in the *store*
+* TODO meta v0.1.0 [0/3]
+:PROPERTIES:
+:ID:       a0eba1fc-5239-4cbd-a3f4-cd24410fb206
+:ARCHIVE_TIME: 2021-09-20 Mon 01:07
+:ARCHIVE_FILE: ~/org/meta/meta.org
+:ARCHIVE_OLPATH: meta/Roadmap
+:ARCHIVE_CATEGORY: meta
+:ARCHIVE_TODO: TODO
+:END:
+alpha release
+- [ ] finalize templates & formatting
+   - sections
+      - abstract
+      - overview
+      - introduction
+      - usage
+      - commentary
+   - headlines
+      - level
+   - properties
+      - category
+      - todo state
+      - tags
+      - id
+   - links
+      - notes
+      - external
+      - bibtex
+   - attachments
+- [ ] meta export commands in [[id:205131fc-ff48-4e0b-a3e8-ab52d5b6ca19][shed]]
+   - [ ] MetaConfig in obj::config
+   - [ ] NoteConfig in obj::config
+- [ ] test
+* TODO JSON parsing for Objects via Objective trait                    :rlib:
+  :LOGBOOK:
+  - state "TODO"       from              [2021-07-04 Sun 20:57] \\
+    implement JSON for all data types passed to and from shed crates
+  :END:
+  At a bare minimum, we need to support data formats of all ranges.
+
+  This means JSON,BIN,ZST,RON for =obj=, RON,BIN at minimum for =cfg=
+
+* CONSUME Jacob's Ladder - movie                                      :movie:
+  :LOGBOOK:
+  - refiled on [2021-07-23 Fri 02:56]
+  - state "CONSUME"    from              [2021-07-23 Fri 02:55]
+  :END:
+
+* CONSUME [[https://osblog.stephenmarz.com/index.html][RISC-V OS in Rust]]                                              :os:
+:LOGBOOK:
+- state "CONSUME"    from "TODO"       [2021-07-25 Sun 22:42]
+- refiled on [2021-07-25 Sun 22:40]
+- state "TODO"       from              [2020-11-28 Sat 11:45]
+:END:
+Github: https://github.com/sgmarz/osblog
++ risc_v/src - contains RISC-V OS in Rust
++ risc_v/src/asm - contains assembly portions
++ risc_v/userspace - contains C++ userspace programs
+
+* CONSUME [[https://portal.mozz.us/gemini/gemini.circumlunar.space/docs/faq.gmi][Gemini Portal]]                                                 :net:
+:properties:
+:created: [2021-07-27 Tue 16:20]
+:ID:       08e34f65-8506-4664-9101-1c2852782dd9
+:end:
+- "The Gemini experience" is roughly equivalent to HTTP where the only request header is "Host" and the only response header is "Content-type" and HTML where the only tags are <p>, <pre>, <a>, <h1> through <h3>, <ul> and <li> and <blockquote>
+
+* NEXT meta updates                                                :doc:meta:
+:LOGBOOK:
+- state "NEXT"       from "TODO"       [2021-08-27 Fri 00:17]
+- state "TODO"       from              [2021-08-13 Fri 18:55] \\
+  address some of the issues Zack had
+  make introduction to all code - more like general overview of topics, where to find things, basic setup
+  create plan for meta project and how projects will be documented, how they will be updated, exported, etc
+  create Roadmap
+:END:
+- devlog
+- structures
+- features
+- roadmap
+- usage
+- docs
+* TODO investigate and implement autoload strategy in config.org      :emacs:
+:properties:
+:created: [2021-08-14 Sat 17:14]
+:ID:       d3bc8b97-f932-46ad-8dcb-6e36acaa10ea
+:end:
+
+* TODO test emacs bootstrap script                                    :emacs:
+:LOGBOOK:
+- state "TODO"       from              [2021-08-14 Sat 17:43]
+:END:
+based on [[https://github.com/raxod502/straight.el/blob/master/install.el][straight.el/install.el at master · raxod502/straight.el · GitHub]]
+
+* TODO create systemd-timers for contrib and pkg management             :vcs:
+:properties:
+:created: <2021-08-16 Mon 01:04>
+:ID:       9cdd5e4c-468a-4221-a585-3f935e5f5330
+:end:
+- hg-pull
+- hg-up - might be included in pull? feel like this doesn't work sometimes..
+- hg-bundle
+- hg-unbundle
+- hg-clean
+
+* CONSUME [[http://hgbook.red-bean.com/][Mercurial: The Definitive Guide]]                               :vcs:
+:properties:
+:created: <2021-08-17 Tue 03:47>
+:ID:       1bd6fe48-b901-4afb-85b7-eecc55cbab75
+:end:
+:LOGBOOK:
+- refiled on [2021-08-17 Tue 04:32]
+- state "CONSUME"    from              [2021-08-17 Tue 03:47]
+:END:
+
+* NEXT create demos and demonstration in meta                          :meta:
+:properties:
+:created: <2021-08-17 Tue 17:00>
+:ID:       b4a58a27-19a6-4446-aada-e5caa527deac
+:end:
+:LOGBOOK:
+- state "NEXT"       from "TODO"       [2021-08-27 Fri 00:17]
+:END:
+for example, how we want to initialize a project in python, write some
+code, then use PyOxidize, and write some Rust code.
+
+* CONSUME [[http://www.cmyr.net/blog/rust-gui-infra.html][Rust GUI Infrastructure]]                                   :rust:ui:
+:properties:
+:created: <2021-08-19 Thu 17:54>
+:ID:       095f9525-0a8d-49e0-9d22-d846aa25d9ac
+:end:
+
+* TODO convert zstd -> zstd-safe                                       :rlib:
+:properties:
+:created: <2021-08-26 Thu 22:38>
+:ID:       f2cc039d-347d-4fcc-94f4-c721e35fd9f5
+:end:
+we have discovered some interesting things that facebook is doing with
+zstd, using the zstd-sys bindings directly. We should try to replicate
+some of their extensions, especially zstdelta.
+https://github.com/facebookexperimental/eden/tree/master/eden/hg-server/lib/zstdelta
+https://crates.io/crates/zstd-safe/4.1.1+zstd.1.5.0
+https://github.com/Nemo157/async-compression/blob/pr%C4%ABmum/Cargo.toml
+
+* TODO create a rustdoc obj type with json repr
+:properties:
+:created: <2021-08-27 Fri 06:05>
+:ID:       95ef73e3-ba66-47af-8c9f-2a3c3ffeeab8
+:end:
+[[https://rust-lang.github.io/rfcs/2963-rustdoc-json.html][2963-rustdoc-json - The Rust RFC Book]]
+* TODO create cargo environment enum in utils
+:properties:
+:created: <2021-08-27 Fri 06:08>
+:ID:       04a642fa-d35c-4db9-8d64-b5ed0106284d
+:end:
+* TODO [[file:/usr/local/share/emacs/28.0.50/etc/spook.lines::\[spook.lines\]][spook.lines]]
+:LOGBOOK:
+- state "TODO"       from              [2021-08-27 Fri 06:10]
+- refiled on [2021-08-27 Fri 06:10]
+:END:
+- add to data store on jekyll
+
+* TODO Org parser init
+:properties:
+:created: <2021-08-27 Fri 21:13>
+:ID:       53526e74-543e-401f-82de-bf9966177f53
+:end:
+keep Orgize or org-rs behind feature as backup and usage in meta build script.
+- Heading
+- Id
+- Properties -- Property
+  are most important
+
+build script will import contents of org repo to data/org
+
+* TODO add prompt and env_var features to babel scripts
+:properties:
+:created: <2021-08-28 Sat 02:53>
+:ID:       32bbae7e-f2ca-4acd-a923-5b3494490afb
+:end:
+take a look at aws and facebook libs to get a better idea of standard
+way to share variables between basic shell scripts. later we need to
+add a bootstrap.py script too
+
+* RESEARCH oauth, jwt and API keys in Rust                             :rlib:
+:properties:
+:created: <2021-08-28 Sat 04:51>
+:ID:       9cb3e76c-876a-40e5-8383-cc906523982f
+:end:
+:LOGBOOK:
+- state "RESEARCH"   from "TODO"       [2021-08-28 Sat 04:52]
+:END:
+this belongs in net::{Client, Server}
+
+* TODO create util::cli::{Cmd, SubCommand, App, Arg} types
+:properties:
+:created: <2021-08-28 Sat 05:28>
+:ID:       a86e7481-9265-472d-af58-93bc4cb862b2
+:end:
+need these wrappers
+
+* TODO implement render time in footer component                       :meta:
+:PROPERTIES:
+:CREATED: <2021-09-03 Fri 07:18>
+:CUSTOM_ID: 113e59c3-03a7-45b4-852b-142915afd27f
+:ID:       b4767d6c-e023-41eb-bda8-cdf180f38bd9
+:END:
+
+
+* RESEARCH  [[https://greatscottgadgets.com/sdr/11/][SDR with HackRF]]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-07-23 Fri 02:56
+:ARCHIVE_FILE: ~/stash/org/notes.old/inbox.org
+:ARCHIVE_CATEGORY: inbox
+:ARCHIVE_TODO: RESEARCH
+:END:
+:LOGBOOK:
+- refiled on [2021-09-11 Sat 03:52]
+- state "RESEARCH"   from              [2020-11-18 Wed 02:29]
+:END:
+- install [[https://github.com/miek/inspectrum][inspectrum]]
+
+* HACK sub crate of ctx - rex - nostd?
+  :LOGBOOK:
+  - refiled on [2021-09-11 Sat 03:56]
+  - state "HACK"       from "TODO"       [2021-09-11 Sat 03:55]
+  - state "TODO"       from "KILL"       [2021-09-01 Wed 00:45]
+  - state "KILL"       from "TODO"       [2021-07-22 Thu 20:37] \\
+    may consider new crate 'metal' for this
+  - state "TODO"       from              [2021-07-11 Sun 17:14] \\
+    rex - the Really Evil eXecutor
+  :END:
+- can still use this with another `metal` crate next to `ctx` - it
+  would be a wrapper for the executor with cross-functionality for
+  parent/child processes
+* TODO create init macro for ctx::cmd
+  :LOGBOOK:
+  - refiled on [2021-09-11 Sat 03:58]
+  - state "TODO"       from              [2021-07-12 Mon 12:26] \\
+    rust ctx main
+  :END:
+  [[elisp:(find-file "~/shed/src/bin/cmd")][bin/cmd]]
+* TODO [[https://www.opensourceshakespeare.org/][opensourceshakespeare]] rust api
+  :LOGBOOK:
+  - refiled on [2021-09-11 Sat 03:58]
+  - state "TODO"       from              [2021-07-12 Mon 11:33] \\
+    make a rust api for this cool service
+  :END:
+* TODO implement simple DNS
+  :LOGBOOK:
+  - refiled on [2021-09-11 Sat 03:59]
+  - state "TODO"       from              [2021-07-13 Tue 22:48] \\
+    [[https://github.com/hatoo/oha/blob/master/src/client.rs#L39][oha DNS]]
+  :END:
+
+* TODO anticorp init
+:PROPERTIES:
+:CREATED: <2021-09-11 Sat 16:52>
+:END:
+* TODO meta-marketing content
+wacky J.R. 'Bob' Dobbs inspired content material
+and that wacky UK car lady
+- webGL render to canvas?
+- audio? probably not
+- text snippets
+
+* TODO anticorp.rs propaganda
+* TODO concept document
+
+* TODO ~envy~
+:PROPERTIES:
+:CREATED: <2021-09-11 Sat 23:18>
+:END:
+idk it just sounded cool lol
+
+* TODO create NAN api client                                          :tenex:
+:PROPERTIES:
+:CREATED: <2021-09-11 Sat 23:19>
+:END:
+:LOGBOOK:
+- noted [2021-09-12 Sun 03:39] \\
+  https://hwurls.com/api/search - send post request with following form params:
+  q=linux&exclude-sites=
+  - same applies for all URLs, so just multiplex it
+:END:
+HTTP Client for News Aggregator Network
+TuxURLs – Linux news aggregator.
+MathURLs – mathematics news aggregator.
+FinURLs – financial news aggregator.
+SciURLs – science news aggregator.
+DevURLs – developer news aggregator.
+TechURLs – technology news aggregator.
+
+* TODO meta v0.1.0 [0/3]
+:PROPERTIES:
+:ID:       a0eba1fc-5239-4cbd-a3f4-cd24410fb206
+:END:
+:LOGBOOK:
+- refiled on [2021-09-20 Mon 01:08]
+:END:
+alpha release
+- [ ] finalize templates & formatting
+   - sections
+      - abstract
+      - overview
+      - introduction
+      - usage
+      - commentary
+   - headlines
+      - level
+   - properties
+      - category
+      - todo state
+      - tags
+      - id
+   - links
+      - notes
+      - external
+      - bibtex
+   - attachments
+- [ ] meta export commands in [[id:205131fc-ff48-4e0b-a3e8-ab52d5b6ca19][shed]]
+   - [ ] MetaConfig in obj::config
+   - [ ] NoteConfig in obj::config
+- [ ] test

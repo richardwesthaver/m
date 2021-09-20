@@ -1,0 +1,21 @@
+* Database
+:PROPERTIES:
+:ID: 737cd881-0f1e-4390-b604-9acc5720dac9
+:END:
+- [[https://en.wikipedia.org/wiki/Extract,_transform,_load][ETL]]
+- [[https://en.wikipedia.org/wiki/Extract,_load,_transform][ELT]]
+  
+** [[https://en.wikipedia.org/wiki/Data_warehouse][Data Warehouse]]
+:PROPERTIES:
+:ID:       2f46e98a-0a23-4bb4-af1b-3b08be1243d6
+:END:
+
+*** [[https://en.wikipedia.org/wiki/Data_mart][Data Mart]]
+:PROPERTIES:
+:ID:       5893d405-66c6-4ca9-86de-d1d468f0054c
+:END:
+
+** [[https://en.wikipedia.org/wiki/Data_lake][Data Lake]]
+:PROPERTIES:
+:ID:       bcdd78cc-46f1-447d-b3d4-56f307016671
+:END:
