@@ -3,9 +3,22 @@
 :ID: e6cf4dca-f6ce-45e0-9504-1c3ad2b238da
 :END:
 - https://en.wikipedia.org/wiki/Finance
-
 ** Methods
 :PROPERTIES:
 :ID:       e372386f-de12-4162-ad4e-bf0ade0f684f
 :END:
-- [[file:ynab.org][YNAB]]
+*** You Need A Budget
+:PROPERTIES:
+:ID: b762bc91-9ff8-4a90-b7af-dbb8b1a7d2ad
+:AKA: YNAB
+:END:
+- https://www.youneedabudget.com
+The core principles of the [[https://www.youneedabudget.com/the-four-rules/][YNAB system]] are:
+- Give every dollar a job
+- Embrace your true expenses
+- Roll with the punches
+- Age your money
+
+Posts on YNAB:
+- https://emacs.cafe/ledger/emacs/ynab/budgeting/2018/06/12/elbank-ynab.html
+- https://sachachua.com/blog/tag/ledger/

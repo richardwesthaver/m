@@ -1,0 +1,58 @@
+* Artificial Intelligence                                                :ai:
+:PROPERTIES:
+:ID:       6651eea3-117f-47fc-9abf-ecf8f6d033d4
+:AKA: AI
+:END:
+** Artificial General Intelligence
+:PROPERTIES:
+:ID:       759d1c0f-1e38-42c1-ba5e-867796dfca89
+:AKA: ALG, full AI, general intelligent action
+:END:
+#+begin_quote
+Artificial general intelligence (AGI) is the hypothetical ability of an intelligent agent to understand or learn any intellectual task that a human being can.
+- [[https://en.wikipedia.org/wiki/Artificial_general_intelligence][Wikipedia]]
+#+end_quote
+** Weak AI
+:PROPERTIES:
+:ID:       07595fdf-1f96-4097-912d-c852b427be4b
+:END:
+** Machine Learning
+:PROPERTIES:
+:ID: 943b8cf4-64b3-402b-b206-c722a326f9ea
+:END:
+- https://en.wikipedia.org/wiki/Machine_learning
+
+- Machine Learning (ML) is a sub-field of AI that focuses
+on the study of algorithms which can be /improved/ with experience.
+*** Natural Language Processing
+:PROPERTIES:
+:ID: f2ad645e-902f-4ec5-abf0-97314022a4f1
+:AKA: NLP
+:END:
+- https://becominghuman.ai/a-simple-introduction-to-natural-language-processing-ea66a1747b32
+
+Natural Language Processing (NLP) is the study of /interactions/
+between computers and human language.
+
+*** Automated Machine Learning
+:PROPERTIES:
+:ID:       910d0f5e-3136-4295-a6b7-cd61adb837ea
+:AKA: AutoML
+:END:
+#+begin_quote
+Automated machine learning (AutoML) is the process of automating the
+tasks of applying machine learning to real-world problems. AutoML
+covers the complete pipeline from the raw dataset to the deployable
+machine learning model. AutoML was proposed as an artificial
+intelligence-based solution to the ever-growing challenge of applying
+machine learning.
+The high degree of automation in AutoML allows non-experts to make use
+of machine learning models and techniques without requiring them to
+become experts in machine learning. Automating the process of applying
+machine learning end-to-end additionally offers the advantages of
+producing simpler solutions, faster creation of those solutions, and
+models that often outperform hand-designed models. AutoML has been
+used to compare the relative importance of each factor in a prediction
+model.
+-- [[https://en.wikipedia.org/wiki/Automated_machine_learning][Wikipedia]]
+#+end_quote
