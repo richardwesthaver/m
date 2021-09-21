@@ -1,0 +1,3172 @@
+* Computer Science                                                       :cs:
+:PROPERTIES:
+:ID:       3321999b-34d2-4c62-a9de-fce29110f068
+:AKA: CS, compsci
+:END:
+#+begin_quote
+Computer science is the study of algorithmic processes, computational
+machines and computation itself.
+-- [[https://www.cs.york.ac.uk/undergraduate/what-is-cs/][What is Computer Science? - Computer Science, University of York]]
+#+end_quote
+** Theoretical Computer Science
+:PROPERTIES:
+:ID:       9c451256-11c8-4111-9f36-9b1aaa2ff6ab
+:AKA: TCS
+:END:
+#+begin_quote
+Theoretical computer science (TCS) is a subset of general computer
+science and mathematics that focuses on mathematical aspects of
+computer science such as the theory of computation, lambda calculus,
+and type theory.
+-- [[https://en.wikipedia.org/wiki/Theoretical_computer_science][Wikipedia]]
+#+end_quote
+*** Algorithms                                                       :algo:
+:PROPERTIES:
+:ID: 74f3683c-e4e8-4d8c-8eea-7b3bb52b41ff
+:END:
+
+#+begin_quote
+a process or set of rules to be followed in calculations or other
+problem-solving operations, especially by a computer.
+#+end_quote
+
+**** RNGs                                                           :rand:
+:PROPERTIES:
+:ID:       0cfb87f8-abc7-4922-a3d7-5383b18add12
+:AKA: Random Number Generator
+:END:
+***** Permuted Congruential Generator
+:PROPERTIES:
+:ID:       1b56e9c3-d63c-4c87-be67-b8a35dd66729
+:AKA: PCG
+:END:
+- [[https://en.wikipedia.org/wiki/Permuted_congruential_generator][wikipedia]]
+**** [[https://en.wikipedia.org/wiki/Binary_search_algorithm][Binary Search]]                                                :search:
+:PROPERTIES:
+:ID:       c963428d-b5b5-4a9b-9912-ab8b17e3cf46
+:END:
+- A very common algorithm used to find the index of a specific item in a
+/sorted/ array.
+- Array must be sorted
+- Executes in logarithmic time
+- Faster than linear search (except for very small arrays)
+- Can be applied easily in many situations
+- There are many variations of binary search such as fractional
+  cascading and exponential search
+- Many data structures provide a better overall design for fast
+  optimal searches, such as Hash Tables
+- [[https://www.hackerearth.com/practice/algorithms/searching/binary-search/tutorial/][Binary Search Tutorials & Notes | Algorithms | HackerEarth]]
+
+**** [[https://en.wikipedia.org/wiki/Merge_sort][Merge sort]]                                                     :sort:
+:PROPERTIES:
+:ID:       9319d0fc-ace5-401c-97b2-a3aea287421a
+:END:
+A divide and conquer algorithm for sorting an array. The array is
+split into immutable chunks and then all chunks are merged in sorted
+order.
+- Invented by John von Neumann in 1945
+**** [[https://en.wikipedia.org/wiki/Lubachevsky%E2%80%93Stillinger_algorithm][Lubachevsky–Stillinger algorithm]]                      :granular_flow:
+  :PROPERTIES:
+  :ID:       7e986f85-e6ca-4f76-b667-bea7fe128b8b
+  :END:
+#+begin_quote
+Lubachevsky-Stillinger (compression) algorithm (LS algorithm, LSA, or
+LS protocol) is a numerical procedure suggested by F. H. Stillinger
+and B.D. Lubachevsky that simulates or imitates a physical process of
+compressing an assembly of hard particles. As the LSA may need
+thousands of arithmetic operations even for a few particles, it is
+usually carried out on a computer.
+#+end_quote
+
+An acoustic phenomena of interest: [[https://en.wikipedia.org/wiki/Singing_sand][Singing sand]]
+
+**** [[https://github.com/apple/swift/pull/39143][An optimal algorithm for bounded random integers]]                :rng:
+:PROPERTIES:
+:ID:       e87c8899-f70f-46f5-ab3c-ace0eabe9ff7
+:END:
+**** [[https://en.wikipedia.org/wiki/ROT13][ROT13]]                                                        :cipher:
+:PROPERTIES:
+:ID:       f45bc97b-fe13-44db-95ba-f3c9f877e568
+:END:
+A very simple, symmetrical substition cipher that shifts a character
+by 13 positions. Since the standard alphabet has 26 characters, this
+operation is its own inverse.
+- The canonical example of weak encryption.
+
+**** [[https://en.wikipedia.org/wiki/Selection_algorithm][Selection algorithm - Wikipedia]]
+:PROPERTIES:
+:ID:       4193b561-27c7-4fe4-a3e4-7a61b8c659ce
+:END:
+***** [[https://en.wikipedia.org/wiki/Quickselect][Quickselect - Wikipedia]]
+:PROPERTIES:
+:ID:       2761e5d3-df1d-43ff-91b2-a8e60ff0469c
+:END:
+**** [[https://en.wikipedia.org/wiki/Sorting_algorithm][Sorting algorithm - Wikipedia]]
+:PROPERTIES:
+:ID:       a4805e40-ccdc-4f64-9581-6c80561b0dfc
+:END:
+***** [[https://en.wikipedia.org/wiki/Quicksort][Quicksort - Wikipedia]]
+:PROPERTIES:
+:ID:       5a7a0e4b-2444-4010-861f-35c7711d7a14
+:END:
+**** [[https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm][Divide-and-conquer algorithm - Wikipedia]]
+:PROPERTIES:
+:ID:       17baa61c-0dfa-41d4-be69-1541929fcccc
+:END:
+
+*** Data Structures
+:PROPERTIES:
+:ID:       3b18c802-d32e-4208-8779-3017c649f1c0
+:END:
+#+begin_quote
+An organization of information, usually in memory, for better
+algorithm efficiency, such as queue, stack, linked list, heap,
+dictionary, and tree, or conceptual unity, such as the name and
+address of a person. It may include redundant information, such as
+length of the list or number of nodes in a subtree.
+-- [[https://xlinux.nist.gov/dads/HTML/datastructur.html][xlinux.nist.gov]]
+#+end_quote
+**** Map
+:PROPERTIES:
+:ID:       b9530429-e281-421e-ae08-623bc78cd6bd
+:AKA: dictionary, dict
+:END:
+A map is a genera
+**** List
+:PROPERTIES:
+:ID:       2178b6c8-81df-4233-b5cd-eeb5cd7c5c6a
+:END:
+**** Array
+:PROPERTIES:
+:ID:       4c5ba40b-6c4e-4320-852b-69da9c2a1ced
+:END:
+***** Vector
+:PROPERTIES:
+:ID:       832bf973-ee96-4a05-b160-a42dbe3017a2
+:AKA: vec
+:END:
+**** Tuple
+:PROPERTIES:
+:ID:       93b57a3d-f4d4-49af-b1b5-7671d807cd45
+:END:
+**** Binary Tree
+:PROPERTIES:
+:ID:       fdb84754-f736-41a8-88ef-ef122ed84a16
+:AKA: btree
+:END:
+
+**** Rope
+:PROPERTIES:
+:ID:       cf085630-073e-47d9-9f5b-8b57d2ae12e1
+:END:
+*** Cryptography
+:PROPERTIES:
+:ID:       3cb89927-649c-4439-872c-00d7971cba42
+:CATEGORY: crypto
+:AKA: crypto
+:END:
+**** Hash                                                    :crypto:hash:
+:PROPERTIES:
+:ID: 99330f0c-bd45-4dc6-942f-4f4c270a0bcf
+:END:
+- https://www.educative.io/edpresso/what-is-hashing
+***** Digital Signatures
+:PROPERTIES:
+:ID:       c68f1319-7d04-434a-b334-1fb27e9b9fec
+:END:
+- [[https://www.ibm.com/docs/en/SSB23S_1.1.0.14/gtps7/ssldig18.gif][https://www.ibm.com/docs/en/SSB23S_1.1.0.14/gtps7/ssldig18.gif]]
+  - [[https://www.ibm.com/docs/en/ztpf/1.1.0.14?topic=concepts-digital-signatures][Digital Signatures - IBM]]
+****** Code Signing
+:PROPERTIES:
+:ID:       1eb81c2f-9716-412a-ba8c-ed8929fab340
+:END:
+#+begin_quote
+Code signing is the process of digitally signing executables and scripts to confirm the software author and guarantee that the code has not been altered or corrupted since it was signed. The process employs the use of a cryptographic hash to validate authenticity and integrity.
+-- [[https://en.wikipedia.org/wiki/Code_signing][Wikipedia]]
+#+end_quote
+**** links
+***** [[https://tools.ietf.org/html/rfc8439][RFC 8439 - ChaCha20 and Poly1305 for IETF Protocols]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 03:07]
+	 :ID:       395390b0-f920-4e6e-8a1a-21743538036d
+	 :END:
+***** [[https://en.wikipedia.org/wiki/Salsa20#ChaCha_variant][Salsa20 - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:59]
+	 :ID:       f81e6d23-1196-4277-9fac-46ff07ab7c07
+	 :END:
+	 - ChaCha variant - most common stream cipher nowadays.
+***** [[https://en.wikipedia.org/wiki/Stream_cipher][Stream cipher - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:48]
+	 :ID:       28828afb-9e9b-4b64-a958-2d8bd72dd559
+	 :END:
+***** [[https://dalek.rs/][dalek cryptography]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:28]
+	 :ID:       b08792ce-1926-49fe-9975-786294d90d73
+	 :END:
+	 love this site design
+***** [[https://en.wikipedia.org/wiki/Public_key_infrastructure][Public Key Infrastructure - Wikipedia]]
+:PROPERTIES:
+:ID:       0e329223-b1ac-4109-b218-7f467e6b67f2
+:END:
+CREATED: [2021-01-22 Fri 04:20]
+#+CAPTION: PKI
+#+ATTR_HTML: :alt PKI image
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Public-Key-Infrastructure.svg/450px-Public-Key-Infrastructure.svg.png]]
+***** [[https://developer.okta.com/blog/2019/10/23/dangers-of-self-signed-certs][The Dangers of Self-Signed Certificates | Okta Developer]]
+:PROPERTIES:
+:ID:       bd03f57d-11e2-4022-a856-2ee7b74db1d5
+:END:
+CREATED: [2020-08-05 Wed 18:27]
+***** [[https://tools.ietf.org/html/rfc7748][RFC 7748 - Elliptic Curves for Security]]
+:PROPERTIES:
+:ID:       205e0909-dc8c-4e49-abe5-a2441d53edda
+:END:
+CREATED: [2020-08-01 Sat 00:04]
+defines some familiar elliptical curves for practical security,
+including in TLS. They work at ~128-bit and ~224-bit security levels.
+***** [[https://tools.ietf.org/html/rfc5116][RFC 5116 - An Interface and Algorithms for Authenticated Encryption]]
+:PROPERTIES:
+:ID:       efbbc943-7a94-4eab-bf2f-6035594b1726
+:END:
+CREATED: [2020-08-01 Sat 16:55]
+AEAD descriptions - we're usually going for a form of this approach
+with MAC+Encrypt
+***** [[https://tools.ietf.org/html/rfc2104][RFC 2104 - HMAC: Keyed-Hashing for Message Authentication]]
+:PROPERTIES:
+:ID:       793739bd-0aba-487a-88be-08b2e8236050
+:END:
+CREATED: [2020-07-31 Fri 23:52]
+HMAC - often used with MD5, SHA-1, etc, plus a secret shared key.
+Key Hashing
+***** [[https://letsencrypt.org/2018/04/04/sct-encoding.html][Engineering deep dive: Encoding of SCTs in certificates - Let's Encrypt - Free SSL/TLS Certificates]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-14 Tue]
+   :ID:       3950dd2d-05f0-42f4-8c37-7e325f640a0f
+	 :END:
+*** Automata Theory
+:PROPERTIES:
+:ID:       971bce74-6e41-4caf-8c31-a3cc9871995b
+:END:
+#+begin_quote
+Automata theory is the study of abstract machines and automata, as
+well as the computational problems that can be solved using them. It
+is a theory in theoretical computer science. The word automata (the
+plural of automaton) comes from the Greek word αὐτόματος, which means
+"self-acting, self-willed, self-moving".
+-- [[https://en.wikipedia.org/wiki/Automata_theory][Wikipedia]]
+#+end_quote
+*** Programming Language Theory
+:PROPERTIES:
+:ID:       c6cc3ff7-bb41-4887-a948-0d9abaa1fa16
+:AKA: PLT, programming language, pl, lang
+:END:
+#+begin_quote
+Programming language theory (PLT) is a branch of computer science that
+deals with the design, implementation, analysis, characterization, and
+classification of formal languages known as programming languages and
+of their individual features.
+-- [[https://en.wikipedia.org/wiki/Programming_language_theory][Wikipedia]]
+#+end_quote
+**** Concepts
+:PROPERTIES:
+:ID:       bf3b9f52-4826-48be-85d9-33eb9ee55b32
+:END:
+***** Functions                                                      :fn:
+:PROPERTIES:
+:ID:       cd26c769-99c5-4233-adc4-ea50c6804317
+:END:
+
+****** Lambdas
+:PROPERTIES:
+:ID:       81db098f-c5c4-40d0-89e8-b130ac3eba13
+:END:
+Anonymous functions
+****** Methods
+:PROPERTIES:
+:ID:       9dd11b83-c6fc-4972-a421-1053cc7a01dd
+:END:
+****** Statics
+:PROPERTIES:
+:ID:       350df744-484e-41f4-ba70-eae9a486dc27
+:END:
+***** Types
+:PROPERTIES:
+:ID:       61e175d2-d398-45a0-8b9d-993ac52354f2
+:END:
+****** Primitives
+:PROPERTIES:
+:ID:       37ec4505-43f3-4e05-a322-bf6518bb0535
+:END:
+****** Generics
+:PROPERTIES:
+:ID:       ce4662ac-d0c8-4a85-9a87-c3480ebb9ceb
+:END:
+****** Complex
+:PROPERTIES:
+:ID:       62cde2c5-03df-4267-b39f-fc8cdb5e39a2
+:END:
+***** Control Structures
+:PROPERTIES:
+:ID:       0bf2e878-1f35-4def-9c46-850b9efa86d3
+:END:
+****** Sequence
+:PROPERTIES:
+:ID:       e40a8d5b-56bb-4d3d-9538-5b85285e259a
+:END:
+the default, line-by-line approach to control flow.
+****** Selection
+:PROPERTIES:
+:ID:       f55e8242-58d7-4c35-9c97-74b2b7a9dc76
+:END:
+in C++:
+- if
+- if/else
+- switch
+****** Iteration
+:PROPERTIES:
+:ID:       f17c89b0-8d4d-4c2b-aeae-4422088eb435
+:END:
+in C++:
+- while
+- do/while
+- for
+
+**** History                                                     :history:
+:PROPERTIES:
+:ID:       9a2b8cc3-234b-410b-80ed-9115e15f0a12
+:END:
+***** [[https://www.csee.umbc.edu/courses/pub/WWW/courses/undergraduate/CMSC331/fall08/0101/notes/02/02history.pdf][The History of Programming Languages]] :deck:
+:PROPERTIES:
+:ID:       e318a7fc-23ba-4259-b4ae-74fc4cc5cff1
+:CREATED: [2021-01-26 Tue 16:24]
+:END:
+A wonderful visual history reference
+** Computer Programming
+:PROPERTIES:
+:ID:       3f293465-adc9-43f3-ad75-9a711594ed33
+:END:
+#+begin_quote
+Computer programming is the process of designing and building an
+executable computer program to accomplish a specific computing result
+or to perform a specific task. Programming involves tasks such as:
+analysis, generating algorithms, profiling algorithms' accuracy and
+resource consumption, and the implementation of algorithms in a chosen
+programming language (commonly referred to as coding).
+-- [[https://en.wikipedia.org/wiki/Computer_programming][Wikipedia]]
+#+end_quote
+*** Paradigms
+:PROPERTIES:
+:ID:       22d4609c-a42d-481e-82a2-94a8c10eda64
+:END:
+**** Declarative Programming
+:PROPERTIES:
+:ID: 0df5feca-9539-4593-8000-fea3ae88f630
+:END:
+-  https://en.wikipedia.org/wiki/Declarative_programming
+
+- [[file:functional-programming.org][Functional Programming]]
+
+**** Functional Programming
+:PROPERTIES:
+:ID: f0816d6c-91c4-4aad-a25b-8d699772fd4f
+:END:
+- https://en.wikipedia.org/wiki/Functional_programming
+
+**** Imperative Programming
+:PROPERTIES:
+:ID: 6199a3af-7f64-4acc-892d-0f3d81231640
+:END:
+- https://en.wikipedia.org/wiki/Imperative_programming
+***** Object-oriented Programming
+:PROPERTIES:
+:ID: 546d70b8-e290-466d-97be-d2486519631f
+:END:
+- https://en.wikipedia.org/wiki/Object-oriented_programming
+Object-oriented Programming (OOP for short) is a programming model
+that organizes code around /objects/, and emphasizes the focus on
+objects that we want to manipulate, rather than the functions and
+logic necessary to manipulate them.
+
+****** Object
+:PROPERTIES:
+:ID:       34165563-0d62-4397-a4a9-2dc1671e0bf3
+:END:
+Objects can be definied as data fields that have /unique attributes
+and behavior/. They are most often identified through [[https://en.wikipedia.org/wiki/Data_modeling][data modeling]],
+which is the practice of organizing an Information system by applying
+a variety of formal techniques.
+
+****** Principles of OOP
+:PROPERTIES:
+:ID:       ce611680-4fbb-47bf-9bb5-2924a702b2fc
+:END:
+
+******* Encapsulation
+:PROPERTIES:
+:ID:       a92b9f7d-8961-4cbe-9f65-3cb9857323dd
+:END:
+
+******* Abstraction
+:PROPERTIES:
+:ID:       a6bc138c-5018-404d-9814-b5e7b7968674
+:END:
+
+******* Ineritance
+:PROPERTIES:
+:ID:       bb4dfff6-8afa-4470-99db-6b92e988ed27
+:END:
+
+******* Polymorphism
+:PROPERTIES:
+:ID:       1127dc87-b7f2-46f4-9141-593087a8f5c8
+:END:
+*** Patterns
+:PROPERTIES:
+:ID:       ad0031c2-9be9-40cb-8a3e-1c6091537221
+:END:
+**** Builder Pattern
+:PROPERTIES:
+:ID:       f81d600b-f5c5-43c1-bde9-cef476de4a04
+:END:
+- [[https://en.wikipedia.org/wiki/Builder_pattern][wikipedia]]
+**** Unit Testing
+:PROPERTIES:
+:ID: ba479a69-fd34-470d-b278-1f9b2229a487
+:END:
+- https://en.wikipedia.org/wiki/Unit_testing
+
+Nowadays it is often useful to write unit tests which accompany core
+source code. A unit test is a /language-agnostic/ module that is
+responsible for determing whether or not a piece of source code is fit
+for use. They are often written in the same directories, or even the
+same files that source code is written in, although this depends on
+the given programming language.
+
+The piece of source code that is tested can be referred to as a
+=unit=, which is a neutral enough term. Another way to think of it is
+as the =scope= that is given to the unit test, or the code that is
+=executed= by a unit test.
+
+When tech guys chatter about [[https://en.wikipedia.org/wiki/Code_coverage][code coverage]], I understand it as the
+relative amount of code that is "covered" by unit tests compared to
+the amount of code that is not (but I've also heard it referred to as
+a measure of documentation?  meh).
+
+Naturally we like to shoot for perfection, and have every snippet of
+code we write be covered by a unit test, but this isn't always
+practical. Software deployments consisting of hand-made code are
+increasing in frequency at a rapid rate (which is /awesome/). Amazon,
+for example, was deploying new code to production every 11.7 seconds
+on average [[https://blog.newrelic.com/technology/data-culture-survey-results-faster-deployment/][as early as 2016]]. How are we supposed to keep up?? There's
+no way we can demand that developers maintain an up-to-date branch of
+the production code base after all..
+
+In my opinion, the most scaleable solution, which is also employed at
+many companies with a strong web presence, is through [[https://en.wikipedia.org/wiki/Systems_architecture][system architecture]].
+**** Async/await
+:PROPERTIES:
+:ID:       25c29048-a6b4-47f0-8122-a74b10fe5651
+:END:
+*** Models
+:PROPERTIES:
+:ID:       0e932ce2-bc13-4a78-b5d7-67d3138908dc
+:END:
+**** [[http://www.linfo.org/osi_model.html][OSI reference model definition by The Linux Information Project]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+   :ID:       12b01584-1e42-40fe-8608-daf0456ecf49
+	 :END:
+**** Agent-based
+:PROPERTIES:
+:ID:       a2c417db-d650-46a3-95ff-0324b2e7907c
+:END:
+- [[https://en.wikipedia.org/wiki/Agent-based_model][wikipedia]]
+
+#+begin_quote
+Agent-based models (ABM) are computer programs that define agents,
+virtual entities that imitate the decision-making processes and
+interactions of real people, animals, neurons, computers, or other
+individuals. ABMs have a wide range of applications. For example, an
+ABM can study a flock of birds. The behavior of each virtual bird can
+be as simple as just trying to fly in close proximity to the nearest
+neighbor; the software can show that this birds combine their behavior
+to generate the complex, adaptive patterns of flight of real
+flocks. An ABM can also study economic behavior: in a virtual society,
+sellers of goods set a price based on limited information they have
+about the market, and buyers may bargain based on their own limited
+information about the market. Even with simple rules, an economic ABM
+can generate complex patterns that can be useful to understand real
+macroeconomic trends.
+-- [[https://github.com/facorread/rust-agent-based-models][facorread/rust-agent-based-models]]
+#+end_quote
+*** Approaches
+:PROPERTIES:
+:ID:       398ec0b0-227d-41ea-a06d-25042b5176e5
+:END:
+**** System Programming                                              :sys:
+:PROPERTIES:
+:ID:       2b291c78-676c-4cae-bf17-3e76ca3541ae
+:AKA: systems programming
+:END:
+#+begin_quote
+[...] System programming is the practice of
+writing system software. System software lives at a low level,
+interfacing directly with the kernel and core system libraries. Your
+shell and your text editor, your compiler and your debugger, your core
+utilities and system daemons are all system software. But so are the
+network server, the web server, and the database. These components are
+entirely system software, primarily if not exclusively interfacing
+with the kernel and the C library. Other software (such as high-level
+GUI applications) lives at a higher level, delving into the low level
+only on occasion. Some programmers spend all day every day writing
+system software; others spend only part of their time on this
+task. There is no programmer, however, who does not benefit from an
+understanding of system programming. Whether it is the programmer’s
+raison d'être, or merely a foundation for higher-level concepts,
+system programming is at the heart of all software that we write.
+-- [[https://www.oreilly.com/library/view/linux-system-programming/9781449341527/ch01.html][Linux System Programming, 2nd Edition [Book]​]]
+#+end_quote
+**** Hacking                                                        :hack:
+:PROPERTIES:
+:ID:       c57e016c-cfa4-40f2-a5b5-a4dbacd12fce
+:END:
+***** Buffer Overflows                                              :mem:
+   :PROPERTIES:
+   :ID:       3b3d3abb-a401-4bc9-abd0-24b0fe7e4b02
+   :AKA: buffer overrun
+   :END:
+   #+begin_quote
+   Buffer overflow, or Buffer Overrun is a software error triggered when a program does not adequately control the amount of data that is copied over the buffer, if this amount exceeds the preassigned capacity, remaining bytes are stored in adjacent memory areas by overwriting its original content. This can be exploited by overwriting a fuction's return address to cause arbitrary code execution and allow access to a vulnerable system. 
+   -- [[https://nets.ec/Buffer_overflow][n3t2.3c]]
+   #+end_quote
+   - security measure considerations
+      - [[id:0a438ddb-49ba-47e8-bca0-149de48d7bdc][ASLR]]
+      - [[id:5d4796b9-ff44-4553-98bc-bacdfc296740][Executable-space Protection]]
+        - [[id:b9c33f21-6389-40bc-8cf2-82bc1135a84f][DEP]]
+
+***** Return-oriented Programming                                   :rop:
+   :PROPERTIES:
+   :ID:       d795cbc0-50e9-45da-8309-b90830951ec4
+   :AKA: ROP
+   :END:
+   #+begin_quote
+   Return-oriented programming (ROP) is a computer security exploit technique that allows an attacker to execute code in the presence of security defenses such as executable space protection and code signing.   
+   -- [[https://en.wikipedia.org/wiki/Return-oriented_programming][Wikipedia]]
+   #+end_quote
+   - go go gadget =pop rdi; ret;=!
+
+***** Cracking                                                     :hash:
+:PROPERTIES:
+:ID:       0d35be9a-1c65-4eec-87a7-0752f8401b1d
+:END:
+It seems this term has different meanings based on context (see [[https://www3.nd.edu/~amcadams/PolS486/Morality/hack.html][this]]
+comparison). Here, we're not talking about ethics, or what is a 'good'
+or 'bad' hacker. Cracking in my mind is the process which results in a
+/repeatable/ method of de-obfuscating some digital resource. This
+resource can be a computer program, a hash, or any other encrypted
+output of a cryptographic algorithm.
+
+cracking programs for hash-based resources:
+- [[https://github.com/hashcat/hashcat][hashcat]]
+- [[https://www.openwall.com/john/][JohnTheRipper]]
+
+*** Formatting                                                        :fmt:
+**** Indentation
+#+begin_quote
+In computer programming, an indentation style is a convention
+governing the indentation of blocks of code to convey program
+structure.
+-- [[https://en.wikipedia.org/wiki/Indentation_style][Wikipedia]]
+#+end_quote
+*** Concretes
+:PROPERTIES:
+:ID:       3ee2d6a3-9c16-4357-9d92-e9ef73a1ac45
+:END:
+**** Memory                                                          :mem:
+:PROPERTIES:
+:ID:       4c339c03-33be-48cf-95d3-85a0054c1efd
+:AKA: mem
+:CATEGORY: programming
+:END:
+***** Allocation                                                  :alloc:
+:PROPERTIES:
+:ID:       4100b13e-69f4-437a-ab41-63340878049d
+:END:
+****** Arenas
+:PROPERTIES:
+:ID:       bada6142-c741-4d7a-8533-19022eb1ae0b
+:END:
+#+begin_quote
+Arena allocation is a memory management technique where a set of
+objects have the same lifetime and can be deallocated at the same
+time. An arena is an object responsible for allocating and
+deallocating the memory. Since large chunks of memory are allocated
+and deallocated at once (rather than allocating individual objects),
+arena allocation is very efficient. Usually, all the objects are
+allocated from a contiguous chunk of memory, that improves cache
+coherency when you are traversing the graph.
+-- [[https://aminb.gitbooks.io/rust-for-c/content/graphs/][Rust for C++ Programmers]]
+#+end_quote
+***** Security                                                 :security:
+   :PROPERTIES:
+   :ID:       f5ac5bbe-a18d-4cd7-ae33-85782cbae46e
+   :END:
+****** Address Space Layout Randomization
+    :PROPERTIES:
+    :ID:       0a438ddb-49ba-47e8-bca0-149de48d7bdc
+    :AKA: ASLR
+    :END:
+    #+begin_quote
+    ASLR is a runtime security measure that randomizes the memory addresses that programs load data and code into. Usually implemented at the Operating System level, this will change the location of loaded code at each boot for libraries that are nx compliant. ASLR Bypass is typically achieved by exploiting a non nx compliant library in the context of an nx compliant operating system.
+    [[https://nets.ec/ASLR][ASLR]]
+    #+end_quote
+****** Executable-space Protection
+    :PROPERTIES:
+    :ID:       5d4796b9-ff44-4553-98bc-bacdfc296740
+    :END:
+    #+begin_quote
+    In computer security, executable-space protection marks memory regions as non-executable, such that an attempt to execute machine code in these regions will cause an exception. 
+    -- [[https://en.wikipedia.org/wiki/Executable_space_protection][Wikipedia]]
+    #+end_quote
+******* Data Execution Prevention                             :windows:
+     :PROPERTIES:
+     :ID:       b9c33f21-6389-40bc-8cf2-82bc1135a84f
+     :AKA: DEP
+     :END:
+     - the name for executable-space protection in Windows systems
+
+*** Languages                                                        :lang:
+:PROPERTIES:
+:ID:       9f3f832c-53e7-46da-968e-858c1637f675
+:END:
+- [[id:b46de918-896e-420d-8cde-09c21ae93ecd][Rust]]
+- [[id:22928e28-f482-40c8-a5ef-0f6857fbd994][C]]
+- [[id:b3d70401-020f-4ae8-bc48-ceee1489bc7c][C++]]
+- [[id:249c2d3e-9d59-4f1f-9f6f-ad68ab04d1d3][Python]]
+- [[id:2a2818ba-2fee-4cf9-87f5-45cb66512265][Lua]]
+- [[id:82eae0d0-bec2-4c70-b003-f43c1ca1c781][COBOL]]
+- [[id:52d04515-6aeb-4a23-8ca3-31fa5f3a85e0][Bash]]
+**** C                                                                 :c:
+:PROPERTIES:
+:ID: 22928e28-f482-40c8-a5ef-0f6857fbd994
+:END:
+- https://en.wikipedia.org/wiki/C_(programming_language)
+- [[https://docs.microsoft.com/en-us/cpp/c-language/c-language-reference?view=msvc-160][C Language Reference | Microsoft Docs]]
+- [[https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html][The GNU C Reference Manual]]
+- [[https://en.cppreference.com/w/c/language][C language - cppreference.com]]
+**** C++                                                             :cpp:
+:PROPERTIES:
+:ID:       b3d70401-020f-4ae8-bc48-ceee1489bc7c
+:END:
+- [[https://en.cppreference.com/w/][cppreference.com]]
+***** [[https://www.reddit.com/r/rust/comments/bya8k6/programming_with_rust_vs_c_c/eqfcu0s?utm_source=share&utm_medium=web2x][Redditor comment regarding the C++ ecosystem]]
+:PROPERTIES:
+:ID:       2e71d133-1492-4718-a2fe-42c4883ec727
+:END:
+This Redditor with 12y of XP writing C++ talks about all the
+complexities involved with coding in C++. OP is asking about some of
+the nuances of [[file:rust.org][Rust]] vs. C++, and our Redditor avoids regurgitating the
+common arguments that are given for Rust in favor of C++ - namely
+Memory Safety and Data Races. A fitting quote from Nietszche is given
+as explanation for not addressing those issues:
+
+#+begin_quote
+Whoever fights with monsters should see to it that he does not become
+a monster in the process. And when you gaze long into an abyss the
+abyss also gazes into you
+
+-- Friedrich Nietzsche
+#+end_quote
+***** RocksDB
+:PROPERTIES:
+:ID:       ccd8e770-844d-44ea-8697-4366498eec39
+:END:
+RocksDB is a /persistent/ key-value store, where Keys and Values are
+*arbitrary byte arrays*. It's maintained by the Facebook Database
+Engineering Team and built as a c++ library. [[https://raw.githubusercontent.com/facebook/rocksdb/gh-pages-old/intro.pdf][The Story of RocksDB]]
+provides some background info and a [[https://github.com/facebook/rocksdb/wiki][wiki]] is provided in the repo.
+
+****** Why RocksDB?
+:PROPERTIES:
+:ID:       592d04b6-465c-460d-8402-5e62acd91345
+:END:
+  - i like it
+  - file system, storage medium, and mostly platform agnostic
+  - [[https://github.com/facebook/rocksdb/wiki/Direct-IO][Direct-IO]]
+  - caters to a variety of use cases
+****** Exploring Rocks
+:PROPERTIES:
+:ID:       2a1a1b60-f927-4de6-b90a-69bf03edb62d
+:END:
+  first step is to clone the repo and take a peak at the examples.
+
+  - clone repo & compile static_lib
+
+  #+begin_src sh :exports code
+git clone https://github.com/facebook/rocksdb && cd rocksdb
+make static_lib
+cd examples/; make all
+  #+end_src
+
+  the examples don't output anything to stdout when they're run, but many of them store database files under a directory in =/tmp= which can be inspected. after compiling the library in the root you get a =make_config.mk= which is include'd in =examples/makefile=. worth checking out to get a better understanding of how examples are compiled (with g++).
+
+  let's take a look at the output of options_file_example:
+
+  #+begin_src sh :exports both :eval never-export
+cd ./media/01/rocksdb_options_file_example && ls
+  #+end_src
+
+  #+results:
+  | 000012.log               |
+  | CURRENT                  |
+  | IDENTITY                 |
+  | LOCK                     |
+  | LOG                      |
+  | LOG.old.1621383828949925 |
+  | MANIFEST-000011          |
+  | OPTIONS-000009           |
+  | OPTIONS-000014           |
+
+  The LOG file looks like this:
+  #+begin_example
+ 7f1c37455ac0 RocksDB version: 6.20.0
+ 7f1c37455ac0 Git sha a0e0feca6281e6f3c207757a15f6b99d3a67070d
+ 7f1c37455ac0 Compile date 2021-04-28 12:52:53
+ 7f1c37455ac0 DB SUMMARY
+ 7f1c37455ac0 DB Session ID:  73HSPOGLJMAK0WD2FX8D
+ 7f1c37455ac0 CURRENT file:  CURRENT
+ 7f1c37455ac0 IDENTITY file:  IDENTITY
+ 7f1c37455ac0 MANIFEST file:  MANIFEST-000004 size: 110 Bytes
+ 7f1c37455ac0 SST files in /tmp/rocksdb_options_file_example dir, Total Num: 0, files: 
+# ...
+  #+end_example
+
+  and the OPTIONS file like this:
+  #+begin_example
+[Version]
+  rocksdb_version=6.20.0
+  options_file_version=1.1
+
+[DBOptions]
+# ...
+  #+end_example
+
+  DB [[https://github.com/facebook/rocksdb/wiki/RocksDB-Options-File][Option Files]] are stored in [[https://en.wikipedia.org/wiki/INI_file][INI]] format. There are a looooot of
+  options and a lot of information shown in the LOG. Yikes!
+	
+****** Some Code
+:PROPERTIES:
+:ID:       6190e8d5-9101-4644-8445-762c4bcfa0e3
+:END:
+
+  After poking around in the wiki for a bit and learning about the
+  [[https://github.com/facebook/rocksdb/wiki/Basic-Operations][Basic Operations]], we can build a helloworld-db tool of our own for
+  testing. We'll also make a simple Makefile that compiles our code
+  with [[https://clang.llvm.org/][Clang]]. We're not going to do much with this program right now
+  since the [[https://github.com/facebook/rocksdb/tree/master/examples][examples]] and [[https://github.com/facebook/rocksdb/wiki][wiki]] provide plenty of reading material.
+  
+  - helloworld.cc
+
+    boneless =simple_example.cc= from the examples
+
+     #+begin_src cpp
+#include <iostream>
+#include <string>
+#include <vector>
+
+#include "rocksdb/db.h"
+#include "rocksdb/options.h"
+
+using namespace rocksdb;
+
+std::string db_path = "infodb";
+DB* db;
+Options options;
+	
+void run() {
+	options.IncreaseParallelism();
+	options.OptimizeLevelStyleCompaction();
+	options.create_if_missing = true;		
+	Status s = DB::Open(options, db_path, &db);
+	assert(s.ok());
+
+	std::string value;	
+  s = db->Get(ReadOptions(), "some_key", &value);
+  assert(s.IsNotFound());
+}
+
+int main() {
+	run();
+	
+	delete db;
+	return 0;
+}
+      #+end_src
+
+    - Makefile
+
+      compile =helloworld.cc= with Clang, link rocksdb dynamically
+      (for now). We can see the linked .so files with =ldd
+      ./helloworld= command after compiling.
+
+      #+begin_src makefile
+	.PHONY: clean
+	_: compile
+	compile: helloworld.cc
+		clang++ -Wall helloworld.cc -ohelloworld -lrocksdb
+
+	clean:
+		rm -rf helloworld
+      #+end_src
+
+    After compiling with ~make~ and running ~./helloworld~ we get some
+    files dumped to ~./infodb~ with the same structure as the
+    examples.
+****** Column Families
+:PROPERTIES:
+:ID:       50580a3f-5e5c-44e7-bda9-ed496c730923
+:END:
+
+  [[https://github.com/facebook/rocksdb/wiki/Column-Families][Column Families]] are a feature of RocksDB that allows us to logically
+  partition our database. HOWEVER, these are not 'columns' as they are
+  known in relational databases. Column Families are simply a new
+  namespace for key:val pairs. If we implement our Column Families
+  correctly , we can /build/ a full database model, relational or
+  otherwise. These features are what makes embedded key:val stores
+  like RocksDB unique - they are *primitive*, and allow developers an
+  insane level of flexibility in their implementations.
+
+  Going forward, how we partition our database through Column Families
+  will play an important role in how useful it is, and how easily we
+  can build additional layers of processing and API on top of it.
+
+  For now, we'll just take a peek at [[https://github.com/indradb/indradb][IndraDB]] and how Column Families
+  are used in their implementation to store [[https://en.wikipedia.org/wiki/Graph_(abstract_data_type)][Graph]] data structures.
+
+******* IndraDB Implementation
+:PROPERTIES:
+:ID:       4d900f5e-3e00-499b-a352-3e11b8fad418
+:END:
+
+   IndraDB is a Graph Database library written in Rust. It's heavily
+   inspired by [[https://www.cs.cmu.edu/~pavlo/courses/fall2013/static/papers/11730-atc13-bronson.pdf][TAO]] (an excellent read btw) and allows for arbitrary
+   /Properties/ to be stored with any Node or Edge. IndraDB supports
+   quite a few different backends, but we're only interested in the
+   RocksDB impl, more specifically, [[https://github.com/indradb/indradb/tree/master/lib/src/rdb][lib/src/rdb]]. The column family
+   names can be found in [[https://github.com/indradb/indradb/blob/master/lib/src/rdb/datastore.rs][datastore.rs]]:
+
+   #+begin_src rust
+const CF_NAMES: [&str; 6] = [
+    "vertices:v1",
+    "edges:v1",
+    "edge_ranges:v1",
+    "reversed_edge_ranges:v1",
+    "vertex_properties:v1",
+    "edge_properties:v1",
+];
+   #+end_src
+
+   =vertices=, =edges=, =edge_ranges=, and =reversed_edge_ranges= are
+   directly derived from the TAO Model. =vertex_properties= and
+   =edge_properties= represent encoded JSON objects (i.e. properties)
+   that can be attached to =vertices= and =edges=. The first four
+   Column Families are all we need to create the TAO Graph
+   implementation so we'll focus on those and set aside properties.
+
+   *Vertices* are ("vertex_id" : "vertex_type") and *Edges* are
+   ("edge_id" : "edge_type"), but what are 'edge_ranges' and
+   'reversed_edge_ranges'? The answer is evident when we consider what
+   we actually get from =vertices= and =edges=. We get a single k/v
+   pair, but no way to connect them, which makes them pretty useless
+   by themselves. *edge_ranges* can be thought of as /associations/
+   between *vertices*, /indexed by time of insertion/. It boils down to
+   a k/v pair, but the key is a struct that looks like this:
+
+   #+begin_src rust
+pub struct EdgeKey {
+    /// The id of the outbound vertex.
+    pub outbound_id: Uuid,
+
+    /// The type of the edge.
+    pub t: Type,
+
+    /// The id of the inbound vertex.
+    pub inbound_id: Uuid,
+}
+   #+end_src
+
+   and the value is a timestamp, resulting in a single Edge pair
+   being:
+
+   #+begin_src rust
+pub struct Edge {
+    /// The key to the edge.
+    pub key: EdgeKey,
+
+    /// When the edge was created.
+    pub created_datetime: DateTime<Utc>,
+}
+   #+end_src
+
+   These Edges (or /associations/) can be found in both the
+   edge_ranges and reversed_edge_ranges column families, with the
+   /reversed/ associations being derived from the same EdgeKey struct
+   but with the *outbound and inbound ids swapped*. This allows us to
+   create /bidirectional/ edges (as well as support parts of the TAO
+   model, but not worth getting into here).
+
+**** Rust                                                             :rs:
+:PROPERTIES:
+:ID: b46de918-896e-420d-8cde-09c21ae93ecd
+:END:
+A multi-paradign systems programming language, and a personal
+favorite of mine.
+- [[https://doc.rust-lang.org/book/][The Rust Book]]
+- [[https://doc.rust-lang.org/rust-by-example/][Rust By Example]]
+- [[file:ml.org][ML]]
+***** resources
+:PROPERTIES:
+:ID:       fc5f460d-dd9e-41f5-8d2b-737d15dcf249
+:END:
+****** [[https://os.phil-opp.com/][Writing an OS in Rust]]          :os:
+:PROPERTIES:
+:ID:       2312fc0a-0948-43e4-b403-b3c21add34d5
+:END:
+- A Freestanding Rust Binary
+  The first step is to create a binary that is independent of the Rust std library, since =std= links to the OS.
+  EZPZ: =#![no_std]=
+  Still need panic_handler and =eh_personality= language item which marks a function used for [[https://www.bogotobogo.com/cplusplus/stackunwinding.php][stack unwinding]]. Stack unwinding is rather complex, and is typically provided by OS (Windows structured exception handling and Linux libunwind).
+
+  The following in =Cargo.toml= will enable abort on panic, which effectively disables stack unwinding.
+  #+begin_src toml
+  [profile.dev]
+  panic = "abort"
+
+  [profile.release]
+  panic = "abort"
+  #+end_src
+
+  At this point in the guide we are getting yet another error =error: requires `start` lang_item=
+
+  start is the marker for the entry point of the program, for typical std rust apps this involves the =crt0= library "C Runtime zero". We need to overwrite the crt0 entry point directly.
+  Another attribute is needed: #![no_main]
+
+  The next step involves resolving a linker error - which happens because of the rust compiler target (usually a C runtime like Windows Mac Linux). What we want is a bare metal target with /none/ for a runtime value. We will be building a [[https://doc.rust-lang.org/rustc/targets/custom.html][custom target]] instead of the example value below, which is actually for an embedded ARM system.
+
+  #+begin_src sh
+  rustup target add thumbv7em-none-eabihf
+
+  cargo build --target thumbv7em-none-eabihf
+  #+end_src
+- A Minimal Rust Kernel
+  The implementation in this tutorial uses BIOS, which has since been proceeded by UEFI. The benefit of BIOS is that it is 'simpler' and runs on almost every machine on the market today, but UEFI is the new fad, and faster. The gh issue is [[https://github.com/phil-opp/blog_os/issues/349][here]].
+
+  -- Side note - check out this [[https://github.com/rust-osdev/uefi-rs/blob/master/uefi-test-runner/build.py][build.py]] used in the uefi-rs crate test-runner
+
+  [[https://github.com/rust-osdev/bootimage][bootimage]] provides a tool that automatically prepends a bootloader to our kernel.
+
+  - So far we've added all the boiler plate needed to get a Hello World! message in QEMU via =cargo run=
+- VGA Text Mode
+  A typical VGA text buffer is 25x80
+  It is available at memory register 0xb8000 via [[https://en.wikipedia.org/wiki/Memory-mapped_I/O][memory-mapped I/O]]
+  volatile crate ensures that our read and writes in vga_buffer::Writer aren't optimized away by the compiler
+  - intro to spinlocks
+    spin provides a spinning mutex (Mutex primitive for OS-less environments)
+- Testing
+  added a basic test runner with a Qemu wrapper to properly exit the kernel once test complete
+  - next step is to print to the host console - to do this we need an interface to send the data over, there are many ways that we could do this, TCP, UDP, etc.. but these all require significant configuration, especially on a bare-metal machine. In this tutorial we're going to use a serial port, more specifically UART16550 in =serial.rs=.
+    For this to work as a console printer, we need to specify the /first/ serial port number, from which the other UART ports can be implicitly defined. 0x3F8 is the standard first port in x86. We add =serial_print!= and =serial_println!= macros for usability in serial.rs.
+
+    We also added a custom panic handler for tests that uses serial_print instead of print, plus removed the GUI so that we can run without opening a QEMU display
+
+    started a /tests/ directory specifically for /integration tests/. see basic_boot for example, basically it's like a separate executable where you need to link to the modules you want to test
+
+    Also began refactoring into a lib.rs :^O bout time
+
+    We now have a decent test framework!
+- Exceptions
+  The CPU throws exceptions when rules are broken with the current instruction. For example when dividing by zero. Our goal in this tutorial is to be able to create [[https://wiki.osdev.org/Exceptions#Breakpoint][breakpoints]] and resume execution of the OS after handling them.
+  There are about 20 exception types in x86 but the most important are:
+  #+begin_quote
+  
+    - Page Fault: A page fault occurs on illegal memory accesses. For
+      example, if the current instruction tries to read from an
+      unmapped page or tries to write to a read-only page.
+    - Invalid Opcode: This exception occurs when the current
+      instruction is invalid, for example when we try to use newer SSE
+      instructions on an old CPU that does not support them.
+    - General Protection Fault: This is the exception with the
+      broadest range of causes. It occurs on various kinds of access
+      violations such as trying to execute a privileged instruction in
+      user level code or writing reserved fields in configuration
+      registers.
+    - Double Fault: When an exception occurs, the CPU tries to call
+      the corresponding handler function. If another exception occurs
+      while calling the exception handler, the CPU raises a double
+      fault exception. This exception also occurs when there is no
+      handler function registered for an exception.
+    - Triple Fault: If an exception occurs while the CPU tries to call
+      the double fault handler function, it issues a fatal triple
+      fault. We can't catch or handle a triple fault. Most processors
+      react by resetting themselves and rebooting the operating
+      system.
+
+  #+end_quote
+  - To handle exceptions, we need to create an Interrupt Descriptor Table (IDT). The hardware uses this table, so we need to use a pre-defined format.
+    Each entry must have the following 16-byte structure:
+
+    #+TBLNAME: IDT Entry
+    |---------+----------------------------------+-----------------------------------------------------------------------------------------------------------------|
+    | type    | name                             | description                                                                                                     |
+    |---------+----------------------------------+-----------------------------------------------------------------------------------------------------------------|
+    | u16     | Function Pointer [0:15]          | The lower bits of the pointer to the handler function.                                                          |
+    | u16     | GDT selector                     | Selector of a code segment in the global descriptor table.                                                      |
+    | u16     | Options                          | (see below)                                                                                                     |
+    | u16     | Function Pointer [16:31]         | The middle bits of the pointer to the handler function.                                                         |
+    | u32     | Function Pointer [32:63]         | The remaining bits of the pointer to the handler function.                                                      |
+    | u32     | Reserved                         |                                                                                                                 |
+    |---------+----------------------------------+-----------------------------------------------------------------------------------------------------------------|
+    | OPTIONS | ----                             | ----                                                                                                            |
+    | Bits    | Name                             | Description                                                                                                     |
+    | 0-2     | Interrupt Stack Table Index      | 0: Don't switch stacks, 1-7: Switch to the n-th stack in the Interrupt Stack Table when this handler is called. |
+    | 3-7     | Reserved                         |                                                                                                                 |
+    | 8       | 0: Interrupt Gate, 1: Trap Gate  | If this bit is 0, interrupts are disabled when this handler is called.                                          |
+    | 9-11    | must be one                      |                                                                                                                 |
+    | 12      | must be zero                     |                                                                                                                 |
+    | 13-14   | Descriptor Privilege Level (DPL) | The minimal privilege level required for calling this handler.                                                  |
+    | 15      | Present                          |                                                                                                                 |
+    |---------+----------------------------------+-----------------------------------------------------------------------------------------------------------------|
+
+    List of all exceptions: https://wiki.osdev.org/Exceptions
+
+  When an exception occurs, the CPU roughly does the folowing:
+  #+begin_quote
+    1. Push some registers on the stack, including the instruction pointer and the RFLAGS register. (We will use these values later in this post.)
+    2. Read the corresponding entry from the Interrupt Descriptor Table (IDT). For example, the CPU reads the 14-th entry when a page fault occurs.
+    3. Check if the entry is present. Raise a double fault if not.
+    4. Disable hardware interrupts if the entry is an interrupt gate (bit 40 not set).
+    5. Load the specified GDT selector into the CS segment.
+    6. Jump to the specified handler function.
+  #+end_quote
+- The Interrupt Stack Frame
+  #+DOWNLOADED: https://os.phil-opp.com/cpu-exceptions/function-stack-frame.svg @ 2020-11-22 12:15:34
+  [[file:media/2020-11-22_12-15-34_function-stack-frame.svg]]
+- Double Faults
+  #+begin_src rust
+// in src/main.rs
+// trigger a page fault
+unsafe {
+    ,*(0xdeadbeef as *mut u64) = 42;
+};
+#+end_src
+  When this code is ran, the QEMU will enter a boot loop. Why? because a Triple Fault is triggered, since no Double Fault Handler has yet been defined. The double fault is triggered when no page fault handler is found :).
+  NOTE: Double fault functions are [[https://doc.rust-lang.org/stable/rust-by-example/fn/diverging.html][Diverging]].
+
+  - cause of double faults
+    for later: [[https://www.amd.com/system/files/TechDocs/24593.pdf][AMD64 manual]]
+    definition of double fault, (sum): “double fault exception can occur when a second exception occurs during the handling of a prior (first) exception handler”. The can is important. The exact combinations of first and second exception handlers are defined as:
+    #+TBLNAME: Exception Combos
+    | First Exception                                                                                 | Second Exception                                                                            |
+    |-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------|
+    | Divide by zero, Invalid TSS, Segment Not Present, Stack-Segment Fault, General Protection Fault | Invalid TSS, Segment Not Present, Stack-Segment Fault, General Protection Fault             |
+    | Page Fault                                                                                      | Page Fault, Invalid TSS, Segment Not Present, Stack-Segment Fault, General Protection Fault |
+    |-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------|
+    
+  So [[https://en.wikipedia.org/wiki/Task_state_segment][TSS]] does need to be implemented - in x86_64 TSS doesn't hold any task-related information. Instead it holds the Privilege Stack Table [u64; 3], Interrupt Stack Table [u64; 7], I/O Map Base Address u16.
+  - At this stage we ignore the PST since we don't have any user programs yet.
+  we will implement a TSS in gdt.rs.
+  - keep in mind - stacks in x86 grow downwards.
+
+  - GDT = [[https://web.archive.org/web/20190217233448/https://www.flingos.co.uk/docs/reference/Global-Descriptor-Table/][Global Descriptor Table]]
+    It is mostly used for two things: Switching between kernel space and user space, and loading a TSS structure.
+  - [[http://pages.cs.wisc.edu/%7Eremzi/OSTEP/][OSTEP]] - free book
+  - The Final Steps
+    #+begin_quote
+    In summary, we need to do the following:
+    1. Reload code segment register: We changed our GDT, so we should reload cs, the code segment register. This is required since the old segment selector could point a different GDT descriptor now (e.g. a TSS descriptor).
+    2. Load the TSS : We loaded a GDT that contains a TSS selector, but we still need to tell the CPU that it should use that TSS.
+    3. Update the IDT entry: As soon as our TSS is loaded, the CPU has access to a valid interrupt stack table (IST). Then we can tell the CPU that it should use our new double fault stack by modifying our double fault IDT entry.
+    #+end_quote
+    - Stack Overflow Test
+    in tests/stack_overflow.rs. we now have exception handling for all cases that would cause a triple fault.
+- Hardware Interrupts
+    getting input from keyboard, setting up a Programmable Interrupt Controller (PIC) to correctly forward hardware interrupts to the CPU
+    #+begin_src text
+                                        ____________             _____
+               Timer ------------> |            |           |     |
+               Keyboard ---------> | Interrupt  |---------> | CPU |
+               Other Hardware ---> | Controller |           |_____|
+               Etc. -------------> |____________|
+
+    #+end_src
+    The [[https://en.wikipedia.org/wiki/Intel_8259][Intel 8259]] is a programmable interrupt controller (PIC) introduced in 1976. It has long been replaced by the newer APIC, but its interface is still supported on current systems for backwards compatibility reasons.
+    The 8259 PIC is significantly easier to set up than the APIC so it's used in this guide.
+
+    8259 diagram:
+    #+begin_src text
+                         ____________                          ____________
+Real Time Clock --> |            |   Timer -------------> |            |
+ACPI -------------> |            |   Keyboard-----------> |            |      _____
+Available --------> | Secondary  |----------------------> | Primary    |     |     |
+Available --------> | Interrupt  |   Serial Port 2 -----> | Interrupt  |---> | CPU |
+Mouse ------------> | Controller |   Serial Port 1 -----> | Controller |     |_____|
+Co-Processor -----> |            |   Parallel Port 2/3 -> |            |
+Primary ATA ------> |            |   Floppy disk -------> |            |
+Secondary ATA ----> |____________|   Parallel Port 1----> |____________|
+
+
+    #+end_src
+    ^^^
+    Each controller can be configured through two I/O ports, one “command” port and one “data” port. For the primary controller these ports are 0x20 (command) and 0x21 (data). For the secondary controller they are 0xa0 (command) and 0xa1 (data).
+    
+    pic8259_simple = "0.2.0" - crate used for initializing via sending config values to command and data ports
+  - Keyboard interrupts
+    In this section we set up a keyboard event handler which accepts a keycode, and translates that using a few utility crates.
+- Paging
+  Memory protection is one of the primary tasks of an operating system. The system should use hardware functionality to make sure program A can not access the memory registers of program B. x86 supports two different approaches to memory protection: [[https://en.wikipedia.org/wiki/X86_memory_segmentation][segmentation]] and [[https://en.wikipedia.org/wiki/Virtual_memory#Paged_virtual_memory][paging]]
+  - segmentation was introduced in 1978 to increase the amount of effective memory a system could use, via /virtual memory/ - which was implemented via offset registers.
+    
+    The idea behind virtual memory is to abstract away the memory addresses from the underlying physical storage device. The virtual memory is /before/ translation, the physical memory is /after/ translation.
+    using a single offset can cause fragmentation - where there is not enough /continuous/ memory available to create a virtual memory register. This could be fixed by pausing and moving the pre-existing virtual memory registers closer together, then adding the next. This causes v bad performance though due to all the copies, and thus isn't even supported in 64_bit mode of x86. Paging is used instead which completely avoids the problem of fragmentation.
+  - paging
+
+    paging involves dividing memory into smaller chunks, where the block in virtual memory are called /pages/ and the blocks in physical memory are called /frames/. Internal fragmentation can still occur (as opposed to /external/ fragmentation, which occurs in segmentation), for example if we set a page size of 50 bytes, and a program of size 101, we would still need 3 pages and thus 49 unused bytes.
+    #+DOWNLOADED: https://os.phil-opp.com/paging-introduction/paging-fragmentation.svg @ 2020-11-23 15:33:33
+    [[file:media/2020-11-23_15-33-33_paging-fragmentation.svg]]
+  - pagetables are a data structure that stores mapping information
+    each program instance has its own pagetable which maps pages to frames
+    we can also have multi-level nested pagetables, where we simply add table pointers to optimize path to physical memory
+  - x86_64 used a 4-level page table and a page size of 4KiB. each page table, regardless of level, has a fixed size of 512 entries. each entry has a size of 8 bytes (512*8B = 4KiB).
+    bytes need to be discarded and left alone to ensure uniqueness of memory address. This is called /sign-extension/ and allows for future extensions like 5-level page tables (which is an optional feature of the recent "Ice Lake" Intel CPUs). NOTE: all page table entries are on physical memory to avoid infinite recursion.
+  - the Translation Lookaside Buffer (TLB) is used to store the last few memory address translations. This allows us to skip the translation if the result is already cached. The TLB needs to be manually managed by the kernel whenever it modifies a page table. There is a special CPU instruction called =invlpg= (invalidate page) that removes a translation from the TLB. The TLB can also be flushed completely by reloading the CR3
+  - Implementation - we actually already have paging implemented at this stage, via our bootloader.
+    first we add a page fault handler, to be thrown instead of generic double fault.
+- Paging Implementation
+  in this post we implement paging support in our kernel. As of last post, we were unable to access page tables because they are in physical memory frames.
+  
+  there are many ways to implement page table mappings:
+  - /Identity Mapping/ - a 1:1 mapping from virtual to physical
+
+  - /Map at fixed offset/ - for example Physical address = 4KiB, virtual = 4KiB + 1TiB
+    Note that the virtual address space needs to be larger than PhysicalMem+Offset, which isn't a problem on x86_64 with 48-bit address space = 256 TiB large
+
+  - /Map the complete physical memory/ - instead of only page table frames
+    #+begin_quote
+    This approach allows our kernel to access arbitrary physical memory, including page table frames of other address spaces. The reserved virtual memory range has the same size as before, with the difference that it no longer contains unmapped pages.
+
+    The disadvantage of this approach is that additional page tables are needed for storing the mapping of the physical memory. These page tables need to be stored somewhere, so they use up a part of physical memory, which can be a problem on devices with a small amount of memory.
+
+    On x86_64, however, we can use huge pages with size 2MiB for the mapping, instead of the default 4KiB pages. This way, mapping 32 GiB of physical memory only requires 132 KiB for page tables since only one level 3 table and 32 level 2 tables are needed. Huge pages are also more cache efficient since they use fewer entries in the translation lookaside buffer (TLB).
+    #+end_quote
+
+  - /Temporary Mapping/ - reuses a single page table of 512 bytes, so only required 4KiB, but can be cumbersome since each new mapping might require modifications of multiple table levels
+    #+begin_quote
+    - Search for a free entry in the identity-mapped level 1 table.
+    - Map that entry to the physical frame of the page table that we want to access.
+    - Access the target frame through the virtual page that maps to the entry.
+    - Set the entry back to unused thereby removing the temporary mapping again.
+    #+end_quote
+
+  - /Recursive Page Tables/ - Another interesting approach, that requires no additional page tables at all, is to map the page table recursively. The idea behind this approach is to map some entry of the level 4 page table to the level 4 table itself. By doing this, we effectively reserve a part of the virtual address space and map all current and future page table frames to that space. This is tricky and not implemented in this tutorial, but we should check out the Address Calculation section for more details.
+
+  After all this we do some implementation, end up being able to set up fresh page table with a correct allocator.
+- Heap Allocation
+  At this point we just copied the tutorial code into our src, just to align with the conventions used. At the end of this post all the allocation and collection types of the built-in [[https://doc.rust-lang.org/alloc/index.html][alloc]] crate will be available in our kernel.
+
+  Our kernel currently uses two types of variables, static and local. Static variables are stored at a fixed memory location and are available for the lifetime of our kernel. Local variables are stored on the
+  [[https://en.wikipedia.org/wiki/Call_stack][call stack]] = [[https://en.wikipedia.org/wiki/Stack_(abstract_data_type)][stack data structure]] that supports =push= and =pop= operations.
+  
+  static variables are encoded directly into the executable and are read only by default. We can modify it using a Mutex though, which allows for a single =&mut= reference to use the variable at a time, passing it around like hot potato. We already use a =Mutex= for our static VGA buffer Writer for example.
+  in addition to static and local:
+  #+begin_quote
+  programming languages often support a third memory region for storing variables called the heap. The heap supports dynamic memory allocation at runtime through two functions called allocate and deallocate. It works in the following way: The allocate function returns a free chunk of memory of the specified size that can be used to store a variable. This variable then lives until it is freed by calling the deallocate function with a reference to the variable.
+  #+end_quote
+
+  The alloc crate which is bundled with the Rust compiler requires some annotations, such as for a static that implements the =GlobalAlloc= trait which is declared as:
+  #+begin_src rust
+  pub unsafe trait GlobalAlloc {
+    unsafe fn alloc(&self, layout: Layout) -> *mut u8;
+    unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout);
+
+    unsafe fn alloc_zeroed(&self, layout: Layout) -> *mut u8 { ... }
+    unsafe fn realloc(
+        &self,
+        ptr: *mut u8,
+        layout: Layout,
+        new_size: usize
+    ) -> *mut u8 { ... }
+  }
+  #+end_src
+
+  - we use the linked_list_allocator crate, but will dive into different heap allocation designs in the next chapter. In the remainder, we implement some tests and show usage of the alloc collections.
+- Allocator Designs
+  The responsibility of an allocator is to manage the available heap memory.
+  - Bump Allocator
+    most simple design - known as a /stack allocator/. It allocates linearly and only keeps track of the number of allocated bytes and the number of allocations.
+    The main advantage of bump allocators is /performance/. It's used in things like Virtual DOMs, but is rarely used in kernel memory allocation. [[https://mgravell.github.io/Pipelines.Sockets.Unofficial/docs/arenas.html][Arena Allocation]] does borrow the concept though, so it's useful to consider. This is a Rust-based arena allocator: [[https://docs.rs/toolshed/0.8.1/toolshed/index.html][toolshed]]
+    The downside is of course that we can't re-use previously allocated registers without clearing all memory from the heap.
+  - Linked List Allocator
+    This is the approach used in the linked_list_allocator crate, also called /pool allocation/. In this approach we store information about the freed region in the region itself. An unbound list can be built by adding a pointer to the next node of freed memory. In this approach we only need a pointer to the first unused region. The resulting data structure is often called a /free list/.
+  - Fixed-Size Block Allocator
+    Similar to Linked List approach, but uses a separate list for each block size (for example 16, 64 and 512). The problem with this approach is it causes unutilized memory due to the need to round up upon allocation.
+    variations:
+    - [[https://en.wikipedia.org/wiki/Slab_allocation][slab allocator]] - this is the first design that came to mind, should definitely investigate, often combined with other allocators. the basic idea is that you map block sizes that correspond directly to selected types in the Kernel - [[https://en.wikipedia.org/wiki/Object_pool_pattern][object pool pattern]]
+    - [[https://en.wikipedia.org/wiki/Buddy_memory_allocation][buddy allocator]] - instead of a linked-list, uses a binary-tree data structure with power-of-2 block sizes. often combined with slab allocator.
+- Async/Await
+  in this post we explore multitasking. worth noting that every system starts with 1 CPU core (before initializing the others).
+  - /Preemptive Multitasking/ - uses OS functionality to switch threads at arbitrary points by forcibly pausing them
+    Guarantees each task gets a fair share of the CPU time, without the need to trust tasks to cooperate.
+    The issue is that each task requires its own stack. This concept is still important because it make it possible to run untrusted userspace programs.  In this post we focus on cooperative multitasking.
+  - /Cooperative Multitasking/ - requires tasks to regularly give up control of the CPU to allow other tasks to make progress.
+    often used at the language level in the form of async/await and coroutines, and in combination with async operations. The issue with these is the possibility of uncooperative tasks that abuse their consumption. They do have strong performance and are a good approach /within/ a program.
+
+  - in Rust
+    - Futures
+      a future represents a value that might not be ready yet. Futures make it possible to continue execution until the value is needed.
+      #+begin_src rust
+pub trait Future {
+    type Output;
+    fn poll(self: Pin<&mut Self>, cx: &mut Context) -> Poll<Self::Output>;
+}
+      #+end_src
+
+    We go into the problems of self-referrential structs and present some solutions. Rust uses the only zero-cost option: /Forbid moving the struct/ - this isolates handling to the type system, but leaves the burden of performing move operations on potentially self-referrential structs to the programmer. Because of this, the pinning API was proposed in [[https://github.com/rust-lang/rfcs/blob/master/text/2349-pin.md][RFC 2349]].
+
+    Pinning is important because most Futures are self-referrential and they take a Pin<&mut Self> parameter. This ensures that the futures are not moved in memory in between =poll= calls. Running many Futures in a system is often managed by an Executor, optionally with a =thread pool= that uses =work stealing= to balance load between the CPU cores. To avoid the overhead of polling futures executors typically take advantage of the =Waker= API supported by Rust's Futures.
+
+    The Waker is initialized by the executor and used by the task to notify the executor that its task has completed. In essence, this system provides a type of cooperative multitasking.
+  - Implementation
+    Futures and async/await are no_std compatible, so nothing special to be done in the src.
+
+****** [[https://doc.redox-os.org/book/][redox-os book]]            :os:
+:PROPERTIES:
+:ID:       a57e76bb-3888-466d-a34e-fc56085f6120
+:END:
+- Boot process \\
+the first code executed is the bootloader in =bootloader/ARCH/bootsector.asm=. This code is responsible for finding and loading the kernel at address 0x100000, as well as initializing the memory map and VESA display mode
+  - Kernel \\
+The kernel is entered through the interrupt table at 0XFF. Using this method, kernel entry can be contained to a single function =kernel= in =kernel/main.rs= which serves as the entrypoint for the kernel.bin executable file
+  - Init \\
+first process spawned is initfs:/bin/init
+
+The overall design follows the "Everything is a URL" principle, where a URL is simply an identifier for a Scheme and a Resource. 
+#+begin_src text
+             /
+             |                                                          +=========+
+             |                                                          | Program |
+             |                                                          +=========+
+             |               +--------------------------------------+      ^   | write
+             |               |                                      |      |   |
+  User space <  +----- URL -----+                                   | read |   v
+             |  | +-----------+ |       open    +---------+  open   |   +----------+
+             |  | |  Scheme   |-|---+  +------->| Scheme  |------------>| Resource |
+             |  | +-----------+ |   |  |        +---------+             +----------+
+             |  | +-----------+ |   |  |
+             |  | | Reference | |   |  |
+             |  | +-----------+ |   |  |
+             \  +---------------+   |  |
+                            resolve |  |
+             /                      v  |
+             |                 +=========+
+Kernel space <                 | Resolve |
+             |                 +=========+
+             \
+#+end_src
+The kernel is micro-kernel based, which uses the principle of least authority, preferring code to be ran in user space instead of kernel space. This architecture /usually/ leads to a variable level of performance degradation due to the additional context switches between the kernel and user handlers. My current thinking is that there are some clever solutions to the problem of context switching, but I need to further understand where and how often (during which syscalls) they occur, and what the impact is. Anyways in short this 'micro-kernel' is slow, but it is only 16k lines which is insane compared to Linux's 25MILLION
+****** [[https://blog.logrocket.com/rust-cryptography-libraries-a-comprehensive-list/][Rust cryptography libraries: A comprehensive list - LogRocket Blog]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:21]
+	 :ID:       32677679-502e-44d5-93a9-f76ab5face2d
+	 :END:
+
+****** [[https://github.com/dalek-cryptography/bulletproofs][GitHub - dalek-cryptography/bulletproofs: A pure-Rust implementation of Bulle...]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-13 Sat 02:28]
+	 :ID:       dde2daf8-522b-45c5-aaa5-37a5c980f53e
+	 :END:
+****** [[https://github.com/dtolnay/syn/tree/master/examples/heapsize][heapsize - syn proc_macro example]] 
+:PROPERTIES:
+:ID:       04d794d2-e0b6-4bf5-ba3d-57113d3e51ea
+:END:
+CREATED: [2021-02-07 Sun 05:15]
+
+****** [[https://gitlab.redox-os.org/redox-os][redox-os · GitLab]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       3372baf3-9ea9-4c82-aeac-95d0b1754d0b
+	 :END:
+****** [[https://docs.rust-embedded.org/][Embedded Rust documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       1e0fd71f-2e7d-458c-b21f-c5dd464606b1
+	 :END:
+****** [[https://github.com/rust-embedded/wg][GitHub - rust-embedded/wg: Coordination repository of the embedded devices Working Group]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       54ae450d-e7e9-4761-a45b-f606994b6aae
+	 :END:
+****** [[https://github.com/MabezDev/xtensa-rust-quickstart/blob/master/src/main.rs][xtensa-rust-quickstart/main.rs at master · MabezDev/xtensa-rust-quickstart · GitHub]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       0595cca6-682e-46b6-86b1-431882655daf
+	 :END:
+****** [[https://github.com/rust-lang/rust/blob/master/src/bootstrap/config.rs][rust/config.rs . github]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+   :ID:       602b9a3c-9733-4031-92db-79db530f97f4
+	 :END:
+****** [[https://jakearchibald.com/2017/async-iterators-and-generators/][Async iterators and generators - JakeArchibald.com]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       3fff1915-2081-4d62-bbc0-22438e9bc2d5
+	 :END:
+****** [[https://rustwasm.github.io/book/introduction.html][Introduction - Rust and WebAssembly]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+   :ID:       093df427-e9b3-47e6-a3d0-47b53cbc1564
+	 :END:
+****** [[https://gitlab.freedesktop.org/gstreamer/gstreamer-rs][GStreamer / gstreamer-rs · GitLab]]
+:PROPERTIES:
+:CREATED:  [2020-06-19 Fri]
+:ID:       d9d8e1f8-9d99-40d4-a396-ea5c4953fea3
+:END:
+****** [[https://smallcultfollowing.com/babysteps/blog/2019/10/26/async-fn-in-traits-are-hard/][why async fn in traits are hard]]
+:PROPERTIES:
+:ID:       01bb06e9-781e-41c9-b3c4-6122e44ddd8d
+:END:
+****** [[https://github.com/mersinvald/aquamarine][aquamarine]]   :docs:
+:PROPERTIES:
+:CREATED: [2021-01-31 Sun 23:51]
+:ID:       1f83ca18-8219-4a7c-bafa-764e4af686a8
+:END:
+ - mermaid.js-powered inline dot
+
+****** [[https://doc.rust-lang.org/nightly/std/pin/index.html][std::pin - Rust]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       9c0a6958-3615-4522-9d7f-ccf267c30131
+	 :END:
+
+****** https://crates.io/crates/pin-project
+:PROPERTIES:
+:ID:       92cacdef-1b7c-40f0-8bbc-d237f074585c
+:END:
+****** [[https://doc.rust-lang.org/std/macro.todo.html][std::todo - Rust]]
+:PROPERTIES:
+:ID:       7d69878b-3681-41e8-a548-9bcfd2ba2bd6
+:END:
+CREATED: [2020-08-01 Sat 15:15]
+todo macros for code that is /not yet written/ - =unimplemented!=
+makes no such claims.
+
+****** [[https://internals.rust-lang.org/t/traits-that-should-be-in-std-but-arent/3002][Traits that should be in std, but aren't - libs - Rust Internals]]
+:PROPERTIES:
+:ID:       c25b7cd5-b641-48fc-8f0c-3187d5568eab
+:END:
+
+****** [[https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples][Macros in Rust: A tutorial with examples - LogRocket Blog]]
+:PROPERTIES:
+:ID:       552b810a-490c-4649-9088-84bf9a0529cb
+:END:
+
+****** 
+:PROPERTIES:
+:ID:       1d0b563a-e356-47eb-a3bc-87e8bd2e10d6
+:END:
+
+***** crates
+:PROPERTIES:
+:ID:       3e36db85-ae02-4bf7-bc2e-3ca044f85d67
+:END:
+A /Crate/ is just a bundle of Rust code which is often made available
+on [[https://crates.io][crates.io]] for use by the community. In other words, crates = packages.
+****** Firecracker                                                 :vmm:
+:PROPERTIES:
+:ID:       f169f36c-3cf8-4763-bd88-1d3c10f51ee7
+:END:
+******* API                                                      :http:
+:PROPERTIES:
+:ID:       51e90da5-d98d-4d63-86aa-90c718c4802c
+:END:
+******** Requests
+:PROPERTIES:
+:ID:       c4b1fecf-d6a1-478f-9189-92f827ca0aec
+:END:
+- clear the existing socket (fd?), designate a fresh one
+#+begin_src shell
+# start the shell
+rm -f /tmp/firecracker.socket
+firecracker --api-sock /tmp/firecracker.socket
+#+end_src
+- mount kernel image
+#+begin_src shell
+curl --unix-socket /tmp/firecracker.socket -i \
+-X PUT 'http://localhost/boot-source'   \
+-H 'Accept: application/json'           \
+-H 'Content-Type: application/json'     \
+-d "{
+\"kernel_image_path\": \"${kernel_path}\",
+\"boot_args\": \"console=ttyS0 reboot=k panic=1 pci=off\"
+}"
+#+end_src
+- mount rootfs
+#+begin_src shell
+rootfs_path=$(pwd)"/hello-rootfs.ext4"
+curl --unix-socket /tmp/firecracker.socket -i \
+-X PUT 'http://localhost/drives/rootfs' \
+-H 'Accept: application/json'           \
+-H 'Content-Type: application/json'     \
+-d "{
+\"drive_id\": \"rootfs\",
+\"path_on_host\": \"${rootfs_path}\",
+\"is_root_device\": true,
+\"is_read_only\": false
+}"
+#+end_src
+- Start the instance
+#+begin_src shell
+curl --unix-socket /tmp/firecracker.socket -i \
+-X PUT 'http://localhost/actions'       \
+-H  'Accept: application/json'          \
+-H  'Content-Type: application/json'    \
+-d '{
+"action_type": "InstanceStart"
+}'
+#+end_src
+
+****** Tokio                                                     :async:
+:PROPERTIES:
+:ID:       cebd5c3f-80a4-485f-aef6-046dce661382
+:END:
+asynchronous runtime and building blocks for writing network
+applications.
+
+- https://tokio.rs/
+#+begin_quote
+Tokio is an asynchronous runtime for the Rust programming language. It
+provides the building blocks needed for writing network
+applications. It gives the flexibility to target a wide range of
+systems, from large servers with dozens of cores to small embedded
+devices.
+#+end_quote
+******* working with UDP
+:PROPERTIES:
+:ID:       f2d3095b-4df4-4b1c-8d39-1122ae8b1e05
+:END:
+:LOGBOOK:
+- noted [2021-08-25 Wed 18:46] \\
+  this is for tokio v0.2.0
+:END:
+UDP connections are handled similarly to TCP in tokio.
+  - =tokio::net::UdpSocket= provides core functionality for
+    communicating over UDP, in contrast to =TcpListener= and
+    =TcpStream=
+  - =tokio::net::udp= provides UDP utility types
+  - =tokio_util::codec= provides codec utilities to go from a stream
+    of bytes to a /Framed/ stream of bytes (AKA a transport)
+  - connecting to Socket example:
+    [[https://github.com/tokio-rs/tokio/blob/master/examples/connect.rs][tokio/connect.rs at master · tokio-rs/tokio · GitHub]]
+    we just care about the =udp= module which reads and writes from
+    stdin to a UDP Frame.
+
+******* [[https://tokio.rs/tokio/tutorial][tokio tutorial]]
+:PROPERTIES:
+:ID:       f2a14b9c-167e-4e65-a2d4-c55b0f38446d
+:END:
+mini-redis implementation
+- tasks take up a single allocation and 64 bytes of memory
+- the #[tokio:main] macro turns async fn main -> fn main with a default tokio runtime build inserted
+- strategies for sharing state:
+- Guard the shared state with a Mutex.
+- Spawn a task to manage the state and use message passing to operate on it.
+first approach is in shared state, second approach is in channels
+
+#+CAPTION: Bytes vs Vec<u8>
+#+BEGIN_QUOTE 
+The goal of Bytes is to provide a robust byte array structure for
+network programming. The biggest feature it adds over Vec<u8> is
+shallow cloning. In other words, calling clone() on a Bytes instance
+does not copy the underlying data. Instead, a Bytes instance is a
+reference-counted handle to some underlying data. The Bytes type is
+roughly an Arc<Vec<u8>> but with some added capabilities.
+#+END_QUOTE
+
+- parking_lot::Mutex is a faster alternative to std::sync::Mutex.
+
+****** Yew                                                        :wasm:
+:PROPERTIES:
+:ID:       cec91739-c70c-4b89-838d-7bc7857aa60e
+:END:
+Component-based framework for web UIs. Very similar to React or Elm
+- [[https://yew.rs/][Introduction | Yew]]
+  #+begin_quote
+  Yew is a modern Rust framework for creating multi-threaded front-end
+  web apps using WebAssembly.
+  #+end_quote
+- Always use =web-sys= package for new projects. =stdweb= isn't
+  maintained and Yew has frozen support for this feature as of v0.18.0
+- [[https://yew.rs/concepts/components][Components]] are the building block of a Yew application and created
+  by implementing the =Component= trait for a type.
+- The =Component= trait provides the Lifecycle methods used to control
+  state of components.
+   - Methods
+      - create
+      - view
+      - rendered
+      - update
+      - change
+      - destroy
+   - Associated Types
+     The =Component= trait has two associated types: =Message= and =Properties=.
+      - The Message type is often an enum, where each variant is
+        associated with a specific event
+      - Properties represent information that is passed down to a
+        child component from its parent. It's usually a struct, used
+        while creating and updating a component, and can specify sets
+        of required or optional fields.
+- [[https://yew.rs/concepts/components/callbacks][Callbacks]]
+  Components are able to create callbacks and self-update via the component "link".
+   - ComponentLink API
+      - send_message
+      - send_message_batch
+      - callback
+      - batch_callback
+- [[https://yew.rs/concepts/components/properties][Properties]]
+- [[https://yew.rs/concepts/components/children][Children]]
+- [[https://yew.rs/concepts/components/refs][Refs]]
+- [[https://yew.rs/concepts/services][Services]]
+- [[https://yew.rs/concepts/services][Router]]
+- [[https://yew.rs/concepts/html][HTML Integration]]
+- [[https://yew.rs/more/css][CSS Integration]]
+  see the [[https://github.com/yewstack/yew/discussions/2003][current discussion]] on GitHub for Community thoughts on the topic.
+   - css-in-rust isn't maintained (much at least), forks are coming out
+   - there are many yew 'component libraries' for popular CSS frameworks.
+      - I use [[https://crates.io/crates/ybc][ybc]] (BulmaCSS) for my website, for example.
+- In my opinion, the future state of UI is not in web-specific
+  frameworks. This will be more apparent once native WebAssembly is
+  fully supported in browsers without JS APIs, and developers can
+  confidently write WASM bindings without interop concerns with
+  different platforms.
+
+****** Amethyst                                               :game_dev:
+:PROPERTIES:
+:ID:       79d51eed-bb65-4bdd-98e0-7cf166564a6b
+:END:
+- [[https://github.com/amethyst/amethyst][source code]]
+- [[https://book.amethyst.rs/book/stable/][the book]]
+- [[https://book.amethyst.rs/api/stable/amethyst/][docs]]
+******* features
+:PROPERTIES:
+:ID:       e62b4c82-9da0-469e-95d4-b270d7b380d8
+:END:
+- Massively parallel architecture.
+- Powered by a correct Entity Component System model.
+- Rapid prototyping with RON files for prefabs and an abstract scripting API.
+- Strong focus on encouraging reusability and clean interfaces.
+
+****** [[https://docs.rs/salsa20/0.7.2/salsa20/][salsa20 - Rust]] :cipher:
+:PROPERTIES:
+:CREATED:  [2021-02-13 Sat 00:09]
+:ID:       4b0377c3-1cf5-4107-8562-dafe07ff34b3
+:END:
+
+****** [[https://docs.rs/ipnet/2.3.0/ipnet/][ipnet - Rust]]        :net:
+:PROPERTIES:
+:CREATED:  [2021-02-13 Sat 00:04]
+:ID:       90e047b2-0deb-448b-97fc-b6b03e43664c
+:END:
+
+****** [[https://crates.io/crates/proc-macro2][proc-macro2]]     :macro:
+:PROPERTIES:
+:ID:       be6af7f1-5941-479f-91a6-745b86de910b
+:END:
+CREATED: [2021-02-07 Sun 05:18]
+A superset of proc-macro
+****** [[https://doc.rust-lang.org/reference/procedural-macros.html][proc macros -- Rust Docs]] :macro:
+:PROPERTIES:
+:ID:       4ca937c1-c026-48c4-8e75-3f4a21d088b4
+:END:
+CREATED: [2021-02-07 Sun 05:17]
+****** [[https://github.com/dtolnay/syn/tree/master/examples/lazy-static][lazy-static! - syn example]] :macro:
+:PROPERTIES:
+:ID:       9701251c-887d-4021-8c5c-d4a581a3a4d4
+:END:
+CREATED: [2021-02-07 Sun 05:16]
+****** https://crates.io/crates/esp32                         :embedded:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       402f1181-378d-480c-896c-cd235ecdedbf
+	 :END:
+****** [[https://github.com/tokio-rs/tracing][tracing - github]] :logging:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+   :ID:       720a87d1-7894-4894-9ca5-f21568e374ae
+	 :END:
+****** https://crates.io/crates/petgraph                         :graph:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+   :ID:       202884a2-2f06-4ca0-b9ac-2ca234f075a2
+	 :END:
+****** [[https://crates.io/crates/nannou_osc][nannou_osc - crates.io]] :art:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       16122d4e-e7dd-4413-bc19-6be2a5472aab
+	 :END:
+****** [[https://crates.io/crates/rosc][rosc - crates.io]]         :net:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       59fdfbec-15ce-4bb6-adf8-5ce1d1429f78
+	 :END:
+- [[https://git.klingt.net/alinz/rosc/src/branch/master/examples/sender.rs][alinz/rosc - examples/sender.rs at master - rosc - Gitea]]
+
+****** [[https://docs.rs/crate/frank_jwt/2.1.0][frank_jwt 2.1.0 - Docs.rs]] :net:
+:PROPERTIES:
+:CREATED:  [2021-02-13 Sat 02:27]
+:ID:       6b385d69-0b64-47b2-b80d-435a26384482
+:END:
+
+
+****** rust_pcg
+:PROPERTIES:
+:ID:       b3c62763-9335-40eb-8f92-efdbf0e3b80d
+:END:
+- [[https://docs.rs/rand_pcg/0.3.1/rand_pcg/][docs.rs]]
+- see PCG
+
+****** axum                                                        :net:
+:PROPERTIES:
+:ID:       31610939-ae15-426c-87f9-dd8fdf601c3a
+:END:
+web framework by the [[id:cebd5c3f-80a4-485f-aef6-046dce661382][tokio]] team - thin wrapper around =hyper=.
++ github :: [[https://github.com/tokio-rs/axum][github.com/tokio-rs/axum]]
++ docs :: [[https://docs.rs/axum/][docs.rs/axum]]
+**** Python                                                           :py:
+:PROPERTIES:
+:ID:       249c2d3e-9d59-4f1f-9f6f-ad68ab04d1d3
+:END:
+Python is one of the most popular programming languages out there
+coming in at [[https://statisticstimes.com/tech/top-computer-languages.php][#2 in popularity and growing as of 2021]]. It is a
+dynamically-typed, garbage-collected language with simple, very
+readable syntax. It is well-maintained with a vast community of
+developers.
+
+It is an [[file:oop.org][OOP]]-based interpretted programming language based on C.
+
+- One of the draws of Python is the ease in which you can just 'get
+something done' quickly. CTFers and other types of competitive hackers
+prefer it for precisely this reason. 
+
+- Another advantage is the ease in which Python can be understood by
+  humans, making it a great beginner language for anyone. This also
+  makes it a great choice for Research and Academic fields where
+  non-programmers are involved, as source code snippets can be
+  included in your work with minimal explanation.
+
+***** [[https://docs.python.org/3/library/ast.html][ast — Abstract Syntax Trees — Python 3.9.7 documentation]]
+:PROPERTIES:
+:ID:       cf7cfdf2-8899-4f04-94f6-a6cc110b29b9
+:END:
+***** Libraries
+:PROPERTIES:
+:ID:       cbfa6dbe-f578-446a-bb2c-4fc0c49d131b
+:END:
+- [[https://mutagen.readthedocs.io/en/latest/][mutagen]] - module for handling audio metadata. Supports ASF, FLAC,
+  MP4, Monkey’s Audio, MP3, Musepack, Ogg Opus, Ogg FLAC, Ogg Speex,
+  Ogg Theora, Ogg Vorbis, True Audio, WavPack, OptimFROG, and AIFF
+  audio files.
+- [[https://www.psycopg.org/docs/][psycopg2]] - PostgreSQL database adapter.
+**** Javascript                                                       :js:
+:PROPERTIES:
+:ID: 57eb884b-b22f-47f2-b6cb-e06ff59adb00
+:AKA: JS
+:END:
+Javascript is an interpreted or JIT ([[https://en.wikipedia.org/wiki/Just-in-time_compilation][just-in-time]]) compiled language
+with [[https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function][first-class functions]].
+
+#+begin_quote https://developer.mozilla.org/en-US/docs/Web/JavaScript
+JavaScript is a prototype-based, multi-paradigm, single-threaded,
+dynamic language, supporting object-oriented, imperative, and
+declarative (e.g. functional programming) styles.
+#+end_quote
+
+#+begin_quote https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources
+ECMAScript is the scripting language that forms the basis of
+JavaScript. ECMAScript standardized by the ECMA International
+standards organization in the ECMA-262 and ECMA-402 specifications.
+#+end_quote
+
+- [[https://tc39.es/ecma262/][ECMAScript® 2022 Language Specification]] - the official standard spec for JS
+- [[https://github.com/tc39/ecma262][GitHub - tc39/ecma262: Status, process, and documents for ECMA-262]]
+- [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources][JavaScript language resources - JavaScript | MDN]]
+***** React
+:PROPERTIES:
+:ID: b1686ccf-fcb0-4787-8b15-889ce2e1230b
+:END:
+React is a declarative, efficient, and flexible JavaScript library for
+building user interfaces. It lets you compose complex UIs from small
+and isolated pieces of code called “components”.
+
+**** Lua                                                             :lua:
+:PROPERTIES:
+:ID: 2a2818ba-2fee-4cf9-87f5-45cb66512265
+:END:
+- [[http://www.lua.org/][The Programming Language Lua]]
+A high-level, multi-paradigm scripting language. Used widely in the
+video game industry and elsewhere, an excellent choice for embedded
+use, especially as a configuration language or DSL.
+
+- To install Lua on GNU Linux, use your [[file:operating-system.org][os]]'s package manager, or run the script below (v5.4.0).
+  #+name: lua-install
+  #+begin_src bash
+#!/usr/bin/bash
+# installs Lua v5.4.3
+curl -R -O http://www.lua.org/ftp/lua-5.4.3.tar.gz
+tar zxf lua-5.4.3.tar.gz
+cd lua-5.4.3
+make all test
+  #+end_src
+  Take a look at [[http://lua-users.org/wiki/LuaDistributions][lua-users wiki: Lua Distributions]] for other platforms.
+- [[https://www.lua.org/pil/][Programming in Lua]] (PIL) is the original book for the Lua
+  programming language, written by the author [[http://www.inf.puc-rio.br/~roberto/][Roberto
+  Ierusalimschy]]. It has a bunch of useful tips, but is not free. The
+  first edition (out of four) is available online at [[https://www.lua.org/pil/contents.html][Programming in
+  Lua (first edition)]] and covers up to Lua 5.0, but is still
+  relevant. The fourth edition covers up to Lua 5.3.
+  
+***** Examples
+:PROPERTIES:
+:ID:       65f97148-06eb-408d-947d-0a7c881e8a54
+:END:
+****** copas tcp echo
+:PROPERTIES:
+:ID:       1de6e845-e18d-4326-9647-cd2774ce0212
+:END:
+Copas (or Coroutine Oriented Portable Asynchronous Services, if you
+prefer) is to Lua what [[file:tokio.org][tokio.rs]] is to Rust - asynchronous networking that
+gives you client/server APIs.  This lil' guy provides a simple tcp
+server that listens on port 8888 and responds to peers with a very
+heart-warming welcome.  A slightly more advanced example is provided
+[[http://lua-users.org/wiki/CopasExample][here]].
+#+name: copas-tcp-echo
+#+begin_src lua
+  require "copas"
+  function handler(c, host, port)
+    local peer = host .. ":" .. port
+    print("connection from", peer)
+    c:send("Get in loser, we're going shopping.\r\n")
+    print("data from", peer, (c:receive"*l"))
+  end
+  copas.addserver(assert(socket.bind("*",8888)),
+                  function(c) return handler(copas.wrap(c), c:getpeername()) end
+  )
+  copas.loop()
+#+end_src
+****** AwesomeWM rc.lua
+:PROPERTIES:
+:ID:       9923d0a2-533c-4235-923c-ddea476d7fcf
+:END:
+=rc.lua= is the main configuration file for the Awesome window
+manager. The configuration API is destributed across several Lua
+libraries and implements a declarative layout system that is very
+flexible and supports features of the Lua language.
+
+The default configuration can be found at [[https://awesomewm.org/doc/api/sample%20files/rc.lua.html][Script rc.lua - awesome API
+documentation]].
+
+****** [[id:4898be7c-465f-4f17-b451-8ec451f70399][Conky config]]
+:PROPERTIES:
+:ID:       5517909d-e1bf-46b3-9d66-06c2834e80f7
+:END:
+**** SQL                                                             :sql:
+:PROPERTIES:
+:ID: a0e844c9-ec8d-4f27-b9fd-7c7dfb88df7f
+:AKA: structured query language
+:END:
+- http://www.sqlcourse.com/intro.html
+
+The ANSI standard language for relational [[file:database.org][Database]] management systems.
+**** Max/MSP                                                         :max:
+:PROPERTIES:
+:ID:       f5665f32-f11e-483b-930a-6de74d0bf207
+:AKA: MSP, Jitter
+:END:
+- [[https://cycling74.com/products/max][What is Max?]]
+
+- A visual programming language for multimedia development.
+
+- Max/MSP belongs to the same family of 'patcher'-like programming
+languages as PureData (Pd).
+
+- Developed and maintained by Cycling '74, bundled with Ableton
+  distributions.
+***** links
+:PROPERTIES:
+:ID:       1c5a0945-bb68-4141-9220-a56adc8fa36d
+:END:
+****** [[https://www.researchgate.net/publication/221494064_Emergent_Rhythms_through_Multi-agency_in_MaxMSP][Emergent Rhythms through Multi-agency in Max/MSP | researchgate]]
+:PROPERTIES:
+:ID:       fb5dff3c-7b07-46e2-9196-8f46c955c3b6
+:END:
+CREATED: [2021-01-22 Fri 02:20]
+
+**** ML                                                             :lisp:
+:PROPERTIES:
+:ID: 041b902b-3032-400e-bd42-53a0253f0839
+:AKA: Meta Language
+:END:
+"Lisp with types"
+
+**** Common Business Oriented Language                             :cobol:
+:PROPERTIES:
+:ID: 82eae0d0-bec2-4c70-b003-f43c1ca1c781
+:AKA: COBOL
+:END:
+- https://en.wikipedia.org/wiki/COBOL
+
+*** Standards
+**** POSIX
+:PROPERTIES:
+:ID:       89e4b741-a241-4e80-8f86-d1c69fd49230
+:END:
+#+begin_quote
+The Portable Operating System Interface (POSIX) is a family of
+standards specified by the IEEE Computer Society for maintaining
+compatibility between operating systems.[1] POSIX defines both the
+system- and user-level application programming interfaces (API), along
+with command line shells and utility interfaces, for software
+compatibility (portability) with variants of Unix and other operating
+systems.
+-- [[https://en.wikipedia.org/wiki/POSIX][Wikipedia]]
+#+end_quote
+***** [[https://drewdevault.com/2018/02/05/Introduction-to-POSIX-shell.html][Introduction to POSIX shell]]
+:PROPERTIES:
+:ID:       b6b804b1-072b-445b-a8cd-45714bea1bfe
+:END:
+*** Software
+:PROPERTIES:
+:ID: 375d49a0-05c9-4937-9efe-7385f354f8ac
+:END:
+**** Licensing
+:PROPERTIES:
+:ID:       cc00c927-a481-44da-9875-0a06898b9592
+:END:
+***** Free Software
+:PROPERTIES:
+:ID:       1304abf5-3760-4f8e-919b-1ea0ed353140
+:END:
+***** Freeware
+:PROPERTIES:
+:ID:       29bd2367-1771-4633-8a9d-42e544f74ad3
+:END:
+- Freeware is software that is /free to use/, NOT to be confused with [[* Free
+ Software][Free Software]].
+- It is important to distinguish Freeware from truly Free Software, as
+  the terms carry very different connotations. All Free Software is
+  also Freeware, but not all Freeware is Free Software.
+***** Proprietary Software
+:PROPERTIES:
+:ID:       ab28c699-cb83-47e6-87d0-7e7e806d07aa
+:END:
+
+**** Programs
+:PROPERTIES:
+:ID: 279e2f53-ca83-44f4-b679-165fd8aabd24
+:END:
+- https://en.wikipedia.org/wiki/Computer_program
+***** Emacs
+:PROPERTIES:
+:ID:       0f13e326-614c-4df9-8344-e257eb165d8c
+:END:
+****** [[src:config/emacs][my emacs config]]
+:PROPERTIES:
+:ID:       84d72558-2180-45fa-89e0-a7853c14e039
+:END:
+****** Building from Source
+:PROPERTIES:
+:ID:       d92c3412-0e3b-4c07-842c-638c0eef4df1
+:END:
+First, clone the repo:
+#+begin_src shell :results silent
+git clone https://git.savannah.gnu.org/git/emacs.git /tmp/emacs
+#+end_src
+
+Once the source is in hand, I stronly recommend making a separate
+build directory and calling the configure script from there.
+
+#+begin_src shell
+mkdir /tmp/emacs-build && cd /tmp/emacs-build
+../emacs/configure --with-mailutils --with-imagemagick --with-x-toolkit=athena --without-pop --without-sound --with-json --enable-link-time-optimization --with-native-compilation
+NATIVE_FULL_AOT=1 make -j8
+# test the build with './src/emacs' (location of output binary)
+# install emacs binaries on current system
+make install
+#+end_src
+
+The =configure= script takes a bunch of different flags that
+customize the build, and generate a build-specific Makefile.
+
+The next line compiles the source. Install with =make install= and
+you're done! A custom Emacs binary with all the fixings has just
+been installed for your current user. :)
+
+Here are some of the other configuration flags worth investigating:
+
+- --without-all
+- --with-x-toolkit=no
+- --without-x
+- --without-dbus --without-gconf --without-gsettings
+
+****** Org Mode                                                    :org:
+:PROPERTIES:
+:ID: 0b4c27b4-3c1a-41c3-afcd-048f2cf15030
+:END:
+https://orgmode.org/
+
+Org-mode is a flexible text-based note-taking system built for [[file:emacs.org][Emacs]].
+
+It's one of the best packages available in the Emacs ecosystem and
+really pushes the boundaries of what simple 'text-files' are capable
+of. It can be intimidating at first look, but if you keep diving down
+the rabbit-hole it feels like a whole new world is opened up to
+you.
+
+My usage of org-mode revolves around the following principles:
+- /Documentation is highly valuable/ - There is no religion without a
+  prophet.
+- /Workflows are not stable/ - There is no one-size-fits-all solution
+  to workflow management. Org-mode configurations will change over
+  time, and that's ok. It also allows us to keep with the latest
+  trends in the community 87).
+- /Inspect and Adapt/ - I have weekly review seshes to take a glimpse
+  at my current workflow from afar, and jot down a list of things that
+  work, and things that don't. Good habit to get into for serious
+  usage.
+
+******* Tutorials
+:PROPERTIES:
+:ID:       8b9a818b-b0b1-4335-9344-d4d7d8da3470
+:END:
+******** Getting Started with Org Mode - Harry Schwartz
+:PROPERTIES:
+:ID:       fb954e05-c80c-4a92-ab6e-7001807d5e3f
+:END:
+[[yt:SzA2YODtgK4][Getting Started With Org Mode]]
+
+****** straight.el
+:PROPERTIES:
+:ID: 9711fba3-2682-400e-9c72-54bdc07a15d5
+:END:
+- https://github.com/raxod502/straight.el
+
+=straight.el= is a modern replacement for [[file:package_el.org][package.el]] with a built-in
+wrapper for [[file:use-package.org][use-package]] declarations, and a modular structure which
+makes it easy to define custom package /recipes/.
+
+- The way this package initializes is by being bootstrapped in the
+  early stages of our Emacs startup with the following script:
+  #+name: sraight-bootstrap
+  #+begin_src emacs-lisp
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+  #+end_src
+
+****** yasnippets
+:PROPERTIES:
+:ID:       e4bb1e33-0288-4610-8dcc-64fc1c0f0ade
+:END:
+- [[https://github.com/joaotavora/yasnippet][GitHub - joaotavora/yasnippet: A template system for Emacs]]
+  #+begin_quote
+  YASnippet is a template system for Emacs. It allows you to type an
+  abbreviation and automatically expand it into function
+  templates. Bundled language templates include: C, C++, C#, Perl,
+  Python, Ruby, SQL, LaTeX, HTML, CSS and more. The snippet syntax is
+  inspired from TextMate's syntax, you can even import most TextMate
+  templates to YASnippet.
+  #+end_quote
+- [[https://www.emacswiki.org/emacs/Yasnippet][EmacsWiki: Yasnippet]]
+- [[https://github.com/AndreaCrotti/yasnippet-snippets][GitHub - AndreaCrotti/yasnippet-snippets: a collection of yasnippet snippets for many languages]]
+****** [[https://opensource.com/article/20/3/blog-emacs][How to blog with Emacs Org mode | Opensource.com]] :org:publish:
+:PROPERTIES:
+:ID:       d2e69772-6fb8-4e0b-a6fb-464a1796c800
+:END:
+CREATED: [2020-07-30 Thu 22:26]
+uses =ox-publish= to create a sitemap in =publish.el=, and executes
+that code with a Makefile.
+****** [[https://www.gnu.org/software/emacs/manual/html_mono/widget.html][The Emacs Widget Library]] :ui:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-24 Fri]
+   :ID:       f4058dfa-0f0b-465a-b1d6-5db01b2d5c92
+	 :END:
+****** [[https://protesilaos.com/dotemacs/#h:847477fe-ef86-4e12-a2da-6c431528da99][GNU Emacs integrated computing environment | Protesilaos Stavrou]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       97edb408-b263-44fa-9243-ee969c1afdd4
+	 :END:
+****** [[https://orgmode.org/worg/dev/org-element-api.html][Org Element API]] :org:api:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       dd0c0d09-b83f-4c6e-b91b-d8873c38660b
+	 :END:
+****** [[http://ergoemacs.org/emacs/elisp_parse_org_mode.html][Elisp: Parse Org Mode]] :org:api:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       6f77b99c-12d0-46cb-a0d5-5365f511e3c9
+	 :END:
+****** [[https://orgmode.org/worg/org-tutorials/weaving-a-budget.html][Weaving a budget with Org & ledger]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       2ff696dd-18d4-46e2-b071-04dd5f94d4fd
+	 :END:
+****** [[https://orgmode.org/worg/org-tutorials/tracking-habits.html][Tracking Habits with Org-mode]] :org:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       1716319d-5eb4-405f-b6b2-921e39f25c7c
+	 :END:
+****** [[https://emacs.stackexchange.com/questions/9674/customize-startup-screen-text][start up - Customize startup screen text - Emacs Stack Exchange]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       feae80bd-a8a9-400e-9c0e-4ed703f88b1c
+	 :END:
+****** [[https://www.johndcook.com/blog/2016/06/15/ascii-art-diagrams-in-emacs-org-mode/][Emacs org-mode ASCII diagrams]] :org:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+   :ID:       6e91adf5-a589-4b45-bd9f-3714d9baf680
+	 :END:
+	 use ditaa n00bz
+****** [[https://www.johndcook.com/blog/2012/02/09/python-org-mode/][Running Python and R inside Emacs]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+   :ID:       b195224e-e8be-4131-81f5-b3a80ffa1b40
+	 :END:
+
+****** [[https://orgmode.org/manual/Creating-Footnotes.html][Creating Footnotes (The Org Manual)]] :org:
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-11 Sat]
+   :ID:       7b3510a5-d341-4c7a-b881-e11c8f02dd46
+	 :END:
+
+****** [[https://www.emacswiki.org/emacs/Icicles][Icicles - EmacsWiki]]
+:PROPERTIES:
+:ID:       88d7f5f9-f5c6-4283-9ac1-88881ea4cfae
+:CREATED: [2021-01-39 Sat 11:01]
+:END:
+Emacs lib for enhancing minibuffer completion
+   
+
+****** [[https://www.emacswiki.org/emacs/BookmarkPlus][bookmark+ docs]]
+:PROPERTIES:
+:ID:       1d87a1fb-4e0d-4f78-949a-2247c702abac
+:CREATED: [2021-02-06 Sat 03:02]
+:END:
+****** [[http://cachestocaches.com/2016/9/my-workflow-org-agenda/][My Workflow with Org-Agenda]] :org:
+:PROPERTIES:
+:ID:       fd929d43-cb4c-4021-90ab-2b2a94729f5c
+:CREATED: [2021-01-26 Tue 18:49]
+:END:
+A classic emacs beginner read
+****** [[https://orgmode.org/manual/HTML-Export.html#HTML-Export][Emacs Org HTML Export]] :org:
+:PROPERTIES:
+:ID:       d7675cbb-9f74-4b96-a2ff-ac85de916deb
+:CREATED: [2021-01-20 Wed 22:47]
+:END:
+***** GNU Make
+:PROPERTIES:
+:ID: c93b85e8-4b50-4477-b121-486271ea50d6
+:END:
+- https://www.gnu.org/software/make/manual/make.html
+
+****** Additional References
+:PROPERTIES:
+:ID:       60830ee9-5424-433c-9b76-7bf4e8b825c5
+:END:
+- [[https://www.gnu.org/software/make/manual/html_node/Quick-Reference.html][Quick Reference]]
+- [[https://devhints.io/makefile][Makefile cheatsheet]]  
+
+***** Nix
+:PROPERTIES:
+:ID: 6f670ab4-bf9a-4475-8f41-b08e16021074
+:END:
+- [[https://nixos.org/learn.html][Learning Resources]]
+- [[https://nix.dev/][nix.dev]]
+
+Nix is a package manager for Unix systems. It is designed around a
+custom DSL call NixExpr, which can be used to create reliable and
+reproducible package builds.  NixOS is a Linux distribution built on
+top of Nix with a completely declarative configuration.  There are
+many other cool features contained in the Nix ecosystem, such as
+NixOps node2nix crate2nix Disnix and Home-manager.
+****** What I think I can find in Nix                          :opinion:
+:PROPERTIES:
+:ID:       d768181a-d4f2-49f4-828a-988ed12be2b5
+:END:
+The draw of Nix to me is consistency. I want to tinker with spinning
+up a loooot of machines in a controlled environment, and this is quite
+difficult to accomplish in an experimental setting, due to either lack
+of utility or lack of time to manually edit Linux config files.
+The core functions we want:
+- configure - modify params (done via NixExpr)
+- deploy - deploy configuration to target machines (NixOps/Disnix)
+- build - build a configuration
+- run - run a package (nix-shell run)
+- monitor
+- ssh
+***** links
+:PROPERTIES:
+:ID:       512510b9-6bcc-4f38-8cc9-059111d25cfe
+:END:
+****** [[https://git.suckless.org/][suckless Repositories]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       b28d2ab8-2331-4626-9185-d797bf70b01e
+	 :END:		
+****** [[https://github.com/browsh-org/browsh][GitHub - browsh-org/browsh: A fully-modern text-based browser, rendering to TTY and browsers]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       471a7170-e0a8-4417-b333-ee130b085953
+	 :END:
+****** [[https://dystroy.org/broot/][Broot]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       62b5db76-f5c2-49f7-bcf5-04faa17ea087
+	 :END:
+****** [[https://caddyserver.com/docs/][Welcome — Caddy Documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+   :ID:       45ddcdf7-c9b7-4ff1-8d41-dbdd21198e43
+	 :END:
+	 v2 caddy docs for API
+****** [[https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md][ripgrep/GUIDE.md at master · BurntSushi/ripgrep · GitHub]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-26 Fri]
+   :ID:       2f96c91e-d79a-4663-bc45-9f56ff6da29f
+	 :END:
+***** Bash                                                        :shell:
+:PROPERTIES:
+:ID:       52d04515-6aeb-4a23-8ca3-31fa5f3a85e0
+:AKA: bash
+:END:
+#+begin_quote
+Bash is the GNU Project's shell—the Bourne Again SHell. This is an
+sh-compatible shell that incorporates useful features from the Korn
+shell (ksh) and the C shell (csh). It is intended to conform to the
+IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard. It offers
+functional improvements over sh for both programming and interactive
+use. In addition, most sh scripts can be run by Bash without
+modification.
+-- [[https://www.gnu.org/software/bash/][GNU Project - Free Software Foundation]]
+#+end_quote
+
+****** [[https://tiswww.case.edu/php/chet/bash/bashtop.html][The GNU Bourne-Again Shell]]
+:PROPERTIES:
+:ID:       216df359-d37e-42d4-9172-fa43e7b95585
+:END:
+- [[https://tiswww.case.edu/php/chet/bash/FAQ][FAQ]]
+
+****** [[https://stackoverflow.com/questions/16365130/what-is-the-difference-between-usr-bin-env-bash-and-usr-bin-bash/16365367#16365367][linux - What is the difference between "#!/usr/bin/env bash" and "#!/usr/bin/bash"? - Stack Overflow]]
+:PROPERTIES:
+:CREATED:  [2020-07-05 Sun]
+:ID:       49984c0c-a553-4c62-a921-07a4259aee73
+:END:
+
+**** Services
+:PROPERTIES:
+:ID:       af50f832-b6a9-4c3c-8842-444fcc4a61e7
+:END:
+***** Systemd
+:PROPERTIES:
+:ID: a2c2925f-960d-43b5-b0cd-da5a86d4a744
+:END:
+****** systemd-nspawn
+:PROPERTIES:
+:ID:       e5232eb5-854c-416c-a25d-190bfa794d10
+:END:
+******* machinectl
+:PROPERTIES:
+:ID:       fdaaa759-73f0-4cf6-b2f4-99c4bd836acd
+:END:
+***** Operating Systems                                              :os:
+:PROPERTIES:
+:ID: 3bf219b5-6ad8-4355-8d68-29bd483f2671
+:END:
+An Operating System or "OS" is software that communicates with
+Applications and interacts with computer hardware.
+- Microsoft Windows
+- MacOS
+****** GNU/Linux                                                 :linux:
+:PROPERTIES:
+:ID: 134e2505-cc34-4dc2-b7a4-b3b71c331f07
+:AKA: linux
+:CATEGORY: os
+:END:
+- [[https://www.kernel.org/][The Linux Kernel Archives]]
+- https://en.wikipedia.org/wiki/Linux
+- [[https://sysprog21.github.io/lkmpg/][The Linux Kernel Module Programming Guide]]
+******* Distros
+:PROPERTIES:
+:ID:       80908ff8-aeeb-4429-8f87-e34660faea48
+:END:
+******** Arch Linux
+:PROPERTIES:
+:ID: 212133b4-f2dc-4735-b383-b0fda10833af
+:END:
+
+#+begin_quote
+A lightweight and flexible Linux distribution that tries to Keep It
+Simple.
+#+end_quote
+
+********* Installation Notes
+:PROPERTIES:
+:ID:       b98b89bf-1bb7-46d6-b27b-9990a0efc647
+:END:
+********** VERIFY
+:PROPERTIES:
+:ID:       05f3c4d6-a12d-4d9a-bd50-db3f56622fdc
+:END:
+we should verify image signatures and md5 sums on pre-install.
+*********** Pre-boot verify
+:PROPERTIES:
+:ID:       9911c315-e3e4-41db-9f7a-a711c51b46d3
+:END:
+#+BEGIN_SRC sh
+gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig
+#+END_SRC
+where 'version' is a date in the format 'YYYY.MM.DD'
+
+*********** Post-boot verify
+:PROPERTIES:
+:ID:       959df534-5209-4850-a4d7-6f150fadecc4
+:END:
+#+BEGIN_SRC sh
+pacman-key -v archlinux-version-x86_64.iso.sig
+#+END_SRC
+not recommended, especially if ISO image was downloaded via [[file:http.org][HTTP]] mirror
+*********** find device names
+:PROPERTIES:
+:ID:       b9d69686-3b4c-4407-8538-5fed693efbe3
+:END:
+#+BEGIN_SRC sh
+lsblk
+#+END_SRC
+*********** write archlinux ISO to device
+:PROPERTIES:
+:ID:       d93a09eb-9926-4025-9ce5-d0af28400619
+:END:
+#+BEGIN_SRC sh
+sudo dd if=/home/neocode/iso/archlinux-2015.09.01-dual.iso /dev/sdb1
+#+END_SRC
+*********** ping internet
+:PROPERTIES:
+:ID:       e6b22ba2-27a9-4a58-b284-2a82e7d6eac7
+:END:
+#+BEGIN_SRC sh
+ping -c 3 google.com
+#+END_SRC
+********** PARTITION
+:PROPERTIES:
+:ID:       8bb83e76-9890-44ba-a5b0-75b5b0c26b7f
+:END:
+*********** fdisk
+:PROPERTIES:
+:ID:       2ea9d4cf-041f-4a3e-8de7-a03caa7a9fdb
+:END:
+*********** format partitions
+:PROPERTIES:
+:ID:       b2c778e5-91cd-4f33-b28e-2a9a3438d415
+:END:
+#+BEGIN_SRC sh
+mkfs.ext4 /dev/sda1
+#+END_SRC
+*********** make swap partitions
+:PROPERTIES:
+:ID:       ccbf3d88-926f-40b6-ba3a-c57f6e08aca0
+:END:
+#+BEGIN_SRC sh
+mkswap /dev/sda2
+swapon /dev/sda2
+#+END_SRC
+********** MOUNT
+:PROPERTIES:
+:ID:       b1615282-40fb-4eca-92c4-508de30fa2a1
+:END:
+#+BEGIN_SRC sh
+mount /dev/sda1 /mnt
+#+END_SRC
+********** PROVISION
+:PROPERTIES:
+:ID:       7706593d-411f-4439-b866-1085a338199c
+:END:
+*********** pacstrap
+:PROPERTIES:
+:ID:       f23e94b7-1775-4121-b810-0dfd1b46d559
+:END:
+#+BEGIN_SRC sh
+pacstrap -i /mnt base base-devel
+#+END_SRC
+********** CONFIG
+:PROPERTIES:
+:ID:       bc26702c-548a-4022-93ab-bca8dc7558b9
+:END:
+*********** Generate fstab file
+:PROPERTIES:
+:ID:       8890dab8-fe14-4f54-a6d6-613c827f07c1
+:END:
+#+BEGIN_SRC sh
+genfstab -U -p /mnt >> /mnt/etc/fstab
+#+END_SRC
+
+test with:
+#+BEGIN_SRC sh
+cat /mnt/etc/fstab
+#+END_SRC
+*********** chroot into fresh install
+:PROPERTIES:
+:ID:       15e4bbba-1aee-40da-9461-f0e2f7592f98
+:END:
+#+BEGIN_SRC sh
+arch-chroot /mnt
+#+END_SRC
+*********** Configure network
+:PROPERTIES:
+:ID:       4afe7a9a-be20-4a6e-be9b-1b0d5db6d2cb
+:END:
+#+BEGIN_SRC sh
+ip link
+# systemctl enable dhcpcd@enp0s3.service
+#+END_SRC
+*********** Set locale
+:PROPERTIES:
+:ID:       ab330c12-37e0-4051-bc8c-77b9bb9ef54b
+:END:
+#+BEGIN_SRC sh
+locale-gen
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+export LANG=en_US.UTF-8
+ln -s /usr/share/zoneinfo/America/New_York > /etc/localtime
+#+END_SRC
+*********** Set Clock to UTC
+:PROPERTIES:
+:ID:       0f0381cf-85cc-4b97-8a4d-da7dedba3fd3
+:END:
+#+BEGIN_SRC sh
+hwclock --systohc --utc
+#+END_SRC
+*********** Update Archlinux Repository
+:PROPERTIES:
+:ID:       2274e479-c437-4f97-abff-3f90c7d78cbe
+:END:
+#+BEGIN_SRC sh
+pacman -Sy
+#+END_SRC
+
+********* Links
+:PROPERTIES:
+:ID:       328ce6ac-c4e4-47e6-9942-018561e7c630
+:END:
+********** [[https://wiki.archlinux.org/title/Dual_boot_with_Windows][Dual boot with Windows - ArchWiki]]
+:PROPERTIES:
+:ID:       0278d93e-d254-4494-b401-aa38277ad838
+:END:
+
+******** Pentoo
+:PROPERTIES:
+:ID: 8db0a4c6-b265-4d92-83ff-095899ca72e6
+:END:
+- https://www.pentoo.ch/
+
+Pentoo is a Linux distro based on Gentoo, provisioned as a 32 or
+64-bit live CD.
+
+Pentoo is designed specifically for Penetration Testing and includes the following features:
+- Kernel with wifi hacking related packages
+- Module loading support ala slax
+- Changes saving on usb stick
+- XFCE4 wm
+- OPENCL cracking support with development tools
+- System and security updates if you got it finally installed
+
+  #+begin_quote
+Put simply, Pentoo is Gentoo with the pentoo overlay. This overlay is
+available in layman so all you have to do is layman -L and layman -a
+pentoo.
+  #+end_quote
+
+******* Concepts
+:PROPERTIES:
+:ID:       395796de-ac63-4063-8fa7-94d4adace195
+:END:
+******** Filesystem
+:PROPERTIES:
+:ID:       96b3bec4-1673-419e-8900-c33bf12aa34f
+:END:
+********* /etc/skel
+:PROPERTIES:
+:ID:       5bd7664e-6f6e-436e-9f28-f7961ca8c724
+:END:
+#+begin_quote
+The default files for each new user are stored in this directory. Each
+time a new user is added, these skeleton files are copied into their
+home directory. An average system would have: .alias, .bash_profile,
+.bashrc and .cshrc files. Other files are left up to the system
+administrator.
+-- [[https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html][The Linux Documentation Project]]
+#+end_quote
+
+****** Windows                                                     :win:
+:PROPERTIES:
+:ID: 63c71a03-6f35-476f-b58b-8c6f3f52e485
+:END:
+- https://en.wikipedia.org/wiki/Microsoft_Windows
+******* [[https://docs.microsoft.com/en-us/windows/deployment/mbr-to-gpt][MBR2GPT - Windows Deployment | Microsoft Docs]]
+:PROPERTIES:
+:ID:       1b58ee7d-4aac-4a43-bb25-a9ff80d2ffa1
+:END:
+****** MacOS                                                    :darwin:
+:PROPERTIES:
+:ID: 80928580-61a4-489d-885b-0f273070fd91
+:END:
+- https://en.wikipedia.org/wiki/MacOS
+
+**** Version Control
+:PROPERTIES:
+:ID: 8ebdc53e-37cf-4f9a-8b4a-ad2e834f5ed3
+:AKA: VC
+:END:
+- https://en.wikipedia.org/wiki/Version_control
+Version Control (or revision control, source control, source code
+management..) most commonly refers to the practice of /managing
+changes/ to computer programs, documents, or other collections of
+information.
+
+The 'Version' in Version Control refers to a specific state of the
+/repository/, often represented as a [[file:hash.org][hash]] key. This key is used to
+identify these 'Versions' in a given Version Control System.
+
+
+***** Mercurial
+:PROPERTIES:
+:ID:       4e71c4b3-d55d-437b-af0b-79797f091418
+:AKA: hg
+:END:
+- https://www.mercurial-scm.org/
+
+#+begin_quote
+Mercurial is a free, distributed source control management tool. It
+efficiently handles projects of any size and offers an easy and
+intuitive interface.
+#+end_quote
+****** Mercurial <--> Git interop
+  :PROPERTIES:
+  :ID:       e8b605d5-8642-401f-bd8e-b84591e261ed
+  :END:
+  - Two different plugins - [[https://www.mercurial-scm.org/wiki/GitExtension][git]] and [[https://www.mercurial-scm.org/wiki/HgGit][hggit]], different features
+  - 'git' usage will treat a cloned repo as a git repo and just pull
+    branch heads into mercurial (.git directory and .hg directory present at root)
+  - 'hggit' will convert all changesets, branches, etc (.hg directory only)
+     - pulling changesets can be incredibly slow at times
+     - unlike vanilla hg, pulling from a git repo with hggit does NOT
+       support revision CLI flag ('-r 100' will not work), so the
+       standard method of doing an incremental pull is not possible
+     - expect unexpected behaviors. always have backups.
+  - hggit will often pull the 'github-pages' branch from repos using
+    GitHub Sites and treat it as the default branch in the resulting
+    clone. To make the repo usable you need to update to the 'master'
+    bookmark, and use that as default
+****** HgWeb
+:PROPERTIES:
+:ID:       855028ee-b28b-433d-a5bb-016fe72cefe2
+:END:
+****** [[https://www.mercurial-scm.org/guide][Mercurial Guide]]
+:PROPERTIES:
+:ID:       6abd2991-b6f0-4686-9620-93185ea19b1d
+:END:
+****** [[https://www.mercurial-scm.org/wiki/RepositoryCorruption][Dealing with Repository and Dirstate Corruption]]
+:PROPERTIES:
+:ID:       99282960-dc18-4db3-ae06-6a293914d0ec
+:END:
+****** [[https://mozilla-version-control-tools.readthedocs.io/en/latest/index.html][Mozilla Version Control Tools]]
+:PROPERTIES:
+:ID:       9f2b607c-0c3a-4fed-8c56-f42f1f42651c
+:END:
+
+****** Mercurialology
+:PROPERTIES:
+:created:  <2021-08-14 Sat 23:49>
+:ID:       ecc1f606-b6c2-4431-9bfe-adfe75ca3437
+:END:
+******* Why Mercurial?
+:PROPERTIES:
+:ID:       92359f36-6395-4864-9f3a-18fc15892b5e
+:END:
+[[https://git-scm.com/][Git]] and [[https://www.mercurial-scm.org/][Mercurial]] are two different tools with the same job, it has just been my
+experience that Mercurial does them a little bit better for my workflow, and I am able
+to build things faster using it.
+
+- Mercurial is designed to provide tools for /building/ a DVCS, and encourages you to
+  expand your knowledge about the system to reap the benefits it provides. With Git I
+  found myself often avoiding the implementation details in favor of quick-fixes and
+  ugly scripts. On the other hand, I feel much more comfortable /designing/ a solution
+  with the tools Mercurial provides.
+
+- the Mercurial system has features such as immutable commits and branches, which can be
+  quite dangerous. There are ways to 'fix' changes made by these commands, but they go
+  against the grain of the rest of the system. Git on the other hand lets you seamlessly
+  edit commits and close branches, which can be life-savers when Billy the Intern
+  commits to master.
+
+- Mercurial also has superior features for exporting native repository to different DVCS
+  (Git, Darcs, SVN), making it more useful in scenarios where a repo needs to be shared
+  with users or tools that are unfamiliar with the 'hg' command.
+
+- Overall, the choice is a personal one. Over time I have felt less constrained, as if
+  there were less rules to follow with Mercurial. This is a far-cry from my first
+  experience with it, where I felt the complete opposite.
+
+******* Web Hosting
+:PROPERTIES:
+:ID:       90aeedf8-86d9-4ef7-81e1-b22417ba58d9
+:END:
+Hosting with vanilla Mercurial is quite similar to vanilla Git. =hg serve= is basically
+the equivalent to =git instaweb=. Where they differ is in the out-of-box solutions - Git
+has cgit, GitLab, Gitolite, git.sr.ht, etc. Mercurial has hg.sr.ht, and just recently
+Heptapod, which is not production-ready.
+
+My experience with self-hosting the sr.ht eco-system was far from a good one due to
+conflicting dependencies, package manager incompatibility, and some classic PHP
+craziness. The Heptapod docker container took eons just to build tests, so I just gave
+up on that for now but will be on the look out for new developments with that
+project. So what we're really left with is the built-in tools. Lucky for us, we have the
+[[https://www.mercurial-scm.org/wiki/PublishingRepositories#hgweb][hgweb]] scripts at our disposal.
+
+Here's the relevant docs covering all topics in this section. They are all must-reads if
+you plan on exposing a Mercurial server to the public.
+
+- [[https://www.mercurial-scm.org/wiki/PublishingRepositories][PublishingRepositories - Mercurial]]
+- [[https://www.mercurial-scm.org/wiki/SecuringRepositories][SecuringRepositories - Mercurial]]
+- [[https://www.mercurial-scm.org/wiki/AuthorizingUsers][AuthorizingUsers - Mercurial]]
+
+- hgweb + wsgi + nginx \\
+  The hgweb script is used for deployment of the server via CGI or WSGI. The WSGI setup
+  is a bit more involved, but according to the docs:
+  #+begin_quote
+  (!) Much better performance can be achieved by using WSGI instead of CGI.
+  #+end_quote
+
+  This section covers the WSGI (pronounced /whis/-/gee/) setup, specifically for
+  Nginx. The docs have better examples for Apache servers, so you do need to go off the
+  beaten path to find just the right values to set in Nginx. The following setup worked
+  for https://hg.rwest.io running Arch Linux.
+
+  - dependencies \\
+    - =uwsgi= and =uwsgi-plugin-python= are required for the hgweb.wsgi script.
+    - =nginx= is used here, but...
+    - =apache= package is needed if you want to use ~htpasswd~ while setting up HTTP
+      Authentication. SSH auth only or public hosts don't need this.
+  - /etc/uwsgi/hgweb.ini \\
+    This is a UWSGI service configuration file - the =hgweb.wsgi= script needs to be
+    located in the directory specified by =chdir=. If you are using systemd, try
+    enabling the service with =systemctl enable uwsgi@hgweb.service=, and check the logs
+    for any errors. The service calls the hgweb.wsgi script, which serves all repos
+    configured via =hgweb.conf=.
+    #+begin_example
+    [uwsgi]
+    master = true
+    ; max-requests = 1000
+    ; logto = {log file path}/hgweb-uwsgi.log
+    uid = hgweb ; set process owner
+    gid = hgweb
+    stats = /run/uwsgi/stats.sock
+    chmod-socket = 666
+    cap = setgid,setuid
+    ; https://www.mercurial-scm.org/wiki/PublishRepositoriesOnNginx
+    plugins = python
+    socket = /run/uwsgi/hgweb.sock
+    chdir = /home/hgweb/hg
+    wsgi-file = hgweb.wsgi
+    ; https://stackoverflow.com/questions/15878176/uwsgi-invalid-request-block-size
+    ; http://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html
+    ; buffer-size = 65535
+    #+end_example
+
+  - hgweb.wsgi \\
+    The config path must be a byte string, and an absolute path. This script needs to be
+    in the same directory as =hgweb.conf=.
+    #+begin_src python
+    #!/usr/bin/env python3
+    config = b"/home/hgweb/hgweb.conf"
+    # Uncomment to send python tracebacks to the browser if an error occurs:
+    #import cgitb; cgitb.enable()
+    # enable demandloading to reduce startup time
+    from mercurial import demandimport; demandimport.enable()
+    from mercurial.hgweb import hgweb
+    application = hgweb(config)
+    #+end_src
+
+  - hgweb.conf \\
+    Mercurial web server configuration file. Setting staticurl to =/static= allows us to
+    pass serving of static content to Nginx, which is faster and has better caching
+    controls.
+    #+begin_example
+    [web]
+    encoding = UTF-8
+    baseurl = https://hg.rwest.io
+    contact = some_dude
+    templates = theme
+    style = spartan
+    logourl = https://rwest.io
+    staticurl = /static
+    descend = True
+    collapse = True
+    [paths]
+    / = src/*
+    #+end_example
+
+  - /etc/nginx/sites-enabled/hg.conf \\
+    Note that none of the extra uwsgi params from mercurial docs are used here, only the
+    default uwsgi_params files provided by Nginx.
+    #+begin_example
+    server {
+      server_name hg.rwest.io;
+      listen 443 ssl;
+      ssl_certificate fullchain.pem;
+      ssl_certificate_key privkey.pem;
+      ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
+      ssl_ciphers HIGH:!aNULL:!MD5;
+      root /home/hgweb/hg;
+      location / {
+        limit_except GET HEAD {
+          auth_basic "Mercurial userspace";
+          auth_basic_user_file /home/hgweb/hg/hg.htpasswd;
+        }
+      include uwsgi_params;
+      uwsgi_pass unix:/run/uwsgi/hgweb.sock;    
+    }
+
+    location /static {
+      alias /home/hgweb/hg/static;
+      expires 30d;
+    }
+  }
+    #+end_example
+
+- theme \\
+  - screenshots
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/hgweb-frontend.png][https://cdn.rwest.io/img/hgweb-frontend.png]]
+    #+caption: hgweb graph view
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/hgweb-graph-frontend.png][https://cdn.rwest.io/img/hgweb-graph-frontend.png]]
+    #+caption: hgweb rev view
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/hgweb-rev-frontend.png][https://cdn.rwest.io/img/hgweb-rev-frontend.png]]
+    #+caption: hgweb file view
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/hgweb-file-frontend.png][https://cdn.rwest.io/img/hgweb-file-frontend.png]]
+    #+caption: hgweb browser view
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/hgweb-browse-frontend.png][https://cdn.rwest.io/img/hgweb-browse-frontend.png]]
+******* Bundles
+:PROPERTIES:
+:ID:       e2ab9e3c-eb6f-4f4a-897d-c68a724827c4
+:END:
+Hg Bundles are a more powerful version of [[https://git-scm.com/docs/git-bundle/2.8.6][git bundles]] and come in two flavors:
+Clonebundles and Pullbundles. They share a common format, support the =bundle= and
+=unbundle= commands, but are also used to provision their own commands: =hg clone= and
+=hg pull= respectively. Bundles are advertised via manifest files located in the =.hg=
+directory of a repo, and support a variety of compression backends via the ~BUNDLESPEC~
+value specified in manifest.
+- Bundlespec
+   - none-v2
+   - gzip-v2
+   - zstd-v2
+   - stream-v2
+- Manifests
+  - clonebundles.manifest
+  - pullbundles.manifest
+  - manifest.json
+- Hosting
+  - https://pkg.rwest.io/hg/
+******* Scripts
+:PROPERTIES:
+:ID:       6466330f-3028-4a9e-96fb-aea6320c1e8c
+:END:
+- hg-pull.sh
+  #+begin_src shell
+#!/bin/bash
+# store the current dir
+CD=$(pwd)
+
+echo "Pulling in latest changes for all local repositories..."
+
+# Find all mercurial repositories, pull and update
+for i in $(find . -name ".hg" | cut -c 3-); do
+    echo "";
+    echo $i;
+
+    # We have to go to the .hg parent directory to call the pull command
+    cd "$i";
+    cd ..;
+    # pull and update
+    hg pull -u;
+    # go back to the CUR_DIR
+    cd $CD
+done
+
+echo "Done."
+
+  #+end_src
+- hg-bundle.sh
+  #+begin_src shell
+#!/bin/bash
+# bundle a tar.zst archive of Mercurial repositories.
+
+CD=$(pwd)
+WD=$HOME/stash/tmp
+OUT=$WD/bundle
+SRC_PATH=$HOME/src
+BUNDLE_NAME=bundle-$(date "+%Y%m%d").tar.zst
+
+echo "Building $BUNDLE_NAME in $WD..."
+
+mkdir -pv $OUT
+rm -rf $OUT/*
+rm -rf $WD/$BUNDLE_NAME
+
+cd $SRC_PATH
+
+# Find all mercurial repositories, create bundles and dump them to $OUT dir
+for i in $(find . -name ".hg" | cut -c 3-); do
+    echo "";
+    echo $i;
+
+    cd "$i";
+    cd ..;
+    hg bundle -a -t gzip-v2 $OUT/$(basename $(hg root)).hg.gz;
+    hg bundle -a -t zstd-v2 $OUT/$(basename $(hg root)).hg.zst;
+    hg bundle -a -t none-v2 $OUT/$(basename $(hg root)).hg;
+    hg debugcreatestreamclonebundle $OUT/$(basename $(hg root)).hg.stream;
+    echo "... Done.";
+    cd $SRC_PATH
+done
+
+cd $WD
+# this will take a while with ultra mode
+tar -I 'zstd --ultra -22' -cf $BUNDLE_NAME bundle/
+
+echo "Done."
+  #+end_src
+- hg-unbundle.sh
+  #+begin_src shell
+#!/bin/sh
+# unbundle a tar.zst archive of Mercurial repositories.
+# this will generate a directory name 'bundle' in '~/pkg/hg/'
+WD=$HOME/stash/tmp
+BUNDLE_NAME=bundle-$(date "+%Y%m%d")
+PKG_DIR=$HOME/pkg/hg
+echo "unbundling $i to $PKG_DIR/bundle"
+# the zstd options for tar no work for me, decompress archive (this should be MacOS only, maybe Win. need to add checks)
+unzstd $WD/$BUNDLE_NAME.tar.zst
+tar -xvf $WD/$BUNDLE_NAME.tar -C $PKG_DIR
+rm -rf $WD/$BUNDLE_NAME.tar.zst $WD/$BUNDLE_NAME.tar
+echo "Done."
+  #+end_src
+******* Further Reading
+:PROPERTIES:
+:ID:       d33ea2ff-cac6-4b75-bc43-7fbc65e49c33
+:END:
+- [[https://blog.nrwl.io/misconceptions-about-monorepos-monorepo-monolith-df1250d4b03c][Misconceptions about Monorepos: Monorepo != Monolith]] - Victor Savkin 2019
+- [[https://research.google/pubs/pub45424/][Why Google Stores Billions of Lines of Code in a Single Repository]] - Josh Levenberg, 2016
+
+***** Git
+:PROPERTIES:
+:ID:       cd04e50c-1de3-46d7-b0ab-47f36962fc0a
+:END:
+
+The preferred choice for most developers. Git is widely used in
+academia as well as in the software industry, making it a necessary
+skill for collaborating with others, and sharing code on the internet.
+
+#+begin_quote
+Git is a free and open source distributed version control system
+designed to handle everything from small to very large projects with
+speed and efficiency.
+
+Git is easy to learn and has a tiny footprint with lightning fast
+performance. It outclasses SCM tools like Subversion, CVS, Perforce,
+and ClearCase with features like cheap local branching, convenient
+staging areas, and multiple workflows.
+-- https://git-scm.com/
+#+end_quote
+
+***** Darcs
+:PROPERTIES:
+:ID:       cad6c8cf-1cd4-462b-8270-28d0ec4497c8
+:END:
+***** Eden
+:PROPERTIES:
+:ID:       5905558f-eddb-4eb4-988b-70a0a0452716
+:END:
+A new SCM attempt by Facebook, with the goal of improving on the
+Mercurial platform, and optimizing for use with Monolithic code bases.
+***** Subversion
+:PROPERTIES:
+:ID:       545af3a6-f096-46a2-a053-1795b0972535
+:AKA: svn
+:END:
+**** Virtualization
+:PROPERTIES:
+:ID: 045133dd-0b52-47bb-b982-6fc586c8fbcd
+:END:
+- http://www.virtualizationsoftwares.com/what-is-hardware-virtualization/
+
+Virtualization (or more specifically, hardware virtualization) is a
+method of sharing hardware components across individual /virtual
+machines/ (VMs).
+
+In software development, the host computer shares its resources with
+individual VMs by using a /hypervisor/ or /virtual machine manager/
+(VMM).
+
+Virtualization technology is constanty evolving, and we likely have a
+long way to go before we get it right, but the increase in popularity
+that is likely due to the use of virtualization in microservice/web
+based apps has made it more approachable in the tech community, and
+accepted as a core components of DevOps.
+*** links
+:PROPERTIES:
+:ID:       4085c001-3c70-45b5-9fca-cd989bf02cf0
+:END:
+**** unsorted
+:PROPERTIES:
+:ID:       6dcfe91d-ecfa-4889-8432-fbccbc6e06b5
+:END:
+***** [[https://docs.google.com/document/d/1xbHW7aOMLT_NUOguLViHgt6xOCitxVxBtuDtbTcVHRU][Open platforms, hundred of millions-level computing power, spatio-temporal data: with the arrival of the epidemic, what is AI doing]] :ai:
+:PROPERTIES:
+:ID:       4fd5aea1-965a-47ab-9998-573618a94a45
+:END:
+CREATED: [2021-01-26 Tue 15:29]
+***** [[https://docs.google.com/presentation/d/1F-_tgU27l6mgH8MY2zUIKPnTz8ZfcSrE][Edge Weight Prediction in Weighted Sign Networks - Srijan Kumar]] :deck:dapp:net:
+:PROPERTIES:
+:ID:       b4f4aa58-b769-46c3-8017-8fbc1431f548
+:END:
+CREATED: [2021-01-26 Tue 15:26]
+Good intro to managing "Goodness" and "Fairness" amongst nodes in distributed systems
+
+***** [[https://io808.com/][iO-808]]
+	 :PROPERTIES:
+	 :CREATED:  [2021-02-07 Sun 23:28]
+	 :ID:       c33cdfcf-393e-4ca7-941f-9d4e5fa88c77
+	 :END:
+	 JS-based TR-808 web app
+***** [[http://pd-tutorial.com/english/ch04s02.html][PureData Sequencer Tutorial]]
+:PROPERTIES:
+:ID:       e24d11a0-f08b-4b26-842f-011fa77de6f4
+:END:
+CREATED: [2021-01-27 Wed 15:09]
+where we left off in researching Max alternatives
+***** [[https://github.com/stripe-samples/checkout-one-time-payments][Stripe - one-time example]]
+:PROPERTIES:
+:ID:       733924bd-0114-409d-98e2-5f3d687fd47d
+:END:
+CREATED: [2021-01-25 Mon 15:09]
+***** [[https://stripe.com/docs/api][Stripe API Reference]]
+:PROPERTIES:
+:ID:       19c3902b-e359-4de7-ab60-1c60001222e6
+:END:
+CREATED: [2021-01-25 Mon 15:10]
+***** [[https://github.com/obsproject/obs-studio/blob/master/plugins/rtmp-services/data/services.json][OBS RTMP Services]] :json:
+:PROPERTIES:
+:ID:       d2020cd5-b0e7-4414-94a1-6c3e6a85c5cf
+:END:
+CREATED: [2021-01-23 Sat 14:45]
+
+***** [[https://en.wikipedia.org/wiki/Rope_(data_structure)][Rope (data structure) - Wikipedia]] :compsci:
+:PROPERTIES:
+:ID:       76ebfa76-dd5b-4c6f-b020-930dfdfe82bc
+:END:
+CREATED: [2020-08-03 Mon 15:41]
+***** [[https://protesilaos.com/fables-on-systems/][Fables on Systems | Protesilaos Stavrou]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       f1f16283-b4ec-450f-b625-e9bdb927a6cd
+	 :END:
+		
+***** [[https://blog.securityevaluators.com/reverse-engineering-bumbles-api-a2a0d39b3a87][Reverse Engineering Bumble's API - ISE]]
+:PROPERTIES:
+:ID:       e9dc0cf6-0b9b-4b9a-9ac3-bc8d0bea9359
+:END:
+CREATED: [2021-01-22 Fri 02:39]
+***** [[https://crates.io/crates/dropbox-sdk][dropbox-sdk]]
+:PROPERTIES:
+:ID:       a8b9d16e-f6c3-4e48-9cb1-b29008c5ab36
+:END:
+CREATED: [2021-01-21 Thu 00:14]
+***** [[https://book.hacktricks.xyz/][HackTricks]]
+:PROPERTIES:
+:ID:       54088fef-a7f3-4927-9e11-f317f6b369df
+:END:
+CREATED: [2021-01-20 Wed 21:38]
+***** [[https://en.wikipedia.org/wiki/Amdahl%27s_law][Amdahl's law - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       36cd31e3-b77c-4ee6-af49-271e92824f45
+	 :END:
+***** [[https://www.researchgate.net/publication/42795002_Consuming_the_entrepreneurial_city_Image_memory_spectacle][Consuming the entrepreneurial city: Image, memory, spectacle | Researchgate]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       c1b178ca-4079-4426-ac82-aab82ff71163
+	 :END:
+***** [[http://www.dcs.ed.ac.uk/home/lego/][The LEGO Proof Assistant]] - lol
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-11 Sat]
+   :ID:       4d38faf0-6a63-4925-9438-beee51c7a0a9
+	 :END:
+***** [[https://docs.rs/svd2rust/0.17.0/svd2rust/][svd2rust - Rust]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-11 Sat]
+   :ID:       53b5547c-cdda-493f-a798-afb024008f79
+	 :END:
+***** [[https://github.com/nodiscc/awesome-linuxaudio][GitHub - nodiscc/awesome-linuxaudio]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-06 Mon]
+   :ID:       6d607faa-0c2c-4306-a02f-19dbe69a6594
+	 :END:
+***** [[https://www.nongnu.org/ratpoison/inspiration.html][SCWM, Pot and the GPL]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+   :ID:       aceaa143-7223-46a8-bc55-5a01efb54ebb
+	 :END:
+***** [[https://registry.opendata.aws/][Registry of Open Data on AWS]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+   :ID:       1046d779-cd8b-49f0-9c2f-8e910b3cebeb
+	 :END:
+***** [[https://commoncrawl.org/][Common Crawl]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-05 Sun]
+   :ID:       63dbe609-6cc5-4b1e-8720-c57b50157f07
+	 :END:
+***** [[https://remexre.xyz/][remexre.xyz]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       6130e479-d150-4522-9825-de713d444209
+	 :END:
+***** [[https://www.reddit.com/r/archlinux/comments/20q0s0/awesome_wm_vs_i3/#:~:text=Another%20really%20major%20difference%20between,one%20screen%20to%20the%20next.][Awesome WM vs i3 : archlinux]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       6da00b38-676f-4be0-8caa-145cdb0569d8
+	 :END:
+***** [[https://awesomewm.org/apidoc/][awesome API documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       adaae893-b0da-4e92-b80c-738602716560
+	 :END:
+***** [[https://github.com/lcpz/awesome-copycats][GitHub - lcpz/awesome-copycats: Awesome WM themes]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       9043f47b-646d-4990-b65f-04fb1a43662a
+	 :END:
+	 ready-to-ship awesomewm configs
+***** [[https://www.navy.mil/submit/display.asp?story_id=109773][SPAWAR Changes Name to Naval Information Warfare Systems Command -- Aligns Identity with Mission]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       6508d388-91ff-4f21-ab3a-1a3f86c79e4d
+	 :END:
+***** [[https://en.wikipedia.org/wiki/Unified_Modeling_Language][Unified Modeling Language - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       e57dd408-2e32-4bbf-880e-1f34b3e16ffd
+	 :END:
+***** [[https://hpbn.co/webrtc/][Browser APIs and Protocols: WebRTC - High Performance Browser Networking (O'Reilly)]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       b85767a0-6e30-4608-8d66-ed50f0cf232f
+	 :END:
+***** [[https://www.researchgate.net/publication/322419379_Fault_Localization_in_Service-Based_Systems_hosted_in_Mobile_Ad_Hoc_Networks][(PDF) Fault Localization in Service-Based Systems hosted in Mobile Ad Hoc Networks]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       facb1c46-f5f6-43c8-b43d-d8338fe9b5bd
+	 :END:
+***** [[https://en.wikipedia.org/wiki/Maximum_transmission_unit][Maximum transmission unit - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       98d377d0-479f-4e7d-a1ab-397c9e1b5de3
+	 :END:
+***** [[https://www.reddit.com/prefs/feeds/][reddit.com: prefs/feeds]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       9493e8f7-8a6b-4cee-909d-7f686b8dfe8d
+	 :END:
+***** [[https://www.rfc-editor.org/rfc/rfc7854.txt][BGP Monitoring Protocol (BMP)]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-01 Wed]
+   :ID:       61c82a59-26fc-44b9-991d-0249f1e229da
+	 :END:
+***** [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol#:~:text=Border%20Gateway%20Protocol%20(BGP)%20is,(AS)%20on%20the%20Internet.][Border Gateway Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-01 Wed]
+   :ID:       443ee013-49c2-4e21-bf87-49e1008262aa
+	 :END:
+***** [[https://tools.ietf.org/html/rfc5424][RFC 5424 - The Syslog Protocol]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-01 Wed]
+   :ID:       8447264a-0cae-43d0-9da8-3391aa4e05ed
+	 :END:
+***** [[https://en.wikipedia.org/wiki/Asterisk_(PBX)][Asterisk (PBX) - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-01 Wed]
+   :ID:       8571620e-b101-4263-aedc-2457bbb9b006
+	 :END:
+***** [[https://books.google.com/books?id=8wsdxBzyV48C&printsec=frontcover#v=onepage&q&f=false][Asterisk Hacking - Joshua Brashars - Google Books]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-01 Wed]
+   :ID:       16ac5177-6086-48e5-890c-646f04fcf50e
+	 :END:
+***** [[https://www.gartner.com/imagesrv/media-products/pdf/radware/Radware-1-2Y7FR0I.pdf][Gartner: Protecting from a Growing Attack Vector: Encrypted Attacks]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+   :ID:       e55ee12d-9dd8-433d-8264-1dd5db4f44ee
+	 :END:
+***** [[https://blogs.infoblox.com/community/dns-data-exfiltration-how-it-works/?_ga=2.5464179.1967257259.1592815237-1124357645.1592815237][DNS Data Exfiltration - How it works]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-28 Sun]
+   :ID:       5b481d26-8905-47b2-8fd7-ea4c54b36f83
+	 :END:
+***** [[https://www.youtube.com/watch?v=lKXe3HUG2l4]["The Mess We're In" by Joe Armstrong - YouTube]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-24 Wed]
+   :ID:       a38e44f1-452a-4022-80f1-b6e573c59777
+	 :END:
+	 [[yt:lKXe3HUG2l4]]
+***** [[https://silvia-odwyer.github.io/photon/demo.html][Photon WASM Demo]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-24 Wed]
+   :ID:       df9d1978-5019-456c-befb-9f11702f6da5
+	 :END:
+***** [[https://academictorrents.com/details/defa6184c98663c94de97cb7e0952a54677e4aac/collections][Enabling Factorized Piano Music Modeling and Generation with the {MAESTRO} Dataset - Collections - Academic Torrents]] :ml:
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-24 Wed]
+   :ID:       502c4cb8-ac98-4a34-8514-ae7186112060
+	 :END:
+***** [[https://www.youtube.com/watch?v=bo5WL5IQAd0][How we program multicores - Joe Armstrong]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-24 Wed]
+   :ID:       2c53c5ef-8fb2-46b7-99a6-a089c40624c6
+	 :END:
+***** [[https://www.geeksforgeeks.org/piping-in-unix-or-linux/][Piping in Unix or Linux - GeeksforGeeks]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-19 Fri]
+   :ID:       7fe89ff1-4808-4357-9fc8-e8a2d5d7b9a8
+	 :END:
+***** [[https://github.com/joncardasis/ultimate-api][ultimate guitar api 2017]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-06-17 Wed]
+   :ID:       2fb5a02f-c248-4555-8182-f3e64003852f
+	 :END:
+***** [[http://w3m.sourceforge.net/][W3M Homepage]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       1a3ab1cf-58fe-43d9-b10e-b0456f82cebc
+	 :END:
+***** [[http://core.dpdk.org/doc/][DPDK]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       261aba16-b34b-4746-a486-2a8bfc7ad84c
+	 :END:
+***** [[https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9730-packet-processing-on-gpu-at-100gbe-line-rate.pdf][NVIDIA - GPU-accelerated packet-processing]]
+:PROPERTIES:
+:ID:       9dfb0671-b926-4f6d-a321-a0423514686f
+:END:
+		they yoinked from DPDK and optimized for GPU
+***** [[https://en.wikipedia.org/wiki/Bit_numbering#Most_significant_byte][Bit numbering - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       16550f25-cd6a-4edb-a5f4-5cc93a1c3019
+	 :END:
+***** [[https://tools.ietf.org/html/rfc2119][RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       2bb91acc-fba5-4f31-8a78-4b1f4f72f7cc
+	 :END:
+***** [[https://tools.ietf.org/html/rfc8174][RFC 8174 - Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       8cf830fa-62f3-48e2-b71b-9299727a15b2
+	 :END:
+***** [[https://en.wikipedia.org/wiki/Spanning_tree][Spanning tree - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       529448d3-bc00-4fa7-9982-8bc8c8fc5501
+	 :END:
+***** [[https://gstreamer.freedesktop.org/documentation/additional/design/element-sink.html?gi-language=c][Sink elements]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       cf8be67d-523e-468d-8dc2-5b925a02d6b0
+	 :END:
+***** [[https://opencorporates.com/][open-corp DB]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       86cf6ebb-3588-4692-b2d4-fa52014305c1
+	 :END:
+***** [[https://en.wikipedia.org/wiki/Cisco_Meraki][Cisco Meraki - Wikipedia]]
+:PROPERTIES:
+:ID:       be6b1e0f-8d05-487d-8962-27cb50d608c7
+:END:
+	 find out what they're currently implementing
+	 :PROPERTIES:
+	 :CREATED: [2020-07-12 Sun]
+	 :END:
+
+***** [[https://github.com/ulid/spec][GitHub - ulid/spec: The canonical spec for ulid]]
+:PROPERTIES:
+:ID:       55760717-82c2-4735-892a-4de534ce52a8
+:END:
+- [[https://github.com/mmacedoeu/rulid.rs/blob/master/src/lib.rs][rulid.rs/lib.rs at master · mmacedoeu/rulid.rs · GitHub]]
+- [[https://github.com/dylanhart/ulid-rs/blob/master/src/lib.rs][ulid-rs/lib.rs at master · dylanhart/ulid-rs · GitHub]]
+
+**** Blogs
+:PROPERTIES:
+:ID:       b1787fc3-31bd-4b18-aa46-54a9c33e498e
+:END:
+- Blogging is common practice in the programming world. It's a great way
+  to learn new things and gain insight.
+- find a few good bloggers in your field of choice, and take some time
+  to understand what they're doing and why.
+***** [[https://sts10.github.io/][Prevent Default]]
+:PROPERTIES:
+:ID:       02ba11a3-0be1-4786-b834-1a3c6598cad5
+:END:
+
+**** Talks
+:PROPERTIES:
+:ID: 1ba5fd10-a4a2-465b-a224-012c736214ef
+:END:
+***** The Mess We're In
+:PROPERTIES:
+:ID: c6dfbf4b-1c22-4502-abef-0945a364edca
+:END:
+A presentation given by Joe Armstrong at [[https://www.thestrangeloop.com/][Strange Loop]] 2014.
+[[yt:lKXe3HUG2l4][The Mess We're In]]
+** Computer Architecture
+:PROPERTIES:
+:ID:       cddbe07b-669c-4956-9bbb-93e3b6ed3813
+:END:
+#+begin_quote
+In computer engineering, computer architecture is a set of rules and
+methods that describe the functionality, organization, and
+implementation of computer systems.
+-- [[https://en.wikipedia.org/wiki/Computer_architecture][Wikipedia]]
+#+end_quote

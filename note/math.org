@@ -11,3 +11,22 @@
 :PROPERTIES:
 :ID: 6d0b5076-98c6-45c0-9b95-6e9b540d5796
 :END:
+
+** Number Systems
+:PROPERTIES:
+:ID:       9b7387eb-a627-4623-a3a2-deb098e6d45e
+:END:
+*** Surreal Numbers
+:PROPERTIES:
+:ID:       8e4ea5a3-bfe4-4255-8165-f28d24ba20ef
+:END:
+#+begin_quote
+In mathematics, the surreal number system is a totally ordered proper
+class containing the real numbers as well as infinite and
+infinitesimal numbers, respectively larger or smaller in absolute
+value than any positive real number.
+-- [[https://en.wikipedia.org/wiki/Surreal_number][Wikipedia]]
+#+end_quote
+
+- [[cdn:media/doc/surreal_numbers.pdf][how two ex-students turned on to pure mathematics and found total happiness]]
+  - D.E. Knuth
