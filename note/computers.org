@@ -1,4 +1,4 @@
-* Computer Science                                                       :cs:
+* Computers                                                              :cs:
 :PROPERTIES:
 :ID:       3321999b-34d2-4c62-a9de-fce29110f068
 :AKA: CS, compsci
@@ -185,6 +185,9 @@ Code signing is the process of digitally signing executables and scripts to conf
 -- [[https://en.wikipedia.org/wiki/Code_signing][Wikipedia]]
 #+end_quote
 **** links
+:PROPERTIES:
+:ID:       217894b2-6547-4f38-b379-d96ec31ab681
+:END:
 ***** [[https://tools.ietf.org/html/rfc8439][RFC 8439 - ChaCha20 and Poly1305 for IETF Protocols]]
 	 :PROPERTIES:
 	 :CREATED:  [2021-02-13 Sat 03:07]
@@ -258,7 +261,7 @@ plural of automaton) comes from the Greek word αὐτόματος, which means
 "self-acting, self-willed, self-moving".
 -- [[https://en.wikipedia.org/wiki/Automata_theory][Wikipedia]]
 #+end_quote
-*** Programming Language Theory
+*** Programming Language Theory                                      :lang:
 :PROPERTIES:
 :ID:       c6cc3ff7-bb41-4887-a948-0d9abaa1fa16
 :AKA: PLT, programming language, pl, lang
@@ -344,6 +347,58 @@ in C++:
 :CREATED: [2021-01-26 Tue 16:24]
 :END:
 A wonderful visual history reference
+**** EBNF                                                           :ebnf:
+:PROPERTIES:
+:ID:       0f36eac3-f9ba-42db-bb56-c09c5760cc89
+:END:
+[[https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form][Extended Backus–Naur form - Wikipedia]]
+#+begin_quote
+In computer science, extended Backus–Naur form (EBNF) is a family of
+metasyntax notations, any of which can be used to express a
+context-free grammar. EBNF is used to make a formal description of a
+formal language such as a computer programming language. They are
+extensions of the basic Backus–Naur form (BNF) metasyntax notation.
+#+end_quote
+
+for more on grammars see:
+- [[https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form][Backus–Naur form - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Phrase_structure_rules][Phrase structure rules - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Context-free_grammar][Context-free grammar - Wikipedia]]
+- [[https://lalrpop.github.io/lalrpop/][LALRPOP]]
+***** Operators
+:PROPERTIES:
+:ID:       67d9d46d-b7a6-4a78-84fe-d2b306590074
+:END:
+#+begin_src 
+ * repetition-symbol
+ - except-symbol
+ , concatenate-symbol
+ | definition-separator-symbol
+ = defining-symbol
+ ; terminator-symbol
+ . terminator-symbol
+#+end_src
+precedence of operator is listed in descending order, and overriden by the following bracket pairs:
+#+begin_src 
+ (* start-comment-symbol          end-comment-symbol *)
+ '  first-quote-symbol            first-quote-symbol  '
+ (  start-group-symbol              end-group-symbol  )
+ [  start-option-symbol            end-option-symbol  ]
+ {  start-repeat-symbol            end-repeat-symbol  }
+ ?  special-sequence-symbol  special-sequence-symbol  ?
+ "  second-quote-symbol          second-quote-symbol  "
+#+end_src
+*** Computational Linguistics                                    :language:
+:PROPERTIES:
+:ID: d614429d-6f19-46e5-87af-91eb591f4307
+:END:
+
+- [[https://plato.stanford.edu/entries/computational-linguistics/][Computational Linguistics (Stanford Encyclopedia of Philosophy)]]
+
+#+begin_quote
+Human knowledge is expressed in language. So computational linguistics is very important.
+-- Mark Steedman, ACL Presidential Address (2007)
+#+end_quote
 ** Computer Programming
 :PROPERTIES:
 :ID:       3f293465-adc9-43f3-ad75-9a711594ed33
@@ -470,6 +525,12 @@ many companies with a strong web presence, is through [[https://en.wikipedia.org
 :PROPERTIES:
 :ID:       25c29048-a6b4-47f0-8122-a74b10fe5651
 :END:
+**** Crash-only Software
+:PROPERTIES:
+:ID: 9ecad969-9cfe-4bf9-b2b9-37f48ba301fc
+:END:
+- [[https://en.wikipedia.org/wiki/Crash-only_software][Crash-only software - Wikipedia]]
+- [[https://www.usenix.org/legacy/events/hotos03/tech/full_papers/candea/candea.pdf][Crash-only Software - George Candea, Armando Fox]]
 *** Models
 :PROPERTIES:
 :ID:       0e932ce2-bc13-4a78-b5d7-67d3138908dc
@@ -574,13 +635,43 @@ cracking programs for hash-based resources:
 - [[https://www.openwall.com/john/][JohnTheRipper]]
 
 *** Formatting                                                        :fmt:
+:PROPERTIES:
+:ID:       4fc48ec4-51c3-439e-9af7-e775e12ea6f1
+:END:
 **** Indentation
+:PROPERTIES:
+:ID:       835482b7-bb8d-41f4-ad72-fafe9c19a4a9
+:END:
 #+begin_quote
 In computer programming, an indentation style is a convention
 governing the indentation of blocks of code to convey program
 structure.
 -- [[https://en.wikipedia.org/wiki/Indentation_style][Wikipedia]]
 #+end_quote
+**** Markup Languages
+:PROPERTIES:
+:ID:       2fbcff2e-d187-4986-86b1-8725f2681337
+:END:
+***** HTML
+:PROPERTIES:
+:ID: 36551370-964b-40cf-834b-72d23228fc4f
+:END:
+HyperText Markup Language
+- [[https://html.spec.whatwg.org/][HTML Standard]]
+- [[https://en.wikipedia.org/wiki/HTML][HTML - Wikipedia]]
+- [[https://datatracker.ietf.org/doc/html/draft-ietf-html-spec-00][draft-ietf-html-spec-00]]
+- <> = tag, encapsulates 'elements'
+- Everything you need to learn the basic HTML spec is included in
+  modern web browsers. To get started, right click anywhere on a
+  webpage and 'Inspect Element'.
+- The Living Spec is [[https://en.wikipedia.org/wiki/HTML5][HTML5]]. It includes a bunch of modern-era elements
+  like =<canvas>= =<video>= =<audio>= =<main>=.
+- The term =HTML= is somewhat of a cluster nowadays - it can refer to
+  anything X/HTML/5 or /HTML-like/. When building systems that
+  leverage =HTML=, it is important to understand to the differences
+  between implementations of HTML parsers across different programs
+  and libraries. Read the docs.
+  
 *** Concretes
 :PROPERTIES:
 :ID:       3ee2d6a3-9c16-4357-9d92-e9ef73a1ac45
@@ -638,17 +729,30 @@ coherency when you are traversing the graph.
      :END:
      - the name for executable-space protection in Windows systems
 
-*** Languages                                                        :lang:
+**** Database
+:PROPERTIES:
+:ID: 737cd881-0f1e-4390-b604-9acc5720dac9
+:END:
+- [[https://en.wikipedia.org/wiki/Extract,_transform,_load][ETL]]
+- [[https://en.wikipedia.org/wiki/Extract,_load,_transform][ELT]]
+  
+***** [[https://en.wikipedia.org/wiki/Data_warehouse][Data Warehouse]]
+:PROPERTIES:
+:ID:       2f46e98a-0a23-4bb4-af1b-3b08be1243d6
+:END:
+****** [[https://en.wikipedia.org/wiki/Data_mart][Data Mart]]
+:PROPERTIES:
+:ID:       5893d405-66c6-4ca9-86de-d1d468f0054c
+:END:
+***** [[https://en.wikipedia.org/wiki/Data_lake][Data Lake]]
+:PROPERTIES:
+:ID:       bcdd78cc-46f1-447d-b3d4-56f307016671
+:END:
+
+*** Programming Languages                                            :lang:
 :PROPERTIES:
 :ID:       9f3f832c-53e7-46da-968e-858c1637f675
 :END:
-- [[id:b46de918-896e-420d-8cde-09c21ae93ecd][Rust]]
-- [[id:22928e28-f482-40c8-a5ef-0f6857fbd994][C]]
-- [[id:b3d70401-020f-4ae8-bc48-ceee1489bc7c][C++]]
-- [[id:249c2d3e-9d59-4f1f-9f6f-ad68ab04d1d3][Python]]
-- [[id:2a2818ba-2fee-4cf9-87f5-45cb66512265][Lua]]
-- [[id:82eae0d0-bec2-4c70-b003-f43c1ca1c781][COBOL]]
-- [[id:52d04515-6aeb-4a23-8ca3-31fa5f3a85e0][Bash]]
 **** C                                                                 :c:
 :PROPERTIES:
 :ID: 22928e28-f482-40c8-a5ef-0f6857fbd994
@@ -1827,6 +1931,9 @@ CREATED: [2021-01-22 Fri 02:20]
 - https://en.wikipedia.org/wiki/COBOL
 
 *** Standards
+:PROPERTIES:
+:ID:       d11cad66-1eba-4eb2-b1bc-ebca6aeeaa33
+:END:
 **** POSIX
 :PROPERTIES:
 :ID:       89e4b741-a241-4e80-8f86-d1c69fd49230
@@ -1845,6 +1952,11 @@ systems.
 :PROPERTIES:
 :ID:       b6b804b1-072b-445b-a8cd-45714bea1bfe
 :END:
+**** Data Interchange Formats
+:PROPERTIES:
+:ID:       8eb2380a-f97d-4dcb-88c5-9707cfa595e3
+:END:
+
 *** Software
 :PROPERTIES:
 :ID: 375d49a0-05c9-4937-9efe-7385f354f8ac
@@ -2123,6 +2235,244 @@ The core functions we want:
 - run - run a package (nix-shell run)
 - monitor
 - ssh
+***** Bash                                                        :shell:
+:PROPERTIES:
+:ID:       52d04515-6aeb-4a23-8ca3-31fa5f3a85e0
+:AKA: bash
+:END:
+#+begin_quote
+Bash is the GNU Project's shell—the Bourne Again SHell. This is an
+sh-compatible shell that incorporates useful features from the Korn
+shell (ksh) and the C shell (csh). It is intended to conform to the
+IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard. It offers
+functional improvements over sh for both programming and interactive
+use. In addition, most sh scripts can be run by Bash without
+modification.
+-- [[https://www.gnu.org/software/bash/][GNU Project - Free Software Foundation]]
+#+end_quote
+
+****** [[https://tiswww.case.edu/php/chet/bash/bashtop.html][The GNU Bourne-Again Shell]]
+:PROPERTIES:
+:ID:       216df359-d37e-42d4-9172-fa43e7b95585
+:END:
+- [[https://tiswww.case.edu/php/chet/bash/FAQ][FAQ]]
+
+****** [[https://stackoverflow.com/questions/16365130/what-is-the-difference-between-usr-bin-env-bash-and-usr-bin-bash/16365367#16365367][linux - What is the difference between "#!/usr/bin/env bash" and "#!/usr/bin/bash"? - Stack Overflow]]
+:PROPERTIES:
+:CREATED:  [2020-07-05 Sun]
+:ID:       49984c0c-a553-4c62-a921-07a4259aee73
+:END:
+
+***** Conky                                                     :lua:cpp:
+:PROPERTIES:
+:ID: ee68a953-f9b3-447d-a531-ef301ca1e0d9
+:CATEGORY: bin
+:END:
+[[https://github.com/brndnmtthws/conky][Conky]] is a lightweight system monitor program for X that generates nice little desktop
+widgets from Lua config files.
+- Built with C++.
+- [[https://wiki.archlinux.org/title/conky][Conky - ArchWiki]]
+- [[https://github.com/brndnmtthws/conky][GitHub - brndnmtthws/conky: Light-weight system monitor for X.]]
+****** Arch Linux desktop example
+:PROPERTIES:
+:ID:       4898be7c-465f-4f17-b451-8ec451f70399
+:END:
+Here's a few widgets I set up - they stay on the desktop behind all my other windows, so
+when I want to see some quick stats I can just switch to an empty tag in AwesomeWM
+(which is also configured via Lua).
+
+Using conky is very easy. It takes a few flags to run in the background smoothly and a
+config file as input.
+
+As a shell script:
+#+begin_src shell
+#!/bin/sh
+conky -bdc ~/.config/conky/conky-l1.lua &
+conky -bdc ~/.config/conky/conky-l2.lua &
+#+end_src
+
+Or in Rust:
+#+begin_src rust
+use cmd_lib::{run_cmd, CmdResult};
+
+/// start conky service in background
+#[cfg(unix)]
+pub fn conky(cfg: &str) -> CmdResult {
+  Ok(run_cmd!(conky  -qbdc "$cfg" '&')?)
+}
+#+end_src
+
+- screenshot
+  #+caption: conky desktop widgets
+  #+attr_html: :width 600
+  [[https://cdn.rwest.io/img/conky_desktop.png][https://cdn.rwest.io/img/conky_desktop.png]]
+
+Next thing I want to do is mess with [[https://github.com/varingst/awesome-conky][awesome-conky]] to get an idea of how to better
+integrate with AwesomeWM, then make some better widgets. :)
+
+- conky-l1.lua
+  #+begin_src lua
+conky.config = {
+    alignment = 'top_left',
+    own_window_colour = '0C272D',
+    background = false,
+    border_width = 2,
+    cpu_avg_samples = 2,
+    default_color = 'D6685E',
+    default_outline_color = '7D4C4E',
+    default_shade_color = 'B19B75',
+    double_buffer = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    draw_outline = false,
+    draw_shades = true,
+    extra_newline = false,
+    font = 'DejaVu Sans Mono:size=12',
+    minimum_width = 500,
+    minimum_height = 5,
+    gap_x = 4,
+    gap_y = -4,
+    net_avg_samples = 2,
+    no_buffers = true,
+    own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager',
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_type = 'desktop',
+    show_graph_range = false,
+    show_graph_scale = false,
+    stippled_borders = 0,
+    update_interval = 4.0,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+}
+
+conky.text = [[
+$nodename $kernel $machine
+$hr
+${color B19B75}Uptime:$color $uptime
+${color B19B75}RAM Usage:$color $mem/$memmax - $memperc%
+${membar 8}
+$hr
+${color EAB0B1}File systems:
+ / $color${fs_used /}/${fs_size /}
+${fs_bar 6 /}
+Networking:
+${color EAB0B1}Up:$color ${upspeed} ${color EAB0B1} - Down:$color ${downspeed}
+
+${color grey}Frequency (in MHz):$color $freq
+${color grey}Frequency (in GHz):$color $freq_g
+$hr
+]]
+  #+end_src
+- conky-l2.lua
+  #+begin_src lua
+conky.config = {
+    alignment = 'bottom_left',
+    background = false,
+    own_window_colour = '36313B',
+    border_width = 2,
+    cpu_avg_samples = 2,
+    default_color = 'F9F2D3',
+    default_outline_color = 'white',
+    default_shade_color = '7D4C4E',
+    double_buffer = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    draw_outline = false,
+    draw_shades = true,
+    extra_newline = false,
+    font = 'DejaVu Sans Mono:size=12',
+    minimum_height = 5,
+    gap_x = 4,
+    gap_y = 00,
+    own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager',
+    minimum_width = 500,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_type = 'desktop',
+    show_graph_range = false,
+    show_graph_scale = false,
+    stippled_borders = 0,
+    update_interval = 4.0,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+}
+
+conky.text = [[
+${color grey}CPU Usage:$color $cpu%
+${color pink}${cpubar 8}$color
+$hr
+${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+$hr
+Name              PID     CPU%   MEM%
+${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${color lightgrey} ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
+${color lightgrey} ${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6}
+${color lightgrey} ${top name 7} ${top pid 7} ${top cpu 7} ${top mem 7}
+${color lightgrey} ${top name 8} ${top pid 8} ${top cpu 8} ${top mem 8}
+$hr
+]]
+  #+end_src
+
+***** QEMU                                                         :virt:
+:PROPERTIES:
+:ID: 9f374d07-e188-4b40-8109-9253e6c88a6a
+:END:
+- https://www.qemu.org/
+#+begin_quote
+QEMU is a generic and open source machine emulator and virtualizer.
+  -- [[https://www.qemu.org/][QEMU homepage]]
+#+end_quote
+***** Maude                                                       :logic:
+:PROPERTIES:
+:ID:       6e0ffd4c-a76b-4696-a39a-fbf6901e82a8
+:AKA: Maude System
+:END:
+[[https://en.wikipedia.org/wiki/Maude_system][Maude System]]
+An implementation of [[https://en.wikipedia.org/wiki/Rewriting][rewriting]] logic.
+***** Roam                                                  :web:service:
+:PROPERTIES:
+:ID: d4532480-589d-434e-81bd-45fa7b8008ec
+:END:
+- https://roamresearch.com/
+
+Roam is a "note-taking tool for networked thought". According to the website:
+
+#+begin_quote
+As easy to use as a document. As powerful as a graph database.
+Roam helps you organize your research for the long haul.
+#+end_quote
+
+This is a very interesting concept which closely resembles the
+personal-wiki/mind-dump applications that currently exist, perhaps
+with a focus on research.
+
+This is a paid web-based service, so not something we're interested
+in, but overall a good continuation of the mind-mapping framework.
+***** Systemd                                               :sys:service:
+:PROPERTIES:
+:ID: a2c2925f-960d-43b5-b0cd-da5a86d4a744
+:END:
+****** systemd-nspawn
+:PROPERTIES:
+:ID:       e5232eb5-854c-416c-a25d-190bfa794d10
+:END:
+******* machinectl
+:PROPERTIES:
+:ID:       fdaaa759-73f0-4cf6-b2f4-99c4bd836acd
+:END:
 ***** links
 :PROPERTIES:
 :ID:       512510b9-6bcc-4f38-8cc9-059111d25cfe
@@ -2153,51 +2503,7 @@ The core functions we want:
 	 :CREATED:  [2020-06-26 Fri]
    :ID:       2f96c91e-d79a-4663-bc45-9f56ff6da29f
 	 :END:
-***** Bash                                                        :shell:
-:PROPERTIES:
-:ID:       52d04515-6aeb-4a23-8ca3-31fa5f3a85e0
-:AKA: bash
-:END:
-#+begin_quote
-Bash is the GNU Project's shell—the Bourne Again SHell. This is an
-sh-compatible shell that incorporates useful features from the Korn
-shell (ksh) and the C shell (csh). It is intended to conform to the
-IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard. It offers
-functional improvements over sh for both programming and interactive
-use. In addition, most sh scripts can be run by Bash without
-modification.
--- [[https://www.gnu.org/software/bash/][GNU Project - Free Software Foundation]]
-#+end_quote
-
-****** [[https://tiswww.case.edu/php/chet/bash/bashtop.html][The GNU Bourne-Again Shell]]
-:PROPERTIES:
-:ID:       216df359-d37e-42d4-9172-fa43e7b95585
-:END:
-- [[https://tiswww.case.edu/php/chet/bash/FAQ][FAQ]]
-
-****** [[https://stackoverflow.com/questions/16365130/what-is-the-difference-between-usr-bin-env-bash-and-usr-bin-bash/16365367#16365367][linux - What is the difference between "#!/usr/bin/env bash" and "#!/usr/bin/bash"? - Stack Overflow]]
-:PROPERTIES:
-:CREATED:  [2020-07-05 Sun]
-:ID:       49984c0c-a553-4c62-a921-07a4259aee73
-:END:
-
-**** Services
-:PROPERTIES:
-:ID:       af50f832-b6a9-4c3c-8842-444fcc4a61e7
-:END:
-***** Systemd
-:PROPERTIES:
-:ID: a2c2925f-960d-43b5-b0cd-da5a86d4a744
-:END:
-****** systemd-nspawn
-:PROPERTIES:
-:ID:       e5232eb5-854c-416c-a25d-190bfa794d10
-:END:
-******* machinectl
-:PROPERTIES:
-:ID:       fdaaa759-73f0-4cf6-b2f4-99c4bd836acd
-:END:
-***** Operating Systems                                              :os:
+**** Operating Systems                                                :os:
 :PROPERTIES:
 :ID: 3bf219b5-6ad8-4355-8d68-29bd483f2671
 :END:
@@ -2205,7 +2511,7 @@ An Operating System or "OS" is software that communicates with
 Applications and interacts with computer hardware.
 - Microsoft Windows
 - MacOS
-****** GNU/Linux                                                 :linux:
+***** GNU/Linux                                                   :linux:
 :PROPERTIES:
 :ID: 134e2505-cc34-4dc2-b7a4-b3b71c331f07
 :AKA: linux
@@ -2214,11 +2520,11 @@ Applications and interacts with computer hardware.
 - [[https://www.kernel.org/][The Linux Kernel Archives]]
 - https://en.wikipedia.org/wiki/Linux
 - [[https://sysprog21.github.io/lkmpg/][The Linux Kernel Module Programming Guide]]
-******* Distros
+****** Distros
 :PROPERTIES:
 :ID:       80908ff8-aeeb-4429-8f87-e34660faea48
 :END:
-******** Arch Linux
+******* Arch Linux
 :PROPERTIES:
 :ID: 212133b4-f2dc-4735-b383-b0fda10833af
 :END:
@@ -2228,16 +2534,16 @@ A lightweight and flexible Linux distribution that tries to Keep It
 Simple.
 #+end_quote
 
-********* Installation Notes
+******** Installation Notes
 :PROPERTIES:
 :ID:       b98b89bf-1bb7-46d6-b27b-9990a0efc647
 :END:
-********** VERIFY
+********* VERIFY
 :PROPERTIES:
 :ID:       05f3c4d6-a12d-4d9a-bd50-db3f56622fdc
 :END:
 we should verify image signatures and md5 sums on pre-install.
-*********** Pre-boot verify
+********** Pre-boot verify
 :PROPERTIES:
 :ID:       9911c315-e3e4-41db-9f7a-a711c51b46d3
 :END:
@@ -2246,7 +2552,7 @@ gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.
 #+END_SRC
 where 'version' is a date in the format 'YYYY.MM.DD'
 
-*********** Post-boot verify
+********** Post-boot verify
 :PROPERTIES:
 :ID:       959df534-5209-4850-a4d7-6f150fadecc4
 :END:
@@ -2254,43 +2560,43 @@ where 'version' is a date in the format 'YYYY.MM.DD'
 pacman-key -v archlinux-version-x86_64.iso.sig
 #+END_SRC
 not recommended, especially if ISO image was downloaded via [[file:http.org][HTTP]] mirror
-*********** find device names
+********** find device names
 :PROPERTIES:
 :ID:       b9d69686-3b4c-4407-8538-5fed693efbe3
 :END:
 #+BEGIN_SRC sh
 lsblk
 #+END_SRC
-*********** write archlinux ISO to device
+********** write archlinux ISO to device
 :PROPERTIES:
 :ID:       d93a09eb-9926-4025-9ce5-d0af28400619
 :END:
 #+BEGIN_SRC sh
 sudo dd if=/home/neocode/iso/archlinux-2015.09.01-dual.iso /dev/sdb1
 #+END_SRC
-*********** ping internet
+********** ping internet
 :PROPERTIES:
 :ID:       e6b22ba2-27a9-4a58-b284-2a82e7d6eac7
 :END:
 #+BEGIN_SRC sh
 ping -c 3 google.com
 #+END_SRC
-********** PARTITION
+********* PARTITION
 :PROPERTIES:
 :ID:       8bb83e76-9890-44ba-a5b0-75b5b0c26b7f
 :END:
-*********** fdisk
+********** fdisk
 :PROPERTIES:
 :ID:       2ea9d4cf-041f-4a3e-8de7-a03caa7a9fdb
 :END:
-*********** format partitions
+********** format partitions
 :PROPERTIES:
 :ID:       b2c778e5-91cd-4f33-b28e-2a9a3438d415
 :END:
 #+BEGIN_SRC sh
 mkfs.ext4 /dev/sda1
 #+END_SRC
-*********** make swap partitions
+********** make swap partitions
 :PROPERTIES:
 :ID:       ccbf3d88-926f-40b6-ba3a-c57f6e08aca0
 :END:
@@ -2298,29 +2604,29 @@ mkfs.ext4 /dev/sda1
 mkswap /dev/sda2
 swapon /dev/sda2
 #+END_SRC
-********** MOUNT
+********* MOUNT
 :PROPERTIES:
 :ID:       b1615282-40fb-4eca-92c4-508de30fa2a1
 :END:
 #+BEGIN_SRC sh
 mount /dev/sda1 /mnt
 #+END_SRC
-********** PROVISION
+********* PROVISION
 :PROPERTIES:
 :ID:       7706593d-411f-4439-b866-1085a338199c
 :END:
-*********** pacstrap
+********** pacstrap
 :PROPERTIES:
 :ID:       f23e94b7-1775-4121-b810-0dfd1b46d559
 :END:
 #+BEGIN_SRC sh
 pacstrap -i /mnt base base-devel
 #+END_SRC
-********** CONFIG
+********* CONFIG
 :PROPERTIES:
 :ID:       bc26702c-548a-4022-93ab-bca8dc7558b9
 :END:
-*********** Generate fstab file
+********** Generate fstab file
 :PROPERTIES:
 :ID:       8890dab8-fe14-4f54-a6d6-613c827f07c1
 :END:
@@ -2332,14 +2638,14 @@ test with:
 #+BEGIN_SRC sh
 cat /mnt/etc/fstab
 #+END_SRC
-*********** chroot into fresh install
+********** chroot into fresh install
 :PROPERTIES:
 :ID:       15e4bbba-1aee-40da-9461-f0e2f7592f98
 :END:
 #+BEGIN_SRC sh
 arch-chroot /mnt
 #+END_SRC
-*********** Configure network
+********** Configure network
 :PROPERTIES:
 :ID:       4afe7a9a-be20-4a6e-be9b-1b0d5db6d2cb
 :END:
@@ -2347,7 +2653,7 @@ arch-chroot /mnt
 ip link
 # systemctl enable dhcpcd@enp0s3.service
 #+END_SRC
-*********** Set locale
+********** Set locale
 :PROPERTIES:
 :ID:       ab330c12-37e0-4051-bc8c-77b9bb9ef54b
 :END:
@@ -2357,14 +2663,14 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 ln -s /usr/share/zoneinfo/America/New_York > /etc/localtime
 #+END_SRC
-*********** Set Clock to UTC
+********** Set Clock to UTC
 :PROPERTIES:
 :ID:       0f0381cf-85cc-4b97-8a4d-da7dedba3fd3
 :END:
 #+BEGIN_SRC sh
 hwclock --systohc --utc
 #+END_SRC
-*********** Update Archlinux Repository
+********** Update Archlinux Repository
 :PROPERTIES:
 :ID:       2274e479-c437-4f97-abff-3f90c7d78cbe
 :END:
@@ -2372,16 +2678,16 @@ hwclock --systohc --utc
 pacman -Sy
 #+END_SRC
 
-********* Links
+******** Links
 :PROPERTIES:
 :ID:       328ce6ac-c4e4-47e6-9942-018561e7c630
 :END:
-********** [[https://wiki.archlinux.org/title/Dual_boot_with_Windows][Dual boot with Windows - ArchWiki]]
+********* [[https://wiki.archlinux.org/title/Dual_boot_with_Windows][Dual boot with Windows - ArchWiki]]
 :PROPERTIES:
 :ID:       0278d93e-d254-4494-b401-aa38277ad838
 :END:
 
-******** Pentoo
+******* Pentoo
 :PROPERTIES:
 :ID: 8db0a4c6-b265-4d92-83ff-095899ca72e6
 :END:
@@ -2404,15 +2710,15 @@ available in layman so all you have to do is layman -L and layman -a
 pentoo.
   #+end_quote
 
-******* Concepts
+****** Concepts
 :PROPERTIES:
 :ID:       395796de-ac63-4063-8fa7-94d4adace195
 :END:
-******** Filesystem
+******* Filesystem
 :PROPERTIES:
 :ID:       96b3bec4-1673-419e-8900-c33bf12aa34f
 :END:
-********* /etc/skel
+******** /etc/skel
 :PROPERTIES:
 :ID:       5bd7664e-6f6e-436e-9f28-f7961ca8c724
 :END:
@@ -2425,22 +2731,73 @@ administrator.
 -- [[https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html][The Linux Documentation Project]]
 #+end_quote
 
-****** Windows                                                     :win:
+***** Windows                                                       :win:
 :PROPERTIES:
 :ID: 63c71a03-6f35-476f-b58b-8c6f3f52e485
 :END:
 - https://en.wikipedia.org/wiki/Microsoft_Windows
-******* [[https://docs.microsoft.com/en-us/windows/deployment/mbr-to-gpt][MBR2GPT - Windows Deployment | Microsoft Docs]]
+****** [[https://docs.microsoft.com/en-us/windows/deployment/mbr-to-gpt][MBR2GPT - Windows Deployment | Microsoft Docs]]
 :PROPERTIES:
 :ID:       1b58ee7d-4aac-4a43-bb25-a9ff80d2ffa1
 :END:
-****** MacOS                                                    :darwin:
+***** MacOS                                                      :darwin:
 :PROPERTIES:
 :ID: 80928580-61a4-489d-885b-0f273070fd91
 :END:
 - https://en.wikipedia.org/wiki/MacOS
 
-**** Version Control
+**** Progressive Web Apps                                :app:web:wasm:js:
+:PROPERTIES:
+:ID: ef3ecaf7-ff7c-49c1-a915-c034a7bfeb5a
+:AKA: PWA
+:END:
+***** PWAs Today - 
+:PROPERTIES:
+:ID:       1ecb433e-f44b-4ec1-a2d5-e3507dab72fa
+:END:
+****** [[https://blog.bitsrc.io/what-is-a-pwa-and-why-should-you-care-388afb6c0bad][What is a PWA and Why Should You Care?]]
+:PROPERTIES:
+:ID:       dc6ac195-2534-403c-874c-a0d3bd28d85b
+:END:
+   - gives the basic highlights
+    - read "Why we need PWAs and what are their features?" section for tl;dr
+   - DemoTime: [[https://www.fidgetspin.xyz/][Fidget Spinner]] --> F12 goto 'Applications' tab
+****** [[https://developers.google.com/web/progressive-web-apps/][PWAs - Google Dev]]
+:PROPERTIES:
+:ID:       789d2efc-0b29-4b24-be52-8a669227970e
+:END:
+   - need manifest.json, service worker with offline capabilities
+   - to trigger install-prompt in chrome - need to have some kind of initial engagment with the app
+****** Connecting the dots - [[https://uxdesign.cc/pwas-are-the-future-d51aae1f3af7][UX Perspective]]
+:PROPERTIES:
+:ID:       e4572f0b-6a89-4f69-ac95-562d57c65b24
+:END:
+
+***** PWAs Tomorrow
+:PROPERTIES:
+:ID:       4df30bd9-e834-4a65-8414-c15ce796f6c6
+:END:
+  - some of this might get rather technical
+****** [[https://blog.chromium.org/2016/08/from-chrome-apps-to-web.html][PWAs have dependencies]]
+:PROPERTIES:
+:ID:       bd2b322e-88c5-4447-adc1-6c00c2dde4ed
+:END:
+   - this is an old post so nothing to worry about in the short term, but the PWA ecosystem is highly dependent on gatekeepers
+     * Google, Apple, Microsoft
+   - gatekeepers make the rules and set prescribed tech through the manifest.json approval process
+   - potential for support for systems tech to be dropped - large tech debt to overcome
+****** [[https://developers.google.com/web/ilt/pwa/introduction-to-service-worker][Service Workers]] - quick note on this article
+:PROPERTIES:
+:ID:       9fa067ce-4835-4901-9d47-728771e08319
+:END:
+   #+begin_quote
+   Because the service worker is not blocking (it's designed to be fully asynchronous) synchronous XHR and localStorage cannot be used in a service worker.
+   #+end_quote
+***** QA Automation checklist: [[https://developers.google.com/web/progressive-web-apps/checklist][PWA Checklist]]
+:PROPERTIES:
+:ID:       ba2f1962-ae85-4576-8b3b-9b55cb8f1529
+:END:
+**** Version Control                                                  :vc:
 :PROPERTIES:
 :ID: 8ebdc53e-37cf-4f9a-8b4a-ad2e834f5ed3
 :AKA: VC
@@ -2456,7 +2813,7 @@ The 'Version' in Version Control refers to a specific state of the
 identify these 'Versions' in a given Version Control System.
 
 
-***** Mercurial
+***** Mercurial                                                      :hg:
 :PROPERTIES:
 :ID:       4e71c4b3-d55d-437b-af0b-79797f091418
 :AKA: hg
@@ -2790,7 +3147,7 @@ echo "Done."
 - [[https://blog.nrwl.io/misconceptions-about-monorepos-monorepo-monolith-df1250d4b03c][Misconceptions about Monorepos: Monorepo != Monolith]] - Victor Savkin 2019
 - [[https://research.google/pubs/pub45424/][Why Google Stores Billions of Lines of Code in a Single Repository]] - Josh Levenberg, 2016
 
-***** Git
+***** Git                                                           :git:
 :PROPERTIES:
 :ID:       cd04e50c-1de3-46d7-b0ab-47f36962fc0a
 :END:
@@ -2821,12 +3178,12 @@ staging areas, and multiple workflows.
 :END:
 A new SCM attempt by Facebook, with the goal of improving on the
 Mercurial platform, and optimizing for use with Monolithic code bases.
-***** Subversion
+***** Subversion                                                    :svn:
 :PROPERTIES:
 :ID:       545af3a6-f096-46a2-a053-1795b0972535
 :AKA: svn
 :END:
-**** Virtualization
+**** Virtualization                                                 :virt:
 :PROPERTIES:
 :ID: 045133dd-0b52-47bb-b982-6fc586c8fbcd
 :END:
@@ -2845,6 +3202,118 @@ long way to go before we get it right, but the increase in popularity
 that is likely due to the use of virtualization in microservice/web
 based apps has made it more approachable in the tech community, and
 accepted as a core components of DevOps.
+**** Embedded Systems
+:PROPERTIES:
+:ID: 8162fa8b-f79d-4a87-8d4e-82ef993e08f2
+:END:
+- [[file:sdr.org][SDR]]
+- [[file:qemu.org][QEMU]]
+***** [[https://elinux.org/Main_Page][Embedded Linux Wiki]]
+:PROPERTIES:
+:ID:       cf94b668-613d-4b18-9474-1b88e73ae749
+:END:
+***** [[https://github.com/esp8266/Arduino][GitHub - esp8266/Arduino: ESP8266 core for Arduino]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       a0db425f-6f46-4e21-9226-49f3a2a47b28
+	 :END:
+	 is there a rust crate tho? - yeeee
+
+***** [[https://github.com/MabezDev/idf2svd][GitHub - MabezDev/idf2svd]]
+:PROPERTIES:
+:CREATED:  [2020-07-12 Sun]
+:ID:       311f5f16-2cfe-4575-9009-9183e4bd5850
+:END:
+generates SVD files for ESP32 based devices.. rather messy
+
+***** [[https://en.wikipedia.org/wiki/ESP32][ESP32 - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       bf168556-e19c-44e7-84fe-7752da708d87
+	 :END:
+**** Software Defined Radio                                          :sdr:
+:PROPERTIES:
+:ID: de73cf8a-d39f-4bdb-8ec9-009288e77d19
+:AKA: SDR
+:END:
+- https://en.wikipedia.org/wiki/Software-defined_radio
+
+***** [[https://www.wikiwand.com/en/Cognitive_radio?fbclid=IwAR2ix1x1HHC9rimSUr_NkdRQERtKKm4_IBvH25Vb05Oh6svQ3mKegV0bKz0][Cognitive Radio]]
+:PROPERTIES:
+:ID:       8d69e21e-cc67-42cb-a048-098d6dd4545f
+:END:
+***** [[https://www.wikiwand.com/en/RF_front_end][RF Front End]]
+:PROPERTIES:
+:ID:       04dc64b3-40cb-4903-af15-8d4f495cf61d
+:END:
+#+BEGIN_QUOTE
+In a radio receiver circuit, the RF front end is a generic term for all the circuitry between a receiver's antenna input up to and including the mixer stage.[1] It consists of all the components in the receiver that process the signal at the original incoming radio frequency (RF), before it is converted to a lower intermediate frequency (IF). In microwave and satellite receivers it is often called the low-noise block (LNB) or low-noise downconverter (LND) and is often located at the antenna, so that the signal from the antenna can be transferred to the rest of the receiver at the more easily handled intermediate frequency.
+
+For most superheterodyne architectures, the RF front end consists of:[2]
+
+A band-pass filter (BPF) to reduce image response. This removes any signals at the image frequency, which would otherwise interfere with the desired signal. It also prevents strong out-of-band signals from saturating the input stages.
+An RF amplifier, often called the low-noise amplifier (LNA). Its primary responsibility is to increase the sensitivity of the receiver by amplifying weak signals without contaminating them with noise, so that they can stay above the noise level in succeeding stages. It must have a very low noise figure (NF). The RF amplifier may not be needed and is often omitted (or switched off) for frequencies below 30 MHz, where the signal-to-noise ratio is defined by atmospheric and man-made noise.
+A local oscillator (LO) which generates a radio frequency signal at an offset from the incoming signal, which is mixed with the incoming signal.
+The mixer, which mixes the incoming signal with the signal from the local oscillator to convert the signal to the intermediate frequency (IF).#+END_QUOTE
+#+END_QUOTE
+
++ imagine fx processing on radio signals. SDR plguins. encryption, ids, etc
+
+
+****** [[https://www.wikiwand.com/en/Band-pass_filter][band-pass filter]]
+:PROPERTIES:
+:ID:       23edba57-5a45-4dcc-9ef7-5f84fe795269
+:END:
+****** [[https://www.wikiwand.com/en/Amplifier][RF amplifier]]
+:PROPERTIES:
+:ID:       cf0c0033-3f95-4ffd-b262-7680350bead9
+:END:
+****** [[https://www.wikiwand.com/en/Local_oscillator][local oscillator]]
+:PROPERTIES:
+:ID:       cf102eb2-dfc0-4309-a0cf-bb8525276382
+:END:
+****** [[https://www.wikiwand.com/en/Frequency_mixer][mixer]]
+:PROPERTIES:
+:ID:       7a669da9-7a06-47f4-bfd2-c569d7f8baeb
+:END:
+******* [[https://www.wikiwand.com/en/Heterodyne][Heterodyne]]
+:PROPERTIES:
+:ID:       840586af-2bfa-46ca-b8c6-82903d5a7bc7
+:END:
+creates new frequencies by combining or mixing two frequencies.
+
+***** Antennai
+:PROPERTIES:
+:ID:       97113225-512b-4760-bfbc-cb8592557c27
+:END:
+***** [[https://wiki.gnuradio.org/index.php/Main_Page][GNU Radio]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       95565d55-a94f-44c9-9dc4-58a6922c095c
+	 :END:
+***** [[https://www.youtube.com/watch?v=ZuNOD3XWp4A][All Your RFz Are Belong to Me - Defcon 21 - Youtube]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       4a650272-ddc4-4c90-b0b7-1f5abbf89b0b
+	 :END:
+	 [[yt:ZuNOD3XWp4A]]
+***** [[https://www.youtube.com/watch?v=vQtLms02PFM][Bill Swearingen - HAKC THE POLICE - Defcon 27 - Youtube]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       47d4f565-34c6-4e2c-9a6a-f3fd66cd0f06
+	 :END:
+	 [[yt:vQtLms02PFM]]
+***** [[https://www.analog.com/en/analog-dialogue/articles/high-definition-low-delay-sdr-based-video-transmission-in-uav-applications.html#][High Definition, Low Delay, SDR-Based Video Transmission in UAV Applications | Analog Devices]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-11 Sat]
+   :ID:       65f3f7cb-3ee3-411f-b26b-39a00b70d6c3
+	 :END:
+***** [[https://liquidsdr.org/][liquidsdr.org]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-04 Sat]
+   :ID:       3bb50626-f1a4-4565-8c01-89a6f254f233
+	 :END:
+
 *** links
 :PROPERTIES:
 :ID:       4085c001-3c70-45b5-9fca-cd989bf02cf0
@@ -3045,12 +3514,6 @@ CREATED: [2021-01-20 Wed 21:38]
 	 :CREATED:  [2020-06-28 Sun]
    :ID:       5b481d26-8905-47b2-8fd7-ea4c54b36f83
 	 :END:
-***** [[https://www.youtube.com/watch?v=lKXe3HUG2l4]["The Mess We're In" by Joe Armstrong - YouTube]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-24 Wed]
-   :ID:       a38e44f1-452a-4022-80f1-b6e573c59777
-	 :END:
-	 [[yt:lKXe3HUG2l4]]
 ***** [[https://silvia-odwyer.github.io/photon/demo.html][Photon WASM Demo]]
 	 :PROPERTIES:
 	 :CREATED:  [2020-06-24 Wed]
@@ -3156,11 +3619,12 @@ CREATED: [2021-01-20 Wed 21:38]
 :END:
 ***** The Mess We're In
 :PROPERTIES:
+:CREATED:  [2020-06-24 Wed]
 :ID: c6dfbf4b-1c22-4502-abef-0945a364edca
 :END:
-A presentation given by Joe Armstrong at [[https://www.thestrangeloop.com/][Strange Loop]] 2014.
-[[yt:lKXe3HUG2l4][The Mess We're In]]
-** Computer Architecture
+- A presentation given by Joe Armstrong at [[https://www.thestrangeloop.com/][Strange Loop]] 2014, quite thought provoking. \\
+[[yt:lKXe3HUG2l4]]
+** Computer Architecture                                              :arch:
 :PROPERTIES:
 :ID:       cddbe07b-669c-4956-9bbb-93e3b6ed3813
 :END:
@@ -3169,4 +3633,600 @@ In computer engineering, computer architecture is a set of rules and
 methods that describe the functionality, organization, and
 implementation of computer systems.
 -- [[https://en.wikipedia.org/wiki/Computer_architecture][Wikipedia]]
+#+end_quote
+*** Instruction Set Architecture
+:PROPERTIES:
+:ID:       1525bed4-1904-49f1-9799-cf78fa2b756f
+:END:
+*** Harvard Architecture
+:PROPERTIES:
+:ID:       6c9e7216-7c82-461b-a578-f3cb00330fac
+:END:
+#+begin_quote
+The Harvard architecture is a computer architecture with separate
+storage and signal pathways for instructions and data. It contrasts
+with the von Neumann architecture, where program instructions and data
+share the same memory and pathways.
+-- [[https://en.wikipedia.org/wiki/Harvard_architecture][Wikipedia]]
+#+end_quote
+
+*** von Neumann Architecture
+:PROPERTIES:
+:ID:       96c1e534-ae8c-4545-a83f-9017aa00ae6a
+:END:
+#+begin_quote
+The von Neumann architecture—also known as the von Neumann model or
+Princeton architecture—is a computer architecture based on a 1945
+description by John von Neumann and others in the First Draft of a
+Report on the EDVAC. That document describes a design architecture
+for an electronic digital computer with these components:
+
+- A processing unit that contains an arithmetic logic unit and processor registers
+- A control unit that contains an instruction register and program counter
+- Memory that stores data and instructions
+- External mass storage
+- Input and output mechanisms
+
+-- [[https://en.wikipedia.org/wiki/Von_Neumann_architecture][Wikipedia]]
+#+end_quote
+
+- [[cdn:media/doc/vnedvac.pdf][First Draft Report on the EDVAC]]
+
+** Computer Networks                                                   :net:
+:PROPERTIES:
+:ID: 34a71a0e-2a43-4b35-9e4c-983f0df2d04d
+:END:
+*** Concepts
+:PROPERTIES:
+:ID:       23ae950a-45a5-4bd8-b343-02a4d5fe5812
+:END:
+**** The Wire
+:PROPERTIES:
+:ID:       0b95a79e-bb8e-4371-b088-4a0a75a572b2
+:END:
+*** Models
+:PROPERTIES:
+:ID:       eac5946e-aa20-4152-92a8-61ff49194b5b
+:END:
+**** Client-Server Model
+:PROPERTIES:
+:ID: 5dd75b6f-6245-465e-87f5-e944c4b836f6
+:END:
+- https://en.wikipedia.org/wiki/Client%E2%80%93server_model
+- A distributed application architecture model
+- usually used to describe a networked service where multiple Clients
+  communicate with a single Server
+- The term 'work' is used to describe the inputs and outputs of such a
+  model. The 'work' performed is strictly scoped.
+   - For example, consider the architecture for an MMO video game. The
+     client-server model applies to the design of Players (=Clients=)
+     connecting to a match, which is hosted on the game server
+     (=Server=). The 'work' performed here may include updates to a
+     Player's in-game position based on control input, chat messages,
+     connection status, etc.
+   - In addition to communicating with the game server, Players may
+     establish direct connection to other Players in their match in a
+     /client-to-client/ or /decentralized/ manner, where 'work' is
+     shared and managed between the =Clients= themselves, under
+     authority of the =Server=. This is where terminology begins to
+     miss the point, as these features share a likeness to [[id:7bdea7d7-9596-4bf3-938d-b6e6f21fff53][p2p networking]].
+
+     
+**** Peer-to-peer Networking
+  :PROPERTIES:
+  :ID: 7bdea7d7-9596-4bf3-938d-b6e6f21fff53
+  :AKA: p2p
+  :END:
+  - [[https://en.wikipedia.org/wiki/Peer-to-peer][Peer-to-peer - Wikipedia]]
+  #+begin_quote
+  Peer-to-peer (P2P) computing or networking is a distributed application architecture that
+  partitions tasks or workloads between peers. Peers are equally privileged, equipotent
+  participants in the application. They are said to form a peer-to-peer network of nodes. 
+
+  Peers make a portion of their resources, such as processing power, disk storage or network
+  bandwidth, directly available to other network participants, without the need for central
+  coordination by servers or stable hosts. Peers are both suppliers and consumers of
+  resources, in contrast to the traditional client–server model in which the consumption and
+  supply of resources is divided.
+  #+end_quote
+*** Protocols
+:PROPERTIES:
+:ID:       368acc88-b789-4a4e-9c90-72c5e37bd35b
+:END:
+- [[id:bf08b5d0-5745-4fa1-bb2e-7715b9f29a22][QUIC]]
+**** Transport Control Protocol
+:PROPERTIES:
+:ID: 4b1299e8-73db-4e8c-b854-5a9eea1d50c7
+:AKA: TCP
+:END:
+- https://tools.ietf.org/html/rfc793
+***** [[https://en.wikipedia.org/wiki/TCP_delayed_acknowledgment][TCP delayed acknowledgment - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       6d8e2989-2ecb-4539-9191-26ab97971d4e
+	 :END:
+**** User Datagram Protocol
+:PROPERTIES:
+:ID: ed2c78ea-8935-4f05-b1be-8d9af0ff045f
+:AKA: UDP
+:END:
+- https://tools.ietf.org/html/rfc768
+***** *UDP vs TCP*
+:PROPERTIES:
+:ID:       b34a9d4a-7ff0-4566-8cd4-dce03cd0ee05
+:END:
+   - *UDP and TCP share the same space* in a network stack and operate
+     on top of the IP protocol.
+   - *UDP has no built-in notion of State*, TCP does. However,
+     stateless protocols can be built on lower-level stateful
+     ones.. and vice-versa. It's just a matter of abstraction.
+	 - for example =HTTP= is a /stateless/ protocol, built
+       on TCP (/stateful/), which is built on IP (/stateless/)
+   - *TCP provides connection guarantees* that a client receives
+     packets IN ORDER and exactly in the condition they were sent
+     (thanks to checksums in headers), at the cost of some performance
+     (to ensure packet sequencing, checking headers, establishing
+     connection, etc)
+     - *UDP does NOT provide connection guarantees*.
+       - UDP does have checksums though, and thus
+         ensures packets are received in same
+         condition that they were sent.
+     - Packets can be sent and lost, it doesn't intrinsically matter
+       in UDP that the client didn't receive them.
+     - The loss of built-in guarantees does come with a performance
+       boost though, as well as a network protocol that is quite
+       flexible in its simplicity.
+
+****** *The need for speed*
+:PROPERTIES:
+:ID:       18be5216-cf69-4472-9fee-9a325eba6ee8
+:END:
+	 UDP is on the rise in networks due to the usage of P2P
+	 services, and the need for more /immediate/ methods of
+	 streaming media data at scale.[fn:0]
+
+[fn:0] [[https://www.caida.org/research/traffic-analysis/tcpudpratio/][Analyzing UDP usage in Internet traffic]]
+***** resources
+:PROPERTIES:
+:ID:       524c9e2f-4078-4776-bbfb-1d1aa2f96efc
+:END:
+****** [[https://tools.ietf.org/html/rfc768][RFC 768 - User Datagram Protocol]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       b9717dfa-3e61-4544-9969-58095603f510
+	 :END:
+****** [[https://hpbn.co/building-blocks-of-udp/][Networking 101: Building Blocks of UDP - High Performance Browser Networking (O'Reilly)]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-02 Thu]
+   :ID:       b97d56db-af17-4bdd-a1b7-97d63e4f3026
+	 :END:
+**** Transport Layer Security
+:PROPERTIES:
+:ID: fd5ea91a-a6aa-4947-9640-c0bf81c85cb0
+:AKA: TLS
+:END:
+- https://www.internetsociety.org/deploy360/tls/basics/
+***** [[https://tools.ietf.org/html/rfc5246][TLS 1.2]]
+:PROPERTIES:
+:ID:       5c8ebd67-404f-409e-ac7c-c6cf0965f861
+:END:
+***** [[https://tools.ietf.org/html/rfc8446][TLS 1.3]]
+:PROPERTIES:
+:ID:       f925ae63-ef7a-4e52-8ae5-3da602844189
+:END:
+**** Hypertext Transfer Protocol
+:PROPERTIES:
+:ID: 049defda-3ac2-4cf1-86ec-060f0a77a5cf
+:END:
+- https://developer.mozilla.org/en-US/docs/Web/HTTP
+
+#+begin_quote
+Hypertext Transfer Protocol (HTTP) is an application-layer protocol
+for transmitting hypermedia documents, such as HTML. It was designed
+for communication between web browsers and web servers, but it can
+also be used for other purposes. HTTP follows a classical
+client-server model, with a client opening a connection to make a
+request, then waiting until it receives a response. HTTP is a
+stateless protocol, meaning that the server does not keep any data
+(state) between two requests. Though often based on a TCP/IP layer, it
+can be used on any reliable transport layer, that is, a protocol that
+doesn't lose messages silently like UDP does. RUDP — the reliable
+update of UDP — is a suitable alternative.
+#+end_quote
+#+begin_center
+-- [[https://developer.mozilla.org/en-US/docs/Web/HTTP][MDN web docs]]
+#+end_center
+
+***** HTTPS
+:PROPERTIES:
+:ID:       fb05567a-224f-4492-b30c-f4718a854da8
+:END:
+HTTPS consists of HTTP with the addition of [[file:../../../../Z/core/notes/tls.org][TLS]].
+
+***** HTTP/S
+:PROPERTIES:
+:ID:       289c6f90-86fb-4b7b-aed6-4ca8ce27894e
+:END:
+HTTP/S is often used as a blanket statement for both HTTP and HTTPS.
+
+**** QUIC
+:PROPERTIES:
+:ID: bf08b5d0-5745-4fa1-bb2e-7715b9f29a22
+:END:
+- https://www.chromium.org/quic
+
+ Transport-layer network protocol, part of the Chromium project.
+ - Leverages the benefits of building on top of UDP instead of TCP
+ - Designed as a re-implementation of TCP+TLS+HTTP/2
+ - Great documentation (ty Mr. Google) + has Rust implementations
+   (yay!) which leads us to:
+ - [[https://crates.io/crates/quinn][Quinn]]
+   - Rust implementation of the QUIC protocol.
+   - Super awesome-cool
+   - provides an API built with tokio
+   - provides the core /deterministic state machine/ of the protocol
+     via [[https://github.com/djc/quinn/tree/master/quinn-proto][=quinn-proto=]]
+ - [[https://www.chromium.org/quic/playing-with-quic][Playing With QUIC]] provides documentation on how to set up a test
+   client/server from the chromium source, a bit verbose for our needs
+   but relevant
+***** [[https://docs.google.com/document/d/1gY9-YNDNAB1eip-RTPbqphgySwSNSDHLq9D5Bty4FSU][QUIC at 10,000 feet]] :net:
+:PROPERTIES:
+:ID:       51a999ce-19fc-40e6-af4e-09cab193c9ac
+:END:
+CREATED: [2021-01-26 Tue 15:28]
+from old research pile
+***** [[https://tools.ietf.org/html/draft-tsvwg-quic-protocol-02][draft-tsvwg-quic-protocol-02 - QUIC: A UDP-Based Secure and Reliable Transport for HTTP/2]]
+:PROPERTIES:
+:ID:       8cfb37e7-3529-455d-a1ab-9ad07d600ea5
+:END:
+CREATED: [2020-07-31 Fri 00:36]
+***** [[https://quicwg.org/base-drafts/draft-ietf-quic-transport.html][QUIC: A UDP-Based Multiplexed and Secure Transport]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       4964841f-852c-443b-a387-77aac58bc092
+	 :END:
+****** [[https://tools.ietf.org/html/draft-ietf-quic-transport-29][draft-ietf-quic-transport-29 - QUIC: A UDP-Based Multiplexed and Secure Transport]]
+:PROPERTIES:
+:ID:       ca87a1e5-26cc-494e-baf4-416fc4e03983
+:END:
+****** [[https://tools.ietf.org/html/draft-ietf-quic-invariants-09][draft-ietf-quic-invariants-09 - Version-Independent Properties of QUIC]]
+:PROPERTIES:
+:ID:       537e7187-dfbe-4825-9748-635cbaacdc7b
+:END:
+****** [[https://tools.ietf.org/html/draft-iyengar-quic-delayed-ack-00][draft-iyengar-quic-delayed-ack-00 - Sender Control of Acknowledgement Delays in QUIC]]
+:PROPERTIES:
+:ID:       35ee2595-7703-4315-827a-06b67ada3124
+:END:
+***** [[https://quicwg.org/][QUIC Working Group]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       016a94ad-c25a-4199-a80a-7427dfc9c486
+	 :END:
+*** links
+:PROPERTIES:
+:ID:       f5fabb7c-c8c1-416d-bfc8-ce1659ab6866
+:END:
+**** [[https://tools.ietf.org/html/rfc6815][RFC 6815 - Applicability Statement for RFC 2544: Use on Production Networks Considered Harmful]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       a09fab63-927b-4e38-8940-0ac629905a03
+	 :END:
+**** [[https://www.freesoft.org/CIE/index.htm][Connected: An Internet Encyclopedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-23 Thu]
+   :ID:       35231223-5328-4cb9-9ce8-4266c5745020
+	 :END:
+
+**** [[https://www.freesoft.org/CIE/RFC/1831/index.htm][RFC 1831]]
+:PROPERTIES:
+:ID:       a228fc82-467a-4256-aacf-89fad7439318
+:END:
+**** [[https://www.ietf.org/rfc/rfc1014.txt][XDR: External Data Representation Standard]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-22 Wed]
+   :ID:       bb8b86e2-58b5-4fc4-b6da-46e1fca74680
+	 :END:
+- seems bulky, but very useful reference due to the breakdown of different types and their definitions.
+**** [[http://www3.cs.stonybrook.edu/~mikepo/][Michalis Polychronakis]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       6efb6988-b4d8-4b7a-9fed-07e456a2159f
+	 :END:		
+	 cool d00d - interesting research
+**** http://an.kaist.ac.kr/~shinae/paper/2016-netsoft.pdf
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-18 Sat]
+   :ID:       f9edd112-4079-4741-94b3-6de5b0bae87e
+	 :END:		
+	 Exploiting Integrated GPUs for Network Packet Processing Workloads
+	 - netsoft 2016
+**** [[https://doc-kurento.readthedocs.io/en/6.9.0/knowledge/rtp_streaming.html][RTP Streaming Commands — Kurento 6.9.0 documentation]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       59f6401f-e7f0-44c9-8c84-c654786bb373
+	 :END:		
+**** [[https://en.wikipedia.org/wiki/Ephemeral_port][Ephemeral port - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       53f90dd5-5f2e-4d1e-abab-f7d0b991106e
+	 :END:
+**** [[https://en.wikipedia.org/wiki/Multiplexing][Multiplexing - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       c26ab509-d23f-4416-9967-a199c503e487
+	 :END:
+**** [[https://en.wikipedia.org/wiki/Frequency-division_multiplexing][Frequency-division multiplexing - Wikipedia]]
+:PROPERTIES:
+:ID:       898fe6e1-1503-4e48-a883-824a80583a95
+:END:
+**** [[https://en.wikipedia.org/wiki/Wavelength-division_multiplexing][Wavelength-division multiplexing - Wikipedia]]
+:PROPERTIES:
+:ID:       46bf6102-5afd-4079-8ec6-754f6cf1a913
+:END:
+**** [[https://en.wikipedia.org/wiki/Polarization-division_multiplexing][Polarization-division multiplexing - Wikipedia]]
+:PROPERTIES:
+:ID:       1cb61d46-57a4-45d4-942a-27a73c39ce3d
+:END:
+**** [[https://en.wikipedia.org/wiki/Time-division_multiplexing][Time-division multiplexing - Wikipedia]]
+:PROPERTIES:
+:ID:       77e12e3d-c7ab-4c59-b24b-6002b2aefc32
+:END:
+***** [[https://en.wikipedia.org/wiki/Orbital_angular_momentum_multiplexing][Orbital angular momentum multiplexing - Wikipedia]]
+:PROPERTIES:
+:ID:       7b77c3c4-c5d8-4e56-8f08-57df978c5368
+:END:
+**** [[https://en.wikipedia.org/wiki/Fiber-optic_communication#Background][Fiber-optic communication - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       0dba484e-63ea-4748-8701-858586fa9372
+	 :END:
+**** [[https://en.wikipedia.org/wiki/Photophone][Photophone - Wikipedia]]
+:PROPERTIES:
+:ID:       edab300e-381d-489a-b838-290fe109dfea
+:END:
+**** [[https://en.wikipedia.org/wiki/Routing_Information_Protocol][Routing Information Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       40fd019a-9db5-41f1-8b1f-6bbe3fb9cf5e
+	 :END:
+**** [[https://en.wikipedia.org/wiki/Satellite_navigation][Satellite navigation - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       ebc95af5-4747-4e3c-9374-4badfa5235fd
+	 :END:
+	 Position, Navigation, and Timing
+**** [[https://en.wikipedia.org/wiki/Time_signal][Time signal - Wikipedia]]
+:PROPERTIES:
+:ID:       dfb3fb95-67f0-4fca-86f5-3eef56e5d07e
+:END:
+**** [[https://en.wikipedia.org/wiki/Precision_Time_Protocol][Precision Time Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       9c6fbb5c-eda1-4eec-9c93-02514f948f3b
+	 :END:
+**** [[https://1.ieee802.org/tsn/802-1as-rev/][P802.1AS-Rev – Timing and Synchronization for Time-Sensitive Applications |]]
+:PROPERTIES:
+:ID:       409d013a-bcfb-415f-a377-6985017ee76b
+:END:
+**** [[https://en.wikipedia.org/wiki/Network_speaker][Network speaker - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       30ff6304-15c7-4f66-ac2e-e79422011373
+	 :END:
+**** [[https://books.google.com/books?id=5CaDBAAAQBAJ&pg=PT103&lpg=PT103&dq=cambridgematrix&source=bl&ots=IPFEA0mP5u&sig=ACfU3U2CZwA9H2nrhLxg3B91ZR5raSS7AQ&hl=en&sa=X&ved=2ahUKEwiV7YTA18jqAhUkoXIEHQQvC9MQ6AEwA3oECAwQAQ#v=onepage&q=cambridgematrix&f=false][brief mention of CambridgeMatrix - hunt this down]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       2a075ffd-3d17-4061-bf6e-c840d65a7eee
+	 :END:
+	 - Everything I've found on the Strawberry Fair is unvalidated, online articles discussing the implementation of custom mesh network on June 3rd, 2006 are just copy/pasting the Wiki.
+	 - original article is here (DNS broked) http://www.cambridgeshiretouristguide.com/Articles/Article_55.asp - trying to find it on web.archive, will search YouTube later
+	 - CambridgeMatrix sounds like a lead, would be surprised if there is no connection to the Strawberry Fair
+**** [[https://en.wikipedia.org/wiki/Hazy_Sighted_Link_State_Routing_Protocol][Hazy Sighted Link State Routing Protocol - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       3f12c30e-2a2a-4268-9af0-4138f353ef89
+	 :END:
+	 link-state algorithm at CUWiN
+**** [[https://en.wikipedia.org/wiki/Expected_transmission_count][Expected transmission count - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       6adab270-917c-4c56-9379-76f997f65d31
+	 :END:
+**** [[http://www.dsn.jhu.edu/software.html][Software: Distributed Systems and Networks Lab]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       7e0486fd-043a-4fc5-b7b9-dbee77baba76
+	 :END:
+	 C src from the lads over at JHU
+**** [[https://www.wing-project.org/][WING - Wireless Mesh Network for Next-Generation Internet]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       db02eaa1-52dc-4b6b-a7c9-6be047253a6a
+	 :END:
+	 from da Italians
+**** [[https://en.wikipedia.org/wiki/Optical_mesh_network][Optical mesh network - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       c6dd18ae-4705-4c43-a003-a68e9d9bf07e
+	 :END:
+**** [[https://en.wikipedia.org/wiki/Free-space_optical_communication][Free-space optical communication - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       3587740b-bb84-4322-9927-dcb3babdc450
+	 :END:
+**** [[http://www.vlcc.net/modules/xpage0/?ml_lang=en][Visible Light Communications Consotium (VLCC) - What's Visible Light Communications?]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       9feed501-c735-4455-b662-614f1b8476d4
+	 :END:
+**** [[https://www.researchgate.net/profile/Volker_Jungnickel/publication/264595391_High-Speed_Visible_Light_Communication_Systems/links/55202e000cf2a2d9e1433634/High-Speed-Visible-Light-Communication-Systems.pdf][High Speed Visible Light Communication Systems - pdf researchgate]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       79639f6b-7d65-4533-89f6-8a10a0f4c633
+	 :END:
+**** [[https://en.wikipedia.org/wiki/Visible_light_communication][Visible light communication - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       e5197687-8df9-4da5-a5dd-69fb563499cb
+	 :END:
+**** [[https://en.wikipedia.org/wiki/Mesh_networking][Mesh networking - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       86afebd1-8344-4fb4-9227-a15312696be9
+	 :END:
+**** [[https://en.wikipedia.org/wiki/InfiniBand][InfiniBand - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       f55d9a6c-683b-41ab-b0a4-23f15ab55400
+	 :END:
+**** [[https://en.wikipedia.org/wiki/Anycast][Anycast - Wikipedia]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-17 Fri]
+   :ID:       864a23ae-1a5d-4a46-b72b-fea3fc545a7e
+	 :END:
+		+ unicast, broadcast, multicast, anycast, geocast
+**** [[https://en.wikipedia.org/wiki/Multicast][Multicast - Wikipedia]]
+:PROPERTIES:
+:ID:       c1476578-210d-4674-918f-014e65c06ff6
+:END:
+**** [[https://blogs.akamai.com/sitr/2019/07/anatomy-of-a-syn-ack-attack.html][Anatomy of a SYN-ACK attack - Akamai Security Intelligence and Threat Research Blog]]
+	 :PROPERTIES:
+	 :CREATED:  [2020-07-12 Sun]
+   :ID:       739b0bd3-86a2-43b5-be45-e9340db140ce
+	 :END:
+  
+
+** Hardware
+:PROPERTIES:
+:ID: 040cb38f-923e-47e7-8cbb-dec452878a6f
+:END:
+- [[https://en.wikipedia.org/wiki/Hardware_code_page][Hardware code page - Wikipedia]]
+
+*** Gadgets
+:PROPERTIES:
+:ID:       82dbbc73-1154-4426-8685-0b7d5e4d1b71
+:END:
+- interesting gadgets found on the web and beyond
+**** [[https://nakedsecurity.sophos.com/2016/11/29/the-tor-phone-prototype-a-truly-private-smartphone/][Tor Phone Prototype 2016]]
+:PROPERTIES:
+:ID:       84393347-ad8b-411b-9de9-04e7aecf18da
+:CREATED: [2021-01-23 Sat 14:40]
+:END:
+Likely not in-line with what we're searching for, but maybe a fun read
+
+*** Computer
+:PROPERTIES:
+:ID:       81fc0153-bfeb-4412-b882-1dcdf563f900
+:END:
+**** Disk
+:PROPERTIES:
+:ID:       7ffff96b-8a79-4233-a062-c4e4764201b2
+:END:
+Disk storage (also sometimes called drive storage) is a general
+category of storage mechanisms where data is recorded by various
+electronic, magnetic, optical, or mechanical changes to a surface
+layer of one or more rotating disks. A disk drive is a device
+implementing such a storage mechanism. Notable types are the hard disk
+drive (HDD) containing a non-removable disk, the floppy disk drive
+(FDD) and its removable floppy disk, and various optical disc drives
+(ODD) and associated optical disc media.
+-- https://en.wikipedia.org/wiki/Disk_storage
+
+***** Filesystems
+:PROPERTIES:
+:ID:       f79e915e-ab9b-47a9-8846-5b9d94d416bb
+:END:
+- Ext4 - https://wiki.archlinux.org/index.php/Ext4
+- ReiserFS
+- HFS+
+- B-Tree
+- XFS
+
+**** Firmware
+:PROPERTIES:
+:ID:       d0f45516-04f4-4da4-84e9-05cc29df51e1
+:END:
+https://en.wikipedia.org/wiki/Firmware
+
+*** Keyboard
+:PROPERTIES:
+:ID:       f8b2d415-ab09-4405-957e-0b697fbce1c2
+:END:
+**** Layouts
+:PROPERTIES:
+:ID:       559216d8-fcb8-45d8-ab46-c3e2f880b93d
+:END:
+***** [[https://en.wikipedia.org/wiki/JCUKEN][JCUKEN]]
+:PROPERTIES:
+:ID:       94b061b0-9fd1-4491-bfd5-76688f226f32
+:END:
+:LOGBOOK:
+- refiled on [2021-09-11 Sat 03:57]
+:END:
+** Artificial Intelligence                                              :ai:
+:PROPERTIES:
+:ID:       6651eea3-117f-47fc-9abf-ecf8f6d033d4
+:AKA: AI
+:END:
+#+begin_quote
+Artificial intelligence (AI) – intelligence exhibited by machines or
+software. It is also the name of the scientific field which studies
+how to create computers and computer software that are capable of
+intelligent behaviour.
+-- [[https://en.wikipedia.org/wiki/Outline_of_artificial_intelligence][Wikipedia]]
+#+end_quote
+*** Artificial General Intelligence
+:PROPERTIES:
+:ID:       759d1c0f-1e38-42c1-ba5e-867796dfca89
+:AKA: ALG, full AI, general intelligent action
+:END:
+#+begin_quote
+Artificial general intelligence (AGI) is the hypothetical ability of
+an intelligent agent to understand or learn any intellectual task that
+a human being can.
+-- [[https://en.wikipedia.org/wiki/Artificial_general_intelligence][Wikipedia]]
+#+end_quote
+*** Weak AI
+:PROPERTIES:
+:ID:       07595fdf-1f96-4097-912d-c852b427be4b
+:END:
+*** Machine Learning
+:PROPERTIES:
+:ID: 943b8cf4-64b3-402b-b206-c722a326f9ea
+:END:
+- https://en.wikipedia.org/wiki/Machine_learning
+
+- Machine Learning (ML) is a sub-field of AI that focuses
+on the study of algorithms which can be /improved/ with experience.
+**** Natural Language Processing
+:PROPERTIES:
+:ID: f2ad645e-902f-4ec5-abf0-97314022a4f1
+:AKA: NLP
+:END:
+- https://becominghuman.ai/a-simple-introduction-to-natural-language-processing-ea66a1747b32
+
+Natural Language Processing (NLP) is the study of /interactions/
+between computers and human language.
+
+**** Automated Machine Learning
+:PROPERTIES:
+:ID:       910d0f5e-3136-4295-a6b7-cd61adb837ea
+:AKA: AutoML
+:END:
+#+begin_quote
+Automated machine learning (AutoML) is the process of automating the
+tasks of applying machine learning to real-world problems. AutoML
+covers the complete pipeline from the raw dataset to the deployable
+machine learning model. AutoML was proposed as an artificial
+intelligence-based solution to the ever-growing challenge of applying
+machine learning.
+The high degree of automation in AutoML allows non-experts to make use
+of machine learning models and techniques without requiring them to
+become experts in machine learning. Automating the process of applying
+machine learning end-to-end additionally offers the advantages of
+producing simpler solutions, faster creation of those solutions, and
+models that often outperform hand-designed models. AutoML has been
+used to compare the relative importance of each factor in a prediction
+model.
+-- [[https://en.wikipedia.org/wiki/Automated_machine_learning][Wikipedia]]
 #+end_quote

@@ -3,7 +3,7 @@
 :ID: 4aaf7257-3900-46ca-8f2b-f284bce6d4d0
 :END:
  - Note :: I'm bad at math
-** Links
+** links
 :PROPERTIES:
 :ID:       e81fae72-c07b-41e1-9c49-43c97217ab9b
 :END:
@@ -30,3 +30,26 @@ value than any positive real number.
 
 - [[cdn:media/doc/surreal_numbers.pdf][how two ex-students turned on to pure mathematics and found total happiness]]
   - D.E. Knuth
+
+** Graph Theory
+:PROPERTIES:
+:ID:       63579fea-7b88-4427-aa14-4f2203df6f09
+:END:
+*** Graphs 
+:PROPERTIES:
+:ID:       f02f117d-9bd0-46aa-a011-1855701ce88f
+:END:
+**** Directed
+:PROPERTIES:
+:ID:       5d77d18d-d99c-42b3-805a-3a045a08172f
+:END:
+***** DAG
+:PROPERTIES:
+:ID:       edd294c8-5958-45c0-951a-c885c23f98bb
+:END:
++ [[https://en.wikipedia.org/wiki/Directed_graph][wiki]] ::
+*** Network Theory
+:PROPERTIES:
+:ID:       550dd206-bc49-490b-bd74-fd917b4e38c5
+:END:
+    

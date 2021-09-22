@@ -2,10 +2,24 @@
 :PROPERTIES:
 :ID:       d8f17fe2-00f1-4cd2-af58-7984e53c4033
 :END:
-Static blog built with Yew and BulmaCSS
+Static website built with Yew and BulmaCSS
 + status :: ALPHA
 + source :: [[src:rwest_io][hg.rwest.io/rwest_io]]
 + version :: 0.0.1
+** Introduction
+:PROPERTIES:
+:ID:       332074bc-e07c-40af-b08f-6488033c58f6
+:END:
+[[https://rwest.io][rwest.io]] is my online homepage. I use it to share my project
+documentation called =metas= as well as my =notes=. It is designed
+primarily for my own convenience, which comes with a few consequences
+I'll talk about later.
+
+The code for this site is open-source and includes HTML, SCSS, JS,
+Rust, and Python.
+
+This site does not track you, your personal information, or your
+behavior in any way.
 
 ** Features
 :PROPERTIES:
@@ -18,7 +32,7 @@ Road to v0.1.0:
 - [X] SCSS styling with Bulma, htmlize.js, custom org.js (index.scss)
 - [X] python-based Org-mode parser
 - [ ] search and filter content
-- [ ] build script
+- [X] build script
 - [ ] auto-deploy
 
 Next:

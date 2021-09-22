@@ -1,7 +1,10 @@
-* Links
+* misc
 :PROPERTIES:
 :ID: d3afbac9-69d0-428b-aac1-b29e50f94bff
 :END:
+miscellaneous items are placed here, to be formally categorized into a
+topic at a later date.
+
 ** [[https://vcvrack.com/][VCV Rack]]                          :audio:synth:
 :PROPERTIES:
 :ID:       a81bece2-4169-4033-b888-8e21b303187f

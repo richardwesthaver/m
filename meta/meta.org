@@ -5,11 +5,10 @@
 A *meta* is a document written in plaintext that provides contextual
 information about some /thing/. This /thing/ may be an idea, some
 software, a work of art, or any other product of the author's
-creation. This =meta= formalizes the *meta* documentation strategy and
-describes my implementation.
-
+creation. This document formalizes the *meta* documentation strategy
+and describes my implementation.
 + status :: EXPERIMENTAL
-+ source :: [[src:org][hg.rwest.io/org]]
++ [[src:org][source]] :: 
 ** Specification
 :PROPERTIES:
 :ID:       b8cf3d80-fa2b-40b5-8c12-09ab922658a8
@@ -25,28 +24,28 @@ to apply to most markdown-type formats.
 :PROPERTIES:
 :ID:       5bb66822-777d-47d9-b874-c2ddb0638132
 :END:
-A =meta= is a tree-like structure, spanning from a single =headline=
-(the /root/, or parent). The parent can have any number of nested
-headlines or =children=, which in turn can have children.. and so
-on.
+A =meta= is a [[id:edd294c8-5958-45c0-951a-c885c23f98bb][DAG]], spanning from a single heading. The root node can
+have any number of nested headings or =children=, which in turn can
+have children.. and so on.
 
-A =component= is simply a piece of a headline. They are used by the
-parent headline in a =meta= as well as all of its children.
+A =component= is simply a piece of a heading. They are used by the
+parent heading in a =meta= as well as all of its children.
 
-- headline :: (AKA heading, node)
-  The headline is a top-level object that shares the same API as any
-  other headline. In org-mode, a new heading is denoted by a new-line
-  followed by one or more stars (=*=), in markdown, it's one or more
-  =#=.
+- headline ::
+  A *headline* is the first line of any heading and includes a limited
+  set of fields, most import of which is the *title* (or name).
 
-  The number of stars determines the =level= of a headline. As a rule,
-  any top-level headline (with a single star) is considered a =parent=
-  (level 0).
+  - In org-mode, a headline is denoted by a new-line followed by
+    one or more stars (=*=), in markdown, it's one or more =#=.
+    The number of stars determines the =level= of a headline.
+
+  - As a rule, any top-level headline (with a single star) is
+    considered a =parent= (level 0).
 
 - properties ::
-  Each =headline= has one or more =properties=, which store
-  additional metadata. A =property= takes the form =KEY : VALUE= where
-  =KEY= is a property type listed below.
+  Each headline has one or more *properties*, which store
+  additional metadata. A property takes the form =KEY : VALUE= where
+  KEY is a property type listed below.
    - property types \\
       - ID (required)
       - CUSTOM_ID

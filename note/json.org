@@ -1,5 +1,0 @@
-* JSON
-:PROPERTIES:
-:ID:       f4d176ee-2857-4f17-a6cb-f66efa322ad3
-:END:
-- [[https://developer.mozilla.org/en-US/docs/Glossary/JSON][JSON - MDN Web Docs Glossary: Definitions of Web-related terms | MDN]]
