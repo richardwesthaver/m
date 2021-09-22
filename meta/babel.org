@@ -1,6 +1,37 @@
 * babel
 :PROPERTIES:
 :ID:       1b363810-26ea-4dae-b689-6e050756bfae
+:CATEGORY: lib
 :END:
 =babel= is my collection of Scripts, snippets, and templates. It is
 heavily inspired by [[id:e4bb1e33-0288-4610-8dcc-64fc1c0f0ade][yasnippets]].
+- As of [2021-09-22 Wed] it's quite unorganized and not useable beyond
+cloning the repo and copy/pasting something useful.
+- There is a small collection of yasnippets available [[src:babel/file/tip/snippet][here]], but the
+  plan is to auto-generate snippets for use in emacs some other clever
+  way..
++ status :: TODO
++ [[src:babel][source]] :: 
+** Context
+:PROPERTIES:
+:ID:       e76b73cb-0a82-4841-9c59-6089903f57be
+:END:
+Re-using code is an important part of software development. You re-use
+code when importing a library module, using macros, writing classes,
+and when [[https://stackoverflow.blog/2021/04/19/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/][copying code from Stack Overflow]]. As such, programmers have
+come up with systems for collecting code that they can re-use in other
+contexts. This happens at many levels of the SDLC and at various
+levels of interaction with the programmer. These /collections/ of
+re-usable code are quite useful.
+** Commentary
+:PROPERTIES:
+:ID:       574ad34f-fcfc-4238-8d4b-aa20b6432720
+:END:
+This collection contains three categories:
+- snippets :: common domain-specific code snippets
+- scripts :: generalized scripts in a variety of languages
+- templates :: project templates
+
+There is a natural hierarchy to these categories (snippet > script >
+template) which is used to build complex templates. Each category also
+provides its own methods of interaction.

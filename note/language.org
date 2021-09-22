@@ -57,16 +57,16 @@ stand alone, but a word, by definition, always stands alone.
 :ID:       e73aa96e-dce4-482e-928e-c91de7f3a80f
 :AKA: ordinary language
 :END:
-** Russian                                                        :language:
+*** Russian                                                      :language:
 :PROPERTIES:
 :ID:       72d5fa25-d1d9-477a-be75-3451bfdeb2ea
 :AKA: русский
 :END:
-*** Slang
+**** Slang
 :PROPERTIES:
 :ID:       fe9947e7-002c-4762-8c3d-b417dddc1302
 :END:
-**** Tech Slang and Humour
+***** Tech Slang and Humour
 :PROPERTIES:
 :ID:       7c2985f1-0359-4f00-b6b0-a39d5a148d81
 :END:

@@ -1,7 +1,0 @@
-* Maude
-:PROPERTIES:
-:ID:       6e0ffd4c-a76b-4696-a39a-fbf6901e82a8
-:AKA: Maude System
-:END:
-[[https://en.wikipedia.org/wiki/Maude_system][Maude System]]
-An implementation of [[https://en.wikipedia.org/wiki/Rewriting][rewriting]] logic.

@@ -1,9 +1,0 @@
-* QEMU
-:PROPERTIES:
-:ID: 9f374d07-e188-4b40-8109-9253e6c88a6a
-:END:
-- https://www.qemu.org/
-#+begin_quote
-QEMU is a generic and open source machine emulator and virtualizer.
-  -- [[https://www.qemu.org/][QEMU homepage]]
-#+end_quote
