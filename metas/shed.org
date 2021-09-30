@@ -92,6 +92,45 @@ This tool can be configured via a single RON or JSON file. The
 - serve :: serve a *Collection* over HTTP[fn:3]
 - stash :: add/remove objects in the *stash*
 - store :: add/remove objects in the *store*
+#+begin_src shell :results raw
+shed --help
+#+end_src
+
+#+RESULTS:
+shed 0.1.0
+
+ellis
+
+USAGE:
+    shed [OPTIONS] [INPUT] [SUBCOMMAND]
+
+ARGS:
+    <INPUT>    
+
+FLAGS:
+    -h, --help       Print help information
+    -V, --version    Print version information
+
+OPTIONS:
+    -c, --config <CONFIG>    
+
+SUBCOMMANDS:
+    build      build a program or library
+    help       Print this message or the help of the given subcommand(s)
+    init       bootstrap a shed
+    meta       documentation
+    note       notes
+    pack       build package
+    publish    publish documentation
+    pull       pull changesets
+    push       push changesets
+    serve      host network services
+    stash      temporary storage
+    status     report current status
+    store      persistent storage
+    unpack     extract package
+    x          
+
 ** API
 :PROPERTIES:
 :ID:       9c126f39-90d3-414b-a248-a5202ae898a3

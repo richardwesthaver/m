@@ -1,5 +1,0 @@
-* emacs
-:PROPERTIES:
-:ID:       903f8087-e0af-48f2-a5a6-f8d7f080464a
-:END:
-Configuration for the superior IDE.
