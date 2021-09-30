@@ -1,10 +1,13 @@
 ^log/
-glob:target
-glob:Cargo.lock
-glob:archive.org
-glob:todo.org
+^0x/
+archive.org
+anticorp.org
+inbox.org
+todo.org
+glob:resume*
 glob:.#*
 glob:*.*~
 glob:*.html
 glob:*.tex
 glob:*.txt
+glob:*.bib

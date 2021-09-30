@@ -1,0 +1,16 @@
+* metas
+:PROPERTIES:
+:ID:       f34c081a-6e12-4a64-af63-eafd3603bd1a
+:CUSTOM_ID: metas
+:CATEGORY: notes
+:END:
+#+INCLUDE: metas/org.org
+#+INCLUDE: metas/demo.org
+#+INCLUDE: metas/shed.org
+#+INCLUDE: metas/tenex.org
+#+INCLUDE: metas/rlib.org
+#+INCLUDE: metas/babel.org
+#+INCLUDE: metas/config.org
+#+INCLUDE: metas/crater.org
+#+INCLUDE: metas/music.org
+#+INCLUDE: metas/rwest_io.org

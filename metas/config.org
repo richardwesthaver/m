@@ -1,0 +1,36 @@
+* config
+:PROPERTIES:
+:ID:       9d7999d3-b66e-4ea2-8586-2ef9c27e8f4b
+:END:
+** home
+:PROPERTIES:
+:ID:       ce071cdb-15e2-4fa6-ab06-f96ef88df22a
+:END:
+Unix system user configuration. Similar in spirit to =etc/skel=. This
+doesn't do much right now, but will serve as a template for
+bootstrapping new users with sensible defaults.
+** hgweb
+:PROPERTIES:
+:ID:       f6e3e514-7bec-496c-9d36-3af7d13c0462
+:END:
+The files in this project can be used to bootstrap a Mercurial public
+server configuration. The theme is a bit messy and will be remedied
+some time in the future, likely following styles similiar to [[src:rwest_io][rwest_io]]
+(currently BulmaCSS-based).
+** etc
+:PROPERTIES:
+:ID:       f0a4ee3f-2763-4c21-8b78-53073cfdfde4
+:END:
+Unix system configuration files.
+** emacs
+:PROPERTIES:
+:ID:       903f8087-e0af-48f2-a5a6-f8d7f080464a
+:END:
+Configuration for the superior IDE.
+** nix
+:PROPERTIES:
+:ID:       e2f62a1e-8f54-4bf6-ab88-86872e49f71d
+:END:
+My poorman's distributed =nix= config has fallen into disrepair, but I
+keep it around for old-time's sake. It might come in handy in the
+future, depending on how the Nix ecosystem progresses.

@@ -1,0 +1,26 @@
+* Copying
+:PROPERTIES:
+:CATEGORY: legal
+:ID:       7fa7875e-7533-4d0a-8b55-fef4345d9771
+:CUSTOM_ID: wtfpl
+:END:
+
+This license applies to any digital content that I create. Third-party
+content such as the [[src:contrib][contrib]] mirrored repos are not subject to this
+license and include their own individual terms of use.
+
+#+begin_src text
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+
+ Copyright (C) 2021 Richard Westhaver <ellis@rwest.io>
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+#+end_src

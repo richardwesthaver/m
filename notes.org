@@ -1,0 +1,14 @@
+* notes
+:PROPERTIES:
+:ID:       54f3b70d-79a1-4526-9b84-088d970e86c1
+:CUSTOM_ID: notes
+:CATEGORY: notes
+:END:
+#+INCLUDE: notes/art.org
+#+INCLUDE: notes/economics.org
+#+INCLUDE: notes/philosophy.org
+#+INCLUDE: notes/math.org
+#+INCLUDE: notes/computers.org
+#+INCLUDE: notes/history.org
+#+INCLUDE: notes/language.org
+#+INCLUDE: notes/misc.org

@@ -1,30 +1,42 @@
 #+title: Richard Westhaver
 #+email: ellis@rwest.io
+#+STARTUP: latexpreview
 #+SETUPFILE: ox.setup
 #+export_file_name: resume
 #+LATEX_HEADER: \usepackage[a4paper,text={6.25in,9in}, truedimen]{geometry}
 #+LATEX_HEADER: \usepackage{nopageno}
 #+LATEX_HEADER: \renewcommand{\large}{\normalsize}
-#+begin_center
-*_=Richard Westhaver=_*
-#+end_center
+
+\begin{huge}\begin{center}\textbf
+{Richard Westhaver}
+\end{center}\end{huge}
+
 #+begin_quote
-=Highly motivated software developer and product manager seeking a new role in Tech. I thrive in fast-paced environments and have a passion for innovation in complex systems.=
+Highly motivated software developer and product manager seeking a new
+role in Tech. I thrive in fast-paced environments and have a passion
+for innovation in complex systems.
 #+end_quote
 
-| location: | New London, CT |
-| website:  | [[https://rwest.io][rwest.io]]       |
-| email:    | [[mailto:ellis@rwest.io][ellis@rwest.io]] |
-
-
-*Education*: Bachelor's Degrees in Philosophy/Economics
-  - /University of Connecticut – Class of 2016/
-
+- Location :: : New London, CT
+- Website :: : [[https://rwest.io][rwest.io]]
+- Email :: : [[mailto:ellis@rwest.io][ellis@rwest.io]]
+#+begin_center
+- Education :: : Bachelor of Art Degrees in Philosophy & Economics \\
+      /University of Connecticut – Class of 2016/
+#+end_center
+- Travel :: : Available to Travel
+- Schedule :: : No restrictions
+- Health :: : Excellent
 
 * *Professional Experience*
 :PROPERTIES:
 :ID:       cd8a928a-c278-4a9d-9513-a44309ffb378
 :END:
+** *Consultant* @ [[https://www.seatronx.com/][Seatronx]] - [2021]
+:PROPERTIES:
+:ID:       f08e4cc7-e540-465c-87ac-421387427ba1
+:END:
+- Contracted to assist with analysis of hardware and software for new medical scan device launch
 ** *Product Owner* @ [[https://www.communitybrands.com/][Community Brands]] - [2017 - 2020] 
 :PROPERTIES:
 :ID:       29479f3b-4e52-421f-bfb0-4308b18db4f0
@@ -39,7 +51,7 @@
 :ID:       b7d6f248-846f-4178-8f49-10481e0e38a9
 :END:
 - Coast Guard licensed Merchant Marine Master responsible for the operation of passenger vessels in Eastern Point Bay and Stonington Harbor
-** *Finance Internship* @ [[http://www.gdeb.com/][Electric Boat]] - [2014]
+** *Finance Intern* @ [[http://www.gdeb.com/][Electric Boat]] - [2014]
 :PROPERTIES:
 :ID:       d83d8fa5-bed3-4a2a-b716-b3d178f8848c
 :END:
@@ -55,31 +67,26 @@
 A live event streaming startup with group/private viewing, chat, social media integrations, and more on an in-house streaming platform.
 - Multiple music festivals hosted this year
 - Backend developer and AWS guru since inception in early 2020
-** Home Lab
+** Open-source software
 :PROPERTIES:
 :ID:       49cc3b0e-fd38-44c2-a2e2-ead92ad5d577
 :END:
-- [[https://rwest.io][blog]] - home website built from Emacs org-mode documents
-- [[https://hg.rwest.io][code]] - mercurial repositories
-- [[https://pkg.rwest.io][packages]] - package distribution server
-- [[https://docs.rwest.io][docs]] - API docs for my Rust libraries
-** Rust Libraries
-:PROPERTIES:
-:ID:       1e4bd720-a8b0-404e-af3f-e16d3509c049
-:END:
-I love the Rust programming language and have been building several libraries over the past few months. These libraries are the cornerstone for other programs I develop and use in my home lab environment.
-- *[[https://hg.rwest.io/rlib][rlib]]* - a mid-level library providing a framework and shared API for systems programming
-   - wrappers for low-level system modules such as cryptography, IO, and compression
-   - logging facade, utilities, and ui components
-   - concrete type system for 'objects' and 'configs' which can be serialized to json, ron, or bincode (binary)
-- *[[https://hg.rwest.io/tenex][tenex]]* - a high-level library for RESTful API clients
-   - provides access to web APIs such as Google, Discord, AWS
-   - authentication and proxy support (coming soon)
-* *Research*
+I love building things and share most of the code I write. All personal projects below are under active development.
+- [[https://rwest.io][website]]
+   - [[https://rwest.io/meta][meta]] :: -- project documentation
+   - [[https://rwest.io/notes][notes]] ::
+- [[https://hg.rwest.io][code]]
+   - [[https://hg.rwest.io/rlib][rlib]] :: -- "Richard's Rust Library"
+   - [[https://hg.rwest.io/tenex][tenex]] :: -- a high-level client library for the web
+   - [[https://hg.rwest.io/shed][shed]] :: -- multi-development tool
+** *Research*
 :PROPERTIES:
 :ID:       180368d4-e7d7-4f19-94fe-eb9c2f3fe3ec
 :END:
-For the past year I've spent time researching specific technologies that have the potential to drastically change the nature of computer interaction within the next 10 years. Below are some of the topics I'm invested in.
+For the past year I've spent time researching specific technologies
+that have the potential to drastically change the nature of computer
+interaction within the next 10 years. Below are some of the topics I'm
+invested in.
 - HTTP/3, TLS1.3, QUIC, and the move from TCP to UDP in general
 - SDR, software-defined radios
 - IPFS, libp2p, and distributed services

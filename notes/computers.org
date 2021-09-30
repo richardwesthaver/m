@@ -435,6 +435,7 @@ programming language (commonly referred to as coding).
 :ID: 6199a3af-7f64-4acc-892d-0f3d81231640
 :END:
 - https://en.wikipedia.org/wiki/Imperative_programming
+- [[id:5acc4903-a9be-40d6-93cf-15d5fee7d3f2][FORTRAN]]
 ***** Object-oriented Programming
 :PROPERTIES:
 :ID: 546d70b8-e290-466d-97be-d2486519631f
@@ -478,6 +479,20 @@ a variety of formal techniques.
 :PROPERTIES:
 :ID:       1127dc87-b7f2-46f4-9141-593087a8f5c8
 :END:
+**** Array Programming
+:PROPERTIES:
+:ID:       00add2fd-499a-447f-b912-9c4e3032306b
+:END:
+#+begin_quote
+In computer science, array programming refers to solutions which allow
+the application of operations to an entire set of values at once. Such
+solutions are commonly used in scientific and engineering settings.
+-- [[https://en.wikipedia.org/wiki/Array_programming][Wikipedia]]
+#+end_quote
+- languages include Fortran, APL, J, K, Octave, BQN
+- opposed to scalar languages like C and Pascal with can apply
+  operations only to single values, so need to make use of control
+  structures such as indexing and looping.
 *** Patterns
 :PROPERTIES:
 :ID:       ad0031c2-9be9-40cb-8a3e-1c6091537221
@@ -531,6 +546,34 @@ many companies with a strong web presence, is through [[https://en.wikipedia.org
 :END:
 - [[https://en.wikipedia.org/wiki/Crash-only_software][Crash-only software - Wikipedia]]
 - [[https://www.usenix.org/legacy/events/hotos03/tech/full_papers/candea/candea.pdf][Crash-only Software - George Candea, Armando Fox]]
+**** Incremental TT munchers                                          :rs:
+:PROPERTIES:
+:ID:       dff8c441-2da1-492e-b161-eee0f10e3fdd
+:END:
+- [[https://danielkeep.github.io/tlborm/book/pat-incremental-tt-munchers.html][Incremental TT munchers]]
+- This is a macro design for Rust code. It allows parsing of
+significantly complex grammars.
+- the 'TT' refers to the input which is /always/ captured as
+  =$($tail:tt)*=. The =tt= repetition is the only way to /losslessly/
+  capture segments of input.
+#+begin_src rust
+macro_rules! mixed_rules {
+    () => {};
+    (trace $name:ident; $($tail:tt)*) => {
+        {
+            println!(concat!(stringify!($name), " = {:?}"), $name);
+            mixed_rules!($($tail)*);
+        }
+    };
+    (trace $name:ident = $init:expr; $($tail:tt)*) => {
+        {
+            let $name = $init;
+            println!(concat!(stringify!($name), " = {:?}"), $name);
+            mixed_rules!($($tail)*);
+        }
+    };
+}
+#+end_src
 *** Models
 :PROPERTIES:
 :ID:       0e932ce2-bc13-4a78-b5d7-67d3138908dc
@@ -633,7 +676,6 @@ output of a cryptographic algorithm.
 cracking programs for hash-based resources:
 - [[https://github.com/hashcat/hashcat][hashcat]]
 - [[https://www.openwall.com/john/][JohnTheRipper]]
-
 *** Formatting                                                        :fmt:
 :PROPERTIES:
 :ID:       4fc48ec4-51c3-439e-9af7-e775e12ea6f1
@@ -753,6 +795,8 @@ coherency when you are traversing the graph.
 :PROPERTIES:
 :ID:       9f3f832c-53e7-46da-968e-858c1637f675
 :END:
+- Growing a Language - Guy Steele [1998] \\
+  [[yt:_ahvzDzKdB0][_ahvzDzKdB0]]
 **** C                                                                 :c:
 :PROPERTIES:
 :ID: 22928e28-f482-40c8-a5ef-0f6857fbd994
@@ -1034,6 +1078,10 @@ favorite of mine.
 ***** resources
 :PROPERTIES:
 :ID:       fc5f460d-dd9e-41f5-8d2b-737d15dcf249
+:END:
+****** [[https://www.fpcomplete.com/blog/philosophies-rust-haskell/][Philosophies of Rust and Haskell]]                             :hs:
+:PROPERTIES:
+:ID:       798fd7a3-70a6-4d48-91c9-272515344b15
 :END:
 ****** [[https://os.phil-opp.com/][Writing an OS in Rust]]          :os:
 :PROPERTIES:
@@ -1437,11 +1485,11 @@ CREATED: [2021-02-07 Sun 05:15]
 :CREATED:  [2020-06-19 Fri]
 :ID:       d9d8e1f8-9d99-40d4-a396-ea5c4953fea3
 :END:
-****** [[https://smallcultfollowing.com/babysteps/blog/2019/10/26/async-fn-in-traits-are-hard/][why async fn in traits are hard]]
+****** [[https://smallcultfollowing.com/babysteps/blog/2019/10/26/async-fn-in-traits-are-hard/][why async fn in traits are hard]]                           :async:
 :PROPERTIES:
 :ID:       01bb06e9-781e-41c9-b3c4-6122e44ddd8d
 :END:
-****** [[https://github.com/mersinvald/aquamarine][aquamarine]]   :docs:
+****** [[https://github.com/mersinvald/aquamarine][aquamarine]]                                      :docs:ui:drawing:
 :PROPERTIES:
 :CREATED: [2021-01-31 Sun 23:51]
 :ID:       1f83ca18-8219-4a7c-bafa-764e4af686a8
@@ -1471,12 +1519,12 @@ makes no such claims.
 :ID:       c25b7cd5-b641-48fc-8f0c-3187d5568eab
 :END:
 
-****** [[https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples][Macros in Rust: A tutorial with examples - LogRocket Blog]]
+****** [[https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples][Macros in Rust: A tutorial with examples - LogRocket Blog]] :macros:
 :PROPERTIES:
 :ID:       552b810a-490c-4649-9088-84bf9a0529cb
 :END:
 
-****** 
+****** [[https://danielkeep.github.io/tlborm/book/README.html][The Little Book of Rust Macros]]                           :macros:
 :PROPERTIES:
 :ID:       1d0b563a-e356-47eb-a3bc-87e8bd2e10d6
 :END:
@@ -1732,7 +1780,11 @@ CREATED: [2021-02-07 Sun 05:16]
 :ID:       6b385d69-0b64-47b2-b80d-435a26384482
 :END:
 
-
+****** procfs
+:PROPERTIES:
+:ID:       e526c71d-8fb3-4e49-9347-9cf1e2650b46
+:END:
+- [[https://github.com/eminence/procfs][GitHub - eminence/procfs: Rust library for reading the Linux procfs filesystem]]
 ****** rust_pcg
 :PROPERTIES:
 :ID:       b3c62763-9335-40eb-8f92-efdbf0e3b80d
@@ -1747,6 +1799,19 @@ CREATED: [2021-02-07 Sun 05:16]
 web framework by the [[id:cebd5c3f-80a4-485f-aef6-046dce661382][tokio]] team - thin wrapper around =hyper=.
 + github :: [[https://github.com/tokio-rs/axum][github.com/tokio-rs/axum]]
 + docs :: [[https://docs.rs/axum/][docs.rs/axum]]
+****** pnet                                                        :net:
+:PROPERTIES:
+:ID:       c6fd1ab4-8622-4a12-b84e-d5b47d03154b
+:END:
+- source :: [[https://github.com/libpnet/libpnet][github.com/libpnet/libpnet.git]]
+- low-level C-style network programming in Rust
+****** mio                                                         :net:
+:PROPERTIES:
+:ID:       3731384a-1561-458a-96fb-f003006bb3d5
+:END:
++ source :: [[https://github.com/tokio-rs/mio.git][github.com/tokio-rs/mio.git]]
+- low-level I/O library
+
 **** Python                                                           :py:
 :PROPERTIES:
 :ID:       249c2d3e-9d59-4f1f-9f6f-ad68ab04d1d3
@@ -1782,6 +1847,47 @@ prefer it for precisely this reason.
   Ogg Theora, Ogg Vorbis, True Audio, WavPack, OptimFROG, and AIFF
   audio files.
 - [[https://www.psycopg.org/docs/][psycopg2]] - PostgreSQL database adapter.
+**** Haskell                                                          :hs:
+:PROPERTIES:
+:ID:       4df9857f-9d1e-4d3a-92b4-c7797296eac5
+:END:
+- a popular functional programming language
+- [[https://www.haskell.org/][Haskell Language]]
+- [[https://blog.akquinet.de/2021/01/03/haskell-is-faster-than-rust-wait-a-sec/][Haskell is Faster than Rust! … Wait a Sec! – akquinet AG – Blog]]
+**** Erlang                                                          :erl:
+:PROPERTIES:
+:ID:       5c8b33bd-cb8b-46ed-9c58-93d23f9633bc
+:END:
+- [[https://www.erlang.org/][Erlang Programming Language]]
+- [[cdn:media/doc/getting_started_with_erlang-5.4.pdf][Getting Started with Erlang (PDF)]]
+- [[https://learnyousomeerlang.com/introduction][Introduction | Learn You Some Erlang for Great Good!]]
+- [[https://github.com/erlang/otp][GitHub - erlang/otp: Erlang/OTP]]
+- [[https://matthil.de/b/web_protocol.html][matt's web protocol experiments in erlang]]
+**** Lisp                                                           :lisp:
+:PROPERTIES:
+:ID:       e3f31e58-1503-4d9b-a830-3ec62bec4e8a
+:END:
+#+begin_quote
+Lisp (historically LISP) is a family of programming languages with a
+long history and a distinctive, fully parenthesized prefix
+notation. Originally specified in 1958, Lisp is the second-oldest
+high-level programming language. Only Fortran is older, by one
+year. Lisp has changed since its early days, and many dialects
+have existed over its history. Today, the best-known general-purpose
+Lisp dialects are Racket, Common Lisp, Scheme, and Clojure.
+-- [[https://en.wikipedia.org/wiki/Lisp_(programming_language)][Wikipedia]]
+#+end_quote
+***** Emacs Lisp                                                     :el:
+:PROPERTIES:
+:ID:       d9c3504b-9d9f-4f96-a844-82371be08da6
+:END:
+This note pertains to elisp ([[https://www.gnu.org/software/emacs/manual/html_node/elisp/][emacs-lisp]]) the programming language of
+[[id:0f13e326-614c-4df9-8344-e257eb165d8c][Emacs]].
+***** Common Lisp                                                    :cl:
+:PROPERTIES:
+:ID:       63cb1352-c79d-41e1-bb10-c05931a3ab6f
+:END:
+- [[https://common-lisp.net/][Welcome to Common-Lisp.net!]]
 **** Javascript                                                       :js:
 :PROPERTIES:
 :ID: 57eb884b-b22f-47f2-b6cb-e06ff59adb00
@@ -1923,13 +2029,286 @@ CREATED: [2021-01-22 Fri 02:20]
 :END:
 "Lisp with types"
 
-**** Common Business Oriented Language                             :cobol:
+**** FORTRAN                                                     :fortran:
+:PROPERTIES:
+:ID:       5acc4903-a9be-40d6-93cf-15d5fee7d3f2
+:END:
+- [[https://www.pbm.com/~lindahl/real.programmers.html][Real Programmers Don't Use Pascal]]
+- [[https://en.wikipedia.org/wiki/Fortran][wiki]] ::
+- example - [[https://en.wikipedia.org/wiki/Heron%27s_formula][Heron's Formula]]
+  #+begin_src fortran
+C AREA OF A TRIANGLE WITH A STANDARD SQUARE ROOT FUNCTION
+C INPUT - TAPE READER UNIT 5, INTEGER INPUT
+C OUTPUT - LINE PRINTER UNIT 6, REAL OUTPUT
+C INPUT ERROR DISPLAY ERROR OUTPUT CODE 1 IN JOB CONTROL LISTING
+      READ INPUT TAPE 5, 501, IA, IB, IC
+  501 FORMAT (3I5)
+C IA, IB, AND IC MAY NOT BE NEGATIVE OR ZERO
+C FURTHERMORE, THE SUM OF TWO SIDES OF A TRIANGLE
+C MUST BE GREATER THAN THE THIRD SIDE, SO WE CHECK FOR THAT, TOO
+      IF (IA) 777, 777, 701
+  701 IF (IB) 777, 777, 702
+  702 IF (IC) 777, 777, 703
+  703 IF (IA+IB-IC) 777, 777, 704
+  704 IF (IA+IC-IB) 777, 777, 705
+  705 IF (IB+IC-IA) 777, 777, 799
+  777 STOP 1
+C USING HERON'S FORMULA WE CALCULATE THE
+C AREA OF THE TRIANGLE
+  799 S = FLOATF (IA + IB + IC) / 2.0
+      AREA = SQRTF( S * (S - FLOATF(IA)) * (S - FLOATF(IB)) *
+     +     (S - FLOATF(IC)))
+      WRITE OUTPUT TAPE 6, 601, IA, IB, IC, AREA
+  601 FORMAT (4H A= ,I5,5H  B= ,I5,5H  C= ,I5,8H  AREA= ,F10.2,
+     +        13H SQUARE UNITS)
+      STOP
+      END
+  #+end_src
+**** COBOL                                                         :cobol:
 :PROPERTIES:
 :ID: 82eae0d0-bec2-4c70-b003-f43c1ca1c781
-:AKA: COBOL
+:AKA: Common Business Oriented Language
 :END:
 - https://en.wikipedia.org/wiki/COBOL
 
+**** APL                                                             :apl:
+:PROPERTIES:
+:ID:       8d8f9182-6fed-42d2-87c0-cb75ae66329c
+:END:
+- the OG array PL
+- inspired many other modern languages and concept models from
+  spreadsheets to functional to DSLs.
+- A Programming Language, 1962 \\
+  #+begin_quote
+  Applied mathematics is largely concerned with the design and
+  analysis of explicit procedures for calculating the exact or
+  approximate values of various functions. Such explicit procedures
+  are called algorithms or programs. Because an effective notation for
+  the description of programs exhibits considerable syntactic
+  structure, it is called a programming language.
+  #+end_quote
+- [[https://aplcart.info/][APLcart - Find your way in APL]]
+- [[https://wiki.haskell.org/Talk:APL][Talk:APL - HaskellWiki]]
+- APL and Haskell quick comparison \\
+  [[yt:QtvvQ7MdwKY]]
+- APL keyboard layout \\
+  [[cdn:img/APL-keybd2.svg][https://cdn.rwest.io/img/APL-keybd2.svg]]
+- [[https://tryapl.org/][TryAPL]]
+- some great youtube tutorials and problem walkthroughs available from [[https://www.youtube.com/channel/UC1kBxkk2bcG78YBX7LMl9pQ][code_report]]
+- [[https://code.jsoftware.com/wiki/Essays/Incunabulum][Essays/Incunabulum - J Wiki]]
+***** Dyalog                                                     :dyalog:
+:PROPERTIES:
+:ID:       27e7caab-127e-4956-9415-e4a9b4013952
+:END:
+- home :: [[https://www.dyalog.com/][dyalog.com]]
+- an APL-based development environment
+- [[https://www.dyalog.com/getting-started/tips.htm][Dyalog - Tips]]
+**** BQN                                                             :bqn:
+:PROPERTIES:
+:ID:       46bfb5a5-0933-4a17-9e99-01a5fadf2e07
+:END:
+- [[https://mlochbaum.github.io/BQN/][BQN: finally, an APL for your flying saucer]]
+- [[https://mlochbaum.github.io/BQN/commentary/why.html][Why use BQN?]]
+- [[https://mlochbaum.github.io/BQN/tutorial/index.html][BQN tutorials]]
+  ligatures everywhere 8)
+   - expressions :: +-×÷⋆√˜⁼˙∘
+      - literals = char, num
+      - primitives = functions, modifiers
+      - 1-modifiers = superscript
+      - 2-modifiers = unbroken circlers
+      - other primitives are /always functions/
+      - to try out BQN, use the [[https://mlochbaum.github.io/BQN/try.html][BQN online REPL]]
+        it's helpful with debugging since it shows the interpreted structure via evaluation diagram
+      - BQN's grammar is governed by syntactic roles. 
+        |------------+----------+-------------------+-------------+---------------|
+        | Precedence | Role     | Input roles       | Output role | Associativity |
+        |------------+----------+-------------------+-------------+---------------|
+        |          0 | ()       | Whatever          | Same thing  | (none)        |
+        |          1 | Modifier | Function, subject | Function    | left-to-right |
+        |          2 | Function | Subject           | subject     | Right-to-left |
+        |------------+----------+-------------------+-------------+---------------|
+   - lists :: ∾≍⌽↕¨´
+      - companies made with 1d (K) by Arthur Whitney : [[https://en.wikipedia.org/wiki/Kx_Systems][Kx Systems]] , [[https://shakti.com/][shakti]]
+      - a /string/ is a list of characters
+        #+begin_src bqn
+ "Text!" 
+        #+end_src
+      - list notation uses angle brackets, ',', newline, and '⋄' are interchangeable separators
+        #+begin_src bqn
+ ⟨ π, ∘, "element" ⋄ ⟨'l',1,5,'t'⟩ ⟩
+        #+end_src
+      - strands are an alternative notation for lists: '‿'
+        #+begin_src bqn
+ >> 2 × ⟨0‿2 ⋄ 1‿3‿5⟩
+ ⟨ ⟨ 0 4 ⟩ ⟨ 2 6 10 ⟩ ⟩
+
+ >> ⟨ 10, 20‿30 ⟩ + ⟨ 1‿2, 3 ⟩
+ ⟨ ⟨ 11 12 ⟩ ⟨ 23 33 ⟩ ⟩
+        #+end_src
+      - '≍' is the function for making one or two atom arguments into a
+        list. Solo in the one-arg case, couple in the two.
+      - '∾' is Join To (inverted lazy S), which concatenates lists
+        #+begin_src bqn
+>> ⟨1,2,3⟩ ∾ "abc"
+⟨ 1 2 3 'a' 'b' 'c' ⟩
+
+>> 0 ∾ ⟨1,2,3⟩
+⟨ 0 1 2 3 ⟩
+
+>> "plural" ∾ 's'
+"plurals"
+        #+end_src
+      - '⌽' is Reverse - puts a list back to front
+        #+begin_src bqn
+>> ⌽ "drawer"
+"reward"
+        #+end_src
+        with a left argument, means Rotate which shifts values over by
+        a specified amount. positive rotates left, negative roates
+        right.
+      - '¨' is the 1-modifier Each which applies the operand to every
+        element of a list argument - it's the same as map in a
+        functional programming language. with two list arguments (with
+        the same length), the elements of each list are paired - like
+        a zip function.
+      - '´' is Fold - reduce or accumulate functions such as `+´`
+        which sums a list
+      - '↕' Range - returns all natural numbers less than subject
+         - natural numbers start at 0 (naturally)
+      - 
+   - combinators :: <>≠=≤≥≡≢○⊸⟜
+     #+begin_quote
+     Tacit programming does not use variables during the execution of
+     a function (but you might use them for convenience in order to
+     construct a tacit program). Variables allow you to use any
+     accessible value in the program with the same level of
+     ease. Tacit code doesn't. In fact it becomes pretty unusable when
+     more than about three values are active at once. One consequence
+     is that tacit code won't cause confusion by modifying far-away
+     variables. But something unique to the tacit paradigm is that
+     when only a small number of values are active—which is always
+     true in a small enough portion of a program!—it has more powerful
+     ways to describe the way these values flow through the
+     program. The main way it achieves this is with combinators.
+     #+end_quote
+      - booleans are represented by the natural numbers 0 and 1, no
+        built-in primitives for this.  the concept and power behind
+        this is seen in how counts and occurences work -
+        #+begin_src bqn
+ >> 'e' = "George Boole"
+ ⟨ 0 1 0 0 0 1 0 0 0 0 0 1 ⟩
+
+ >> +´ 'e' = "George Boole"
+ 3
+
+ >> 'e' +´∘= "George Boole"  # With a combinator
+ 3
+
+        #+end_src
+      - '⋆⟜-' is "Power After Negation"
+      - '⋆⊸-' is "Exponent Before Subtracting"
+      - of course have one-arg or two arg-case of Before and After,
+        structure of application is the same.
+      - introduced the Not function - holy crap!
+        ¬x == 1-x
+        gives us multiple ways to write some interesting things
+        #+begin_src bqn
+>> ¬⊸× 0.5
+0.25
+        #+end_src
+      - reintroducing fact that modifiers can be assigned to data
+        values, also, data values can be applied as functions.
+        specifically /constant/ functions that just return themselves
+      - consider the following improvement to a previous example for
+        use of number as const function using Range
+        #+begin_src bqn
+>> ↕⊸÷⟜(-⟜1) 8
+⟨ 0 0.14285714285714285 0.2857142857142857 0.42857142857142855 0.5714285714285714 0.7142857142857143 0.8571428571428571 1 ⟩
+        #+end_src
+        or with a train, simply
+        #+begin_src bqn
+(↕÷-⟜1) 8
+        #+end_src
+        our new base-decode function:
+        #+begin_src bqn
+(@+ ·+⟜(2⊸×)´∘⌽¨ -⟜'0') "01000010"‿"01010001"‿"01001110"
+        #+end_src
+      - using a data value as the left operand of Before or the right
+        operand of After is called Bind because it attaches that data
+        value as an argument to the other operand
+   - variables :: ∧∨¬⊣⊢↑↓«»⌾
+     #+begin_quote
+     To take a proud denizen of the eternal cosmos of values, held for
+     a fleeting instant by the course of code, and bind it. Tie it
+     down with a name, failing always to alter its inner nature but
+     allowing context to reform its outer appearance. So labelled,
+     perhaps through the progress of time it will know escape, or else
+     find itself passed through one bond to another, ever
+     tethered. It's a task to be approached only with respect.
+     #+end_quote
+     #+begin_src bqn
+>> hey ← "Hi there"
+
+>> hey ∾ ", World!"
+"Hi there, World!"
+     #+end_src
+     > lol
+      - ← is used for declare and assign
+      - ↩ is just assign (after already declared)
+      - oh my variables have roles too
+         - lowercase = subject
+         - Uppercase = function
+         - _leftUnderscore = 1-modifier
+         - \_twoUnderscores\_ = 2-modifier
++ [[https://mlochbaum.github.io/BQN/doc/index.html][docs]] ::
+- [[https://github.com/mlochbaum/BQN/blob/master/running.md][how to run BQN]] \\
+  CBQN is the primary offline implementation - there is
+  also a mostly usable javascript implementation.
+- [[https://github.com/mlochbaum/BQN/blob/master/doc/embed.md][Using embedded BQN]]
+  #+begin_quote
+  Probably you can figure out the easy things like calling
+  bqn("×´1+↕6") to compute six factorial. But how do you get JS and
+  BQN to talk to each other, for example to compute the factorial of a
+  number n? Constructing a source string with bqn("×´1+↕"+n) isn't the
+  best way—in fact I would recommend you never use this strategy.
+
+  Instead, return a function from BQN and call it:
+  bqn("{×´1+↕𝕩}")(n). This strategy also has the advantage that you
+  can store the function, so that it will only be compiled
+  once. Define let fact = bqn("{×´1+↕𝕩}"); at the top of your program
+  and use it as a function elsewhere.
+  #+end_quote
+**** K                                                                 :k:
+:PROPERTIES:
+:ID:       1aa00dc0-2712-40fb-a3ba-57b0173f80d6
+:END:
+- [[https://github.com/JohnEarnest/ok/blob/gh-pages/docs/Programming.md][Programming in K]]
+- [[https://ngn.bitbucket.io/k.html][k impls]]
+- http://nsl.com/k/training/idioms_K3.pdf - k2/k3 version
+- Arthur Whitney's array programming language
+- many dialects, the OG ones are proprietary, there are OSS
+  alternatives.
+- wiki :: [[https://en.wikipedia.org/wiki/K_(programming_language)][K (programming language)]]
+- ngn/k is the dialect I'm using to learn
+- see [[https://github.com/tavmem/buddy][this repo]] for examples of Arthur Whitney's programming
+  style. the side-by-side buddy allocator implementations are quite
+  thought provoking. Arthur's version is 11 lines, the idiomatic
+  documented C version is almost 750. [[https://github.com/tavmem/buddy/blob/master/a/b.c][b.c]]
+- [[https://kparc.github.io/ref/][+/kei | K reference card]]
+- https://kparc.com/
+- [[https://github.com/kevinlawler/kona/wiki/Coding-Guidelines#this-is-a-very-unusual-style-of-c][Coding Guidelines · kevinlawler/kona]]
+***** ngn                                                           :ngk:
+:PROPERTIES:
+:ID:       71892548-a530-4136-8147-e7ed5294fe3e
+:END:
++ source :: [[https://codeberg.org/ngn/k][codeberg.org/ngn/k]]
+***** shakti                                                        :shk:
+:PROPERTIES:
+:ID:       95d05cc5-b1b0-4836-a96d-ecb9d0351169
+:END:
+- [[https://shakti.com/][shakti homepage]]
+- [[https://estradajke.github.io/k9-simples/kbu.pdf][Shakti k9 tutorials]]
+  - [[https://estradajke.github.io/k9-simples/k9/index.html][Shakti (k9) tutorial]]
 *** Standards
 :PROPERTIES:
 :ID:       d11cad66-1eba-4eb2-b1bc-ebca6aeeaa33
@@ -2122,6 +2501,10 @@ that code with a Makefile.
 	 :CREATED:  [2020-07-24 Fri]
    :ID:       f4058dfa-0f0b-465a-b1d6-5db01b2d5c92
 	 :END:
+****** [[https://ambrevar.xyz/lisp-repl-shell/index.html][A Lisp REPL as my main shell]]
+:PROPERTIES:
+:ID:       33e82a72-ba0d-43cd-b036-53a504a13214
+:END:
 ****** [[https://protesilaos.com/dotemacs/#h:847477fe-ef86-4e12-a2da-6c431528da99][GNU Emacs integrated computing environment | Protesilaos Stavrou]]
 	 :PROPERTIES:
 	 :CREATED:  [2020-07-23 Thu]
@@ -2177,7 +2560,6 @@ that code with a Makefile.
 :END:
 Emacs lib for enhancing minibuffer completion
    
-
 ****** [[https://www.emacswiki.org/emacs/BookmarkPlus][bookmark+ docs]]
 :PROPERTIES:
 :ID:       1d87a1fb-4e0d-4f78-949a-2247c702abac
@@ -2263,6 +2645,14 @@ modification.
 :ID:       49984c0c-a553-4c62-a921-07a4259aee73
 :END:
 
+****** [[https://github.com/dylanaraps/pure-bash-bible][pure bash bible]]                                              :sh:
+:PROPERTIES:
+:ID:       f7fc486e-56e3-458c-ada6-b2b800722abd
+:END:
+****** [[https://wiki.bash-hackers.org/][the bash hacker's wiki]]                                       :sh:
+:PROPERTIES:
+:ID:       3c99996a-b259-49a2-a762-dbb03d53590e
+:END:
 ***** Conky                                                     :lua:cpp:
 :PROPERTIES:
 :ID: ee68a953-f9b3-447d-a531-ef301ca1e0d9
@@ -2509,8 +2899,6 @@ in, but overall a good continuation of the mind-mapping framework.
 :END:
 An Operating System or "OS" is software that communicates with
 Applications and interacts with computer hardware.
-- Microsoft Windows
-- MacOS
 ***** GNU/Linux                                                   :linux:
 :PROPERTIES:
 :ID: 134e2505-cc34-4dc2-b7a4-b3b71c331f07
@@ -2520,6 +2908,7 @@ Applications and interacts with computer hardware.
 - [[https://www.kernel.org/][The Linux Kernel Archives]]
 - https://en.wikipedia.org/wiki/Linux
 - [[https://sysprog21.github.io/lkmpg/][The Linux Kernel Module Programming Guide]]
+- [[https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/net/ipv4][linux kernel ipv4 stack]]
 ****** Distros
 :PROPERTIES:
 :ID:       80908ff8-aeeb-4429-8f87-e34660faea48
@@ -2714,10 +3103,17 @@ pentoo.
 :PROPERTIES:
 :ID:       395796de-ac63-4063-8fa7-94d4adace195
 :END:
-******* Filesystem
+******* Filesystems
 :PROPERTIES:
 :ID:       96b3bec4-1673-419e-8900-c33bf12aa34f
 :END:
+******** proc
+:PROPERTIES:
+:ID:       d695b072-a8fc-44cf-b37f-9a0465b8dacc
+:END:
+- process information pseudo-filesystem
+- [[https://man7.org/linux/man-pages/man5/proc.5.html][proc(5) - Linux manual page]]
+- Rust interface is available via procfs
 ******** /etc/skel
 :PROPERTIES:
 :ID:       5bd7664e-6f6e-436e-9f28-f7961ca8c724
@@ -3902,6 +4298,14 @@ CREATED: [2020-07-31 Fri 00:36]
 	 :CREATED:  [2020-07-12 Sun]
    :ID:       016a94ad-c25a-4199-a80a-7427dfc9c486
 	 :END:
+*** Tutorials
+:PROPERTIES:
+:ID:       3dd7d402-ec2f-4320-a38b-17fd5bc6bb3a
+:END:
+**** [[https://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp/][Let's code a TCP/IP stack, 1: Ethernet & ARP]]
+:PROPERTIES:
+:ID:       86df665d-8f21-4290-913b-64dca2276dfc
+:END:
 *** links
 :PROPERTIES:
 :ID:       f5fabb7c-c8c1-416d-bfc8-ce1659ab6866
@@ -4095,8 +4499,7 @@ CREATED: [2020-07-31 Fri 00:36]
    :ID:       739b0bd3-86a2-43b5-be45-e9340db140ce
 	 :END:
   
-
-** Hardware
+** Computer Hardware                                                    :hw:
 :PROPERTIES:
 :ID: 040cb38f-923e-47e7-8cbb-dec452878a6f
 :END:

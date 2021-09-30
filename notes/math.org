@@ -53,3 +53,20 @@ value than any positive real number.
 :ID:       550dd206-bc49-490b-bd74-fd917b4e38c5
 :END:
     
+
+** Geometry
+:PROPERTIES:
+:ID:       41753703-1ea2-4778-8985-2bafb666d58a
+:END:
+One of the oldest branches of mathematics. Concermed with properties
+of space related to distance, shape, size, and relative position of
+figures.
+
+*** Taxicab geometry
+:PROPERTIES:
+:ID:       7db8c7e8-97f6-41de-a303-acd7ef44b89e
+:END:
+a form of geometry in which the metric for the distance between two
+points is replaced by the sum of the /absolute differences/ of their
+Cartesian coordinates, known as the taxicab metric, or Manhattan
+Distance.
