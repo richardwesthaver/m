@@ -2,57 +2,90 @@
 :PROPERTIES:
 :ID:       8adf8bc0-3a2f-47ae-860b-1e71e93fc339
 :END:
-The repo found at [[src:org][hg.rwest.io/org]] contains words I've written in
-plaintext. The two main modules are =metas=, which contains information about my
-projects and =notes= which contains information about everything else.
-
++ ? :: a knowledge system
 + status :: ACTIVE
-+ source :: [[src:org][hg.rwest.io/org]]
++ src :: [[src:org][hg.rwest.io/org]]
 
+:krypt:
+- l :: =logs=
+:end:
+- m :: =metas=
+  - information about my projects
+  - Each node is like a README file with super powers.
+- n :: =notes=
+  - loosely categorized under a few headlines, forming nested trees of
+    nodes.
 ** Context
 :PROPERTIES:
 :ID:       22d47091-0079-44d9-b728-d6387c4b659a
 :END:
-Emacs is my IDE and text-editor of choice, so Org-mode is a natural
-fit for all types of writing I do. The problem with Org is that it is
-difficult to parse /outside of Emacs/. in =elisp=, the [[https://orgmode.org/worg/dev/org-element-api.html][org-element api]]
-fully supports the specification, but it is a monster task to
-re-implement in another language.
-** Syntax
-:PROPERTIES:
-:ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
-:END:
-** Modules
-:PROPERTIES:
-:ID:       ca9dfe07-771c-4945-a0c8-d536e2921450
-:END:
-I use the term modules here instead of just 'sub-directory' or
-'category' to highlight the fundamental differences in functionality
-available. Beyond the functionality such as publishing, processing,
-and templating there is little to no difference between the contents
-of these modules. They're all just org-mode text files with some
-special [[id:93185ce3-7b16-4f9b-8e59-39127869ac45][syntax]].
-
-*** metas
-:PROPERTIES:
-:ID:       54a8cda3-de08-468a-ad70-f402a56db1e6
-:END:
-A *meta* is a document that provides information about one of my
-projects. These documents are more formal and intended to serve as a
-primary resource for the project covered. It's like a README file with
-super powers.
-
-*** notes
-:PROPERTIES:
-:ID:       876834a2-7419-411c-90b7-d9ea5575dd2a
-:END:
-A *note* is a document that provides information about any /thing/. 
+It is my opinion that the best system for /personal/ Knowledge
+Management is the one that you build yourself, because it is not an
+exact science. I have tried many different note-taking/info-gathering
+methodologies and tools over the years - some of which are quite
+excellent. I can assure you however, that you will need to make
+changes and ocassionally break the rules, and as you do, you drift
+into no-man's land. Sometimes this is totally fine. Other times, you
+may break something in your system of choice, causing loss of
+functionality. What you end up with is a constant battle between your
+mind and your tools.
 ** Implementation
 :PROPERTIES:
 :ID:       f8e064be-822d-4fe0-b772-6932818f502c
 :END:
-- All docs begin with Org-mode. My emacs configuration makes
-  searching, linking, and modifying docs very easy.
+*** Syntax
+:PROPERTIES:
+:ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
+:END:
+This section assumes some familiarity with org syntax. Org syntax is
+covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document structure
+can be found in [[https://www.gnu.org/software/emacs/manual/html_node/org/Document-Structure.html][the Emacs manual]]. What follows is a reference to some
+of the specific elements that have special meaning in my writing and
+basic extensions to this syntax.
+- Properties ::
+  Every headline has an ID or CUSTOM_ID in the properties drawer. This
+  is used to ensure uniqueness of all headlines (also called =nodes=).
+  #+begin_example
+  :PROPERTIES:
+  :ID: 0x0x0x
+  :CUSTOM_ID: some-id
+  :CATEGORY: linux
+  :END:
+  #+end_example
+- Props ::
+  All nodes have an optional number of "props" which are denoted as a
+  list item that uses =+= followed by the prop symbol and a delimiter:
+  =::=. These can appear anywhere in the =section= element of a node
+  (not just immediately following properties drawer). They're like a
+  shorthand for custom properties. 
+  #+begin_example
+# info
++ ? :: some description
++ status :: ACTIVE
++ license :: [[https://docs.rs/tokio][as_link]]
++ src :: https://hg.rwest.io/org #source code
+# can bind value to prop via direct link
++ [[https://en.wikipedia.org/some_thing][wiki]] ::
++ [[https://mlochbaum.github.io/BQN/doc/index.html][docs]] ::
+
+# edges
++ < :: [[id:parent-node][parent node]] #from
++ > :: [[id:child-node][child node]] #to
+  #+end_example
+- Drawers ::
+  #+begin_example
+  :krypt:
+  hidden text
+  :end:
+
+  :note:
+  note text here
+  :end:
+  #+end_example
+*** Exporting
+:PROPERTIES:
+:ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
+:END:
 - Once we're done with writing it's time to share our work. yay! Emacs
   has many backends for [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an emacs-lisp
   script is all that is needed to generate conventional formats like
@@ -60,23 +93,21 @@ A *note* is a document that provides information about any /thing/.
 - A list of publishing templates are defined to export individual
   modules or output formats.
 - Each format is generated in a separate temporary directory
-- Documents are /usually/ first re-exported in org format to a new
-  location. This may seem odd, but it allows us to pre-process the
-  org-mode documents before any other program starts reading the
-  contents. It allows us to do certain things like evaluate source
-  blocks or remove items tagged with :NOEXPORT: - both of which are
-  things best handled by Emacs, and not left to my hand-written
-  parsers to mangle (for now).
-- While the elisp script is chugging along, some pre-processing
-  occurs which parses the org files and creates a strictly typed
-  indexed tree of objects in JSON, RON, and Bincode format.
-- When the elisp script is done, files are sent to their final
-  destinations via a mix of SSH, FTP upload, and cp (with object files
-  where needed). Compression and archiving is also performed to
-  generate tar.zst packages before transfer in some cases.
+- Documents are /usually/ re-exported in org format to a new location
+  before anything else happense. This may seem odd, but it allows us
+  to pre-process the org-mode documents before any other program
+  starts reading the contents. It allows us to do certain things like
+  evaluate source blocks or remove items tagged with :NOEXPORT: - both
+  of which are things best handled by Emacs, and not left to my
+  hand-written parsers to mangle (for now).
+- While the elisp script is chugging along, some pre-processing occurs
+  which parses the org files and creates a strictly typed indexed tree
+  of objects in JSON, RON, and Bincode format.
+- Compression and archiving is also performed to generate tar.zst
+  packages before transfer in some cases.
 - Some programs that render docs (such as my website) need to be
   re-compiled with the new content/index. We do that first, and then
   finish distribution.
 - New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
   [[https://pkg.rwest.io/org][pkg.rwest.io/org]] which includes tar.zst packages.
-- /Individual/ files for all formats can be accessed via [[cdn:org][cdn.rwest.io/org]].
+  - /individual/ files for all formats can be accessed via [[cdn:org][cdn.rwest.io/org]].

@@ -2,7 +2,13 @@
 :PROPERTIES:
 :ID: 4aaf7257-3900-46ca-8f2b-f284bce6d4d0
 :END:
- - Note :: I'm bad at math
+- [[https://projecteuler.net/][Project Euler]] is a great place to find applied codegolf-type
+  challenges and keep your chops up
+   - if you're unfamiliar with the format, it will take time to
+     learn. The homepage calls this process 'inductive chain learning'
+     which just means that you build off your experience. By solving
+     one, you learn something that helps you solve another.. then
+     another.. and so on. It adds up.
 ** links
 :PROPERTIES:
 :ID:       e81fae72-c07b-41e1-9c49-43c97217ab9b
@@ -11,6 +17,16 @@
 :PROPERTIES:
 :ID: 6d0b5076-98c6-45c0-9b95-6e9b540d5796
 :END:
+*** [[https://byjusexamprep.com/solve-mathematical-operators-in-reasoning-i-081aea6a-d162-11e5-bfd2-ffbcfe7b24bd][Basic Concepts & Short Tricks of Fictitious Symbol questions]]
+:PROPERTIES:
+:ID:       6d2f9279-9e4a-4e4d-846f-8e3285af4811
+:END:
+
+** Algebra
+:PROPERTIES:
+:ID:       894b7ce1-6e9b-4395-8ecc-b3d145047f1a
+:END:
++ [[https://en.wikipedia.org/wiki/Algebra][wiki]] ::
 
 ** Number Systems
 :PROPERTIES:
@@ -53,7 +69,6 @@ value than any positive real number.
 :ID:       550dd206-bc49-490b-bd74-fd917b4e38c5
 :END:
     
-
 ** Geometry
 :PROPERTIES:
 :ID:       41753703-1ea2-4778-8985-2bafb666d58a

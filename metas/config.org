@@ -26,11 +26,37 @@ Unix system configuration files.
 :PROPERTIES:
 :ID:       903f8087-e0af-48f2-a5a6-f8d7f080464a
 :END:
-Configuration for the superior IDE.
+Configuration for the superior IDE. 
+- screenshots
+  - themes \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/abyss-theme-emacs.png][https://cdn.rwest.io/img/abyss-theme-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/sanityinc-theme-emacs.png][https://cdn.rwest.io/img/sanityinc-theme-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/wheatgrass-theme-emacs.png][https://cdn.rwest.io/img/wheatgrass-theme-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/leuven-theme-emacs.png][https://cdn.rwest.io/img/leuven-theme-emacs.png]]
+  - org-mode \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/olivetti-emacs.png][https://cdn.rwest.io/img/olivetti-emacs.png]]
+  - programming \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/rust-development-emacs.png][https://cdn.rwest.io/img/rust-development-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/rust-tests-emacs.png][https://cdn.rwest.io/img/rust-tests-emacs.png]]
+  - email \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/email-emacs.png][https://cdn.rwest.io/img/email-emacs.png]]
+  - eww \\
+    The Emacs Web Wowser
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/eww-emacs.png][https://cdn.rwest.io/img/eww-emacs.png]]
+
 ** nix
 :PROPERTIES:
 :ID:       e2f62a1e-8f54-4bf6-ab88-86872e49f71d
 :END:
-My poorman's distributed =nix= config has fallen into disrepair, but I
+Poorman's distributed =nix= config has fallen into disrepair, but I
 keep it around for old-time's sake. It might come in handy in the
 future, depending on how the Nix ecosystem progresses.

@@ -22,6 +22,35 @@
 :END:
 - pursuit of knowledge ~= intrinsic good IMO
 - knowledge systems are used to build and manage knowledge
+- random thoughts on knowledge ::
+  First of all, what the hell is /Knowledge/? Why it is something we
+  know, of course! /But seriously/.. it depends on who you talk to.
+  - The lawyer will say it's an understanding of a thing
+  - The economist will say it's information about a thing
+  - The philosopher will say they don't know
+
+  At least Plato had a catchy definition for us: a "justified true
+  belief". However, it is well understood nowadays that this one-liner
+  doesn't suffice. Some smug epistemologist may tell you it's a
+  "cluster concept", or that it is simply an artifact of natural
+  language, referring only to a degree of conviction. Both excellent
+  ways of dodging the question.
+
+  In pursuit of practicality let's ignore the philosopher and focus on
+  the remaining definitions..
+  - an understanding of a thing
+  - information about a thing
+  Nice, and now - a magic trick:
+  - an understanding of a /thing/ we have information about
+  
+  Information is cultivated to develop Knowledge. This knowledge can be
+  used to develop even more Knowledge, or revise existing Knowledge.
+
+  This is our lazy compromise between the two - composed of an output
+  (an understanding) and an input (information). We'll refer to this
+  definition when talking about /Knowledge Management/, which is simply
+  a process of turning our input into an output and looping over that
+  output.
 *** Truth
 :PROPERTIES:
 :ID:       dac768dd-dec6-40c7-b1a8-fedcdad26a76

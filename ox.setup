@@ -1,2 +1,6 @@
 #    -*- mode: org -*-
 #+options: toc:nil author:nil timestamp:nil email:nil title:nil num:nil ^:nil html-style:nil html-scripts:nil html-preamble:nil html-postamble:nil
+#+INFOJS_OPT: path:org-info.js
+#+INFOJS_OPT: toc:nil ltoc:t view:info mouse:underline buttons:nil
+#+INFOJS_OPT: up:https://rwest.io/i
+#+INFOJS_OPT: home:https://rwest.io
