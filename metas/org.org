@@ -1,8 +1,8 @@
-* org
+* d
 :PROPERTIES:
 :ID:       8adf8bc0-3a2f-47ae-860b-1e71e93fc339
 :END:
-+ ? :: a knowledge system
++ ? :: docs
 + status :: ACTIVE
 + src :: [[src:org][hg.rwest.io/org]]
 
@@ -13,8 +13,7 @@
   - information about my projects
   - Each node is like a README file with super powers.
 - n :: =notes=
-  - loosely categorized under a few headlines, forming nested trees of
-    nodes.
+  - loosely categorized notes
 ** Context
 :PROPERTIES:
 :ID:       22d47091-0079-44d9-b728-d6387c4b659a
@@ -109,5 +108,5 @@ basic extensions to this syntax.
   re-compiled with the new content/index. We do that first, and then
   finish distribution.
 - New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
-  [[https://pkg.rwest.io/org][pkg.rwest.io/org]] which includes tar.zst packages.
-  - /individual/ files for all formats can be accessed via [[cdn:org][cdn.rwest.io/org]].
+  [[https://pkg.rwest.io/x][pkg.rwest.io/x]] which includes tar.zst packages.
+  - /individual/ files for all formats can be accessed via [[cdn:x][cdn.rwest.io/x]].
