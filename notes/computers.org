@@ -676,6 +676,11 @@ output of a cryptographic algorithm.
 cracking programs for hash-based resources:
 - [[https://github.com/hashcat/hashcat][hashcat]]
 - [[https://www.openwall.com/john/][JohnTheRipper]]
+**** Unix Philosophy                                                :unix:
+:PROPERTIES:
+:ID:       2c483711-aa5c-4060-9d51-f840e2cae822
+:END:
++ [[https://en.wikipedia.org/wiki/Unix_philosophy][wiki]] ::
 *** Formatting                                                        :fmt:
 :PROPERTIES:
 :ID:       4fc48ec4-51c3-439e-9af7-e775e12ea6f1
@@ -1065,7 +1070,11 @@ pub struct Edge {
    but with the *outbound and inbound ids swapped*. This allows us to
    create /bidirectional/ edges (as well as support parts of the TAO
    model, but not worth getting into here).
-
+***** Skia                                                       :2d:gui:
+:PROPERTIES:
+:ID:       5d5c6541-63e5-4783-ae77-9be2ffd6d580
+:END:
++ ref :: [[https://skia.org/][Skia Homepage]]
 **** Rust                                                             :rs:
 :PROPERTIES:
 :ID: b46de918-896e-420d-8cde-09c21ae93ecd
@@ -1812,6 +1821,12 @@ web framework by the [[id:cebd5c3f-80a4-485f-aef6-046dce661382][tokio]] team - t
 + source :: [[https://github.com/tokio-rs/mio.git][github.com/tokio-rs/mio.git]]
 - low-level I/O library
 
+***** distributing packages
+****** pacman guidelines
+:PROPERTIES:
+:ID:       decad209-85c2-4634-998e-75fd098e879c
+:END:
++ ref :: [[https://wiki.archlinux.org/title/Rust_package_guidelines][Rust package guidelines - ArchWiki]]
 **** Python                                                           :py:
 :PROPERTIES:
 :ID:       249c2d3e-9d59-4f1f-9f6f-ad68ab04d1d3
@@ -1883,6 +1898,8 @@ Lisp dialects are Racket, Common Lisp, Scheme, and Clojure.
 :END:
 This note pertains to elisp ([[https://www.gnu.org/software/emacs/manual/html_node/elisp/][emacs-lisp]]) the programming language of
 [[id:0f13e326-614c-4df9-8344-e257eb165d8c][Emacs]].
+- [[https://caiorss.github.io/Emacs-Elisp-Programming/Elisp_Programming.html][Elisp Programming]]
+  a full elisp guide
 ***** Common Lisp                                                    :cl:
 :PROPERTIES:
 :ID:       63cb1352-c79d-41e1-bb10-c05931a3ab6f
@@ -2278,6 +2295,13 @@ C AREA OF THE TRIANGLE
   once. Define let fact = bqn("{×´1+↕𝕩}"); at the top of your program
   and use it as a function elsewhere.
   #+end_quote
+- [[https://github.com/cannadayr/ebqn][github/cannadayr/ebqn: A BQN virtual machine in Erlang]]
+- example of BQN characters  
+  #+begin_example
+  +-×÷⋆√⌊⌈∧∨¬|=≠≤<>≥≡≢⊣⊢⥊∾≍↑↓↕⌽⍉/⍋⍒⊏⊑⊐⊒∊⍷⊔
+  `˜˘¨⁼⌜´˝˙  ∘⊸⟜○⌾⎉⚇⍟⊘◶⎊
+  π‿∞‿@↩←⇐→,⋄  𝕨𝕩𝔽𝔾𝕎𝕏𝕗𝕘𝕊𝕤ℝ𝕣⦃⦄⟨⟩
+  #+end_example
 **** K                                                                 :k:
 :PROPERTIES:
 :ID:       1aa00dc0-2712-40fb-a3ba-57b0173f80d6
@@ -2294,21 +2318,45 @@ C AREA OF THE TRIANGLE
   style. the side-by-side buddy allocator implementations are quite
   thought provoking. Arthur's version is 11 lines, the idiomatic
   documented C version is almost 750. [[https://github.com/tavmem/buddy/blob/master/a/b.c][b.c]]
+- The Origins of K ::
+  #+begin_quote
+  In computerized society where individuality is diminished, there are
+  those who find little or no satisfaction in strict conformity to
+  stereotyped thinking and are searching for their own answers to
+  life's questions and how best to live, work and find inspiration.
+
+  Although little is known about what transpired during his brief
+  visit to the Northern Venice, the idea Arthur conceived during that
+  trip is much better known — he had a clear and uncompromising vision
+  of a new system.
+
+  In 1992, Whitney departed from Morgan Stanley to fully concentrate
+  on the design of a new computer language.
+  #+end_quote
 - [[https://kparc.github.io/ref/][+/kei | K reference card]]
 - https://kparc.com/
 - [[https://github.com/kevinlawler/kona/wiki/Coding-Guidelines#this-is-a-very-unusual-style-of-c][Coding Guidelines · kevinlawler/kona]]
-***** ngn                                                           :ngk:
+- [[https://mlochbaum.github.io/BQN/implementation/kclaims.html][BQN: Wild claims about K performance]]
+***** ngn/k                                                        :ngnk:
 :PROPERTIES:
 :ID:       71892548-a530-4136-8147-e7ed5294fe3e
 :END:
 + source :: [[https://codeberg.org/ngn/k][codeberg.org/ngn/k]]
-***** shakti                                                        :shk:
+***** shakti                                                         :k9:
 :PROPERTIES:
 :ID:       95d05cc5-b1b0-4836-a96d-ecb9d0351169
 :END:
 - [[https://shakti.com/][shakti homepage]]
-- [[https://estradajke.github.io/k9-simples/kbu.pdf][Shakti k9 tutorials]]
-  - [[https://estradajke.github.io/k9-simples/k9/index.html][Shakti (k9) tutorial]]
+   - you can download the evaluation version of shakti for 30-days
+     without charge. The enterprise version is where some of the
+     premium features are though.
+- [[https://estradajke.github.io/k9-simples/kbu.pdf][Shakti k9 tutorials]] \\
+  compared to the other dialects, this is a huge amount of docs.
+   - [[https://estradajke.github.io/k9-simples/k9/index.html][Shakti (k9) tutorial]]
+- there is also kdb/kdb+ with the Q programming language. Also proprietary.
+  - As far as I know, Arthur is working more heavily on the DB side -
+    kdb+ has web APIs, FFI (for Rust too!), IPC, ML, you name
+    it. shakti playes well with these.
 *** Standards
 :PROPERTIES:
 :ID:       d11cad66-1eba-4eb2-b1bc-ebca6aeeaa33
@@ -2435,7 +2483,11 @@ My usage of org-mode revolves around the following principles:
   at my current workflow from afar, and jot down a list of things that
   work, and things that don't. Good habit to get into for serious
   usage.
-
+******* Research
+:PROPERTIES:
+:ID:       623dab31-4864-4a25-809e-b9ed9fde6a32
+:END:
+- [[cdn:media/doc/][A Multi-Language Computing Environment for Literate Programming and Reproducible Research]]
 ******* Tutorials
 :PROPERTIES:
 :ID:       8b9a818b-b0b1-4335-9344-d4d7d8da3470
@@ -2899,6 +2951,13 @@ in, but overall a good continuation of the mind-mapping framework.
 :END:
 An Operating System or "OS" is software that communicates with
 Applications and interacts with computer hardware.
+***** Unix                                                         :unix:
+:PROPERTIES:
+:ID:       998c177b-980e-49ed-a196-cf3739f140bc
+:END:
++ [[https://en.wikipedia.org/wiki/Unix][wiki]] ::
++ < :: ⟨[[id:3bf219b5-6ad8-4355-8d68-29bd483f2671][OS]]⟩
++ > :: ⟨[[id:2c483711-aa5c-4060-9d51-f840e2cae822][Unix Philosophy]]⟩
 ***** GNU/Linux                                                   :linux:
 :PROPERTIES:
 :ID: 134e2505-cc34-4dc2-b7a4-b3b71c331f07
