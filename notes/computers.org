@@ -4192,22 +4192,22 @@ for an electronic digital computer with these components:
 :ID:       368acc88-b789-4a4e-9c90-72c5e37bd35b
 :END:
 - [[id:bf08b5d0-5745-4fa1-bb2e-7715b9f29a22][QUIC]]
-**** Transport Control Protocol
+**** TCP                                                       :transport:
 :PROPERTIES:
 :ID: 4b1299e8-73db-4e8c-b854-5a9eea1d50c7
-:AKA: TCP
 :END:
+Transport Control Protocol
 - https://tools.ietf.org/html/rfc793
 ***** [[https://en.wikipedia.org/wiki/TCP_delayed_acknowledgment][TCP delayed acknowledgment - Wikipedia]]
 	 :PROPERTIES:
 	 :CREATED:  [2020-07-17 Fri]
    :ID:       6d8e2989-2ecb-4539-9191-26ab97971d4e
 	 :END:
-**** User Datagram Protocol
+**** UDP                                                       :transport:
 :PROPERTIES:
 :ID: ed2c78ea-8935-4f05-b1be-8d9af0ff045f
-:AKA: UDP
 :END:
+- User Datagram Protocol
 - https://tools.ietf.org/html/rfc768
 ***** *UDP vs TCP*
 :PROPERTIES:
@@ -4258,11 +4258,11 @@ for an electronic digital computer with these components:
 	 :CREATED:  [2020-07-02 Thu]
    :ID:       b97d56db-af17-4bdd-a1b7-97d63e4f3026
 	 :END:
-**** Transport Layer Security
+**** TLS
 :PROPERTIES:
 :ID: fd5ea91a-a6aa-4947-9640-c0bf81c85cb0
-:AKA: TLS
 :END:
+Transport Layer Security
 - https://www.internetsociety.org/deploy360/tls/basics/
 ***** [[https://tools.ietf.org/html/rfc5246][TLS 1.2]]
 :PROPERTIES:
@@ -4272,7 +4272,7 @@ for an electronic digital computer with these components:
 :PROPERTIES:
 :ID:       f925ae63-ef7a-4e52-8ae5-3da602844189
 :END:
-**** Hypertext Transfer Protocol
+**** HTTP
 :PROPERTIES:
 :ID: 049defda-3ac2-4cf1-86ec-060f0a77a5cf
 :END:
@@ -4307,6 +4307,13 @@ HTTPS consists of HTTP with the addition of [[file:../../../../Z/core/notes/tls.
 :END:
 HTTP/S is often used as a blanket statement for both HTTP and HTTPS.
 
+**** WebSocket
+:PROPERTIES:
+:ID:       2895ce01-4417-4588-8c3b-15dab28a303e
+:END:
++ rfc :: [[https://datatracker.ietf.org/doc/html/rfc6455][6455]]
+- layer on top of TCP
+- [[https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API][The WebSocket API (WebSockets) - Web APIs | MDN]]
 **** QUIC
 :PROPERTIES:
 :ID: bf08b5d0-5745-4fa1-bb2e-7715b9f29a22

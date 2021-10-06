@@ -1,5 +1,0 @@
-#+SETUPFILE: ox.setup
-#+INCLUDE: metas.org
-#+INCLUDE: notes.org
-#+INCLUDE: resume.org
-#+INCLUDE: copying.org
