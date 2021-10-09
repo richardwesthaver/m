@@ -25,7 +25,7 @@ multi-development tool
 - Build tool wrappers (=cargo=, =clang=, =Makefile=, =scripts=)
 - Template integration with =babel= for files and projects
 - Packaging
-- Fully configurable via RON or JSON files
+- System configuration
 
 ** Usage
 :PROPERTIES:
@@ -72,24 +72,23 @@ extended by the user.
 :PROPERTIES:
 :ID:       a0f0f72d-475a-49a1-a21f-5d8a604099fd
 :END:
-- serve :: serve a *Collection* over HTTP[fn:3]
-- stash :: add/remove objects in the *stash*
-- store :: add/remove objects in the *store*
-#+begin_src shell :export results
+#+begin_src shell :export both :results code replace
 shed --help
 #+end_src
 
 #+RESULTS:
-shed 0.1.0-ff45bc34c9f6+
+#+begin_src shell
+shed 0.1.0-943832e83af3+
 
 ellis <ellis@rwest.io>
 
-shed ← tool≍⌜⍋box
+shed multi-development tool
 
 USAGE:
-    shed [OPTIONS] [SUBCOMMAND]
+    shed [FLAGS] [OPTIONS] [SUBCOMMAND]
 
 FLAGS:
+    -?               set the log level
     -h, --help       Print help information
     -V, --version    Print version information
 
@@ -97,21 +96,23 @@ OPTIONS:
     -c, --config <RON|JSON|BIN>    override configuration values
 
 SUBCOMMANDS:
-    build     build scripts
-    clean     clean stuff up
-    edit      edit all the things
-    help      Print this message or the help of the given subcommand(s)
-    init      initialize the shed
-    krypt     blackbox
-    pack      create packages from file or directory
-    pull      fetch resources
-    push      commit changes to upstream
-    serve     network services
-    stash     local storage
-    status    print basic info
-    store     shared block storage
-    unpack    unpack .zst or .tz files
-    x         do things with runtimes
+    build       build scripts
+    clean       clean stuff up
+    download    fetch resources
+    edit        edit all the things
+    help        Print this message or the help of the given subcommand(s)
+    init        initialize the shed
+    krypt       blackbox
+    pack        create packages from file or directory
+    pull        fetch resources
+    push        commit changes to upstream
+    serve       network services
+    stash       local storage
+    status      print basic info
+    store       shared block storage
+    unpack      unpack .z or .tz files
+    x           do things with runtimes
+#+end_src
 
 ** Footnotes
 :PROPERTIES:
@@ -124,6 +125,3 @@ initially introduced.
 
 [fn:2] =rlib= on the other hand, is very similar to =rust-shed= and
 other crates Facebook has open-sourced such as [[https://github.com/facebookincubator/gazebo][gazebo]].
-
-[fn:3] will support TLS, and eventually migrate to QUIC
-
