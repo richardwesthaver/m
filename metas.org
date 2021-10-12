@@ -1,3 +1,4 @@
+#+SETUPFILE: ox.setup
 * metas
 :PROPERTIES:
 :ID:       f34c081a-6e12-4a64-af63-eafd3603bd1a
