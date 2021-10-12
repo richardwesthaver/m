@@ -1,4 +1,6 @@
-* notes
+#+TITLE: notes
+#+SETUPFILE: ox.setup
+* notes                                                                   :n:
 :PROPERTIES:
 :ID:       54f3b70d-79a1-4526-9b84-088d970e86c1
 :CUSTOM_ID: notes
@@ -30,12 +32,12 @@
 :PROPERTIES:
 :ID:       80adf867-5ec6-4a0a-99e3-d98704f89229
 :END:
-+ [[https://en.wikipedia.org/wiki/Francis_Bacon_(artist)][wiki]] ::
-+ ^ :: [[https://artsandculture.google.com/entity/three-studies-for-figures-at-the-base-of-a-crucifixion/m0fn6vr?hl=en][three-studies]], [[https://en.wikipedia.org/wiki/The_Black_Triptychs][black-triptychs]]
-+ life :: [1909-10-28]--[1992-04-28]
++ [[https://en.wikipedia.org/wiki/Francis_Bacon_(artist)][wiki]] ⇐
++ ^ ⇐ [[https://artsandculture.google.com/entity/three-studies-for-figures-at-the-base-of-a-crucifixion/m0fn6vr?hl=en][three-studies]], [[https://en.wikipedia.org/wiki/The_Black_Triptychs][black-triptychs]]
++ life ⇐ [1909-10-28]--[1992-04-28]
 
-- Francis' studio
-  [[cdn:img/Dublin_Francis_Bacon_Gallery_The_Hugh_Lane749.jpg][https://cdn.rwest.io/img/Dublin_Francis_Bacon_Gallery_The_Hugh_Lane749.jpg]]  
+- his studio
+  - [[cdn:img/Dublin_Francis_Bacon_Gallery_The_Hugh_Lane749.jpg][https://cdn.rwest.io/img/Dublin_Francis_Bacon_Gallery_The_Hugh_Lane749.jpg]]  
 - significant works 
    - Three Studies for Figures at the Base of a Crucifixion [^:three-studies]
    - The Black Triptychs [^:black-triptychs]
@@ -53,7 +55,8 @@
 :PROPERTIES:
 :ID:       c6c81234-e152-4d6d-ad96-e8994077fb59
 :END:
-+ [[https://en.wikipedia.org/wiki/Polyptych][wiki]] ::
++ [[https://en.wikipedia.org/wiki/Polyptych][wiki]] ⇐
+
 - usually refers to a work of art that is divided into a number of
   panes that can be folded and shut or be displayed open.
 - first appeared in early Christian art and was popularized from the
@@ -126,6 +129,37 @@
 :PROPERTIES:
 :ID:       9b857657-a34e-40ba-ba5d-3b7e7c97cf3a
 :END:
+*** Techne
+:PROPERTIES:
+:ID:       132b417a-a722-43bb-a484-a1b9a27eb85b
+:END:
++ [[https://en.wikipedia.org/wiki/Techne][wiki]] ::
++ what :: the context-specific process of making works of art
++ why :: to make much more better artz
++ how :: practice
+**** Music
+:PROPERTIES:
+:ID:       405d038c-0e51-40d5-b548-fad333500128
+:END:
+***** Instrument
+:PROPERTIES:
+:ID:       49087f85-386f-46c5-95ea-d21bc29ae271
+:END:
+****** Drumkit                                                   :drums:
+:PROPERTIES:
+:ID:       ef003f26-af21-4281-9890-193a61830862
+:END:
+- a /shed/ is a drum session. usually involves a couple drum buddies
+  trading solos and cool /chops/ off a single groove. \\
+  [[yt:ct-k91feDp4][shed sessionz vol.1]]
+- a /groove/ refers to a repeated pattern with significant focus on
+  time-keeping and generally holdin' it down \\
+  [[yt:T1j1_aeK6WA][The Purdie Shuffle]]
+  [[yt:Ou70vvjE8k4][50 Ways to Leave Your Lover]]
+  [[yt:ON9vJWBtgHA][Steve Gadd Funky Groove w/Eddie Gomez]]
+- a /chop/ refers to a short phrase or pattern on the drum
+  kit, usually with variations. \\
+  [[yt:LSSIvvwCtVQ][Darion Ja'Von's flam-sweep thang]]
 
 ** Computers                                                            :cs:
 :PROPERTIES:
@@ -1961,6 +1995,41 @@ web framework by the [[id:cebd5c3f-80a4-485f-aef6-046dce661382][tokio]] team - t
 + source :: [[https://github.com/tokio-rs/mio.git][github.com/tokio-rs/mio.git]]
 - low-level I/O library
 
+******* sample                                                  :audio:
+:PROPERTIES:
+:ID:       7558eeea-9e5b-4838-9773-ef246ceb8279
+:END:
+- https://crates.io/crates/sample
+- for PCM-based sampling/DSP
+******* dsp-chain                                               :audio:
+:PROPERTIES:
+:ID:       5816c557-de7b-41e1-93b7-e2f1381f7e0a
+:END:
+- https://github.com/RustAudio/dsp-chain
+#+BEGIN_SRC rust
+// Construct our dsp graph.
+let mut graph = Graph::new();
+
+// Construct our fancy Synth and add it to the graph!
+let synth = graph.add_node(DspNode::Synth);
+
+// Add a few oscillators as inputs to the synth.
+graph.add_input(DspNode::Oscillator(0.0, A5_HZ, 0.2), synth);
+graph.add_input(DspNode::Oscillator(0.0, D5_HZ, 0.1), synth);
+graph.add_input(DspNode::Oscillator(0.0, F5_HZ, 0.15), synth);
+
+// Set the synth as the master node for the graph.
+// This can be inferred by the graph so calling this is optional, but it's nice to be explicit.
+graph.set_master(Some(synth));
+
+// Request audio from our Graph.
+graph.audio_requested(&mut buffer, settings);
+#+END_SRC
+******* portaudio                                               :audio:
+:PROPERTIES:
+:ID:       f9d362ce-744c-46f2-92fa-1ef05ffdfd62
+:END:
+- https://github.com/RustAudio/rust-portaudio
 ****** distributing packages
 :PROPERTIES:
 :ID:       cbe9cd2a-47ef-487a-997d-1b55500efc7f
@@ -4844,7 +4913,7 @@ used to compare the relative importance of each factor in a prediction
 model.
 -- [[https://en.wikipedia.org/wiki/Automated_machine_learning][Wikipedia]]
 #+end_quote
-** Economics
+** Economics                                                          :econ:
 :PROPERTIES:
 :ID: fba82c1e-94d9-45ce-84d6-144268803965
 :END:
@@ -4918,7 +4987,7 @@ The core principles of the [[https://www.youneedabudget.com/the-four-rules/][YNA
 Posts on YNAB:
 - https://emacs.cafe/ledger/emacs/ynab/budgeting/2018/06/12/elbank-ynab.html
 - https://sachachua.com/blog/tag/ledger/
-** History
+** History                                                         :history:
 :PROPERTIES:
 :ID: 57fbaf47-0e20-4f48-8402-6163bac5b90b
 :END:
@@ -5029,7 +5098,7 @@ stand alone, but a word, by definition, always stands alone.
   - Погромисты is partially sounds like routers in Russian
   - someone who writes in ALGOL (Алго́л) is an alcoholic
     (алкого́лик)
-** Math
+** Math                                                               :math:
 :PROPERTIES:
 :ID: 4aaf7257-3900-46ca-8f2b-f284bce6d4d0
 :END:
@@ -5116,7 +5185,7 @@ a form of geometry in which the metric for the distance between two
 points is replaced by the sum of the /absolute differences/ of their
 Cartesian coordinates, known as the taxicab metric, or Manhattan
 Distance.
-** Philosophy
+** Philosophy                                                           :ph:
 :PROPERTIES:
 :ID: 022b63ff-b010-44dc-bb21-89498769d3e0
 :END:

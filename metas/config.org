@@ -26,8 +26,26 @@ Unix system configuration files.
 :PROPERTIES:
 :ID:       903f8087-e0af-48f2-a5a6-f8d7f080464a
 :END:
-Configuration for the superior IDE. 
-- screenshots
++ what ⇐ Configuration for the superior editor.
++ [[src:config/emacs][src]] ⇐
+*** Abstract
+:PROPERTIES:
+:ID:       937b83dd-233b-44cb-9a0b-d5536f7d9db3
+:END:
+I've been using Emacs since 2016 as my primary editor. I started with
+Spacemacs, used Doom for a while, then started rolling my own
+configurations. Configuring the Emacs editor requires learning the
+Emacs language - emacs-lisp. It is a dialect of Common Lisp which can
+be a bit tricky to adapt to for non-Lisp programmers, but it is built
+specifically for Emacs. It's a DSL, and a very large one at that.
+
+This meta covers my Emacs modules, configurations, scripts, and other
+code written in emacs-lisp. 
+
+*** Screenshots
+:PROPERTIES:
+:ID:       005d2a6e-d34f-45ee-a169-f26fc264c916
+:END:
   - themes \\
     #+attr_html: :width 600
     [[https://cdn.rwest.io/img/abyss-theme-emacs.png][https://cdn.rwest.io/img/abyss-theme-emacs.png]]

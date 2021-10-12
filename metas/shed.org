@@ -5,13 +5,13 @@
 :END:
 multi-development tool
 + status :: ALPHA
-+ [[src:shed][source]] :: 
++ [[src:shed][src]] :: 
 + version :: 0.0.1
-** Abstract
+** Overview
 :PROPERTIES:
 :ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0
 :END:
-=shed= is a software development tool.
+=shed= is a CLI tool for programmers. I
 
 ** Features
 :PROPERTIES:
