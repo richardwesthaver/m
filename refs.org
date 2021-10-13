@@ -1,4 +1,0 @@
-* Refs
-:PROPERTIES:
-:ID:       fe0c7194-9203-465f-aa2f-c6a0b6fb7ea3
-:END:
