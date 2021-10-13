@@ -1,9 +1,7 @@
-* Copying
-:PROPERTIES:
-:CATEGORY: legal
-:ID:       7fa7875e-7533-4d0a-8b55-fef4345d9771
-:CUSTOM_ID: wtfpl
-:END:
+#+TITLE: copying
+#+CATEGORY: legal
+#+ID: 7fa7875e-7533-4d0a-8b55-fef4345d9771
+#+CUSTOM_ID: wtfpl
 
 This license applies to any digital content that I create. Third-party
 content such as the [[src:contrib][contrib]] mirrored repos are not subject to this
