@@ -1,17 +1,660 @@
+#+TITLE: metas
 #+SETUPFILE: ox.setup
-* metas
+#+ID: f34c081a-6e12-4a64-af63-eafd3603bd1a
+#+CUSTOM_ID: metas
+#+CATEGORY: metas
+* rwest_io
 :PROPERTIES:
-:ID:       f34c081a-6e12-4a64-af63-eafd3603bd1a
-:CUSTOM_ID: metas
-:CATEGORY: metas
+:ID:       d8f17fe2-00f1-4cd2-af58-7984e53c4033
 :END:
-#+INCLUDE: metas/org.org
-#+INCLUDE: metas/demo.org
-#+INCLUDE: metas/shed.org
-#+INCLUDE: metas/tenex.org
-#+INCLUDE: metas/rlib.org
-#+INCLUDE: metas/babel.org
-#+INCLUDE: metas/config.org
-#+INCLUDE: metas/crater.org
-#+INCLUDE: metas/music.org
-#+INCLUDE: metas/rwest_io.org
+Static web stuff
++ status :: ALPHA
++ source :: [[src:rwest_io][hg.rwest.io/rwest_io]]
++ version :: 0.0.1
+** Introduction
+:PROPERTIES:
+:ID:       332074bc-e07c-40af-b08f-6488033c58f6
+:END:
+[[https://rwest.io][rwest.io]] is my online homepage. I use it to share my project
+documentation called =metas= as well as my =notes=. It is designed
+primarily for my own convenience, which comes with a few consequences
+I'll talk about later.
+
+The code for this site is open-source and includes HTML, SCSS, JS,
+Rust, and Python.
+** API
+:PROPERTIES:
+:ID:       9c126f39-90d3-414b-a248-a5202ae898a3
+:END:
+*** Services
+:PROPERTIES:
+:ID:       44c854e1-feff-4d7f-940c-b8ff7ce934d6
+:END:
+Generally speaking, my stuff can be found at the following URLs. Services
+are hosted using Nginx.
+- [[https://rwest.io][rwest.io]] :: The service that returns this page. It's a WebAssembly SPA/PWA built with
+  [[https://yew.rs/][Yew]] and [[https://bulma.io/][BulmaCSS]].
+- [[https://docs.rwest.io][docs.rwest.io]] :: Rust API Docs
+- [[https://hg.rwest.io][hg.rwest.io]] :: Source code
+- [[https://pkg.rwest.io][pkg.rwest.io]] :: Packages
+- [[https://cdn.rwest.io][cdn.rwest.io]] :: CDN for shared static web content. This is used to serve fonts, css,
+  images, and other media types on the web.
+- [[https://q.rwest.io][q.rwest.io]] :: Signal API endpoint for SSR, webhooks, and messages (WIP).
+* demo                                                      :rust:rlib:tenex:
+:PROPERTIES:
+:ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
+:CATEGORY: bin
+:END:
+
+Project demos and examples relating to [[id:7e0d54ee-d3f7-468a-b0cf-664bba4df675][rlib]] and [[id:0480aced-777f-4f30-ae05-189500fb6903][tenex]].
++ status :: ALPHA
++ [[src:demo][source]] ::
+
+** Examples
+:PROPERTIES:
+:ID:       04580557-8e76-49b6-ad36-731464a527dd
+:END:
+*** hgsub-sort.rs
+:PROPERTIES:
+:ID:       c313a484-e72b-4f41-b9ab-44c3d69727c1
+:END:
+Sorts a Mercurial Subrepos file (=.hgsub=) alphabetically.
+*** hi.rs
+:PROPERTIES:
+:ID:       01bf673a-4179-43bc-9281-00d01be97bfd
+:END:
+A startup script I run after logging in to my desktop. It does a few things:
+- print my public IP
+- print a weather report
+- print list of connected USB devices
+- build a tmux session and attach to it (Unix only + =tmux=)
+- configure desktop displays with xrandr (Linux only + =x11=)
+- spawn some desktop widgets (Linux only + =conky=)
+- set my desktop background (Linux only + =fehbg=)
+
+Conditional compilation flags are used - so this program will only
+print IP, weather, and USB devices on Windows.
+
+*** wg-keygen.rs
+:PROPERTIES:
+:ID:       0cfaf940-b3d9-4566-bbbf-8c19ea556d14
+:END:
+
+*** chatter
+:PROPERTIES:
+:ID:       d61ebbcc-5154-4616-8c37-fbf836493030
+:END:
+OpenAI API examples (NOTE: requires an OpenAI beta access key)
+
+* shed                                                                 :rust:
+:PROPERTIES:
+:ID: 205131fc-ff48-4e0b-a3e8-ab52d5b6ca19
+:CATEGORY: bin
+:END:
+multi-development tool
++ status :: ALPHA
++ [[src:shed][src]] :: 
++ version :: 0.0.1
+** Overview
+:PROPERTIES:
+:ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0
+:END:
+=shed= is a CLI tool for programmers. I
+
+** Features
+:PROPERTIES:
+:ID:       83a9750a-bb30-4272-b1f3-23d85806cbb8
+:END:
+- Mercurial VCS
+   - Pullbundles and Clonebundles
+   - Subrepos
+   - HTTP client/server
+   - Git import/export
+- Build tool wrappers (=cargo=, =clang=, =Makefile=, =scripts=)
+- Template integration with =babel= for files and projects
+- Packaging
+- System configuration
+
+** Usage
+:PROPERTIES:
+:ID:       ecb7c923-6329-4e13-af72-84482bdbcb1e
+:END:
+Once the binary is installed run =shed init= to bootstrap a
+=Config= via CLI prompts or download one remotely. A user
+configuration file needs to be available and accessible by the current
+user. The default config path is determined by the ~$SHED_CFG~
+environment variable or =./cfg.ron= as a fallback.
+*** Configuration
+:PROPERTIES:
+:ID:       0fa1c99b-6452-4b60-be05-6801803600cf
+:END:
+Global configuration is controlled by the =Config= type (=RON=, =JSON=
+or =bincode= file). The specification is non-exhaustive and can be
+extended by the user.
+
+#+begin_src ron
+// cfg.ron
+#![enable(implicit_some)]
+(
+  path: "/home/ellis/.config/shed.ron",
+  owner: "ellis",
+  src: [],
+  network: (
+    socket: "127.0.0.1:0",
+    transport: "udp",
+    tunnel: None,
+    engine: None,
+    peers: None,
+  ),
+  hgrc: (
+    name: "",
+    contact: "",
+    description: "",
+    extensions: [],
+    sock: "0.0.0.0:0",
+    paths: {},
+  ),
+)
+#+end_src
+*** Commands
+:PROPERTIES:
+:ID:       a0f0f72d-475a-49a1-a21f-5d8a604099fd
+:END:
+#+begin_src shell :export both :results code replace
+shed --help
+#+end_src
+
+#+RESULTS:
+#+begin_src shell
+shed 0.1.0-943832e83af3+
+
+ellis <ellis@rwest.io>
+
+shed multi-development tool
+
+USAGE:
+    shed [FLAGS] [OPTIONS] [SUBCOMMAND]
+
+FLAGS:
+    -?               set the log level
+    -h, --help       Print help information
+    -V, --version    Print version information
+
+OPTIONS:
+    -c, --config <RON|JSON|BIN>    override configuration values
+
+SUBCOMMANDS:
+    build       build scripts
+    clean       clean stuff up
+    download    fetch resources
+    edit        edit all the things
+    help        Print this message or the help of the given subcommand(s)
+    init        initialize the shed
+    krypt       blackbox
+    pack        create packages from file or directory
+    pull        fetch resources
+    push        commit changes to upstream
+    serve       network services
+    stash       local storage
+    status      print basic info
+    store       shared block storage
+    unpack      unpack .z or .tz files
+    x           do things with runtimes
+#+end_src
+
+** Footnotes
+:PROPERTIES:
+:ID:       eabd06fd-762c-43ef-b8bd-a4d3683ea1c4
+:END:
+
+[fn:1]  =shed= is not based on a single concrete type like a
+=package=, and fully encompasses the =lab= project management tool
+initially introduced.
+
+[fn:2] =rlib= on the other hand, is very similar to =rust-shed= and
+other crates Facebook has open-sourced such as [[https://github.com/facebookincubator/gazebo][gazebo]].
+
+* tenex                                                                :rust:
+:PROPERTIES:
+:ID: 0480aced-777f-4f30-ae05-189500fb6903
+:CATEGORY: lib
+:END:
+A library for working with popular HTTP/S APIs in Rust.
+
+** Status
+:PROPERTIES:
+:ID:       5ea34ba4-b3fc-4e19-8eac-42d4974e695c
+:END:
+*EXPERIMENTAL*
+- most things don't work out-of-box, if at all
+- NWS, ipapi, and SMTPS are most functional (see =demo=)
+
+** Features
+:PROPERTIES:
+:ID:       81958264-5117-4120-9be7-5493c5ae14b8
+:END:
+- Clients
+   - [X] NWS (US Weather)
+   - [X] ipapi (public IP lookup)
+   - [ ] openai (beta API)
+   - [ ] Google Cloud
+   - [ ] AWS
+   - [X] SMTPS (smtp.gmail.com)
+- [ ] Authentication
+   - [ ] JWT
+   - [ ] OAuth
+
+** Modules
+:PROPERTIES:
+:ID:       e7d687bf-2a1f-493f-bad4-f93dbfaa0f04
+:END:
+
+* rlib                                                                 :rust:
+:PROPERTIES:
+:ID: 7e0d54ee-d3f7-468a-b0cf-664bba4df675
+:CATEGORY: lib
+:END:
++ what ⇐ a Rust system library
++ why ⇐ develop next-gen applications and services
++ how ⇐ a common interface for low-level modules
++ status ⇐ EXPERIMENTAL
++ [[src:rlib][src]] ⇐
++ [[https://docs.rwest.io/rlib/doc][docs]] ⇐
+** Usage
+:PROPERTIES:
+:ID:       89920d82-42dd-402c-8eb7-efdcc71007e5
+:END:
+This crate is not (yet) published on crates.io. To get started you'll need
+to clone the [[src:rlib][repo]] and add it as a dependency to your project like so:
+#+begin_src toml
+[package]
+name = "foo"
+#...
+[dependencies]
+rlib = { version = "0.1.0", path = "../rlib", features = ["cli","kala","anyhow"]} #include some features
+#+end_src
+
+then just use the modules in your code:
+#+begin_src rust
+use rlib::{ctx, logger, kala};
+use rlib::util::Result;
+#[ctx::main]
+async fn main() -> Result<()> {
+  logger::flexi("debug")?;
+  println!("greetings stranger!");
+  kala::cmd::sys::describe_host();
+  Ok(())
+}
+#+end_src
+
+Once our local cargo package registry is complete, instructions will
+be included for how to use this crate from within a =shed= development
+environment.
+
+** Crates
+:PROPERTIES:
+:ID:       bb740861-e7b9-4730-bd34-622f7ae53ce8
+:END:
+
+=rlib= is split into separate crates with a single [[https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html][workspace]]
+library.
+
+- obj
+  - [[https://docs.rwest.io/rlib/doc/obj][API docs]]
+  =Objects= are pre-defined Rust structs that can easily encode to RON,
+  JSON or Bincode, and tagged with metadata such as an =Id=, for easy
+  indexing. They implement a few traits, namely =Objective= and
+  =Identity= which define common functions.
+
+  Objects can be initialized using the =Objective= methods, which allows
+  all fields in their type definition to be decoded from JSON, RON, or
+  bincode. Some Objects also provide methods used to parse the
+  underlying type itself, such as =Wav= for .wav audio files and =Org=
+  for .org text files.
+- ctx
+  - [[https://docs.rwest.io/rlib/doc/ctx][API docs]]
+  Async runtime context(s).
+- eve
+  - [[https://docs.rwest.io/rlib/doc/eve][API docs]]
+  Async event queue (io_uring). Linux only and very experimental
+- net
+  - [[https://docs.rwest.io/rlib/doc/net][API docs]]
+  Network modules for building clients/servers.
+- db
+  - [[https://docs.rwest.io/rlib/doc/db][API docs]]
+  Database modules
+- alch
+  - [[https://docs.rwest.io/rlib/doc/alch][API docs]]
+  Allocator implementations for the niche.
+- hash
+  - [[https://docs.rwest.io/rlib/doc/hash][API docs]]
+  Hash algorithms. (re-exported in =crypto= too)
+- logger
+  - [[https://docs.rwest.io/rlib/doc/logger][API docs]]
+  Logging essentials including a runtime context and macros from the =log= crate
+- math
+  - [[https://docs.rwest.io/rlib/doc/math][API docs]]
+  TBD
+- flate
+  - [[https://docs.rwest.io/rlib/doc/flate][API docs]]
+  Compression module swiss-army knife built around =zstd=.
+- crypto
+  Crypto /primitives/.
+  - [[https://ed25519.cr.yp.to/][ed25519]] and [[https://github.com/dalek-cryptography/ed25519-dalek][ed25519-dalek]] public-key signatures
+  - [[https://cr.yp.to/snuffle.html][Salsa20]] stream cipher + [[https://cr.yp.to/snuffle/xsalsa-20081128.pdf][XSalsa20]]
+  - [[https://nacl.cr.yp.to/secretbox.html][NaCl]] (TBD)
+  - [[https://docs.rwest.io/rlib/doc/crypto][API docs]]
+- audio
+  - [[https://docs.rwest.io/rlib/doc/audio][API docs]]
+  Cross-platform audio device detection and playback.
+- kala
+  Handy /offline/ functions.
+  - [[https://docs.rwest.io/rlib/doc/kala][API docs]]
+- dmc
+  TBD
+  - [[https://docs.rwest.io/rlib/doc/dmc][API docs]]
+- dts
+  - [[https://docs.rwest.io/rlib/doc/dts][API docs]]
+  Experimental types (Monads and GATs and such)
+- ui
+  - [[https://docs.rwest.io/rlib/doc/ui][API docs]]
+  TBD
+- util
+  - [[https://docs.rwest.io/rlib/doc/util][API docs]]
+  Utilities and development tools designed to reduce boilerplate code
+  for build scripts and binaries. Includes wrappers for =anyhow=,
+  =clap=, =chrono=, and some other useful things.
+
+* babel
+:PROPERTIES:
+:ID:       1b363810-26ea-4dae-b689-6e050756bfae
+:CATEGORY: lib
+:END:
+=babel= is my collection of scripts, snippets, and templates. It is
+heavily inspired by [[id:e4bb1e33-0288-4610-8dcc-64fc1c0f0ade][yasnippets]].
+- As of [2021-09-22 Wed] it's quite unorganized and not useable beyond
+cloning the repo and copy/pasting something useful.
+- There is a small collection of yasnippets available [[src:babel/file/tip/snippet][here]], but the
+  plan is to auto-generate snippets for use in emacs some other clever
+  way..
++ status :: TODO
++ [[src:babel][source]] :: 
+** Context
+:PROPERTIES:
+:ID:       e76b73cb-0a82-4841-9c59-6089903f57be
+:END:
+Re-using code is an important part of software development. You re-use
+code when importing a library module, using macros, writing classes,
+and when [[https://stackoverflow.blog/2021/04/19/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/][copying code from Stack Overflow]]. As such, programmers have
+come up with systems for collecting code that they can re-use in other
+contexts. This happens at many levels of the SDLC and at various
+levels of interaction with the programmer. These /collections/ of
+re-usable code are quite useful.
+** Commentary
+:PROPERTIES:
+:ID:       574ad34f-fcfc-4238-8d4b-aa20b6432720
+:END:
+This collection contains three categories:
+- snippets :: common domain-specific code snippets
+- scripts :: generalized scripts in a variety of languages
+- templates :: project templates
+
+There is a natural hierarchy to these categories (snippet > script >
+template) which is used to build complex templates. Each category also
+provides its own methods of interaction.
+
+* config
+:PROPERTIES:
+:ID:       9d7999d3-b66e-4ea2-8586-2ef9c27e8f4b
+:END:
+** home
+:PROPERTIES:
+:ID:       ce071cdb-15e2-4fa6-ab06-f96ef88df22a
+:END:
+Unix system user configuration. Similar in spirit to =etc/skel=. This
+doesn't do much right now, but will serve as a template for
+bootstrapping new users with sensible defaults.
+** hgweb
+:PROPERTIES:
+:ID:       f6e3e514-7bec-496c-9d36-3af7d13c0462
+:END:
+The files in this project can be used to bootstrap a Mercurial public
+server configuration. The theme is a bit messy and will be remedied
+some time in the future, likely following styles similiar to [[src:rwest_io][rwest_io]]
+(currently BulmaCSS-based).
+** etc
+:PROPERTIES:
+:ID:       f0a4ee3f-2763-4c21-8b78-53073cfdfde4
+:END:
+Unix system configuration files.
+** emacs
+:PROPERTIES:
+:ID:       903f8087-e0af-48f2-a5a6-f8d7f080464a
+:END:
++ what ⇐ Configuration for the superior editor.
++ version ⇐ 2.1
++ [[src:config/emacs][src]] ⇐
+*** Abstract
+:PROPERTIES:
+:ID:       937b83dd-233b-44cb-9a0b-d5536f7d9db3
+:END:
+I've been using Emacs since 2016 as my primary editor. I started with
+Spacemacs, used Doom for a while, then started rolling my own
+configurations. Configuring the Emacs editor requires learning the
+Emacs language - emacs-lisp. It is a dialect of Common Lisp which can
+be a bit tricky to adapt to for non-Lisp programmers, but it is built
+specifically for Emacs.
+
+This meta covers my Emacs modules, configurations, scripts, and other
+code written in emacs-lisp. I have a main configuration which is
+thousands of lines, but lately I've been experimenting with running
+multiple smaller isolated emacs servers, with their own unique
+configs.
+*** config.org
+:PROPERTIES:
+:ID:       6782d0a9-1915-4b3e-85fb-3dd5e7ec917e
+:END:
+The (old) main configuration file. A lot of this is getting moved to
+our =notes=. The resulting files will be refactored. Despite being
+messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916][Screenshots]]).
+*** Screenshots
+:PROPERTIES:
+:ID:       005d2a6e-d34f-45ee-a169-f26fc264c916
+:END:
+  - themes \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/abyss-theme-emacs.png][https://cdn.rwest.io/img/abyss-theme-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/sanityinc-theme-emacs.png][https://cdn.rwest.io/img/sanityinc-theme-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/wheatgrass-theme-emacs.png][https://cdn.rwest.io/img/wheatgrass-theme-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/leuven-theme-emacs.png][https://cdn.rwest.io/img/leuven-theme-emacs.png]]
+  - org-mode \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/olivetti-emacs.png][https://cdn.rwest.io/img/olivetti-emacs.png]]
+  - programming \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/rust-development-emacs.png][https://cdn.rwest.io/img/rust-development-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/rust-tests-emacs.png][https://cdn.rwest.io/img/rust-tests-emacs.png]]
+  - email \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/email-emacs.png][https://cdn.rwest.io/img/email-emacs.png]]
+  - eww \\
+    The Emacs Web Wowser
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/eww-emacs.png][https://cdn.rwest.io/img/eww-emacs.png]]
+** nix
+:PROPERTIES:
+:ID:       e2f62a1e-8f54-4bf6-ab88-86872e49f71d
+:END:
+Poorman's distributed =nix= config has fallen into disrepair, but I
+keep it around for old-time's sake. It might come in handy in the
+future, depending on how the Nix ecosystem progresses.
+
+* contrib
+:PROPERTIES:
+:ID:       23172369-1d5e-425c-8ffb-78a152c28670
+:END:
+Third-party code and dependencies
+
+* crater
+:PROPERTIES:
+:ID:       39a1d49f-b477-4e19-8b54-d223168c5703
+:END:
+This is a private crate registry for the Rust programming
+language.
+
+The [[https://crates.io][crates.io]] package registry provides a number of excellent crates,
+integrates well with the =cargo= development tool, and should be
+preferred in all cases. I use =crater= when I need to:
+- import my unpublished crates
+- import the master branch of a published crate
+- import a local or patched version of a published crate
+- import a non-git crate (hg)
+
+=crater= also works well in intranet/local environments, and can be
+deployed for use in the following ways:
+- remote :: same as crates.io, registry index is publicly hosted on GitHub (default)
+- local :: registry index is stored locally, crates are retrieved remotely
+- static :: registry index and crate sources are stored locally, no
+  network requests are required
+
+* music
+:PROPERTIES:
+:ID: 29e8cd23-f49c-47a8-b685-e96b3fbe36e3
+:CATEGORY: art
+:CUSTOM_ID: 0d9fdd16-0e05-4835-a7de-9e2545b41221
+:END:
+I make music sometimes, because I enjoy the process. There are so many
+things to appreciate in sound and it's easy to let yourself become
+absorbed.
+
+Most of the time I just jam with my synths and drum machines and hit
+the record button. It's a good time.
+- [[https://soundcloud.com/ellisaudio][soundcloud1]] | [[https://soundcloud.com/2pldn][soundcloud2]]
+- [[https://cdn.rwest.io/media/audio][audio loops]] \\
+  I have a bunch of loops and other soundbytes I've created over the
+  years - they're all in an Ableton project so that I can mix and
+  arrange them for on-the-fly jam seshes.
+- keyboard clips
+   - [[https://cdn.rwest.io/media/video/joined_video_971d629fa80c4660b1e8b8abf89b1015.mp4][light rhodes jam]]
+   - [[https://cdn.rwest.io/media/video/20170704_204759_1.mp4][electro rhodes jam]]
+   - [[https://cdn.rwest.io/media/video/20170706_213623.mp4][classical practice]]
+     working out Resignation by Brad Mehldau
+- [[https://cdn.rwest.io/media/video/shader_example.mp4][Main Thing (Remix) shader demo]]
+  GLSL shader in Max/MSP + House Music
+
+* org
+:PROPERTIES:
+:ID:       8adf8bc0-3a2f-47ae-860b-1e71e93fc339
+:END:
++ ? :: docs
++ status :: ACTIVE
++ src :: [[src:org][hg.rwest.io/org]]
+
+:krypt:
+- l :: =logs=
+:end:
+- m :: =metas=
+  - information about my projects
+  - Each node is like a README file with super powers.
+- n :: =notes=
+  - loosely categorized notes
+** Context
+:PROPERTIES:
+:ID:       22d47091-0079-44d9-b728-d6387c4b659a
+:END:
+It is my opinion that the best system for /personal/ Knowledge
+Management is the one that you build yourself, because it is not an
+exact science. I have tried many different note-taking/info-gathering
+methodologies and tools over the years - some of which are quite
+excellent. I can assure you however, that you will need to make
+changes and ocassionally break the rules, and as you do, you drift
+into no-man's land. Sometimes this is totally fine. Other times, you
+may break something in your system of choice, causing loss of
+functionality. What you end up with is a constant battle between your
+mind and your tools.
+** Implementation
+:PROPERTIES:
+:ID:       f8e064be-822d-4fe0-b772-6932818f502c
+:END:
+*** Syntax
+:PROPERTIES:
+:ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
+:END:
+This section assumes some familiarity with org syntax. Org syntax is
+covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document structure
+can be found in [[https://www.gnu.org/software/emacs/manual/html_node/org/Document-Structure.html][the Emacs manual]]. What follows is a reference to some
+of the specific elements that have special meaning in my writing and
+basic extensions to this syntax.
+- Properties ::
+  Every headline has an ID or CUSTOM_ID in the properties drawer. This
+  is used to ensure uniqueness of all headlines (also called =nodes=).
+  #+begin_example
+  :PROPERTIES:
+  :ID: 0x0x0x
+  :CUSTOM_ID: some-id
+  :CATEGORY: linux
+  :END:
+  #+end_example
+- Props ::
+  All nodes have an optional number of "props" which are denoted as a
+  list item that uses =+= followed by the prop symbol and a delimiter:
+  =::=. These can appear anywhere in the =section= element of a node
+  (not just immediately following properties drawer). They're like a
+  shorthand for custom properties. 
+  #+begin_example
+# info
++ ? :: some description
++ status :: ACTIVE
++ license :: [[https://docs.rs/tokio][as_link]]
++ src :: https://hg.rwest.io/org #source code
+# can bind value to prop via direct link
++ [[https://en.wikipedia.org/some_thing][wiki]] ::
++ [[https://mlochbaum.github.io/BQN/doc/index.html][docs]] ::
+
+# edges
++ < :: [[id:parent-node][parent node]] #from
++ > :: [[id:child-node][child node]] #to
+  #+end_example
+- Drawers ::
+  #+begin_example
+  :krypt:
+  hidden text
+  :end:
+
+  :note:
+  note text here
+  :end:
+  #+end_example
+*** Exporting
+:PROPERTIES:
+:ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
+:END:
+- Once we're done with writing it's time to share our work. yay! Emacs
+  has many backends for [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an emacs-lisp
+  script is all that is needed to generate conventional formats like
+  HTML.
+- A list of publishing templates are defined to export individual
+  modules or output formats.
+- Each format is generated in a separate temporary directory
+- Documents are /usually/ re-exported in org format to a new location
+  before anything else happense. This may seem odd, but it allows us
+  to pre-process the org-mode documents before any other program
+  starts reading the contents. It allows us to do certain things like
+  evaluate source blocks or remove items tagged with :NOEXPORT: - both
+  of which are things best handled by Emacs, and not left to my
+  hand-written parsers to mangle (for now).
+- While the elisp script is chugging along, some pre-processing occurs
+  which parses the org files and creates a strictly typed indexed tree
+  of objects in JSON, RON, and Bincode format.
+- Compression and archiving is also performed to generate tar.zst
+  packages before transfer in some cases.
+- Some programs that render docs (such as my website) need to be
+  re-compiled with the new content/index. We do that first, and then
+  finish distribution.
+- New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
+  [[https://pkg.rwest.io/x][pkg.rwest.io/x]] which includes tar.zst packages.
+  - /individual/ files for all formats can be accessed via [[cdn:x][cdn.rwest.io/x]].
