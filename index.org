@@ -1,0 +1,15 @@
+#+TITLE: rwest.io
+#+SETUP_FILE: ox.setup
+#+OPTIONS: num:nil toc:nil
++ =who= ⇐ Richard Westhaver <[[mailto:ellis@rwest.io][ellis@rwest.io]]>
++ =what= ⇐ a humble hacker homepage
++ =where= ⇐ a 2011 lenovo laptop || USA
++ =why= ⇐ to share stuff
+
+- [[https://rwest.io][~]]
+  - [[file:notes.org][notes]]
+  - [[file:metas.org][metas]]
+  - [[resume.org][hire me]]
+
+- srv
+  - [[src:][hg]]
