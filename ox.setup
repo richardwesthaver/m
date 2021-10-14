@@ -1,5 +1,5 @@
 #    -*- mode: org -*-
-#+INFOJS_OPT: path:https://cdn.rwest.io/js/org-info.min.js
+#+INFOJS_OPT: path:js/org-info.min.js
 #+INFOJS_OPT: home:https://rwest.io
 #+INFOJS_OPT: toc:nil view:slide
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/bulma.min.css" />
