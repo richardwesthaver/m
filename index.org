@@ -9,7 +9,7 @@
 - [[https://rwest.io][~]]
   - [[file:notes.org][notes]]
   - [[file:metas.org][metas]]
-  - [[resume.org][hire me]]
+  - [[file:cv.org][hire me]]
 
 - srv
   - [[src:][hg]]
