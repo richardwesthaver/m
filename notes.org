@@ -2106,10 +2106,36 @@ Lisp dialects are Racket, Common Lisp, Scheme, and Clojure.
 :PROPERTIES:
 :ID:       d9c3504b-9d9f-4f96-a844-82371be08da6
 :END:
-This note pertains to elisp ([[https://www.gnu.org/software/emacs/manual/html_node/elisp/][emacs-lisp]]) the programming language of
-[[id:0f13e326-614c-4df9-8344-e257eb165d8c][Emacs]].
++ what ⇐ the programming language of [[id:0f13e326-614c-4df9-8344-e257eb165d8c][Emacs]].
++ [[https://www.gnu.org/software/emacs/manual/html_node/elisp/][^]] ⇐ 
+
 - [[https://caiorss.github.io/Emacs-Elisp-Programming/Elisp_Programming.html][Elisp Programming]]
   a full elisp guide
+- [[https://alphapapa.github.io/emacs-package-dev-handbook/][The Emacs Package Developer's Handbook (alphapapa)]]
+  alphapapa's dev handbook
+- [[https://github.com/alphapapa/unpackaged.el][unpackaged.el (alphapapa)]]
+  elisp snippets
+- [[https://ruzkuku.com/texts/emacs-style.html][Good Style in modern Emacs Packages]]
+****** builtin libraries
+:PROPERTIES:
+:ID:       77b22551-34e5-417b-8611-e42943557f10
+:END:
+these libraries come installed with emacs.
+ - ewoc
+ - widget
+ - url
+ - eieio
+ - org-element
+****** external libraries
+:PROPERTIES:
+:ID:       1a9cdefa-db8c-4058-836d-fcbcfd2332fb
+:END:
+- navigel
+   - [[https://gitea.petton.fr/DamienCassou/navigel/][src]]
+- lispy
+   - you need this package or [[https://github.com/Fuco1/smartparens][smartparens]] to be productive with lisp
+     tbh.
+   - [[https://old.reddit.com/r/emacs/comments/60tl6o/tips_on_reading_dense_emacs_lisp_code/dfa92hg/][lispy debug tips]]
 ***** Common Lisp                                                    :cl:
 :PROPERTIES:
 :ID:       63cb1352-c79d-41e1-bb10-c05931a3ab6f
@@ -2120,7 +2146,7 @@ This note pertains to elisp ([[https://www.gnu.org/software/emacs/manual/html_no
 :ID: 57eb884b-b22f-47f2-b6cb-e06ff59adb00
 :AKA: JS
 :END:
-Javascript is an interpreted or JIT ([[https://en.wikipedia.org/wiki/Just-in-time_compilation][just-in-time]]) compiled language
++ what ⇐ an interpreted or JIT ([[https://en.wikipedia.org/wiki/Just-in-time_compilation][just-in-time]]) compiled language
 with [[https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function][first-class functions]].
 
 #+begin_quote https://developer.mozilla.org/en-US/docs/Web/JavaScript
