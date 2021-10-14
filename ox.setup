@@ -1,9 +1,8 @@
 #    -*- mode: org -*-
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="https://cdn.rwest.io/css/bulma.min.css" />
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="https://cdn.rwest.io/css/page.css" />
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="https://cdn.rwest.io/css/org2.css" />
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="https://cdn.rwest.io/css/htmlize.css" />
-#+OPTIONS: prop:t
+#+OPTIONS: prop:t ^:nil
 #+INFOJS_OPT: path:https://cdn.rwest.io/js/org-info.min.js
 #+INFOJS_OPT: home:https://rwest.io
 #+INFOJS_OPT: toc:nil view:slide

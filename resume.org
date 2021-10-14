@@ -1,7 +1,7 @@
 #+title: Richard Westhaver
 #+email: ellis@rwest.io
 #+STARTUP: latexpreview
- #+options: toc:nil author:nil timestamp:nil email:nil title:nil num:nil ^:nil html-style:nil html-scripts:nil html-preamble:nil html-postamble:nil
+ #+options: toc:nil author:nil timestamp:nil email:nil title:nil num:nil html-style:nil html-scripts:nil html-preamble:nil html-postamble:nil
 #+export_file_name: resume
 #+LATEX_HEADER: \usepackage[a4paper,text={6.25in,9in}, truedimen]{geometry}
 #+LATEX_HEADER: \usepackage{nopageno}
