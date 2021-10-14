@@ -1,9 +1,9 @@
 #    -*- mode: org -*-
 #+INFOJS_OPT: path:js/org-info.min.js
 #+INFOJS_OPT: home:https://rwest.io
-#+INFOJS_OPT: toc:nil view:slide
+#+INFOJS_OPT: toc:nil ltoc:t view:info mouse:underline buttons:t
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/bulma.min.css" />
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/page.css" />
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/htmlize.css" />
 #+HTML_LINK_HOME: https://rwest.io
-#+OPTIONS: prop:t ^:nil
+#+OPTIONS: ^:nil num:nil
