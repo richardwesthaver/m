@@ -2,6 +2,7 @@
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="https://cdn.rwest.io/css/bulma.min.css" />
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="https://cdn.rwest.io/css/page.css" />
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="https://cdn.rwest.io/css/htmlize.css" />
+#+HTML_LINK_HOME: https://rwest.io
 #+OPTIONS: prop:t ^:nil
 #+INFOJS_OPT: path:https://cdn.rwest.io/js/org-info.min.js
 #+INFOJS_OPT: home:https://rwest.io
