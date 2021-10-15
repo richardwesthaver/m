@@ -26,7 +26,7 @@
 :PROPERTIES:
 :ID:       932db5b8-54de-41c8-906d-0ed30ffb6749
 :END:
-*** Francis Bacon
+*** Francis Bacon                                                   :paint:
 :PROPERTIES:
 :ID:       80adf867-5ec6-4a0a-99e3-d98704f89229
 :END:
@@ -42,6 +42,21 @@
      - created as an 'exorcism' of his sense of loss after the suicide
        of his former lover George Dyer who died of suicide via
        overdose in a Paris hotel.
+*** Brad Mehldau                                                    :piano:
+:PROPERTIES:
+:ID:       2288c500-5896-47e8-a2d5-e404330980d3
+:END:
+- [[QCJOdpSZkfY][Brad Mehldau Trio -- Toulouse]]
+*** Bill Evans                                                      :piano:
+:PROPERTIES:
+:ID:       ea0a921b-da83-42e8-8145-51f793b7d2da
+:END:
+- [[uco5FNbjqv0][Live '64 '75]]
+*** Dizzy Gillespie                                               :trumpet:
+:PROPERTIES:
+:ID:       7ad0b5b0-aa65-4289-824c-06465f73f081
+:END:
+- [[2uLpjp7xkyI][Dizzy Gillespie Quintet 1966]]
 ** Forms
 :PROPERTIES:
 :ID:       26bd57ef-2392-4114-8978-d0f1af926039
@@ -143,7 +158,7 @@
 :PROPERTIES:
 :ID:       49087f85-386f-46c5-95ea-d21bc29ae271
 :END:
-***** Drumkit                                                     :drums:
+***** Drum kit                                                    :drums:
 :PROPERTIES:
 :ID:       ef003f26-af21-4281-9890-193a61830862
 :END:
@@ -158,7 +173,14 @@
 - a /chop/ refers to a short phrase or pattern on the drum
   kit, usually with variations. \\
   [[yt:LSSIvvwCtVQ][Darion Ja'Von's flam-sweep thang]]
-
+***** Piano                                                       :piano:
+:PROPERTIES:
+:ID:       368e2e18-02c5-4d75-942e-ebf803fb01a5
+:END:
+- A lesson with Seymour Bernstein \\
+  - "My fingers always win and what is more, they do everything"
+  [[yt:HIFQUrhdT2k]]
+  
 * Computers                                                              :cs:
 :PROPERTIES:
 :ID:       3321999b-34d2-4c62-a9de-fce29110f068
