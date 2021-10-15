@@ -1,6 +1,5 @@
 #+TITLE: rwest.io
 #+SETUP_FILE: ox.setup
-#+OPTIONS: num:nil toc:nil
 #+begin_center
 + =who= ⇐ Richard Westhaver <[[mailto:ellis@rwest.io][ellis@rwest.io]]>
 + =what= ⇐ a humble hacker homepage
