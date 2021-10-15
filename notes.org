@@ -46,17 +46,17 @@
 :PROPERTIES:
 :ID:       2288c500-5896-47e8-a2d5-e404330980d3
 :END:
-- [[QCJOdpSZkfY][Brad Mehldau Trio -- Toulouse]]
+- [[yt:QCJOdpSZkfY][Brad Mehldau Trio -- Toulouse]]
 *** Bill Evans                                                      :piano:
 :PROPERTIES:
 :ID:       ea0a921b-da83-42e8-8145-51f793b7d2da
 :END:
-- [[uco5FNbjqv0][Live '64 '75]]
+- [[yt:uco5FNbjqv0][Live '64 '75]]
 *** Dizzy Gillespie                                               :trumpet:
 :PROPERTIES:
 :ID:       7ad0b5b0-aa65-4289-824c-06465f73f081
 :END:
-- [[2uLpjp7xkyI][Dizzy Gillespie Quintet 1966]]
+- [[yt:2uLpjp7xkyI][Dizzy Gillespie Quintet 1966]]
 ** Forms
 :PROPERTIES:
 :ID:       26bd57ef-2392-4114-8978-d0f1af926039
