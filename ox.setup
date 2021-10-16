@@ -1,4 +1,4 @@
-#    -*- mode: org -*-
+#-*- mode: org -*-
 #+INFOJS_OPT: path:js/org-info.min.js
 #+INFOJS_OPT: home:https://rwest.io
 #+INFOJS_OPT: toc:nil ltoc:t view:content mouse:#948E9C buttons:t
