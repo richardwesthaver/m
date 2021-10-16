@@ -2682,10 +2682,8 @@ systems.
 :PROPERTIES:
 :ID:       0f13e326-614c-4df9-8344-e257eb165d8c
 :END:
-****** [[src:config/emacs][my emacs config]]
-:PROPERTIES:
-:ID:       84d72558-2180-45fa-89e0-a7853c14e039
-:END:
+- [[src:config/emacs][my emacs config]]
+- [[yt:43Dg5zYPHTU][Emacs completion frameworks (Embark, Consult, Orderless + Minibuffer)]]
 ****** Building from Source
 :PROPERTIES:
 :ID:       d92c3412-0e3b-4c07-842c-638c0eef4df1
@@ -2793,6 +2791,10 @@ makes it easy to define custom package /recipes/.
 :PROPERTIES:
 :ID:       e4bb1e33-0288-4610-8dcc-64fc1c0f0ade
 :END:
+- I (personally) don't recommend this package - take a look at the built-in packages:
+  - skeleton
+  - abbrev/dabbrev
+  - autoinsert
 - [[https://github.com/joaotavora/yasnippet][GitHub - joaotavora/yasnippet: A template system for Emacs]]
   #+begin_quote
   YASnippet is a template system for Emacs. It allows you to type an
