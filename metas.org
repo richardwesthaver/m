@@ -3,14 +3,18 @@
 #+ID: f34c081a-6e12-4a64-af63-eafd3603bd1a
 #+CUSTOM_ID: metas
 #+CATEGORY: metas
+* meta
+:PROPERTIES:
+:ID:       60bed781-3a70-4435-9df0-097b799539e4
+:END:
 * rwest_io
 :PROPERTIES:
 :ID:       d8f17fe2-00f1-4cd2-af58-7984e53c4033
 :END:
 Static web stuff
-+ status :: ALPHA
-+ source :: [[src:rwest_io][hg.rwest.io/rwest_io]]
-+ version :: 0.0.1
++ status ← ALPHA
++ source ← [[src:rwest_io][hg.rwest.io/rwest_io]]
++ version ← 0.0.1
 ** Introduction
 :PROPERTIES:
 :ID:       332074bc-e07c-40af-b08f-6488033c58f6
@@ -47,8 +51,8 @@ are hosted using Nginx.
 :END:
 
 Project demos and examples relating to [[id:7e0d54ee-d3f7-468a-b0cf-664bba4df675][rlib]] and [[id:0480aced-777f-4f30-ae05-189500fb6903][tenex]].
-+ status :: ALPHA
-+ [[src:demo][source]] ::
++ status ← ALPHA
++ [[src:demo][source]] ⇐
 
 ** Examples
 :PROPERTIES:
@@ -92,9 +96,9 @@ OpenAI API examples (NOTE: requires an OpenAI beta access key)
 :CATEGORY: bin
 :END:
 multi-development tool
-+ status :: ALPHA
-+ [[src:shed][src]] :: 
-+ version :: 0.0.1
++ status ← ALPHA
++ [[src:shed][src]] ⇐ 
++ version ← 0.0.1
 ** Overview
 :PROPERTIES:
 :ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0
@@ -219,16 +223,15 @@ other crates Facebook has open-sourced such as [[https://github.com/facebookincu
 :ID: 0480aced-777f-4f30-ae05-189500fb6903
 :CATEGORY: lib
 :END:
-A library for working with popular HTTP/S APIs in Rust.
-
-** Status
-:PROPERTIES:
-:ID:       5ea34ba4-b3fc-4e19-8eac-42d4974e695c
-:END:
-*EXPERIMENTAL*
-- most things don't work out-of-box, if at all
-- NWS, ipapi, and SMTPS are most functional (see =demo=)
-
++ what ← A Rust HTTP Client library
+  - ergonomic wrappers for foreign APIs
+  - features ← {google, AWS, discord, openAI, ipapi, NWS}
++ why ← isolation of vendor-specific network calls
+  - apps ←{
+    - cloud management tools (google_drive, gmail, EC2, discord_bots)
+    - basic API requests (IP_info, weather_forecast[US only])
+    - async task pools (cross_API_chaining, chatbots_with_triggers, deployment_pipelines)
+    - FFI (WASM/Python/C)
 ** Features
 :PROPERTIES:
 :ID:       81958264-5117-4120-9be7-5493c5ae14b8
@@ -243,11 +246,6 @@ A library for working with popular HTTP/S APIs in Rust.
 - [ ] Authentication
    - [ ] JWT
    - [ ] OAuth
-
-** Modules
-:PROPERTIES:
-:ID:       e7d687bf-2a1f-493f-bad4-f93dbfaa0f04
-:END:
 
 * rlib                                                                 :rust:
 :PROPERTIES:
@@ -370,39 +368,44 @@ library.
 :ID:       1b363810-26ea-4dae-b689-6e050756bfae
 :CATEGORY: lib
 :END:
-=babel= is my collection of scripts, snippets, and templates. It is
-heavily inspired by [[id:e4bb1e33-0288-4610-8dcc-64fc1c0f0ade][yasnippets]].
-- As of [2021-09-22 Wed] it's quite unorganized and not useable beyond
-cloning the repo and copy/pasting something useful.
-- There is a small collection of yasnippets available [[src:babel/file/tip/snippet][here]], but the
-  plan is to auto-generate snippets for use in emacs some other clever
-  way..
-+ status :: TODO
-+ [[src:babel][source]] :: 
-** Context
-:PROPERTIES:
-:ID:       e76b73cb-0a82-4841-9c59-6089903f57be
-:END:
-Re-using code is an important part of software development. You re-use
-code when importing a library module, using macros, writing classes,
-and when [[https://stackoverflow.blog/2021/04/19/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/][copying code from Stack Overflow]]. As such, programmers have
-come up with systems for collecting code that they can re-use in other
-contexts. This happens at many levels of the SDLC and at various
-levels of interaction with the programmer. These /collections/ of
-re-usable code are quite useful.
-** Commentary
-:PROPERTIES:
-:ID:       574ad34f-fcfc-4238-8d4b-aa20b6432720
-:END:
-This collection contains three categories:
-- snippets :: common domain-specific code snippets
-- scripts :: generalized scripts in a variety of languages
-- templates :: project templates
++ what ← scripts[sc], snippets[sn], and templates[tm]
++ how ←
+  - user-defined project templates
+    - located in =tm/=
+  - auto-generated snippets and scripts via elisp and
+    org-mode[coming_soon]
++ status ← IN_PROGRESS
++ [[src:babel][src]] ⇐ 
 
-There is a natural hierarchy to these categories (snippet > script >
-template) which is used to build complex templates. Each category also
+Re-using code is an important part of software development. We re-use
+code when importing a library module, using macros, writing classes,
+and [[https://stackoverflow.blog/2021/04/19/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/][copying code from Stack Overflow]]. As such, programmers have often
+come up with systems for collecting code that they can re-use in other
+contexts.
+
+=babel= is one of these systems. It is highly integrated with [[id:205131fc-ff48-4e0b-a3e8-ab52d5b6ca19][shed]] and
+[[id:903f8087-e0af-48f2-a5a6-f8d7f080464a][GNU Emacs]] which are used to modify, organize, and use the
+collections.
+
+Collections are described by three categories:
+- sn :: common domain-specific code snippets
+- sc :: generalized scripts in a variety of languages
+- tm :: project templates
+
+There is a natural hierarchy to these categories (sn > sc >
+tm) which is used to build complex templates. Each category also
 provides its own methods of interaction.
 
+- Emacs built-ins ::
+  This library doesn't depend on any external packages. The following
+  built-in packages are used to provide IDE-specific functionality:
+  - org.el
+  - ob.el
+  - skel.el
+  - autoinsert.el
+  - abbrev.el
+    
+  Emacs 28 is required.
 * config
 :PROPERTIES:
 :ID:       9d7999d3-b66e-4ea2-8586-2ef9c27e8f4b

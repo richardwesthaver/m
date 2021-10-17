@@ -31,8 +31,8 @@
 :ID:       80adf867-5ec6-4a0a-99e3-d98704f89229
 :END:
 + [[https://en.wikipedia.org/wiki/Francis_Bacon_(artist)][wiki]] ⇐
-+ ^ ⇐ [[https://artsandculture.google.com/entity/three-studies-for-figures-at-the-base-of-a-crucifixion/m0fn6vr?hl=en][three-studies]], [[https://en.wikipedia.org/wiki/The_Black_Triptychs][black-triptychs]]
-+ life ⇐ [1909-10-28]--[1992-04-28]
++ ^ ← [[https://artsandculture.google.com/entity/three-studies-for-figures-at-the-base-of-a-crucifixion/m0fn6vr?hl=en][three-studies]], [[https://en.wikipedia.org/wiki/The_Black_Triptychs][black-triptychs]]
++ life ← [1909-10-28]--[1992-04-28]
 
 - his studio
   - [[cdn:img/Dublin_Francis_Bacon_Gallery_The_Hugh_Lane749.jpg][https://cdn.rwest.io/img/Dublin_Francis_Bacon_Gallery_The_Hugh_Lane749.jpg]]  
@@ -2646,7 +2646,16 @@ systems.
 :PROPERTIES:
 :ID:       8eb2380a-f97d-4dcb-88c5-9707cfa595e3
 :END:
-
+**** X Window System
+:PROPERTIES:
+:ID:       8e714746-e11c-4e77-982e-82fd544d6f2a
+:END:
+***** EWMH
+:PROPERTIES:
+:ID:       8cbfdfb5-f98a-48fc-ae27-022a313eec1f
+:END:
++ [[https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints][wiki]] ←
+- Extended Window Manager Hints
 *** Software
 :PROPERTIES:
 :ID: 375d49a0-05c9-4937-9efe-7385f354f8ac
