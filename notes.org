@@ -2563,6 +2563,7 @@ C AREA OF THE TRIANGLE
   `˜˘¨⁼⌜´˝˙  ∘⊸⟜○⌾⎉⚇⍟⊘◶⎊
   π‿∞‿@↩←⇐→,⋄  𝕨𝕩𝔽𝔾𝕎𝕏𝕗𝕘𝕊𝕤ℝ𝕣⦃⦄⟨⟩
   #+end_example
+  See [[https://github.com/mlochbaum/BQN/blob/master/src/glyphs.bqn][glyphs.bqn]]
 **** K                                                                 :k:
 :PROPERTIES:
 :ID:       1aa00dc0-2712-40fb-a3ba-57b0173f80d6
