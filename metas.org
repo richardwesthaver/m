@@ -7,6 +7,105 @@
 :PROPERTIES:
 :ID:       60bed781-3a70-4435-9df0-097b799539e4
 :END:
++ what ← docs
++ why ← knowledge is power
++ status ← ALPHA
++ [[src:meta][src]] ⇐ 
+
+This project contains documents I've written in plain-text which are
+used to generate my website and readmes.
+- =m.org= contains formal docs for projects
+- =n.org= contains informal notes
+- =cv.org= is my resume (hire me!)
+
+** Context
+:PROPERTIES:
+:ID:       22d47091-0079-44d9-b728-d6387c4b659a
+:END:
+It is my opinion that the best system for /personal/ Knowledge
+Management is the one that you build yourself, because it is not an
+exact science. I have tried many different note-taking/info-gathering
+methodologies and tools over the years - some of which are quite
+excellent. I can assure you however, that you will need to make
+changes and ocassionally break the rules, and as you do, you drift
+into no-man's land. Sometimes this is totally fine. Other times, you
+may break something in your system of choice, causing loss of
+functionality. What you end up with is a constant battle between your
+mind and your tools.
+
+** Implementation
+:PROPERTIES:
+:ID:       f8e064be-822d-4fe0-b772-6932818f502c
+:END:
+*** Syntax
+:PROPERTIES:
+:ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
+:END:
+This section assumes some familiarity with org syntax. Org syntax is
+covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document structure
+can be found in [[https://www.gnu.org/software/emacs/manual/html_node/org/Document-Structure.html][the Emacs manual]]. What follows is a reference to some
+of the specific elements that have special meaning in my writing and
+basic extensions to this syntax.
+- Properties ::
+  Every headline has an ID or CUSTOM_ID in the properties drawer. This
+  is used to ensure uniqueness of all headlines (also called =nodes=).
+  #+begin_example
+  :PROPERTIES:
+  :ID: 0x0x0x
+  :CUSTOM_ID: some-id
+  :CATEGORY: linux
+  :END:
+  #+end_example
+- Props ::
+  All nodes have an optional number of "props" which are denoted as a
+  list item that uses =+= followed by the prop symbol and a delimiter:
+  =::=. These can appear anywhere in the =section= element of a node
+  (not just immediately following properties drawer). They're like a
+  shorthand for custom properties. 
+  #+begin_example
+# info
++ ? :: some description
++ status :: ACTIVE
++ license :: [[https://docs.rs/tokio][as_link]]
++ src :: https://hg.rwest.io/org #source code
+# can bind value to prop via direct link
++ [[https://en.wikipedia.org/some_thing][wiki]] ::
++ [[https://mlochbaum.github.io/BQN/doc/index.html][docs]] ::
+
+# edges
++ < :: [[id:parent-node][parent node]] #from
++ > :: [[id:child-node][child node]] #to
+  #+end_example
+- Drawers ::
+  #+begin_example
+  :krypt:
+  hidden text
+  :end:
+
+  :note:
+  note text here
+  :end:
+  #+end_example
+*** Exporting
+:PROPERTIES:
+:ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
+:END:
+- Once we're done with writing it's time to share our work. yay! Emacs
+  has many backends for [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an emacs-lisp
+  script is all that is needed to generate conventional formats like
+  HTML.
+- A list of publishing templates are defined to export individual
+  modules or output formats.
+- Each format is generated in a separate temporary directory
+- While the elisp script is chugging along, some pre-processing occurs
+  which parses the org files and creates an intermediate
+  representation for ingestion by internal services.
+- Compression and archiving is also performed to generate =.tz=
+  (tar.zst) packages for each format.
+- New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
+  [[https://x.rwest.io][x.rwest.io]] which includes .tz packages.
+
+
 * rwest_io
 :PROPERTIES:
 :ID:       d8f17fe2-00f1-4cd2-af58-7984e53c4033
@@ -26,24 +125,6 @@ I'll talk about later.
 
 The code for this site is open-source and includes HTML, SCSS, JS,
 Rust, and Python.
-** API
-:PROPERTIES:
-:ID:       9c126f39-90d3-414b-a248-a5202ae898a3
-:END:
-*** Services
-:PROPERTIES:
-:ID:       44c854e1-feff-4d7f-940c-b8ff7ce934d6
-:END:
-Generally speaking, my stuff can be found at the following URLs. Services
-are hosted using Nginx.
-- [[https://rwest.io][rwest.io]] :: The service that returns this page. It's a WebAssembly SPA/PWA built with
-  [[https://yew.rs/][Yew]] and [[https://bulma.io/][BulmaCSS]].
-- [[https://docs.rwest.io][docs.rwest.io]] :: Rust API Docs
-- [[https://hg.rwest.io][hg.rwest.io]] :: Source code
-- [[https://pkg.rwest.io][pkg.rwest.io]] :: Packages
-- [[https://cdn.rwest.io][cdn.rwest.io]] :: CDN for shared static web content. This is used to serve fonts, css,
-  images, and other media types on the web.
-- [[https://q.rwest.io][q.rwest.io]] :: Signal API endpoint for SSR, webhooks, and messages (WIP).
 * demo                                                      :rust:rlib:tenex:
 :PROPERTIES:
 :ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
@@ -52,7 +133,7 @@ are hosted using Nginx.
 
 Project demos and examples relating to [[id:7e0d54ee-d3f7-468a-b0cf-664bba4df675][rlib]] and [[id:0480aced-777f-4f30-ae05-189500fb6903][tenex]].
 + status ← ALPHA
-+ [[src:demo][source]] ⇐
++ [[src:demo][src]] ⇐
 
 ** Examples
 :PROPERTIES:
@@ -549,115 +630,3 @@ the record button. It's a good time.
 - [[https://cdn.rwest.io/media/video/shader_example.mp4][Main Thing (Remix) shader demo]]
   GLSL shader in Max/MSP + House Music
 
-* org
-:PROPERTIES:
-:ID:       8adf8bc0-3a2f-47ae-860b-1e71e93fc339
-:END:
-+ ? :: docs
-+ status :: ACTIVE
-+ src :: [[src:org][hg.rwest.io/org]]
-
-:krypt:
-- l :: =logs=
-:end:
-- m :: =metas=
-  - information about my projects
-  - Each node is like a README file with super powers.
-- n :: =notes=
-  - loosely categorized notes
-** Context
-:PROPERTIES:
-:ID:       22d47091-0079-44d9-b728-d6387c4b659a
-:END:
-It is my opinion that the best system for /personal/ Knowledge
-Management is the one that you build yourself, because it is not an
-exact science. I have tried many different note-taking/info-gathering
-methodologies and tools over the years - some of which are quite
-excellent. I can assure you however, that you will need to make
-changes and ocassionally break the rules, and as you do, you drift
-into no-man's land. Sometimes this is totally fine. Other times, you
-may break something in your system of choice, causing loss of
-functionality. What you end up with is a constant battle between your
-mind and your tools.
-** Implementation
-:PROPERTIES:
-:ID:       f8e064be-822d-4fe0-b772-6932818f502c
-:END:
-*** Syntax
-:PROPERTIES:
-:ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
-:END:
-This section assumes some familiarity with org syntax. Org syntax is
-covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document structure
-can be found in [[https://www.gnu.org/software/emacs/manual/html_node/org/Document-Structure.html][the Emacs manual]]. What follows is a reference to some
-of the specific elements that have special meaning in my writing and
-basic extensions to this syntax.
-- Properties ::
-  Every headline has an ID or CUSTOM_ID in the properties drawer. This
-  is used to ensure uniqueness of all headlines (also called =nodes=).
-  #+begin_example
-  :PROPERTIES:
-  :ID: 0x0x0x
-  :CUSTOM_ID: some-id
-  :CATEGORY: linux
-  :END:
-  #+end_example
-- Props ::
-  All nodes have an optional number of "props" which are denoted as a
-  list item that uses =+= followed by the prop symbol and a delimiter:
-  =::=. These can appear anywhere in the =section= element of a node
-  (not just immediately following properties drawer). They're like a
-  shorthand for custom properties. 
-  #+begin_example
-# info
-+ ? :: some description
-+ status :: ACTIVE
-+ license :: [[https://docs.rs/tokio][as_link]]
-+ src :: https://hg.rwest.io/org #source code
-# can bind value to prop via direct link
-+ [[https://en.wikipedia.org/some_thing][wiki]] ::
-+ [[https://mlochbaum.github.io/BQN/doc/index.html][docs]] ::
-
-# edges
-+ < :: [[id:parent-node][parent node]] #from
-+ > :: [[id:child-node][child node]] #to
-  #+end_example
-- Drawers ::
-  #+begin_example
-  :krypt:
-  hidden text
-  :end:
-
-  :note:
-  note text here
-  :end:
-  #+end_example
-*** Exporting
-:PROPERTIES:
-:ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
-:END:
-- Once we're done with writing it's time to share our work. yay! Emacs
-  has many backends for [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an emacs-lisp
-  script is all that is needed to generate conventional formats like
-  HTML.
-- A list of publishing templates are defined to export individual
-  modules or output formats.
-- Each format is generated in a separate temporary directory
-- Documents are /usually/ re-exported in org format to a new location
-  before anything else happense. This may seem odd, but it allows us
-  to pre-process the org-mode documents before any other program
-  starts reading the contents. It allows us to do certain things like
-  evaluate source blocks or remove items tagged with :NOEXPORT: - both
-  of which are things best handled by Emacs, and not left to my
-  hand-written parsers to mangle (for now).
-- While the elisp script is chugging along, some pre-processing occurs
-  which parses the org files and creates a strictly typed indexed tree
-  of objects in JSON, RON, and Bincode format.
-- Compression and archiving is also performed to generate tar.zst
-  packages before transfer in some cases.
-- Some programs that render docs (such as my website) need to be
-  re-compiled with the new content/index. We do that first, and then
-  finish distribution.
-- New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
-  [[https://pkg.rwest.io/x][pkg.rwest.io/x]] which includes tar.zst packages.
-  - /individual/ files for all formats can be accessed via [[cdn:x][cdn.rwest.io/x]].
