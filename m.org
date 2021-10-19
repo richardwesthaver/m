@@ -13,7 +13,7 @@
 + [[src:meta][src]] ⇐ 
 
 This project contains documents I've written in plain-text which are
-used to generate my website and readmes.
+used to generate my [[https://rwest.io][website]] and readmes.
 - =m.org= contains formal docs for projects
 - =n.org= contains informal notes
 - =cv.org= is my resume (hire me!)
@@ -33,60 +33,42 @@ may break something in your system of choice, causing loss of
 functionality. What you end up with is a constant battle between your
 mind and your tools.
 
-** Implementation
-:PROPERTIES:
-:ID:       f8e064be-822d-4fe0-b772-6932818f502c
-:END:
-*** Syntax
+** Syntax
 :PROPERTIES:
 :ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
 :END:
 This section assumes some familiarity with org syntax. Org syntax is
 covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document structure
-can be found in [[https://www.gnu.org/software/emacs/manual/html_node/org/Document-Structure.html][the Emacs manual]]. What follows is a reference to some
-of the specific elements that have special meaning in my writing and
-basic extensions to this syntax.
-- Properties ::
-  Every headline has an ID or CUSTOM_ID in the properties drawer. This
-  is used to ensure uniqueness of all headlines (also called =nodes=).
-  #+begin_example
-  :PROPERTIES:
-  :ID: 0x0x0x
-  :CUSTOM_ID: some-id
-  :CATEGORY: linux
-  :END:
-  #+end_example
-- Props ::
+can be found in [[https://www.gnu.org/software/emacs/manual/html_node/org/Document-Structure.html][the Emacs manual]].
+
+All docs are fully compliant with Org syntax, with the addition of
+some special elements that may appear in the body or =section= of any
+heading.
+
+- props ::
   All nodes have an optional number of "props" which are denoted as a
-  list item that uses =+= followed by the prop symbol and a delimiter:
-  =::=. These can appear anywhere in the =section= element of a node
-  (not just immediately following properties drawer). They're like a
-  shorthand for custom properties. 
+  list item that uses =+= followed by the prop symbol and a special
+  character. These can appear anywhere in the =section= element of a
+  node (not just immediately following properties drawer). They're
+  like a shorthand for custom properties.
+
   #+begin_example
-# info
-+ ? :: some description
-+ status :: ACTIVE
-+ license :: [[https://docs.rs/tokio][as_link]]
-+ src :: https://hg.rwest.io/org #source code
+# info props
++ ? ← some long description
++ who/what/when/where/why/how ← some text
++ status ← ACTIVE
++ src ← https://hg.rwest.io/org
+
 # can bind value to prop via direct link
-+ [[https://en.wikipedia.org/some_thing][wiki]] ::
-+ [[https://mlochbaum.github.io/BQN/doc/index.html][docs]] ::
++ [[https://en.wikipedia.org/some_thing][wiki]] ⇐ 
++ [[https://mlochbaum.github.io/BQN/doc/index.html][docs]] ⇐ 
 
 # edges
-+ < :: [[id:parent-node][parent node]] #from
-+ > :: [[id:child-node][child node]] #to
++ < ← [[id:parent-node][parent node]] #from
++ > ← [[id:child-node][child node]] #to
   #+end_example
-- Drawers ::
-  #+begin_example
-  :krypt:
-  hidden text
-  :end:
 
-  :note:
-  note text here
-  :end:
-  #+end_example
-*** Exporting
+** Exporting
 :PROPERTIES:
 :ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
 :END:
@@ -103,8 +85,7 @@ basic extensions to this syntax.
 - Compression and archiving is also performed to generate =.tz=
   (tar.zst) packages for each format.
 - New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
-  [[https://x.rwest.io][x.rwest.io]] which includes .tz packages.
-
+  [[https://rwest.io/x][rwest.io/x]] which includes .tz packages.
 
 * rwest_io
 :PROPERTIES:
