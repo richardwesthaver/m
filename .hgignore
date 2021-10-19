@@ -1,13 +1,3 @@
-^log/
-^0x/
-archive.org
-anticorp.org
-inbox.org
-todo.org
-glob:resume*
+^o/
 glob:.#*
 glob:*.*~
-glob:*.html
-glob:*.tex
-glob:*.txt
-glob:*.bib
