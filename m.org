@@ -87,25 +87,6 @@ heading.
 - New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
   [[https://rwest.io/x][rwest.io/x]] which includes .tz packages.
 
-* rwest_io
-:PROPERTIES:
-:ID:       d8f17fe2-00f1-4cd2-af58-7984e53c4033
-:END:
-Static web stuff
-+ status ← ALPHA
-+ source ← [[src:rwest_io][hg.rwest.io/rwest_io]]
-+ version ← 0.0.1
-** Introduction
-:PROPERTIES:
-:ID:       332074bc-e07c-40af-b08f-6488033c58f6
-:END:
-[[https://rwest.io][rwest.io]] is my online homepage. I use it to share my project
-documentation called =metas= as well as my =notes=. It is designed
-primarily for my own convenience, which comes with a few consequences
-I'll talk about later.
-
-The code for this site is open-source and includes HTML, SCSS, JS,
-Rust, and Python.
 * demo                                                      :rust:rlib:tenex:
 :PROPERTIES:
 :ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
