@@ -165,7 +165,7 @@ multi-development tool
 :PROPERTIES:
 :ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0
 :END:
-=shed= is a CLI tool for programmers. I
+=shed= is a CLI tool for programming.
 
 ** Features
 :PROPERTIES:
@@ -240,6 +240,7 @@ shed multi-development tool
 
 USAGE:
     shed [FLAGS] [OPTIONS] [SUBCOMMAND]
+
 
 FLAGS:
     -?               set the log level
