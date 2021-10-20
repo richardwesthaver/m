@@ -415,7 +415,7 @@ library.
 + what ← scripts[sc], snippets[sn], and templates[tm]
 + how ←
   - user-defined project templates
-    - located in =tm/=
+    - located in =tm=
   - auto-generated snippets and scripts via elisp and
     org-mode[coming_soon]
 + status ← IN_PROGRESS
@@ -428,7 +428,7 @@ come up with systems for collecting code that they can re-use in other
 contexts.
 
 =babel= is one of these systems. It is highly integrated with [[id:205131fc-ff48-4e0b-a3e8-ab52d5b6ca19][shed]] and
-[[id:903f8087-e0af-48f2-a5a6-f8d7f080464a][GNU Emacs]] which are used to modify, organize, and use the
+[[id:903f8087-e0af-48f2-a5a6-f8d7f080464a][GNU Emacs]] which are used to modify, organize, and implement our
 collections.
 
 Collections are described by three categories:
@@ -436,20 +436,43 @@ Collections are described by three categories:
 - sc :: generalized scripts in a variety of languages
 - tm :: project templates
 
-There is a natural hierarchy to these categories (sn > sc >
-tm) which is used to build complex templates. Each category also
-provides its own methods of interaction.
+Each category provides its own methods of interaction available to the
+user for different types of meta-programming activities. There are
+also high-level interfaces for composing ephemerial hacking sessions
+and configuration.
 
-- Emacs built-ins ::
-  This library doesn't depend on any external packages. The following
-  built-in packages are used to provide IDE-specific functionality:
+A big inspiration for this project is the [[https://orgmode.org/manual/Library-of-Babel.html][Library of Babel]] - which
+allows you to define blocks of code in an Org doc, and call them
+remotely. =sn= is in fact just this - a collection of code blocks in
+an Org doc. The other collections similarly mirror some set of
+features available in Emacs.
+
+The goal of =babel= however is not just to build collections, but to
+provide APIs for them. As such a large focus of this project will be
+on exporting and parsing collections built in Emacs so that they can
+be used by other processes. Our intention is to mimick the powerful
+meta-programming capabilities of Emacs and Org Babel (specifically,
+the ability to mix and match functions /from any language/) in a
+user-defined runtime.
+
+** Dependencies
+:PROPERTIES:
+:ID:       b3146122-3109-45ce-b155-97d52701a0ca
+:END:
+- *Emacs 28* \\
+  The editor integration doesn't depend on any external packages
+  outside of vanilla Emacs. The following built-in packages are used
+  to provide functionality:
   - org.el
   - ob.el
   - skel.el
   - autoinsert.el
   - abbrev.el
-    
-  Emacs 28 is required.
+  All of the above features should be available in the default Emacs
+  distribution for your OS. 
+- *GNU Make* \\
+  =optional=
+  
 * config
 :PROPERTIES:
 :ID:       9d7999d3-b66e-4ea2-8586-2ef9c27e8f4b
