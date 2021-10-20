@@ -598,6 +598,12 @@ resource consumption, and the implementation of algorithms in a chosen
 programming language (commonly referred to as coding).
 -- [[https://en.wikipedia.org/wiki/Computer_programming][Wikipedia]]
 #+end_quote
+
+- Blogging is common practice in the programming world. It's a great way
+  to learn new things and gain insight.
+  - find a few good bloggers in your field of choice, and take some time
+    to understand what they're doing and why.
+  - [[https://sts10.github.io/][Prevent Default]]
 *** Paradigms
 :PROPERTIES:
 :ID:       22d4609c-a42d-481e-82a2-94a8c10eda64
@@ -732,7 +738,7 @@ many companies with a strong web presence, is through [[https://en.wikipedia.org
 :END:
 - [[https://en.wikipedia.org/wiki/Crash-only_software][Crash-only software - Wikipedia]]
 - [[https://www.usenix.org/legacy/events/hotos03/tech/full_papers/candea/candea.pdf][Crash-only Software - George Candea, Armando Fox]]
-**** Incremental TT munchers                                          :rs:
+**** Incremental TT muncher                                           :rs:
 :PROPERTIES:
 :ID:       dff8c441-2da1-492e-b161-eee0f10e3fdd
 :END:
@@ -862,7 +868,7 @@ output of a cryptographic algorithm.
 cracking programs for hash-based resources:
 - [[https://github.com/hashcat/hashcat][hashcat]]
 - [[https://www.openwall.com/john/][JohnTheRipper]]
-***** Leaks
+***** Leaks                                                        :data:
 :PROPERTIES:
 :ID:       15d8a50a-53a9-40ab-b5e7-3fb3bda3da1b
 :END:
@@ -878,6 +884,9 @@ cracking programs for hash-based resources:
 :ID:       2c483711-aa5c-4060-9d51-f840e2cae822
 :END:
 + [[https://en.wikipedia.org/wiki/Unix_philosophy][wiki]] ::
+- [[cdn:doc/ugh.pdf][The UNIX-HATERS Handbook]]
+  “Two of the most famous products of Berkeley are LSD and Unix.  I
+  don’t think that is a coincidence.”
 *** Formatting                                                        :fmt:
 :PROPERTIES:
 :ID:       4fc48ec4-51c3-439e-9af7-e775e12ea6f1
@@ -892,6 +901,34 @@ governing the indentation of blocks of code to convey program
 structure.
 -- [[https://en.wikipedia.org/wiki/Indentation_style][Wikipedia]]
 #+end_quote
+- I personally prefer 2-space indent just about everywhere. spaces >
+  tabs, but 4 spaces is too much.
+  - There are exceptions to this of course - Emacs-lisp is a big one
+    considering that best-practice is often to vertically align
+    elements.
+
+    For example, this is considered good formatting:
+    #+begin_src emacs-lisp
+(format "%a %b"
+	thing1
+	thing2)
+    #+end_src
+    And this is bad formatting:
+    #+begin_src emacs-lisp
+(format "%a %b"
+ thing1
+ thing2)
+    #+end_src
+    
+    In fact, adding my strict 2-space preference would be even /worse/
+    formatting.
+
+  - Makefiles are another good example. the =TAB= character is the
+    default indent, so you can either accept it or add an assignment
+    for the [[https://www.gnu.org/software/make/manual/make.html#Special-Variables][special variable]] =.RECIPEPREFIX= that gets added to all of
+    your Makefiles. I go for the former since it has better
+    integration with IDEs (which often expect TABs and may warn you
+    about invalid syntax, despite the =.RECIPEPREFIX= assignment)
 **** Markup Languages
 :PROPERTIES:
 :ID:       2fbcff2e-d187-4986-86b1-8725f2681337
@@ -992,6 +1029,19 @@ coherency when you are traversing the graph.
 :PROPERTIES:
 :ID:       bcdd78cc-46f1-447d-b3d4-56f307016671
 :END:
+
+**** Binary
+:PROPERTIES:
+:ID:       eba49197-a5b3-4460-83cd-2904308cc0cf
+:END:
+- [[https://en.wikipedia.org/wiki/Executable_and_Linkable_Format][ELF]]
+  - linker sections:
+    - text contains the program instructions
+    - rodata contains constant values like strings
+    - data contains statically allocated variables whose initial values are not zero
+    - bss also contains statically allocated variables whose initial values are zero
+    - vector_table is a non-standard section that we use to store the vector (interrupt) table
+    - ARM.attributes and the .debug_* sections contain metadata and will not be loaded onto the target when flashing the binary.
 
 *** Programming Languages                                            :lang:
 :PROPERTIES:
@@ -2062,6 +2112,11 @@ graph.audio_requested(&mut buffer, settings);
 :ID:       decad209-85c2-4634-998e-75fd098e879c
 :END:
 + ref :: [[https://wiki.archlinux.org/title/Rust_package_guidelines][Rust package guidelines - ArchWiki]]
+***** Embedded Rust
++ < ← [[id:8162fa8b-f79d-4a87-8d4e-82ef993e08f2][Embedded Systems]]
+
+- [[https://docs.rust-embedded.org/book/design-patterns/hal/checklist.html][HAL design pattern checklist]]
+
 **** Python                                                           :py:
 :PROPERTIES:
 :ID:       249c2d3e-9d59-4f1f-9f6f-ad68ab04d1d3
@@ -2643,11 +2698,11 @@ systems.
 :PROPERTIES:
 :ID:       b6b804b1-072b-445b-a8cd-45714bea1bfe
 :END:
-**** Data Interchange Formats
+**** Data Interchange Formats                                       :data:
 :PROPERTIES:
 :ID:       8eb2380a-f97d-4dcb-88c5-9707cfa595e3
 :END:
-**** X Window System
+**** X Window System                                                 :x11:
 :PROPERTIES:
 :ID:       8e714746-e11c-4e77-982e-82fd544d6f2a
 :END:
@@ -3936,8 +3991,6 @@ accepted as a core components of DevOps.
 :PROPERTIES:
 :ID: 8162fa8b-f79d-4a87-8d4e-82ef993e08f2
 :END:
-- [[file:sdr.org][SDR]]
-- [[file:qemu.org][QEMU]]
 ***** [[https://elinux.org/Main_Page][Embedded Linux Wiki]]
 :PROPERTIES:
 :ID:       cf94b668-613d-4b18-9474-1b88e73ae749
@@ -3961,18 +4014,18 @@ generates SVD files for ESP32 based devices.. rather messy
 	 :CREATED:  [2020-07-12 Sun]
    :ID:       bf168556-e19c-44e7-84fe-7752da708d87
 	 :END:
-**** Software Defined Radio                                          :sdr:
+***** Software Defined Radio                                        :sdr:
 :PROPERTIES:
 :ID: de73cf8a-d39f-4bdb-8ec9-009288e77d19
 :AKA: SDR
 :END:
 - https://en.wikipedia.org/wiki/Software-defined_radio
 
-***** [[https://www.wikiwand.com/en/Cognitive_radio?fbclid=IwAR2ix1x1HHC9rimSUr_NkdRQERtKKm4_IBvH25Vb05Oh6svQ3mKegV0bKz0][Cognitive Radio]]
+******* [[https://www.wikiwand.com/en/Cognitive_radio?fbclid=IwAR2ix1x1HHC9rimSUr_NkdRQERtKKm4_IBvH25Vb05Oh6svQ3mKegV0bKz0][Cognitive Radio]]
 :PROPERTIES:
 :ID:       8d69e21e-cc67-42cb-a048-098d6dd4545f
 :END:
-***** [[https://www.wikiwand.com/en/RF_front_end][RF Front End]]
+******* [[https://www.wikiwand.com/en/RF_front_end][RF Front End]]
 :PROPERTIES:
 :ID:       04dc64b3-40cb-4903-af15-8d4f495cf61d
 :END:
@@ -3990,55 +4043,55 @@ The mixer, which mixes the incoming signal with the signal from the local oscill
 + imagine fx processing on radio signals. SDR plguins. encryption, ids, etc
 
 
-****** [[https://www.wikiwand.com/en/Band-pass_filter][band-pass filter]]
+******** [[https://www.wikiwand.com/en/Band-pass_filter][band-pass filter]]
 :PROPERTIES:
 :ID:       23edba57-5a45-4dcc-9ef7-5f84fe795269
 :END:
-****** [[https://www.wikiwand.com/en/Amplifier][RF amplifier]]
+******** [[https://www.wikiwand.com/en/Amplifier][RF amplifier]]
 :PROPERTIES:
 :ID:       cf0c0033-3f95-4ffd-b262-7680350bead9
 :END:
-****** [[https://www.wikiwand.com/en/Local_oscillator][local oscillator]]
+******** [[https://www.wikiwand.com/en/Local_oscillator][local oscillator]]
 :PROPERTIES:
 :ID:       cf102eb2-dfc0-4309-a0cf-bb8525276382
 :END:
-****** [[https://www.wikiwand.com/en/Frequency_mixer][mixer]]
+******** [[https://www.wikiwand.com/en/Frequency_mixer][mixer]]
 :PROPERTIES:
 :ID:       7a669da9-7a06-47f4-bfd2-c569d7f8baeb
 :END:
-******* [[https://www.wikiwand.com/en/Heterodyne][Heterodyne]]
+********* [[https://www.wikiwand.com/en/Heterodyne][Heterodyne]]
 :PROPERTIES:
 :ID:       840586af-2bfa-46ca-b8c6-82903d5a7bc7
 :END:
 creates new frequencies by combining or mixing two frequencies.
 
-***** Antennai
+******* Antennai
 :PROPERTIES:
 :ID:       97113225-512b-4760-bfbc-cb8592557c27
 :END:
-***** [[https://wiki.gnuradio.org/index.php/Main_Page][GNU Radio]]
+******* [[https://wiki.gnuradio.org/index.php/Main_Page][GNU Radio]]
 	 :PROPERTIES:
 	 :CREATED:  [2020-07-12 Sun]
    :ID:       95565d55-a94f-44c9-9dc4-58a6922c095c
 	 :END:
-***** [[https://www.youtube.com/watch?v=ZuNOD3XWp4A][All Your RFz Are Belong to Me - Defcon 21 - Youtube]]
+******* [[https://www.youtube.com/watch?v=ZuNOD3XWp4A][All Your RFz Are Belong to Me - Defcon 21 - Youtube]]
 	 :PROPERTIES:
 	 :CREATED:  [2020-07-12 Sun]
    :ID:       4a650272-ddc4-4c90-b0b7-1f5abbf89b0b
 	 :END:
 	 [[yt:ZuNOD3XWp4A]]
-***** [[https://www.youtube.com/watch?v=vQtLms02PFM][Bill Swearingen - HAKC THE POLICE - Defcon 27 - Youtube]]
+******* [[https://www.youtube.com/watch?v=vQtLms02PFM][Bill Swearingen - HAKC THE POLICE - Defcon 27 - Youtube]]
 	 :PROPERTIES:
 	 :CREATED:  [2020-07-12 Sun]
    :ID:       47d4f565-34c6-4e2c-9a6a-f3fd66cd0f06
 	 :END:
 	 [[yt:vQtLms02PFM]]
-***** [[https://www.analog.com/en/analog-dialogue/articles/high-definition-low-delay-sdr-based-video-transmission-in-uav-applications.html#][High Definition, Low Delay, SDR-Based Video Transmission in UAV Applications | Analog Devices]]
+******* [[https://www.analog.com/en/analog-dialogue/articles/high-definition-low-delay-sdr-based-video-transmission-in-uav-applications.html#][High Definition, Low Delay, SDR-Based Video Transmission in UAV Applications | Analog Devices]]
 	 :PROPERTIES:
 	 :CREATED:  [2020-07-11 Sat]
    :ID:       65f3f7cb-3ee3-411f-b26b-39a00b70d6c3
 	 :END:
-***** [[https://liquidsdr.org/][liquidsdr.org]]
+******* [[https://liquidsdr.org/][liquidsdr.org]]
 	 :PROPERTIES:
 	 :CREATED:  [2020-07-04 Sat]
    :ID:       3bb50626-f1a4-4565-8c01-89a6f254f233
@@ -4329,19 +4382,6 @@ CREATED: [2021-01-20 Wed 21:38]
 :END:
 - [[https://github.com/mmacedoeu/rulid.rs/blob/master/src/lib.rs][rulid.rs/lib.rs at master · mmacedoeu/rulid.rs · GitHub]]
 - [[https://github.com/dylanhart/ulid-rs/blob/master/src/lib.rs][ulid-rs/lib.rs at master · dylanhart/ulid-rs · GitHub]]
-
-**** Blogs
-:PROPERTIES:
-:ID:       b1787fc3-31bd-4b18-aa46-54a9c33e498e
-:END:
-- Blogging is common practice in the programming world. It's a great way
-  to learn new things and gain insight.
-- find a few good bloggers in your field of choice, and take some time
-  to understand what they're doing and why.
-***** [[https://sts10.github.io/][Prevent Default]]
-:PROPERTIES:
-:ID:       02ba11a3-0be1-4786-b834-1a3c6598cad5
-:END:
 
 **** Talks
 :PROPERTIES:

@@ -207,7 +207,7 @@ extended by the user.
 :PROPERTIES:
 :ID:       a0f0f72d-475a-49a1-a21f-5d8a604099fd
 :END:
-#+begin_src shell :export both :results code replace
+#+begin_src shell :exports both :results code replace
 shed --help
 #+end_src
 
