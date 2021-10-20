@@ -461,7 +461,7 @@ user-defined runtime.
 :PROPERTIES:
 :ID:       b297c4d5-9d42-4618-9ab6-e8134d7587a0
 :END:
-[[cdn:img/literace_c.jpg]]
+[[cdn:img/literate_c.jpg]]
 
 The OG Library of Babel (=LOB=) is grounded in the principles of
 [[id:a001a57c-f1f6-4c52-af3e-cb67a145ea08][literate programming]].
