@@ -887,6 +887,12 @@ cracking programs for hash-based resources:
 - [[cdn:doc/ugh.pdf][The UNIX-HATERS Handbook]]
   “Two of the most famous products of Berkeley are LSD and Unix.  I
   don’t think that is a coincidence.”
+**** Meta Programming                                                 :mp:
+:PROPERTIES:
+:ID:       8196a4dd-8f6a-40ca-9102-32ac66d1dbce
+:END:
+- [[https://www.boost.org/doc/libs/1_39_0/libs/mpl/doc/tutorial/tutorial-metafunctions.html][Metafunctions and Higher-Order Metaprogramming - boost C++]]
+
 *** Formatting                                                        :fmt:
 :PROPERTIES:
 :ID:       4fc48ec4-51c3-439e-9af7-e775e12ea6f1
