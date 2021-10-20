@@ -9,7 +9,7 @@
 
 - [[file:n.org][n]] -- notes
 - [[file:m.org][m]] -- metas
-- [[file:cv.org][cv]] -- CV
+- [[rw:x/pdf/cv.pdf][cv]] -- CV
 
 - [[src:][hg]] -- code
 - [[rw:x][x]] -- docs
