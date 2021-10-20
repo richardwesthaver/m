@@ -4510,6 +4510,7 @@ for an electronic digital computer with these components:
 :ID:       368acc88-b789-4a4e-9c90-72c5e37bd35b
 :END:
 - [[id:bf08b5d0-5745-4fa1-bb2e-7715b9f29a22][QUIC]]
+- [[https://www.cs.unc.edu/~dewan/242/s07/notes/ipc/node26.html][Process to Process Communication: UDP and TCP/IP]]
 **** TCP                                                       :transport:
 :PROPERTIES:
 :ID: 4b1299e8-73db-4e8c-b854-5a9eea1d50c7
@@ -4527,6 +4528,7 @@ Transport Control Protocol
 :END:
 - User Datagram Protocol
 - https://tools.ietf.org/html/rfc768
+- [[https://www.embedded.com/speed-up-machine-to-machine-networking-with-udp/][Speed Up Machine-to-Machine Networking with UDP]]
 ***** *UDP vs TCP*
 :PROPERTIES:
 :ID:       b34a9d4a-7ff0-4566-8cd4-dce03cd0ee05
