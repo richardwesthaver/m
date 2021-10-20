@@ -441,19 +441,30 @@ user for different types of meta-programming activities. There are
 also high-level interfaces for composing ephemerial hacking sessions
 and configuration.
 
-A big inspiration for this project is the [[https://orgmode.org/manual/Library-of-Babel.html][Library of Babel]] - which
-allows you to define blocks of code in an Org doc, and call them
-remotely. =sn= is in fact just this - a collection of code blocks in
-an Org doc. The other collections similarly mirror some set of
-features available in Emacs.
+This project is an extension of the [[https://orgmode.org/manual/Library-of-Babel.html][Library of Babel]] - which allows
+you to define blocks of code in an org file, and call them
+remotely. =babel= is in fact just this - a collection of code blocks
+in an org file. Emacs was previously distributed with an initial
+collection; [[https://git.sr.ht/~bzg/worg/tree/master/item/library-of-babel.org][library-of-babel.org]]. This is no longer the case, but the
+powerful functionality of =org-babel= is still there, in all its
+glory.
 
 The goal of =babel= however is not just to build collections, but to
 provide APIs for them. As such a large focus of this project will be
 on exporting and parsing collections built in Emacs so that they can
 be used by other processes. Our intention is to mimick the powerful
-meta-programming capabilities of Emacs and Org Babel (specifically,
-the ability to mix and match functions /from any language/) in a
+meta-programming capabilities of =org-babel= (specifically, the
+ability to mix and match functions /from any language/) in a
 user-defined runtime.
+
+** Weaving and Tangling
+:PROPERTIES:
+:ID:       b297c4d5-9d42-4618-9ab6-e8134d7587a0
+:END:
+[[cdn:img/literace_c.jpg]]
+
+The OG Library of Babel (=LOB=) is grounded in the principles of
+[[id:a001a57c-f1f6-4c52-af3e-cb67a145ea08][literate programming]].
 
 ** Dependencies
 :PROPERTIES:

@@ -685,6 +685,16 @@ solutions are commonly used in scientific and engineering settings.
 - opposed to scalar languages like C and Pascal with can apply
   operations only to single values, so need to make use of control
   structures such as indexing and looping.
+**** Literate Programming
+:PROPERTIES:
+:ID:       a001a57c-f1f6-4c52-af3e-cb67a145ea08
+:END:
++ what -- The prose programming paradigm
++ [[http://www.literateprogramming.com/][~]] <-
++ [[https://en.wikipedia.org/wiki/Literate_programming][wiki]] <-
+
+- literate programming flow \\
+  [[cdn:img/literace_c.jpg]]
 *** Patterns
 :PROPERTIES:
 :ID:       ad0031c2-9be9-40cb-8a3e-1c6091537221
@@ -1336,7 +1346,21 @@ A multi-paradign systems programming language, and a personal
 favorite of mine.
 - [[https://doc.rust-lang.org/book/][The Rust Book]]
 - [[https://doc.rust-lang.org/rust-by-example/][Rust By Example]]
-- [[file:ml.org][ML]]
+- [[https://doc.rust-lang.org/rustc][the rustc book]]
+  :notes:
+  - rustc is the Rust compiler. It is rarely invoked directly by the
+    programmer, but rather indirectly through Cargo. Use the
+    =--verbose= flag to see how =rustc= is called, for example in:
+    #+begin_src shell
+    cargo build --verbose
+    #+end_src
+    
+  - The compiler has many options.
+    #+begin_src shell
+rustc --help    
+    #+end_src
+  :end:
+- [[https://doc.rust-lang.org/cargo][The Cargo Book]]
 ***** resources
 :PROPERTIES:
 :ID:       fc5f460d-dd9e-41f5-8d2b-737d15dcf249
@@ -1791,7 +1815,7 @@ makes no such claims.
 :ID:       1d0b563a-e356-47eb-a3bc-87e8bd2e10d6
 :END:
 
-***** crates
+***** crates                                                        :lib:
 :PROPERTIES:
 :ID:       3e36db85-ae02-4bf7-bc2e-3ca044f85d67
 :END:
@@ -2118,7 +2142,7 @@ graph.audio_requested(&mut buffer, settings);
 :ID:       decad209-85c2-4634-998e-75fd098e879c
 :END:
 + ref :: [[https://wiki.archlinux.org/title/Rust_package_guidelines][Rust package guidelines - ArchWiki]]
-***** Embedded Rust
+***** Embedded Rust                                            :embedded:
 + < ← [[id:8162fa8b-f79d-4a87-8d4e-82ef993e08f2][Embedded Systems]]
 
 - [[https://docs.rust-embedded.org/book/design-patterns/hal/checklist.html][HAL design pattern checklist]]
@@ -2165,6 +2189,7 @@ prefer it for precisely this reason.
 - a popular functional programming language
 - [[https://www.haskell.org/][Haskell Language]]
 - [[https://blog.akquinet.de/2021/01/03/haskell-is-faster-than-rust-wait-a-sec/][Haskell is Faster than Rust! … Wait a Sec! – akquinet AG – Blog]]
+- [[https://hledger.org/index.html][hledger]]
 **** Erlang                                                          :erl:
 :PROPERTIES:
 :ID:       5c8b33bd-cb8b-46ed-9c58-93d23f9633bc
@@ -2329,6 +2354,16 @@ documentation]].
 :PROPERTIES:
 :ID:       5517909d-e1bf-46b3-9d66-06c2834e80f7
 :END:
+**** FORTH                                                         :forth:
+:PROPERTIES:
+:ID:       8395200c-f135-4329-aecf-9f6cc9996d6f
+:END:
++ [[https://www.forth.com/forth/][~]] <-
+**** io                                                               :io:
+:PROPERTIES:
+:ID:       784d60d0-87c5-4850-b35a-787ea9b9f42f
+:END:
++ [[https://iolanguage.org/index.html][~]] <-
 **** SQL                                                             :sql:
 :PROPERTIES:
 :ID: a0e844c9-ec8d-4f27-b9fd-7c7dfb88df7f
@@ -2360,7 +2395,41 @@ languages as PureData (Pd).
 :ID:       fb5dff3c-7b07-46e2-9196-8f46c955c3b6
 :END:
 CREATED: [2021-01-22 Fri 02:20]
+**** SuperCollider
+:PROPERTIES:
+:ID:       46d3f7c8-f5f5-481e-94ff-0a7b491a59b3
+:END:
++ [[https://supercollider.github.io/][~]] <-
 
+Three major components:
+
+- *scsynth*, a real-time audio server, forms the core of the
+  platform. It features 400+ unit generators (“UGens”) for analysis,
+  synthesis, and processing. Its granularity allows the fluid
+  combination of many known and unknown audio techniques, moving
+  between additive and subtractive synthesis, FM, granular synthesis,
+  FFT, and physical modeling. You can write your own UGens in C++, and
+  users have already contributed several hundred more to the
+  sc3-plugins repository.
+
+- *sclang*, an interpreted programming language. It is focused on sound,
+  but not limited to any specific domain. sclang controls scsynth via
+  Open Sound Control. You can use it for algorithmic composition and
+  sequencing, finding new sound synthesis methods, connecting your app
+  to external hardware including MIDI controllers, network music,
+  writing GUIs and visual displays, or for your daily programming
+  experiments. It has a stock of user-contributed extensions called
+  Quarks.
+
+- *scide* is an editor for sclang with an integrated help system.
+**** Stan                                                           :stan:
+:PROPERTIES:
+:ID:       e08189d6-370d-4f96-8b17-3704efe670fa
+:END:
++ [[https://mc-stan.org/][~]] <-
++ what -- a platform for statistical modeling and high-performance
+  statistical computation.
+- [[https://mc-stan.org/docs/2_28/stan-users-guide/index.html][user guide]]
 **** ML                                                             :lisp:
 :PROPERTIES:
 :ID: 041b902b-3032-400e-bd42-53a0253f0839
