@@ -694,7 +694,7 @@ solutions are commonly used in scientific and engineering settings.
 + [[https://en.wikipedia.org/wiki/Literate_programming][wiki]] <-
 
 - literate programming flow \\
-  [[cdn:img/literace_c.jpg]]
+  [[cdn:img/literate_c.jpg]]
 *** Patterns
 :PROPERTIES:
 :ID:       ad0031c2-9be9-40cb-8a3e-1c6091537221
