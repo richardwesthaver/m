@@ -1,16 +1,18 @@
 #+TITLE: rwest.io
 #+SETUPFILE: ox.setup
 #+begin_center
-+ =who= ⇐ Richard Westhaver <[[mailto:ellis@rwest.io][ellis@rwest.io]]>
-+ =what= ⇐ a humble hacker homepage
-+ =where= ⇐ 2011 lenovo laptop -- USA
-+ =why= ⇐ sharing is caring
++ =who= -- Richard Westhaver <[[mailto:ellis@rwest.io][ellis@rwest.io]]>
++ =what= -- a humble hacker homepage
++ =where= -- 2011 lenovo laptop -- USA
++ =why= -- sharing is caring
 #+end_center
 
-- [[file:n.org][notes]]
-- [[file:m.org][metas]]
-- [[file:cv.org][cv]]
+- [[file:n.org][n]] -- notes
+- [[file:m.org][m]] -- metas
+- [[file:cv.org][cv]] -- CV
 
-- srv
-  - [[src:][hg]]
-
+- [[src:][hg]] -- code
+- [[rw:x][x]] -- docs
+- [[rw:y][y]] -- distribution
+- [[rw:z][z]] -- data
+- [[rw:a][a]] -- attachments
