@@ -1356,9 +1356,68 @@ favorite of mine.
     #+end_src
     
   - The compiler has many options.
-    #+begin_src shell
+    #+begin_src shell :exports both :results output replace
 rustc --help    
     #+end_src
+    #+RESULTS:
+    #+begin_example
+    Usage: rustc [OPTIONS] INPUT
+
+    Options:
+        -h, --help          Display this message
+            --cfg SPEC      Configure the compilation environment
+        -L [KIND=]PATH      Add a directory to the library search path. The
+                            optional KIND can be one of dependency, crate, native,
+                            framework, or all (the default).
+        -l [KIND[:MODIFIERS]=]NAME[:RENAME]
+                            Link the generated crate(s) to the specified native
+                            library NAME. The optional KIND can be one of
+                            static, framework, or dylib (the default).
+                            Optional comma separated MODIFIERS
+                            (bundle|verbatim|whole-archive|as-needed)
+                            may be specified each with a prefix of either '+' to
+                            enable or '-' to disable.
+            --crate-type [bin|lib|rlib|dylib|cdylib|staticlib|proc-macro]
+                            Comma separated list of types of crates
+                            for the compiler to emit
+            --crate-name NAME
+                            Specify the name of the crate being built
+            --edition 2015|2018|2021
+                            Specify which edition of the compiler to use when
+                            compiling code.
+            --emit [asm|llvm-bc|llvm-ir|obj|metadata|link|dep-info|mir]
+                            Comma separated list of types of output for the
+                            compiler to emit
+            --print [crate-name|file-names|sysroot|target-libdir|cfg|target-list|target-cpus|target-features|relocation-models|code-models|tls-models|target-spec-json|native-static-libs]
+                            Compiler information to print on stdout
+        -g                  Equivalent to -C debuginfo=2
+        -O                  Equivalent to -C opt-level=2
+        -o FILENAME         Write output to <filename>
+            --out-dir DIR   Write output to compiler-chosen filename in <dir>
+            --explain OPT   Provide a detailed explanation of an error message
+            --test          Build a test harness
+            --target TARGET Target triple for which the code is compiled
+        -A, --allow LINT    Set lint allowed
+        -W, --warn LINT     Set lint warnings
+            --force-warn LINT
+                            Set lint force-warn
+        -D, --deny LINT     Set lint denied
+        -F, --forbid LINT   Set lint forbidden
+            --cap-lints LEVEL
+                            Set the most restrictive lint level. More restrictive
+                            lints are capped at this level
+        -C, --codegen OPT[=VALUE]
+                            Set a codegen option
+        -V, --version       Print version info and exit
+        -v, --verbose       Use verbose output
+
+    Additional help:
+        -C help             Print codegen options
+        -W help             Print 'lint' options and default settings
+        -Z help             Print unstable compiler options
+        --help -v           Print the full set of options rustc accepts
+
+    #+end_example
   :end:
 - [[https://doc.rust-lang.org/cargo][The Cargo Book]]
 ***** resources
@@ -2217,26 +2276,37 @@ Lisp dialects are Racket, Common Lisp, Scheme, and Clojure.
 :PROPERTIES:
 :ID:       d9c3504b-9d9f-4f96-a844-82371be08da6
 :END:
-+ what ⇐ the programming language of [[id:0f13e326-614c-4df9-8344-e257eb165d8c][Emacs]].
-+ [[https://www.gnu.org/software/emacs/manual/html_node/elisp/][^]] ⇐ 
++ what <- the programming language of [[id:0f13e326-614c-4df9-8344-e257eb165d8c][Emacs]].
++ [[https://www.gnu.org/software/emacs/manual/html_node/elisp/][~]] <- 
 
-- [[https://caiorss.github.io/Emacs-Elisp-Programming/Elisp_Programming.html][Elisp Programming]]
-  a full elisp guide
-- [[https://alphapapa.github.io/emacs-package-dev-handbook/][The Emacs Package Developer's Handbook (alphapapa)]]
-  alphapapa's dev handbook
+- guides
+  - [[https://caiorss.github.io/Emacs-Elisp-Programming/Elisp_Programming.html][Elisp Programming]]
+    a full elisp guide
+  - [[https://alphapapa.github.io/emacs-package-dev-handbook/][The Emacs Package Developer's Handbook (alphapapa)]]
+    alphapapa's dev handbook
+  - [[https://ruzkuku.com/texts/emacs-style.html][Good Style in modern Emacs Packages]]
+
 - [[https://github.com/alphapapa/unpackaged.el][unpackaged.el (alphapapa)]]
   elisp snippets
-- [[https://ruzkuku.com/texts/emacs-style.html][Good Style in modern Emacs Packages]]
-****** builtin libraries
-:PROPERTIES:
-:ID:       77b22551-34e5-417b-8611-e42943557f10
-:END:
-these libraries come installed with emacs.
- - ewoc
- - widget
- - url
- - eieio
- - org-element
+
+- ref
+  - generic functions
+    + [[info:elisp#Generic Functions][info]] <-
+    - [[https://kitchingroup.cheme.cmu.edu/blog/2018/05/09/Making-it-easier-to-extend-the-export-of-org-mode-links-with-generic-functions/][expanding org-mode links with generic functions]]
+- built-ins \\
+  these libraries come installed with emacs on all platforms.
+  - ewoc
+    + [[info:elisp#Abstract Display][info]] <-
+  - widget
+  - url
+  - eieio
+    + [[info:eieio#Top][info]] <-
+  - org-element
+  - skeleton
+    + [[info:autotype#Top][info]] <-
+  - abbrev
+    + [[info:emacs#Abbrevs][info]] <-
+  - dabbrev
 ****** external libraries
 :PROPERTIES:
 :ID:       1a9cdefa-db8c-4058-836d-fcbcfd2332fb
@@ -2395,7 +2465,7 @@ languages as PureData (Pd).
 :ID:       fb5dff3c-7b07-46e2-9196-8f46c955c3b6
 :END:
 CREATED: [2021-01-22 Fri 02:20]
-**** SuperCollider
+**** SuperCollider                                                 :audio:
 :PROPERTIES:
 :ID:       46d3f7c8-f5f5-481e-94ff-0a7b491a59b3
 :END:
@@ -2791,7 +2861,7 @@ systems.
 :PROPERTIES:
 :ID: 375d49a0-05c9-4937-9efe-7385f354f8ac
 :END:
-**** Licensing
+**** Licensing                                                       :law:
 :PROPERTIES:
 :ID:       cc00c927-a481-44da-9875-0a06898b9592
 :END:
@@ -2813,7 +2883,7 @@ systems.
 :ID:       ab28c699-cb83-47e6-87d0-7e7e806d07aa
 :END:
 
-**** Programs
+**** Programs                                                        :bin:
 :PROPERTIES:
 :ID: 279e2f53-ca83-44f4-b679-165fd8aabd24
 :END:
@@ -2822,8 +2892,6 @@ systems.
 :PROPERTIES:
 :ID:       0f13e326-614c-4df9-8344-e257eb165d8c
 :END:
-- [[src:config/emacs][my emacs config]]
-- [[yt:43Dg5zYPHTU][Emacs completion frameworks (Embark, Consult, Orderless + Minibuffer)]]
 ****** Building from Source
 :PROPERTIES:
 :ID:       d92c3412-0e3b-4c07-842c-638c0eef4df1
@@ -2859,7 +2927,13 @@ Here are some of the other configuration flags worth investigating:
 - --without-x
 - --without-dbus --without-gconf --without-gsettings
 
-****** Org Mode                                                    :org:
+****** built-ins
+:PROPERTIES:
+:ID:       fc5863a6-0e73-40cc-a39c-05225a5ce1bb
+:END
+- remember
+  + [[info:remember#Top][info]] <-
+******* org                                                       :org:
 :PROPERTIES:
 :ID: 0b4c27b4-3c1a-41c3-afcd-048f2cf15030
 :END:
@@ -2884,21 +2958,29 @@ My usage of org-mode revolves around the following principles:
   at my current workflow from afar, and jot down a list of things that
   work, and things that don't. Good habit to get into for serious
   usage.
-******* Research
+******** Research
 :PROPERTIES:
 :ID:       623dab31-4864-4a25-809e-b9ed9fde6a32
 :END:
 - [[cdn:media/doc/][A Multi-Language Computing Environment for Literate Programming and Reproducible Research]]
-******* Tutorials
+******** Tutorials
 :PROPERTIES:
 :ID:       8b9a818b-b0b1-4335-9344-d4d7d8da3470
 :END:
-******** Getting Started with Org Mode - Harry Schwartz
+********* Getting Started with Org Mode - Harry Schwartz
 :PROPERTIES:
 :ID:       fb954e05-c80c-4a92-ab6e-7001807d5e3f
 :END:
 [[yt:SzA2YODtgK4][Getting Started With Org Mode]]
 
+******* skeleton                                                :babel:
+:PROPERTIES:
+:ID:       f08a38cb-7ca1-40ff-949c-547000792a03
+:END:
++ [[https://www.emacswiki.org/emacs/SkeletonMode][wiki]] <-
++ [[info:autotype#Top][info]] <- 
+****** media
+[[yt:43Dg5zYPHTU][Emacs completion frameworks (Embark, Consult, Orderless + Minibuffer)]]
 ****** straight.el
 :PROPERTIES:
 :ID: 9711fba3-2682-400e-9c72-54bdc07a15d5
@@ -3038,7 +3120,13 @@ A classic emacs beginner read
 :ID: c93b85e8-4b50-4477-b121-486271ea50d6
 :END:
 - https://www.gnu.org/software/make/manual/make.html
-
+  - [[info:make#Loading Objects][Loading Objects]] : You can load dynamic objects into Makefiles with
+    the =load= keyword.
+    - Such an object might include new =make= functions and a 'setup'
+      function for registering them with GNU =make='s function handling
+      system.
+  - There is also a [[info:make#Guile Integration][Guile Integration]] which can be used for scripting
+    among other things.
 ****** Additional References
 :PROPERTIES:
 :ID:       60830ee9-5424-433c-9b76-7bf4e8b825c5
@@ -3350,6 +3438,10 @@ in, but overall a good continuation of the mind-mapping framework.
 	 :CREATED:  [2020-06-26 Fri]
    :ID:       2f96c91e-d79a-4663-bc45-9f56ff6da29f
 	 :END:
+**** Libraries                                                       :lib:
+***** Memcached                                                     :kvs:
++ what -- FOSS, high-performance, distributed memory object caching system
+  - (in-mem key:val store)
 **** Operating Systems                                                :os:
 :PROPERTIES:
 :ID: 3bf219b5-6ad8-4355-8d68-29bd483f2671

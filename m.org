@@ -18,64 +18,36 @@ used to generate my [[https://rwest.io][website]] and readmes.
 - =n.org= contains informal notes
 - =cv.org= is my resume (hire me!)
 
-** Context
-:PROPERTIES:
-:ID:       22d47091-0079-44d9-b728-d6387c4b659a
-:END:
-It is my opinion that the best system for /personal/ Knowledge
-Management is the one that you build yourself, because it is not an
-exact science. I have tried many different note-taking/info-gathering
-methodologies and tools over the years - some of which are quite
-excellent. I can assure you however, that you will need to make
-changes and ocassionally break the rules, and as you do, you drift
-into no-man's land. Sometimes this is totally fine. Other times, you
-may break something in your system of choice, causing loss of
-functionality. What you end up with is a constant battle between your
-mind and your tools.
-
-** Syntax
+** Syntax Extensions
 :PROPERTIES:
 :ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
 :END:
-This section assumes some familiarity with org syntax. Org syntax is
-covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document structure
-can be found in [[https://www.gnu.org/software/emacs/manual/html_node/org/Document-Structure.html][the Emacs manual]].
+The source files assume some familiarity with org syntax. Org syntax
+is covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document
+structure can be found in the [[info:emacs#Top][Emacs manual]].
 
-All docs are fully compliant with Org syntax, with the addition of
-some special elements that may appear in the body or =section= of any
+All docs are fully compliant with org, with the addition of some
+special elements that may appear in the body (or =section=) of any
 heading.
-
 - props ::
   All nodes have an optional number of "props" which are denoted as a
-  list item that uses =+= followed by the prop symbol and a special
-  character. These can appear anywhere in the =section= element of a
-  node (not just immediately following properties drawer). They're
-  like a shorthand for custom properties.
-
-  #+begin_example
-# info props
-+ ? ← some long description
-+ who/what/when/where/why/how ← some text
-+ status ← ACTIVE
-+ src ← https://hg.rwest.io/org
-
-# can bind value to prop via direct link
-+ [[https://en.wikipedia.org/some_thing][wiki]] ⇐ 
-+ [[https://mlochbaum.github.io/BQN/doc/index.html][docs]] ⇐ 
-
-# edges
-+ < ← [[id:parent-node][parent node]] #from
-+ > ← [[id:child-node][child node]] #to
-  #+end_example
-
+  list item that uses =+= followed by the prop symbol and an
+  `edge` (=--=, =<-=, =->=). These can appear anywhere in the =section= element of a node
+  (not just immediately following properties drawer). They're like a
+  shorthand for custom properties.
+- drawers ::
+  Org-mode has a feature called drawers, which are collapsible
+  sections of text starting with =:DRAWER_NAME:= and ending with
+  =:END:=. The most common one seen in our docs is the PROPERTIES
+  drawer, but there are a few special ones we use, especially in
+  =n.org=: =notes=, =opinion=, and =dialog=.
 ** Exporting
 :PROPERTIES:
 :ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
 :END:
-- Once we're done with writing it's time to share our work. yay! Emacs
-  has many backends for [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an emacs-lisp
-  script is all that is needed to generate conventional formats like
-  HTML.
+- Emacs has many backends for [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an
+  emacs-lisp script is all that is needed to generate conventional
+  formats like HTML.
 - A list of publishing templates are defined to export individual
   modules or output formats.
 - Each format is generated in a separate temporary directory
@@ -86,6 +58,140 @@ heading.
   (tar.zst) packages for each format.
 - New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
   [[https://rwest.io/x][rwest.io/x]] which includes .tz packages.
+
+** Scripts                                                              :sc:
+:PROPERTIES:
+:ID:       c27a67be-7b8b-47c5-9578-5acc71e27c53
+:header-args: :results silent :eval no-export
+:END:
+
+- *makefile* \\
+  #+begin_src makefile :tangle makefile :shebang "#!/usr/bin/make -f -j8"
+PUB := ./pub.el
+OX_SETUP := ./ox.setup
+
+HD ?= dmz
+P ?= html md txt pdf org
+
+MD = mkdir -p $(@)
+
+.PHONY: c
+
+o:o/x;shed pack $< $<.tz;
+	$(foreach p,$(P), shed pack $</${p} $@/${p}.tz;)
+
+w:o;ssh $(HD) rm -rf dmz/w/*.html;\
+	scp -r $</x/html/*.html $(HD):dmz/w;\
+	scp -r $</*.tz $(HD):dmz/w/x
+
+c:;rm -rf o
+
+o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
+	ssh $(HD) rm -rf dmz/w/*.html; scp -r $@/html/*.html $(HD):dmz/w/;\
+	shed pack $@ o/x.tz;scp -r $@ $(HD):dmz/w
+  #+end_src
+
+- *pub.el* \\
+  #+name: meta_publish
+  #+begin_src elisp :tangle pub.el :shebang "#!/usr/local/bin/emacs --script"
+(require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
+(require 'ox-publish)
+(require 'ox-latex)
+(require 'ox-man)
+(require 'ox-html)
+(require 'cl-lib)
+(require 'ox-ascii)
+(require 'org-id)
+
+(setq org-html-head-include-default-style nil)
+
+(setq org-publish-project-alist
+      '(("org-html"
+         :author "ellis"
+         :email "ellis@rwest.io"
+	 :base-directory "~/shed/src/meta/o/x/org"
+	 :base-extension "org"
+         :with-date (current-time)
+	 :publishing-directory "~/shed/src/meta/o/x/html"
+	 :publishing-function org-html-publish-to-html
+	 :auto-sitemap nil)
+        ("org-md"
+         :author "ellis"
+         :email "ellis@rwest.io"
+	 :base-directory "~/shed/src/meta/o/x/org"
+	 :base-extension "org"
+         :with-date (current-time)
+	 :publishing-directory "~/shed/src/meta/o/x/md"
+	 :recursive t
+	 :publishing-function org-md-publish-to-md
+	 :auto-sitemap nil)
+        ("org-man"
+         :author "ellis"
+         :email "ellis@rwest.io"
+	 :base-directory "~/shed/src/meta/o/x/org"
+	 :base-extension "org"
+         :with-date (current-time)
+	 :publishing-directory "~/shed/src/meta/o/x/man"
+	 :recursive t
+	 :publishing-function org-man-export-to-man
+	 :auto-sitemap nil)
+        ("org-pdf"
+         :author "ellis"
+         :email "ellis@rwest.io"
+	 :base-directory "~/shed/src/meta/o/x/org"
+	 :base-extension "org"
+         :with-date (current-time)
+	 :publishing-directory "~/shed/src/meta/o/x/pdf"
+	 :recursive t
+	 :publishing-function org-latex-publish-to-pdf
+	 :auto-sitemap nil)
+        ("org-txt"
+         :author "ellis"
+         :email "ellis@rwest.io"
+	 :base-directory "~/shed/src/meta/o/x/org"
+	 :base-extension "org"
+         :with-date (current-time)
+	 :publishing-directory "~/shed/src/meta/o/x/txt"
+	 :recursive t
+	 :publishing-function org-ascii-publish-to-ascii
+	 :auto-sitemap nil)
+	("all" :components ("org-html" "org-md" "org-pdf" "org-txt"))))
+
+(setq org-link-abbrev-alist
+      '(("google"    . "http://www.google.com/search?q=")
+        ("gmap"      . "http://maps.google.com/maps?q=%s")
+        ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
+        ("ads"       . "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\"")
+	("rw" . "https://rwest.io/%s")
+        ("src" . "https://hg.rwest.io/%s")
+        ("contrib" . "https://hg.rwest.io/contrib/%s")
+        ("cdn" . "https://rwest.io/a/%s")))
+
+(defvar yt-iframe-format
+  (concat "<iframe width=\"480\""
+          " height=\"360\""
+          " src=\"https://www.youtube.com/embed/%s\""
+          " frameborder=\"0\""
+          " allowfullscreen>%s</iframe>"))
+
+(org-add-link-type
+ "yt"
+ (lambda (handle)
+   (browse-url
+    (concat "https://www.youtube.com/embed/"
+            handle)))
+ (lambda (path desc backend)
+   (cl-case backend
+     (html (format yt-iframe-format
+                   path (or desc "")))
+     (latex (format "\href{%s}{%s}"
+                    path (or desc "video"))))))
+
+(org-publish-remove-all-timestamps)
+(org-refile-cache-clear)
+(org-publish "all" t)
+
+  #+end_src
 
 * demo                                                      :rust:rlib:tenex:
 :PROPERTIES:
@@ -207,13 +313,13 @@ extended by the user.
 :PROPERTIES:
 :ID:       a0f0f72d-475a-49a1-a21f-5d8a604099fd
 :END:
-#+begin_src shell :exports both :results code replace
+#+begin_src shell :exports both :results output replace
 shed --help
 #+end_src
 
 #+RESULTS:
-#+begin_src shell
-shed 0.1.0-943832e83af3+
+#+begin_example
+shed 0.1.0-0fc01f4e2590+
 
 ellis <ellis@rwest.io>
 
@@ -221,7 +327,6 @@ shed multi-development tool
 
 USAGE:
     shed [FLAGS] [OPTIONS] [SUBCOMMAND]
-
 
 FLAGS:
     -?               set the log level
@@ -248,7 +353,7 @@ SUBCOMMANDS:
     store       shared block storage
     unpack      unpack .z or .tz files
     x           do things with runtimes
-#+end_src
+#+end_example
 
 ** Footnotes
 :PROPERTIES:
