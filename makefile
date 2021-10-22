@@ -1,5 +1,4 @@
 #!/usr/bin/make -f -j8
-# --- meta makefile
 PUB := ./pub.el
 OX_SETUP := ./ox.setup
 

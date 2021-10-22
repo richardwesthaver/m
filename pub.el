@@ -8,10 +8,7 @@
 (require 'ox-ascii)
 (require 'org-id)
 
-(setq org-html-htmlize-output-type 'inline-css)
 (setq org-html-head-include-default-style nil)
-(setq org-export-html-style-include-scripts nil
-      org-export-html-style-include-default nil)
 
 (setq org-publish-project-alist
       '(("org-html"
