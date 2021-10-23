@@ -7,10 +7,10 @@
 :PROPERTIES:
 :ID:       60bed781-3a70-4435-9df0-097b799539e4
 :END:
-+ what ← docs
-+ why ← knowledge is power
-+ status ← ALPHA
-+ [[src:meta][src]] ⇐ 
++ what -- docs
++ why -- knowledge is power
++ status -- ALPHA
++ [[src:meta][src]] <-
 
 This project contains documents I've written in plain-text which are
 used to generate my [[https://rwest.io][website]] and readmes.
@@ -18,7 +18,7 @@ used to generate my [[https://rwest.io][website]] and readmes.
 - =n.org= contains informal notes
 - =cv.org= is my resume (hire me!)
 
-** Syntax Extensions
+** Syntax Elements
 :PROPERTIES:
 :ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
 :END:
@@ -27,8 +27,8 @@ is covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail an
 structure can be found in the [[info:emacs#Top][Emacs manual]].
 
 All docs are fully compliant with org, with the addition of some
-special elements that may appear in the body (or =section=) of any
-heading.
+special elements:
+
 - props ::
   All nodes have an optional number of "props" which are denoted as a
   list item that uses =+= followed by the prop symbol and an
@@ -40,7 +40,19 @@ heading.
   sections of text starting with =:DRAWER_NAME:= and ending with
   =:END:=. The most common one seen in our docs is the PROPERTIES
   drawer, but there are a few special ones we use, especially in
-  =n.org=: =notes=, =opinion=, and =dialog=.
+  =n.org=: =note=, =opinion=, and =boris=.
+- links ::
+  In addition to the default links, we use a few custom links, most
+  notably =yt= which embeds a video from youtube.
+
+  This is not good for users, since the embedded youtube links include
+  tracking and other nasty bits from Google. In the future these links
+  will be migrated to =cdn= to avoid that, increasing user privacy and
+  greatly improving page load time.
+
+  =cdn=, =src=, and =rw= links all point to some service hosted on
+  =rwest.io=.
+
 ** Exporting
 :PROPERTIES:
 :ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
@@ -55,10 +67,11 @@ heading.
   which parses the org files and creates an intermediate
   representation for ingestion by internal services.
 - Compression and archiving is also performed to generate =.tz=
-  (tar.zst) packages for each format.
+  (tar.zst) archives for each format.
+- all build artifacts are transferred over SSH to a public web server
 - New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
-  [[https://rwest.io/x][rwest.io/x]] which includes .tz packages.
-
+  [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
+  formats.
 ** Scripts                                                              :sc:
 :PROPERTIES:
 :ID:       c27a67be-7b8b-47c5-9578-5acc71e27c53
@@ -162,7 +175,7 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
         ("gmap"      . "http://maps.google.com/maps?q=%s")
         ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
         ("ads"       . "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\"")
-	("rw" . "https://rwest.io/%s")
+	    ("rw" . "https://rwest.io/%s")
         ("src" . "https://hg.rwest.io/%s")
         ("contrib" . "https://hg.rwest.io/contrib/%s")
         ("cdn" . "https://rwest.io/a/%s")))
@@ -193,81 +206,313 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
 
   #+end_src
 
-* demo                                                      :rust:rlib:tenex:
+* babel
 :PROPERTIES:
-:ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
-:CATEGORY: bin
+:ID:       1b363810-26ea-4dae-b689-6e050756bfae
+:CATEGORY: lib
 :END:
++ what ← scripts[sc], snippets[sn], and templates[tm]
++ how ←
+  - user-defined project templates
+    - located in =tm=
+  - auto-generated snippets and scripts via elisp and
+    org-mode[coming_soon]
++ status ← IN_PROGRESS
++ [[src:babel][src]] ⇐ 
 
-Project demos and examples relating to [[id:7e0d54ee-d3f7-468a-b0cf-664bba4df675][rlib]] and [[id:0480aced-777f-4f30-ae05-189500fb6903][tenex]].
-+ status ← ALPHA
-+ [[src:demo][src]] ⇐
+Re-using code is an important part of software development. We re-use
+code when importing a library module, using macros, writing classes,
+and [[https://stackoverflow.blog/2021/04/19/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/][copying code from Stack Overflow]]. As such, programmers have often
+come up with systems for collecting code that they can re-use in other
+contexts.
 
-** Examples
+=babel= is one of these systems. It is highly integrated with [[id:205131fc-ff48-4e0b-a3e8-ab52d5b6ca19][shed]] and
+[[id:903f8087-e0af-48f2-a5a6-f8d7f080464a][GNU Emacs]] which are used to modify, organize, and implement our
+collections.
+
+Collections are described by three categories:
+- sn :: common domain-specific code snippets
+- sc :: generalized scripts in a variety of languages
+- tm :: project templates
+
+Each category provides its own methods of interaction available to the
+user for different types of meta-programming activities. There are
+also high-level interfaces for composing ephemerial hacking sessions
+and configuration.
+
+This project is an extension of the [[https://orgmode.org/manual/Library-of-Babel.html][Library of Babel]] - which allows
+you to define blocks of code in an org file, and call them
+remotely. =babel= is in fact just this - a collection of code blocks
+in an org file. Emacs was previously distributed with an initial
+collection; [[https://git.sr.ht/~bzg/worg/tree/master/item/library-of-babel.org][library-of-babel.org]]. This is no longer the case, but the
+powerful functionality of =org-babel= is still there, in all its
+glory.
+
+The goal of =babel= however is not just to build collections, but to
+provide APIs for them. As such a large focus of this project will be
+on exporting and parsing collections built in Emacs so that they can
+be used by other processes. Our intention is to mimick the powerful
+meta-programming capabilities of =org-babel= (specifically, the
+ability to mix and match functions /from any language/) in a
+user-defined runtime.
+
+** Weaving and Tangling
 :PROPERTIES:
-:ID:       04580557-8e76-49b6-ad36-731464a527dd
+:ID:       b297c4d5-9d42-4618-9ab6-e8134d7587a0
 :END:
-*** hgsub-sort.rs
-:PROPERTIES:
-:ID:       c313a484-e72b-4f41-b9ab-44c3d69727c1
-:END:
-Sorts a Mercurial Subrepos file (=.hgsub=) alphabetically.
-*** hi.rs
-:PROPERTIES:
-:ID:       01bf673a-4179-43bc-9281-00d01be97bfd
-:END:
-A startup script I run after logging in to my desktop. It does a few things:
-- print my public IP
-- print a weather report
-- print list of connected USB devices
-- build a tmux session and attach to it (Unix only + =tmux=)
-- configure desktop displays with xrandr (Linux only + =x11=)
-- spawn some desktop widgets (Linux only + =conky=)
-- set my desktop background (Linux only + =fehbg=)
+[[cdn:img/literate_c.jpg]]
 
-Conditional compilation flags are used - so this program will only
-print IP, weather, and USB devices on Windows.
+The OG Library of Babel (=LOB=) is grounded in the principles of
+[[id:a001a57c-f1f6-4c52-af3e-cb67a145ea08][literate programming]].
 
-*** wg-keygen.rs
+** Dependencies
 :PROPERTIES:
-:ID:       0cfaf940-b3d9-4566-bbbf-8c19ea556d14
+:ID:       b3146122-3109-45ce-b155-97d52701a0ca
 :END:
-
-*** chatter
+- *Emacs 28* \\
+  The editor integration doesn't depend on any external packages
+  outside of vanilla Emacs. The following built-in packages are used
+  to provide functionality:
+  - =org.el=
+  - =ob.el=
+  - =skeleton.el=
+  - =autoinsert.el=
+  - =abbrev.el=
+  - =dabbrev.el=
+  All of the above features should be available in the default Emacs
+  distribution for your OS.
+- *GNU Make* \\
+  =optional=
+  
+* cfg
 :PROPERTIES:
-:ID:       d61ebbcc-5154-4616-8c37-fbf836493030
+:ID:       9d7999d3-b66e-4ea2-8586-2ef9c27e8f4b
 :END:
-OpenAI API examples (NOTE: requires an OpenAI beta access key)
++ what -> my config files
+  - emacs
+  - mail
+  - shell
+  - term
+  - tmux
+  - vc
+  - virt
+  - wm
 
+I have a relatively small set of config files, but they get a lot
+done. The sections below cover configuration of a certain category or
+individual application such as =shell= or =emacs= respectively.
+
+The top-level makefile is used for basic deployment and publishing,
+but these files are generally intended to be loaded into a user
+environment via the =shed= development tool.
+** emacs
+:PROPERTIES:
+:ID:       903f8087-e0af-48f2-a5a6-f8d7f080464a
+:END:
++ what -- Configuration for the superior editor.
++ version -- 2.1
+*** Abstract
+:PROPERTIES:
+:ID:       937b83dd-233b-44cb-9a0b-d5536f7d9db3
+:END:
+I've been using Emacs since 2016 as my primary editor. I started with
+Spacemacs, used Doom for a while, then started rolling my own
+configurations. Configuring the Emacs editor requires learning the
+Emacs language - emacs-lisp. It is a dialect of Common Lisp which can
+be a bit tricky to adapt to for non-Lisp programmers, but it is built
+specifically for Emacs.
+
+This meta covers my Emacs modules, configurations, scripts, and other
+code written in emacs-lisp. I have a main configuration which is
+thousands of lines, but lately I've been experimenting with running
+multiple smaller isolated emacs servers, with their own unique
+configs.
+*** config.org
+:PROPERTIES:
+:ID:       6782d0a9-1915-4b3e-85fb-3dd5e7ec917e
+:END:
+The (old) main configuration file. A lot of this is getting moved to
+our =notes=. The resulting files will be refactored. Despite being
+messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916][Screenshots]]).
+*** Screenshots
+:PROPERTIES:
+:ID:       005d2a6e-d34f-45ee-a169-f26fc264c916
+:END:
+  - themes \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/abyss-theme-emacs.png][https://cdn.rwest.io/img/abyss-theme-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/sanityinc-theme-emacs.png][https://cdn.rwest.io/img/sanityinc-theme-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/wheatgrass-theme-emacs.png][https://cdn.rwest.io/img/wheatgrass-theme-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/leuven-theme-emacs.png][https://cdn.rwest.io/img/leuven-theme-emacs.png]]
+  - org-mode \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/olivetti-emacs.png][https://cdn.rwest.io/img/olivetti-emacs.png]]
+  - programming \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/rust-development-emacs.png][https://cdn.rwest.io/img/rust-development-emacs.png]]
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/rust-tests-emacs.png][https://cdn.rwest.io/img/rust-tests-emacs.png]]
+  - email \\
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/email-emacs.png][https://cdn.rwest.io/img/email-emacs.png]]
+  - eww \\
+    The Emacs Web Wowser
+    #+attr_html: :width 600
+    [[https://cdn.rwest.io/img/eww-emacs.png][https://cdn.rwest.io/img/eww-emacs.png]]
+** mail
+:PROPERTIES:
+:ID:       f3d16b98-d848-46a4-a7a6-fc6014ebef76
+:END:
++ what -- mail configs
+  - notmuch
+  - offlineimap
+** shell
+:PROPERTIES:
+:ID:       217423f6-ab17-457a-a35c-04678d4b71c3
+:END:
++ what -- shell configs
+  - bash
+  - zsh
+** term
+:PROPERTIES:
+:ID:       4c4a3209-a71c-4f94-9900-c1fd50f9b186
+:END:
++ what -- terminal emulator configs
+  - kitty
+** tmux
+:PROPERTIES:
+:ID:       33726d69-2c43-453e-808e-78cfb126dc05
+:END:
++ what -- tmux config
+** vc
+:PROPERTIES:
+:ID:       f8ce8509-e360-4d1c-936f-37aae0537684
+:END:
++ what -- Version Control configs
+  - mercurial
+  - git
+** virt
+:PROPERTIES:
+:ID:       c240a030-7e6b-4061-8c13-a5764169eb35
+:END:
++ what -- virtual machine and container configs
+  - lxd | lxc
+** wm
+:PROPERTIES:
+:ID:       3eafb844-4684-48af-ac2b-4660df2c2ab4
+:END:
++ what -- X11 configs
+  - 2bwm
+  - conky
+  - lemonbar
+** nix                                                 :deprecated:noexport:
+:PROPERTIES:
+:ID:       e2f62a1e-8f54-4bf6-ab88-86872e49f71d
+:END:
+Poorman's distributed =nix= config has fallen into disrepair, but I
+keep it around for old-time's sake. It might come in handy in the
+future, depending on how the Nix ecosystem progresses.
 * shed                                                                 :rust:
 :PROPERTIES:
 :ID: 205131fc-ff48-4e0b-a3e8-ab52d5b6ca19
 :CATEGORY: bin
 :END:
 multi-development tool
-+ status ← ALPHA
-+ [[src:shed][src]] ⇐ 
-+ version ← 0.0.1
++ status -- ALPHA
++ version -- 0.0.1
++ [[src:shed][src]] <-
++ [[https://docs.rwest.io/shed][docs]] <-
 ** Overview
 :PROPERTIES:
 :ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0
 :END:
-=shed= is a CLI tool for programming.
+This tool is intended to encapsulate and optimize my full development
+workflow. The idea is that I can install this tool on any development
+machine, and with a single command (=shed init=) bootstrap a
+custom-tailored workspace.
+
+** Roadmap
+:PROPERTIES:
+:ID:       169e6a06-9260-4f12-95de-aeb2afa17fd1
+:END:
+*** NEXT Registry
+:PROPERTIES:
+:ID:       b157b0bd-da91-4f0a-925f-39acfed569a7
+:END:
+:LOGBOOK:
+- State "NEXT"       from              [2021-10-23 Sat 03:38]
+:END:
+
+*** HACK Commands
+:LOGBOOK:
+- State "HACK"       from "TODO"       [2021-10-23 Sat 03:41]
+- State "TODO"       from              [2021-10-23 Sat 03:38]
+:END:
+
+*** TODO Krypt
+:LOGBOOK:
+- State "TODO"       from              [2021-10-23 Sat 03:38]
+:END:
+
+*** TODO Babel
+:LOGBOOK:
+- State "TODO"       from              [2021-10-23 Sat 03:43]
+:END:
+
+*** TODO shed.el
+:LOGBOOK:
+- State "TODO"       from              [2021-10-23 Sat 03:39]
+:END:
 
 ** Features
 :PROPERTIES:
 :ID:       83a9750a-bb30-4272-b1f3-23d85806cbb8
 :END:
-- Mercurial VCS
-   - Pullbundles and Clonebundles
-   - Subrepos
-   - HTTP client/server
-   - Git import/export
-- Build tool wrappers (=cargo=, =clang=, =Makefile=, =scripts=)
-- Template integration with =babel= for files and projects
-- Packaging
-- System configuration
-
+- *Src*
+  - Mercurial VCS
+    - Bundle support
+    - HTTP client/server
+    - Git import/export
+  - Build tools (=cargo=, =clang=, =Makefile=, =scripts=)
+- *X*
+  - programming environments (REPLs)
+    - embedded Python (RustPython)
+    - APLs (BQN, k6/9, Gnu/Dyalog APL)
+    - Elisp (ielm.el)
+    - Erlang (erl)
+    - Lua
+- *Babel*
+  - File templates
+  - scripts and snippets
+  - meta-programming primitives
+- *Stash*
+  - temp storage (=tmp=)
+  - music library (=music=)
+  - configs (=cfg=)
+  - library of babel (=babel=)
+  - tasks, journal, inbox, ops (=org=)
+- *Store*
+  - archive (=arch=)
+  - data (=data=)
+  - media (=media=)
+    - audio (=aud=)
+    - video (=vid=)
+  - virt (=virt=)
+    - OS images (=img=)
+    - FS images (=fs=)
+- *Lab*
+  - Virtual system management (=lxd= and =qemu=)
+    - configurable fs and network sharing for guests
+  - Bootstrap =babel= projects, use local data from =stash= and
+    =store=
+- *Krypt*
+  - reasonably safe secret storage
+    - Wireguard, SSH, TLS, plaintext
+  - isolated access to OAuth2 and JWT authenticated API services
+    - Google, AWS, Discord, Github
 ** Usage
 :PROPERTIES:
 :ID:       ecb7c923-6329-4e13-af72-84482bdbcb1e
@@ -367,35 +612,6 @@ initially introduced.
 [fn:2] =rlib= on the other hand, is very similar to =rust-shed= and
 other crates Facebook has open-sourced such as [[https://github.com/facebookincubator/gazebo][gazebo]].
 
-* tenex                                                                :rust:
-:PROPERTIES:
-:ID: 0480aced-777f-4f30-ae05-189500fb6903
-:CATEGORY: lib
-:END:
-+ what ← A Rust HTTP Client library
-  - ergonomic wrappers for foreign APIs
-  - features ← {google, AWS, discord, openAI, ipapi, NWS}
-+ why ← isolation of vendor-specific network calls
-  - apps ←{
-    - cloud management tools (google_drive, gmail, EC2, discord_bots)
-    - basic API requests (IP_info, weather_forecast[US only])
-    - async task pools (cross_API_chaining, chatbots_with_triggers, deployment_pipelines)
-    - FFI (WASM/Python/C)
-** Features
-:PROPERTIES:
-:ID:       81958264-5117-4120-9be7-5493c5ae14b8
-:END:
-- Clients
-   - [X] NWS (US Weather)
-   - [X] ipapi (public IP lookup)
-   - [ ] openai (beta API)
-   - [ ] Google Cloud
-   - [ ] AWS
-   - [X] SMTPS (smtp.gmail.com)
-- [ ] Authentication
-   - [ ] JWT
-   - [ ] OAuth
-
 * rlib                                                                 :rust:
 :PROPERTIES:
 :ID: 7e0d54ee-d3f7-468a-b0cf-664bba4df675
@@ -406,7 +622,7 @@ other crates Facebook has open-sourced such as [[https://github.com/facebookincu
 + how ⇐ a common interface for low-level modules
 + status ⇐ EXPERIMENTAL
 + [[src:rlib][src]] ⇐
-+ [[https://docs.rwest.io/rlib/doc][docs]] ⇐
++ [[https://docs.rwest.io/rlib][docs]] ⇐
 ** Usage
 :PROPERTIES:
 :ID:       89920d82-42dd-402c-8eb7-efdcc71007e5
@@ -512,186 +728,95 @@ library.
   for build scripts and binaries. Includes wrappers for =anyhow=,
   =clap=, =chrono=, and some other useful things.
 
-* babel
+* tenex                                                                :rust:
 :PROPERTIES:
-:ID:       1b363810-26ea-4dae-b689-6e050756bfae
+:ID: 0480aced-777f-4f30-ae05-189500fb6903
 :CATEGORY: lib
 :END:
-+ what ← scripts[sc], snippets[sn], and templates[tm]
-+ how ←
-  - user-defined project templates
-    - located in =tm=
-  - auto-generated snippets and scripts via elisp and
-    org-mode[coming_soon]
-+ status ← IN_PROGRESS
-+ [[src:babel][src]] ⇐ 
++ what -> A Rust HTTP Client library
+  - ergonomic wrappers for foreign APIs
+  - features -> {google, AWS, discord, openAI, ipapi, NWS}
++ why -> isolation of vendor-specific network calls
+  - apps ->
+    - cloud management tools (google_drive, gmail, EC2, discord_bots)
+    - basic API requests (IP_info, weather_forecast[US only])
+    - async task pools (cross_API_chaining, chatbots_with_triggers, deployment_pipelines)
+    - FFI (WASM/Python/C)
++ status -- ALPHA
++ [[src:tenex][src]] <-
++ [[https://docs.rwest.io/tenex][docs]] <-
+** Features
+:PROPERTIES:
+:ID:       81958264-5117-4120-9be7-5493c5ae14b8
+:END:
+- Clients
+   - [X] NWS (US Weather)
+   - [X] ipapi (public IP lookup)
+   - [ ] openai (beta API)
+   - [ ] Google Cloud
+   - [ ] AWS
+   - [X] SMTPS (smtp.gmail.com)
+- [ ] Authentication
+   - [ ] JWT
+   - [ ] OAuth
 
-Re-using code is an important part of software development. We re-use
-code when importing a library module, using macros, writing classes,
-and [[https://stackoverflow.blog/2021/04/19/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/][copying code from Stack Overflow]]. As such, programmers have often
-come up with systems for collecting code that they can re-use in other
-contexts.
+* demo                                                                 :rust:
+:PROPERTIES:
+:ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
+:CATEGORY: bin
+:END:
++ what -- demos and examples relating to [[id:7e0d54ee-d3f7-468a-b0cf-664bba4df675][rlib]] and [[id:0480aced-777f-4f30-ae05-189500fb6903][tenex]].
++ status -- ALPHA
++ [[src:demo][src]] <-
+** Examples
+:PROPERTIES:
+:ID:       04580557-8e76-49b6-ad36-731464a527dd
+:END:
+*** hgsub-sort.rs
+:PROPERTIES:
+:ID:       c313a484-e72b-4f41-b9ab-44c3d69727c1
+:END:
+Sorts a Mercurial Subrepos file (=.hgsub=) alphabetically.
+*** hi.rs
+:PROPERTIES:
+:ID:       01bf673a-4179-43bc-9281-00d01be97bfd
+:END:
+A startup script I run after logging in to my desktop. It does a few things:
+- print my public IP
+- print a weather report
+- print list of connected USB devices
+- build a tmux session and attach to it (Unix only + =tmux=)
+- configure desktop displays with xrandr (Linux only + =x11=)
+- spawn some desktop widgets (Linux only + =conky=)
+- set my desktop background (Linux only + =fehbg=)
 
-=babel= is one of these systems. It is highly integrated with [[id:205131fc-ff48-4e0b-a3e8-ab52d5b6ca19][shed]] and
-[[id:903f8087-e0af-48f2-a5a6-f8d7f080464a][GNU Emacs]] which are used to modify, organize, and implement our
-collections.
+Conditional compilation flags are used - so this program will only
+print IP, weather, and USB devices on Windows.
 
-Collections are described by three categories:
-- sn :: common domain-specific code snippets
-- sc :: generalized scripts in a variety of languages
-- tm :: project templates
+*** wg-keygen.rs
+:PROPERTIES:
+:ID:       0cfaf940-b3d9-4566-bbbf-8c19ea556d14
+:END:
 
-Each category provides its own methods of interaction available to the
-user for different types of meta-programming activities. There are
-also high-level interfaces for composing ephemerial hacking sessions
-and configuration.
-
-This project is an extension of the [[https://orgmode.org/manual/Library-of-Babel.html][Library of Babel]] - which allows
-you to define blocks of code in an org file, and call them
-remotely. =babel= is in fact just this - a collection of code blocks
-in an org file. Emacs was previously distributed with an initial
-collection; [[https://git.sr.ht/~bzg/worg/tree/master/item/library-of-babel.org][library-of-babel.org]]. This is no longer the case, but the
-powerful functionality of =org-babel= is still there, in all its
-glory.
-
-The goal of =babel= however is not just to build collections, but to
-provide APIs for them. As such a large focus of this project will be
-on exporting and parsing collections built in Emacs so that they can
-be used by other processes. Our intention is to mimick the powerful
-meta-programming capabilities of =org-babel= (specifically, the
-ability to mix and match functions /from any language/) in a
-user-defined runtime.
-
-** Weaving and Tangling
+*** chatter
 :PROPERTIES:
-:ID:       b297c4d5-9d42-4618-9ab6-e8134d7587a0
+:ID:       d61ebbcc-5154-4616-8c37-fbf836493030
 :END:
-[[cdn:img/literate_c.jpg]]
-
-The OG Library of Babel (=LOB=) is grounded in the principles of
-[[id:a001a57c-f1f6-4c52-af3e-cb67a145ea08][literate programming]].
-
-** Dependencies
-:PROPERTIES:
-:ID:       b3146122-3109-45ce-b155-97d52701a0ca
-:END:
-- *Emacs 28* \\
-  The editor integration doesn't depend on any external packages
-  outside of vanilla Emacs. The following built-in packages are used
-  to provide functionality:
-  - org.el
-  - ob.el
-  - skel.el
-  - autoinsert.el
-  - abbrev.el
-  All of the above features should be available in the default Emacs
-  distribution for your OS. 
-- *GNU Make* \\
-  =optional=
-  
-* config
-:PROPERTIES:
-:ID:       9d7999d3-b66e-4ea2-8586-2ef9c27e8f4b
-:END:
-** home
-:PROPERTIES:
-:ID:       ce071cdb-15e2-4fa6-ab06-f96ef88df22a
-:END:
-Unix system user configuration. Similar in spirit to =etc/skel=. This
-doesn't do much right now, but will serve as a template for
-bootstrapping new users with sensible defaults.
-** hgweb
-:PROPERTIES:
-:ID:       f6e3e514-7bec-496c-9d36-3af7d13c0462
-:END:
-The files in this project can be used to bootstrap a Mercurial public
-server configuration. The theme is a bit messy and will be remedied
-some time in the future, likely following styles similiar to [[src:rwest_io][rwest_io]]
-(currently BulmaCSS-based).
-** etc
-:PROPERTIES:
-:ID:       f0a4ee3f-2763-4c21-8b78-53073cfdfde4
-:END:
-Unix system configuration files.
-** emacs
-:PROPERTIES:
-:ID:       903f8087-e0af-48f2-a5a6-f8d7f080464a
-:END:
-+ what ⇐ Configuration for the superior editor.
-+ version ⇐ 2.1
-+ [[src:config/emacs][src]] ⇐
-*** Abstract
-:PROPERTIES:
-:ID:       937b83dd-233b-44cb-9a0b-d5536f7d9db3
-:END:
-I've been using Emacs since 2016 as my primary editor. I started with
-Spacemacs, used Doom for a while, then started rolling my own
-configurations. Configuring the Emacs editor requires learning the
-Emacs language - emacs-lisp. It is a dialect of Common Lisp which can
-be a bit tricky to adapt to for non-Lisp programmers, but it is built
-specifically for Emacs.
-
-This meta covers my Emacs modules, configurations, scripts, and other
-code written in emacs-lisp. I have a main configuration which is
-thousands of lines, but lately I've been experimenting with running
-multiple smaller isolated emacs servers, with their own unique
-configs.
-*** config.org
-:PROPERTIES:
-:ID:       6782d0a9-1915-4b3e-85fb-3dd5e7ec917e
-:END:
-The (old) main configuration file. A lot of this is getting moved to
-our =notes=. The resulting files will be refactored. Despite being
-messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916][Screenshots]]).
-*** Screenshots
-:PROPERTIES:
-:ID:       005d2a6e-d34f-45ee-a169-f26fc264c916
-:END:
-  - themes \\
-    #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/abyss-theme-emacs.png][https://cdn.rwest.io/img/abyss-theme-emacs.png]]
-    #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/sanityinc-theme-emacs.png][https://cdn.rwest.io/img/sanityinc-theme-emacs.png]]
-    #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/wheatgrass-theme-emacs.png][https://cdn.rwest.io/img/wheatgrass-theme-emacs.png]]
-    #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/leuven-theme-emacs.png][https://cdn.rwest.io/img/leuven-theme-emacs.png]]
-  - org-mode \\
-    #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/olivetti-emacs.png][https://cdn.rwest.io/img/olivetti-emacs.png]]
-  - programming \\
-    #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/rust-development-emacs.png][https://cdn.rwest.io/img/rust-development-emacs.png]]
-    #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/rust-tests-emacs.png][https://cdn.rwest.io/img/rust-tests-emacs.png]]
-  - email \\
-    #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/email-emacs.png][https://cdn.rwest.io/img/email-emacs.png]]
-  - eww \\
-    The Emacs Web Wowser
-    #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/eww-emacs.png][https://cdn.rwest.io/img/eww-emacs.png]]
-** nix
-:PROPERTIES:
-:ID:       e2f62a1e-8f54-4bf6-ab88-86872e49f71d
-:END:
-Poorman's distributed =nix= config has fallen into disrepair, but I
-keep it around for old-time's sake. It might come in handy in the
-future, depending on how the Nix ecosystem progresses.
+OpenAI API examples (NOTE: requires an OpenAI beta access key)
 
 * contrib
 :PROPERTIES:
 :ID:       23172369-1d5e-425c-8ffb-78a152c28670
 :END:
-Third-party code and dependencies
-
++ what -- Third-party code and dependencies with mirrored source trees
++ why -- isolation of external dependencies
++ [[src:contrib][src]]
 * crater
 :PROPERTIES:
 :ID:       39a1d49f-b477-4e19-8b54-d223168c5703
 :END:
-This is a private crate registry for the Rust programming
-language.
-
++ what -- a private crate registry for the Rust programming language.
++ [[src:crater][src]]
 The [[https://crates.io][crates.io]] package registry provides a number of excellent crates,
 integrates well with the =cargo= development tool, and should be
 preferred in all cases. I use =crater= when I need to:
@@ -732,3 +857,16 @@ the record button. It's a good time.
 - [[https://cdn.rwest.io/media/video/shader_example.mp4][Main Thing (Remix) shader demo]]
   GLSL shader in Max/MSP + House Music
 
+** computer_music
+:PROPERTIES:
+:ID:       de3060ce-5d70-486e-bd54-caf6be79f034
+:END:
+- I'm slowly preparing some tools for music composition, now that the
+  RustAudio ecosystem is approaching maturity.
+- cool things are on their way, and I'm excited to be getting back
+  into the creative flow.
+- possibilities:
+  - MIDI server for analog hardware
+  - OSC server for Max/MSP, PureData, SuperCollider integrations
+  - Multi-track arrangement, recording, and mixing
+  - sample-level DSP with Oscillators, Effects, and Synth Engines
