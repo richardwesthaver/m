@@ -340,28 +340,37 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 :END:
   - themes \\
     #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/abyss-theme-emacs.png][https://cdn.rwest.io/img/abyss-theme-emacs.png]]
+    #+attr_latex: :width 600
+    [[https://rwest.io/a/img/abyss-theme-emacs.png][https://rwest.io/a/img/abyss-theme-emacs.png]]
     #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/sanityinc-theme-emacs.png][https://cdn.rwest.io/img/sanityinc-theme-emacs.png]]
+    #+attr_latex: :width 600
+    [[https://rwest.io/a/img/sanityinc-theme-emacs.png][https://rwest.io/a/img/sanityinc-theme-emacs.png]]
     #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/wheatgrass-theme-emacs.png][https://cdn.rwest.io/img/wheatgrass-theme-emacs.png]]
+    #+attr_latex: :width 600
+    [[https://rwest.io/a/img/wheatgrass-theme-emacs.png][https://rwest.io/a/img/wheatgrass-theme-emacs.png]]
     #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/leuven-theme-emacs.png][https://cdn.rwest.io/img/leuven-theme-emacs.png]]
+    #+attr_latex: :width 600
+    [[https://rwest.io/a/img/leuven-theme-emacs.png][https://rwest.io/a/img/leuven-theme-emacs.png]]
   - org-mode \\
     #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/olivetti-emacs.png][https://cdn.rwest.io/img/olivetti-emacs.png]]
+    #+attr_latex: :width 600
+    [[https://rwest.io/a/img/olivetti-emacs.png][https://rwest.io/a/img/olivetti-emacs.png]]
   - programming \\
     #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/rust-development-emacs.png][https://cdn.rwest.io/img/rust-development-emacs.png]]
+    #+attr_latex: :width 600
+    [[https://rwest.io/a/img/rust-development-emacs.png][https://rwest.io/a/img/rust-development-emacs.png]]
     #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/rust-tests-emacs.png][https://cdn.rwest.io/img/rust-tests-emacs.png]]
+    #+attr_latex: :width 600
+    [[https://rwest.io/a/img/rust-tests-emacs.png][https://rwest.io/a/img/rust-tests-emacs.png]]
   - email \\
     #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/email-emacs.png][https://cdn.rwest.io/img/email-emacs.png]]
+    #+attr_latex: :width 600
+    [[https://rwest.io/a/img/email-emacs.png][https://rwest.io/a/img/email-emacs.png]]
   - eww \\
     The Emacs Web Wowser
     #+attr_html: :width 600
-    [[https://cdn.rwest.io/img/eww-emacs.png][https://cdn.rwest.io/img/eww-emacs.png]]
+    #+attr_latex: :width 600
+    [[https://rwest.io/a/img/eww-emacs.png][https://rwest.io/a/img/eww-emacs.png]]
 ** mail
 :PROPERTIES:
 :ID:       f3d16b98-d848-46a4-a7a6-fc6014ebef76
@@ -420,11 +429,34 @@ future, depending on how the Nix ecosystem progresses.
 :ID: 205131fc-ff48-4e0b-a3e8-ab52d5b6ca19
 :CATEGORY: bin
 :END:
-multi-development tool
++ what -- An opinionated, CLI-based IDE
++ why -> escape the Cloud
+  - It is clear that the future of organized web development is
+    embedded in the Cloud.
+    - Github, AWS, Google Cloud, Azure.. are all excellent
+      tools.
+    - These services become a core part of your deployment pipeline,
+      many of them are quite complex. The features you use are likely
+      to be based on a subscription (monthly/yearly fee),
+      pay-as-you-go model (/Gb, /Hr), or even through a third-party
+      extension (/gasp/).
+    - These factors lead to a new level of meta-programming in which
+      you create hacks to support your workflow, reduce costs, and
+      integrate with your internal infrastructure. This is the 10th
+      circle of Hell in which engineers and network specialists need
+      to Read The Docs and become subject matter experts themselves.
+  - Is there a better way?
+    - For conventional orgs, probably not.
+    - For the one-man army or isolated tribe of hackers.. perhaps.
+      - Build it yourself!
+      - Own your data.
+      - Develop in distributed silos or 'labs'.
+      - Self-host services.
 + status -- ALPHA
 + version -- 0.0.1
 + [[src:shed][src]] <-
 + [[https://docs.rwest.io/shed][docs]] <-
+
 ** Overview
 :PROPERTIES:
 :ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0
@@ -513,15 +545,24 @@ custom-tailored workspace.
     - Wireguard, SSH, TLS, plaintext
   - isolated access to OAuth2 and JWT authenticated API services
     - Google, AWS, Discord, Github
+** Installation
+:PROPERTIES:
+:ID:       803d215d-18da-499b-a2fd-01e15a152e13
+:END:
 ** Usage
 :PROPERTIES:
 :ID:       ecb7c923-6329-4e13-af72-84482bdbcb1e
 :END:
-Once the binary is installed run =shed init= to bootstrap a
-=Config= via CLI prompts or download one remotely. A user
-configuration file needs to be available and accessible by the current
-user. The default config path is determined by the ~$SHED_CFG~
-environment variable or =./cfg.ron= as a fallback.
+Once the binary is installed run =shed init -p= to bootstrap a
+=Config= via prompts. The default config path is determined by the
+~$SHED_CFG~ environment variable or ~$HOME/.config/shed.cfg~ by
+default.
+
+Some commands run just fine without writing a config to disk - A
+default configuration is supplied when =shed.cfg= can't be
+found. Other commands may panic in the event that a system or internal
+path dependency is missing.
+
 *** Configuration
 :PROPERTIES:
 :ID:       0fa1c99b-6452-4b60-be05-6801803600cf
@@ -599,18 +640,6 @@ SUBCOMMANDS:
     unpack      unpack .z or .tz files
     x           do things with runtimes
 #+end_example
-
-** Footnotes
-:PROPERTIES:
-:ID:       eabd06fd-762c-43ef-b8bd-a4d3683ea1c4
-:END:
-
-[fn:1]  =shed= is not based on a single concrete type like a
-=package=, and fully encompasses the =lab= project management tool
-initially introduced.
-
-[fn:2] =rlib= on the other hand, is very similar to =rust-shed= and
-other crates Facebook has open-sourced such as [[https://github.com/facebookincubator/gazebo][gazebo]].
 
 * rlib                                                                 :rust:
 :PROPERTIES:
@@ -792,6 +821,9 @@ A startup script I run after logging in to my desktop. It does a few things:
 
 Conditional compilation flags are used - so this program will only
 print IP, weather, and USB devices on Windows.
+#+attr_html: :width 600
+#+attr_latex: :width 600
+[[https://rwest.io/a/img/hi-windows-demo.png][https://rwest.io/a/img/hi-windows-demo.png]]
 
 *** wg-keygen.rs
 :PROPERTIES:

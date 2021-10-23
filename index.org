@@ -9,10 +9,11 @@
 
 - [[file:n.org][n]] -- notes
 - [[file:m.org][m]] -- metas
-- [[rw:x/pdf/cv.pdf][cv]] -- CV
+- [[rw:x/pdf/cv.pdf][cv]] -- CV \\
 
 - [[src:][hg]] -- code
-- [[rw:x][x]] -- docs
+- [[https://docs.rwest.io][docs]] -- Rust docs
+- [[rw:x][x]] -- exports
 - [[rw:y][y]] -- distribution
 - [[rw:z][z]] -- data
 - [[rw:a][a]] -- attachments
