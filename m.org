@@ -7,13 +7,18 @@
 :PROPERTIES:
 :ID:       60bed781-3a70-4435-9df0-097b799539e4
 :END:
-+ what -- docs
-+ why -- knowledge is power
++ what -> 'meta' content
+  - high-level project docs
+    - intro, examples, resources
++ why -- good practice, helps me and strangers alike understand why
+  things are, as they are.
 + status -- ALPHA
++ license -- wtfplv2.1
 + [[src:meta][src]] <-
 
-This project contains documents I've written in plain-text which are
-used to generate my [[https://rwest.io][website]] and readmes.
+This project contains documents I've written in plain-text used to
+generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/][hg.rwest.io]].
+
 - =m.org= contains formal docs for projects
 - =n.org= contains informal notes
 - =cv.org= is my resume (hire me!)
@@ -30,17 +35,24 @@ All docs are fully compliant with org, with the addition of some
 special *elements*:
 
 - props ::
-  All nodes have an optional number of "props" which are denoted as a
-  list item that uses =+= followed by the prop symbol and an
-  `edge` (=--=, =<-=, =->=). These can appear anywhere in the =section= element of a node
-  (not just immediately following properties drawer). They're like a
-  shorthand for custom properties.
+  - All nodes have an optional number of =props= which are simply list
+    items starting with =+= followed by the =prop-key= an assignment
+    operator (=--=, =<-=, =->=), and a =prop-val=.
+    #+begin_example
+    # [+] [KEY] [OP] [VAL]
+    + what -- an example
+    #+end_example
+  - the =prop-val= type is determined by the operator. It can be a
+    string =--=, list =->=, or empty =<-=.
+  - =props= can appear anywhere in the =section= element of a node
+    (not just immediately following properties drawer). With the
+    condition that they can't be embedded (props in =prop-val=).
 - drawers ::
   Org-mode has a feature called drawers, which are collapsible
   sections of text starting with =:DRAWER_NAME:= and ending with
   =:END:=. The most common one seen in our docs is the PROPERTIES
   drawer, but there are a few special ones we use, especially in
-  =n.org=: =note=, =opinion=, and =boris=.
+  =n.org=: =note=, =opinion=, =props= =boris=.
 - links ::
   In addition to the default links, we use a few custom links, most
   notably =yt= which embeds a video from youtube.
