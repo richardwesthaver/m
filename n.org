@@ -2322,6 +2322,12 @@ Lisp dialects are Racket, Common Lisp, Scheme, and Clojure.
 :ID:       63cb1352-c79d-41e1-bb10-c05931a3ab6f
 :END:
 - [[https://common-lisp.net/][Welcome to Common-Lisp.net!]]
+**** ALGOL                                                         :algol:
+:PROPERTIES:
+:ID:       bda7cf4b-0c06-4701-b8b9-79de1688b1e6
+:END:
+- [[http://www.math.bas.bg/bantchev/place/algol68.html][ALGOL 68]]
+- an old imperative language
 **** Javascript                                                       :js:
 :PROPERTIES:
 :ID: 57eb884b-b22f-47f2-b6cb-e06ff59adb00
