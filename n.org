@@ -2614,15 +2614,15 @@ C AREA OF THE TRIANGLE
    - lists :: ∾≍⌽↕¨´
       - companies made with 1d (K) by Arthur Whitney : [[https://en.wikipedia.org/wiki/Kx_Systems][Kx Systems]] , [[https://shakti.com/][shakti]]
       - a /string/ is a list of characters
-        #+begin_src bqn
+        #+begin_src text
  "Text!" 
         #+end_src
       - list notation uses angle brackets, ',', newline, and '⋄' are interchangeable separators
-        #+begin_src bqn
+        #+begin_src text
  ⟨ π, ∘, "element" ⋄ ⟨'l',1,5,'t'⟩ ⟩
         #+end_src
       - strands are an alternative notation for lists: '‿'
-        #+begin_src bqn
+        #+begin_src text
  >> 2 × ⟨0‿2 ⋄ 1‿3‿5⟩
  ⟨ ⟨ 0 4 ⟩ ⟨ 2 6 10 ⟩ ⟩
 
@@ -2632,7 +2632,7 @@ C AREA OF THE TRIANGLE
       - '≍' is the function for making one or two atom arguments into a
         list. Solo in the one-arg case, couple in the two.
       - '∾' is Join To (inverted lazy S), which concatenates lists
-        #+begin_src bqn
+        #+begin_src text
 >> ⟨1,2,3⟩ ∾ "abc"
 ⟨ 1 2 3 'a' 'b' 'c' ⟩
 
@@ -2643,7 +2643,7 @@ C AREA OF THE TRIANGLE
 "plurals"
         #+end_src
       - '⌽' is Reverse - puts a list back to front
-        #+begin_src bqn
+        #+begin_src text
 >> ⌽ "drawer"
 "reward"
         #+end_src
@@ -2678,7 +2678,7 @@ C AREA OF THE TRIANGLE
       - booleans are represented by the natural numbers 0 and 1, no
         built-in primitives for this.  the concept and power behind
         this is seen in how counts and occurences work -
-        #+begin_src bqn
+        #+begin_src text
  >> 'e' = "George Boole"
  ⟨ 0 1 0 0 0 1 0 0 0 0 0 1 ⟩
 
@@ -2696,7 +2696,7 @@ C AREA OF THE TRIANGLE
       - introduced the Not function - holy crap!
         ¬x == 1-x
         gives us multiple ways to write some interesting things
-        #+begin_src bqn
+        #+begin_src text
 >> ¬⊸× 0.5
 0.25
         #+end_src
@@ -2705,16 +2705,16 @@ C AREA OF THE TRIANGLE
         specifically /constant/ functions that just return themselves
       - consider the following improvement to a previous example for
         use of number as const function using Range
-        #+begin_src bqn
+        #+begin_src text
 >> ↕⊸÷⟜(-⟜1) 8
 ⟨ 0 0.14285714285714285 0.2857142857142857 0.42857142857142855 0.5714285714285714 0.7142857142857143 0.8571428571428571 1 ⟩
         #+end_src
         or with a train, simply
-        #+begin_src bqn
+        #+begin_src text
 (↕÷-⟜1) 8
         #+end_src
         our new base-decode function:
-        #+begin_src bqn
+        #+begin_src text
 (@+ ·+⟜(2⊸×)´∘⌽¨ -⟜'0') "01000010"‿"01010001"‿"01001110"
         #+end_src
       - using a data value as the left operand of Before or the right
@@ -2730,7 +2730,7 @@ C AREA OF THE TRIANGLE
      find itself passed through one bond to another, ever
      tethered. It's a task to be approached only with respect.
      #+end_quote
-     #+begin_src bqn
+     #+begin_src text
 >> hey ← "Hi there"
 
 >> hey ∾ ", World!"
