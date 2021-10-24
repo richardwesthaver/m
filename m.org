@@ -18,7 +18,7 @@ used to generate my [[https://rwest.io][website]] and readmes.
 - =n.org= contains informal notes
 - =cv.org= is my resume (hire me!)
 
-** Syntax Elements
+** Elements
 :PROPERTIES:
 :ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
 :END:
@@ -27,7 +27,7 @@ is covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail an
 structure can be found in the [[info:emacs#Top][Emacs manual]].
 
 All docs are fully compliant with org, with the addition of some
-special elements:
+special *elements*:
 
 - props ::
   All nodes have an optional number of "props" which are denoted as a
@@ -44,18 +44,16 @@ special elements:
 - links ::
   In addition to the default links, we use a few custom links, most
   notably =yt= which embeds a video from youtube.
-
+  :note:
   This is not good for users, since the embedded youtube links include
   tracking and other nasty bits from Google. In the future these links
   will be migrated to =cdn= to avoid that, increasing user privacy and
   greatly improving page load time.
-
-  =cdn=, =src=, and =rw= links all point to some service hosted on
-  =rwest.io=.
-
-** Exporting
+  :end:
+  =cdn=, =src=, and =rw= links all point to =rwest.io=.
+** Build
 :PROPERTIES:
-:ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
+:ID:       d0e37437-8959-4692-9b7f-9245073042e2
 :END:
 - Emacs has many backends for [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an
   emacs-lisp script is all that is needed to generate conventional
@@ -72,14 +70,12 @@ special elements:
 - New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
   [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
   formats.
-** Scripts                                                              :sc:
+*** makefile
 :PROPERTIES:
 :ID:       c27a67be-7b8b-47c5-9578-5acc71e27c53
 :header-args: :results silent :eval no-export
 :END:
-
-- *makefile* \\
-  #+begin_src makefile :tangle makefile :shebang "#!/usr/bin/make -f -j8"
+#+begin_src makefile :tangle makefile :shebang "#!/usr/bin/make -f -j8"
 PUB := ./pub.el
 OX_SETUP := ./ox.setup
 
@@ -103,10 +99,12 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
 	ssh $(HD) rm -rf dmz/w/*.html; scp -r $@/html/*.html $(HD):dmz/w/;\
 	shed pack $@ o/x.tz;scp -r $@ $(HD):dmz/w
   #+end_src
-
-- *pub.el* \\
-  #+name: meta_publish
-  #+begin_src elisp :tangle pub.el :shebang "#!/usr/local/bin/emacs --script"
+*** pub.el
+:PROPERTIES:
+:ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
+:END:
+#+name: meta_publish
+#+begin_src elisp :tangle pub.el :shebang "#!/usr/local/bin/emacs --script" :var ox_meta="html" :results silent
 (require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
 (require 'ox-publish)
 (require 'ox-latex)
@@ -202,21 +200,14 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
 
 (org-publish-remove-all-timestamps)
 (org-refile-cache-clear)
-(org-publish "all" t)
-
+(org-publish ox_meta t t)
   #+end_src
-
 * babel
 :PROPERTIES:
 :ID:       1b363810-26ea-4dae-b689-6e050756bfae
 :CATEGORY: lib
 :END:
 + what ← scripts[sc], snippets[sn], and templates[tm]
-+ how ←
-  - user-defined project templates
-    - located in =tm=
-  - auto-generated snippets and scripts via elisp and
-    org-mode[coming_soon]
 + status ← IN_PROGRESS
 + [[src:babel][src]] ⇐ 
 
@@ -250,7 +241,7 @@ glory.
 
 The goal of =babel= however is not just to build collections, but to
 provide APIs for them. As such a large focus of this project will be
-on exporting and parsing collections built in Emacs so that they can
+on exporting (i.e. [[id:b297c4d5-9d42-4618-9ab6-e8134d7587a0][Weaving and Tangling]]) and parsing collections built in Emacs so that they can
 be used by other processes. Our intention is to mimick the powerful
 meta-programming capabilities of =org-babel= (specifically, the
 ability to mix and match functions /from any language/) in a
@@ -262,8 +253,23 @@ user-defined runtime.
 :END:
 [[cdn:img/literate_c.jpg]]
 
-The OG Library of Babel (=LOB=) is grounded in the principles of
-[[id:a001a57c-f1f6-4c52-af3e-cb67a145ea08][literate programming]].
+Weaving and Tangling are two types of operations that are performed on
+some raw source, which should include both prose and code. The raw
+source is =org= in our case, but the same applies elsewhere.
+
+- *Weaving* is associated with the /publishing/ and /exporting/
+  pipeline for the source, which is meant to enhance the
+  human-readable aspects.
+
+- *Tangling* is associated with the /compilation/ and /build/ pipeline
+  for source. It creates machine-friendly artifacts which can be
+  distributed for use by tools and services.
+
+The framework itself is quite 'Emacs-y' in nature. It follows the same
+self-documenting philosophy. Other examples that come to mind are
+Jupyter notebooks and to a lesser extent Rust docs. The concept can be
+applied widely but is typically reserved for the domains of
+Academia/Research.
 
 ** Dependencies
 :PROPERTIES:
@@ -284,6 +290,10 @@ The OG Library of Babel (=LOB=) is grounded in the principles of
 - *GNU Make* \\
   =optional=
   
+** Example
+:PROPERTIES:
+:ID:       d46704c3-829b-4f46-b487-915ed5304638
+:END:
 * cfg
 :PROPERTIES:
 :ID:       9d7999d3-b66e-4ea2-8586-2ef9c27e8f4b
