@@ -1,14 +1,11 @@
 #!/usr/local/bin/emacs --script
-(require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
 (require 'ox-publish)
-(require 'ox-latex)
-(require 'ox-man)
-(require 'ox-html)
-(require 'cl-lib)
-(require 'ox-ascii)
+(require 'org-refile)
 (require 'org-id)
-
-(setq org-html-head-include-default-style nil)
+(let ((default-directory  "~/shed/src/contrib/el/"))
+  (normal-top-level-add-subdirs-to-load-path))
+(require 'hyde "~/shed/src/cfg/emacs/lisp/hyde.el")
+(require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
 
 (setq org-publish-project-alist
       '(("org-html"
@@ -19,6 +16,7 @@
          :with-date (current-time)
 	 :publishing-directory "~/shed/src/meta/o/x/html"
 	 :publishing-function org-html-publish-to-html
+	 :htmlize-source t
 	 :auto-sitemap nil)
         ("org-md"
          :author "ellis"
@@ -92,6 +90,4 @@
      (latex (format "\href{%s}{%s}"
                     path (or desc "video"))))))
 
-(org-publish-remove-all-timestamps)
-(org-refile-cache-clear)
-(org-publish "all" t)
+(org-publish "all" t nil)

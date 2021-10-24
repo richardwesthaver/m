@@ -12,7 +12,7 @@ MD = mkdir -p $(@)
 o:o/x;shed pack $< $<.tz;
 	$(foreach p,$(P), shed pack $</${p} $@/${p}.tz;)
 
-w:o;ssh $(HD) rm -rf dmz/w/*.html;\
+w:;ssh $(HD) rm -rf dmz/w/*.html;\
 	scp -r $</x/html/*.html $(HD):dmz/w;\
 	scp -r $</*.tz $(HD):dmz/w/x
 
