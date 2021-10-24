@@ -3479,6 +3479,29 @@ A lightweight and flexible Linux distribution that tries to Keep It
 Simple.
 #+end_quote
 
+******** Prepping ArchISO from MacOS
+********* GUI
+The first step is to download/install [[https://github.com/balena-io/etcher][balenaEtcher]] - a simple
+typescript-based, cross-platform app for flashing OS images to
+SD/USB drives.  The process from there is very intuitive - just
+start the app, select your ISO image and target, click 'Flash'.
+(Don't forget to eject the newly flashed drive :) )
+********* CLI
+#+begin_src sh
+# convert our source iso to img format
+hdiutil convert -format UDRW -o ~/Downloads/target.img ~/Downloads/source.iso
+# remove the .dmg extension, because Apple
+mv ~/Downloads/target.img.dmg ~/Downloads/target.img
+# check available disks
+diskutil list
+# unmount target disk - by identifier (usually something like disk0)
+diskutil unmountDisk /dev/diskN
+# flash img to disk - use rdisk on macos: https://superuser.com/questions/631592/why-is-dev-rdisk-about-20-times-faster-than-dev-disk-in-mac-os-x
+sudo dd if=~/Downloads/target.img of=/dev/rdiskN bs=1m
+# eject newly flashed drive
+diskutil eject /dev/diskN
+#+end_src
+
 ******** Installation Notes
 :PROPERTIES:
 :ID:       b98b89bf-1bb7-46d6-b27b-9990a0efc647
