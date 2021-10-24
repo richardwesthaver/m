@@ -1,10 +1,7 @@
 #!/usr/bin/make -f -j8
-PUB := ./pub.el
-OX_SETUP := ./ox.setup
-
+OX_SETUP ?= ./ox.setup
 HD ?= dmz
 P ?= html md txt pdf org
-
 MD = mkdir -p $(@)
 
 .PHONY: c

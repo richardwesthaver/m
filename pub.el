@@ -4,6 +4,7 @@
 (require 'org-id)
 (let ((default-directory  "~/shed/src/contrib/el/"))
   (normal-top-level-add-subdirs-to-load-path))
+(require 'default "~/shed/src/cfg/emacs/lisp/default.el")
 (require 'hyde "~/shed/src/cfg/emacs/lisp/hyde.el")
 (require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
 
