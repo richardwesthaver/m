@@ -2,18 +2,19 @@
 #+SETUPFILE: ox.setup
 #+begin_center
 + =who= -- Richard Westhaver <[[mailto:ellis@rwest.io][ellis@rwest.io]]>
-+ =what= -- a humble hacker homepage
++ =what= -- a humble hacker
 + =where= -- 2011 lenovo laptop -- USA
 + =why= -- sharing is caring
 #+end_center
-
+\\
 - [[file:n.org][n]] -- notes
 - [[file:m.org][m]] -- metas
-- [[rw:x/pdf/cv.pdf][cv]] -- CV \\
-
+- [[rw:x/pdf/cv.pdf][cv]] -- CV
+\\
+- [[rw:a][a]] -- attachments
+- [[rw:x][x]] -- dist
+- [[rw:y][y]] -- pkgs
+- [[rw:z][z]] -- data
+\\
 - [[src:][hg]] -- code
 - [[https://docs.rwest.io][docs]] -- Rust docs
-- [[rw:x][x]] -- exports
-- [[rw:y][y]] -- distribution
-- [[rw:z][z]] -- data
-- [[rw:a][a]] -- attachments

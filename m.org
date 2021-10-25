@@ -6,6 +6,7 @@
 * meta
 :PROPERTIES:
 :ID:       60bed781-3a70-4435-9df0-097b799539e4
+:CUSTOM_ID: meta
 :END:
 + what -> 'meta' content
   - high-level project docs
@@ -26,6 +27,7 @@ generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/
 ** Elements
 :PROPERTIES:
 :ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
+:CUSTOM_ID: elements
 :END:
 The source files assume some familiarity with org syntax. Org syntax
 is covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document
@@ -34,7 +36,7 @@ structure can be found in the [[info:emacs#Top][Emacs manual]].
 All docs are fully compliant with org, with the addition of some
 special *elements*:
 
-- props ::
+- props :: \\
   - All nodes have an optional number of =props= which are simply list
     items starting with =+= followed by the =prop-key= an assignment
     operator (=--=, =<-=, =->=), and a =prop-val=.
@@ -47,7 +49,7 @@ special *elements*:
   - =props= can appear anywhere in the =section= element of a node
     (not just immediately following properties drawer). With the
     condition that they can't be embedded (props in =prop-val=).
-- drawers ::
+- drawers :: \\
   Org-mode has a feature called drawers, which are collapsible
   sections of text starting with =:DRAWER_NAME:= and ending with
   =:END:=. The most common one seen in our docs is the PROPERTIES
@@ -66,6 +68,7 @@ special *elements*:
 ** Build
 :PROPERTIES:
 :ID:       d0e37437-8959-4692-9b7f-9245073042e2
+:CUSTOM_ID: build
 :END:
 - Emacs has many backends for [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an
   emacs-lisp script is all that is needed to generate conventional
@@ -86,6 +89,7 @@ special *elements*:
 :PROPERTIES:
 :ID:       c27a67be-7b8b-47c5-9578-5acc71e27c53
 :header-args: :results silent :eval no-export
+:CUSTOM_ID: makefile
 :END:
 #+begin_src makefile :tangle makefile :shebang "#!/usr/bin/make -f -j8"
 PUB := ./pub.el
@@ -114,6 +118,7 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
 *** pub.el
 :PROPERTIES:
 :ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
+:CUSTOM_ID: pub-el
 :END:
 #+name: meta_publish
 #+begin_src elisp :tangle pub.el :shebang "#!/usr/local/bin/emacs --script" :var ox_meta="html" :results silent
@@ -218,6 +223,7 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
 :PROPERTIES:
 :ID:       1b363810-26ea-4dae-b689-6e050756bfae
 :CATEGORY: lib
+:CUSTOM_ID: babel
 :END:
 + what ← scripts[sc], snippets[sn], and templates[tm]
 + status ← IN_PROGRESS
@@ -229,8 +235,8 @@ and [[https://stackoverflow.blog/2021/04/19/how-often-do-people-actually-copy-an
 come up with systems for collecting code that they can re-use in other
 contexts.
 
-=babel= is one of these systems. It is highly integrated with [[id:205131fc-ff48-4e0b-a3e8-ab52d5b6ca19][shed]] and
-[[id:903f8087-e0af-48f2-a5a6-f8d7f080464a][GNU Emacs]] which are used to modify, organize, and implement our
+=babel= is one of these systems. It is highly integrated with [[#shed][shed]] and
+[[file:n.org::#gnu-emacs][GNU Emacs]] which are used to modify, organize, and implement our
 collections.
 
 Collections are described by three categories:
@@ -253,39 +259,60 @@ glory.
 
 The goal of =babel= however is not just to build collections, but to
 provide APIs for them. As such a large focus of this project will be
-on exporting (i.e. [[id:b297c4d5-9d42-4618-9ab6-e8134d7587a0][Weaving and Tangling]]) and parsing collections built in Emacs so that they can
-be used by other processes. Our intention is to mimick the powerful
-meta-programming capabilities of =org-babel= (specifically, the
-ability to mix and match functions /from any language/) in a
-user-defined runtime.
+on exporting (i.e. [[id:b297c4d5-9d42-4618-9ab6-e8134d7587a0][Weaving and Tangling]]) and parsing collections built
+in Emacs so that they can be used by other processes. Our intention is
+to mimick the powerful meta-programming capabilities of =org-babel=
+(specifically, the ability to mix and match functions /from any
+language/).
 
-** Weaving and Tangling
+** Literate Programming
+:PROPERTIES:
+:ID:       b8372c87-ff6a-4d31-baa8-23ad66514d4e
+:CUSTOM_ID: literate-programming
+:END:
+
+Literate programming was first introduced by Donald Knuth in 1984 via
+his documentation and programming system =WEB=. The approach involves
+writing the logic of a program in /natural language/ interspersed with
+snippets, macros, and other source code, from which a compilable
+computer program can be generated.
+
+The concept can be applied widely but is typically reserved for the
+domains of Academia/Research, where it is a popular method of creating
+reproducible research.
+
+Knuth's =WEB= was originally built for Pascal + LaTex *only*, but in
+1989 a new language-agnostic tool called =noweb= was released. This
+model, that is capable of working with multiple programming languages
+and documentation backends, is what we commonly refer to as Literate
+Programming today.
+
+*** Weaving and Tangling
 :PROPERTIES:
 :ID:       b297c4d5-9d42-4618-9ab6-e8134d7587a0
+:CUSTOM_ID: weaving-and-tangling
 :END:
 [[cdn:img/literate_c.jpg]]
 
-Weaving and Tangling are two types of operations that are performed on
+Weaving and Tangling are the core operations that are performed on
 some raw source, which should include both prose and code. The raw
-source is =org= in our case, but the same applies elsewhere.
+source is written in =org= in our case, but the same concepts apply to
+other mediums.
+
+LP tools are used to perform these two operations.
 
 - *Weaving* is associated with the /publishing/ and /exporting/
   pipeline for the source, which is meant to enhance the
   human-readable aspects.
 
-- *Tangling* is associated with the /compilation/ and /build/ pipeline
+- *Tangling* is associated with the /compilation/ nand /build/ pipeline
   for source. It creates machine-friendly artifacts which can be
   distributed for use by tools and services.
-
-The framework itself is quite 'Emacs-y' in nature. It follows the same
-self-documenting philosophy. Other examples that come to mind are
-Jupyter notebooks and to a lesser extent Rust docs. The concept can be
-applied widely but is typically reserved for the domains of
-Academia/Research.
 
 ** Dependencies
 :PROPERTIES:
 :ID:       b3146122-3109-45ce-b155-97d52701a0ca
+:CUSTOM_ID: dependencies
 :END:
 - *Emacs 28* \\
   The editor integration doesn't depend on any external packages
@@ -305,10 +332,12 @@ Academia/Research.
 ** Example
 :PROPERTIES:
 :ID:       d46704c3-829b-4f46-b487-915ed5304638
+:CUSTOM_ID: example
 :END:
 * cfg
 :PROPERTIES:
 :ID:       9d7999d3-b66e-4ea2-8586-2ef9c27e8f4b
+:CUSTOM_ID: cfg
 :END:
 + what -> my config files
   - emacs
@@ -330,12 +359,14 @@ environment via the =shed= development tool.
 ** emacs
 :PROPERTIES:
 :ID:       903f8087-e0af-48f2-a5a6-f8d7f080464a
+:CUSTOM_ID: emacs
 :END:
 + what -- Configuration for the superior editor.
 + version -- 2.1
 *** Abstract
 :PROPERTIES:
 :ID:       937b83dd-233b-44cb-9a0b-d5536f7d9db3
+:CUSTOM_ID: abstract
 :END:
 I've been using Emacs since 2016 as my primary editor. I started with
 Spacemacs, used Doom for a while, then started rolling my own
@@ -352,6 +383,7 @@ configs.
 *** config.org
 :PROPERTIES:
 :ID:       6782d0a9-1915-4b3e-85fb-3dd5e7ec917e
+:CUSTOM_ID: config-org
 :END:
 The (old) main configuration file. A lot of this is getting moved to
 our =notes=. The resulting files will be refactored. Despite being
@@ -359,6 +391,7 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 *** Screenshots
 :PROPERTIES:
 :ID:       005d2a6e-d34f-45ee-a169-f26fc264c916
+:CUSTOM_ID: screenshots
 :END:
   - themes \\
     #+attr_html: :width 600
@@ -396,6 +429,7 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 ** mail
 :PROPERTIES:
 :ID:       f3d16b98-d848-46a4-a7a6-fc6014ebef76
+:CUSTOM_ID: mail
 :END:
 + what -- mail configs
   - notmuch
@@ -403,6 +437,7 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 ** shell
 :PROPERTIES:
 :ID:       217423f6-ab17-457a-a35c-04678d4b71c3
+:CUSTOM_ID: shell
 :END:
 + what -- shell configs
   - bash
@@ -410,17 +445,20 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 ** term
 :PROPERTIES:
 :ID:       4c4a3209-a71c-4f94-9900-c1fd50f9b186
+:CUSTOM_ID: term
 :END:
 + what -- terminal emulator configs
   - kitty
 ** tmux
 :PROPERTIES:
 :ID:       33726d69-2c43-453e-808e-78cfb126dc05
+:CUSTOM_ID: tmux
 :END:
 + what -- tmux config
 ** vc
 :PROPERTIES:
 :ID:       f8ce8509-e360-4d1c-936f-37aae0537684
+:CUSTOM_ID: vc
 :END:
 + what -- Version Control configs
   - mercurial
@@ -428,12 +466,14 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 ** virt
 :PROPERTIES:
 :ID:       c240a030-7e6b-4061-8c13-a5764169eb35
+:CUSTOM_ID: virt
 :END:
 + what -- virtual machine and container configs
   - lxd | lxc
 ** wm
 :PROPERTIES:
 :ID:       3eafb844-4684-48af-ac2b-4660df2c2ab4
+:CUSTOM_ID: wm
 :END:
 + what -- X11 configs
   - 2bwm
@@ -442,6 +482,7 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 ** nix                                                 :deprecated:noexport:
 :PROPERTIES:
 :ID:       e2f62a1e-8f54-4bf6-ab88-86872e49f71d
+:CUSTOM_ID: nix
 :END:
 Poorman's distributed =nix= config has fallen into disrepair, but I
 keep it around for old-time's sake. It might come in handy in the
@@ -450,30 +491,10 @@ future, depending on how the Nix ecosystem progresses.
 :PROPERTIES:
 :ID: 205131fc-ff48-4e0b-a3e8-ab52d5b6ca19
 :CATEGORY: bin
+:CUSTOM_ID: shed
 :END:
-+ what -- An opinionated, CLI-based IDE
-+ why -> escape the Cloud
-  - It is clear that the future of organized web development is
-    embedded in the Cloud.
-    - Github, AWS, Google Cloud, Azure.. are all excellent
-      tools.
-    - These services become a core part of your deployment pipeline,
-      many of them are quite complex. The features you use are likely
-      to be based on a subscription (monthly/yearly fee),
-      pay-as-you-go model (/Gb, /Hr), or even through a third-party
-      extension (/gasp/).
-    - These factors lead to a new level of meta-programming in which
-      you create hacks to support your workflow, reduce costs, and
-      integrate with your internal infrastructure. This is the 10th
-      circle of Hell in which engineers and network specialists need
-      to Read The Docs and become subject matter experts themselves.
-  - Is there a better way?
-    - For conventional orgs, probably not.
-    - For the one-man army or isolated tribe of hackers.. perhaps.
-      - Build it yourself!
-      - Own your data.
-      - Develop in distributed silos or 'labs'.
-      - Self-host services.
++ what -- An opinionated Software Ecosystem
++ why -> 
 + status -- ALPHA
 + version -- 0.0.1
 + [[src:shed][src]] <-
@@ -482,6 +503,7 @@ future, depending on how the Nix ecosystem progresses.
 ** Overview
 :PROPERTIES:
 :ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0
+:CUSTOM_ID: overview
 :END:
 This tool is intended to encapsulate and optimize my full development
 workflow. The idea is that I can install this tool on any development
@@ -491,39 +513,99 @@ custom-tailored workspace.
 ** Roadmap
 :PROPERTIES:
 :ID:       169e6a06-9260-4f12-95de-aeb2afa17fd1
+:CUSTOM_ID: roadmap
 :END:
 *** NEXT Registry
 :PROPERTIES:
 :ID:       b157b0bd-da91-4f0a-925f-39acfed569a7
+:CUSTOM_ID: registry
 :END:
 :LOGBOOK:
 - State "NEXT"       from              [2021-10-23 Sat 03:38]
 :END:
-
+- Domain -> Namespace -> ID
+- [Domain/Namespace]:ID index tables for quick DHT-style lookups of resource
+- Namespaces sharing the same Domain share the same Registry
+- For a similar concept, see [[https://doc.redox-os.org/book/ch04-04-urls.html][RedoxOS URLs]]
 *** HACK Commands
+:PROPERTIES:
+:CUSTOM_ID: commands
+:END:
 :LOGBOOK:
 - State "HACK"       from "TODO"       [2021-10-23 Sat 03:41]
 - State "TODO"       from              [2021-10-23 Sat 03:38]
 :END:
-
+**** TODO clean
+:PROPERTIES:
+:CUSTOM_ID: clean
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2021-10-24 Sun 07:06]
+:END:
+- =shed clean= ::
+  - if CWD is a project directory, perform clean script from config.
+  - elif INPUT is a project name, perform clean script from config.
+  - elif cache !empty clean global cache.
+  - else say 'nothing to clean'.
+- ARGS
+  - =--lab [LAB]= :: clean the specified lab environment
+  - =--project [PROJECT]= :: clean the specified project
+  - =--stash= :: clean the stash
+  - =--store= :: clean the store
+  - =--all= :: clean everything
+**** TODO test
+:PROPERTIES:
+:CUSTOM_ID: test
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2021-10-24 Sun 07:07]
+:END:
+- =shed test= ::
+  - if CWD is project directory, perform test script from config.
+  - elif INPUT is project name, perform test script from config.
+  - else say 'nothing to test'
+- ARGS
+  -  =--all= :: test everything
+**** TODO list
+:PROPERTIES:
+:CUSTOM_ID: list
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2021-10-24 Sun 07:07]
+:END:
+- =shed list= ::
+  - =INPUT= :: projects, labs, stash, store
+  - else list service stats
 *** TODO Krypt
+:PROPERTIES:
+:CUSTOM_ID: krypt
+:END:
 :LOGBOOK:
 - State "TODO"       from              [2021-10-23 Sat 03:38]
 :END:
-
+- 
 *** TODO Babel
+:PROPERTIES:
+:CUSTOM_ID: babel
+:END:
 :LOGBOOK:
 - State "TODO"       from              [2021-10-23 Sat 03:43]
 :END:
 
 *** TODO shed.el
+:PROPERTIES:
+:CUSTOM_ID: shed-el
+:END:
 :LOGBOOK:
 - State "TODO"       from              [2021-10-23 Sat 03:39]
 :END:
-
+- daemon <-> process IPC
+- bindat protocol definitions
+- network daemon messages and packets
 ** Features
 :PROPERTIES:
 :ID:       83a9750a-bb30-4272-b1f3-23d85806cbb8
+:CUSTOM_ID: features
 :END:
 - *Src*
   - Mercurial VCS
@@ -560,7 +642,7 @@ custom-tailored workspace.
 - *Lab*
   - Virtual system management (=lxd= and =qemu=)
     - configurable fs and network sharing for guests
-  - Bootstrap =babel= projects, use local data from =stash= and
+  - Bootstrap projects from =babel=, use local data from =stash= and
     =store=
 - *Krypt*
   - reasonably safe secret storage
@@ -570,10 +652,12 @@ custom-tailored workspace.
 ** Installation
 :PROPERTIES:
 :ID:       803d215d-18da-499b-a2fd-01e15a152e13
+:CUSTOM_ID: installation
 :END:
 ** Usage
 :PROPERTIES:
 :ID:       ecb7c923-6329-4e13-af72-84482bdbcb1e
+:CUSTOM_ID: usage
 :END:
 Once the binary is installed run =shed init -p= to bootstrap a
 =Config= via prompts. The default config path is determined by the
@@ -588,6 +672,7 @@ path dependency is missing.
 *** Configuration
 :PROPERTIES:
 :ID:       0fa1c99b-6452-4b60-be05-6801803600cf
+:CUSTOM_ID: configuration
 :END:
 Global configuration is controlled by the =Config= type (=RON=, =JSON=
 or =bincode= file). The specification is non-exhaustive and can be
@@ -620,6 +705,7 @@ extended by the user.
 *** Commands
 :PROPERTIES:
 :ID:       a0f0f72d-475a-49a1-a21f-5d8a604099fd
+:CUSTOM_ID: commands
 :END:
 #+begin_src shell :exports both :results output replace
 shed --help
@@ -667,16 +753,18 @@ SUBCOMMANDS:
 :PROPERTIES:
 :ID: 7e0d54ee-d3f7-468a-b0cf-664bba4df675
 :CATEGORY: lib
+:CUSTOM_ID: rlib
 :END:
-+ what ⇐ a Rust system library
-+ why ⇐ develop next-gen applications and services
-+ how ⇐ a common interface for low-level modules
-+ status ⇐ EXPERIMENTAL
-+ [[src:rlib][src]] ⇐
-+ [[https://docs.rwest.io/rlib][docs]] ⇐
++ what -- a Rust system library
++ why -- develop next-gen applications and services
++ how -- a common interface for low-level modules
++ status -- EXPERIMENTAL
++ [[src:rlib][src]] <-
++ [[https://docs.rwest.io/rlib][docs]] <-
 ** Usage
 :PROPERTIES:
 :ID:       89920d82-42dd-402c-8eb7-efdcc71007e5
+:CUSTOM_ID: usage
 :END:
 This crate is not (yet) published on crates.io. To get started you'll need
 to clone the [[src:rlib][repo]] and add it as a dependency to your project like so:
@@ -708,6 +796,7 @@ environment.
 ** Crates
 :PROPERTIES:
 :ID:       bb740861-e7b9-4730-bd34-622f7ae53ce8
+:CUSTOM_ID: crates
 :END:
 
 =rlib= is split into separate crates with a single [[https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html][workspace]]
@@ -783,6 +872,7 @@ library.
 :PROPERTIES:
 :ID: 0480aced-777f-4f30-ae05-189500fb6903
 :CATEGORY: lib
+:CUSTOM_ID: tenex
 :END:
 + what -> A Rust HTTP Client library
   - ergonomic wrappers for foreign APIs
@@ -799,6 +889,7 @@ library.
 ** Features
 :PROPERTIES:
 :ID:       81958264-5117-4120-9be7-5493c5ae14b8
+:CUSTOM_ID: features
 :END:
 - Clients
    - [X] NWS (US Weather)
@@ -815,6 +906,7 @@ library.
 :PROPERTIES:
 :ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
 :CATEGORY: bin
+:CUSTOM_ID: demo
 :END:
 + what -- demos and examples relating to [[id:7e0d54ee-d3f7-468a-b0cf-664bba4df675][rlib]] and [[id:0480aced-777f-4f30-ae05-189500fb6903][tenex]].
 + status -- ALPHA
@@ -822,15 +914,18 @@ library.
 ** Examples
 :PROPERTIES:
 :ID:       04580557-8e76-49b6-ad36-731464a527dd
+:CUSTOM_ID: examples
 :END:
 *** hgsub-sort.rs
 :PROPERTIES:
 :ID:       c313a484-e72b-4f41-b9ab-44c3d69727c1
+:CUSTOM_ID: hgsub-sort-rs
 :END:
 Sorts a Mercurial Subrepos file (=.hgsub=) alphabetically.
 *** hi.rs
 :PROPERTIES:
 :ID:       01bf673a-4179-43bc-9281-00d01be97bfd
+:CUSTOM_ID: hi-rs
 :END:
 A startup script I run after logging in to my desktop. It does a few things:
 - print my public IP
@@ -850,17 +945,20 @@ print IP, weather, and USB devices on Windows.
 *** wg-keygen.rs
 :PROPERTIES:
 :ID:       0cfaf940-b3d9-4566-bbbf-8c19ea556d14
+:CUSTOM_ID: wg-keygen-rs
 :END:
 
 *** chatter
 :PROPERTIES:
 :ID:       d61ebbcc-5154-4616-8c37-fbf836493030
+:CUSTOM_ID: chatter
 :END:
 OpenAI API examples (NOTE: requires an OpenAI beta access key)
 
 * contrib
 :PROPERTIES:
 :ID:       23172369-1d5e-425c-8ffb-78a152c28670
+:CUSTOM_ID: contrib
 :END:
 + what -- Third-party code and dependencies with mirrored source trees
 + why -- isolation of external dependencies
@@ -868,6 +966,7 @@ OpenAI API examples (NOTE: requires an OpenAI beta access key)
 * crater
 :PROPERTIES:
 :ID:       39a1d49f-b477-4e19-8b54-d223168c5703
+:CUSTOM_ID: crater
 :END:
 + what -- a private crate registry for the Rust programming language.
 + [[src:crater][src]]
@@ -914,6 +1013,7 @@ the record button. It's a good time.
 ** computer_music
 :PROPERTIES:
 :ID:       de3060ce-5d70-486e-bd54-caf6be79f034
+:CUSTOM_ID: computer-music
 :END:
 - I'm slowly preparing some tools for music composition, now that the
   RustAudio ecosystem is approaching maturity.
