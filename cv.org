@@ -30,15 +30,18 @@ for innovation in complex systems.
 * *Professional Experience*
 :PROPERTIES:
 :ID:       cd8a928a-c278-4a9d-9513-a44309ffb378
+:CUSTOM_ID: professional-experience
 :END:
 ** *Consultant* @ [[https://www.seatronx.com/][Seatronx]] - [2021]
 :PROPERTIES:
 :ID:       f08e4cc7-e540-465c-87ac-421387427ba1
+:CUSTOM_ID: consultant-https-www-seatronx-com-seatronx-2021
 :END:
 - Contracted to assist with analysis of hardware and software for new medical scan device launch
 ** *Product Owner* @ [[https://www.communitybrands.com/][Community Brands]] - [2017 - 2020] 
 :PROPERTIES:
 :ID:       29479f3b-4e52-421f-bfb0-4308b18db4f0
+:CUSTOM_ID: product-owner-https-www-communitybrands-com-community-brands-2017-2020
 :END:
 - Ensured successful delivery of Learning Management System for top clients, resulting in a reinforced relationship and negotiation of a new multi-year platform development project
 - SAFe certified Product Owner, assisting in development of the product roadmap, internal process improvement, and management of a group of 20+ software engineers
@@ -48,20 +51,24 @@ for innovation in complex systems.
 ** *Launch Operator* @ [[http://dodsonboatyard.com/][Dodson's Boatyard]] - [2011 - 2016]
 :PROPERTIES:
 :ID:       b7d6f248-846f-4178-8f49-10481e0e38a9
+:CUSTOM_ID: launch-operator-http-dodsonboatyard-com-dodson-s-boatyard-2011-2016
 :END:
 - Coast Guard licensed Merchant Marine Master responsible for the operation of passenger vessels in Eastern Point Bay and Stonington Harbor
 ** *Finance Intern* @ [[http://www.gdeb.com/][Electric Boat]] - [2014]
 :PROPERTIES:
 :ID:       d83d8fa5-bed3-4a2a-b716-b3d178f8848c
+:CUSTOM_ID: finance-intern-http-www-gdeb-com-electric-boat-2014
 :END:
 - Responsible for reporting and management of large internal datasets for the Ohio Replacement Program
 * *Projects*
 :PROPERTIES:
 :ID:       857392f6-6560-428e-b20d-50b809775cdd
+:CUSTOM_ID: projects
 :END:
 ** [[https://www.virtuosofestival.com][Virtuoso Festivals]]
 :PROPERTIES:
 :ID:       b92dd784-1350-4809-9d8d-6442b7f6479b
+:CUSTOM_ID: https-www-virtuosofestival-com-virtuoso-festivals
 :END:
 A live event streaming startup with group/private viewing, chat, social media integrations, and more on an in-house streaming platform.
 - Multiple music festivals hosted this year
@@ -69,6 +76,7 @@ A live event streaming startup with group/private viewing, chat, social media in
 ** Open-source software
 :PROPERTIES:
 :ID:       49cc3b0e-fd38-44c2-a2e2-ead92ad5d577
+:CUSTOM_ID: open-source-software
 :END:
 I love building things and share most of the code I write. All personal projects below are under active development.
 - [[https://rwest.io][website]]
@@ -81,6 +89,7 @@ I love building things and share most of the code I write. All personal projects
 ** *Research*
 :PROPERTIES:
 :ID:       180368d4-e7d7-4f19-94fe-eb9c2f3fe3ec
+:CUSTOM_ID: research
 :END:
 For the past year I've spent time researching specific technologies
 that have the potential to drastically change the nature of computer
