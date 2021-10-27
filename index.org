@@ -18,3 +18,35 @@
 \\
 - [[src:][hg]] -- code
 - [[https://docs.rwest.io][docs]] -- Rust docs
+\\
+
+#+CALL: get-emacs-version()
+#+RESULTS:
+: GNU Emacs 28.0.50 (build 1, x86_64-pc-linux-gnu, X toolkit, cairo version 1.17.4, Xaw scroll bars)
+:  of 2021-08-22
+: Org v9.4.4
+
++ [[src:meta][src]] -- \\
+  #+CALL: hg-summary() :results output
+  #+RESULTS:
+  : parent: 57:d21c2669146d tip
+  :  fixed some things.. H:N is badbad for org-info-js
+  : branch: default
+  : commit: 4 modified, 2 unknown
+  : update: (current)
+
++ weather -- \\
+  #+CALL: shc-weather() :results output
+  #+RESULTS:
+  #+begin_example
+  09:00:00-10:00:00 t:52 "Chance Rain Showers"
+  10:00:00-11:00:00 t:53 "Slight Chance Rain Showers"
+  11:00:00-12:00:00 t:54 "Slight Chance Rain Showers"
+  12:00:00-13:00:00 t:54 "Mostly Cloudy"
+  13:00:00-14:00:00 t:53 "Mostly Cloudy"
+  14:00:00-15:00:00 t:53 "Mostly Cloudy"
+  15:00:00-16:00:00 t:53 "Partly Sunny"
+  16:00:00-17:00:00 t:53 "Partly Sunny"
+  17:00:00-18:00:00 t:52 "Partly Sunny"
+  18:00:00-19:00:00 t:51 "Mostly Cloudy"
+  #+end_example

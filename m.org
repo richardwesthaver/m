@@ -1,8 +1,11 @@
 #+TITLE: metas
 #+SETUPFILE: ox.setup
-#+ID: f34c081a-6e12-4a64-af63-eafd3603bd1a
-#+CUSTOM_ID: metas
 #+CATEGORY: metas
+#+CALL: cp-f("o/x/html/m.html", "/ssh:dmz:dmz/w/")
+#+CALL: cp-f("o/x/html/n.html", "/ssh:dmz:dmz/w/")
+#+CALL: cp-f("o/x/html/index.html", "/ssh:dmz:dmz/w/")
+#+RESULTS:
+#+CALL: load-file("pub.el") :results silent
 * meta
 :PROPERTIES:
 :ID:       60bed781-3a70-4435-9df0-097b799539e4
@@ -32,6 +35,10 @@ generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/
 The source files assume some familiarity with org syntax. Org syntax
 is covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document
 structure can be found in the [[info:emacs#Top][Emacs manual]].
+
+#+attr_html: :width 600
+#+attr_latex: :width 600
+[[cdn:img/org-mode-features_display.png]]
 
 All docs are fully compliant with org, with the addition of some
 special *elements*:
@@ -68,7 +75,6 @@ special *elements*:
 ** Build
 :PROPERTIES:
 :ID:       d0e37437-8959-4692-9b7f-9245073042e2
-:CUSTOM_ID: build
 :END:
 - Emacs has many backends for [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an
   emacs-lisp script is all that is needed to generate conventional
@@ -89,7 +95,6 @@ special *elements*:
 :PROPERTIES:
 :ID:       c27a67be-7b8b-47c5-9578-5acc71e27c53
 :header-args: :results silent :eval no-export
-:CUSTOM_ID: makefile
 :END:
 #+begin_src makefile :tangle makefile :shebang "#!/usr/bin/make -f -j8"
 PUB := ./pub.el
@@ -223,7 +228,6 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
 :PROPERTIES:
 :ID:       1b363810-26ea-4dae-b689-6e050756bfae
 :CATEGORY: lib
-:CUSTOM_ID: babel
 :END:
 + what ← scripts[sc], snippets[sn], and templates[tm]
 + status ← IN_PROGRESS
@@ -312,7 +316,6 @@ LP tools are used to perform these two operations.
 ** Dependencies
 :PROPERTIES:
 :ID:       b3146122-3109-45ce-b155-97d52701a0ca
-:CUSTOM_ID: dependencies
 :END:
 - *Emacs 28* \\
   The editor integration doesn't depend on any external packages
@@ -332,7 +335,6 @@ LP tools are used to perform these two operations.
 ** Example
 :PROPERTIES:
 :ID:       d46704c3-829b-4f46-b487-915ed5304638
-:CUSTOM_ID: example
 :END:
 * cfg
 :PROPERTIES:
@@ -359,14 +361,12 @@ environment via the =shed= development tool.
 ** emacs
 :PROPERTIES:
 :ID:       903f8087-e0af-48f2-a5a6-f8d7f080464a
-:CUSTOM_ID: emacs
 :END:
 + what -- Configuration for the superior editor.
 + version -- 2.1
 *** Abstract
 :PROPERTIES:
 :ID:       937b83dd-233b-44cb-9a0b-d5536f7d9db3
-:CUSTOM_ID: abstract
 :END:
 I've been using Emacs since 2016 as my primary editor. I started with
 Spacemacs, used Doom for a while, then started rolling my own
@@ -391,7 +391,6 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 *** Screenshots
 :PROPERTIES:
 :ID:       005d2a6e-d34f-45ee-a169-f26fc264c916
-:CUSTOM_ID: screenshots
 :END:
   - themes \\
     #+attr_html: :width 600
@@ -429,7 +428,6 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 ** mail
 :PROPERTIES:
 :ID:       f3d16b98-d848-46a4-a7a6-fc6014ebef76
-:CUSTOM_ID: mail
 :END:
 + what -- mail configs
   - notmuch
@@ -437,7 +435,6 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 ** shell
 :PROPERTIES:
 :ID:       217423f6-ab17-457a-a35c-04678d4b71c3
-:CUSTOM_ID: shell
 :END:
 + what -- shell configs
   - bash
@@ -445,20 +442,17 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 ** term
 :PROPERTIES:
 :ID:       4c4a3209-a71c-4f94-9900-c1fd50f9b186
-:CUSTOM_ID: term
 :END:
 + what -- terminal emulator configs
   - kitty
 ** tmux
 :PROPERTIES:
 :ID:       33726d69-2c43-453e-808e-78cfb126dc05
-:CUSTOM_ID: tmux
 :END:
 + what -- tmux config
 ** vc
 :PROPERTIES:
 :ID:       f8ce8509-e360-4d1c-936f-37aae0537684
-:CUSTOM_ID: vc
 :END:
 + what -- Version Control configs
   - mercurial
@@ -466,14 +460,12 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 ** virt
 :PROPERTIES:
 :ID:       c240a030-7e6b-4061-8c13-a5764169eb35
-:CUSTOM_ID: virt
 :END:
 + what -- virtual machine and container configs
   - lxd | lxc
 ** wm
 :PROPERTIES:
 :ID:       3eafb844-4684-48af-ac2b-4660df2c2ab4
-:CUSTOM_ID: wm
 :END:
 + what -- X11 configs
   - 2bwm
@@ -482,7 +474,6 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 ** nix                                                 :deprecated:noexport:
 :PROPERTIES:
 :ID:       e2f62a1e-8f54-4bf6-ab88-86872e49f71d
-:CUSTOM_ID: nix
 :END:
 Poorman's distributed =nix= config has fallen into disrepair, but I
 keep it around for old-time's sake. It might come in handy in the
@@ -494,7 +485,6 @@ future, depending on how the Nix ecosystem progresses.
 :CUSTOM_ID: shed
 :END:
 + what -- An opinionated Software Ecosystem
-+ why -> 
 + status -- ALPHA
 + version -- 0.0.1
 + [[src:shed][src]] <-
@@ -503,7 +493,6 @@ future, depending on how the Nix ecosystem progresses.
 ** Overview
 :PROPERTIES:
 :ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0
-:CUSTOM_ID: overview
 :END:
 This tool is intended to encapsulate and optimize my full development
 workflow. The idea is that I can install this tool on any development
@@ -513,12 +502,10 @@ custom-tailored workspace.
 ** Roadmap
 :PROPERTIES:
 :ID:       169e6a06-9260-4f12-95de-aeb2afa17fd1
-:CUSTOM_ID: roadmap
 :END:
 *** NEXT Registry
 :PROPERTIES:
 :ID:       b157b0bd-da91-4f0a-925f-39acfed569a7
-:CUSTOM_ID: registry
 :END:
 :LOGBOOK:
 - State "NEXT"       from              [2021-10-23 Sat 03:38]
@@ -529,7 +516,6 @@ custom-tailored workspace.
 - For a similar concept, see [[https://doc.redox-os.org/book/ch04-04-urls.html][RedoxOS URLs]]
 *** HACK Commands
 :PROPERTIES:
-:CUSTOM_ID: commands
 :END:
 :LOGBOOK:
 - State "HACK"       from "TODO"       [2021-10-23 Sat 03:41]
@@ -537,7 +523,6 @@ custom-tailored workspace.
 :END:
 **** TODO clean
 :PROPERTIES:
-:CUSTOM_ID: clean
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2021-10-24 Sun 07:06]
@@ -555,7 +540,6 @@ custom-tailored workspace.
   - =--all= :: clean everything
 **** TODO test
 :PROPERTIES:
-:CUSTOM_ID: test
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2021-10-24 Sun 07:07]
@@ -568,7 +552,6 @@ custom-tailored workspace.
   -  =--all= :: test everything
 **** TODO list
 :PROPERTIES:
-:CUSTOM_ID: list
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2021-10-24 Sun 07:07]
@@ -578,15 +561,14 @@ custom-tailored workspace.
   - else list service stats
 *** TODO Krypt
 :PROPERTIES:
-:CUSTOM_ID: krypt
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2021-10-23 Sat 03:38]
 :END:
 - 
+- based on intuitions from [[https://nacl.cr.yp.to/box.html][crypto_box]] 
 *** TODO Babel
 :PROPERTIES:
-:CUSTOM_ID: babel
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2021-10-23 Sat 03:43]
@@ -594,7 +576,6 @@ custom-tailored workspace.
 
 *** TODO shed.el
 :PROPERTIES:
-:CUSTOM_ID: shed-el
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2021-10-23 Sat 03:39]
@@ -605,7 +586,6 @@ custom-tailored workspace.
 ** Features
 :PROPERTIES:
 :ID:       83a9750a-bb30-4272-b1f3-23d85806cbb8
-:CUSTOM_ID: features
 :END:
 - *Src*
   - Mercurial VCS
@@ -652,61 +632,140 @@ custom-tailored workspace.
 ** Installation
 :PROPERTIES:
 :ID:       803d215d-18da-499b-a2fd-01e15a152e13
-:CUSTOM_ID: installation
 :END:
-** Usage
-:PROPERTIES:
-:ID:       ecb7c923-6329-4e13-af72-84482bdbcb1e
-:CUSTOM_ID: usage
-:END:
-Once the binary is installed run =shed init -p= to bootstrap a
-=Config= via prompts. The default config path is determined by the
-~$SHED_CFG~ environment variable or ~$HOME/.config/shed.cfg~ by
-default.
+Once the binary is installed, run =shed init -p= to bootstrap a via
+prompts. The default config path is determined by the ~$SHED_CFG~
+environment variable or ~$HOME/.config/shed.cfg~.
 
 Some commands run just fine without writing a config to disk - A
 default configuration is supplied when =shed.cfg= can't be
 found. Other commands may panic in the event that a system or internal
 path dependency is missing.
 
-*** Configuration
+** Configuration
 :PROPERTIES:
 :ID:       0fa1c99b-6452-4b60-be05-6801803600cf
-:CUSTOM_ID: configuration
 :END:
-Global configuration is controlled by the =Config= type (=RON=, =JSON=
-or =bincode= file). The specification is non-exhaustive and can be
-extended by the user.
+Global configuration is controlled by the [[https://docs.rwest.io/shed/config/struct.Config.html][Config struct]]. The
+specification is non-exhaustive and can be extended by the user at
+runtime or in code at compile.
+#+begin_src rust
+pub struct Config {
+    pub path: PathBuf,
+    pub src: Vec<PackageConfig>,
+    pub bin: Vec<ProgramConfig>,
+    pub net: NetworkConfig,
+    pub hg: MercurialConfig,
+    pub lab: Vec<ProjectConfig>,
+    pub usr: UserConfig,
+}
+#+end_src
 
-#+begin_src ron
+Configs can be deserialized from RON, JSON, or Bincode formats. I
+prefer RON for writing local configuration, but feel free to use JSON
+instead. Bincode is intended for =shed= internal processes such as IPC
+and database storage, but exposed to the user for convenience.
+
+- RON
+  #+begin_src ron
 // cfg.ron
 #![enable(implicit_some)]
 (
-  path: "/home/ellis/.config/shed.ron",
-  owner: "ellis",
+  path: "~/shed",
   src: [],
-  network: (
+  bin: [],
+  net: (
     socket: "127.0.0.1:0",
-    transport: "udp",
     tunnel: None,
-    engine: None,
+    engine: Http,
     peers: None,
   ),
-  hgrc: (
-    name: "",
-    contact: "",
-    description: "",
-    extensions: [],
-    sock: "0.0.0.0:0",
-    paths: {},
+  hg: (
+    ui: {},
+    extensions: None,
+    paths: None,
+    web: (
+      name: "",
+      contact: "",
+      description: "",
+      extensions: [],
+      socket: "0.0.0.0:0",
+      paths: {},
+    ),
+  ),
+  lab: [],
+  usr: (
+    shell: (
+      env: {},
+      cmds: {},
+      shell: Bash,
+    ),
+    geo: None,
+    displays: None,
+    packages: [],
+    projects: [],
+    auth: [],
   ),
 )
-#+end_src
-*** Commands
-:PROPERTIES:
-:ID:       a0f0f72d-475a-49a1-a21f-5d8a604099fd
-:CUSTOM_ID: commands
-:END:
+  #+end_src
+- JSON
+  #+begin_src json
+{
+  "path": "/home/ellis/shed",
+  "src": [],
+  "bin": [],
+  "net": {
+    "socket": "127.0.0.1:0",
+    "tunnel": null,
+    "engine": "Http",
+    "peers": null
+  },
+  "hg": {
+    "ui": {},
+    "extensions": null,
+    "paths": null,
+    "web": {
+      "name": "",
+      "contact": "",
+      "description": "",
+      "extensions": [],
+      "socket": "0.0.0.0:0",
+      "paths": {}
+    }
+  },
+  "lab": [],
+  "usr": {
+    "shell": {
+      "env": {},
+      "cmds": {},
+      "shell": "Bash"
+    },
+    "geo": null,
+    "displays": null,
+    "packages": [],
+    "projects": [],
+    "auth": []
+  }
+}
+  #+end_src
+- BIN
+  #+begin_src hexl
+00000000: 1000 0000 0000 0000 2f68 6f6d 652f 656c  ......../home/el
+00000010: 6c69 732f 7368 6564 0000 0000 0000 0000  lis/shed........
+00000020: 0000 0000 0000 0000 0000 0000 7f00 0001  ................
+00000030: 0000 0001 0000 0000 0000 0000 0000 0000  ................
+00000040: 0000 0000 0000 0000 0000 0000 0000 0000  ................
+00000050: 0000 0000 0000 0000 0000 0000 0000 0000  ................
+00000060: 0000 0000 0000 0000 0000 0000 0000 0000  ................
+00000070: 0000 0000 0000 0000 0000 0000 0000 0000  ................
+00000080: 0000 0000 0000 0000 0000 0000 0000 0000  ................
+00000090: 0000 0000 0000 0000 0000 0000 0000 0000  ................
+000000a0: 0000 0000 0000 0000 0000 0a              ...........
+  #+end_src
+** Commands
+   :PROPERTIES:
+   :ID: a0f0f72d-475a-49a1-a21f-5d8a604099fd
+   :END:
 #+begin_src shell :exports both :results output replace
 shed --help
 #+end_src
@@ -764,7 +823,6 @@ SUBCOMMANDS:
 ** Usage
 :PROPERTIES:
 :ID:       89920d82-42dd-402c-8eb7-efdcc71007e5
-:CUSTOM_ID: usage
 :END:
 This crate is not (yet) published on crates.io. To get started you'll need
 to clone the [[src:rlib][repo]] and add it as a dependency to your project like so:
@@ -796,7 +854,6 @@ environment.
 ** Crates
 :PROPERTIES:
 :ID:       bb740861-e7b9-4730-bd34-622f7ae53ce8
-:CUSTOM_ID: crates
 :END:
 
 =rlib= is split into separate crates with a single [[https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html][workspace]]
@@ -889,7 +946,6 @@ library.
 ** Features
 :PROPERTIES:
 :ID:       81958264-5117-4120-9be7-5493c5ae14b8
-:CUSTOM_ID: features
 :END:
 - Clients
    - [X] NWS (US Weather)
@@ -914,7 +970,6 @@ library.
 ** Examples
 :PROPERTIES:
 :ID:       04580557-8e76-49b6-ad36-731464a527dd
-:CUSTOM_ID: examples
 :END:
 *** hgsub-sort.rs
 :PROPERTIES:
@@ -1013,7 +1068,6 @@ the record button. It's a good time.
 ** computer_music
 :PROPERTIES:
 :ID:       de3060ce-5d70-486e-bd54-caf6be79f034
-:CUSTOM_ID: computer-music
 :END:
 - I'm slowly preparing some tools for music composition, now that the
   RustAudio ecosystem is approaching maturity.

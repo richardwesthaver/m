@@ -1,7 +1,5 @@
 #+TITLE: notes
 #+SETUPFILE: ox.setup
-#+ID: 54f3b70d-79a1-4526-9b84-088d970e86c1
-#+CUSTOM_ID: notes
 #+CATEGORY: notes
 * Art                                                                   :art:
 :PROPERTIES:
@@ -338,21 +336,21 @@ operation is its own inverse.
 :ID:       3b18c802-d32e-4208-8779-3017c649f1c0
 :CUSTOM_ID: data-structures
 :END:
-#+begin_quote
-An organization of information, usually in memory, for better
-algorithm efficiency, such as queue, stack, linked list, heap,
-dictionary, and tree, or conceptual unity, such as the name and
-address of a person. It may include redundant information, such as
-length of the list or number of nodes in a subtree.
--- [[https://xlinux.nist.gov/dads/HTML/datastructur.html][xlinux.nist.gov]]
-#+end_quote
++ what -- \\
+  #+begin_quote
+  An organization of information, usually in memory, for better
+  algorithm efficiency, such as queue, stack, linked list, heap,
+  dictionary, and tree, or conceptual unity, such as the name and
+  address of a person. It may include redundant information, such as
+  length of the list or number of nodes in a subtree.
+  -- [[https://xlinux.nist.gov/dads/HTML/datastructur.html][xlinux.nist.gov]]
+  #+end_quote
 **** Map
 :PROPERTIES:
 :ID:       b9530429-e281-421e-ae08-623bc78cd6bd
 :AKA: dictionary, dict
 :CUSTOM_ID: map
 :END:
-A map is a genera
 **** List
 :PROPERTIES:
 :ID:       2178b6c8-81df-4233-b5cd-eeb5cd7c5c6a
@@ -381,11 +379,21 @@ A map is a genera
 :CUSTOM_ID: binary-tree
 :END:
 
+**** Radix Trie
+:PROPERTIES:
+:ID:       13a3d8a4-cd75-4afb-8fe0-b33166302f8e
+:CUSTOM_ID: radix-trie
+:END:
++ what -- a space-optimized Trie.
+
+[[cdn:img/Patricia_trie.svg]]
+
 **** Rope
 :PROPERTIES:
 :ID:       cf085630-073e-47d9-9f5b-8b57d2ae12e1
 :CUSTOM_ID: rope
 :END:
+
 *** Cryptography
 :PROPERTIES:
 :ID:       3cb89927-649c-4439-872c-00d7971cba42
@@ -411,75 +419,40 @@ A map is a genera
 :ID:       1eb81c2f-9716-412a-ba8c-ed8929fab340
 :CUSTOM_ID: code-signing
 :END:
-#+begin_quote
-Code signing is the process of digitally signing executables and scripts to confirm the software author and guarantee that the code has not been altered or corrupted since it was signed. The process employs the use of a cryptographic hash to validate authenticity and integrity.
--- [[https://en.wikipedia.org/wiki/Code_signing][Wikipedia]]
-#+end_quote
++ what -- \\
+  #+begin_quote
+  Code signing is the process of digitally signing executables and
+  scripts to confirm the software author and guarantee that the code has
+  not been altered or corrupted since it was signed. The process employs
+  the use of a cryptographic hash to validate authenticity and
+  integrity.  -- [[https://en.wikipedia.org/wiki/Code_signing][Wikipedia]]
+  #+end_quote
 **** links
 :PROPERTIES:
 :ID:       217894b2-6547-4f38-b379-d96ec31ab681
 :END:
-***** [[https://tools.ietf.org/html/rfc8439][RFC 8439 - ChaCha20 and Poly1305 for IETF Protocols]]
-	 :PROPERTIES:
-	 :CREATED:  [2021-02-13 Sat 03:07]
-	 :ID:       395390b0-f920-4e6e-8a1a-21743538036d
-	 :END:
-***** [[https://en.wikipedia.org/wiki/Salsa20#ChaCha_variant][Salsa20 - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2021-02-13 Sat 02:59]
-	 :ID:       f81e6d23-1196-4277-9fac-46ff07ab7c07
-	 :END:
-	 - ChaCha variant - most common stream cipher nowadays.
-***** [[https://en.wikipedia.org/wiki/Stream_cipher][Stream cipher - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2021-02-13 Sat 02:48]
-	 :ID:       28828afb-9e9b-4b64-a958-2d8bd72dd559
-	 :END:
-***** [[https://dalek.rs/][dalek cryptography]]
-	 :PROPERTIES:
-	 :CREATED:  [2021-02-13 Sat 02:28]
-	 :ID:       b08792ce-1926-49fe-9975-786294d90d73
-	 :END:
-	 love this site design
-***** [[https://en.wikipedia.org/wiki/Public_key_infrastructure][Public Key Infrastructure - Wikipedia]]
-:PROPERTIES:
-:ID:       0e329223-b1ac-4109-b218-7f467e6b67f2
-:END:
-CREATED: [2021-01-22 Fri 04:20]
-#+CAPTION: PKI
-#+ATTR_HTML: :alt PKI image
-[[https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Public-Key-Infrastructure.svg/450px-Public-Key-Infrastructure.svg.png]]
-***** [[https://developer.okta.com/blog/2019/10/23/dangers-of-self-signed-certs][The Dangers of Self-Signed Certificates | Okta Developer]]
-:PROPERTIES:
-:ID:       bd03f57d-11e2-4022-a856-2ee7b74db1d5
-:END:
-CREATED: [2020-08-05 Wed 18:27]
-***** [[https://tools.ietf.org/html/rfc7748][RFC 7748 - Elliptic Curves for Security]]
-:PROPERTIES:
-:ID:       205e0909-dc8c-4e49-abe5-a2441d53edda
-:END:
-CREATED: [2020-08-01 Sat 00:04]
-defines some familiar elliptical curves for practical security,
-including in TLS. They work at ~128-bit and ~224-bit security levels.
-***** [[https://tools.ietf.org/html/rfc5116][RFC 5116 - An Interface and Algorithms for Authenticated Encryption]]
-:PROPERTIES:
-:ID:       efbbc943-7a94-4eab-bf2f-6035594b1726
-:END:
-CREATED: [2020-08-01 Sat 16:55]
-AEAD descriptions - we're usually going for a form of this approach
-with MAC+Encrypt
-***** [[https://tools.ietf.org/html/rfc2104][RFC 2104 - HMAC: Keyed-Hashing for Message Authentication]]
-:PROPERTIES:
-:ID:       793739bd-0aba-487a-88be-08b2e8236050
-:END:
-CREATED: [2020-07-31 Fri 23:52]
-HMAC - often used with MD5, SHA-1, etc, plus a secret shared key.
-Key Hashing
-***** [[https://letsencrypt.org/2018/04/04/sct-encoding.html][Engineering deep dive: Encoding of SCTs in certificates - Let's Encrypt - Free SSL/TLS Certificates]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-14 Tue]
-   :ID:       3950dd2d-05f0-42f4-8c37-7e325f640a0f
-	 :END:
+- [[https://tools.ietf.org/html/rfc8439][RFC 8439 - ChaCha20 and Poly1305 for IETF Protocols]]
+- [[https://en.wikipedia.org/wiki/Salsa20#ChaCha_variant][Salsa20 - Wikipedia]]
+  - ChaCha variant - most common stream cipher nowadays.
+- [[https://en.wikipedia.org/wiki/Stream_cipher][Stream cipher - Wikipedia]]
+- [[https://dalek.rs/][dalek cryptography]]
+  love this site design
+- [[https://en.wikipedia.org/wiki/Public_key_infrastructure][Public Key Infrastructure - Wikipedia]]
+  #+CAPTION: PKI
+  #+ATTR_HTML: :alt PKI image
+  [[https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Public-Key-Infrastructure.svg/450px-Public-Key-Infrastructure.svg.png]]
+- [[https://developer.okta.com/blog/2019/10/23/dangers-of-self-signed-certs][The Dangers of Self-Signed Certificates | Okta Developer]]
+- [[https://tools.ietf.org/html/rfc7748][RFC 7748 - Elliptic Curves for Security]]
+  - defines some familiar elliptical curves for practical security,
+    including in TLS. They work at ~128-bit and ~224-bit security
+    levels.
+- [[https://tools.ietf.org/html/rfc5116][RFC 5116 - An Interface and Algorithms for Authenticated Encryption]]
+  - AEAD descriptions - we're usually going for a form of this
+    approach with MAC+Encrypt
+- [[https://tools.ietf.org/html/rfc2104][RFC 2104 - HMAC: Keyed-Hashing for Message Authentication]]
+  - HMAC - often used with MD5, SHA-1, etc, plus a secret shared key.
+    Key Hashing
+- [[https://letsencrypt.org/2018/04/04/sct-encoding.html][Engineering deep dive: Encoding of SCTs in certificates - Let's Encrypt - Free SSL/TLS Certificates]]
 *** Automata Theory
 :PROPERTIES:
 :ID:       971bce74-6e41-4caf-8c31-a3cc9871995b
@@ -584,14 +557,9 @@ in C++:
 **** History                                                     :history:
 :PROPERTIES:
 :ID:       9a2b8cc3-234b-410b-80ed-9115e15f0a12
-:CUSTOM_ID: history
 :END:
-***** [[https://www.csee.umbc.edu/courses/pub/WWW/courses/undergraduate/CMSC331/fall08/0101/notes/02/02history.pdf][The History of Programming Languages]] :deck:
-:PROPERTIES:
-:ID:       e318a7fc-23ba-4259-b4ae-74fc4cc5cff1
-:CREATED: [2021-01-26 Tue 16:24]
-:END:
-A wonderful visual history reference
+- [[https://www.csee.umbc.edu/courses/pub/WWW/courses/undergraduate/CMSC331/fall08/0101/notes/02/02history.pdf][The History of Programming Languages]]                                 :deck:
+  - A wonderful visual history reference
 **** EBNF                                                           :ebnf:
 :PROPERTIES:
 :ID:       0f36eac3-f9ba-42db-bb56-c09c5760cc89
@@ -937,11 +905,7 @@ macro_rules! mixed_rules {
 :PROPERTIES:
 :ID:       0e932ce2-bc13-4a78-b5d7-67d3138908dc
 :END:
-**** [[http://www.linfo.org/osi_model.html][OSI reference model definition by The Linux Information Project]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-22 Wed]
-   :ID:       12b01584-1e42-40fe-8608-daf0456ecf49
-	 :END:
+- [[http://www.linfo.org/osi_model.html][OSI reference model definition by The Linux Information Project]]
 **** Agent-based
 :PROPERTIES:
 :ID:       a2c417db-d650-46a3-95ff-0324b2e7907c
@@ -1213,19 +1177,9 @@ coherency when you are traversing the graph.
 :END:
 - [[https://en.wikipedia.org/wiki/Extract,_transform,_load][ETL]]
 - [[https://en.wikipedia.org/wiki/Extract,_load,_transform][ELT]]
-  
-***** [[https://en.wikipedia.org/wiki/Data_warehouse][Data Warehouse]]
-:PROPERTIES:
-:ID:       2f46e98a-0a23-4bb4-af1b-3b08be1243d6
-:END:
-****** [[https://en.wikipedia.org/wiki/Data_mart][Data Mart]]
-:PROPERTIES:
-:ID:       5893d405-66c6-4ca9-86de-d1d468f0054c
-:END:
-***** [[https://en.wikipedia.org/wiki/Data_lake][Data Lake]]
-:PROPERTIES:
-:ID:       bcdd78cc-46f1-447d-b3d4-56f307016671
-:END:
+- [[https://en.wikipedia.org/wiki/Data_warehouse][Data Warehouse]]
+- [[https://en.wikipedia.org/wiki/Data_mart][Data Mart]]
+- [[https://en.wikipedia.org/wiki/Data_lake][Data Lake]]
 
 **** Binary
 :PROPERTIES:
@@ -1263,24 +1217,21 @@ coherency when you are traversing the graph.
 :CUSTOM_ID: cpp
 :END:
 - [[https://en.cppreference.com/w/][cppreference.com]]
-***** [[https://www.reddit.com/r/rust/comments/bya8k6/programming_with_rust_vs_c_c/eqfcu0s?utm_source=share&utm_medium=web2x][Redditor comment regarding the C++ ecosystem]]
-:PROPERTIES:
-:ID:       2e71d133-1492-4718-a2fe-42c4883ec727
-:END:
-This Redditor with 12y of XP writing C++ talks about all the
-complexities involved with coding in C++. OP is asking about some of
-the nuances of [[file:rust.org][Rust]] vs. C++, and our Redditor avoids regurgitating the
-common arguments that are given for Rust in favor of C++ - namely
-Memory Safety and Data Races. A fitting quote from Nietszche is given
-as explanation for not addressing those issues:
+- [[https://www.reddit.com/r/rust/comments/bya8k6/programming_with_rust_vs_c_c/eqfcu0s?utm_source=share&utm_medium=web2x][Redditor comment regarding the C++ ecosystem]]
+  - This Redditor with 12y of XP writing C++ talks about all the
+  complexities involved with coding in C++. OP is asking about some of
+  the nuances of [[file:rust.org][Rust]] vs. C++, and our Redditor avoids regurgitating
+  the common arguments that are given for Rust in favor of C++ -
+  namely Memory Safety and Data Races. A fitting quote from Nietszche
+  is given as explanation for not addressing those issues:
 
-#+begin_quote
-Whoever fights with monsters should see to it that he does not become
-a monster in the process. And when you gaze long into an abyss the
-abyss also gazes into you
-
--- Friedrich Nietzsche
-#+end_quote
+  #+begin_quote
+  Whoever fights with monsters should see to it that he does not become
+  a monster in the process. And when you gaze long into an abyss the
+  abyss also gazes into you
+  
+  -- Friedrich Nietzsche
+  #+end_quote
 ***** RocksDB
 :PROPERTIES:
 :ID:       ccd8e770-844d-44ea-8697-4366498eec39
@@ -1617,14 +1568,70 @@ rustc --help
 :PROPERTIES:
 :ID:       fc5f460d-dd9e-41f5-8d2b-737d15dcf249
 :END:
-****** [[https://www.fpcomplete.com/blog/philosophies-rust-haskell/][Philosophies of Rust and Haskell]] :hs:
+- [[https://www.fpcomplete.com/blog/philosophies-rust-haskell/][Philosophies of Rust and Haskell]]                                       :hs:
+- [[https://blog.logrocket.com/rust-cryptography-libraries-a-comprehensive-list/][Rust cryptography libraries: A comprehensive list - LogRocket Blog]]
+- [[https://github.com/dalek-cryptography/bulletproofs][GitHub - dalek-cryptography/bulletproofs: A pure-Rust implementation of Bulle...]]
+- [[https://github.com/dtolnay/syn/tree/master/examples/heapsize][heapsize - syn proc_macro example]] 
+- [[https://gitlab.redox-os.org/redox-os][redox-os · GitLab]]
+- [[https://docs.rust-embedded.org/][Embedded Rust documentation]]
+- [[https://github.com/rust-embedded/wg][GitHub - rust-embedded/wg: Coordination repository of the embedded devices Working Group]]
+- [[https://github.com/MabezDev/xtensa-rust-quickstart/blob/master/src/main.rs][xtensa-rust-quickstart/main.rs at master · MabezDev/xtensa-rust-quickstart · GitHub]]
+- [[https://github.com/rust-lang/rust/blob/master/src/bootstrap/config.rs][rust/config.rs . github]]
+- [[https://jakearchibald.com/2017/async-iterators-and-generators/][Async iterators and generators - JakeArchibald.com]]
+- [[https://rustwasm.github.io/book/introduction.html][Introduction - Rust and WebAssembly]]
+- [[https://gitlab.freedesktop.org/gstreamer/gstreamer-rs][GStreamer / gstreamer-rs · GitLab]]
+- [[https://smallcultfollowing.com/babysteps/blog/2019/10/26/async-fn-in-traits-are-hard/][why async fn in traits are hard]]                                     :async:
+- [[https://github.com/mersinvald/aquamarine][aquamarine]]                                                :docs:ui:drawing:
+  - mermaid.js-powered inline dot
+- [[https://doc.rust-lang.org/nightly/std/pin/index.html][std::pin - Rust]]
+- https://crates.io/crates/pin-project
+- [[https://doc.rust-lang.org/std/macro.todo.html][std::todo - Rust]]
+  - todo macros for code that is /not yet written/ - =unimplemented!=
+  makes no such claims.
+- [[https://internals.rust-lang.org/t/traits-that-should-be-in-std-but-arent/3002][Traits that should be in std, but aren't - libs - Rust Internals]]
+- [[https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples][Macros in Rust]]                                                     :macros:
+- [[https://danielkeep.github.io/tlborm/book/README.html][The Little Book of Rust Macros]]                                     :macros:
+****** redox-os book            :os:
 :PROPERTIES:
-:ID:       798fd7a3-70a6-4d48-91c9-272515344b15
+:ID:       a57e76bb-3888-466d-a34e-fc56085f6120
 :END:
-****** [[https://os.phil-opp.com/][Writing an OS in Rust]]          :os:
++ [[https://doc.redox-os.org/book/][src]] <-
+- Boot process \\
+the first code executed is the bootloader in =bootloader/ARCH/bootsector.asm=. This code is responsible for finding and loading the kernel at address 0x100000, as well as initializing the memory map and VESA display mode
+  - Kernel \\
+The kernel is entered through the interrupt table at 0XFF. Using this method, kernel entry can be contained to a single function =kernel= in =kernel/main.rs= which serves as the entrypoint for the kernel.bin executable file
+  - Init \\
+first process spawned is initfs:/bin/init
+
+The overall design follows the "Everything is a URL" principle, where a URL is simply an identifier for a Scheme and a Resource. 
+#+begin_src text
+             /
+             |                                                          +=========+
+             |                                                          | Program |
+             |                                                          +=========+
+             |               +--------------------------------------+      ^   | write
+             |               |                                      |      |   |
+  User space <  +----- URL -----+                                   | read |   v
+             |  | +-----------+ |       open    +---------+  open   |   +----------+
+             |  | |  Scheme   |-|---+  +------->| Scheme  |------------>| Resource |
+             |  | +-----------+ |   |  |        +---------+             +----------+
+             |  | +-----------+ |   |  |
+             |  | | Reference | |   |  |
+             |  | +-----------+ |   |  |
+             \  +---------------+   |  |
+                            resolve |  |
+             /                      v  |
+             |                 +=========+
+Kernel space <                 | Resolve |
+             |                 +=========+
+             \
+#+end_src
+The kernel is micro-kernel based, which uses the principle of least authority, preferring code to be ran in user space instead of kernel space. This architecture /usually/ leads to a variable level of performance degradation due to the additional context switches between the kernel and user handlers. My current thinking is that there are some clever solutions to the problem of context switching, but I need to further understand where and how often (during which syscalls) they occur, and what the impact is. Anyways in short this 'micro-kernel' is slow, but it is only 16k lines which is insane compared to Linux's 25MILLION
+****** Writing an OS in Rust          :os:
 :PROPERTIES:
 :ID:       2312fc0a-0948-43e4-b403-b3c21add34d5
 :END:
++ [[https://os.phil-opp.com/][src]] <-
 - A Freestanding Rust Binary
   The first step is to create a binary that is independent of the Rust std library, since =std= links to the OS.
   EZPZ: =#![no_std]=
@@ -1931,142 +1938,6 @@ pub trait Future {
   - Implementation
     Futures and async/await are no_std compatible, so nothing special to be done in the src.
 
-****** [[https://doc.redox-os.org/book/][redox-os book]]            :os:
-:PROPERTIES:
-:ID:       a57e76bb-3888-466d-a34e-fc56085f6120
-:END:
-- Boot process \\
-the first code executed is the bootloader in =bootloader/ARCH/bootsector.asm=. This code is responsible for finding and loading the kernel at address 0x100000, as well as initializing the memory map and VESA display mode
-  - Kernel \\
-The kernel is entered through the interrupt table at 0XFF. Using this method, kernel entry can be contained to a single function =kernel= in =kernel/main.rs= which serves as the entrypoint for the kernel.bin executable file
-  - Init \\
-first process spawned is initfs:/bin/init
-
-The overall design follows the "Everything is a URL" principle, where a URL is simply an identifier for a Scheme and a Resource. 
-#+begin_src text
-             /
-             |                                                          +=========+
-             |                                                          | Program |
-             |                                                          +=========+
-             |               +--------------------------------------+      ^   | write
-             |               |                                      |      |   |
-  User space <  +----- URL -----+                                   | read |   v
-             |  | +-----------+ |       open    +---------+  open   |   +----------+
-             |  | |  Scheme   |-|---+  +------->| Scheme  |------------>| Resource |
-             |  | +-----------+ |   |  |        +---------+             +----------+
-             |  | +-----------+ |   |  |
-             |  | | Reference | |   |  |
-             |  | +-----------+ |   |  |
-             \  +---------------+   |  |
-                            resolve |  |
-             /                      v  |
-             |                 +=========+
-Kernel space <                 | Resolve |
-             |                 +=========+
-             \
-#+end_src
-The kernel is micro-kernel based, which uses the principle of least authority, preferring code to be ran in user space instead of kernel space. This architecture /usually/ leads to a variable level of performance degradation due to the additional context switches between the kernel and user handlers. My current thinking is that there are some clever solutions to the problem of context switching, but I need to further understand where and how often (during which syscalls) they occur, and what the impact is. Anyways in short this 'micro-kernel' is slow, but it is only 16k lines which is insane compared to Linux's 25MILLION
-****** [[https://blog.logrocket.com/rust-cryptography-libraries-a-comprehensive-list/][Rust cryptography libraries: A comprehensive list - LogRocket Blog]]
-	 :PROPERTIES:
-	 :CREATED:  [2021-02-13 Sat 02:21]
-	 :ID:       32677679-502e-44d5-93a9-f76ab5face2d
-	 :END:
-
-****** [[https://github.com/dalek-cryptography/bulletproofs][GitHub - dalek-cryptography/bulletproofs: A pure-Rust implementation of Bulle...]]
-	 :PROPERTIES:
-	 :CREATED:  [2021-02-13 Sat 02:28]
-	 :ID:       dde2daf8-522b-45c5-aaa5-37a5c980f53e
-	 :END:
-****** [[https://github.com/dtolnay/syn/tree/master/examples/heapsize][heapsize - syn proc_macro example]] 
-:PROPERTIES:
-:ID:       04d794d2-e0b6-4bf5-ba3d-57113d3e51ea
-:END:
-CREATED: [2021-02-07 Sun 05:15]
-
-****** [[https://gitlab.redox-os.org/redox-os][redox-os · GitLab]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-18 Sat]
-   :ID:       3372baf3-9ea9-4c82-aeac-95d0b1754d0b
-	 :END:
-****** [[https://docs.rust-embedded.org/][Embedded Rust documentation]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-18 Sat]
-   :ID:       1e0fd71f-2e7d-458c-b21f-c5dd464606b1
-	 :END:
-****** [[https://github.com/rust-embedded/wg][GitHub - rust-embedded/wg: Coordination repository of the embedded devices Working Group]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-18 Sat]
-   :ID:       54ae450d-e7e9-4761-a45b-f606994b6aae
-	 :END:
-****** [[https://github.com/MabezDev/xtensa-rust-quickstart/blob/master/src/main.rs][xtensa-rust-quickstart/main.rs at master · MabezDev/xtensa-rust-quickstart · GitHub]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       0595cca6-682e-46b6-86b1-431882655daf
-	 :END:
-****** [[https://github.com/rust-lang/rust/blob/master/src/bootstrap/config.rs][rust/config.rs . github]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-04 Sat]
-   :ID:       602b9a3c-9733-4031-92db-79db530f97f4
-	 :END:
-****** [[https://jakearchibald.com/2017/async-iterators-and-generators/][Async iterators and generators - JakeArchibald.com]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-02 Thu]
-   :ID:       3fff1915-2081-4d62-bbc0-22438e9bc2d5
-	 :END:
-****** [[https://rustwasm.github.io/book/introduction.html][Introduction - Rust and WebAssembly]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-28 Sun]
-   :ID:       093df427-e9b3-47e6-a3d0-47b53cbc1564
-	 :END:
-****** [[https://gitlab.freedesktop.org/gstreamer/gstreamer-rs][GStreamer / gstreamer-rs · GitLab]]
-:PROPERTIES:
-:CREATED:  [2020-06-19 Fri]
-:ID:       d9d8e1f8-9d99-40d4-a396-ea5c4953fea3
-:END:
-****** [[https://smallcultfollowing.com/babysteps/blog/2019/10/26/async-fn-in-traits-are-hard/][why async fn in traits are hard]] :async:
-:PROPERTIES:
-:ID:       01bb06e9-781e-41c9-b3c4-6122e44ddd8d
-:END:
-****** [[https://github.com/mersinvald/aquamarine][aquamarine]] :docs:ui:drawing:
-:PROPERTIES:
-:CREATED: [2021-01-31 Sun 23:51]
-:ID:       1f83ca18-8219-4a7c-bafa-764e4af686a8
-:END:
- - mermaid.js-powered inline dot
-
-****** [[https://doc.rust-lang.org/nightly/std/pin/index.html][std::pin - Rust]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       9c0a6958-3615-4522-9d7f-ccf267c30131
-	 :END:
-
-****** https://crates.io/crates/pin-project
-:PROPERTIES:
-:ID:       92cacdef-1b7c-40f0-8bbc-d237f074585c
-:END:
-****** [[https://doc.rust-lang.org/std/macro.todo.html][std::todo - Rust]]
-:PROPERTIES:
-:ID:       7d69878b-3681-41e8-a548-9bcfd2ba2bd6
-:END:
-CREATED: [2020-08-01 Sat 15:15]
-todo macros for code that is /not yet written/ - =unimplemented!=
-makes no such claims.
-
-****** [[https://internals.rust-lang.org/t/traits-that-should-be-in-std-but-arent/3002][Traits that should be in std, but aren't - libs - Rust Internals]]
-:PROPERTIES:
-:ID:       c25b7cd5-b641-48fc-8f0c-3187d5568eab
-:END:
-
-****** [[https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples][Macros in Rust: A tutorial with examples - LogRocket Blog]] :macros:
-:PROPERTIES:
-:ID:       552b810a-490c-4649-9088-84bf9a0529cb
-:END:
-
-****** [[https://danielkeep.github.io/tlborm/book/README.html][The Little Book of Rust Macros]] :macros:
-:PROPERTIES:
-:ID:       1d0b563a-e356-47eb-a3bc-87e8bd2e10d6
-:END:
-
 ***** crates                                                        :lib:
 :PROPERTIES:
 :ID:       3e36db85-ae02-4bf7-bc2e-3ca044f85d67
@@ -2074,6 +1945,21 @@ makes no such claims.
 :END:
 A /Crate/ is just a bundle of Rust code which is often made available
 on [[https://crates.io][crates.io]] for use by the community. In other words, crates = packages.
+
+- [[https://docs.rs/salsa20/0.7.2/salsa20/][salsa20 - Rust]]                                                     :cipher:
+- [[https://docs.rs/ipnet/2.3.0/ipnet/][ipnet - Rust]]                                                          :net:
+- [[https://crates.io/crates/proc-macro2][proc-macro2]]                                                         :macro:
+  - A superset of proc-macro
+- [[https://doc.rust-lang.org/reference/procedural-macros.html][proc macros -- Rust Docs]]                                            :macro:
+- [[https://github.com/dtolnay/syn/tree/master/examples/lazy-static][lazy-static! - syn example]]                                          :macro:
+- https://crates.io/crates/esp32                                   :embedded:
+- [[https://github.com/tokio-rs/tracing][tracing - github]]                                                  :logging:
+- https://crates.io/crates/petgraph                                   :graph:
+- [[https://crates.io/crates/nannou_osc][nannou_osc - crates.io]]                                                :art:
+- [[https://crates.io/crates/rosc][rosc - crates.io]]                                                      :net:
+  - [[https://git.klingt.net/alinz/rosc/src/branch/master/examples/sender.rs][alinz/rosc - examples/sender.rs at master - rosc - Gitea]]
+- [[https://docs.rs/crate/frank_jwt/2.1.0][frank_jwt 2.1.0 - Docs.rs]]                                             :net:
+
 ****** Firecracker                                                 :vmm:
 :PROPERTIES:
 :ID:       f169f36c-3cf8-4763-bd88-1d3c10f51ee7
@@ -2266,67 +2152,6 @@ Component-based framework for web UIs. Very similar to React or Elm
 - Rapid prototyping with RON files for prefabs and an abstract scripting API.
 - Strong focus on encouraging reusability and clean interfaces.
 
-****** [[https://docs.rs/salsa20/0.7.2/salsa20/][salsa20 - Rust]] :cipher:
-:PROPERTIES:
-:CREATED:  [2021-02-13 Sat 00:09]
-:ID:       4b0377c3-1cf5-4107-8562-dafe07ff34b3
-:END:
-
-****** [[https://docs.rs/ipnet/2.3.0/ipnet/][ipnet - Rust]]        :net:
-:PROPERTIES:
-:CREATED:  [2021-02-13 Sat 00:04]
-:ID:       90e047b2-0deb-448b-97fc-b6b03e43664c
-:END:
-
-****** [[https://crates.io/crates/proc-macro2][proc-macro2]]     :macro:
-:PROPERTIES:
-:ID:       be6af7f1-5941-479f-91a6-745b86de910b
-:END:
-CREATED: [2021-02-07 Sun 05:18]
-A superset of proc-macro
-****** [[https://doc.rust-lang.org/reference/procedural-macros.html][proc macros -- Rust Docs]] :macro:
-:PROPERTIES:
-:ID:       4ca937c1-c026-48c4-8e75-3f4a21d088b4
-:END:
-CREATED: [2021-02-07 Sun 05:17]
-****** [[https://github.com/dtolnay/syn/tree/master/examples/lazy-static][lazy-static! - syn example]] :macro:
-:PROPERTIES:
-:ID:       9701251c-887d-4021-8c5c-d4a581a3a4d4
-:END:
-CREATED: [2021-02-07 Sun 05:16]
-****** https://crates.io/crates/esp32                         :embedded:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       402f1181-378d-480c-896c-cd235ecdedbf
-	 :END:
-****** [[https://github.com/tokio-rs/tracing][tracing - github]] :logging:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-05 Sun]
-   :ID:       720a87d1-7894-4894-9ca5-f21568e374ae
-	 :END:
-****** https://crates.io/crates/petgraph                         :graph:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-04 Sat]
-   :ID:       202884a2-2f06-4ca0-b9ac-2ca234f075a2
-	 :END:
-****** [[https://crates.io/crates/nannou_osc][nannou_osc - crates.io]] :art:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-02 Thu]
-   :ID:       16122d4e-e7dd-4413-bc19-6be2a5472aab
-	 :END:
-****** [[https://crates.io/crates/rosc][rosc - crates.io]]         :net:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-02 Thu]
-   :ID:       59fdfbec-15ce-4bb6-adf8-5ce1d1429f78
-	 :END:
-- [[https://git.klingt.net/alinz/rosc/src/branch/master/examples/sender.rs][alinz/rosc - examples/sender.rs at master - rosc - Gitea]]
-
-****** [[https://docs.rs/crate/frank_jwt/2.1.0][frank_jwt 2.1.0 - Docs.rs]] :net:
-:PROPERTIES:
-:CREATED:  [2021-02-13 Sat 02:27]
-:ID:       6b385d69-0b64-47b2-b80d-435a26384482
-:END:
-
 ****** procfs
 :PROPERTIES:
 :ID:       e526c71d-8fb3-4e49-9347-9cf1e2650b46
@@ -2453,10 +2278,7 @@ prefer it for precisely this reason.
   non-programmers are involved, as source code snippets can be
   included in your work with minimal explanation.
 
-***** [[https://docs.python.org/3/library/ast.html][ast — Abstract Syntax Trees — Python 3.9.7 documentation]]
-:PROPERTIES:
-:ID:       cf7cfdf2-8899-4f04-94f6-a6cc110b29b9
-:END:
+- [[https://docs.python.org/3/library/ast.html][ast — Abstract Syntax Trees — Python 3.9.7 documentation]]
 ***** Libraries
 :PROPERTIES:
 :ID:       cbfa6dbe-f578-446a-bb2c-4fc0c49d131b
@@ -2664,11 +2486,6 @@ flexible and supports features of the Lua language.
 The default configuration can be found at [[https://awesomewm.org/doc/api/sample%20files/rc.lua.html][Script rc.lua - awesome API
 documentation]].
 
-****** [[id:4898be7c-465f-4f17-b451-8ec451f70399][Conky config]]
-:PROPERTIES:
-:ID:       5517909d-e1bf-46b3-9d66-06c2834e80f7
-:CUSTOM_ID: conky-config
-:END:
 **** FORTH                                                         :forth:
 :PROPERTIES:
 :ID:       8395200c-f135-4329-aecf-9f6cc9996d6f
@@ -2705,15 +2522,7 @@ languages as PureData (Pd).
 
 - Developed and maintained by Cycling '74, bundled with Ableton
   distributions.
-***** links
-:PROPERTIES:
-:ID:       1c5a0945-bb68-4141-9220-a56adc8fa36d
-:END:
-****** [[https://www.researchgate.net/publication/221494064_Emergent_Rhythms_through_Multi-agency_in_MaxMSP][Emergent Rhythms through Multi-agency in Max/MSP | researchgate]]
-:PROPERTIES:
-:ID:       fb5dff3c-7b07-46e2-9196-8f46c955c3b6
-:END:
-CREATED: [2021-01-22 Fri 02:20]
+- [[https://www.researchgate.net/publication/221494064_Emergent_Rhythms_through_Multi-agency_in_MaxMSP][Emergent Rhythms through Multi-agency in Max/MSP | researchgate]]
 **** SuperCollider                                                 :audio:
 :PROPERTIES:
 :ID:       46d3f7c8-f5f5-481e-94ff-0a7b491a59b3
@@ -3101,10 +2910,7 @@ compatibility (portability) with variants of Unix and other operating
 systems.
 -- [[https://en.wikipedia.org/wiki/POSIX][Wikipedia]]
 #+end_quote
-***** [[https://drewdevault.com/2018/02/05/Introduction-to-POSIX-shell.html][Introduction to POSIX shell]]
-:PROPERTIES:
-:ID:       b6b804b1-072b-445b-a8cd-45714bea1bfe
-:END:
+- [[https://drewdevault.com/2018/02/05/Introduction-to-POSIX-shell.html][Introduction to POSIX shell]]
 **** Data Interchange Formats                                       :data:
 :PROPERTIES:
 :ID:       8eb2380a-f97d-4dcb-88c5-9707cfa595e3
@@ -3313,93 +3119,27 @@ makes it easy to define custom package /recipes/.
   #+end_quote
 - [[https://www.emacswiki.org/emacs/Yasnippet][EmacsWiki: Yasnippet]]
 - [[https://github.com/AndreaCrotti/yasnippet-snippets][GitHub - AndreaCrotti/yasnippet-snippets: a collection of yasnippet snippets for many languages]]
-****** [[https://opensource.com/article/20/3/blog-emacs][How to blog with Emacs Org mode | Opensource.com]] :org:publish:
-:PROPERTIES:
-:ID:       d2e69772-6fb8-4e0b-a6fb-464a1796c800
-:END:
-CREATED: [2020-07-30 Thu 22:26]
-uses =ox-publish= to create a sitemap in =publish.el=, and executes
-that code with a Makefile.
-****** [[https://www.gnu.org/software/emacs/manual/html_mono/widget.html][The Emacs Widget Library]] :ui:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-24 Fri]
-   :ID:       f4058dfa-0f0b-465a-b1d6-5db01b2d5c92
-	 :END:
-****** [[https://ambrevar.xyz/lisp-repl-shell/index.html][A Lisp REPL as my main shell]]
-:PROPERTIES:
-:ID:       33e82a72-ba0d-43cd-b036-53a504a13214
-:END:
-****** [[https://protesilaos.com/dotemacs/#h:847477fe-ef86-4e12-a2da-6c431528da99][GNU Emacs integrated computing environment | Protesilaos Stavrou]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       97edb408-b263-44fa-9243-ee969c1afdd4
-	 :END:
-****** [[https://orgmode.org/worg/dev/org-element-api.html][Org Element API]] :org:api:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       dd0c0d09-b83f-4c6e-b91b-d8873c38660b
-	 :END:
-****** [[http://ergoemacs.org/emacs/elisp_parse_org_mode.html][Elisp: Parse Org Mode]] :org:api:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       6f77b99c-12d0-46cb-a0d5-5365f511e3c9
-	 :END:
-****** [[https://orgmode.org/worg/org-tutorials/weaving-a-budget.html][Weaving a budget with Org & ledger]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       2ff696dd-18d4-46e2-b071-04dd5f94d4fd
-	 :END:
-****** [[https://orgmode.org/worg/org-tutorials/tracking-habits.html][Tracking Habits with Org-mode]] :org:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       1716319d-5eb4-405f-b6b2-921e39f25c7c
-	 :END:
-****** [[https://emacs.stackexchange.com/questions/9674/customize-startup-screen-text][start up - Customize startup screen text - Emacs Stack Exchange]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       feae80bd-a8a9-400e-9c0e-4ed703f88b1c
-	 :END:
-****** [[https://www.johndcook.com/blog/2016/06/15/ascii-art-diagrams-in-emacs-org-mode/][Emacs org-mode ASCII diagrams]] :org:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-22 Wed]
-   :ID:       6e91adf5-a589-4b45-bd9f-3714d9baf680
-	 :END:
-	 use ditaa n00bz
-****** [[https://www.johndcook.com/blog/2012/02/09/python-org-mode/][Running Python and R inside Emacs]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-22 Wed]
-   :ID:       b195224e-e8be-4131-81f5-b3a80ffa1b40
-	 :END:
-
-****** [[https://orgmode.org/manual/Creating-Footnotes.html][Creating Footnotes (The Org Manual)]] :org:
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-11 Sat]
-   :ID:       7b3510a5-d341-4c7a-b881-e11c8f02dd46
-	 :END:
-
-****** [[https://www.emacswiki.org/emacs/Icicles][Icicles - EmacsWiki]]
-:PROPERTIES:
-:ID:       88d7f5f9-f5c6-4283-9ac1-88881ea4cfae
-:CREATED: [2021-01-39 Sat 11:01]
-:END:
-Emacs lib for enhancing minibuffer completion
-   
-****** [[https://www.emacswiki.org/emacs/BookmarkPlus][bookmark+ docs]]
-:PROPERTIES:
-:ID:       1d87a1fb-4e0d-4f78-949a-2247c702abac
-:CREATED: [2021-02-06 Sat 03:02]
-:END:
-****** [[http://cachestocaches.com/2016/9/my-workflow-org-agenda/][My Workflow with Org-Agenda]] :org:
-:PROPERTIES:
-:ID:       fd929d43-cb4c-4021-90ab-2b2a94729f5c
-:CREATED: [2021-01-26 Tue 18:49]
-:END:
-A classic emacs beginner read
-****** [[https://orgmode.org/manual/HTML-Export.html#HTML-Export][Emacs Org HTML Export]] :org:
-:PROPERTIES:
-:ID:       d7675cbb-9f74-4b96-a2ff-ac85de916deb
-:CREATED: [2021-01-20 Wed 22:47]
-:END:
+- [[https://opensource.com/article/20/3/blog-emacs][How to blog with Emacs Org mode | Opensource.com]]              :org:publish:
+  - uses =ox-publish= to create a sitemap in =publish.el=, and
+    executes that code with a Makefile.
+- [[https://www.gnu.org/software/emacs/manual/html_mono/widget.html][The Emacs Widget Library]]                                               :ui:
+- [[https://ambrevar.xyz/lisp-repl-shell/index.html][A Lisp REPL as my main shell]]
+- [[https://protesilaos.com/dotemacs/#h:847477fe-ef86-4e12-a2da-6c431528da99][GNU Emacs integrated computing environment | Protesilaos Stavrou]]
+- [[https://orgmode.org/worg/dev/org-element-api.html][Org Element API]]                                                   :org:api:
+- [[http://ergoemacs.org/emacs/elisp_parse_org_mode.html][Elisp: Parse Org Mode]]                                             :org:api:
+- [[https://orgmode.org/worg/org-tutorials/weaving-a-budget.html][Weaving a budget with Org & ledger]]
+- [[https://orgmode.org/worg/org-tutorials/tracking-habits.html][Tracking Habits with Org-mode]]                                         :org:
+- [[https://emacs.stackexchange.com/questions/9674/customize-startup-screen-text][start up - Customize startup screen text - Emacs Stack Exchange]]
+- [[https://www.johndcook.com/blog/2016/06/15/ascii-art-diagrams-in-emacs-org-mode/][Emacs org-mode ASCII diagrams]]                                         :org:
+  - use ditaa n00bz
+- [[https://www.johndcook.com/blog/2012/02/09/python-org-mode/][Running Python and R inside Emacs]]
+- [[https://orgmode.org/manual/Creating-Footnotes.html][Creating Footnotes (The Org Manual)]]                                   :org:
+- [[https://www.emacswiki.org/emacs/Icicles][Icicles - EmacsWiki]]
+  - Emacs lib for enhancing minibuffer completion
+- [[https://www.emacswiki.org/emacs/BookmarkPlus][bookmark+ docs]]
+- [[http://cachestocaches.com/2016/9/my-workflow-org-agenda/][My Workflow with Org-Agenda]]                                           :org:
+  - A classic emacs beginner read
+- [[https://orgmode.org/manual/HTML-Export.html#HTML-Export][Emacs Org HTML Export]]                                                 :org:
 ***** GNU Make
 :PROPERTIES:
 :ID: c93b85e8-4b50-4477-b121-486271ea50d6
@@ -3468,26 +3208,11 @@ modification.
 -- [[https://www.gnu.org/software/bash/][GNU Project - Free Software Foundation]]
 #+end_quote
 
-****** [[https://tiswww.case.edu/php/chet/bash/bashtop.html][The GNU Bourne-Again Shell]]
-:PROPERTIES:
-:ID:       216df359-d37e-42d4-9172-fa43e7b95585
-:END:
+- [[https://tiswww.case.edu/php/chet/bash/bashtop.html][The GNU Bourne-Again Shell]]
 - [[https://tiswww.case.edu/php/chet/bash/FAQ][FAQ]]
-
-****** [[https://stackoverflow.com/questions/16365130/what-is-the-difference-between-usr-bin-env-bash-and-usr-bin-bash/16365367#16365367][linux - What is the difference between "#!/usr/bin/env bash" and "#!/usr/bin/bash"? - Stack Overflow]]
-:PROPERTIES:
-:CREATED:  [2020-07-05 Sun]
-:ID:       49984c0c-a553-4c62-a921-07a4259aee73
-:END:
-
-****** [[https://github.com/dylanaraps/pure-bash-bible][pure bash bible]] :sh:
-:PROPERTIES:
-:ID:       f7fc486e-56e3-458c-ada6-b2b800722abd
-:END:
-****** [[https://wiki.bash-hackers.org/][the bash hacker's wiki]]   :sh:
-:PROPERTIES:
-:ID:       3c99996a-b259-49a2-a762-dbb03d53590e
-:END:
+- [[https://stackoverflow.com/questions/16365130/what-is-the-difference-between-usr-bin-env-bash-and-usr-bin-bash/16365367#16365367][linux - What is the difference between "#!/usr/bin/env bash" and "#!/usr/bin/bash"? - Stack Overflow]]
+- [[https://github.com/dylanaraps/pure-bash-bible][pure bash bible]]                                                        :sh:
+- [[https://wiki.bash-hackers.org/][the bash hacker's wiki]]                                                 :sh:
 ***** Conky                                                     :lua:cpp:
 :PROPERTIES:
 :ID: ee68a953-f9b3-447d-a531-ef301ca1e0d9
@@ -3710,35 +3435,16 @@ in, but overall a good continuation of the mind-mapping framework.
 :PROPERTIES:
 :ID:       512510b9-6bcc-4f38-8cc9-059111d25cfe
 :END:
-****** [[https://git.suckless.org/][suckless Repositories]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-18 Sat]
-   :ID:       b28d2ab8-2331-4626-9185-d797bf70b01e
-	 :END:		
-****** [[https://github.com/browsh-org/browsh][GitHub - browsh-org/browsh: A fully-modern text-based browser, rendering to TTY and browsers]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-18 Sat]
-   :ID:       471a7170-e0a8-4417-b333-ee130b085953
-	 :END:
-****** [[https://dystroy.org/broot/][Broot]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-18 Sat]
-   :ID:       62b5db76-f5c2-49f7-bcf5-04faa17ea087
-	 :END:
-****** [[https://caddyserver.com/docs/][Welcome — Caddy Documentation]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-28 Sun]
-   :ID:       45ddcdf7-c9b7-4ff1-8d41-dbdd21198e43
-	 :END:
-	 v2 caddy docs for API
-****** [[https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md][ripgrep/GUIDE.md at master · BurntSushi/ripgrep · GitHub]]
+- [[https://git.suckless.org/][suckless Repositories]]
+- [[https://github.com/browsh-org/browsh][GitHub - browsh-org/browsh: A fully-modern text-based browser, rendering to TTY and browsers]]
+- [[https://dystroy.org/broot/][Broot]]
+- [[https://caddyserver.com/docs/][Welcome — Caddy Documentation]]
+  - v2 caddy docs for API
+- [[https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md][ripgrep/GUIDE.md at master · BurntSushi/ripgrep · GitHub]]
 	 :PROPERTIES:
 	 :CREATED:  [2020-06-26 Fri]
    :ID:       2f96c91e-d79a-4663-bc45-9f56ff6da29f
 	 :END:
-**** Libraries                                                       :lib:
-:PROPERTIES:
-:END:
 ***** Memcached                                                     :kvs:
 :PROPERTIES:
 :CUSTOM_ID: memcached
@@ -3988,11 +3694,11 @@ pacman -Sy
 :PROPERTIES:
 :ID:       328ce6ac-c4e4-47e6-9942-018561e7c630
 :END:
-********* [[https://wiki.archlinux.org/title/Dual_boot_with_Windows][Dual boot with Windows - ArchWiki]]
+********* Dual boot with Windows
 :PROPERTIES:
 :ID:       0278d93e-d254-4494-b401-aa38277ad838
 :END:
-
++ [[https://wiki.archlinux.org/title/Dual_boot_with_Windows][wiki]] <-
 ******* Pentoo
 :PROPERTIES:
 :ID: 8db0a4c6-b265-4d92-83ff-095899ca72e6
@@ -4054,10 +3760,11 @@ administrator.
 :CUSTOM_ID: windows
 :END:
 - https://en.wikipedia.org/wiki/Microsoft_Windows
-****** [[https://docs.microsoft.com/en-us/windows/deployment/mbr-to-gpt][MBR2GPT - Windows Deployment | Microsoft Docs]]
+****** MBR2GPT - Windows Deployment
 :PROPERTIES:
 :ID:       1b58ee7d-4aac-4a43-bb25-a9ff80d2ffa1
 :END:
++ [[https://docs.microsoft.com/en-us/windows/deployment/mbr-to-gpt][src]] <-
 ***** MacOS                                                      :darwin:
 :PROPERTIES:
 :ID: 80928580-61a4-489d-885b-0f273070fd91
@@ -4076,49 +3783,53 @@ administrator.
 :ID:       1ecb433e-f44b-4ec1-a2d5-e3507dab72fa
 :CUSTOM_ID: pwas-today
 :END:
-****** [[https://blog.bitsrc.io/what-is-a-pwa-and-why-should-you-care-388afb6c0bad][What is a PWA and Why Should You Care?]]
+****** What is a PWA and Why Should You Care?
 :PROPERTIES:
 :ID:       dc6ac195-2534-403c-874c-a0d3bd28d85b
 :END:
-   - gives the basic highlights
-    - read "Why we need PWAs and what are their features?" section for tl;dr
-   - DemoTime: [[https://www.fidgetspin.xyz/][Fidget Spinner]] --> F12 goto 'Applications' tab
-****** [[https://developers.google.com/web/progressive-web-apps/][PWAs - Google Dev]]
++ [[https://blog.bitsrc.io/what-is-a-pwa-and-why-should-you-care-388afb6c0bad][src]] <-
+- gives the basic highlights
+  - read "Why we need PWAs and what are their features?" section for tl;dr
+- DemoTime: [[https://www.fidgetspin.xyz/][Fidget Spinner]] --> F12 goto 'Applications' tab
+****** PWAs - Google Dev
 :PROPERTIES:
 :ID:       789d2efc-0b29-4b24-be52-8a669227970e
 :END:
-   - need manifest.json, service worker with offline capabilities
-   - to trigger install-prompt in chrome - need to have some kind of initial engagment with the app
-****** Connecting the dots - [[https://uxdesign.cc/pwas-are-the-future-d51aae1f3af7][UX Perspective]]
++ [[https://developers.google.com/web/progressive-web-apps/][src]] <-
+- need manifest.json, service worker with offline capabilities
+- to trigger install-prompt in chrome - need to have some kind of initial engagment with the app
+****** Connecting the dots
 :PROPERTIES:
 :ID:       e4572f0b-6a89-4f69-ac95-562d57c65b24
 :END:
-
+- [[https://uxdesign.cc/pwas-are-the-future-d51aae1f3af7][UX Perspective]]
 ***** PWAs Tomorrow
 :PROPERTIES:
 :ID:       4df30bd9-e834-4a65-8414-c15ce796f6c6
 :CUSTOM_ID: pwas-tomorrow
 :END:
   - some of this might get rather technical
-****** [[https://blog.chromium.org/2016/08/from-chrome-apps-to-web.html][PWAs have dependencies]]
+****** PWAs have dependencies
 :PROPERTIES:
 :ID:       bd2b322e-88c5-4447-adc1-6c00c2dde4ed
 :END:
-   - this is an old post so nothing to worry about in the short term, but the PWA ecosystem is highly dependent on gatekeepers
-     * Google, Apple, Microsoft
-   - gatekeepers make the rules and set prescribed tech through the manifest.json approval process
-   - potential for support for systems tech to be dropped - large tech debt to overcome
-****** [[https://developers.google.com/web/ilt/pwa/introduction-to-service-worker][Service Workers]] - quick note on this article
++ [[https://blog.chromium.org/2016/08/from-chrome-apps-to-web.html][src]] <-
+- this is an old post so nothing to worry about in the short term, but the PWA ecosystem is highly dependent on gatekeepers
+- gatekeepers make the rules and set prescribed tech through the manifest.json approval process
+- potential for support for systems tech to be dropped - large tech debt to overcome
+****** quick note on this article
 :PROPERTIES:
 :ID:       9fa067ce-4835-4901-9d47-728771e08319
 :END:
+  [[https://developers.google.com/web/ilt/pwa/introduction-to-service-worker][Service Workers]]
    #+begin_quote
    Because the service worker is not blocking (it's designed to be fully asynchronous) synchronous XHR and localStorage cannot be used in a service worker.
    #+end_quote
-***** QA Automation checklist: [[https://developers.google.com/web/progressive-web-apps/checklist][PWA Checklist]]
+***** QA Automation checklist: 
 :PROPERTIES:
 :ID:       ba2f1962-ae85-4576-8b3b-9b55cb8f1529
 :END:
+- [[https://developers.google.com/web/progressive-web-apps/checklist][PWA Checklist]]
 **** Version Control                                                  :vc:
 :PROPERTIES:
 :ID: 8ebdc53e-37cf-4f9a-8b4a-ad2e834f5ed3
@@ -4172,19 +3883,21 @@ intuitive interface.
 :ID:       855028ee-b28b-433d-a5bb-016fe72cefe2
 :CUSTOM_ID: hgweb
 :END:
-****** [[https://www.mercurial-scm.org/guide][Mercurial Guide]]
+****** Mercurial Guide
 :PROPERTIES:
 :ID:       6abd2991-b6f0-4686-9620-93185ea19b1d
 :END:
-****** [[https://www.mercurial-scm.org/wiki/RepositoryCorruption][Dealing with Repository and Dirstate Corruption]]
++ [[https://www.mercurial-scm.org/guide][src]] <-
+****** Dealing with Repository and Dirstate Corruption
 :PROPERTIES:
 :ID:       99282960-dc18-4db3-ae06-6a293914d0ec
 :END:
-****** [[https://mozilla-version-control-tools.readthedocs.io/en/latest/index.html][Mozilla Version Control Tools]]
++ [[https://www.mercurial-scm.org/wiki/RepositoryCorruption][src]] <-
+****** Mozilla Version Control Tools
 :PROPERTIES:
 :ID:       9f2b607c-0c3a-4fed-8c56-f42f1f42651c
 :END:
-
++ [[https://mozilla-version-control-tools.readthedocs.io/en/latest/index.html][src]] <-
 ****** Mercurialology
 :PROPERTIES:
 :created:  <2021-08-14 Sat 23:49>
@@ -4544,29 +4257,12 @@ accepted as a core components of DevOps.
 :ID: 8162fa8b-f79d-4a87-8d4e-82ef993e08f2
 :CUSTOM_ID: embedded-systems
 :END:
-***** [[https://elinux.org/Main_Page][Embedded Linux Wiki]]
-:PROPERTIES:
-:ID:       cf94b668-613d-4b18-9474-1b88e73ae749
-:END:
-***** [[https://github.com/esp8266/Arduino][GitHub - esp8266/Arduino: ESP8266 core for Arduino]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       a0db425f-6f46-4e21-9226-49f3a2a47b28
-	 :END:
-	 is there a rust crate tho? - yeeee
-
-***** [[https://github.com/MabezDev/idf2svd][GitHub - MabezDev/idf2svd]]
-:PROPERTIES:
-:CREATED:  [2020-07-12 Sun]
-:ID:       311f5f16-2cfe-4575-9009-9183e4bd5850
-:END:
-generates SVD files for ESP32 based devices.. rather messy
-
-***** [[https://en.wikipedia.org/wiki/ESP32][ESP32 - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       bf168556-e19c-44e7-84fe-7752da708d87
-	 :END:
+- [[https://elinux.org/Main_Page][Embedded Linux Wiki]]
+- [[https://github.com/esp8266/Arduino][GitHub - esp8266/Arduino: ESP8266 core for Arduino]]
+  - is there a rust crate tho? - yeeee
+- [[https://github.com/MabezDev/idf2svd][GitHub - MabezDev/idf2svd]]
+  - generates SVD files for ESP32 based devices.. rather messy
+- [[https://en.wikipedia.org/wiki/ESP32][ESP32 - Wikipedia]]
 ***** Software Defined Radio                                        :sdr:
 :PROPERTIES:
 :ID: de73cf8a-d39f-4bdb-8ec9-009288e77d19
@@ -4575,14 +4271,17 @@ generates SVD files for ESP32 based devices.. rather messy
 :END:
 - https://en.wikipedia.org/wiki/Software-defined_radio
 
-******* [[https://www.wikiwand.com/en/Cognitive_radio?fbclid=IwAR2ix1x1HHC9rimSUr_NkdRQERtKKm4_IBvH25Vb05Oh6svQ3mKegV0bKz0][Cognitive Radio]]
+******* Cognitive Radio
 :PROPERTIES:
 :ID:       8d69e21e-cc67-42cb-a048-098d6dd4545f
 :END:
-******* [[https://www.wikiwand.com/en/RF_front_end][RF Front End]]
++ [[https://www.wikiwand.com/en/Cognitive_radio?fbclid=IwAR2ix1x1HHC9rimSUr_NkdRQERtKKm4_IBvH25Vb05Oh6svQ3mKegV0bKz0][wiki]] <-
+******* RF Front End
 :PROPERTIES:
 :ID:       04dc64b3-40cb-4903-af15-8d4f495cf61d
 :END:
++ [[https://www.wikiwand.com/en/RF_front_end][wiki]] <-
++ what -- \\
 #+BEGIN_QUOTE
 In a radio receiver circuit, the RF front end is a generic term for all the circuitry between a receiver's antenna input up to and including the mixer stage.[1] It consists of all the components in the receiver that process the signal at the original incoming radio frequency (RF), before it is converted to a lower intermediate frequency (IF). In microwave and satellite receivers it is often called the low-noise block (LNB) or low-noise downconverter (LND) and is often located at the antenna, so that the signal from the antenna can be transferred to the rest of the receiver at the more easily handled intermediate frequency.
 
@@ -4594,7 +4293,7 @@ A local oscillator (LO) which generates a radio frequency signal at an offset fr
 The mixer, which mixes the incoming signal with the signal from the local oscillator to convert the signal to the intermediate frequency (IF).#+END_QUOTE
 #+END_QUOTE
 
-+ imagine fx processing on radio signals. SDR plguins. encryption, ids, etc
+- imagine fx processing on radio signals. SDR plguins. encryption, ids, etc
 
 
 ******** [[https://www.wikiwand.com/en/Band-pass_filter][band-pass filter]]
@@ -4624,34 +4323,13 @@ creates new frequencies by combining or mixing two frequencies.
 :ID:       97113225-512b-4760-bfbc-cb8592557c27
 :CUSTOM_ID: antennai
 :END:
-******* [[https://wiki.gnuradio.org/index.php/Main_Page][GNU Radio]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       95565d55-a94f-44c9-9dc4-58a6922c095c
-	 :END:
-******* [[https://www.youtube.com/watch?v=ZuNOD3XWp4A][All Your RFz Are Belong to Me - Defcon 21 - Youtube]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       4a650272-ddc4-4c90-b0b7-1f5abbf89b0b
-	 :END:
-	 [[yt:ZuNOD3XWp4A]]
-******* [[https://www.youtube.com/watch?v=vQtLms02PFM][Bill Swearingen - HAKC THE POLICE - Defcon 27 - Youtube]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       47d4f565-34c6-4e2c-9a6a-f3fd66cd0f06
-	 :END:
-	 [[yt:vQtLms02PFM]]
-******* [[https://www.analog.com/en/analog-dialogue/articles/high-definition-low-delay-sdr-based-video-transmission-in-uav-applications.html#][High Definition, Low Delay, SDR-Based Video Transmission in UAV Applications | Analog Devices]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-11 Sat]
-   :ID:       65f3f7cb-3ee3-411f-b26b-39a00b70d6c3
-	 :END:
-******* [[https://liquidsdr.org/][liquidsdr.org]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-04 Sat]
-   :ID:       3bb50626-f1a4-4565-8c01-89a6f254f233
-	 :END:
-
+- [[https://wiki.gnuradio.org/index.php/Main_Page][GNU Radio]]
+- [[https://www.youtube.com/watch?v=ZuNOD3XWp4A][All Your RFz Are Belong to Me - Defcon 21 - Youtube]]
+  [[yt:ZuNOD3XWp4A]]
+- [[https://www.youtube.com/watch?v=vQtLms02PFM][Bill Swearingen - HAKC THE POLICE - Defcon 27 - Youtube]]
+  [[yt:vQtLms02PFM]]
+- [[https://www.analog.com/en/analog-dialogue/articles/high-definition-low-delay-sdr-based-video-transmission-in-uav-applications.html#][High Definition, Low Delay, SDR-Based Video Transmission in UAV Applications | Analog Devices]]
+- [[https://liquidsdr.org/][liquidsdr.org]]
 *** links
 :PROPERTIES:
 :ID:       4085c001-3c70-45b5-9fca-cd989bf02cf0
@@ -4661,279 +4339,60 @@ creates new frequencies by combining or mixing two frequencies.
 :ID:       6dcfe91d-ecfa-4889-8432-fbccbc6e06b5
 :CUSTOM_ID: unsorted
 :END:
-***** [[https://docs.google.com/document/d/1xbHW7aOMLT_NUOguLViHgt6xOCitxVxBtuDtbTcVHRU][Open platforms, hundred of millions-level computing power, spatio-temporal data: with the arrival of the epidemic, what is AI doing]] :ai:
-:PROPERTIES:
-:ID:       4fd5aea1-965a-47ab-9998-573618a94a45
-:END:
-CREATED: [2021-01-26 Tue 15:29]
-***** [[https://docs.google.com/presentation/d/1F-_tgU27l6mgH8MY2zUIKPnTz8ZfcSrE][Edge Weight Prediction in Weighted Sign Networks - Srijan Kumar]] :deck:dapp:net:
-:PROPERTIES:
-:ID:       b4f4aa58-b769-46c3-8017-8fbc1431f548
-:END:
-CREATED: [2021-01-26 Tue 15:26]
-Good intro to managing "Goodness" and "Fairness" amongst nodes in distributed systems
+- [[https://docs.google.com/document/d/1xbHW7aOMLT_NUOguLViHgt6xOCitxVxBtuDtbTcVHRU][Open platforms, hundred of millions-level computing power, spatio-temporal data: with the arrival of the epidemic, what is AI doing]] :ai:
+- [[https://docs.google.com/presentation/d/1F-_tgU27l6mgH8MY2zUIKPnTz8ZfcSrE][Edge Weight Prediction in Weighted Sign Networks - Srijan Kumar]] :deck:dapp:net:
+  - Good intro to managing "Goodness" and "Fairness" amongst nodes in distributed systems
 
-***** [[https://io808.com/][iO-808]]
-	 :PROPERTIES:
-	 :CREATED:  [2021-02-07 Sun 23:28]
-	 :ID:       c33cdfcf-393e-4ca7-941f-9d4e5fa88c77
-	 :END:
-	 JS-based TR-808 web app
-***** [[http://pd-tutorial.com/english/ch04s02.html][PureData Sequencer Tutorial]]
-:PROPERTIES:
-:ID:       e24d11a0-f08b-4b26-842f-011fa77de6f4
-:END:
-CREATED: [2021-01-27 Wed 15:09]
-where we left off in researching Max alternatives
-***** [[https://github.com/stripe-samples/checkout-one-time-payments][Stripe - one-time example]]
-:PROPERTIES:
-:ID:       733924bd-0114-409d-98e2-5f3d687fd47d
-:END:
-CREATED: [2021-01-25 Mon 15:09]
-***** [[https://stripe.com/docs/api][Stripe API Reference]]
-:PROPERTIES:
-:ID:       19c3902b-e359-4de7-ab60-1c60001222e6
-:END:
-CREATED: [2021-01-25 Mon 15:10]
-***** [[https://github.com/obsproject/obs-studio/blob/master/plugins/rtmp-services/data/services.json][OBS RTMP Services]] :json:
-:PROPERTIES:
-:ID:       d2020cd5-b0e7-4414-94a1-6c3e6a85c5cf
-:END:
-CREATED: [2021-01-23 Sat 14:45]
-
-***** [[https://en.wikipedia.org/wiki/Rope_(data_structure)][Rope (data structure) - Wikipedia]] :compsci:
-:PROPERTIES:
-:ID:       76ebfa76-dd5b-4c6f-b020-930dfdfe82bc
-:END:
-CREATED: [2020-08-03 Mon 15:41]
-***** [[https://protesilaos.com/fables-on-systems/][Fables on Systems | Protesilaos Stavrou]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       f1f16283-b4ec-450f-b625-e9bdb927a6cd
-	 :END:
-		
-***** [[https://blog.securityevaluators.com/reverse-engineering-bumbles-api-a2a0d39b3a87][Reverse Engineering Bumble's API - ISE]]
-:PROPERTIES:
-:ID:       e9dc0cf6-0b9b-4b9a-9ac3-bc8d0bea9359
-:END:
-CREATED: [2021-01-22 Fri 02:39]
-***** [[https://crates.io/crates/dropbox-sdk][dropbox-sdk]]
-:PROPERTIES:
-:ID:       a8b9d16e-f6c3-4e48-9cb1-b29008c5ab36
-:END:
-CREATED: [2021-01-21 Thu 00:14]
-***** [[https://book.hacktricks.xyz/][HackTricks]]
-:PROPERTIES:
-:ID:       54088fef-a7f3-4927-9e11-f317f6b369df
-:END:
-CREATED: [2021-01-20 Wed 21:38]
-***** [[https://en.wikipedia.org/wiki/Amdahl%27s_law][Amdahl's law - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       36cd31e3-b77c-4ee6-af49-271e92824f45
-	 :END:
-***** [[https://www.researchgate.net/publication/42795002_Consuming_the_entrepreneurial_city_Image_memory_spectacle][Consuming the entrepreneurial city: Image, memory, spectacle | Researchgate]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       c1b178ca-4079-4426-ac82-aab82ff71163
-	 :END:
-***** [[http://www.dcs.ed.ac.uk/home/lego/][The LEGO Proof Assistant]] - lol
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-11 Sat]
-   :ID:       4d38faf0-6a63-4925-9438-beee51c7a0a9
-	 :END:
-***** [[https://docs.rs/svd2rust/0.17.0/svd2rust/][svd2rust - Rust]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-11 Sat]
-   :ID:       53b5547c-cdda-493f-a798-afb024008f79
-	 :END:
-***** [[https://github.com/nodiscc/awesome-linuxaudio][GitHub - nodiscc/awesome-linuxaudio]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-06 Mon]
-   :ID:       6d607faa-0c2c-4306-a02f-19dbe69a6594
-	 :END:
-***** [[https://www.nongnu.org/ratpoison/inspiration.html][SCWM, Pot and the GPL]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-05 Sun]
-   :ID:       aceaa143-7223-46a8-bc55-5a01efb54ebb
-	 :END:
-***** [[https://registry.opendata.aws/][Registry of Open Data on AWS]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-05 Sun]
-   :ID:       1046d779-cd8b-49f0-9c2f-8e910b3cebeb
-	 :END:
-***** [[https://commoncrawl.org/][Common Crawl]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-05 Sun]
-   :ID:       63dbe609-6cc5-4b1e-8720-c57b50157f07
-	 :END:
-***** [[https://remexre.xyz/][remexre.xyz]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-02 Thu]
-   :ID:       6130e479-d150-4522-9825-de713d444209
-	 :END:
-***** [[https://www.reddit.com/r/archlinux/comments/20q0s0/awesome_wm_vs_i3/#:~:text=Another%20really%20major%20difference%20between,one%20screen%20to%20the%20next.][Awesome WM vs i3 : archlinux]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       6da00b38-676f-4be0-8caa-145cdb0569d8
-	 :END:
-***** [[https://awesomewm.org/apidoc/][awesome API documentation]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       adaae893-b0da-4e92-b80c-738602716560
-	 :END:
-***** [[https://github.com/lcpz/awesome-copycats][GitHub - lcpz/awesome-copycats: Awesome WM themes]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       9043f47b-646d-4990-b65f-04fb1a43662a
-	 :END:
-	 ready-to-ship awesomewm configs
-***** [[https://www.navy.mil/submit/display.asp?story_id=109773][SPAWAR Changes Name to Naval Information Warfare Systems Command -- Aligns Identity with Mission]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       6508d388-91ff-4f21-ab3a-1a3f86c79e4d
-	 :END:
-***** [[https://en.wikipedia.org/wiki/Unified_Modeling_Language][Unified Modeling Language - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-02 Thu]
-   :ID:       e57dd408-2e32-4bbf-880e-1f34b3e16ffd
-	 :END:
-***** [[https://hpbn.co/webrtc/][Browser APIs and Protocols: WebRTC - High Performance Browser Networking (O'Reilly)]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-02 Thu]
-   :ID:       b85767a0-6e30-4608-8d66-ed50f0cf232f
-	 :END:
-***** [[https://www.researchgate.net/publication/322419379_Fault_Localization_in_Service-Based_Systems_hosted_in_Mobile_Ad_Hoc_Networks][(PDF) Fault Localization in Service-Based Systems hosted in Mobile Ad Hoc Networks]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-02 Thu]
-   :ID:       facb1c46-f5f6-43c8-b43d-d8338fe9b5bd
-	 :END:
-***** [[https://en.wikipedia.org/wiki/Maximum_transmission_unit][Maximum transmission unit - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-02 Thu]
-   :ID:       98d377d0-479f-4e7d-a1ab-397c9e1b5de3
-	 :END:
-***** [[https://www.reddit.com/prefs/feeds/][reddit.com: prefs/feeds]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-02 Thu]
-   :ID:       9493e8f7-8a6b-4cee-909d-7f686b8dfe8d
-	 :END:
-***** [[https://www.rfc-editor.org/rfc/rfc7854.txt][BGP Monitoring Protocol (BMP)]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-01 Wed]
-   :ID:       61c82a59-26fc-44b9-991d-0249f1e229da
-	 :END:
-***** [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol#:~:text=Border%20Gateway%20Protocol%20(BGP)%20is,(AS)%20on%20the%20Internet.][Border Gateway Protocol - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-01 Wed]
-   :ID:       443ee013-49c2-4e21-bf87-49e1008262aa
-	 :END:
-***** [[https://tools.ietf.org/html/rfc5424][RFC 5424 - The Syslog Protocol]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-01 Wed]
-   :ID:       8447264a-0cae-43d0-9da8-3391aa4e05ed
-	 :END:
-***** [[https://en.wikipedia.org/wiki/Asterisk_(PBX)][Asterisk (PBX) - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-01 Wed]
-   :ID:       8571620e-b101-4263-aedc-2457bbb9b006
-	 :END:
-***** [[https://books.google.com/books?id=8wsdxBzyV48C&printsec=frontcover#v=onepage&q&f=false][Asterisk Hacking - Joshua Brashars - Google Books]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-01 Wed]
-   :ID:       16ac5177-6086-48e5-890c-646f04fcf50e
-	 :END:
-***** [[https://www.gartner.com/imagesrv/media-products/pdf/radware/Radware-1-2Y7FR0I.pdf][Gartner: Protecting from a Growing Attack Vector: Encrypted Attacks]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-28 Sun]
-   :ID:       e55ee12d-9dd8-433d-8264-1dd5db4f44ee
-	 :END:
-***** [[https://blogs.infoblox.com/community/dns-data-exfiltration-how-it-works/?_ga=2.5464179.1967257259.1592815237-1124357645.1592815237][DNS Data Exfiltration - How it works]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-28 Sun]
-   :ID:       5b481d26-8905-47b2-8fd7-ea4c54b36f83
-	 :END:
-***** [[https://silvia-odwyer.github.io/photon/demo.html][Photon WASM Demo]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-24 Wed]
-   :ID:       df9d1978-5019-456c-befb-9f11702f6da5
-	 :END:
-***** [[https://academictorrents.com/details/defa6184c98663c94de97cb7e0952a54677e4aac/collections][Enabling Factorized Piano Music Modeling and Generation with the {MAESTRO} Dataset - Collections - Academic Torrents]] :ml:
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-24 Wed]
-   :ID:       502c4cb8-ac98-4a34-8514-ae7186112060
-	 :END:
-***** [[https://www.geeksforgeeks.org/piping-in-unix-or-linux/][Piping in Unix or Linux - GeeksforGeeks]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-19 Fri]
-   :ID:       7fe89ff1-4808-4357-9fc8-e8a2d5d7b9a8
-	 :END:
-***** [[https://github.com/joncardasis/ultimate-api][ultimate guitar api 2017]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-17 Wed]
-   :ID:       2fb5a02f-c248-4555-8182-f3e64003852f
-	 :END:
-***** [[http://w3m.sourceforge.net/][W3M Homepage]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-18 Sat]
-   :ID:       1a3ab1cf-58fe-43d9-b10e-b0456f82cebc
-	 :END:
-***** [[http://core.dpdk.org/doc/][DPDK]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-18 Sat]
-   :ID:       261aba16-b34b-4746-a486-2a8bfc7ad84c
-	 :END:
-***** [[https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9730-packet-processing-on-gpu-at-100gbe-line-rate.pdf][NVIDIA - GPU-accelerated packet-processing]]
-:PROPERTIES:
-:ID:       9dfb0671-b926-4f6d-a321-a0423514686f
-:END:
-		they yoinked from DPDK and optimized for GPU
-***** [[https://en.wikipedia.org/wiki/Bit_numbering#Most_significant_byte][Bit numbering - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       16550f25-cd6a-4edb-a5f4-5cc93a1c3019
-	 :END:
-***** [[https://tools.ietf.org/html/rfc2119][RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       2bb91acc-fba5-4f31-8a78-4b1f4f72f7cc
-	 :END:
-***** [[https://tools.ietf.org/html/rfc8174][RFC 8174 - Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       8cf830fa-62f3-48e2-b71b-9299727a15b2
-	 :END:
-***** [[https://en.wikipedia.org/wiki/Spanning_tree][Spanning tree - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       529448d3-bc00-4fa7-9982-8bc8c8fc5501
-	 :END:
-***** [[https://gstreamer.freedesktop.org/documentation/additional/design/element-sink.html?gi-language=c][Sink elements]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       cf8be67d-523e-468d-8dc2-5b925a02d6b0
-	 :END:
-***** [[https://opencorporates.com/][open-corp DB]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       86cf6ebb-3588-4692-b2d4-fa52014305c1
-	 :END:
-***** [[https://en.wikipedia.org/wiki/Cisco_Meraki][Cisco Meraki - Wikipedia]]
-:PROPERTIES:
-:ID:       be6b1e0f-8d05-487d-8962-27cb50d608c7
-:END:
-	 find out what they're currently implementing
-	 :PROPERTIES:
-	 :CREATED: [2020-07-12 Sun]
-	 :END:
-
-***** [[https://github.com/ulid/spec][GitHub - ulid/spec: The canonical spec for ulid]]
-:PROPERTIES:
-:ID:       55760717-82c2-4735-892a-4de534ce52a8
-:END:
-- [[https://github.com/mmacedoeu/rulid.rs/blob/master/src/lib.rs][rulid.rs/lib.rs at master · mmacedoeu/rulid.rs · GitHub]]
-- [[https://github.com/dylanhart/ulid-rs/blob/master/src/lib.rs][ulid-rs/lib.rs at master · dylanhart/ulid-rs · GitHub]]
-
+- [[https://io808.com/][iO-808]]
+  - JS-based TR-808 web app
+- [[http://pd-tutorial.com/english/ch04s02.html][PureData Sequencer Tutorial]]
+  - where we left off in researching Max alternatives
+- [[https://github.com/stripe-samples/checkout-one-time-payments][Stripe - one-time example]]
+- [[https://stripe.com/docs/api][Stripe API Reference]]
+- [[https://github.com/obsproject/obs-studio/blob/master/plugins/rtmp-services/data/services.json][OBS RTMP Services]]                                                    :json:
+- [[https://en.wikipedia.org/wiki/Rope_(data_structure)][Rope (data structure) - Wikipedia]]                                 :compsci:
+- [[https://protesilaos.com/fables-on-systems/][Fables on Systems | Protesilaos Stavrou]]
+- [[https://blog.securityevaluators.com/reverse-engineering-bumbles-api-a2a0d39b3a87][Reverse Engineering Bumble's API - ISE]]
+- [[https://crates.io/crates/dropbox-sdk][dropbox-sdk]]
+- [[https://book.hacktricks.xyz/][HackTricks]]
+- [[https://en.wikipedia.org/wiki/Amdahl%27s_law][Amdahl's law - Wikipedia]]
+- [[https://www.researchgate.net/publication/42795002_Consuming_the_entrepreneurial_city_Image_memory_spectacle][Consuming the entrepreneurial city: Image, memory, spectacle | Researchgate]]
+- [[http://www.dcs.ed.ac.uk/home/lego/][The LEGO Proof Assistant]] - lol
+- [[https://docs.rs/svd2rust/0.17.0/svd2rust/][svd2rust - Rust]]
+- [[https://github.com/nodiscc/awesome-linuxaudio][GitHub - nodiscc/awesome-linuxaudio]]
+- [[https://www.nongnu.org/ratpoison/inspiration.html][SCWM, Pot and the GPL]]
+- [[https://registry.opendata.aws/][Registry of Open Data on AWS]]
+- [[https://commoncrawl.org/][Common Crawl]]
+- [[https://remexre.xyz/][remexre.xyz]]
+- [[https://www.reddit.com/r/archlinux/comments/20q0s0/awesome_wm_vs_i3/#:~:text=Another%20really%20major%20difference%20between,one%20screen%20to%20the%20next.][Awesome WM vs i3 : archlinux]]
+- [[https://awesomewm.org/apidoc/][awesome API documentation]]
+- [[https://github.com/lcpz/awesome-copycats][GitHub - lcpz/awesome-copycats: Awesome WM themes]]
+  - ready-to-ship awesomewm configs
+- [[https://www.navy.mil/submit/display.asp?story_id=109773][SPAWAR Changes Name to Naval Information Warfare Systems Command -- Aligns Identity with Mission]]
+- [[https://en.wikipedia.org/wiki/Unified_Modeling_Language][Unified Modeling Language - Wikipedia]]
+- [[https://hpbn.co/webrtc/][Browser APIs and Protocols: WebRTC - High Performance Browser Networking (O'Reilly)]]
+- [[https://www.researchgate.net/publication/322419379_Fault_Localization_in_Service-Based_Systems_hosted_in_Mobile_Ad_Hoc_Networks][(PDF) Fault Localization in Service-Based Systems hosted in Mobile Ad Hoc Networks]]
+- [[https://en.wikipedia.org/wiki/Maximum_transmission_unit][Maximum transmission unit - Wikipedia]]
+- [[https://www.reddit.com/prefs/feeds/][reddit.com: prefs/feeds]]
+- [[https://www.rfc-editor.org/rfc/rfc7854.txt][BGP Monitoring Protocol (BMP)]]
+- [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol#:~:text=Border%20Gateway%20Protocol%20(BGP)%20is,(AS)%20on%20the%20Internet.][Border Gateway Protocol - Wikipedia]]
+- [[https://tools.ietf.org/html/rfc5424][RFC 5424 - The Syslog Protocol]]
+- [[https://en.wikipedia.org/wiki/Asterisk_(PBX)][Asterisk (PBX) - Wikipedia]]
+- [[https://books.google.com/books?id=8wsdxBzyV48C&printsec=frontcover#v=onepage&q&f=false][Asterisk Hacking - Joshua Brashars - Google Books]]
+- [[https://www.gartner.com/imagesrv/media-products/pdf/radware/Radware-1-2Y7FR0I.pdf][Gartner: Protecting from a Growing Attack Vector: Encrypted Attacks]]
+- [[https://blogs.infoblox.com/community/dns-data-exfiltration-how-it-works/?_ga=2.5464179.1967257259.1592815237-1124357645.1592815237][DNS Data Exfiltration - How it works]]
+- [[https://silvia-odwyer.github.io/photon/demo.html][Photon WASM Demo]]
+- [[https://academictorrents.com/details/defa6184c98663c94de97cb7e0952a54677e4aac/collections][Enabling Factorized Piano Music Modeling and Generation with the {MAESTRO} Dataset - Collections - Academic Torrents]] :ml:
+- [[https://www.geeksforgeeks.org/piping-in-unix-or-linux/][Piping in Unix or Linux - GeeksforGeeks]]
+- [[https://github.com/joncardasis/ultimate-api][ultimate guitar api 2017]]
+- [[http://w3m.sourceforge.net/][W3M Homepage]]
+- [[http://core.dpdk.org/doc/][DPDK]]
+- [[https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9730-packet-processing-on-gpu-at-100gbe-line-rate.pdf][NVIDIA - GPU-accelerated packet-processing]]
+  - they yoinked from DPDK and optimized for GPU
+- [[https://en.wikipedia.org/wiki/Bit_numbering#Most_significant_byte][Bit numbering - Wikipedia]]
+- [[https://tools.ietf.org/html/rfc2119][RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels]]
+- [[https://tools.ietf.org/html/rfc8174][RFC 8174 - Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words]]
+- [[https://en.wikipedia.org/wiki/Spanning_tree][Spanning tree - Wikipedia]]
 **** Talks
 :PROPERTIES:
 :ID: 1ba5fd10-a4a2-465b-a224-012c736214ef
@@ -5074,11 +4533,7 @@ for an electronic digital computer with these components:
 :END:
 Transport Control Protocol
 - https://tools.ietf.org/html/rfc793
-***** [[https://en.wikipedia.org/wiki/TCP_delayed_acknowledgment][TCP delayed acknowledgment - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       6d8e2989-2ecb-4539-9191-26ab97971d4e
-	 :END:
+- [[https://en.wikipedia.org/wiki/TCP_delayed_acknowledgment][TCP delayed acknowledgment - Wikipedia]]
 **** UDP                                                       :transport:
 :PROPERTIES:
 :ID: ed2c78ea-8935-4f05-b1be-8d9af0ff045f
@@ -5128,16 +4583,8 @@ streaming media data at scale.
 :PROPERTIES:
 :ID:       524c9e2f-4078-4776-bbfb-1d1aa2f96efc
 :END:
-****** [[https://tools.ietf.org/html/rfc768][RFC 768 - User Datagram Protocol]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       b9717dfa-3e61-4544-9969-58095603f510
-	 :END:
-****** [[https://hpbn.co/building-blocks-of-udp/][Networking 101: Building Blocks of UDP - High Performance Browser Networking (O'Reilly)]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-02 Thu]
-   :ID:       b97d56db-af17-4bdd-a1b7-97d63e4f3026
-	 :END:
+- [[https://tools.ietf.org/html/rfc768][RFC 768 - User Datagram Protocol]]
+- [[https://hpbn.co/building-blocks-of-udp/][Networking 101: Building Blocks of UDP - High Performance Browser Networking (O'Reilly)]]
 **** TLS
 :PROPERTIES:
 :ID: fd5ea91a-a6aa-4947-9640-c0bf81c85cb0
@@ -5145,14 +4592,8 @@ streaming media data at scale.
 :END:
 Transport Layer Security
 - https://www.internetsociety.org/deploy360/tls/basics/
-***** [[https://tools.ietf.org/html/rfc5246][TLS 1.2]]
-:PROPERTIES:
-:ID:       5c8ebd67-404f-409e-ac7c-c6cf0965f861
-:END:
-***** [[https://tools.ietf.org/html/rfc8446][TLS 1.3]]
-:PROPERTIES:
-:ID:       f925ae63-ef7a-4e52-8ae5-3da602844189
-:END:
+-  [[https://tools.ietf.org/html/rfc5246][TLS 1.2]]
+-  [[https://tools.ietf.org/html/rfc8446][TLS 1.3]]
 **** HTTP
 :PROPERTIES:
 :ID: 049defda-3ac2-4cf1-86ec-060f0a77a5cf
@@ -5220,239 +4661,83 @@ HTTP/S is often used as a blanket statement for both HTTP and HTTPS.
  - [[https://www.chromium.org/quic/playing-with-quic][Playing With QUIC]] provides documentation on how to set up a test
    client/server from the chromium source, a bit verbose for our needs
    but relevant
-***** [[https://docs.google.com/document/d/1gY9-YNDNAB1eip-RTPbqphgySwSNSDHLq9D5Bty4FSU][QUIC at 10,000 feet]] :net:
+***** QUIC at 10,000 feet :net:
 :PROPERTIES:
 :ID:       51a999ce-19fc-40e6-af4e-09cab193c9ac
 :END:
-CREATED: [2021-01-26 Tue 15:28]
-from old research pile
-***** [[https://tools.ietf.org/html/draft-tsvwg-quic-protocol-02][draft-tsvwg-quic-protocol-02 - QUIC: A UDP-Based Secure and Reliable Transport for HTTP/2]]
++ [[https://docs.google.com/document/d/1gY9-YNDNAB1eip-RTPbqphgySwSNSDHLq9D5Bty4FSU][src]] <-
+***** drafts
 :PROPERTIES:
 :ID:       8cfb37e7-3529-455d-a1ab-9ad07d600ea5
 :END:
 CREATED: [2020-07-31 Fri 00:36]
-***** [[https://quicwg.org/base-drafts/draft-ietf-quic-transport.html][QUIC: A UDP-Based Multiplexed and Secure Transport]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       4964841f-852c-443b-a387-77aac58bc092
-	 :END:
-****** [[https://tools.ietf.org/html/draft-ietf-quic-transport-29][draft-ietf-quic-transport-29 - QUIC: A UDP-Based Multiplexed and Secure Transport]]
-:PROPERTIES:
-:ID:       ca87a1e5-26cc-494e-baf4-416fc4e03983
-:END:
-****** [[https://tools.ietf.org/html/draft-ietf-quic-invariants-09][draft-ietf-quic-invariants-09 - Version-Independent Properties of QUIC]]
-:PROPERTIES:
-:ID:       537e7187-dfbe-4825-9748-635cbaacdc7b
-:END:
-****** [[https://tools.ietf.org/html/draft-iyengar-quic-delayed-ack-00][draft-iyengar-quic-delayed-ack-00 - Sender Control of Acknowledgement Delays in QUIC]]
-:PROPERTIES:
-:ID:       35ee2595-7703-4315-827a-06b67ada3124
-:END:
-***** [[https://quicwg.org/][QUIC Working Group]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       016a94ad-c25a-4199-a80a-7427dfc9c486
-	 :END:
+- [[https://tools.ietf.org/html/draft-tsvwg-quic-protocol-02][draft-wg-02]] 
+- [[https://tools.ietf.org/html/draft-ietf-quic-transport-29][draft-ietf-quic-transport-29 - QUIC: A UDP-Based Multiplexed and Secure Transport]]
+- [[https://tools.ietf.org/html/draft-ietf-quic-invariants-09][draft-ietf-quic-invariants-09 - Version-Independent Properties of QUIC]]
+- [[https://tools.ietf.org/html/draft-iyengar-quic-delayed-ack-00][draft-iyengar-quic-delayed-ack-00 - Sender Control of Acknowledgement Delays in QUIC]]
+- [[https://quicwg.org/][QUIC Working Group]]
 *** Tutorials
 :PROPERTIES:
 :ID:       3dd7d402-ec2f-4320-a38b-17fd5bc6bb3a
 :END:
-**** [[https://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp/][Let's code a TCP/IP stack, 1: Ethernet & ARP]]
-:PROPERTIES:
-:ID:       86df665d-8f21-4290-913b-64dca2276dfc
-:END:
+- [[https://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp/][Let's code a TCP/IP stack, 1: Ethernet & ARP]]
 *** links
 :PROPERTIES:
 :ID:       f5fabb7c-c8c1-416d-bfc8-ce1659ab6866
 :END:
-**** [[https://tools.ietf.org/html/rfc6815][RFC 6815 - Applicability Statement for RFC 2544: Use on Production Networks Considered Harmful]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       a09fab63-927b-4e38-8940-0ac629905a03
-	 :END:
-**** [[https://www.freesoft.org/CIE/index.htm][Connected: An Internet Encyclopedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       35231223-5328-4cb9-9ce8-4266c5745020
-	 :END:
-
-**** [[https://www.freesoft.org/CIE/RFC/1831/index.htm][RFC 1831]]
-:PROPERTIES:
-:ID:       a228fc82-467a-4256-aacf-89fad7439318
-:END:
-**** [[https://www.ietf.org/rfc/rfc1014.txt][XDR: External Data Representation Standard]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-22 Wed]
-   :ID:       bb8b86e2-58b5-4fc4-b6da-46e1fca74680
-	 :END:
-- seems bulky, but very useful reference due to the breakdown of different types and their definitions.
-**** [[http://www3.cs.stonybrook.edu/~mikepo/][Michalis Polychronakis]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-18 Sat]
-   :ID:       6efb6988-b4d8-4b7a-9fed-07e456a2159f
-	 :END:		
-	 cool d00d - interesting research
-**** http://an.kaist.ac.kr/~shinae/paper/2016-netsoft.pdf
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-18 Sat]
-   :ID:       f9edd112-4079-4741-94b3-6de5b0bae87e
-	 :END:		
-	 Exploiting Integrated GPUs for Network Packet Processing Workloads
-	 - netsoft 2016
-**** [[https://doc-kurento.readthedocs.io/en/6.9.0/knowledge/rtp_streaming.html][RTP Streaming Commands — Kurento 6.9.0 documentation]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       59f6401f-e7f0-44c9-8c84-c654786bb373
-	 :END:		
-**** [[https://en.wikipedia.org/wiki/Ephemeral_port][Ephemeral port - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       53f90dd5-5f2e-4d1e-abab-f7d0b991106e
-	 :END:
-**** [[https://en.wikipedia.org/wiki/Multiplexing][Multiplexing - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       c26ab509-d23f-4416-9967-a199c503e487
-	 :END:
-**** [[https://en.wikipedia.org/wiki/Frequency-division_multiplexing][Frequency-division multiplexing - Wikipedia]]
-:PROPERTIES:
-:ID:       898fe6e1-1503-4e48-a883-824a80583a95
-:END:
-**** [[https://en.wikipedia.org/wiki/Wavelength-division_multiplexing][Wavelength-division multiplexing - Wikipedia]]
-:PROPERTIES:
-:ID:       46bf6102-5afd-4079-8ec6-754f6cf1a913
-:END:
-**** [[https://en.wikipedia.org/wiki/Polarization-division_multiplexing][Polarization-division multiplexing - Wikipedia]]
-:PROPERTIES:
-:ID:       1cb61d46-57a4-45d4-942a-27a73c39ce3d
-:END:
-**** [[https://en.wikipedia.org/wiki/Time-division_multiplexing][Time-division multiplexing - Wikipedia]]
-:PROPERTIES:
-:ID:       77e12e3d-c7ab-4c59-b24b-6002b2aefc32
-:END:
-***** [[https://en.wikipedia.org/wiki/Orbital_angular_momentum_multiplexing][Orbital angular momentum multiplexing - Wikipedia]]
-:PROPERTIES:
-:ID:       7b77c3c4-c5d8-4e56-8f08-57df978c5368
-:END:
-**** [[https://en.wikipedia.org/wiki/Fiber-optic_communication#Background][Fiber-optic communication - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       0dba484e-63ea-4748-8701-858586fa9372
-	 :END:
-**** [[https://en.wikipedia.org/wiki/Photophone][Photophone - Wikipedia]]
-:PROPERTIES:
-:ID:       edab300e-381d-489a-b838-290fe109dfea
-:END:
-**** [[https://en.wikipedia.org/wiki/Routing_Information_Protocol][Routing Information Protocol - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       40fd019a-9db5-41f1-8b1f-6bbe3fb9cf5e
-	 :END:
-**** [[https://en.wikipedia.org/wiki/Satellite_navigation][Satellite navigation - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       ebc95af5-4747-4e3c-9374-4badfa5235fd
-	 :END:
-	 Position, Navigation, and Timing
-**** [[https://en.wikipedia.org/wiki/Time_signal][Time signal - Wikipedia]]
-:PROPERTIES:
-:ID:       dfb3fb95-67f0-4fca-86f5-3eef56e5d07e
-:END:
-**** [[https://en.wikipedia.org/wiki/Precision_Time_Protocol][Precision Time Protocol - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       9c6fbb5c-eda1-4eec-9c93-02514f948f3b
-	 :END:
-**** [[https://1.ieee802.org/tsn/802-1as-rev/][P802.1AS-Rev – Timing and Synchronization for Time-Sensitive Applications |]]
-:PROPERTIES:
-:ID:       409d013a-bcfb-415f-a377-6985017ee76b
-:END:
-**** [[https://en.wikipedia.org/wiki/Network_speaker][Network speaker - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       30ff6304-15c7-4f66-ac2e-e79422011373
-	 :END:
-**** [[https://books.google.com/books?id=5CaDBAAAQBAJ&pg=PT103&lpg=PT103&dq=cambridgematrix&source=bl&ots=IPFEA0mP5u&sig=ACfU3U2CZwA9H2nrhLxg3B91ZR5raSS7AQ&hl=en&sa=X&ved=2ahUKEwiV7YTA18jqAhUkoXIEHQQvC9MQ6AEwA3oECAwQAQ#v=onepage&q=cambridgematrix&f=false][brief mention of CambridgeMatrix - hunt this down]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       2a075ffd-3d17-4061-bf6e-c840d65a7eee
-	 :END:
-	 - Everything I've found on the Strawberry Fair is unvalidated, online articles discussing the implementation of custom mesh network on June 3rd, 2006 are just copy/pasting the Wiki.
-	 - original article is here (DNS broked) http://www.cambridgeshiretouristguide.com/Articles/Article_55.asp - trying to find it on web.archive, will search YouTube later
-	 - CambridgeMatrix sounds like a lead, would be surprised if there is no connection to the Strawberry Fair
-**** [[https://en.wikipedia.org/wiki/Hazy_Sighted_Link_State_Routing_Protocol][Hazy Sighted Link State Routing Protocol - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       3f12c30e-2a2a-4268-9af0-4138f353ef89
-	 :END:
-	 link-state algorithm at CUWiN
-**** [[https://en.wikipedia.org/wiki/Expected_transmission_count][Expected transmission count - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       6adab270-917c-4c56-9379-76f997f65d31
-	 :END:
-**** [[http://www.dsn.jhu.edu/software.html][Software: Distributed Systems and Networks Lab]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       7e0486fd-043a-4fc5-b7b9-dbee77baba76
-	 :END:
-	 C src from the lads over at JHU
-**** [[https://www.wing-project.org/][WING - Wireless Mesh Network for Next-Generation Internet]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       db02eaa1-52dc-4b6b-a7c9-6be047253a6a
-	 :END:
-	 from da Italians
-**** [[https://en.wikipedia.org/wiki/Optical_mesh_network][Optical mesh network - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       c6dd18ae-4705-4c43-a003-a68e9d9bf07e
-	 :END:
-**** [[https://en.wikipedia.org/wiki/Free-space_optical_communication][Free-space optical communication - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       3587740b-bb84-4322-9927-dcb3babdc450
-	 :END:
-**** [[http://www.vlcc.net/modules/xpage0/?ml_lang=en][Visible Light Communications Consotium (VLCC) - What's Visible Light Communications?]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       9feed501-c735-4455-b662-614f1b8476d4
-	 :END:
-**** [[https://www.researchgate.net/profile/Volker_Jungnickel/publication/264595391_High-Speed_Visible_Light_Communication_Systems/links/55202e000cf2a2d9e1433634/High-Speed-Visible-Light-Communication-Systems.pdf][High Speed Visible Light Communication Systems - pdf researchgate]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       79639f6b-7d65-4533-89f6-8a10a0f4c633
-	 :END:
-**** [[https://en.wikipedia.org/wiki/Visible_light_communication][Visible light communication - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       e5197687-8df9-4da5-a5dd-69fb563499cb
-	 :END:
-**** [[https://en.wikipedia.org/wiki/Mesh_networking][Mesh networking - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       86afebd1-8344-4fb4-9227-a15312696be9
-	 :END:
-**** [[https://en.wikipedia.org/wiki/InfiniBand][InfiniBand - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       f55d9a6c-683b-41ab-b0a4-23f15ab55400
-	 :END:
-**** [[https://en.wikipedia.org/wiki/Anycast][Anycast - Wikipedia]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-17 Fri]
-   :ID:       864a23ae-1a5d-4a46-b72b-fea3fc545a7e
-	 :END:
-		+ unicast, broadcast, multicast, anycast, geocast
-**** [[https://en.wikipedia.org/wiki/Multicast][Multicast - Wikipedia]]
-:PROPERTIES:
-:ID:       c1476578-210d-4674-918f-014e65c06ff6
-:END:
-**** [[https://blogs.akamai.com/sitr/2019/07/anatomy-of-a-syn-ack-attack.html][Anatomy of a SYN-ACK attack - Akamai Security Intelligence and Threat Research Blog]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       739b0bd3-86a2-43b5-be45-e9340db140ce
-	 :END:
+- [[https://tools.ietf.org/html/rfc6815][RFC 6815 - Applicability Statement for RFC 2544: Use on Production Networks Considered Harmful]]
+- [[https://www.freesoft.org/CIE/index.htm][Connected: An Internet Encyclopedia]]
+- [[https://www.freesoft.org/CIE/RFC/1831/index.htm][RFC 1831]]
+- [[https://www.ietf.org/rfc/rfc1014.txt][XDR: External Data Representation Standard]]
+  - seems bulky, but very useful reference due to the breakdown of different types and their definitions.
+- [[http://www3.cs.stonybrook.edu/~mikepo/][Michalis Polychronakis]]
+  cool d00d - interesting research
+- http://an.kaist.ac.kr/~shinae/paper/2016-netsoft.pdf
+  Exploiting Integrated GPUs for Network Packet Processing Workloads
+  - netsoft 2016
+- [[https://doc-kurento.readthedocs.io/en/6.9.0/knowledge/rtp_streaming.html][RTP Streaming Commands — Kurento 6.9.0 documentation]]
+- [[https://en.wikipedia.org/wiki/Ephemeral_port][Ephemeral port - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Multiplexing][Multiplexing - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Frequency-division_multiplexing][Frequency-division multiplexing - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Wavelength-division_multiplexing][Wavelength-division multiplexing - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Polarization-division_multiplexing][Polarization-division multiplexing - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Time-division_multiplexing][Time-division multiplexing - Wikipedia]]
+-  [[https://en.wikipedia.org/wiki/Orbital_angular_momentum_multiplexing][Orbital angular momentum multiplexing - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Fiber-optic_communication#Background][Fiber-optic communication - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Photophone][Photophone - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Routing_Information_Protocol][Routing Information Protocol - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Satellite_navigation][Satellite navigation - Wikipedia]]
+  Position, Navigation, and Timing
+- [[https://en.wikipedia.org/wiki/Time_signal][Time signal - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Precision_Time_Protocol][Precision Time Protocol - Wikipedia]]
+- [[https://1.ieee802.org/tsn/802-1as-rev/][P802.1AS-Rev – Timing and Synchronization for Time-Sensitive Applications |]]
+- [[https://en.wikipedia.org/wiki/Network_speaker][Network speaker - Wikipedia]]
+- [[https://books.google.com/books?id=5CaDBAAAQBAJ&pg=PT103&lpg=PT103&dq=cambridgematrix&source=bl&ots=IPFEA0mP5u&sig=ACfU3U2CZwA9H2nrhLxg3B91ZR5raSS7AQ&hl=en&sa=X&ved=2ahUKEwiV7YTA18jqAhUkoXIEHQQvC9MQ6AEwA3oECAwQAQ#v=onepage&q=cambridgematrix&f=false][brief mention of CambridgeMatrix - hunt this down]]
+  - Everything I've found on the Strawberry Fair is unvalidated,
+    online articles discussing the implementation of custom mesh
+    network on June 3rd, 2006 are just copy/pasting the Wiki.
+  - original article is here (DNS broked)
+    http://www.cambridgeshiretouristguide.com/Articles/Article_55.asp -
+    trying to find it on web.archive, will search YouTube later
+  - CambridgeMatrix sounds like a lead, would be surprised if there is
+    no connection to the Strawberry Fair
+- [[https://en.wikipedia.org/wiki/Hazy_Sighted_Link_State_Routing_Protocol][Hazy Sighted Link State Routing Protocol - Wikipedia]]
+  link-state algorithm at CUWiN
+- [[https://en.wikipedia.org/wiki/Expected_transmission_count][Expected transmission count - Wikipedia]]
+- [[http://www.dsn.jhu.edu/software.html][Software: Distributed Systems and Networks Lab]]
+  C src from the lads over at JHU
+  from da Italians
+- [[https://en.wikipedia.org/wiki/Optical_mesh_network][Optical mesh network - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Free-space_optical_communication][Free-space optical communication - Wikipedia]]
+- [[http://www.vlcc.net/modules/xpage0/?ml_lang=en][Visible Light Communications Consotium (VLCC) - What's Visible Light Communications?]]
+- [[https://www.researchgate.net/profile/Volker_Jungnickel/publication/264595391_High-Speed_Visible_Light_Communication_Systems/links/55202e000cf2a2d9e1433634/High-Speed-Visible-Light-Communication-Systems.pdf][High Speed Visible Light Communication Systems - pdf researchgate]]
+- [[https://en.wikipedia.org/wiki/Visible_light_communication][Visible light communication - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Mesh_networking][Mesh networking - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/InfiniBand][InfiniBand - Wikipedia]]
+- [[https://en.wikipedia.org/wiki/Anycast][Anycast - Wikipedia]]
+  - unicast, broadcast, multicast, anycast, geocast
+- [[https://en.wikipedia.org/wiki/Multicast][Multicast - Wikipedia]]
+- [[https://blogs.akamai.com/sitr/2019/07/anatomy-of-a-syn-ack-attack.html][Anatomy of a SYN-ACK attack - Akamai Security Intelligence and Threat Research Blog]]
   
 ** Computer Hardware                                                    :hw:
 :PROPERTIES:
@@ -5527,12 +4812,12 @@ dd if=/dev/zero of=/dev/your_device bs=1M
 :ID:       82dbbc73-1154-4426-8685-0b7d5e4d1b71
 :CUSTOM_ID: gadgets
 :END:
-**** [[https://nakedsecurity.sophos.com/2016/11/29/the-tor-phone-prototype-a-truly-private-smartphone/][Tor Phone Prototype 2016]]
+**** Tor Phone Prototype 2016
 :PROPERTIES:
 :ID:       84393347-ad8b-411b-9de9-04e7aecf18da
 :CREATED: [2021-01-23 Sat 14:40]
 :END:
-Likely not in-line with what we're searching for, but maybe a fun read
++ [[https://nakedsecurity.sophos.com/2016/11/29/the-tor-phone-prototype-a-truly-private-smartphone/][src]]
 
 **** Keyboard
 :PROPERTIES:
@@ -5544,13 +4829,11 @@ Likely not in-line with what we're searching for, but maybe a fun read
 :ID:       559216d8-fcb8-45d8-ab46-c3e2f880b93d
 :CUSTOM_ID: layouts
 :END:
-****** [[https://en.wikipedia.org/wiki/JCUKEN][JCUKEN]]
+****** JCUKEN
 :PROPERTIES:
 :ID:       94b061b0-9fd1-4491-bfd5-76688f226f32
 :END:
-:LOGBOOK:
-- refiled on [2021-09-11 Sat 03:57]
-:END:
++ [[https://en.wikipedia.org/wiki/JCUKEN][wiki]] <-
 ** Artificial Intelligence                                           :ai:nn:
 :PROPERTIES:
 :ID:       6651eea3-117f-47fc-9abf-ecf8f6d033d4
@@ -5788,11 +5071,11 @@ stand alone, but a word, by definition, always stands alone.
 :ID:       c34be150-2d92-4150-a2de-a9f91b18246a
 :CUSTOM_ID: punctuation
 :END:
-**** [[https://getpocket.com/explore/item/the-commas-that-cost-companies-millions][The Commas That Cost Companies Millions]]
+**** The Commas That Cost Companies Millions
 :PROPERTIES:
 :ID:       d3bcaf89-ed5f-48f6-92a0-11de0ee05ecc
 :END:
-
++ [[https://getpocket.com/explore/item/the-commas-that-cost-companies-millions][src]] <-
 ** Natural Language
 :PROPERTIES:
 :ID:       e73aa96e-dce4-482e-928e-c91de7f3a80f
@@ -5855,15 +5138,16 @@ stand alone, but a word, by definition, always stands alone.
 :PROPERTIES:
 :ID:       e81fae72-c07b-41e1-9c49-43c97217ab9b
 :END:
-*** [[https://en.wikipedia.org/wiki/Haversine_formula][Haversine formula - Wikipedia]]
+*** Haversine formula
 :PROPERTIES:
 :ID: 6d0b5076-98c6-45c0-9b95-6e9b540d5796
 :END:
-*** [[https://byjusexamprep.com/solve-mathematical-operators-in-reasoning-i-081aea6a-d162-11e5-bfd2-ffbcfe7b24bd][Basic Concepts & Short Tricks of Fictitious Symbol questions]]
++ [[https://en.wikipedia.org/wiki/Haversine_formula][wiki]] <-
+*** Basic Concepts & Short Tricks of Fictitious Symbol questions
 :PROPERTIES:
 :ID:       6d2f9279-9e4a-4e4d-846f-8e3285af4811
 :END:
-
++ [[https://byjusexamprep.com/solve-mathematical-operators-in-reasoning-i-081aea6a-d162-11e5-bfd2-ffbcfe7b24bd][src]] <-
 ** Algebra                                                              :alg:
 :PROPERTIES:
 :ID:       894b7ce1-6e9b-4395-8ecc-b3d145047f1a
@@ -5947,11 +5231,12 @@ Distance.
 :ID:       699e4731-8fd8-46f7-877f-cf6e13a98f9a
 :CUSTOM_ID: logic
 :END:
-*** [[https://en.wikipedia.org/wiki/Exclusive_or][Exclusive or - Wikipedia]]
+*** XOR
 :PROPERTIES:
 :CREATED:  [2021-02-13 Sat 01:01]
 :ID:       801b2499-d1cb-4c37-87b4-c009eff70bd7
 :END:
++ [[https://en.wikipedia.org/wiki/Exclusive_or][wiki]] <-
 ** Epistemology
 :PROPERTIES:
 :ID:       d148f093-0014-48e5-94a1-244248792df4
@@ -6084,64 +5369,68 @@ Misinformation is false, inaccurate, or misleading information that is communica
 miscellaneous items are placed here, to be formally categorized into a
 topic at a later date.
 
-** [[https://vcvrack.com/][VCV Rack]]                          :audio:synth:
+** VCV Rack                          :audio:synth:
 :PROPERTIES:
 :ID:       a81bece2-4169-4033-b888-8e21b303187f
 :END:
-CREATED: [2021-01-23 Sat 09:20]
++ [[https://vcvrack.com/][~]] <-
 Cross-platform Virtual Eurorack.
 - Does it run on web?
 - [[https://github.com/VCVRack][github project]]
 - Core engine is C++
 - 1843 opensource modules :) - [[https://library.vcvrack.com/?page=1&limit=50&query=&tag=&sort=creationTimestamp&brand=&license=open][free mods]]
-** [[https://en.wikipedia.org/wiki/Waveguide][Waveguide - Wikipedia]]
+** Waveguide
 :PROPERTIES:
 :ID:       e68f684a-1609-4cce-b034-579c06ba668b
 :END:
-CREATED: [2020-08-01 Sat 16:58]
-** [[https://github.com/rse-standrewscs/shallow-water][GitHub - rse-standrewscs/shallow-water: 3D shallow water code]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       2830c1ce-836e-4b15-9f02-fd683189ff93
-	 :END:
-
-** [[https://github.com/google/tarpc][GitHub - google/tarpc]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       802071cb-c4c2-4c93-89a4-dcd112a6a5b5
-	 :END:
-
-** [[https://opencensus.io/tracing/][OpenCensus - Tracing]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-23 Thu]
-   :ID:       50a05f08-638b-4d6d-bd60-fa846eadd252
-	 :END:
-
-** [[https://www.svenstaro.org/][CV of Sven-Hendrik Haase]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-22 Wed]
-   :ID:       7aeb0542-469c-4f69-a766-7c47ab4c02d3
-	 :END:		
-good lookin CV, wonder if we should be more wordy with ours? I hate sticking with lists :(
-** [[https://offshoreleaks.icij.org/pages/database][panama papers graph DB - magnet links]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       623bfbf8-b266-45c7-9b78-4f4a5d58b03a
-	 :END:
-** [[https://www.icij.org/investigations/panama-papers/what-happened-after-the-panama-papers/][What happened after the Panama Papers? - ICIJ]]
-	 :PROPERTIES:
-	 :CREATED:  [2020-07-12 Sun]
-   :ID:       cdd21bff-04a6-456d-9602-3f8a92cde807
-	 :END:
++ what -- \\
+  #+begin_quote
+A waveguide is a structure that guides waves, such as electromagnetic waves or
+sound, with minimal loss of energy by restricting the transmission of energy
+to one direction. Without the physical constraint of a waveguide, wave
+intensities decrease according to the inverse square law as they expand into
+three dimensional space. 
+  #+end_quote
++ [[https://en.wikipedia.org/wiki/Waveguide][wiki]] <-
+** shallow-water
+:PROPERTIES:
+:CREATED:  [2020-07-23 Thu]
+:ID:       2830c1ce-836e-4b15-9f02-fd683189ff93
+:END:
++ [[https://github.com/rse-standrewscs/shallow-water][src]] <-
+** tarpc
+:PROPERTIES:
+:ID:       802071cb-c4c2-4c93-89a4-dcd112a6a5b5
+:END:
++ [[https://github.com/google/tarpc][src]] <-
+** OpenCensus - Tracing
+:PROPERTIES:
+:CREATED:  [2020-07-23 Thu]
+:ID:       50a05f08-638b-4d6d-bd60-fa846eadd252
+:END:
++ [[https://opencensus.io/tracing/][~]] <-
+** panama papers graph DB - magnet links
+:PROPERTIES:
+:CREATED:  [2020-07-12 Sun]
+:ID:       623bfbf8-b266-45c7-9b78-4f4a5d58b03a
+:END:
++ [[https://offshoreleaks.icij.org/pages/database][src]] <-
+** What happened after the Panama Papers? - ICIJ
+:PROPERTIES:
+:CREATED:  [2020-07-12 Sun]
+:ID:       cdd21bff-04a6-456d-9602-3f8a92cde807
+:END:
+- https://www.icij.org/investigations/panama-papers/what-happened-after-the-panama-papers/
 ** Robot Wrestling is for Real Men
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-18 Thu]
-   :ID:       a92cd6ec-7da2-49bf-a0d2-54f286d2806c
-	 :END:
-	 [[yt:vpM0IoRawu4]]
+:PROPERTIES:
+:CREATED:  [2020-06-18 Thu]
+:ID:       a92cd6ec-7da2-49bf-a0d2-54f286d2806c
+:END:
+[[yt:vpM0IoRawu4]]
 ** sintel trailer webm 480p
-	 :PROPERTIES:
-	 :CREATED:  [2020-06-18 Thu]
-   :ID:       f743aa5a-8491-4a59-af71-f449060f4a2f
-	 :END:
-	 [[https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm]]
+:PROPERTIES:
+:CREATED:  [2020-06-18 Thu]
+:ID:       f743aa5a-8491-4a59-af71-f449060f4a2f
+:END:
+[[https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm]]
+
