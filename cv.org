@@ -78,27 +78,8 @@ A live event streaming startup with group/private viewing, chat, social media in
 :ID:       49cc3b0e-fd38-44c2-a2e2-ead92ad5d577
 :CUSTOM_ID: open-source-software
 :END:
-I love building things and share most of the code I write. All personal projects below are under active development.
+I love building things and share most of the code I write. 
 - [[https://rwest.io][website]]
-   - [[https://rwest.io/meta][meta]] :: -- project documentation
-   - [[https://rwest.io/notes][notes]] ::
+   - [[https://rwest.io/m][docs]]
+   - [[https://rwest.io/n][notes]]
 - [[https://hg.rwest.io][code]]
-   - [[https://hg.rwest.io/rlib][rlib]] :: -- "Richard's Rust Library"
-   - [[https://hg.rwest.io/tenex][tenex]] :: -- a high-level client library for the web
-   - [[https://hg.rwest.io/shed][shed]] :: -- multi-development tool
-** *Research*
-:PROPERTIES:
-:ID:       180368d4-e7d7-4f19-94fe-eb9c2f3fe3ec
-:CUSTOM_ID: research
-:END:
-For the past year I've spent time researching specific technologies
-that have the potential to drastically change the nature of computer
-interaction within the next 10 years. Below are some of the topics I'm
-invested in.
-- HTTP/3, TLS1.3, QUIC, and the move from TCP to UDP in general
-- SDR, software-defined radios
-- IPFS, libp2p, and distributed services
-- io_uring, the new async IO interface for Linux
-- GPT-3, GPT-J, and the OpenAI beta API
-- RISC-V, an open-source instruction set architecture for CPUs
-- RocksDB, an embedded key-value storage engine built by Facebook
