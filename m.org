@@ -1,17 +1,19 @@
 #+TITLE: metas
 #+SETUPFILE: ox.setup
 #+CATEGORY: metas
-#+CALL: cp-f("o/x/html/m.html", "/ssh:dmz:dmz/w/")
-#+CALL: cp-f("o/x/html/n.html", "/ssh:dmz:dmz/w/")
-#+CALL: cp-f("o/x/html/index.html", "/ssh:dmz:dmz/w/")
-#+RESULTS:
-#+CALL: load-file("pub.el") :results silent
+# |   | name | description | status | commit log |
+# |---+------+-------------+--------+------------|
+# |   | meta | info        |        |            |
+# |   | shed | dev tool    |        |            |
+# |   |      |             |        |            |
+# |---+------+-------------+--------+------------|
+
 * meta
 :PROPERTIES:
 :ID:       60bed781-3a70-4435-9df0-097b799539e4
 :CUSTOM_ID: meta
 :END:
-+ what -> 'meta' content
++ what -> info
   - high-level project docs
     - intro, examples, resources
 + why -- good practice, helps me and strangers alike understand why
@@ -27,116 +29,39 @@ generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/
 - =n.org= contains informal notes
 - =cv.org= is my resume (hire me!)
 
-** Elements
-:PROPERTIES:
-:ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
-:CUSTOM_ID: elements
-:END:
-The source files assume some familiarity with org syntax. Org syntax
-is covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document
-structure can be found in the [[info:emacs#Top][Emacs manual]].
-
-#+attr_html: :width 600
-#+attr_latex: :width 600
-[[cdn:img/org-mode-features_display.png]]
-
-All docs are fully compliant with org, with the addition of some
-special *elements*:
-
-- props :: \\
-  - All nodes have an optional number of =props= which are simply list
-    items starting with =+= followed by the =prop-key= an assignment
-    operator (=--=, =<-=, =->=), and a =prop-val=.
-    #+begin_example
-    # [+] [KEY] [OP] [VAL]
-    + what -- an example
-    #+end_example
-  - the =prop-val= type is determined by the operator. It can be a
-    string =--=, list =->=, or empty =<-=.
-  - =props= can appear anywhere in the =section= element of a node
-    (not just immediately following properties drawer). With the
-    condition that they can't be embedded (props in =prop-val=).
-- drawers :: \\
-  Org-mode has a feature called drawers, which are collapsible
-  sections of text starting with =:DRAWER_NAME:= and ending with
-  =:END:=. The most common one seen in our docs is the PROPERTIES
-  drawer, but there are a few special ones we use, especially in
-  =n.org=: =note=, =opinion=, =props= =boris=.
-- links ::
-  In addition to the default links, we use a few custom links, most
-  notably =yt= which embeds a video from youtube.
-  :note:
-  This is not good for users, since the embedded youtube links include
-  tracking and other nasty bits from Google. In the future these links
-  will be migrated to =cdn= to avoid that, increasing user privacy and
-  greatly improving page load time.
-  :end:
-  =cdn=, =src=, and =rw= links all point to =rwest.io=.
-** Build
+** scripts
 :PROPERTIES:
 :ID:       d0e37437-8959-4692-9b7f-9245073042e2
 :END:
-- Emacs has many backends for [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an
-  emacs-lisp script is all that is needed to generate conventional
-  formats like HTML.
-- A list of publishing templates are defined to export individual
-  modules or output formats.
-- Each format is generated in a separate temporary directory
-- While the elisp script is chugging along, some pre-processing occurs
-  which parses the org files and creates an intermediate
-  representation for ingestion by internal services.
-- Compression and archiving is also performed to generate =.tz=
-  (tar.zst) archives for each format.
-- all build artifacts are transferred over SSH to a public web server
-- New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
-  [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
-  formats.
-*** makefile
+*** tmp
 :PROPERTIES:
-:ID:       c27a67be-7b8b-47c5-9578-5acc71e27c53
-:header-args: :results silent :eval no-export
+:ID:       a3e61646-3d9f-4186-9187-cc826b3e9392
 :END:
-#+begin_src makefile :tangle makefile :shebang "#!/usr/bin/make -f -j8"
-PUB := ./pub.el
-OX_SETUP := ./ox.setup
-
-HD ?= dmz
-P ?= html md txt pdf org
-
-MD = mkdir -p $(@)
-
-.PHONY: c
-
-o:o/x;shed pack $< $<.tz;
-	$(foreach p,$(P), shed pack $</${p} $@/${p}.tz;)
-
-w:o;ssh $(HD) rm -rf dmz/w/*.html;\
-	scp -r $</x/html/*.html $(HD):dmz/w;\
-	scp -r $</*.tz $(HD):dmz/w/x
-
-c:;rm -rf o
-
-o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
-	ssh $(HD) rm -rf dmz/w/*.html; scp -r $@/html/*.html $(HD):dmz/w/;\
-	shed pack $@ o/x.tz;scp -r $@ $(HD):dmz/w
-  #+end_src
-*** pub.el
+#+name: meta-tmp
+#+begin_src emacs-lisp :results silent
+  (let ((files (list "m" "n" "index" "cv")))
+    (dolist (f files)
+      (copy-file (concat f ".org") "o/x/org/" 1))
+    (copy-file "ox.setup" "o/x/org/" 1)
+    (setq org-html-validation-link nil)
+    (setq org-export-with-author nil)
+    (load-file "pub.el"))
+#+end_src
+*** pub
 :PROPERTIES:
 :ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
 :CUSTOM_ID: pub-el
 :END:
-#+name: meta_publish
-#+begin_src elisp :tangle pub.el :shebang "#!/usr/local/bin/emacs --script" :var ox_meta="html" :results silent
-(require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
+- Org has integrated [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an
+  emacs-lisp script is all that is needed to generate conventional
+  formats like HTML, Markdown, PDF, and txt.
+- Exported files are saved in separate directories
+#+name: meta-pub
+#+begin_src elisp
 (require 'ox-publish)
-(require 'ox-latex)
-(require 'ox-man)
-(require 'ox-html)
-(require 'cl-lib)
-(require 'ox-ascii)
+(require 'org-refile)
+(require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
 (require 'org-id)
-
-(setq org-html-head-include-default-style nil)
 
 (setq org-publish-project-alist
       '(("org-html"
@@ -147,6 +72,7 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
          :with-date (current-time)
 	 :publishing-directory "~/shed/src/meta/o/x/html"
 	 :publishing-function org-html-publish-to-html
+	 :htmlize-source t
 	 :auto-sitemap nil)
         ("org-md"
          :author "ellis"
@@ -195,7 +121,7 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
         ("gmap"      . "http://maps.google.com/maps?q=%s")
         ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
         ("ads"       . "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\"")
-	    ("rw" . "https://rwest.io/%s")
+	("rw" . "https://rwest.io/%s")
         ("src" . "https://hg.rwest.io/%s")
         ("contrib" . "https://hg.rwest.io/contrib/%s")
         ("cdn" . "https://rwest.io/a/%s")))
@@ -222,8 +148,125 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
 
 (org-publish-remove-all-timestamps)
 (org-refile-cache-clear)
-(org-publish ox_meta t t)
+(org-publish "all" t)
   #+end_src
+
+  #+RESULTS: meta-pub
+
+*** pack
+:PROPERTIES:
+:ID:       8530e126-6fbf-41bb-bd48-2bd06f1ae5ab
+:END:
+- exported directories are compressed to =.tz= (tar.zst) archives.
+#+name: meta-pack
+#+begin_src sh
+  pushd o/x
+  for i in $(find ./* -type d);
+  do
+      shc pack $i
+  done
+  popd
+#+end_src
+
+*** ship
+:PROPERTIES:
+:ID:       80226a3c-8866-4c35-ab3e-5a5d5d35b9c9
+:END:
+- all build artifacts are transferred over SSH to a public web server
+- New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
+  [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
+  formats.
+#+name: meta-ship
+#+begin_src elisp
+  (let ((path "o/x/")
+        (rhost "/ssh:dmz:dmz/w/")
+        (files (list "m" "n" "index" "cv"))
+        (packs (list "html" "org" "pdf" "txt" "md")))
+    (dolist (f files)
+      (copy-file (concat path "html/" f ".html") rhost 1))
+    (dolist (p packs)
+      (copy-file (concat path p ".tz") (concat rhost "x/") 1)
+      (copy-file (concat path p) (concat rhost "x/") 1)))
+#+end_src
+
+#+RESULTS: meta-ship
+
+*** makefile                                                     :noexport:
+:PROPERTIES:
+:ID:       c27a67be-7b8b-47c5-9578-5acc71e27c53
+:header-args: :results silent :eval no-export
+:END:
+#+begin_src makefile :tangle makefile :shebang "#!/usr/bin/make -f -j8"
+PUB := ./pub.el
+OX_SETUP := ./ox.setup
+
+HD ?= dmz
+P ?= html md txt pdf org
+
+MD = mkdir -p $(@)
+
+.PHONY: c
+
+o:o/x;shed pack $< $<.tz;
+	$(foreach p,$(P), shed pack $</${p} $@/${p}.tz;)
+
+w:o;ssh $(HD) rm -rf dmz/w/*.html;\
+	scp -r $</x/html/*.html $(HD):dmz/w;\
+	scp -r $</*.tz $(HD):dmz/w/x
+
+c:;rm -rf o
+
+o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
+	ssh $(HD) rm -rf dmz/w/*.html; scp -r $@/html/*.html $(HD):dmz/w/;\
+	shed pack $@ o/x.tz;scp -r $@ $(HD):dmz/w
+  #+end_src
+
+** Syntax
+:PROPERTIES:
+:ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
+:CUSTOM_ID: elements
+:END:
+The source files assume some familiarity with org syntax. Org syntax
+is covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document
+structure can be found in the [[info:emacs#Top][Emacs manual]].
+
+#+attr_html: :width 600
+#+attr_latex: :width 600
+[[cdn:img/org-mode-features_display.png]]
+
+All docs are fully compliant with org, with the addition of some
+special *elements*:
+
+- props :: \\
+  - All nodes have an optional number of =props= which are simply list
+    items starting with =+= followed by the =prop-key= an assignment
+    operator (=--=, =<-=, =->=), and a =prop-val=.
+    #+begin_example
+    # [+] [KEY] [OP] [VAL]
+    + what -- an example
+    #+end_example
+  - the =prop-val= type is determined by the operator. It can be a
+    string =--=, list =->=, or empty =<-=.
+  - =props= can appear anywhere in the =section= element of a node
+    (not just immediately following properties drawer). With the
+    condition that they can't be embedded (props in =prop-val=).
+- drawers :: \\
+  Org-mode has a feature called drawers, which are collapsible
+  sections of text starting with =:DRAWER_NAME:= and ending with
+  =:END:=. The most common one seen in our docs is the PROPERTIES
+  drawer, but there are a few special ones we use, especially in
+  =n.org=: =note=, =opinion=, =props= =boris=.
+- links ::
+  In addition to the default links, we use a few custom links, most
+  notably =yt= which embeds a video from youtube.
+  :note:
+  This is not good for users, since the embedded youtube links include
+  tracking and other nasty bits from Google. In the future these links
+  will be migrated to =cdn= to avoid that, increasing user privacy and
+  greatly improving page load time.
+  :end:
+  =cdn=, =src=, and =rw= links all point to =rwest.io=.
+
 * babel
 :PROPERTIES:
 :ID:       1b363810-26ea-4dae-b689-6e050756bfae
@@ -490,6 +533,9 @@ future, depending on how the Nix ecosystem progresses.
 + [[src:shed][src]] <-
 + [[https://docs.rwest.io/shed][docs]] <-
 
+#+BEGIN_export html
+<script id="asciicast-445161" src="https://asciinema.org/a/445161.js" async></script>
+#+END_export
 ** Overview
 :PROPERTIES:
 :ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0

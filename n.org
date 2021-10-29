@@ -2269,8 +2269,8 @@ developers.
 It is an [[file:oop.org][OOP]]-based interpretted programming language based on C.
 
 - One of the draws of Python is the ease in which you can just 'get
-something done' quickly. CTFers and other types of competitive hackers
-prefer it for precisely this reason. 
+  something done' quickly. CTFers and other types of competitive
+  hackers prefer it for precisely this reason.
 
 - Another advantage is the ease in which Python can be understood by
   humans, making it a great beginner language for anyone. This also
@@ -2279,15 +2279,17 @@ prefer it for precisely this reason.
   included in your work with minimal explanation.
 
 - [[https://docs.python.org/3/library/ast.html][ast — Abstract Syntax Trees — Python 3.9.7 documentation]]
-***** Libraries
-:PROPERTIES:
-:ID:       cbfa6dbe-f578-446a-bb2c-4fc0c49d131b
-:END:
+
+- [[https://www.python.org/doc/essays/cp4e/][Computer Programming for Everybody]] - 1999
+
+- BDFL [[https://en.wikipedia.org/wiki/Guido_van_Rossum][Guido van Rossum]]
+
 - [[https://mutagen.readthedocs.io/en/latest/][mutagen]] - module for handling audio metadata. Supports ASF, FLAC,
   MP4, Monkey’s Audio, MP3, Musepack, Ogg Opus, Ogg FLAC, Ogg Speex,
   Ogg Theora, Ogg Vorbis, True Audio, WavPack, OptimFROG, and AIFF
   audio files.
 - [[https://www.psycopg.org/docs/][psycopg2]] - PostgreSQL database adapter.
+
 **** Haskell                                                          :hs:
 :PROPERTIES:
 :ID:       4df9857f-9d1e-4d3a-92b4-c7797296eac5
