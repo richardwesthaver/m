@@ -20,33 +20,17 @@
 - [[https://docs.rwest.io][docs]] -- Rust docs
 \\
 
+
 #+CALL: get-emacs-version()
 #+RESULTS:
 : GNU Emacs 28.0.50 (build 1, x86_64-pc-linux-gnu, X toolkit, cairo version 1.17.4, Xaw scroll bars)
 :  of 2021-08-22
 : Org v9.4.4
 
-+ [[src:meta][src]] -- \\
-  #+CALL: hg-summary() :results output :exports results
-  #+RESULTS:
-  : parent: 58:c534397dc5fd tip
-  :  random ob-scripts
-  : branch: default
-  : commit: 2 modified, 1 unknown
-  : update: (current)
-
-+ weather -- \\
-  #+CALL: shc-weather() :results output :exports results
-  #+RESULTS:
-  #+begin_example
-  20:00:00-21:00:00 t:49 "Mostly Cloudy"
-  21:00:00-22:00:00 t:49 "Mostly Cloudy"
-  22:00:00-23:00:00 t:48 "Partly Cloudy"
-  23:00:00-00:00:00 t:48 "Partly Cloudy"
-  00:00:00-01:00:00 t:48 "Partly Cloudy"
-  01:00:00-02:00:00 t:47 "Partly Cloudy"
-  02:00:00-03:00:00 t:46 "Partly Cloudy"
-  03:00:00-04:00:00 t:46 "Partly Cloudy"
-  04:00:00-05:00:00 t:46 "Partly Cloudy"
-  05:00:00-06:00:00 t:45 "Partly Cloudy"
-  #+end_example
+#+CALL: hg-summary()
+#+RESULTS:
+: parent: 59:7b03f0dad30b tip
+:  weather report updates on publish
+: branch: default
+: commit: 5 modified
+: update: (current)
