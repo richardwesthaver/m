@@ -45,7 +45,7 @@ directory instead of copying the raw source. This is great for docs
 with sensitive info, but I prefer the copy method for public projects.
 
 #+name: meta-tmp
-#+begin_src elisp :async
+#+begin_src elisp 
   (let ((path "o/x/org/")
         (files (list "m.org" "n.org" "index.org" "cv.org" "ox.setup")))
     (make-directory path t)
@@ -130,7 +130,7 @@ with sensitive info, but I prefer the copy method for public projects.
 :END:
 - exported directories are compressed to =.tz= (tar.zst) archives.
 #+name: meta-pack
-#+begin_src sh :async
+#+begin_src sh
   pushd o/x
   for i in $(find ./* -maxdepth 0 -type d);
   do
@@ -149,14 +149,14 @@ with sensitive info, but I prefer the copy method for public projects.
 :END:
 Generate API docs for all Rust projects
 #+name: meta-gen-rust-docs
-#+begin_src sh :async
+#+begin_src sh
 WD=$SHED/src
-O=$WD/meta/o/docs
+O=$WD/meta/o/d
 cd $WD
 for i in rlib tenex shed; do # shed
-    pushd $i
+    cd $i
     cargo +nightly doc --target-dir $O --no-deps --all-features --workspace --release --message-format short
-    popd
+    cd ..
 done
 cd $O
 mv doc/* ./ && rm -r doc release
@@ -179,7 +179,7 @@ mv doc/* ./ && rm -r doc release
   [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
   formats.
 #+name: meta-deploy
-#+begin_src emacs-lisp :async
+#+begin_src emacs-lisp
   (let ((x "o/x/")
         (rh "/ssh:dmz:dmz/w/")
         (files '("m.html" "n.html" "index.html" "cv.html")))
@@ -191,15 +191,14 @@ mv doc/* ./ && rm -r doc release
 #+RESULTS: meta-deploy
 
 #+name: meta-deploy-rust-docs
-#+begin_src elisp :async
-(copy-file "o/docs" "/ssh:dmz:dmz/w/docs")
+#+begin_src elisp
+(copy-file "o/d" "/ssh:dmz:dmz/w/d" 1)
 #+end_src
 
 #+RESULTS: meta-deploy-rust-docs
-: 13e5accdf507318e1ec6965fe92179b1
 *** clean
 #+name: meta-clean
-#+begin_src shell :async
+#+begin_src shell
 rm -rf o
 #+end_src
 
@@ -210,12 +209,11 @@ rm -rf o
 :ID:       9ca529ee-50b6-4beb-9b46-042d4b2a521c
 :END:
 #+name: meta-readme-gen
-#+begin_src emacs-lisp :async
+#+begin_src emacs-lisp
   (org-export-headings-to-org)
 #+end_src
 
 #+RESULTS: meta-readme-gen
-: b08e1a374d0150e0f8608c817682d69f
 
 #+name: meta-readme-commit
 #+begin_src elisp
