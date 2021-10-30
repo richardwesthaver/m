@@ -1,4 +1,5 @@
 #+TITLE: metas
+#+STARTUP: overview
 #+SETUPFILE: ox.setup
 #+CATEGORY: metas
 # |   | name | description | status | commit log |
@@ -12,23 +13,20 @@
 :PROPERTIES:
 :ID:       60bed781-3a70-4435-9df0-097b799539e4
 :CUSTOM_ID: meta
+:EXPORT_FILE_NAME: o/readme
 :END:
-+ what -> info
-  - high-level project docs
-    - intro, examples, resources
-+ why -- good practice, helps me and strangers alike understand why
-  things are, as they are.
++ what -- \\
+  This project contains documents I've written in plain-text used to
+  generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/][hg.rwest.io]].
++ why -- \\
+  good practice, helps me and strangers alike understand why things
+  are, as they are.
 + status -- ALPHA
 + license -- wtfplv2.1
 + [[src:meta][src]] <-
-
-This project contains documents I've written in plain-text used to
-generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/][hg.rwest.io]].
-
 - =m.org= contains formal docs for projects
 - =n.org= contains informal notes
 - =cv.org= is my resume (hire me!)
-
 ** scripts
 :PROPERTIES:
 :ID:       d0e37437-8959-4692-9b7f-9245073042e2
@@ -37,16 +35,26 @@ generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/
 :PROPERTIES:
 :ID:       a3e61646-3d9f-4186-9187-cc826b3e9392
 :END:
+First we generate the output directory and copy the source files
+there. This ensures the root project directory isn't polluted on
+export.
+
+You could also do an initial export to generate pre-parsed files (with
+comments and headings tagged with =noexport= removed) in the output
+directory instead of copying the raw source. This is great for docs
+with sensitive info, but I prefer the copy method for public projects.
+
 #+name: meta-tmp
-#+begin_src emacs-lisp :results silent
-  (let ((files (list "m" "n" "index" "cv")))
+#+begin_src elisp :async
+  (let ((path "o/x/org/")
+        (files (list "m.org" "n.org" "index.org" "cv.org" "ox.setup")))
+    (make-directory path t)
     (dolist (f files)
-      (copy-file (concat f ".org") "o/x/org/" 1))
-    (copy-file "ox.setup" "o/x/org/" 1)
-    (setq org-html-validation-link nil)
-    (setq org-export-with-author nil)
-    (load-file "pub.el"))
+      (copy-file f path "o")))
 #+end_src
+
+#+RESULTS: meta-tmp
+
 *** pub
 :PROPERTIES:
 :ID:       e350dd4f-eab2-477b-9ce7-c39e4e4d75e0
@@ -58,97 +66,60 @@ generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/
 - Exported files are saved in separate directories
 #+name: meta-pub
 #+begin_src elisp
-(require 'ox-publish)
-(require 'org-refile)
-(require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
-(require 'org-id)
+  (require 'ox-publish)
+  (require 'org-refile)
+  (require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
+  (require 'org-id)
 
-(setq org-publish-project-alist
-      '(("org-html"
-         :author "ellis"
-         :email "ellis@rwest.io"
-	 :base-directory "~/shed/src/meta/o/x/org"
-	 :base-extension "org"
-         :with-date (current-time)
-	 :publishing-directory "~/shed/src/meta/o/x/html"
-	 :publishing-function org-html-publish-to-html
-	 :htmlize-source t
-	 :auto-sitemap nil)
-        ("org-md"
-         :author "ellis"
-         :email "ellis@rwest.io"
-	 :base-directory "~/shed/src/meta/o/x/org"
-	 :base-extension "org"
-         :with-date (current-time)
-	 :publishing-directory "~/shed/src/meta/o/x/md"
-	 :recursive t
-	 :publishing-function org-md-publish-to-md
-	 :auto-sitemap nil)
-        ("org-man"
-         :author "ellis"
-         :email "ellis@rwest.io"
-	 :base-directory "~/shed/src/meta/o/x/org"
-	 :base-extension "org"
-         :with-date (current-time)
-	 :publishing-directory "~/shed/src/meta/o/x/man"
-	 :recursive t
-	 :publishing-function org-man-export-to-man
-	 :auto-sitemap nil)
-        ("org-pdf"
-         :author "ellis"
-         :email "ellis@rwest.io"
-	 :base-directory "~/shed/src/meta/o/x/org"
-	 :base-extension "org"
-         :with-date (current-time)
-	 :publishing-directory "~/shed/src/meta/o/x/pdf"
-	 :recursive t
-	 :publishing-function org-latex-publish-to-pdf
-	 :auto-sitemap nil)
-        ("org-txt"
-         :author "ellis"
-         :email "ellis@rwest.io"
-	 :base-directory "~/shed/src/meta/o/x/org"
-	 :base-extension "org"
-         :with-date (current-time)
-	 :publishing-directory "~/shed/src/meta/o/x/txt"
-	 :recursive t
-	 :publishing-function org-ascii-publish-to-ascii
-	 :auto-sitemap nil)
-	("all" :components ("org-html" "org-md" "org-pdf" "org-txt"))))
+  (load-theme 'modus-operandi)
+  (setq org-html-validation-link nil
+        org-export-with-author nil)
+  (setq org-publish-project-alist
+        '(("org-html"
+           :author "ellis"
+           :email "ellis@rwest.io"
+           :base-directory "~/shed/src/meta/o/x/org"
+           :base-extension "org"
+           :with-date (current-time)
+           :publishing-directory "~/shed/src/meta/o/x/html"
+           :publishing-function org-html-publish-to-html
+           :htmlize-source t
+           :auto-sitemap nil)
+          ("org-md"
+           :author "ellis"
+           :email "ellis@rwest.io"
+           :base-directory "~/shed/src/meta/o/x/org"
+           :base-extension "org"
+           :with-date (current-time)
+           :publishing-directory "~/shed/src/meta/o/x/md"
+           :recursive t
+           :publishing-function org-md-publish-to-md
+           :auto-sitemap nil)
+          ("org-pdf"
+           :author "ellis"
+           :email "ellis@rwest.io"
+           :base-directory "~/shed/src/meta/o/org"
+           :base-extension "org"
+           :with-date (current-time)
+           :publishing-directory "~/shed/src/meta/o/pdf"
+           :recursive t
+           :publishing-function org-latex-publish-to-pdf
+           :auto-sitemap nil)
+          ("org-txt"
+           :author "ellis"
+           :email "ellis@rwest.io"
+           :base-directory "~/shed/src/meta/o/x/org"
+           :base-extension "org"
+           :with-date (current-time)
+           :publishing-directory "~/shed/src/meta/o/x/txt"
+           :recursive t
+           :publishing-function org-ascii-publish-to-ascii
+           :auto-sitemap nil)
+          ("all" :components ("org-html" "org-md" "org-pdf" "org-txt"))))
 
-(setq org-link-abbrev-alist
-      '(("google"    . "http://www.google.com/search?q=")
-        ("gmap"      . "http://maps.google.com/maps?q=%s")
-        ("omap"      . "http://nominatim.openstreetmap.org/search?q=%s&polygon=1")
-        ("ads"       . "https://ui.adsabs.harvard.edu/search/q=%20author%3A\"%s\"")
-	("rw" . "https://rwest.io/%s")
-        ("src" . "https://hg.rwest.io/%s")
-        ("contrib" . "https://hg.rwest.io/contrib/%s")
-        ("cdn" . "https://rwest.io/a/%s")))
-
-(defvar yt-iframe-format
-  (concat "<iframe width=\"480\""
-          " height=\"360\""
-          " src=\"https://www.youtube.com/embed/%s\""
-          " frameborder=\"0\""
-          " allowfullscreen>%s</iframe>"))
-
-(org-add-link-type
- "yt"
- (lambda (handle)
-   (browse-url
-    (concat "https://www.youtube.com/embed/"
-            handle)))
- (lambda (path desc backend)
-   (cl-case backend
-     (html (format yt-iframe-format
-                   path (or desc "")))
-     (latex (format "\href{%s}{%s}"
-                    path (or desc "video"))))))
-
-(org-publish-remove-all-timestamps)
-(org-refile-cache-clear)
-(org-publish "all" t)
+  (org-publish-remove-all-timestamps)
+  (org-refile-cache-clear)
+  (org-publish "all" t)
   #+end_src
 
   #+RESULTS: meta-pub
@@ -159,16 +130,47 @@ generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/
 :END:
 - exported directories are compressed to =.tz= (tar.zst) archives.
 #+name: meta-pack
-#+begin_src sh
+#+begin_src sh :async
   pushd o/x
-  for i in $(find ./* -type d);
+  for i in $(find ./* -maxdepth 0 -type d);
   do
       shc pack $i
   done
   popd
 #+end_src
 
-*** ship
+#+RESULTS: meta-pack
+| ~/shed/src/meta/o/x | ~/shed/src/meta |
+| ~/shed/src/meta     |                 |
+
+*** docs
+:PROPERTIES:
+:ID:       58c7f49f-b095-4d0d-adcd-e5cba7ccadd7
+:END:
+Generate API docs for all Rust projects
+#+name: meta-gen-rust-docs
+#+begin_src sh :async
+WD=$SHED/src
+O=$WD/meta/o/docs
+cd $WD
+for i in rlib tenex shed; do # shed
+    pushd $i
+    cargo +nightly doc --target-dir $O --no-deps --all-features --workspace --release --message-format short
+    popd
+done
+cd $O
+mv doc/* ./ && rm -r doc release
+#+end_src
+
+#+RESULTS: meta-gen-rust-docs
+| ~/shed/src/rlib  | ~/shed/src |
+| ~/shed/src       |            |
+| ~/shed/src/tenex | ~/shed/src |
+| ~/shed/src       |            |
+| ~/shed/src/shed  | ~/shed/src |
+| ~/shed/src       |            |
+
+*** deploy
 :PROPERTIES:
 :ID:       80226a3c-8866-4c35-ab3e-5a5d5d35b9c9
 :END:
@@ -176,20 +178,52 @@ generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/
 - New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
   [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
   formats.
-#+name: meta-ship
-#+begin_src elisp
-  (let ((path "o/x/")
-        (rhost "/ssh:dmz:dmz/w/")
-        (files (list "m" "n" "index" "cv"))
-        (packs (list "html" "org" "pdf" "txt" "md")))
+#+name: meta-deploy
+#+begin_src emacs-lisp :async
+  (let ((x "o/x/")
+        (rh "/ssh:dmz:dmz/w/")
+        (files '("m.html" "n.html" "index.html" "cv.html")))
+    (copy-file x (concat rh "x/") 1)
     (dolist (f files)
-      (copy-file (concat path "html/" f ".html") rhost 1))
-    (dolist (p packs)
-      (copy-file (concat path p ".tz") (concat rhost "x/") 1)
-      (copy-file (concat path p) (concat rhost "x/") 1)))
+      (copy-file (concat x "html/" f) rh 1)))
 #+end_src
 
-#+RESULTS: meta-ship
+#+RESULTS: meta-deploy
+
+#+name: meta-deploy-rust-docs
+#+begin_src elisp :async
+(copy-file "o/docs" "/ssh:dmz:dmz/w/docs")
+#+end_src
+
+#+RESULTS: meta-deploy-rust-docs
+: 13e5accdf507318e1ec6965fe92179b1
+*** clean
+#+name: meta-clean
+#+begin_src shell :async
+rm -rf o
+#+end_src
+
+#+RESULTS: meta-clean
+
+*** readme-gen                                                   :noexport:
+:PROPERTIES:
+:ID:       9ca529ee-50b6-4beb-9b46-042d4b2a521c
+:END:
+#+name: meta-readme-gen
+#+begin_src emacs-lisp
+  (org-export-headings-to-org)
+#+end_src
+
+#+RESULTS: meta-readme-gen
+
+#+name: meta-commit
+#+begin_src emacs-lisp
+(vc-hg-command t nil "commit" nil "-m 'update readme.org'")
+
+#+end_src
+
+#+RESULTS: meta-commit
+: 255
 
 *** makefile                                                     :noexport:
 :PROPERTIES:
@@ -221,7 +255,7 @@ o/x:$(OX_SETUP) $(PUB);$(MD)/org;cp ./*.org $< o/x/org;$(PUB);\
 	shed pack $@ o/x.tz;scp -r $@ $(HD):dmz/w
   #+end_src
 
-** Syntax
+** syntax
 :PROPERTIES:
 :ID:       93185ce3-7b16-4f9b-8e59-39127869ac45
 :CUSTOM_ID: elements
@@ -271,6 +305,7 @@ special *elements*:
 :PROPERTIES:
 :ID:       1b363810-26ea-4dae-b689-6e050756bfae
 :CATEGORY: lib
+:EXPORT_FILE_NAME: ../babel/readme
 :END:
 + what ← scripts[sc], snippets[sn], and templates[tm]
 + status ← IN_PROGRESS
@@ -383,6 +418,7 @@ LP tools are used to perform these two operations.
 :PROPERTIES:
 :ID:       9d7999d3-b66e-4ea2-8586-2ef9c27e8f4b
 :CUSTOM_ID: cfg
+:EXPORT_FILE_NAME: ../cfg/readme
 :END:
 + what -> my config files
   - emacs
@@ -526,13 +562,13 @@ future, depending on how the Nix ecosystem progresses.
 :ID: 205131fc-ff48-4e0b-a3e8-ab52d5b6ca19
 :CATEGORY: bin
 :CUSTOM_ID: shed
+:EXPORT_FILE_NAME: ../shed/readme
 :END:
 + what -- An opinionated Software Ecosystem
 + status -- ALPHA
 + version -- 0.0.1
 + [[src:shed][src]] <-
 + [[https://docs.rwest.io/shed][docs]] <-
-
 #+BEGIN_export html
 <script id="asciicast-445161" src="https://asciinema.org/a/445161.js" async></script>
 #+END_export
@@ -679,7 +715,7 @@ custom-tailored workspace.
 :PROPERTIES:
 :ID:       803d215d-18da-499b-a2fd-01e15a152e13
 :END:
-Once the binary is installed, run =shed init -p= to bootstrap a via
+Once the binary is installed, run =shc init -p= to bootstrap a via
 prompts. The default config path is determined by the ~$SHED_CFG~
 environment variable or ~$HOME/.config/shed.cfg~.
 
@@ -813,7 +849,7 @@ and database storage, but exposed to the user for convenience.
    :ID: a0f0f72d-475a-49a1-a21f-5d8a604099fd
    :END:
 #+begin_src shell :exports both :results output replace
-shed --help
+shc --help
 #+end_src
 
 #+RESULTS:
@@ -854,11 +890,42 @@ SUBCOMMANDS:
     x           do things with runtimes
 #+end_example
 
+** contrib
+:PROPERTIES:
+:ID:       23172369-1d5e-425c-8ffb-78a152c28670
+:CUSTOM_ID: contrib
+:END:
++ what -- Third-party code and dependencies with mirrored source trees
++ why -- isolation of external dependencies
++ [[src:contrib][src]]
+** crater
+:PROPERTIES:
+:ID:       39a1d49f-b477-4e19-8b54-d223168c5703
+:CUSTOM_ID: crater
+:END:
++ what -- a private crate registry for the Rust programming language.
++ [[src:crater][src]]
+The [[https://crates.io][crates.io]] package registry provides a number of excellent crates,
+integrates well with the =cargo= development tool, and should be
+preferred in all cases. I use =crater= when I need to:
+- import my unpublished crates
+- import the master branch of a published crate
+- import a local or patched version of a published crate
+- import a non-git crate (hg)
+
+=crater= also works well in intranet/local environments, and can be
+deployed for use in the following ways:
+- remote :: same as crates.io, registry index is publicly hosted on GitHub (default)
+- local :: registry index is stored locally, crates are retrieved remotely
+- static :: registry index and crate sources are stored locally, no
+  network requests are required
+
 * rlib                                                                 :rust:
 :PROPERTIES:
 :ID: 7e0d54ee-d3f7-468a-b0cf-664bba4df675
 :CATEGORY: lib
 :CUSTOM_ID: rlib
+:EXPORT_FILE_NAME: ../rlib/readme
 :END:
 + what -- a Rust system library
 + why -- develop next-gen applications and services
@@ -976,6 +1043,7 @@ library.
 :ID: 0480aced-777f-4f30-ae05-189500fb6903
 :CATEGORY: lib
 :CUSTOM_ID: tenex
+:EXPORT_FILE_NAME: ../tenex/readme
 :END:
 + what -> A Rust HTTP Client library
   - ergonomic wrappers for foreign APIs
@@ -1009,6 +1077,7 @@ library.
 :ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
 :CATEGORY: bin
 :CUSTOM_ID: demo
+:EXPORT_FILE_NAME: ../demo/readme
 :END:
 + what -- demos and examples relating to [[id:7e0d54ee-d3f7-468a-b0cf-664bba4df675][rlib]] and [[id:0480aced-777f-4f30-ae05-189500fb6903][tenex]].
 + status -- ALPHA
@@ -1056,37 +1125,7 @@ print IP, weather, and USB devices on Windows.
 :END:
 OpenAI API examples (NOTE: requires an OpenAI beta access key)
 
-* contrib
-:PROPERTIES:
-:ID:       23172369-1d5e-425c-8ffb-78a152c28670
-:CUSTOM_ID: contrib
-:END:
-+ what -- Third-party code and dependencies with mirrored source trees
-+ why -- isolation of external dependencies
-+ [[src:contrib][src]]
-* crater
-:PROPERTIES:
-:ID:       39a1d49f-b477-4e19-8b54-d223168c5703
-:CUSTOM_ID: crater
-:END:
-+ what -- a private crate registry for the Rust programming language.
-+ [[src:crater][src]]
-The [[https://crates.io][crates.io]] package registry provides a number of excellent crates,
-integrates well with the =cargo= development tool, and should be
-preferred in all cases. I use =crater= when I need to:
-- import my unpublished crates
-- import the master branch of a published crate
-- import a local or patched version of a published crate
-- import a non-git crate (hg)
-
-=crater= also works well in intranet/local environments, and can be
-deployed for use in the following ways:
-- remote :: same as crates.io, registry index is publicly hosted on GitHub (default)
-- local :: registry index is stored locally, crates are retrieved remotely
-- static :: registry index and crate sources are stored locally, no
-  network requests are required
-
-* music
+* music                                                            :noexport:
 :PROPERTIES:
 :ID: 29e8cd23-f49c-47a8-b685-e96b3fbe36e3
 :CATEGORY: art
