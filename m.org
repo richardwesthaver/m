@@ -210,20 +210,22 @@ rm -rf o
 :ID:       9ca529ee-50b6-4beb-9b46-042d4b2a521c
 :END:
 #+name: meta-readme-gen
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :async
   (org-export-headings-to-org)
 #+end_src
 
 #+RESULTS: meta-readme-gen
+: b08e1a374d0150e0f8608c817682d69f
 
-#+name: meta-commit
-#+begin_src emacs-lisp
-(vc-hg-command t nil "commit" nil "-m 'update readme.org'")
-
+#+name: meta-readme-commit
+#+begin_src elisp
+  (let ((default-directory (expand-file-name "~/shed/src")))
+    (dolist (src (list "shed" "rlib" "tenex" "babel" "cfg"))
+      (let ((default-directory (expand-file-name src)))
+        (vc-hg-command "*hg-cmd*" 'async nil "ci" "-m" "readme.org update"))))
 #+end_src
 
-#+RESULTS: meta-commit
-: 255
+#+RESULTS: meta-readme-commit
 
 *** makefile                                                     :noexport:
 :PROPERTIES:
