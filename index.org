@@ -7,30 +7,32 @@
 + =why= -- sharing is caring
 #+end_center
 \\
-- [[file:n.org][n]] -- notes
 - [[file:m.org][m]] -- metas
-- [[rw:cv.pdf][cv]] -- CV
+- [[file:n.org][n]] -- notes
+- [[https://rwest.io/d][docs]] -- api docs
 \\
 - [[rw:a][a]] -- attachments
 - [[rw:x][x]] -- dist
 - [[rw:y][y]] -- pkgs
 - [[rw:z][z]] -- data
 \\
-- [[src:][hg]] -- code
-- [[https://docs.rwest.io][docs]] -- Rust docs
+- [[src:][hg]] -- source code
 \\
 
 
-#+CALL: get-emacs-version()
+#+CALL: get-emacs-version() :eval yes
 #+RESULTS:
-: GNU Emacs 28.0.50 (build 1, x86_64-pc-linux-gnu, X toolkit, cairo version 1.17.4, Xaw scroll bars)
-:  of 2021-08-22
-: Org v9.4.4
+: GNU Emacs 29.0.50 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.24.30, cairo version 1.17.4)
+:  of 2021-10-29
+: Org v9.5
 
-#+CALL: hg-summary()
+#+CALL: shc-hg-summary(".") :eval yes
 #+RESULTS:
-: parent: 59:7b03f0dad30b tip
-:  weather report updates on publish
+: parent: 60:9bee04559bb3 tip
+:  removed makefile and pub.el, moved to meta::scripts
 : branch: default
-: commit: 5 modified
+: commit: 3 modified
 : update: (current)
+: M index.org
+: M m.org
+: M ox.setup
