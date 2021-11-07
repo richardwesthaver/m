@@ -1,5 +1,5 @@
 #-*- mode: org -*-
-#+OPTIONS: ^:nil toc:t H:1
+#+OPTIONS: ^:nil toc:t
 #+INFOJS_OPT: path:js/org-info.min.js home:https://rwest.io
 #+INFOJS_OPT: buttons:nil
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/page.css" />
