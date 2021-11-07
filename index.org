@@ -9,7 +9,7 @@
 \\
 - [[file:m.org][m]] -- metas
 - [[file:n.org][n]] -- notes
-- [[https://rwest.io/d][docs]] -- api docs
+- [[https://rwest.io/d][d]] -- api docs
 \\
 - [[rw:a][a]] -- attachments
 - [[rw:x][x]] -- dist
@@ -26,13 +26,14 @@
 :  of 2021-10-29
 : Org v9.5
 
-#+CALL: shc-hg-summary(".") :eval yes
+#+CALL: shc-hg-summary() :eval yes
 #+RESULTS:
-: parent: 60:9bee04559bb3 tip
-:  removed makefile and pub.el, moved to meta::scripts
+: parent: 63:d3291677e8c8 tip
+:  toc update
 : branch: default
-: commit: 3 modified
+: commit: 4 modified
 : update: (current)
 : M index.org
 : M m.org
+: M n.org
 : M ox.setup

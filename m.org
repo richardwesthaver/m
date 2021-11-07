@@ -24,6 +24,7 @@
 + status -- ALPHA
 + license -- wtfplv2.1
 + [[src:meta][src]] <-
+
 - =m.org= contains formal docs for projects
 - =n.org= contains informal notes
 - =cv.org= is my resume (hire me!)
@@ -45,7 +46,7 @@ directory instead of copying the raw source. This is great for docs
 with sensitive info, but I prefer the copy method for public projects.
 
 #+name: meta-tmp
-#+begin_src elisp 
+#+begin_src elisp
   (let ((path "o/x/org/")
         (files (list "m.org" "n.org" "index.org" "cv.org" "ox.setup")))
     (make-directory path t)
@@ -98,10 +99,10 @@ with sensitive info, but I prefer the copy method for public projects.
           ("org-pdf"
            :author "ellis"
            :email "ellis@rwest.io"
-           :base-directory "~/shed/src/meta/o/org"
+           :base-directory "~/shed/src/meta/o/x/org"
            :base-extension "org"
            :with-date (current-time)
-           :publishing-directory "~/shed/src/meta/o/pdf"
+           :publishing-directory "~/shed/src/meta/o/x/pdf"
            :recursive t
            :publishing-function org-latex-publish-to-pdf
            :auto-sitemap nil)
@@ -128,20 +129,25 @@ with sensitive info, but I prefer the copy method for public projects.
 :PROPERTIES:
 :ID:       8530e126-6fbf-41bb-bd48-2bd06f1ae5ab
 :END:
-- exported directories are compressed to =.tz= (tar.zst) archives.
+First we clean some of the junk latex produced by the PDF export.
+#+name: meta-clean-latex-clutter
+#+begin_src sh
+cd o/x/org && rm -rf *.pdf *.tex
+#+end_src
+
+#+RESULTS: meta-clean-latex-clutter
+
+Now we can compress our exports to =.tz= (tar.zst) archives.
 #+name: meta-pack
 #+begin_src sh
-  pushd o/x
+  cd o/x/
   for i in $(find ./* -maxdepth 0 -type d);
   do
       shc pack $i
   done
-  popd
-#+end_src
+  #+end_src
 
 #+RESULTS: meta-pack
-| ~/shed/src/meta/o/x | ~/shed/src/meta |
-| ~/shed/src/meta     |                 |
 
 *** docs
 :PROPERTIES:
@@ -163,12 +169,6 @@ mv doc/* ./ && rm -r doc release
 #+end_src
 
 #+RESULTS: meta-gen-rust-docs
-| ~/shed/src/rlib  | ~/shed/src |
-| ~/shed/src       |            |
-| ~/shed/src/tenex | ~/shed/src |
-| ~/shed/src       |            |
-| ~/shed/src/shed  | ~/shed/src |
-| ~/shed/src       |            |
 
 *** deploy
 :PROPERTIES:
@@ -181,7 +181,7 @@ mv doc/* ./ && rm -r doc release
 #+name: meta-deploy
 #+begin_src emacs-lisp
   (let ((x "o/x/")
-        (rh "/ssh:dmz:dmz/w/")
+        (rh "/ssh:hyde:/mnt/w/")
         (files '("m.html" "n.html" "index.html" "cv.html")))
     (copy-file x (concat rh "x/") 1)
     (dolist (f files)
@@ -192,10 +192,8 @@ mv doc/* ./ && rm -r doc release
 
 #+name: meta-deploy-rust-docs
 #+begin_src elisp
-(copy-file "o/d" "/ssh:dmz:dmz/w/d" 1)
+(copy-file "o/d" "/ssh:hyde:/mnt/w/d" 1)
 #+end_src
-
-#+RESULTS: meta-deploy-rust-docs
 *** clean
 #+name: meta-clean
 #+begin_src shell
@@ -215,12 +213,13 @@ rm -rf o
 
 #+RESULTS: meta-readme-gen
 
+
+
 #+name: meta-readme-commit
-#+begin_src elisp
-  (let ((default-directory (expand-file-name "~/shed/src")))
-    (dolist (src (list "shed" "rlib" "tenex" "babel" "cfg"))
-      (let ((default-directory (expand-file-name src)))
-        (vc-hg-command "*hg-cmd*" 'async nil "ci" "-m" "readme.org update"))))
+#+begin_src shell
+  for i in shed rlib tenex babel cfg demo; do
+      cd ~/shed/src/$i && hg ci -m 'readme.org update'
+  done
 #+end_src
 
 #+RESULTS: meta-readme-commit
@@ -564,22 +563,15 @@ future, depending on how the Nix ecosystem progresses.
 :CUSTOM_ID: shed
 :EXPORT_FILE_NAME: ../shed/readme
 :END:
-+ what -- An opinionated Software Ecosystem
++ what -- A Self-hosted Development Environment
 + status -- ALPHA
 + version -- 0.0.1
 + [[src:shed][src]] <-
 + [[https://docs.rwest.io/shed][docs]] <-
+
 #+BEGIN_export html
-<script id="asciicast-445161" src="https://asciinema.org/a/445161.js" async></script>
+<a href="https://asciinema.org/a/445161" target="_blank"><img src="https://asciinema.org/a/445161.svg" /></a>
 #+END_export
-** Overview
-:PROPERTIES:
-:ID:       0093b08d-ee3f-44aa-9683-8317eafde9c0
-:END:
-This tool is intended to encapsulate and optimize my full development
-workflow. The idea is that I can install this tool on any development
-machine, and with a single command (=shed init=) bootstrap a
-custom-tailored workspace.
 
 ** Roadmap
 :PROPERTIES:

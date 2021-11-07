@@ -1,6 +1,7 @@
 #+TITLE: notes
 #+SETUPFILE: ox.setup
 #+CATEGORY: notes
+#+STARTUP: overview
 * Art                                                                   :art:
 :PROPERTIES:
 :ID: a556be07-555e-4cc1-83d1-eaac2b7c4871
@@ -636,7 +637,7 @@ Human knowledge is expressed in language. So computational linguistics is very i
   - find a few good bloggers in your field of choice, and take some time
     to understand what they're doing and why.
   - [[https://sts10.github.io/][Prevent Default]]
-
+    
 - It is clear that the future of organized web development is
   embedded in the Cloud. :(
   - Github, AWS, Google Cloud, Azure.. are all excellent
@@ -682,11 +683,11 @@ Human knowledge is expressed in language. So computational linguistics is very i
 + pub -> \\
   - [[https://www.jsoftware.com/papers/APLModel.htm][Practical Uses of a Model of APL]] w/[[id:4c180058-b147-4f0e-92c8-09796e0a7108][Kenneth Iverson]]
   - [[https://dl.acm.org/doi/10.1145/800058.801118][The one tree (breaking out of the workspace)]] 
-- an APL and meta-programming heavy-weight
-- ATW_MODE
-- K, Q, A, A+
-- co-founder of KXSystems
-- creator of kdb
++ an APL and meta-programming heavy-weight
++ ATW_MODE
++ K, Q, A, A+
++ co-founder of KXSystems
++ creator of kdb
 **** Donald Knuth
 :PROPERTIES:
 :ID:       35915e89-a4a2-45ea-8615-b95b4ba60e07
@@ -710,6 +711,7 @@ Human knowledge is expressed in language. So computational linguistics is very i
 
 - an OG Emacser, designed the original command set for Emacs and first
   to port TeX
+
 *** Paradigms
 :PROPERTIES:
 :ID:       22d4609c-a42d-481e-82a2-94a8c10eda64
@@ -819,13 +821,18 @@ solutions are commonly used in scientific and engineering settings.
 :ID:       ad0031c2-9be9-40cb-8a3e-1c6091537221
 :CUSTOM_ID: patterns
 :END:
-**** Builder Pattern
+**** Builder
 :PROPERTIES:
 :ID:       f81d600b-f5c5-43c1-bde9-cef476de4a04
 :CUSTOM_ID: builder-pattern
 :END:
 - [[https://en.wikipedia.org/wiki/Builder_pattern][wikipedia]]
-**** Unit Testing
+**** Coroutine
+:PROPERTIES:
+:ID:       7997c51e-13a8-42c3-a9e0-7487b7961183
+:END:
+[[https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html][Coroutines in C]]
+**** Unit Test
 :PROPERTIES:
 :ID: ba479a69-fd34-470d-b278-1f9b2229a487
 :CUSTOM_ID: unit-testing
@@ -2236,7 +2243,7 @@ graph.audio_requested(&mut buffer, settings);
 
 unofficial bindings for the Azure SDK. why does MS not at least have
 autogen bindings? :(
-***** distributing packages
+***** distributing binaries
 :PROPERTIES:
 :ID:       cbe9cd2a-47ef-487a-997d-1b55500efc7f
 :CUSTOM_ID: distributing-packages
@@ -2247,6 +2254,11 @@ autogen bindings? :(
 :CUSTOM_ID: pacman-guidelines
 :END:
 + ref :: [[https://wiki.archlinux.org/title/Rust_package_guidelines][Rust package guidelines - ArchWiki]]
+****** minimizing Rust binary size
+:PROPERTIES:
+:ID:       72cad4e5-5245-4779-9d24-8275abb9a61c
+:END:
+[[https://github.com/johnthagen/min-sized-rust][GitHub - johnthagen/min-sized-rust]]
 ***** Embedded Rust                                            :embedded:
 :PROPERTIES:
 :CUSTOM_ID: embedded-rust
