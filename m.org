@@ -32,6 +32,23 @@
 :PROPERTIES:
 :ID:       d0e37437-8959-4692-9b7f-9245073042e2
 :END:
+
+#+name: meta-tbl
+| key   | val              | notes             |
+|-------+------------------+-------------------|
+| wd    | ~/shed/src/meta/ | working directory |
+| files |                  | input files       |
+| rh    | /sshx:hyde:      | remote host       |
+| o     | o/               | output directory  |
+
+#+name: meta-vt
+#+begin_src emacs-lisp :results value :var tbl=meta-tbl idx=0
+(nth idx (mapcar (lambda (x) (cadr x)) tbl))
+#+end_src
+
+#+RESULTS: meta-vt
+: ~/shed/src/meta/
+
 *** tmp
 :PROPERTIES:
 :ID:       a3e61646-3d9f-4186-9187-cc826b3e9392
@@ -46,15 +63,17 @@ directory instead of copying the raw source. This is great for docs
 with sensitive info, but I prefer the copy method for public projects.
 
 #+name: meta-tmp
-#+begin_src elisp
-  (let ((path "o/x/org/")
-        (files (list "m.org" "n.org" "index.org" "cv.org" "ox.setup")))
-    (make-directory path t)
-    (dolist (f files)
-      (copy-file f path "o")))
+#+begin_src elisp :var o=meta-vt(idx=3)
+    (let ((path (concat o "org/"))
+          (files (list "m.org" "n.org" "index.org" "cv.org" "ox.setup")))
+      (make-directory path t)
+      (dolist (f files)
+        (copy-file f path t))
+      (message "created meta tmp dirs"))
 #+end_src
 
 #+RESULTS: meta-tmp
+: created meta tmp dirs
 
 *** pub
 :PROPERTIES:
@@ -79,40 +98,40 @@ with sensitive info, but I prefer the copy method for public projects.
         '(("org-html"
            :author "ellis"
            :email "ellis@rwest.io"
-           :base-directory "~/shed/src/meta/o/x/org"
+           :base-directory "~/shed/src/meta/o/org"
            :base-extension "org"
            :with-date (current-time)
-           :publishing-directory "~/shed/src/meta/o/x/html"
+           :publishing-directory "~/shed/src/meta/o/html"
            :publishing-function org-html-publish-to-html
            :htmlize-source t
            :auto-sitemap nil)
           ("org-md"
            :author "ellis"
            :email "ellis@rwest.io"
-           :base-directory "~/shed/src/meta/o/x/org"
+           :base-directory "~/shed/src/meta/o/org"
            :base-extension "org"
            :with-date (current-time)
-           :publishing-directory "~/shed/src/meta/o/x/md"
+           :publishing-directory "~/shed/src/meta/o/md"
            :recursive t
            :publishing-function org-md-publish-to-md
            :auto-sitemap nil)
           ("org-pdf"
            :author "ellis"
            :email "ellis@rwest.io"
-           :base-directory "~/shed/src/meta/o/x/org"
+           :base-directory "~/shed/src/meta/o/org"
            :base-extension "org"
            :with-date (current-time)
-           :publishing-directory "~/shed/src/meta/o/x/pdf"
+           :publishing-directory "~/shed/src/meta/o/pdf"
            :recursive t
            :publishing-function org-latex-publish-to-pdf
            :auto-sitemap nil)
           ("org-txt"
            :author "ellis"
            :email "ellis@rwest.io"
-           :base-directory "~/shed/src/meta/o/x/org"
+           :base-directory "~/shed/src/meta/o/org"
            :base-extension "org"
            :with-date (current-time)
-           :publishing-directory "~/shed/src/meta/o/x/txt"
+           :publishing-directory "~/shed/src/meta/o/txt"
            :recursive t
            :publishing-function org-ascii-publish-to-ascii
            :auto-sitemap nil)
@@ -131,8 +150,8 @@ with sensitive info, but I prefer the copy method for public projects.
 :END:
 First we clean some of the junk latex produced by the PDF export.
 #+name: meta-clean-latex-clutter
-#+begin_src sh
-cd o/x/org && rm -rf *.pdf *.tex
+#+begin_src sh :var o=meta-vt(idx=3)
+cd $o/org && rm -rf *.pdf *.tex
 #+end_src
 
 #+RESULTS: meta-clean-latex-clutter
@@ -140,7 +159,7 @@ cd o/x/org && rm -rf *.pdf *.tex
 Now we can compress our exports to =.tz= (tar.zst) archives.
 #+name: meta-pack
 #+begin_src sh
-  cd o/x/
+  cd o/
   for i in $(find ./* -maxdepth 0 -type d);
   do
       shc pack $i
@@ -154,7 +173,7 @@ Now we can compress our exports to =.tz= (tar.zst) archives.
 :ID:       58c7f49f-b095-4d0d-adcd-e5cba7ccadd7
 :END:
 Generate API docs for all Rust projects
-#+name: meta-gen-rust-docs
+#+name: shed-gen-rust-docs
 #+begin_src sh
 WD=$SHED/src
 O=$WD/meta/o/d
@@ -168,8 +187,6 @@ cd $O
 mv doc/* ./ && rm -r doc release
 #+end_src
 
-#+RESULTS: meta-gen-rust-docs
-
 *** deploy
 :PROPERTIES:
 :ID:       80226a3c-8866-4c35-ab3e-5a5d5d35b9c9
@@ -179,20 +196,18 @@ mv doc/* ./ && rm -r doc release
   [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
   formats.
 #+name: meta-deploy
-#+begin_src emacs-lisp
-  (let ((x "o/x/")
-        (rh "/ssh:hyde:/mnt/w/")
-        (files '("m.html" "n.html" "index.html" "cv.html")))
-    (copy-file x (concat rh "x/") 1)
-    (dolist (f files)
-      (copy-file (concat x "html/" f) rh 1)))
+#+begin_src emacs-lisp :var o="o/" rh="/sshx:hyde:/mnt/w/" files='("m.html" "n.html" "index.html")
+  (copy-file o (concat rh "x/") 1)
+  (dolist (f files)
+    (copy-file (concat o "html/" f) rh 1))
+  (copy-file (concat o "pdf/cv.pdf") rh 1)
 #+end_src
 
 #+RESULTS: meta-deploy
 
 #+name: meta-deploy-rust-docs
 #+begin_src elisp
-(copy-file "o/d" "/ssh:hyde:/mnt/w/d" 1)
+(copy-file "o/d" "/sshx:hyde:/mnt/w/d" 1)
 #+end_src
 *** clean
 #+name: meta-clean
@@ -210,10 +225,6 @@ rm -rf o
 #+begin_src emacs-lisp
   (org-export-headings-to-org)
 #+end_src
-
-#+RESULTS: meta-readme-gen
-
-
 
 #+name: meta-readme-commit
 #+begin_src shell
@@ -419,45 +430,62 @@ LP tools are used to perform these two operations.
 :CUSTOM_ID: cfg
 :EXPORT_FILE_NAME: ../cfg/readme
 :END:
-+ what -> my config files
-  - emacs
-  - mail
-  - shell
-  - term
-  - tmux
-  - vc
-  - virt
-  - wm
+This repo contains [[https://wiki.archlinux.org/title/Dotfiles][dotfiles]] for various programs and applications I
+use often.
 
-I have a relatively small set of config files, but they get a lot
-done. The sections below cover configuration of a certain category or
+| category | description                            | apps                |
+|----------+----------------------------------------+---------------------|
+| emacs    | the superior editor                    | emacs               |
+| mail     | gmail local setup                      | offlineimap notmuch |
+| shell    | shell profiles and configs             | bash zsh            |
+| term     | terminal emulation and multiplexing    | urxvt tmux kitty    |
+| vc       | version control                        | hg git              |
+| virt     | machine emulation                      | lxc qemu archiso    |
+| wm       | minimal X11 desktop config and widgets | 2bwm conky          |
+
+The top-level makefile can be used for basic local bootstrap but these
+files are generally intended to be loaded into a user environment via
+the =shed= development tool. I work out of a Linux box 99% of the
+time, but most programs are cross-platform. I don't bother with
+Windows machines, but there is a =powershell= configuration that
+provides some amenities when I need to use one. My default =emacs=
+config also works on Windows but YMMV.
+
+The sections below cover configuration of a certain category or
 individual application such as =shell= or =emacs= respectively.
 
-The top-level makefile is used for basic deployment and publishing,
-but these files are generally intended to be loaded into a user
-environment via the =shed= development tool.
 ** emacs
 :PROPERTIES:
 :ID:       903f8087-e0af-48f2-a5a6-f8d7f080464a
 :END:
 + what -- Configuration for the superior editor.
 + version -- 2.1
-*** Abstract
-:PROPERTIES:
-:ID:       937b83dd-233b-44cb-9a0b-d5536f7d9db3
-:END:
-I've been using Emacs since 2016 as my primary editor. I started with
-Spacemacs, used Doom for a while, then started rolling my own
-configurations. Configuring the Emacs editor requires learning the
-Emacs language - emacs-lisp. It is a dialect of Common Lisp which can
-be a bit tricky to adapt to for non-Lisp programmers, but it is built
-specifically for Emacs.
 
-This meta covers my Emacs modules, configurations, scripts, and other
-code written in emacs-lisp. I have a main configuration which is
-thousands of lines, but lately I've been experimenting with running
-multiple smaller isolated emacs servers, with their own unique
-configs.
+I've been using Emacs since 2016 as my primary editor. I started with
+[[https://www.spacemacs.org/][Spacemacs]], used [[https://github.com/hlissner/doom-emacs][Doom]] for a while, then started rolling my own
+configurations. Configuring the Emacs editor requires learning the
+Emacs language - [[https://www.gnu.org/software/emacs/manual/html_node/elisp/][Emacs Lisp]] or =elisp=. It is a dialect of Common Lisp
+which can be a bit tricky to adapt to for non-Lisp programmers (such
+as myself), but it is built specifically for Emacs and quite powerful.
+
+This section covers my Emacs packages, configurations, and other code
+written in =elisp=.
+*** default.el
+:PROPERTIES:
+:ID:       673fb426-f80c-4b51-b2a7-27e330051da5
+:END:
+=default.el= provides a package called =default= which is always the
+first package loaded in my init file. Why? because it doesn't require
+/any/ external packages - only packages included with the vanilla GNU
+Emacs distribution. This removes the need to bootstrap a package
+manager, download remote packages, and do other things that can impact
+startup time. It also guarantees my defaults will work on any platform
+that supports vanilla Emacs.
+
+*** hyde.el
+:PROPERTIES:
+:ID:       0366a755-e1c1-4002-a39e-cc9729bd8051
+:END:
 *** config.org
 :PROPERTIES:
 :ID:       6782d0a9-1915-4b3e-85fb-3dd5e7ec917e
@@ -466,7 +494,7 @@ configs.
 The (old) main configuration file. A lot of this is getting moved to
 our =notes=. The resulting files will be refactored. Despite being
 messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916][Screenshots]]).
-*** Screenshots
+**** Screenshots
 :PROPERTIES:
 :ID:       005d2a6e-d34f-45ee-a169-f26fc264c916
 :END:
@@ -532,23 +560,23 @@ messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916]
 :PROPERTIES:
 :ID:       f8ce8509-e360-4d1c-936f-37aae0537684
 :END:
-+ what -- Version Control configs
-  - mercurial
-  - git
+- mercurial
+- git
 ** virt
 :PROPERTIES:
 :ID:       c240a030-7e6b-4061-8c13-a5764169eb35
 :END:
 + what -- virtual machine and container configs
-  - lxd | lxc
+  - lxc
+  - qemu
+  - archiso
 ** wm
 :PROPERTIES:
 :ID:       3eafb844-4684-48af-ac2b-4660df2c2ab4
 :END:
-+ what -- X11 configs
-  - 2bwm
-  - conky
-  - lemonbar
+- 2bwm
+- conky
+- lemonbar
 ** nix                                                 :deprecated:noexport:
 :PROPERTIES:
 :ID:       e2f62a1e-8f54-4bf6-ab88-86872e49f71d
