@@ -317,63 +317,32 @@ special *elements*:
 :CATEGORY: lib
 :EXPORT_FILE_NAME: ../babel/readme
 :END:
-+ what ← scripts[sc], snippets[sn], and templates[tm]
-+ status ← IN_PROGRESS
-+ [[src:babel][src]] ⇐ 
-
-Re-using code is an important part of software development. We re-use
-code when importing a library module, using macros, writing classes,
-and [[https://stackoverflow.blog/2021/04/19/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/][copying code from Stack Overflow]]. As such, programmers have often
-come up with systems for collecting code that they can re-use in other
-contexts.
-
-=babel= is one of these systems. It is highly integrated with [[#shed][shed]] and
-[[file:n.org::#gnu-emacs][GNU Emacs]] which are used to modify, organize, and implement our
-collections.
-
-Collections are described by three categories:
-- sn :: common domain-specific code snippets
-- sc :: generalized scripts in a variety of languages
-- tm :: project templates
-
-Each category provides its own methods of interaction available to the
-user for different types of meta-programming activities. There are
-also high-level interfaces for composing ephemerial hacking sessions
-and configuration.
 
 This project is an extension of the [[https://orgmode.org/manual/Library-of-Babel.html][Library of Babel]] - which allows
-you to define blocks of code in an org file, and call them
-remotely. =babel= is in fact just this - a collection of code blocks
-in an org file. Emacs was previously distributed with an initial
-collection; [[https://git.sr.ht/~bzg/worg/tree/master/item/library-of-babel.org][library-of-babel.org]]. This is no longer the case, but the
-powerful functionality of =org-babel= is still there, in all its
-glory.
+you to define blocks of code in an org file, and call them remotely
+(from elsewhere within Emacs). Emacs was previously distributed with
+an initial collection; [[https://git.sr.ht/~bzg/worg/tree/master/item/library-of-babel.org][library-of-babel.org]]. This is no longer the
+case, but the powerful functionality of =org-babel= is still there.
 
-The goal of =babel= however is not just to build collections, but to
-provide APIs for them. As such a large focus of this project will be
-on exporting (i.e. [[id:b297c4d5-9d42-4618-9ab6-e8134d7587a0][Weaving and Tangling]]) and parsing collections built
-in Emacs so that they can be used by other processes. Our intention is
-to mimick the powerful meta-programming capabilities of =org-babel=
-(specifically, the ability to mix and match functions /from any
-language/).
+=babel.el= is the core package for this library. It includes a few
+extensions to built-in packages, a minor-mode, and a framework for
+using code blocks in various contexts. More on that later.
 
 ** Literate Programming
 :PROPERTIES:
-:ID:       b8372c87-ff6a-4d31-baa8-23ad66514d4e
-:CUSTOM_ID: literate-programming
+:ID:       838554e2-7987-4649-9b6d-430b67b193e3
 :END:
-
-Literate programming was first introduced by Donald Knuth in 1984 via
+Literate Programming (LP) was first introduced by Donald Knuth in 1984 via
 his documentation and programming system =WEB=. The approach involves
 writing the logic of a program in /natural language/ interspersed with
 snippets, macros, and other source code, from which a compilable
 computer program can be generated.
 
 The concept can be applied widely but is typically reserved for the
-domains of Academia/Research, where it is a popular method of creating
+domains of academia, where it is a popular method of creating
 reproducible research.
 
-Knuth's =WEB= was originally built for Pascal + LaTex *only*, but in
+Knuth's =WEB= was originally built for Pascal + LaTex /only/, but in
 1989 a new language-agnostic tool called =noweb= was released. This
 model, that is capable of working with multiple programming languages
 and documentation backends, is what we commonly refer to as Literate
@@ -381,49 +350,51 @@ Programming today.
 
 *** Weaving and Tangling
 :PROPERTIES:
-:ID:       b297c4d5-9d42-4618-9ab6-e8134d7587a0
-:CUSTOM_ID: weaving-and-tangling
+:ID:       9c673bfa-a8a4-4a9d-990a-2d141a6037ae
 :END:
-[[cdn:img/literate_c.jpg]]
+
+[[https://rwest.io/a/img/literate_c.jpg]]
 
 Weaving and Tangling are the core operations that are performed on
 some raw source, which should include both prose and code. The raw
 source is written in =org= in our case, but the same concepts apply to
-other mediums.
+other mediums such as Jupyter Notebooks.
 
-LP tools are used to perform these two operations.
+the core functions of any LP system are =weave= and =tangle=.
 
 - *Weaving* is associated with the /publishing/ and /exporting/
   pipeline for the source, which is meant to enhance the
-  human-readable aspects.
+  human-readable aspects. We =weave= an LP document into formats such
+  as LaTex, HTML, and PDF for human consumption.
 
-- *Tangling* is associated with the /compilation/ nand /build/ pipeline
-  for source. It creates machine-friendly artifacts which can be
-  distributed for use by tools and services.
+- *Tangling* is associated with the /compilation/ nand /build/
+  pipeline for source. It creates raw source code files, sometimes
+  with additional comments. These files are machine-readable and can
+  be interpreted in the runtime of our choosing.
+
+As it relates to our project =babel=, we are particularly interested
+in the =tangle= function. I do enjoy a well-woven document and
+reviewing LP code in that manner, and =babel= functions can be used to
+compose LP documents which are in turn woven, but it doesn't play a
+role in the implementation itself. Our focus is instead on
+/ergonomics/, specifically for the programmer and the runtime
+environment he finds himself in, which requires close attention to the
+machine-readable formats of source blocks.
 
 ** Dependencies
 :PROPERTIES:
-:ID:       b3146122-3109-45ce-b155-97d52701a0ca
+:ID:       aca42323-7eac-4ccd-b338-4d78b3407923
 :END:
 - *Emacs 28* \\
   The editor integration doesn't depend on any external packages
-  outside of vanilla Emacs. The following built-in packages are used
-  to provide functionality:
+  outside of vanilla Emacs. The following built-in packages are used:
   - =org.el=
   - =ob.el=
   - =skeleton.el=
   - =autoinsert.el=
   - =abbrev.el=
   - =dabbrev.el=
-  All of the above features should be available in the default Emacs
-  distribution for your OS.
-- *GNU Make* \\
-  =optional=
-  
-** Example
-:PROPERTIES:
-:ID:       d46704c3-829b-4f46-b487-915ed5304638
-:END:
+
 * cfg
 :PROPERTIES:
 :ID:       9d7999d3-b66e-4ea2-8586-2ef9c27e8f4b
