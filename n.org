@@ -978,13 +978,18 @@ system programming is at the heart of all software that we write.
    :CUSTOM_ID: buffer-overflows
    :END:
    #+begin_quote
-   Buffer overflow, or Buffer Overrun is a software error triggered when a program does not adequately control the amount of data that is copied over the buffer, if this amount exceeds the preassigned capacity, remaining bytes are stored in adjacent memory areas by overwriting its original content. This can be exploited by overwriting a fuction's return address to cause arbitrary code execution and allow access to a vulnerable system. 
-   -- [[https://nets.ec/Buffer_overflow][n3t2.3c]]
+   Buffer overflow, or Buffer Overrun is a software error triggered
+   when a program does not adequately control the amount of data that
+   is copied over the buffer, if this amount exceeds the preassigned
+   capacity, remaining bytes are stored in adjacent memory areas by
+   overwriting its original content. This can be exploited by
+   overwriting a fuction's return address to cause arbitrary code
+   execution and allow access to a vulnerable system.  -- [[https://nets.ec/Buffer_overflow][n3t2.3c]]
    #+end_quote
    - security measure considerations
-      - [[id:0a438ddb-49ba-47e8-bca0-149de48d7bdc][ASLR]]
-      - [[id:5d4796b9-ff44-4553-98bc-bacdfc296740][Executable-space Protection]]
-        - [[id:b9c33f21-6389-40bc-8cf2-82bc1135a84f][DEP]]
+      - [[#address-space-layout-randomization][Address Space Layout Randomization]]
+      - [[#executable-space-protection][Executable-space Protection]]
+        - [[#data-execution-prevention][Data Execution Prevention]]
 
 ***** Return-oriented Programming                                   :rop:
    :PROPERTIES:
@@ -993,8 +998,10 @@ system programming is at the heart of all software that we write.
    :CUSTOM_ID: return-oriented-programming
    :END:
    #+begin_quote
-   Return-oriented programming (ROP) is a computer security exploit technique that allows an attacker to execute code in the presence of security defenses such as executable space protection and code signing.   
-   -- [[https://en.wikipedia.org/wiki/Return-oriented_programming][Wikipedia]]
+   Return-oriented programming (ROP) is a computer security exploit
+   technique that allows an attacker to execute code in the presence
+   of security defenses such as executable space protection and code
+   signing.  -- [[https://en.wikipedia.org/wiki/Return-oriented_programming][Wikipedia]]
    #+end_quote
    - go go gadget =pop rdi; ret;=!
 
@@ -1013,19 +1020,57 @@ output of a cryptographic algorithm.
 cracking programs for hash-based resources:
 - [[https://github.com/hashcat/hashcat][hashcat]]
 - [[https://www.openwall.com/john/][JohnTheRipper]]
+***** Risk Assessment
+:PROPERTIES:
+:ID:       dcbbfd56-1dc7-423b-8fd0-71a49b0162cd
+:END:
+****** Vulnerability Assessment
+:PROPERTIES:
+:ID:       abd1de58-e07b-4cf6-b8c8-aae0f202aca4
+:END:
+- The vulnerability assessment of a computer system involves
+  identifying, quantifying, and prioritizing vulnerabilities. This is
+  an important step for both offensive and defensive measures in risk
+  assessment.
+- This is often an ongoing process that is performed on a schedule
+  within the network security team. Systems change, new features are
+  added, new exploits are discovered, so it's important to keep up.
+- One of the most important defensive tools you have as a network
+  admin is logging and analyzing network traffic, but it is far more
+  important to be pro-active with your analysis. There seems to be a
+  lot of orgs out there that save inspection of network traffic until
+  /after/ their customer DB has been exfiltrated for months on end.
+  - Don't wait for an active attack to start learning how to analyze
+    your traffic. By then it is far too late and defeats the purpose
+    of having logging in the first place. It help you identify way
+    more potential vulnerabilities, really understand your network,
+    and secure your assets AOT.
+
+- Networks are also not the only type of computer system that requires
+  vulnerability assessment, it's just the one that is often most
+  exposed. Software applications and libraries, communication and
+  cryptographic protocols, and hardware are all fair game. The term
+  itself is generic and applies to systems that are far more difficult
+  to assess such as energy supply and transportation systems.
+****** Pen Test
+:PROPERTIES:
+:ID:       fa7b9139-c390-43b1-9d65-da1e088521c1
+:END:
+- A penetration test is an /authorized/ simulated attack on a computer
+  system used to evaluate the security of the system or part of it.
+- This is very different from a /vulnerability assessment/ which is
+  also often the precursor to a pen test.
+***** Simulation                                               :net:virt:
+:PROPERTIES:
+:ID:       a5a7fe9e-7bee-4283-9df5-067a107ca517
+:END:
 ***** Leaks                                                        :data:
 :PROPERTIES:
 :ID:       15d8a50a-53a9-40ab-b5e7-3fb3bda3da1b
-:CUSTOM_ID: leaks
-:END:
-****** Twitch Part 1 (2021)
-:PROPERTIES:
-:ID:       6e18c771-087a-4731-aad7-4546877fa017
-:CUSTOM_ID: twitch-part-1-2021
 :END:
 - [[https://sizeof.cat/post/twitch-leaks/][Twitch leaks - sizeof(cat)]]
-- sourced from the hacker known only as 4chan
-  magnet link: ~magnet:?xt=urn:btih:N5BLZ6XECNEHHARHJOVQAS4W7TWRXCSI&dn=twitch-leaks-part-one&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce~
+  - sourced from the hacker known only as 4chan
+    magnet link: ~magnet:?xt=urn:btih:N5BLZ6XECNEHHARHJOVQAS4W7TWRXCSI&dn=twitch-leaks-part-one&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce~
 **** Unix Philosophy                                                :unix:
 :PROPERTIES:
 :ID:       2c483711-aa5c-4060-9d51-f840e2cae822
