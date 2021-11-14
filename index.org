@@ -1,23 +1,66 @@
-#+TITLE: rwest.io
-#+SETUPFILE: ox.setup
+#+OPTIONS: ^:nil toc:nil num:nil
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/page.css" />
 #+begin_center
-=who= -- Richard Westhaver <[[mailto:ellis@rwest.io][ellis@rwest.io]]>
-=what= -- a humble hacker
-=where= -- some laptop -- USA
-=why= -- sharing is caring
+=who= -- Richard Westhaver <[[mailto:ellis@rwest.io][ellis@rwest.io]]> \\
+=what= -- a humble hacker \\
+=where= -- some laptop -- USA \\
+=why= -- sharing is caring \\
 #+end_center
 
-| link |             |
-|------+-------------|
-| [[file:m.org][m]]    | metas       |
-| [[file:n.org][n]]    | notes       |
-|------+-------------|
-| [[rw:a][a]]    | attachments |
-| [[rw:x][x]]    | exports     |
-| [[rw:y][y]]    | data_1      |
-| [[rw:z][z]]    | data_2      |
-|------+-------------|
-| [[src:][hg]]   | source code |
+|--------+-------------+------------------------------------------|
+| path   | ?           |                                          |
+|--------+-------------+------------------------------------------|
+| /      | <           |                                          |
+| [[file:m.org][m]]      | projects    | [[[file:m.org::#meta][meta]] [[file:m.org::#babel][babel]] [[file:m.org::#cfg][cfg]] [[file:m.org::#shed][shed]] [[file:m.org::#rlib][rlib]] [[file:m.org::#tenex][tenex]]]         |
+| [[file:n.org][n]]      | notes       | [[[file:n.org::#art][art]] [[file:n.org::#computers][computers]] [[file:n.org::#economics][econ]] [[file:n.org::#language][lang]] [[file:n.org::#math][math]] [[file:n.org::#philosophy][phil]] [[file:n.org::#misc][misc]]] |
+| r(TBD) | rambles     |                                          |
+|        |             |                                          |
+| [[rw:a][a]]      | attachments | [[[cdn:audio][audio]] [[cdn:doc][doc]] [[cdn:img][img]] [[cdn:video][video]]]                    |
+| [[rw:x][x]]      | exports     | [[[rw:x/html][html]] [[rw:x/md][md]] [[rw:x/org][org]] [[rw:x/pdf][pdf]] [[rw:x/txt][txt]]]                    |
+| [[rw:y][y]]      | dist        | [[[rw:y/bin][bin]] [[rw:y/hg][hg]]]                                 |
+| [[rw:z][z]](TBD) | data        |                                          |
+|--------+-------------+------------------------------------------|
+
+* FAQ
+:PROPERTIES:
+:CUSTOM_ID: faq
+:END:
+
+- /What is this?/
+  - Richard's static website.
+- /Who's that?/
+  - An American hacker/coder/musician finding a way in a digital
+    world.
+- /What do you do?/
+  - I flip bits, build software tools, analyze networks, and study
+    sociotechnical systems.
+- /What's with the favicon?/
+  - That's J.R "Bob" Dobbs, [[http://www.subgenius.com][cult]] icon and OG Slacker.
+- /Where's the code?/
+  - Code is hosted at [[https://hg.rwest.io][hg.rwest.io]] in Mercurial repositories and
+    mirrored on [[https://github.com/richardwesthaver][github]] for Git die-hards.
+- /How do I get in contact?/
+  - You can reach me via [[mailto:ellis@rwest.io][email]] and encrypt with my [[rw:y/key.gpg][public key]] if you
+    prefer.
+
+* Info
+:PROPERTIES:
+:CUSTOM_ID: info
+:END:
+
+#+name: meta-info
+|---+-------+-----------------------------+------+-----------------+-------+--------------------------+---|
+|   | meta  | info                        |      |                 | stats |                          |   |
+|---+-------+-----------------------------+------+-----------------+-------+--------------------------+---|
+| / |       | <                           |      |                 | <     |                          |   |
+| ! | name  | info                        | type | version         | stats | count                    |   |
+| # | meta  | project information         | org  | alpha-0.2:%U:%R |       | [l:# f:#, v:#, t:%, d:%] |   |
+| # | shed  | self-hosted dev environment | rust |                 |       |                          |   |
+| # | rlib  | Richard's Rust Library      | rust |                 |       |                          |   |
+| # | tenex | HTTP API clients            | rust |                 |       |                          |   |
+| # | cfg   | dotfiles                    | etc  |                 |       |                          |   |
+| # | babel | meta-programming library    | etc  |                 |       |                          |   |
+|---+-------+-----------------------------+------+-----------------+-------+--------------------------+---|
 
 #+CALL: get-emacs-version() :eval yes
 #+RESULTS:
@@ -36,3 +79,18 @@
 : M m.org
 : M n.org
 : M ox.setup
+
+#+CALL: shc-weather() :eval yes
+#+RESULTS:
+#+begin_example
+16:00:00-17:00:00 t:48 "Partly Sunny"
+17:00:00-18:00:00 t:47 "Partly Sunny"
+18:00:00-19:00:00 t:45 "Mostly Cloudy"
+19:00:00-20:00:00 t:45 "Mostly Cloudy"
+20:00:00-21:00:00 t:45 "Mostly Cloudy"
+21:00:00-22:00:00 t:45 "Mostly Cloudy"
+22:00:00-23:00:00 t:45 "Cloudy"
+23:00:00-00:00:00 t:44 "Chance Rain Showers"
+00:00:00-01:00:00 t:43 "Rain Showers Likely"
+01:00:00-02:00:00 t:42 "Rain Showers Likely"
+#+end_example

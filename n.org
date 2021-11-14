@@ -210,7 +210,10 @@
 - A lesson with Seymour Bernstein \\
   - "My fingers always win and what is more, they do everything"
   [[yt:HIFQUrhdT2k]]
-  
+**** Audio Synthesis
+- Prophet Rev 2 patches \\
+  [[yt:4Ne7LjxOSco]] \\
+  [[yt:G2d1OMzwAOs]]
 * Computers                                                         :cs:comp:
 :PROPERTIES:
 :ID:       3321999b-34d2-4c62-a9de-fce29110f068
@@ -5053,7 +5056,7 @@ The core principles of the [[https://www.youneedabudget.com/the-four-rules/][YNA
 Posts on YNAB:
 - https://emacs.cafe/ledger/emacs/ynab/budgeting/2018/06/12/elbank-ynab.html
 - https://sachachua.com/blog/tag/ledger/
-* History                                                           :history:
+* History                                                  :history:noexport:
 :PROPERTIES:
 :ID: 57fbaf47-0e20-4f48-8402-6163bac5b90b
 :END:

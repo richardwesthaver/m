@@ -1,28 +1,49 @@
 #+TITLE: metas
-#+STARTUP: overview
 #+SETUPFILE: ox.setup
-#+CATEGORY: metas
-# |   | name | description | status | commit log |
-# |---+------+-------------+--------+------------|
-# |   | meta | info        |        |            |
-# |   | shed | dev tool    |        |            |
-# |   |      |             |        |            |
-# |---+------+-------------+--------+------------|
-
 * meta
 :PROPERTIES:
-:ID:       60bed781-3a70-4435-9df0-097b799539e4
 :CUSTOM_ID: meta
-:EXPORT_FILE_NAME: o/readme
+:EXPORT_FILE_NAME: readme
 :END:
-+ what -- \\
-  This project contains documents I've written in plain-text used to
-  generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/][hg.rwest.io]].
-+ why -- \\
-  good practice, helps me and strangers alike understand why things
-  are, as they are.
-+ status -- ALPHA
-+ license -- wtfplv2.1
+
+#+name: meta-info
+|----------+-------|
+| release  |       |
+| status   |       |
+| revision |       |
+| tags     |       |
+| updated  |       |
+| license  | wtfpl |
+|          |       |
+|----------+-------|
+
+
+#+name: meta-stats
+|-------+---|
+| lines |   |
+|       |   |
+
+
+#+name: files
+#+begin_src sh :results table :exports both
+  ls -lh --time-style=long-iso \
+    |awk '{if (NR!=1) print $8, $5, $6"-"$7}' \
+    |awk 'BEGIN{print "file size updated"}{print $0}'
+#+end_src
+
+#+name: meta-files
+#+RESULTS: files
+| file       | size |          updated |
+| cv.org     | 3.8K | 2021-10-27-20:37 |
+| index.org  | 2.0K | 2021-11-12-18:38 |
+| m.org      | 36K  | 2021-11-12-23:17 |
+| n.org      | 229K | 2021-11-12-02:18 |
+| ox.setup   | 270  | 2021-11-12-19:01 |
+| readme.org | 7.5K | 2021-11-12-02:49 |
+
+This project contains documents I've written in plain-text used to
+generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/][hg.rwest.io]].
+
 + [[src:meta][src]] <-
 
 - =m.org= contains formal docs for projects
@@ -62,18 +83,15 @@ comments and headings tagged with =noexport= removed) in the output
 directory instead of copying the raw source. This is great for docs
 with sensitive info, but I prefer the copy method for public projects.
 
-#+name: meta-tmp
-#+begin_src elisp :var o=meta-vt(idx=3)
-    (let ((path (concat o "org/"))
-          (files (list "m.org" "n.org" "index.org" "cv.org" "ox.setup")))
-      (make-directory path t)
-      (dolist (f files)
-        (copy-file f path t))
-      (message "created meta tmp dirs"))
+#+name: meta-tmp 
+#+begin_src emacs-lisp :var o=meta-vt(idx=3) :results silent
+  (let ((path (concat o "org/"))
+        (files (list "m.org" "n.org" "index.org" "cv.org" "ox.setup")))
+    (make-directory path t)
+    (dolist (f files)
+      (copy-file f path t))
+    (message "created meta-tmp dir"))
 #+end_src
-
-#+RESULTS: meta-tmp
-: created meta tmp dirs
 
 *** pub
 :PROPERTIES:
@@ -85,15 +103,17 @@ with sensitive info, but I prefer the copy method for public projects.
   formats like HTML, Markdown, PDF, and txt.
 - Exported files are saved in separate directories
 #+name: meta-pub
-#+begin_src elisp
-  (require 'ox-publish)
+#+begin_src elisp :results silent
+  (require 'ox)
   (require 'org-refile)
   (require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
   (require 'org-id)
 
-  (load-theme 'modus-operandi)
   (setq org-html-validation-link nil
+;;        org-html-htmlize-output-type 'css
         org-export-with-author nil)
+
+  (load-theme 'modus-operandi)
   (setq org-publish-project-alist
         '(("org-html"
            :author "ellis"
@@ -140,34 +160,31 @@ with sensitive info, but I prefer the copy method for public projects.
   (org-publish-remove-all-timestamps)
   (org-refile-cache-clear)
   (org-publish "all" t)
+
+  (load-theme current-theme)
   #+end_src
-
-  #+RESULTS: meta-pub
-
 *** pack
 :PROPERTIES:
 :ID:       8530e126-6fbf-41bb-bd48-2bd06f1ae5ab
 :END:
+
 First we clean some of the junk latex produced by the PDF export.
+
 #+name: meta-clean-latex-clutter
-#+begin_src sh :var o=meta-vt(idx=3)
+#+begin_src sh :var o=meta-vt(idx=3) :results silent
 cd $o/org && rm -rf *.pdf *.tex
 #+end_src
 
-#+RESULTS: meta-clean-latex-clutter
-
 Now we can compress our exports to =.tz= (tar.zst) archives.
+
 #+name: meta-pack
-#+begin_src sh
+#+begin_src sh :results silent
   cd o/
   for i in $(find ./* -maxdepth 0 -type d);
   do
       shc pack $i
   done
   #+end_src
-
-#+RESULTS: meta-pack
-
 *** docs
 :PROPERTIES:
 :ID:       58c7f49f-b095-4d0d-adcd-e5cba7ccadd7
@@ -186,7 +203,6 @@ done
 cd $O
 mv doc/* ./ && rm -r doc release
 #+end_src
-
 *** deploy
 :PROPERTIES:
 :ID:       80226a3c-8866-4c35-ab3e-5a5d5d35b9c9
@@ -196,44 +212,37 @@ mv doc/* ./ && rm -r doc release
   [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
   formats.
 #+name: meta-deploy
-#+begin_src emacs-lisp :var o="o/" rh="/sshx:hyde:/mnt/w/" files='("m.html" "n.html" "index.html")
+#+begin_src emacs-lisp :var o="o/" rh="/sshx:hyde:/mnt/w/" files='("m.html" "n.html" "index.html") :results silent
   (copy-file o (concat rh "x/") 1)
   (dolist (f files)
     (copy-file (concat o "html/" f) rh 1))
   (copy-file (concat o "pdf/cv.pdf") rh 1)
 #+end_src
 
-#+RESULTS: meta-deploy
-
 #+name: meta-deploy-rust-docs
-#+begin_src elisp
+#+begin_src elisp :results silent
 (copy-file "o/d" "/sshx:hyde:/mnt/w/d" 1)
 #+end_src
 *** clean
 #+name: meta-clean
-#+begin_src shell
+#+begin_src shell :results silent
 rm -rf o
 #+end_src
-
-#+RESULTS: meta-clean
-
 *** readme-gen                                                   :noexport:
 :PROPERTIES:
 :ID:       9ca529ee-50b6-4beb-9b46-042d4b2a521c
 :END:
 #+name: meta-readme-gen
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :results silent
   (org-export-headings-to-org)
 #+end_src
 
 #+name: meta-readme-commit
-#+begin_src shell
+#+begin_src shell :results silent
   for i in shed rlib tenex babel cfg demo; do
       cd ~/shed/src/$i && hg ci -m 'readme.org update'
   done
 #+end_src
-
-#+RESULTS: meta-readme-commit
 
 *** makefile                                                     :noexport:
 :PROPERTIES:
@@ -314,6 +323,7 @@ special *elements*:
 * babel
 :PROPERTIES:
 :ID:       1b363810-26ea-4dae-b689-6e050756bfae
+:CUSTOM_ID: babel
 :CATEGORY: lib
 :EXPORT_FILE_NAME: ../babel/readme
 :END:
@@ -464,10 +474,11 @@ that supports vanilla Emacs.
 :END:
 The (old) main configuration file. A lot of this is getting moved to
 our =notes=. The resulting files will be refactored. Despite being
-messy, it's still very effective (see [[id:005d2a6e-d34f-45ee-a169-f26fc264c916][Screenshots]]).
+messy, it's still very effective (see [[#emacs_screenshots][Screenshots]]).
 **** Screenshots
 :PROPERTIES:
-:ID:       005d2a6e-d34f-45ee-a169-f26fc264c916
+:CUSTOM_ID: emacs_screenshots
+:ID:       0b7b8c46-e783-4adb-8b37-56fe8578df72
 :END:
   - themes \\
     #+attr_html: :width 600
@@ -617,12 +628,12 @@ future, depending on how the Nix ecosystem progresses.
 :LOGBOOK:
 - State "TODO"       from              [2021-10-24 Sun 07:07]
 :END:
-- =shed test= ::
+- =shed test=
   - if CWD is project directory, perform test script from config.
   - elif INPUT is project name, perform test script from config.
   - else say 'nothing to test'
 - ARGS
-  -  =--all= :: test everything
+  -  =--all= => test everything
 **** TODO list
 :PROPERTIES:
 :END:
@@ -1063,94 +1074,3 @@ library.
    - [ ] JWT
    - [ ] OAuth
 
-* demo                                                                 :rust:
-:PROPERTIES:
-:ID: cbe16e7d-6d73-4e34-a0fc-13a34abe65ba
-:CATEGORY: bin
-:CUSTOM_ID: demo
-:EXPORT_FILE_NAME: ../demo/readme
-:END:
-+ what -- demos and examples relating to [[id:7e0d54ee-d3f7-468a-b0cf-664bba4df675][rlib]] and [[id:0480aced-777f-4f30-ae05-189500fb6903][tenex]].
-+ status -- ALPHA
-+ [[src:demo][src]] <-
-** Examples
-:PROPERTIES:
-:ID:       04580557-8e76-49b6-ad36-731464a527dd
-:END:
-*** hgsub-sort.rs
-:PROPERTIES:
-:ID:       c313a484-e72b-4f41-b9ab-44c3d69727c1
-:CUSTOM_ID: hgsub-sort-rs
-:END:
-Sorts a Mercurial Subrepos file (=.hgsub=) alphabetically.
-*** hi.rs
-:PROPERTIES:
-:ID:       01bf673a-4179-43bc-9281-00d01be97bfd
-:CUSTOM_ID: hi-rs
-:END:
-A startup script I run after logging in to my desktop. It does a few things:
-- print my public IP
-- print a weather report
-- print list of connected USB devices
-- build a tmux session and attach to it (Unix only + =tmux=)
-- configure desktop displays with xrandr (Linux only + =x11=)
-- spawn some desktop widgets (Linux only + =conky=)
-- set my desktop background (Linux only + =fehbg=)
-
-Conditional compilation flags are used - so this program will only
-print IP, weather, and USB devices on Windows.
-#+attr_html: :width 600
-#+attr_latex: :width 600
-[[https://rwest.io/a/img/hi-windows-demo.png][https://rwest.io/a/img/hi-windows-demo.png]]
-
-*** wg-keygen.rs
-:PROPERTIES:
-:ID:       0cfaf940-b3d9-4566-bbbf-8c19ea556d14
-:CUSTOM_ID: wg-keygen-rs
-:END:
-
-*** chatter
-:PROPERTIES:
-:ID:       d61ebbcc-5154-4616-8c37-fbf836493030
-:CUSTOM_ID: chatter
-:END:
-OpenAI API examples (NOTE: requires an OpenAI beta access key)
-
-* music                                                            :noexport:
-:PROPERTIES:
-:ID: 29e8cd23-f49c-47a8-b685-e96b3fbe36e3
-:CATEGORY: art
-:CUSTOM_ID: 0d9fdd16-0e05-4835-a7de-9e2545b41221
-:END:
-I make music sometimes, because I enjoy the process. There are so many
-things to appreciate in sound and it's easy to let yourself become
-absorbed.
-
-Most of the time I just jam with my synths and drum machines and hit
-the record button. It's a good time.
-- [[https://soundcloud.com/ellisaudio][soundcloud1]] | [[https://soundcloud.com/2pldn][soundcloud2]]
-- [[https://cdn.rwest.io/media/audio][audio loops]] \\
-  I have a bunch of loops and other soundbytes I've created over the
-  years - they're all in an Ableton project so that I can mix and
-  arrange them for on-the-fly jam seshes.
-- keyboard clips
-   - [[https://cdn.rwest.io/media/video/joined_video_971d629fa80c4660b1e8b8abf89b1015.mp4][light rhodes jam]]
-   - [[https://cdn.rwest.io/media/video/20170704_204759_1.mp4][electro rhodes jam]]
-   - [[https://cdn.rwest.io/media/video/20170706_213623.mp4][classical practice]]
-     working out Resignation by Brad Mehldau
-- [[https://cdn.rwest.io/media/video/shader_example.mp4][Main Thing (Remix) shader demo]]
-  GLSL shader in Max/MSP + House Music
-
-** computer_music
-:PROPERTIES:
-:ID:       de3060ce-5d70-486e-bd54-caf6be79f034
-:END:
-- I'm slowly preparing some tools for music composition, now that the
-  RustAudio ecosystem is approaching maturity.
-- cool things are on their way, and I'm excited to be getting back
-  into the creative flow.
-- possibilities:
-  - MIDI server for analog hardware
-  - OSC server for Max/MSP, PureData, SuperCollider integrations
-  - Multi-track arrangement, recording, and mixing
-  - sample-level DSP with Oscillators, Effects, and Synth Engines
