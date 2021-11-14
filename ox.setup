@@ -1,6 +1,9 @@
 #-*- mode: org -*-
 #+OPTIONS: ^:nil toc:t
-#+INFOJS_OPT: path:js/org-info.min.js home:https://rwest.io
-#+INFOJS_OPT: buttons:nil
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/page.css" />
-#+HTML_LINK_HOME: https://rwest.io
+#+HTML_HEAD_EXTRA: <script type="text/javascript" language="JavaScript" src="js/org-info.js"></script>
+#+HTML_HEAD_EXTRA: <script type="text/javascript" language="JavaScript">
+#+HTML_HEAD_EXTRA:  org_html_manager.set("VIEW", "overview");
+#+HTML_HEAD_EXTRA:  org_html_manager.set("LINK_HOME", "https://rwest.io");
+#+HTML_HEAD_EXTRA:  org_html_manager.setup ();
+#+HTML_HEAD_EXTRA: </script>

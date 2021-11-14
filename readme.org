@@ -1,0 +1,241 @@
+# Created 2021-11-12 Fri 02:49
+#+title: meta
+#+name: meta-info
+|----------+-------|
+| release  |       |
+| status   |       |
+| revision |       |
+| tags     |       |
+| updated  |       |
+| license  | wtfpl |
+|          |       |
+|----------+-------|
+
+
+#+name: meta-stats
+|-------+---|
+| lines |   |
+|       |   |
+
+
+#+name: files
+#+begin_src sh
+  ls -lh --time-style=long-iso \
+    |awk '{if (NR!=1) print $8, $5, $6"-"$7}' \
+    |awk 'BEGIN{print "file size updated"}{print $0}'
+#+end_src
+
+#+name: meta-files
+#+results: files
+| file       | size |          updated |
+| cv.org     | 3.8K | 2021-10-27-20:37 |
+| index.org  | 2.4K | 2021-11-12-02:32 |
+| m.org      | 35K  | 2021-11-12-02:49 |
+| n.org      | 229K | 2021-11-12-02:18 |
+| o          | 90   | 2021-11-12-02:41 |
+| ox.setup   | 244  | 2021-10-31-04:43 |
+| readme.org | 7.5K | 2021-11-12-02:48 |
+
+This project contains documents I've written in plain-text used to
+generate my [[https://rwest.io][website]] and readmes for code hosted at [[https://hg.rwest.io//][hg.rwest.io]].
+
+- [[https://hg.rwest.io/meta][src]] <-
+
+- =m.org= contains formal docs for projects
+- =n.org= contains informal notes
+- =cv.org= is my resume (hire me!)
+* scripts
+#+name: meta-tbl
+| key   | val              | notes             |
+|-------+------------------+-------------------|
+| wd    | ~/shed/src/meta/ | working directory |
+| files |                  | input files       |
+| rh    | /sshx:hyde:      | remote host       |
+| o     | o/               | output directory  |
+
+#+name: meta-vt
+#+begin_src emacs-lisp
+  (nth idx (mapcar (lambda (x) (cadr x)) tbl))
+#+end_src
+
+** tmp
+First we generate the output directory and copy the source files
+there. This ensures the root project directory isn't polluted on
+export.
+
+You could also do an initial export to generate pre-parsed files (with
+comments and headings tagged with =noexport= removed) in the output
+directory instead of copying the raw source. This is great for docs
+with sensitive info, but I prefer the copy method for public projects.
+
+#+name: meta-tmp
+#+begin_src emacs-lisp
+  (let ((path (concat o "org/"))
+        (files (list "m.org" "n.org" "index.org" "cv.org" "ox.setup")))
+    (make-directory path t)
+    (dolist (f files)
+      (copy-file f path t))
+    (message "created meta-tmp dir"))
+#+end_src
+
+** pub
+- Org has integrated [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an
+  emacs-lisp script is all that is needed to generate conventional
+  formats like HTML, Markdown, PDF, and txt.
+- Exported files are saved in separate directories
+#+name: meta-pub
+#+begin_src elisp
+    (require 'ox)
+    (require 'org-refile)
+    (require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
+    (require 'org-id)
+
+    (setq org-html-validation-link nil
+  ;;        org-html-htmlize-output-type 'css
+  	org-export-with-author nil)
+
+    (load-theme 'modus-operandi)
+    (setq org-publish-project-alist
+  	'(("org-html"
+  	   :author "ellis"
+  	   :email "ellis@rwest.io"
+  	   :base-directory "~/shed/src/meta/o/org"
+  	   :base-extension "org"
+  	   :with-date (current-time)
+  	   :publishing-directory "~/shed/src/meta/o/html"
+  	   :publishing-function org-html-publish-to-html
+  	   :htmlize-source t
+  	   :auto-sitemap nil)
+  	  ("org-md"
+  	   :author "ellis"
+  	   :email "ellis@rwest.io"
+  	   :base-directory "~/shed/src/meta/o/org"
+  	   :base-extension "org"
+  	   :with-date (current-time)
+  	   :publishing-directory "~/shed/src/meta/o/md"
+  	   :recursive t
+  	   :publishing-function org-md-publish-to-md
+  	   :auto-sitemap nil)
+  	  ("org-pdf"
+  	   :author "ellis"
+  	   :email "ellis@rwest.io"
+  	   :base-directory "~/shed/src/meta/o/org"
+  	   :base-extension "org"
+  	   :with-date (current-time)
+  	   :publishing-directory "~/shed/src/meta/o/pdf"
+  	   :recursive t
+  	   :publishing-function org-latex-publish-to-pdf
+  	   :auto-sitemap nil)
+  	  ("org-txt"
+  	   :author "ellis"
+  	   :email "ellis@rwest.io"
+  	   :base-directory "~/shed/src/meta/o/org"
+  	   :base-extension "org"
+  	   :with-date (current-time)
+  	   :publishing-directory "~/shed/src/meta/o/txt"
+  	   :recursive t
+  	   :publishing-function org-ascii-publish-to-ascii
+  	   :auto-sitemap nil)
+  	  ("all" :components ("org-html" "org-md" "org-pdf" "org-txt"))))
+
+    (org-publish-remove-all-timestamps)
+    (org-refile-cache-clear)
+    (org-publish "all" t)
+
+    (load-theme current-theme)
+#+end_src
+** pack
+First we clean some of the junk latex produced by the PDF export.
+
+#+name: meta-clean-latex-clutter
+#+begin_src sh
+  cd $o/org && rm -rf *.pdf *.tex
+#+end_src
+
+Now we can compress our exports to =.tz= (tar.zst) archives.
+
+#+name: meta-pack
+#+begin_src sh
+  cd o/
+  for i in $(find ./* -maxdepth 0 -type d);
+  do
+      shc pack $i
+  done
+#+end_src
+** docs
+Generate API docs for all Rust projects
+#+name: shed-gen-rust-docs
+#+begin_src sh
+  WD=$SHED/src
+  O=$WD/meta/o/d
+  cd $WD
+  for i in rlib tenex shed; do # shed
+      cd $i
+      cargo +nightly doc --target-dir $O --no-deps --all-features --workspace --release --message-format short
+      cd ..
+  done
+  cd $O
+  mv doc/* ./ && rm -r doc release
+#+end_src
+** deploy
+- all build artifacts are transferred over SSH to a public web server
+- New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
+  [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
+  formats.
+#+name: meta-deploy
+#+begin_src emacs-lisp
+  (copy-file o (concat rh "x/") 1)
+  (dolist (f files)
+    (copy-file (concat o "html/" f) rh 1))
+  (copy-file (concat o "pdf/cv.pdf") rh 1)
+#+end_src
+
+#+name: meta-deploy-rust-docs
+#+begin_src elisp
+  (copy-file "o/d" "/sshx:hyde:/mnt/w/d" 1)
+#+end_src
+** clean
+#+name: meta-clean
+#+begin_src shell
+  rm -rf o
+#+end_src
+
+* syntax
+The source files assume some familiarity with org syntax. Org syntax
+is covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document
+structure can be found in the [[info:emacs#Top][Emacs manual]].
+
+[[https://rwest.io/a/img/org-mode-features_display.png]]
+
+All docs are fully compliant with org, with the addition of some
+special *elements*:
+
+- props :: \\
+  - All nodes have an optional number of =props= which are simply list
+    items starting with =+= followed by the =prop-key= an assignment
+    operator (=--=, =<-=, =->=), and a =prop-val=.
+    #+begin_example
+      # [+] [KEY] [OP] [VAL]
+      + what -- an example
+    #+end_example
+  - the =prop-val= type is determined by the operator. It can be a
+    string =--=, list =->=, or empty =<-=.
+  - =props= can appear anywhere in the =section= element of a node
+    (not just immediately following properties drawer). With the
+    condition that they can't be embedded (props in =prop-val=).
+- drawers :: \\
+     Org-mode has a feature called drawers, which are collapsible
+     sections of text starting with =:DRAWER_NAME:= and ending with
+     =:END:=. The most common one seen in our docs is the PROPERTIES
+     drawer, but there are a few special ones we use, especially in
+     =n.org=: =note=, =opinion=, =props= =boris=.
+- links :: 
+     In addition to the default links, we use a few custom links, most
+     notably =yt= which embeds a video from youtube.
+     :note:
+     This is not good for users, since the embedded youtube links include
+     tracking and other nasty bits from Google. In the future these links
+     will be migrated to =cdn= to avoid that, increasing user privacy and
+     greatly improving page load time.
+     :END:
+     =cdn=, =src=, and =rw= links all point to =rwest.io=.
