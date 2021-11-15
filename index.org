@@ -1,17 +1,10 @@
 #+OPTIONS: ^:nil toc:nil num:nil
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/page.css" />
-#+begin_center
-=who= -- Richard Westhaver <[[mailto:ellis@rwest.io][ellis@rwest.io]]> \\
-=what= -- a humble hacker \\
-=where= -- some laptop -- USA \\
-=why= -- sharing is caring \\
-#+end_center
-
 |--------+-------------+------------------------------------------|
 | path   | ?           |                                          |
 |--------+-------------+------------------------------------------|
 | /      | <           |                                          |
-| [[file:m.org][m]]      | projects    | [[[file:m.org::#meta][meta]] [[file:m.org::#babel][babel]] [[file:m.org::#cfg][cfg]] [[file:m.org::#shed][shed]] [[file:m.org::#rlib][rlib]] [[file:m.org::#tenex][tenex]]]         |
+| [[file:m.org][m]]      | metas       | [[[file:m.org::#meta][meta]] [[file:m.org::#babel][babel]] [[file:m.org::#cfg][cfg]] [[file:m.org::#shed][shed]] [[file:m.org::#rlib][rlib]] [[file:m.org::#tenex][tenex]]]         |
 | [[file:n.org][n]]      | notes       | [[[file:n.org::#art][art]] [[file:n.org::#computers][computers]] [[file:n.org::#economics][econ]] [[file:n.org::#language][lang]] [[file:n.org::#math][math]] [[file:n.org::#philosophy][phil]] [[file:n.org::#misc][misc]]] |
 | r(TBD) | rambles     |                                          |
 |        |             |                                          |
@@ -20,7 +13,6 @@
 | [[rw:y][y]]      | dist        | [[[rw:y/bin][bin]] [[rw:y/hg][hg]]]                                 |
 | [[rw:z][z]](TBD) | data        |                                          |
 |--------+-------------+------------------------------------------|
-
 * FAQ
 :PROPERTIES:
 :CUSTOM_ID: faq
@@ -63,7 +55,6 @@
 |---+-------+-----------------------------+------+-----------------+-------+--------------------------+---|
 
 #+CALL: get-emacs-version() :eval yes
-#+RESULTS:
 : GNU Emacs 29.0.50 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.24.30, cairo version 1.17.4)
 :  of 2021-10-29
 : Org v9.5
