@@ -147,26 +147,6 @@
 :ID:       4db1e82f-fd50-4c6f-8b84-83b63ad036b9
 :CUSTOM_ID: sound
 :END:
-** Works
-:PROPERTIES:
-:ID:       d856c2c1-5cda-442f-afd2-b91736edbb7d
-:CUSTOM_ID: works
-:END:
-*** Music
-:PROPERTIES:
-:ID:       ec8c5f39-1e4c-459d-b2ec-a07aa3a0a449
-:CUSTOM_ID: music
-:END:
-*** Sculpture
-:PROPERTIES:
-:ID:       7db54784-a189-4b93-b6d1-988e77016c39
-:CUSTOM_ID: sculpture
-:END:
-*** Paintings
-:PROPERTIES:
-:ID:       9b857657-a34e-40ba-ba5d-3b7e7c97cf3a
-:CUSTOM_ID: paintings
-:END:
 ** Techne
 :PROPERTIES:
 :ID:       132b417a-a722-43bb-a484-a1b9a27eb85b
@@ -251,7 +231,6 @@ problem-solving operations, especially by a computer.
 
 **** RNGs                                                           :rand:
 :PROPERTIES:
-:ID:       0cfb87f8-abc7-4922-a3d7-5383b18add12
 :AKA: Random Number Generator
 :CUSTOM_ID: rngs
 :END:

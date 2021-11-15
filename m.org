@@ -6,49 +6,53 @@
 :EXPORT_FILE_NAME: readme
 :END:
 
-#+name: meta-info
-|----------+-------|
-| release  |       |
-| status   |       |
-| revision |       |
-| tags     |       |
-| updated  |       |
-| license  | wtfpl |
-|          |       |
-|----------+-------|
+This project contains documents I've written in plain-text used to
+generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/][hg.rwest.io]].
 
+#+name: meta-info
+| info    |              |
+|---------+--------------|
+| name    | meta         |
+| status  | ALPHA        |
+| rev     | [[https://hg.rwest.io/meta/rev/cea5c4bb5c18][cea5c4bb5c18]] |
+| updated | 6 hours ago  |
+|---------+--------------|
+#+TBLFM: @4$2='(let ((rev (org-sbe "hg-rev"))) (concat "[[https://hg.rwest.io/" @2 "/rev/" rev "][" rev "]]"))
+#+TBLFM: @5$2='(org-sbe "hg-log-age")
 
 #+name: meta-stats
-|-------+---|
-| lines |   |
-|       |   |
+| stats |       |
+|-------+-------|
+| lines |  6976 |
+| words | 31231 |
+| tests |  NULL |
+| docs  |  NULL |
+|-------+-------|
+#+TBLFM: @2$2='(org-sbe "wc-dir-lines")
+#+TBLFM: @3$2='(org-sbe "wc-dir-words")
 
-
-#+name: files
-#+begin_src sh :results table :exports both
+#+name: _files
+#+begin_src sh :colnames yes :hlines yes :results table silent :exports code
   ls -lh --time-style=long-iso \
     |awk '{if (NR!=1) print $8, $5, $6"-"$7}' \
     |awk 'BEGIN{print "file size updated"}{print $0}'
 #+end_src
 
 #+name: meta-files
-#+RESULTS: files
+#+begin_src python :var t=_files :hlines yes :colnames yes :eval yes :exports results
+return t
+#+end_src
+
+#+RESULTS: meta-files
 | file       | size |          updated |
+|------------+------+------------------|
 | cv.org     | 3.8K | 2021-10-27-20:37 |
-| index.org  | 2.0K | 2021-11-12-18:38 |
-| m.org      | 36K  | 2021-11-12-23:17 |
-| n.org      | 229K | 2021-11-12-02:18 |
-| ox.setup   | 270  | 2021-11-12-19:01 |
+| index.org  | 4.4K | 2021-11-14-19:46 |
+| m.org      | 34K  | 2021-11-14-23:03 |
+| n.org      | 229K | 2021-11-14-17:37 |
+| ox.setup   | 520  | 2021-11-14-17:23 |
 | readme.org | 7.5K | 2021-11-12-02:49 |
 
-This project contains documents I've written in plain-text used to
-generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/][hg.rwest.io]].
-
-+ [[src:meta][src]] <-
-
-- =m.org= contains formal docs for projects
-- =n.org= contains informal notes
-- =cv.org= is my resume (hire me!)
 ** scripts
 :PROPERTIES:
 :ID:       d0e37437-8959-4692-9b7f-9245073042e2
@@ -66,9 +70,6 @@ generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/
 #+begin_src emacs-lisp :results value :var tbl=meta-tbl idx=0
 (nth idx (mapcar (lambda (x) (cadr x)) tbl))
 #+end_src
-
-#+RESULTS: meta-vt
-: ~/shed/src/meta/
 
 *** tmp
 :PROPERTIES:
