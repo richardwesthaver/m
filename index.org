@@ -54,34 +54,26 @@
 | # | babel | meta-programming library    | etc  |                 |       |                          |   |
 |---+-------+-----------------------------+------+-----------------+-------+--------------------------+---|
 
-#+CALL: get-emacs-version() :eval yes
-: GNU Emacs 29.0.50 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.24.30, cairo version 1.17.4)
-:  of 2021-10-29
-: Org v9.5
+- Emacs Version
+  #+CALL: get-emacs-version()
+  #+RESULTS:
+  : GNU Emacs 29.0.50 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.24.30, cairo version 1.17.4)
+  :  of 2021-10-29
+  : Org v9.5
 
-#+CALL: shc-hg-summary() :eval yes
-#+RESULTS:
-: parent: 63:d3291677e8c8 tip
-:  toc update
-: branch: default
-: commit: 4 modified
-: update: (current)
-: M index.org
-: M m.org
-: M n.org
-: M ox.setup
-
-#+CALL: shc-weather() :eval yes
-#+RESULTS:
-#+begin_example
-16:00:00-17:00:00 t:48 "Partly Sunny"
-17:00:00-18:00:00 t:47 "Partly Sunny"
-18:00:00-19:00:00 t:45 "Mostly Cloudy"
-19:00:00-20:00:00 t:45 "Mostly Cloudy"
-20:00:00-21:00:00 t:45 "Mostly Cloudy"
-21:00:00-22:00:00 t:45 "Mostly Cloudy"
-22:00:00-23:00:00 t:45 "Cloudy"
-23:00:00-00:00:00 t:44 "Chance Rain Showers"
-00:00:00-01:00:00 t:43 "Rain Showers Likely"
-01:00:00-02:00:00 t:42 "Rain Showers Likely"
-#+end_example
+- Weather Forecast
+  #+CALL: shc-weather() :eval yes
+  #+RESULTS:
+  #+begin_example
+  02:00:00-03:00:00 t:45 "Slight Chance Rain Showers"
+  03:00:00-04:00:00 t:45 "Slight Chance Rain Showers"
+  04:00:00-05:00:00 t:43 "Mostly Cloudy"
+  05:00:00-06:00:00 t:42 "Mostly Cloudy"
+  06:00:00-07:00:00 t:42 "Partly Sunny"
+  07:00:00-08:00:00 t:39 "Slight Chance Rain Showers"
+  08:00:00-09:00:00 t:41 "Slight Chance Rain Showers"
+  09:00:00-10:00:00 t:43 "Slight Chance Rain Showers"
+  10:00:00-11:00:00 t:46 "Slight Chance Rain Showers"
+  11:00:00-12:00:00 t:47 "Slight Chance Rain Showers"
+  #+end_example
+ 
