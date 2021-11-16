@@ -10,24 +10,23 @@ This project contains documents I've written in plain-text used to
 generate my [[https://rwest.io][website]] and readmes for code hosted at [[src:/][hg.rwest.io]].
 
 #+name: meta-info
-| info    |              |
-|---------+--------------|
-| name    | meta         |
-| status  | ALPHA        |
-| rev     | [[https://hg.rwest.io/meta/rev/2928a8220b35][2928a8220b35]] |
-| updated | 30 hours ago |
-|---------+--------------|
+| info    |                |
+|---------+----------------|
+| name    | meta           |
+| status  | ALPHA          |
+| rev     | [[https://hg.rwest.io/meta/rev/03852995eb2f][03852995eb2f]]   |
+| updated | 25 seconds ago |
+|---------+----------------|
 #+TBLFM: @4$2='(let ((rev (org-sbe "hg-rev"))) (concat "[[https://hg.rwest.io/" @2 "/rev/" rev "][" rev "]]"))
 #+TBLFM: @5$2='(org-sbe "hg-log-age")
 
   #+CALL: shc-hg-summary() :eval yes
   #+RESULTS:
-  : parent: 69:2928a8220b35 tip
-  :  more org-sbe and fixed org-info-js
+  : parent: 70:03852995eb2f tip
+  :  id hl fixes
   : branch: default
-  : commit: 2 modified
+  : commit: 1 modified
   : update: (current)
-  : M index.org
   : M m.org
 
 
@@ -57,8 +56,8 @@ ft
 | file       | size |          updated |
 |------------+------+------------------|
 | cv.org     | 3.8K | 2021-10-27-20:37 |
-| index.org  | 4.4K | 2021-11-14-19:46 |
-| m.org      | 34K  | 2021-11-15-02:05 |
+| index.org  | 4.4K | 2021-11-15-02:18 |
+| m.org      | 34K  | 2021-11-16-06:01 |
 | n.org      | 229K | 2021-11-14-17:37 |
 | ox.setup   | 580  | 2021-11-14-23:06 |
 | readme.org | 7.5K | 2021-11-12-02:49 |

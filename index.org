@@ -1,18 +1,18 @@
 #+OPTIONS: ^:nil toc:nil num:nil
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/page.css" />
-|--------+-------------+------------------------------------------|
-| path   | ?           |                                          |
-|--------+-------------+------------------------------------------|
-| /      | <           |                                          |
-| [[file:m.org][m]]      | metas       | [[[file:m.org::#meta][meta]] [[file:m.org::#babel][babel]] [[file:m.org::#cfg][cfg]] [[file:m.org::#shed][shed]] [[file:m.org::#rlib][rlib]] [[file:m.org::#tenex][tenex]]]         |
-| [[file:n.org][n]]      | notes       | [[[file:n.org::#art][art]] [[file:n.org::#computers][computers]] [[file:n.org::#economics][econ]] [[file:n.org::#language][lang]] [[file:n.org::#math][math]] [[file:n.org::#philosophy][phil]] [[file:n.org::#misc][misc]]] |
-| r(TBD) | rambles     |                                          |
-|        |             |                                          |
-| [[rw:a][a]]      | attachments | [[[cdn:audio][audio]] [[cdn:doc][doc]] [[cdn:img][img]] [[cdn:video][video]]]                    |
-| [[rw:x][x]]      | exports     | [[[rw:x/html][html]] [[rw:x/md][md]] [[rw:x/org][org]] [[rw:x/pdf][pdf]] [[rw:x/txt][txt]]]                    |
-| [[rw:y][y]]      | dist        | [[[rw:y/bin][bin]] [[rw:y/hg][hg]]]                                 |
-| [[rw:z][z]](TBD) | data        |                                          |
-|--------+-------------+------------------------------------------|
+|---------+-------------+------------------------------------------|
+| path    | ?           |                                          |
+|---------+-------------+------------------------------------------|
+| /       | <           |                                          |
+| [[file:m.org][m]]       | metas       | [[[file:m.org::#meta][meta]] [[file:m.org::#babel][babel]] [[file:m.org::#cfg][cfg]] [[file:m.org::#shed][shed]] [[file:m.org::#rlib][rlib]] [[file:m.org::#tenex][tenex]]]         |
+| [[file:n.org][n]]       | notes       | [[[file:n.org::#art][art]] [[file:n.org::#computers][computers]] [[file:n.org::#economics][econ]] [[file:n.org::#language][lang]] [[file:n.org::#math][math]] [[file:n.org::#philosophy][phil]] [[file:n.org::#misc][misc]]] |
+| r (TBD) | rambles     |                                          |
+|         |             |                                          |
+| [[rw:a][a]]       | attachments | [[[cdn:audio][audio]] [[cdn:doc][doc]] [[cdn:img][img]] [[cdn:video][video]]]                    |
+| [[rw:x][x]]       | exports     | [[[rw:x/html][html]] [[rw:x/md][md]] [[rw:x/org][org]] [[rw:x/pdf][pdf]] [[rw:x/txt][txt]]]                    |
+| [[rw:y][y]]       | dist        | [[[rw:y/bin][bin]] [[rw:y/hg][hg]] [[rw:y/iso][iso]] [[rw:y/key.gpg][key.gpg]]]                     |
+| [[rw:z][z]]       | data        |                                          |
+|---------+-------------+------------------------------------------|
 * FAQ
 :PROPERTIES:
 :CUSTOM_ID: faq
@@ -65,15 +65,15 @@
   #+CALL: shc-weather() :eval yes
   #+RESULTS:
   #+begin_example
-  02:00:00-03:00:00 t:45 "Slight Chance Rain Showers"
-  03:00:00-04:00:00 t:45 "Slight Chance Rain Showers"
-  04:00:00-05:00:00 t:43 "Mostly Cloudy"
-  05:00:00-06:00:00 t:42 "Mostly Cloudy"
-  06:00:00-07:00:00 t:42 "Partly Sunny"
-  07:00:00-08:00:00 t:39 "Slight Chance Rain Showers"
-  08:00:00-09:00:00 t:41 "Slight Chance Rain Showers"
-  09:00:00-10:00:00 t:43 "Slight Chance Rain Showers"
-  10:00:00-11:00:00 t:46 "Slight Chance Rain Showers"
-  11:00:00-12:00:00 t:47 "Slight Chance Rain Showers"
+  06:00:00-07:00:00 t:36 "Sunny"
+  07:00:00-08:00:00 t:35 "Sunny"
+  08:00:00-09:00:00 t:37 "Sunny"
+  09:00:00-10:00:00 t:40 "Sunny"
+  10:00:00-11:00:00 t:43 "Sunny"
+  11:00:00-12:00:00 t:45 "Sunny"
+  12:00:00-13:00:00 t:47 "Sunny"
+  13:00:00-14:00:00 t:48 "Sunny"
+  14:00:00-15:00:00 t:49 "Sunny"
+  15:00:00-16:00:00 t:48 "Sunny"
   #+end_example
  
