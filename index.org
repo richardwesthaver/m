@@ -65,15 +65,15 @@
   #+CALL: shc-weather() :eval yes
   #+RESULTS:
   #+begin_example
-  06:00:00-07:00:00 t:36 "Sunny"
-  07:00:00-08:00:00 t:35 "Sunny"
-  08:00:00-09:00:00 t:37 "Sunny"
-  09:00:00-10:00:00 t:40 "Sunny"
-  10:00:00-11:00:00 t:43 "Sunny"
-  11:00:00-12:00:00 t:45 "Sunny"
-  12:00:00-13:00:00 t:47 "Sunny"
-  13:00:00-14:00:00 t:48 "Sunny"
-  14:00:00-15:00:00 t:49 "Sunny"
-  15:00:00-16:00:00 t:48 "Sunny"
+  00:00:00-01:00:00 t:38 "Areas Of Frost"
+  01:00:00-02:00:00 t:36 "Widespread Frost"
+  02:00:00-03:00:00 t:34 "Widespread Frost"
+  03:00:00-04:00:00 t:32 "Widespread Frost"
+  04:00:00-05:00:00 t:30 "Widespread Frost"
+  05:00:00-06:00:00 t:30 "Widespread Frost"
+  06:00:00-07:00:00 t:30 "Widespread Frost"
+  07:00:00-08:00:00 t:31 "Widespread Frost"
+  08:00:00-09:00:00 t:34 "Areas Of Frost"
+  09:00:00-10:00:00 t:39 "Sunny"
   #+end_example
  
