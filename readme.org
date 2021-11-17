@@ -1,51 +1,53 @@
-# Created 2021-11-12 Fri 02:49
+# Created 2021-11-17 Wed 00:43
 #+title: meta
-#+name: meta-info
-|----------+-------|
-| release  |       |
-| status   |       |
-| revision |       |
-| tags     |       |
-| updated  |       |
-| license  | wtfpl |
-|          |       |
-|----------+-------|
+This project contains documents I've written in plain-text used to
+generate my [[https://rwest.io][website]] and readme files for code hosted at [[https://hg.rwest.io//][hg.rwest.io]].
+
+#+results: meta-make-tbl
+| key     | val                                      |
+|---------+------------------------------------------|
+| name    | nil                                      |
+| version | alpha-0.1                                |
+| rev     | [[https://hg.rwest.io/nil/rev/nil][nil]] |
+| update  | nil                                      |
+
+#+results: 
+: parent: 71:10f2ff7e9aba tip
+:  weather update
+: branch: default
+: commit: 2 modified
+: update: (current)
+: M index.org
+: M m.org
+
 
 
 #+name: meta-stats
-|-------+---|
-| lines |   |
-|       |   |
+| stats |       |
+|-------+-------|
+| lines |  7048 |
+| words | 31428 |
+| tests |  NULL |
+| docs  |  NULL |
+|-------+-------|
+#+TBLFM: @2$2='(org-sbe "wc-dir-lines")
+#+TBLFM: @3$2='(org-sbe "wc-dir-words")
 
-
-#+name: files
-#+begin_src sh
-  ls -lh --time-style=long-iso \
-    |awk '{if (NR!=1) print $8, $5, $6"-"$7}' \
-    |awk 'BEGIN{print "file size updated"}{print $0}'
-#+end_src
-
-#+name: meta-files
-#+results: files
+#+results: meta-files
 | file       | size |          updated |
+|------------+------+------------------|
 | cv.org     | 3.8K | 2021-10-27-20:37 |
-| index.org  | 2.4K | 2021-11-12-02:32 |
-| m.org      | 35K  | 2021-11-12-02:49 |
-| n.org      | 229K | 2021-11-12-02:18 |
-| o          | 90   | 2021-11-12-02:41 |
-| ox.setup   | 244  | 2021-10-31-04:43 |
-| readme.org | 7.5K | 2021-11-12-02:48 |
+| index.org  | 4.4K | 2021-11-17-00:38 |
+| m.org      | 36K  | 2021-11-17-00:41 |
+| n.org      | 229K | 2021-11-14-17:37 |
+| o          | 90   | 2021-11-17-00:41 |
+| ox.setup   | 580  | 2021-11-14-23:06 |
+| readme.org | 7.5K | 2021-11-12-02:49 |
 
-This project contains documents I've written in plain-text used to
-generate my [[https://rwest.io][website]] and readmes for code hosted at [[https://hg.rwest.io//][hg.rwest.io]].
-
-- [[https://hg.rwest.io/meta][src]] <-
-
-- =m.org= contains formal docs for projects
-- =n.org= contains informal notes
-- =cv.org= is my resume (hire me!)
 * scripts
-#+name: meta-tbl
+** index
+** prod
+#+name: meta-prod-vars
 | key   | val              | notes             |
 |-------+------------------+-------------------|
 | wd    | ~/shed/src/meta/ | working directory |
@@ -53,12 +55,7 @@ generate my [[https://rwest.io][website]] and readmes for code hosted at [[https
 | rh    | /sshx:hyde:      | remote host       |
 | o     | o/               | output directory  |
 
-#+name: meta-vt
-#+begin_src emacs-lisp
-  (nth idx (mapcar (lambda (x) (cadr x)) tbl))
-#+end_src
-
-** tmp
+*** tmp
 First we generate the output directory and copy the source files
 there. This ensures the root project directory isn't polluted on
 export.
@@ -78,91 +75,88 @@ with sensitive info, but I prefer the copy method for public projects.
     (message "created meta-tmp dir"))
 #+end_src
 
-** pub
+*** pub
 - Org has integrated [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an
   emacs-lisp script is all that is needed to generate conventional
   formats like HTML, Markdown, PDF, and txt.
 - Exported files are saved in separate directories
 #+name: meta-pub
 #+begin_src elisp
-    (require 'ox)
-    (require 'org-refile)
-    (require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
-    (require 'org-id)
+  (require 'ox)
+  (require 'org-refile)
+  (require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
+  (require 'org-id)
 
-    (setq org-html-validation-link nil
-  ;;        org-html-htmlize-output-type 'css
-  	org-export-with-author nil)
+  (setq org-html-validation-link nil
+        ;;        org-html-htmlize-output-type 'css
+        org-export-with-author nil)
 
-    (load-theme 'modus-operandi)
-    (setq org-publish-project-alist
-  	'(("org-html"
-  	   :author "ellis"
-  	   :email "ellis@rwest.io"
-  	   :base-directory "~/shed/src/meta/o/org"
-  	   :base-extension "org"
-  	   :with-date (current-time)
-  	   :publishing-directory "~/shed/src/meta/o/html"
-  	   :publishing-function org-html-publish-to-html
-  	   :htmlize-source t
-  	   :auto-sitemap nil)
-  	  ("org-md"
-  	   :author "ellis"
-  	   :email "ellis@rwest.io"
-  	   :base-directory "~/shed/src/meta/o/org"
-  	   :base-extension "org"
-  	   :with-date (current-time)
-  	   :publishing-directory "~/shed/src/meta/o/md"
-  	   :recursive t
-  	   :publishing-function org-md-publish-to-md
-  	   :auto-sitemap nil)
-  	  ("org-pdf"
-  	   :author "ellis"
-  	   :email "ellis@rwest.io"
-  	   :base-directory "~/shed/src/meta/o/org"
-  	   :base-extension "org"
-  	   :with-date (current-time)
-  	   :publishing-directory "~/shed/src/meta/o/pdf"
-  	   :recursive t
-  	   :publishing-function org-latex-publish-to-pdf
-  	   :auto-sitemap nil)
-  	  ("org-txt"
-  	   :author "ellis"
-  	   :email "ellis@rwest.io"
-  	   :base-directory "~/shed/src/meta/o/org"
-  	   :base-extension "org"
-  	   :with-date (current-time)
-  	   :publishing-directory "~/shed/src/meta/o/txt"
-  	   :recursive t
-  	   :publishing-function org-ascii-publish-to-ascii
-  	   :auto-sitemap nil)
-  	  ("all" :components ("org-html" "org-md" "org-pdf" "org-txt"))))
+  (load-theme 'modus-operandi)
+  (setq org-publish-project-alist
+        '(("org-html"
+  	 :author "ellis"
+  	 :email "ellis@rwest.io"
+  	 :base-directory "~/shed/src/meta/o/org"
+  	 :base-extension "org"
+  	 :with-date (current-time)
+  	 :publishing-directory "~/shed/src/meta/o/html"
+  	 :publishing-function org-html-publish-to-html
+  	 :htmlize-source t
+  	 :auto-sitemap nil)
+  	("org-md"
+  	 :author "ellis"
+  	 :email "ellis@rwest.io"
+  	 :base-directory "~/shed/src/meta/o/org"
+  	 :base-extension "org"
+  	 :with-date (current-time)
+  	 :publishing-directory "~/shed/src/meta/o/md"
+  	 :recursive t
+  	 :publishing-function org-md-publish-to-md
+  	 :auto-sitemap nil)
+  	("org-pdf"
+  	 :author "ellis"
+  	 :email "ellis@rwest.io"
+  	 :base-directory "~/shed/src/meta/o/org"
+  	 :base-extension "org"
+  	 :with-date (current-time)
+  	 :publishing-directory "~/shed/src/meta/o/pdf"
+  	 :recursive t
+  	 :publishing-function org-latex-publish-to-pdf
+  	 :auto-sitemap nil)
+  	("org-txt"
+  	 :author "ellis"
+  	 :email "ellis@rwest.io"
+  	 :base-directory "~/shed/src/meta/o/org"
+  	 :base-extension "org"
+  	 :with-date (current-time)
+  	 :publishing-directory "~/shed/src/meta/o/txt"
+  	 :recursive t
+  	 :publishing-function org-ascii-publish-to-ascii
+  	 :auto-sitemap nil)
+  	("all" :components ("org-html" "org-md" "org-pdf" "org-txt"))))
 
-    (org-publish-remove-all-timestamps)
-    (org-refile-cache-clear)
-    (org-publish "all" t)
+  (org-publish-remove-all-timestamps)
+  (org-refile-cache-clear)
+  (org-publish "all" t)
 
-    (load-theme current-theme)
+  (load-theme current-theme)
 #+end_src
-** pack
-First we clean some of the junk latex produced by the PDF export.
-
-#+name: meta-clean-latex-clutter
-#+begin_src sh
-  cd $o/org && rm -rf *.pdf *.tex
-#+end_src
-
-Now we can compress our exports to =.tz= (tar.zst) archives.
+*** pack
+First we clean some of the junk latex produced by the PDF export, then
+compress our exports to =.tz= (tar.zst) archives.
 
 #+name: meta-pack
 #+begin_src sh
-  cd o/
+  cd $o/org
+  rm -rf *.pdf *.tex
+  cd ..
   for i in $(find ./* -maxdepth 0 -type d);
   do
-      shc pack $i
+    shc pack $i
   done
 #+end_src
-** docs
+
+*** docs
 Generate API docs for all Rust projects
 #+name: shed-gen-rust-docs
 #+begin_src sh
@@ -177,7 +171,7 @@ Generate API docs for all Rust projects
   cd $O
   mv doc/* ./ && rm -r doc release
 #+end_src
-** deploy
+*** deploy
 - all build artifacts are transferred over SSH to a public web server
 - New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
   [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
@@ -194,7 +188,7 @@ Generate API docs for all Rust projects
 #+begin_src elisp
   (copy-file "o/d" "/sshx:hyde:/mnt/w/d" 1)
 #+end_src
-** clean
+*** clean
 #+name: meta-clean
 #+begin_src shell
   rm -rf o
