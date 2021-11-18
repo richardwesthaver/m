@@ -54,26 +54,31 @@
 | # | babel | meta-programming library    | etc  |                 |       |                          |   |
 |---+-------+-----------------------------+------+-----------------+-------+--------------------------+---|
 
-- Emacs Version
-  #+CALL: get-emacs-version()
-  #+RESULTS:
-  : GNU Emacs 29.0.50 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.24.30, cairo version 1.17.4)
-  :  of 2021-10-29
-  : Org v9.5
+- Stats
+  - Host
+    - Platform
+      #+CALL: rust-target-triple()
+      #+RESULTS:
+      : x86_64-unknown-linux-gnu
+    - Emacs Version
+      #+CALL: get-emacs-version()
+      #+RESULTS:
+      : GNU Emacs 29.0.50 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.24.30, cairo version 1.17.4)
+      :  of 2021-10-29
+      : Org v9.5
+  - Weather Forecast
+    #+CALL: shc-weather() :exports results :eval yes
+    #+RESULTS:
+    #+begin_example
+    22:00:00-23:00:00 = 54°F :: "Cloudy"
+    23:00:00-00:00:00 = 53°F :: "Cloudy"
+    00:00:00-01:00:00 = 52°F :: "Cloudy"
+    01:00:00-02:00:00 = 52°F :: "Cloudy"
+    02:00:00-03:00:00 = 51°F :: "Cloudy"
+    03:00:00-04:00:00 = 50°F :: "Cloudy"
+    04:00:00-05:00:00 = 50°F :: "Mostly Cloudy"
+    05:00:00-06:00:00 = 50°F :: "Mostly Cloudy"
+    06:00:00-07:00:00 = 51°F :: "Mostly Sunny"
+    07:00:00-08:00:00 = 52°F :: "Mostly Sunny"
+    #+end_example
 
-- Weather Forecast
-  #+CALL: shc-weather() :eval yes
-  #+RESULTS:
-  #+begin_example
-  00:00:00-01:00:00 t:38 "Areas Of Frost"
-  01:00:00-02:00:00 t:36 "Widespread Frost"
-  02:00:00-03:00:00 t:34 "Widespread Frost"
-  03:00:00-04:00:00 t:32 "Widespread Frost"
-  04:00:00-05:00:00 t:30 "Widespread Frost"
-  05:00:00-06:00:00 t:30 "Widespread Frost"
-  06:00:00-07:00:00 t:30 "Widespread Frost"
-  07:00:00-08:00:00 t:31 "Widespread Frost"
-  08:00:00-09:00:00 t:34 "Areas Of Frost"
-  09:00:00-10:00:00 t:39 "Sunny"
-  #+end_example
- 

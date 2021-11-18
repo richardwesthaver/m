@@ -1,52 +1,42 @@
-# Created 2021-11-17 Wed 00:43
+# Created 2021-11-18 Thu 00:54
 #+title: meta
 This project contains documents I've written in plain-text used to
-generate my [[https://rwest.io][website]] and readme files for code hosted at [[https://hg.rwest.io//][hg.rwest.io]].
+generate my [[https://rwest.io][website]] and readme files for code hosted at [[https://hg.rwest.io/][hg.rwest.io]].
 
 #+results: meta-make-tbl
-| key     | val                                      |
-|---------+------------------------------------------|
-| name    | nil                                      |
-| version | alpha-0.1                                |
-| rev     | [[https://hg.rwest.io/nil/rev/nil][nil]] |
-| update  | nil                                      |
-
-#+results: 
-: parent: 71:10f2ff7e9aba tip
-:  weather update
-: branch: default
-: commit: 2 modified
-: update: (current)
-: M index.org
-: M m.org
-
-
-
-#+name: meta-stats
-| stats |       |
-|-------+-------|
-| lines |  7048 |
-| words | 31428 |
-| tests |  NULL |
-| docs  |  NULL |
-|-------+-------|
-#+TBLFM: @2$2='(org-sbe "wc-dir-lines")
-#+TBLFM: @3$2='(org-sbe "wc-dir-words")
-
+| name    | [[https://rwest.io/m#meta][meta]]                                                                                     |
+| version | alpha-0.1                                                                                                             |
+| vc      | [[https://hg.rwest.io/meta/rev/e7fc3c34a2fd][72+:e7fc3c34a2fd]], [[https://github.com/richardwesthaver/meta][github]] |
+| updated | 22 hours ago                                                                                                          |
+| count   | 7063 lines, 31741 words                                                                                               |
 #+results: meta-files
 | file       | size |          updated |
 |------------+------+------------------|
 | cv.org     | 3.8K | 2021-10-27-20:37 |
-| index.org  | 4.4K | 2021-11-17-00:38 |
-| m.org      | 36K  | 2021-11-17-00:41 |
+| index.org  | 4.6K | 2021-11-17-23:56 |
+| m.org      | 38K  | 2021-11-18-00:53 |
 | n.org      | 229K | 2021-11-14-17:37 |
-| o          | 90   | 2021-11-17-00:41 |
+| o          | 90   | 2021-11-18-00:54 |
 | ox.setup   | 580  | 2021-11-14-23:06 |
-| readme.org | 7.5K | 2021-11-12-02:49 |
+| readme.org | 8.7K | 2021-11-17-23:57 |
+
+#+results: 
+: parent: 72:e7fc3c34a2fd tip
+:  meta fixes
+: branch: default
+: commit: 3 modified
+: update: (current)
+: M index.org
+: M m.org
+: M readme.org
 
 * scripts
 ** index
-** prod
+** deploy
+This is the script for deploying metas. It usually takes a few minutes
+to run and chains together a bunch of code blocks, but is otherwise
+fully automated.
+
 #+name: meta-prod-vars
 | key   | val              | notes             |
 |-------+------------------+-------------------|
@@ -55,12 +45,24 @@ generate my [[https://rwest.io][website]] and readme files for code hosted at [[
 | rh    | /sshx:hyde:      | remote host       |
 | o     | o/               | output directory  |
 
-*** tmp
-First we generate the output directory and copy the source files
-there. This ensures the root project directory isn't polluted on
-export.
+This block is the main entry point that gets executed - each call to
+=org-sbx= (a custom function based on =org-sbe=) executes the contents
+of a named code block.
 
-You could also do an initial export to generate pre-parsed files (with
+#+name: meta-deploy-main
+#+begin_src emacs-lisp
+  (org-sbx meta-tmp)
+  (org-sbx meta-pub)
+  (org-sbx meta-pack)
+  (org-sbx meta-deploy)
+  (org-sbx meta-readme-gen)
+  (org-sbx meta-readme-commit)
+  (org-sbx meta-clean)
+#+end_src
+
+First we generate the output directory and copy source files there.
+This ensures the root project directory isn't polluted on export. You
+could also do an initial export to generate pre-parsed files (with
 comments and headings tagged with =noexport= removed) in the output
 directory instead of copying the raw source. This is great for docs
 with sensitive info, but I prefer the copy method for public projects.
@@ -75,18 +77,17 @@ with sensitive info, but I prefer the copy method for public projects.
     (message "created meta-tmp dir"))
 #+end_src
 
-*** pub
-- Org has integrated [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an
-  emacs-lisp script is all that is needed to generate conventional
-  formats like HTML, Markdown, PDF, and txt.
-- Exported files are saved in separate directories
+Org has integrated [[https://orgmode.org/manual/Exporting.html][exporting]] powered by [[https://orgmode.org/worg/exporters/ox-docstrings.html][ox.el]] - an emacs-lisp script
+is all that is needed to generate conventional formats like HTML,
+Markdown, PDF, and txt. Exported files are saved in separate
+directories.
+
 #+name: meta-pub
-#+begin_src elisp
+#+begin_src emacs-lisp
   (require 'ox)
   (require 'org-refile)
   (require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
   (require 'org-id)
-
   (setq org-html-validation-link nil
         ;;        org-html-htmlize-output-type 'css
         org-export-with-author nil)
@@ -138,10 +139,9 @@ with sensitive info, but I prefer the copy method for public projects.
   (org-publish-remove-all-timestamps)
   (org-refile-cache-clear)
   (org-publish "all" t)
-
   (load-theme current-theme)
 #+end_src
-*** pack
+
 First we clean some of the junk latex produced by the PDF export, then
 compress our exports to =.tz= (tar.zst) archives.
 
@@ -152,30 +152,15 @@ compress our exports to =.tz= (tar.zst) archives.
   cd ..
   for i in $(find ./* -maxdepth 0 -type d);
   do
-    shc pack $i
+      shc pack $i
   done
 #+end_src
 
-*** docs
-Generate API docs for all Rust projects
-#+name: shed-gen-rust-docs
-#+begin_src sh
-  WD=$SHED/src
-  O=$WD/meta/o/d
-  cd $WD
-  for i in rlib tenex shed; do # shed
-      cd $i
-      cargo +nightly doc --target-dir $O --no-deps --all-features --workspace --release --message-format short
-      cd ..
-  done
-  cd $O
-  mv doc/* ./ && rm -r doc release
-#+end_src
-*** deploy
-- all build artifacts are transferred over SSH to a public web server
-- New content can now be viewed online at [[https://rwest.io][rwest.io]] and downloaded at
-  [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files in all
-  formats.
+All build artifacts are transferred over SSH to a public web
+server. New content can now be viewed online at [[https://rwest.io][rwest.io]] and
+downloaded at [[https://rwest.io/x][rwest.io/x]] which includes archives and individual files
+in all formats.
+
 #+name: meta-deploy
 #+begin_src emacs-lisp
   (copy-file o (concat rh "x/") 1)
@@ -184,11 +169,42 @@ Generate API docs for all Rust projects
   (copy-file (concat o "pdf/cv.pdf") rh 1)
 #+end_src
 
-#+name: meta-deploy-rust-docs
-#+begin_src elisp
-  (copy-file "o/d" "/sshx:hyde:/mnt/w/d" 1)
+
+Next we execute a helper function from my [[#cfg-emacs][emacs config]]. This function
+scans the current file (=m.org=) and generates individual =readme.org=
+files for our projects.
+
+#+name: meta-readme-gen
+#+begin_src emacs-lisp
+  (org-export-headings-to-org)
 #+end_src
-*** clean
+
+Here's the docstring for =org-export-headings-to-org=:
+#+begin_quote
+Export all subtrees that are *not* tagged with :noexport: to
+separate files.
+
+Subtrees that do not have the :EXPORT_FILE_NAME: property set
+are exported to a filename derived from the headline text.
+#+end_quote
+
+What's going on here? Well to start, we are indeed using the
+=:EXPORT_FILE_NAME:= property in our headlines. This allows us to
+generate the same 'filename' (=readme.org=) in respective project
+directories. They also look quite nice on GitHub without any
+additional configuration ;).
+
+Before we talk about github stuff, let's commit the readme changes for
+our projects.
+#+name: meta-readme-commit
+#+begin_src shell
+  for i in shed rlib tenex babel cfg demo; do
+      cd ~/shed/src/$i && hg ci -m 'readme.org update'
+  done
+#+end_src
+
+We can also remove the output directory clutter we created earlier.
+
 #+name: meta-clean
 #+begin_src shell
   rm -rf o
