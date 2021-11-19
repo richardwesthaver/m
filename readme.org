@@ -1,34 +1,168 @@
-# Created 2021-11-18 Thu 00:54
+# Created 2021-11-19 Fri 04:39
 #+title: meta
 This project contains documents I've written in plain-text used to
 generate my [[https://rwest.io][website]] and readme files for code hosted at [[https://hg.rwest.io/][hg.rwest.io]].
 
 #+results: meta-make-tbl
+| info    |                                                                                                                       |
+|---------+-----------------------------------------------------------------------------------------------------------------------|
 | name    | [[https://rwest.io/m#meta][meta]]                                                                                     |
 | version | alpha-0.1                                                                                                             |
-| vc      | [[https://hg.rwest.io/meta/rev/e7fc3c34a2fd][72+:e7fc3c34a2fd]], [[https://github.com/richardwesthaver/meta][github]] |
-| updated | 22 hours ago                                                                                                          |
-| count   | 7063 lines, 31741 words                                                                                               |
+| vc      | [[https://hg.rwest.io/meta/rev/09a7c7a6ad64][73+:09a7c7a6ad64]], [[https://github.com/richardwesthaver/meta][github]] |
+| updated | 26 hours ago                                                                                                          |
+| lines   | 6946 = λ:6440 #:29 _:477                                                                                              |
+| langs   | (Org)                                                                                                                 |
+|---------+-----------------------------------------------------------------------------------------------------------------------|
+
+
 #+results: meta-files
-| file       | size |          updated |
-|------------+------+------------------|
-| cv.org     | 3.8K | 2021-10-27-20:37 |
-| index.org  | 4.6K | 2021-11-17-23:56 |
-| m.org      | 38K  | 2021-11-18-00:53 |
-| n.org      | 229K | 2021-11-14-17:37 |
-| o          | 90   | 2021-11-18-00:54 |
-| ox.setup   | 580  | 2021-11-14-23:06 |
-| readme.org | 8.7K | 2021-11-17-23:57 |
+| file         | size |          updated |
+|--------------+------+------------------|
+| aws          |   26 | 2021-11-19-04:28 |
+| babel.el     | 8.0K | 2021-11-19-04:28 |
+| build.rs     |  809 | 2021-11-19-04:27 |
+| Cargo.toml   | 1.3K | 2021-11-19-04:28 |
+| cv.org       | 3.8K | 2021-10-27-20:37 |
+| emacs        |   64 | 2021-11-19-04:28 |
+| google       |   98 | 2021-11-19-04:28 |
+| index.org    | 4.6K | 2021-11-17-23:56 |
+| lisp         |   14 | 2021-11-19-04:27 |
+| lob.org      |  20K | 2021-11-19-04:28 |
+| mail         |   30 | 2021-11-19-04:28 |
+| makefile     |  186 | 2021-11-19-04:28 |
+| m.org        |  37K | 2021-11-19-04:39 |
+| n.org        | 229K | 2021-11-14-17:37 |
+| o            |   90 | 2021-11-19-04:39 |
+| ox.setup     |  580 | 2021-11-14-23:06 |
+| readme.org   | 1.6K | 2021-11-19-04:28 |
+| rustfmt.toml |   53 | 2021-11-19-04:28 |
+| sc           |  768 | 2021-11-19-04:28 |
+| shell        |   86 | 2021-11-19-04:28 |
+| src          |  238 | 2021-11-19-04:28 |
+| term         |   28 | 2021-11-19-04:28 |
+| vc           |    8 | 2021-11-19-04:28 |
+| virt         |   20 | 2021-11-19-04:28 |
+| wm           |   50 | 2021-11-19-04:28 |
 
 #+results: 
-: parent: 72:e7fc3c34a2fd tip
-:  meta fixes
-: branch: default
-: commit: 3 modified
-: update: (current)
-: M index.org
-: M m.org
-: M readme.org
+#+begin_example
+  parent: 73:09a7c7a6ad64 tip
+   script refinement
+  branch: default
+  commit: 2 modified, 109 unknown
+  update: (current)
+  M m.org
+  M readme.org
+  ? Cargo.toml
+  ? aws/Cargo.toml
+  ? aws/src/lib.rs
+  ? babel.el
+  ? build.rs
+  ? emacs/early-init.el
+  ? emacs/init.el
+  ? emacs/lisp/babel.el
+  ? emacs/lisp/default.el
+  ? emacs/lisp/hyde.el
+  ? emacs/lisp/ot-json.el
+  ? emacs/lisp/script/t-mail.el
+  ? emacs/lisp/shed.el
+  ? emacs/makefile
+  ? google/Cargo.toml
+  ? google/Pipfile
+  ? google/common/Cargo.toml
+  ? google/common/README.md
+  ? google/common/src/error.rs
+  ? google/common/src/http.rs
+  ? google/common/src/lib.rs
+  ? google/common/src/multipart.rs
+  ? google/generate.py
+  ? google/src/drive.rs
+  ? google/src/drive/drive_v3_types.rs
+  ? google/src/lib.rs
+  ? google/src/youtube.rs
+  ? google/src/youtube/youtube_v3_types.rs
+  ? google/templates.py
+  ? lisp/shed.el
+  ? lob.org
+  ? mail/.notmuch-config
+  ? makefile
+  ? rustfmt.toml
+  ? sc/add-demon.sh
+  ? sc/arch-chroot.sh
+  ? sc/archiso/first-run.sh
+  ? sc/archiso/mkinit-linux.sh
+  ? sc/archiso/mkinit.sh
+  ? sc/archiso/test.sh
+  ? sc/build-efi.py
+  ? sc/check_term_colors.sh
+  ? sc/fm_radio_rx.py
+  ? sc/fuzz.sh
+  ? sc/gen_rust_docs.sh
+  ? sc/hackrf.py
+  ? sc/hg-bundle.sh
+  ? sc/hg-export-bundle.sh
+  ? sc/hg-export-github.sh
+  ? sc/hg-pull.sh
+  ? sc/hg-unbundle.sh
+  ? sc/install.sh
+  ? sc/monads.hs
+  ? sc/nfs-re-export.sh
+  ? sc/org.py
+  ? sc/pipes.sh
+  ? sc/port-scan.sh
+  ? sc/powershell/nbd-firewall-rule.ps1
+  ? sc/powershell/win-dlbin64-certutil.ps1
+  ? sc/powershell/win-dlx-bitsadmin.ps1
+  ? sc/qemu-init-win10.sh
+  ? sc/record_gif.sh
+  ? sc/rust_docs_bootstrap_frontend.sh
+  ? sc/set-version.sh
+  ? sc/set_bg.sh
+  ? sc/setup-monitors.sh
+  ? sc/sm_scrape.py
+  ? sc/wg-gen-keys.sh
+  ? shell/.bash_profile
+  ? shell/.bashrc
+  ? shell/.profile
+  ? shell/.zprofile
+  ? shell/.zshrc
+  ? src/app.rs
+  ? src/bin/shc.rs
+  ? src/bin/shd.rs
+  ? src/bin/she.rs
+  ? src/bin/shk.rs
+  ? src/bin/shs.rs
+  ? src/bin/shx.rs
+  ? src/cli.rs
+  ? src/client.rs
+  ? src/client/discord.rs
+  ? src/client/ipapi.rs
+  ? src/client/nws.rs
+  ? src/client/openai.rs
+  ? src/coding.rs
+  ? src/config.rs
+  ? src/crypto.rs
+  ? src/daemon.rs
+  ? src/email.rs
+  ? src/lib.rs
+  ? src/stash.rs
+  ? src/store.rs
+  ? src/tests.rs
+  ? src/web.rs
+  ? src/web/client.rs
+  ? src/web/server.rs
+  ? term/kitty/kitty.conf
+  ? term/kitty/treez.png
+  ? term/tmux/tmux.conf
+  ? term/urxvt/.Xresources
+  ? vc/hgrc
+  ? virt/lxc/config.yml
+  ? wm/.xinitrc
+  ? wm/2bwm/config.h
+  ? wm/avpt.png
+  ? wm/conky/conky-l1.lua
+  ? wm/conky/conky-l2.lua
+#+end_example
 
 * scripts
 ** index
@@ -56,8 +190,9 @@ of a named code block.
   (org-sbx meta-pack)
   (org-sbx meta-deploy)
   (org-sbx meta-readme-gen)
-  (org-sbx meta-readme-commit)
   (org-sbx meta-clean)
+  (org-sbx meta-commit)
+  (org-sbx meta-github-push)
 #+end_src
 
 First we generate the output directory and copy source files there.
@@ -195,20 +330,55 @@ directories. They also look quite nice on GitHub without any
 additional configuration ;).
 
 Before we talk about github stuff, let's commit the readme changes for
-our projects.
-#+name: meta-readme-commit
-#+begin_src shell
-  for i in shed rlib tenex babel cfg demo; do
-      cd ~/shed/src/$i && hg ci -m 'readme.org update'
-  done
-#+end_src
-
-We can also remove the output directory clutter we created earlier.
-
+our projects - first let's clean up build artifacts.
 #+name: meta-clean
 #+begin_src shell
   rm -rf o
 #+end_src
+
+Now we can commit without being skeptical about the repo state.
+
+#+name: meta-commit
+#+begin_src shell
+  for i in shed rlib tenex babel cfg demo meta; do
+      cd ~/shed/src/$i && hg ci -m 'meta-commit update'
+  done
+#+end_src
+
+Ok, now let's push our changes to github. Note that this creates lots
+of commits, but we don't really care since it's a mirror. I'm just
+testing this as an alternative approach to a 'pure' VC mirror which
+would include all commits, branches, etc. I'll probably just switch
+back to the [[https://hg-git.github.io/][hg-git]] 'pure' solution soon.
+
+#+name: meta-github-push
+#+begin_src bash
+  REPOS=("meta" "shed" "babel" "cfg" "tenex" "rlib")
+  WD=$STAMP
+  for r in ${REPOS[@]}; do
+      src=$SHED/src/$r
+      gh=git@github.com:richardwesthaver/$r.git
+
+      rm -rf $WD/$r
+      git clone $gh $WD/$r
+
+      pushd $WD/$r
+      case $r in
+  	meta) cp -rf $src/{m.org,n.org,cv.org,index.org,ox.setup,readme.org} ./ ;;
+  	shed) cp -rf $src/{Cargo.toml,build.rs,lisp,makefile,src,readme.org,rustfmt.toml} ./ ;;
+  	babel) cp -rf $src/{babel.el,lob.org,readme.org,makefile,sc} ./ ;;
+  	rlib) cp -rf $src/{Cargo.toml,.cargo,rustfmt.toml,src,alch,audio,crypto,db,eve,flate,fu,hash,kala,logger,math,net,obj,organ,tests,ui,util,readme.org} ./ ;;
+  	cfg) cp -rf $src/{emacs,mail,shell,term,tmux,vc,virt,wm,readme.org} ./ ;;
+  	tenex) cp -rf $src/{src,aws,google,readme.org,rustfmt.toml,Cargo.toml} ./ ;;
+      esac
+      git add .
+      git commit -m "from https://hg.rwest.io/$r"
+      git push
+      popd
+  done
+#+end_src
+
+*** hg-export-github
 
 * syntax
 The source files assume some familiarity with org syntax. Org syntax
