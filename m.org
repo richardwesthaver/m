@@ -122,7 +122,7 @@ of a named code block.
   (org-sbx meta-deploy)
   (org-sbx meta-readme-gen)
   (org-sbx meta-clean)
-  (org-sbx meta-push)
+;  (org-sbx meta-commit)
   (org-sbx meta-mirror)
 #+end_src
 
@@ -269,10 +269,10 @@ our projects - first let's clean up build artifacts.
 
 Now we can commit without being skeptical about the repo state.
 
-#+name: meta-push
+#+name: meta-commit
 #+begin_src shell :results silent
   for i in shed rlib tenex babel cfg demo meta; do
-      cd ~/shed/src/$i && hg ci -m 'meta-commit update' && hg push
+      cd ~/shed/src/$i && hg ci -m 'meta-commit update'
   done
 #+end_src
 
@@ -330,12 +330,6 @@ Generate API docs for all Rust projects
 #+begin_src elisp :results silent
   (copy-file "o/d" "/sshx:hyde:/mnt/w/d" 1)
 #+end_src
-
-**** hg-export-github
-:PROPERTIES:
-:CUSTOM_ID: meta-deploy-hg-export-github
-:END:
-
 **** makefile                                                   :noexport:
 :PROPERTIES:
 :CUSTOM_ID: meta-prod-makefile
