@@ -122,8 +122,8 @@ of a named code block.
   (org-sbx meta-deploy)
   (org-sbx meta-readme-gen)
   (org-sbx meta-clean)
-  (org-sbx meta-commit)
-  (org-sbx meta-github-push)
+  (org-sbx meta-push)
+  (org-sbx meta-mirror)
 #+end_src
 
 First we generate the output directory and copy source files there.
@@ -269,10 +269,10 @@ our projects - first let's clean up build artifacts.
 
 Now we can commit without being skeptical about the repo state.
 
-#+name: meta-commit
+#+name: meta-push
 #+begin_src shell :results silent
   for i in shed rlib tenex babel cfg demo meta; do
-      cd ~/shed/src/$i && hg ci -m 'meta-commit update'
+      cd ~/shed/src/$i && hg ci -m 'meta-commit update' && hg push
   done
 #+end_src
 
@@ -282,17 +282,15 @@ testing this as an alternative approach to a 'pure' VC mirror which
 would include all commits, branches, etc. I'll probably just switch
 back to the [[https://hg-git.github.io/][hg-git]] 'pure' solution soon.
 
-#+name: meta-github-push
+#+name: meta-mirror
 #+begin_src bash :results value silent :eval no-export
   REPOS=("meta" "shed" "babel" "cfg" "tenex" "rlib")
   WD=$STAMP
   for r in ${REPOS[@]}; do
       src=$SHED/src/$r
       gh=git@github.com:richardwesthaver/$r.git
-
       rm -rf $WD/$r
       git clone $gh $WD/$r
-
       pushd $WD/$r
       case $r in
           meta) cp -rf $src/{m.org,n.org,cv.org,index.org,ox.setup,readme.org} ./ ;;
