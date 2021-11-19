@@ -12,55 +12,71 @@ generate my [[https://rwest.io][website]] and readme files for code hosted at [[
 #+header: :var name=(org-sbx org-current-heading-title) :var age=hg-log-age()
 #+header: :var rev=(org-sbx hg-rev (path (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title))))
 #+header: :var num=(org-sbx hg-id-num (path (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title))))
-#+header: :var lc=(org-sbx wc-dir-lines (dir (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title)))) wc=(org-sbx wc-dir-words (dir (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title))))
+#+header: :var lc=(org-sbx wc-dir-lines (dir (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title))))
+#+header: :var cc1=(org-sbx tokei-dir-lines (dir (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title))))
+#+header: :var cc2=(org-sbx tokei-dir-langs (dir (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title))))
 #+header: :var ver="alpha-0.1"
-#+begin_src emacs-lisp :exports results :eval no-export
-        (let* ((nf (format "[[https://rwest.io/m#%s][%s]]" name name))
-               (rf (format "[[https://hg.rwest.io/%s/rev/%s][%s:%s]]" name rev num rev))
-               (gf (format "[[https://github.com/richardwesthaver/%s][github]]" name))
-               (vf (format "%s, %s" rf gf))
-               (cf (format "%s lines, %s words" lc wc)))
-          `(("name" ,nf)
-            ("version" ,ver)
-            ("vc" ,vf)
-            ("updated" ,age)
-            ("count" ,cf)))
+#+begin_src emacs-lisp :exports results :results table :eval no-export
+    (let* ((nf (format "[[https://rwest.io/m#%s][%s]]" name name))
+           (rf (format "[[https://hg.rwest.io/%s/rev/%s][%s:%s]]" name rev num rev))
+           (gf (format "[[https://github.com/richardwesthaver/%s][github]]" name))
+           (vf (format "%s, %s" rf gf))
+           (lsum (org-sbe sum-str-nums ('x 'cc1)))
+           (l (split-string cc1))
+           (lang (split-string cc2))
+           (cf (format "%s = λ:%s #:%s _:%s" lsum (pop l) (pop l) (pop l))))
+      `(("info", "")
+        hline
+        ("name" ,nf)
+        ("version" ,ver)
+        ("vc" ,vf)
+        ("updated" ,age)
+        ("lines" ,cf)
+        ("langs" ,lang)
+        hline))
 #+end_src
 
 #+RESULTS: meta-make-tbl
+| info    |                          |
+|---------+--------------------------|
 | name    | [[https://rwest.io/m#meta][meta]]                     |
 | version | alpha-0.1                |
-| vc      | [[https://hg.rwest.io/meta/rev/e7fc3c34a2fd][72+:e7fc3c34a2fd]], [[https://github.com/richardwesthaver/meta][github]] |
-| updated | 22 hours ago             |
-| count   | 7063 lines, 31741 words  |
+| vc      | [[https://hg.rwest.io/meta/rev/09a7c7a6ad64][73+:09a7c7a6ad64]], [[https://github.com/richardwesthaver/meta][github]] |
+| updated | 26 hours ago             |
+| lines   | 6946 = λ:6440 #:29 _:477 |
+| langs   | (Org)                    |
+|---------+--------------------------|
+
+
 #+name: _meta-files
 #+begin_src sh :results silent :exports none
   ls -lh --time-style=long-iso \
     |awk '{if (NR!=1) print $8, $5, $6"-"$7}' \
     |awk 'BEGIN{print "file size updated"}{print $0}'
 #+end_src
+
 #+name: meta-files 
 #+begin_src emacs-lisp :var ft=_meta-files :results table :colnames yes :hlines yes :exports results
 ft
 #+end_src
+
 #+RESULTS: meta-files
 | file       | size |          updated |
 |------------+------+------------------|
 | cv.org     | 3.8K | 2021-10-27-20:37 |
-| index.org  | 4.6K | 2021-11-17-22:42 |
-| m.org      | 38K  | 2021-11-17-23:51 |
+| index.org  | 4.6K | 2021-11-17-23:56 |
+| m.org      | 38K  | 2021-11-18-01:08 |
 | n.org      | 229K | 2021-11-14-17:37 |
 | ox.setup   | 580  | 2021-11-14-23:06 |
-| readme.org | 8.7K | 2021-11-17-23:25 |
+| readme.org | 8.7K | 2021-11-18-00:54 |
 
 #+CALL: shc-hg-summary() :eval yes
 #+RESULTS:
-: parent: 72:e7fc3c34a2fd tip
-:  meta fixes
+: parent: 73:09a7c7a6ad64 tip
+:  script refinement
 : branch: default
-: commit: 3 modified
+: commit: 2 modified
 : update: (current)
-: M index.org
 : M m.org
 : M readme.org
 
@@ -105,8 +121,9 @@ of a named code block.
   (org-sbx meta-pack)
   (org-sbx meta-deploy)
   (org-sbx meta-readme-gen)
-  ;(org-sbx meta-readme-commit)
   (org-sbx meta-clean)
+  (org-sbx meta-commit)
+  (org-sbx meta-github-push)
 #+end_src
 
 First we generate the output directory and copy source files there.
@@ -244,19 +261,52 @@ directories. They also look quite nice on GitHub without any
 additional configuration ;).
 
 Before we talk about github stuff, let's commit the readme changes for
-our projects.
-#+name: meta-readme-commit
-#+begin_src shell :results silent
-  for i in shed rlib tenex babel cfg demo; do
-      cd ~/shed/src/$i && hg ci -m 'readme.org update'
-  done
-#+end_src
-
-We can also remove the output directory clutter we created earlier.
-
+our projects - first let's clean up build artifacts.
 #+name: meta-clean
 #+begin_src shell :results silent
   rm -rf o
+#+end_src
+
+Now we can commit without being skeptical about the repo state.
+
+#+name: meta-commit
+#+begin_src shell :results silent
+  for i in shed rlib tenex babel cfg demo meta; do
+      cd ~/shed/src/$i && hg ci -m 'meta-commit update'
+  done
+#+end_src
+
+Ok, now let's push our changes to github. Note that this creates lots
+of commits, but we don't really care since it's a mirror. I'm just
+testing this as an alternative approach to a 'pure' VC mirror which
+would include all commits, branches, etc. I'll probably just switch
+back to the [[https://hg-git.github.io/][hg-git]] 'pure' solution soon.
+
+#+name: meta-github-push
+#+begin_src bash :results value silent :eval no-export
+  REPOS=("meta" "shed" "babel" "cfg" "tenex" "rlib")
+  WD=$STAMP
+  for r in ${REPOS[@]}; do
+      src=$SHED/src/$r
+      gh=git@github.com:richardwesthaver/$r.git
+
+      rm -rf $WD/$r
+      git clone $gh $WD/$r
+
+      pushd $WD/$r
+      case $r in
+          meta) cp -rf $src/{m.org,n.org,cv.org,index.org,ox.setup,readme.org} ./ ;;
+          shed) cp -rf $src/{Cargo.toml,build.rs,lisp,makefile,src,readme.org,rustfmt.toml} ./ ;;
+          babel) cp -rf $src/{babel.el,lob.org,readme.org,makefile,sc} ./ ;;
+          rlib) cp -rf $src/{Cargo.toml,.cargo,rustfmt.toml,src,alch,audio,crypto,db,eve,flate,fu,hash,kala,logger,math,net,obj,organ,tests,ui,util,readme.org} ./ ;;
+          cfg) cp -rf $src/{emacs,mail,shell,term,tmux,vc,virt,wm,readme.org} ./ ;;
+          tenex) cp -rf $src/{src,aws,google,readme.org,rustfmt.toml,Cargo.toml} ./ ;;
+      esac
+      git add .
+      git commit -m "from https://hg.rwest.io/$r"
+      git push
+      popd
+  done
 #+end_src
 
 **** docs                                                       :noexport:
@@ -283,9 +333,9 @@ Generate API docs for all Rust projects
   (copy-file "o/d" "/sshx:hyde:/mnt/w/d" 1)
 #+end_src
 
-**** hg-export-github                                           :noexport:
+**** hg-export-github
 :PROPERTIES:
-:CUSTOM_ID: meta-prod-hg-export-github
+:CUSTOM_ID: meta-deploy-hg-export-github
 :END:
 
 **** makefile                                                   :noexport:
@@ -383,11 +433,15 @@ using code blocks in various contexts. More on that later.
 
 #+CALL: meta-make-tbl()
 #+RESULTS:
-| name    | [[https://rwest.io/m#babel][babel]]                   |
-| version | alpha-0.1               |
-| vc      | [[https://hg.rwest.io/babel/rev/7f8740fdf0a4][74:7f8740fdf0a4]], [[https://github.com/richardwesthaver/babel][github]] |
-| updated | 23 hours ago            |
-| count   | 1031 lines, 3791 words  |
+| info    |                                                   |
+|---------+---------------------------------------------------|
+| name    | [[https://rwest.io/m#babel][babel]]                                             |
+| version | alpha-0.1                                         |
+| vc      | [[https://hg.rwest.io/babel/rev/fc31b7ffb5b2][75+:fc31b7ffb5b2]], [[https://github.com/richardwesthaver/babel][github]]                          |
+| updated | 26 hours ago                                      |
+| lines   | 6929 = λ:4712 #:805 _:829                         |
+| langs   | (Elisp Haskell Makefile Org PowerShell Python Sh) |
+|---------+---------------------------------------------------|
 
 ** Literate Programming
 :PROPERTIES:
@@ -466,11 +520,15 @@ use often.
 
 #+CALL: meta-make-tbl()
 #+RESULTS:
-| name    | [[https://rwest.io/m#cfg][cfg]]                     |
-| version | alpha-0.1               |
-| vc      | [[https://hg.rwest.io/cfg/rev/1a841ba8c7ae][39:1a841ba8c7ae]], [[https://github.com/richardwesthaver/cfg][github]] |
-| updated | 23 hours ago            |
-| count   | 101 lines, 530 words    |
+| info    |                                       |
+|---------+---------------------------------------|
+| name    | [[https://rwest.io/m#cfg][cfg]]                                   |
+| version | alpha-0.1                             |
+| vc      | [[https://hg.rwest.io/cfg/rev/8649c6171529][41+:8649c6171529]], [[https://github.com/richardwesthaver/cfg][github]]              |
+| updated | 26 hours ago                          |
+| lines   | 6929 = λ:1971 #:445 _:259             |
+| langs   | (CHeader Elisp Lua Makefile Org Yaml) |
+|---------+---------------------------------------|
 
 | category | description                            | apps                |
 |----------+----------------------------------------+---------------------|
@@ -530,72 +588,54 @@ that supports vanilla Emacs.
 :ID:       6782d0a9-1915-4b3e-85fb-3dd5e7ec917e
 :CUSTOM_ID: config-org
 :END:
-The (old) main configuration file. A lot of this is getting moved to
-our =notes=. The resulting files will be refactored. Despite being
-messy, it's still very effective (see [[#emacs_screenshots][Screenshots]]).
-**** Screenshots
-:PROPERTIES:
-:CUSTOM_ID: emacs_screenshots
-:ID:       0b7b8c46-e783-4adb-8b37-56fe8578df72
-:END:
-- themes \\
-  #+attr_html: :width 600
-  #+attr_latex: :width 600
+  #+attr_html: :width 500
+  #+attr_latex: :width 500
   [[https://rwest.io/a/img/abyss-theme-emacs.png][https://rwest.io/a/img/abyss-theme-emacs.png]]
-  #+attr_html: :width 600
-  #+attr_latex: :width 600
+  #+attr_html: :width 500
+  #+attr_latex: :width 500
   [[https://rwest.io/a/img/sanityinc-theme-emacs.png][https://rwest.io/a/img/sanityinc-theme-emacs.png]]
-  #+attr_html: :width 600
-  #+attr_latex: :width 600
+  #+attr_html: :width 500
+  #+attr_latex: :width 500
   [[https://rwest.io/a/img/wheatgrass-theme-emacs.png][https://rwest.io/a/img/wheatgrass-theme-emacs.png]]
-  #+attr_html: :width 600
-  #+attr_latex: :width 600
+  #+attr_html: :width 500
+  #+attr_latex: :width 500
   [[https://rwest.io/a/img/leuven-theme-emacs.png][https://rwest.io/a/img/leuven-theme-emacs.png]]
-- org-mode \\
-  #+attr_html: :width 600
-  #+attr_latex: :width 600
+  #+attr_html: :width 500
+  #+attr_latex: :width 500
   [[https://rwest.io/a/img/olivetti-emacs.png][https://rwest.io/a/img/olivetti-emacs.png]]
-- programming \\
-  #+attr_html: :width 600
-  #+attr_latex: :width 600
+  #+attr_html: :width 500
+  #+attr_latex: :width 500
   [[https://rwest.io/a/img/rust-development-emacs.png][https://rwest.io/a/img/rust-development-emacs.png]]
-  #+attr_html: :width 600
-  #+attr_latex: :width 600
+  #+attr_html: :width 500
+  #+attr_latex: :width 500
   [[https://rwest.io/a/img/rust-tests-emacs.png][https://rwest.io/a/img/rust-tests-emacs.png]]
-- email \\
-  #+attr_html: :width 600
-  #+attr_latex: :width 600
+  #+attr_html: :width 500
+  #+attr_latex: :width 500
   [[https://rwest.io/a/img/email-emacs.png][https://rwest.io/a/img/email-emacs.png]]
-- eww \\
-  The Emacs Web Wowser
-  #+attr_html: :width 600
-  #+attr_latex: :width 600
+  #+attr_html: :width 500
+  #+attr_latex: :width 500
   [[https://rwest.io/a/img/eww-emacs.png][https://rwest.io/a/img/eww-emacs.png]]
 ** mail
 :PROPERTIES:
 :CUSTOM_ID: cfg-mail
 :END:
-+ what -- mail configs
-  - notmuch
-  - offlineimap
+- notmuch
+- offlineimap
 ** shell
 :PROPERTIES:
 :CUSTOM_ID: cfg-shell
 :END:
-+ what -- shell configs
-  - bash
-  - zsh
+- bash
+- zsh
 ** term
 :PROPERTIES:
 :CUSTOM_DI: cfg-term
 :END:
-+ what -- terminal emulator configs
-  - kitty
+- kitty
 ** tmux
 :PROPERTIES:
 :CUSTOM_ID: cfg-tmux
 :END:
-+ what -- tmux config
 ** vc
 :PROPERTIES:
 :CUSTOM_ID: cfg-vc
@@ -606,10 +646,9 @@ messy, it's still very effective (see [[#emacs_screenshots][Screenshots]]).
 :PROPERTIES:
 :CUSTOM_ID: cfg-virt
 :END:
-+ what -- virtual machine and container configs
-  - lxc
-  - qemu
-  - archiso
+- lxc
+- qemu
+- archiso
 ** wm
 :PROPERTIES:
 :CUSTOM_ID: cfg-wm
@@ -629,23 +668,18 @@ future, depending on how the Nix ecosystem progresses.
 :CUSTOM_ID: shed
 :EXPORT_FILE_NAME: ../shed/readme
 :END:
-+ what -- A Self-hosted Development Environment
-+ status -- ALPHA
-+ version -- 0.0.1
-+ [[src:shed][src]] <-
-+ [[https://docs.rwest.io/shed][docs]] <-
-
-#+BEGIN_export html
-<a href="https://asciinema.org/a/445161" target="_blank"><img src="https://asciinema.org/a/445161.svg" /></a>
-#+END_export
-
+SelfHostED
 #+CALL: meta-make-tbl()
 #+RESULTS:
-| name    | [[https://rwest.io/m#shed][shed]]                    |
-| version | alpha-0.1               |
-| vc      | [[https://hg.rwest.io/shed/rev/8147771c6b85][61:8147771c6b85]], [[https://github.com/richardwesthaver/shed][github]] |
-| updated | 23 hours ago            |
-| count   | 4922 lines, 9886 words  |
+| info    |                                                |
+|---------+------------------------------------------------|
+| name    | [[https://rwest.io/m#shed][shed]]                                           |
+| version | alpha-0.1                                      |
+| vc      | [[https://hg.rwest.io/shed/rev/d696a8ae75d5][63+:d696a8ae75d5]], [[https://github.com/richardwesthaver/shed][github]]                       |
+| updated | 26 hours ago                                   |
+| lines   | 6935 = λ:2105 #:102 _:136                      |
+| langs   | (Bash Elisp Makefile Org PowerShell Rust Toml) |
+|---------+------------------------------------------------|
 
 ** Roadmap
 :PROPERTIES:
@@ -731,52 +765,30 @@ future, depending on how the Nix ecosystem progresses.
 - daemon <-> process IPC
 - bindat protocol definitions
 - network daemon messages and packets
-** Features
+** Programs
 :PROPERTIES:
 :CUSTOM_ID: shed-features
 :END:
-- *Src*
-  - Mercurial VCS
-    - Bundle support
-    - HTTP client/server
-    - Git import/export
-  - Build tools (=cargo=, =clang=, =Makefile=, =scripts=)
-- *X*
+- *shc*
+  - CLI client
+  - used to interact with the services
+- *shx*
   - programming environments (REPLs)
     - embedded Python (RustPython)
     - APLs (BQN, k6/9, Gnu/Dyalog APL)
     - Elisp (ielm.el)
     - Erlang (erl)
     - Lua
-- *Babel*
-  - File templates
-  - scripts and snippets
-  - meta-programming primitives
-- *Stash*
-  - temp storage (=tmp=)
-  - music library (=music=)
-  - configs (=cfg=)
-  - library of babel (=babel=)
-  - tasks, journal, inbox, ops (=org=)
-- *Store*
-  - archive (=arch=)
-  - data (=data=)
-  - media (=media=)
-    - audio (=aud=)
-    - video (=vid=)
-  - virt (=virt=)
-    - OS images (=img=)
-    - FS images (=fs=)
-- *Lab*
-  - Virtual system management (=lxd= and =qemu=)
-    - configurable fs and network sharing for guests
-  - Bootstrap projects from =babel=, use local data from =stash= and
-    =store=
-- *Krypt*
+- *shk*
+  - krypt service
   - reasonably safe secret storage
     - Wireguard, SSH, TLS, plaintext
-  - isolated access to OAuth2 and JWT authenticated API services
-    - Google, AWS, Discord, Github
+- *she*
+  - emacs daemon service
+- *shd*
+  - prime daemon service
+- *shs*
+  - HTTP service daemon
 ** Installation
 :PROPERTIES:
 :CUSTOM_ID: shed-installation
@@ -1004,16 +1016,18 @@ equipped with your own runtime if you plan to =.await=.
 This is a /personal/ library which is unfit for production use as it
 is quite bloated, some of the individual modules are useful on their
 own though.
-+ [[src:rlib][src]] 
-+ [[https://docs.rwest.io/rlib][docs]] 
 
 #+CALL: meta-make-tbl()
 #+RESULTS:
-| name    | [[https://rwest.io/m#rlib][rlib]]                     |
-| version | alpha-0.1                |
-| vc      | [[https://hg.rwest.io/rlib/rev/b90f4fe279ef][93+:b90f4fe279ef]], [[https://github.com/richardwesthaver/rlib][github]] |
-| updated | 23 hours ago             |
-| count   | 5719 lines, 11036 words  |
+| info    |                           |
+|---------+---------------------------|
+| name    | [[https://rwest.io/m#rlib][rlib]]                      |
+| version | alpha-0.1                 |
+| vc      | [[https://hg.rwest.io/rlib/rev/c3465cc34930][95+:c3465cc34930]], [[https://github.com/richardwesthaver/rlib][github]]  |
+| updated | 26 hours ago              |
+| lines   | 6946 = λ:6183 #:253 _:952 |
+| langs   | (Org RON Rust Text Toml)  |
+|---------+---------------------------|
 
 ** Usage
 :PROPERTIES:
@@ -1026,139 +1040,40 @@ to clone the [[src:rlib][repo]] and add it as a dependency to your project like 
   name = "foo"
   #...
   [dependencies]
-  rlib = { version = "0.1.0", path = "../rlib", features = ["cli","kala","anyhow"]} #include some features
+  rlib = { version = "0.1.0", path = "../rlib", features = ["kala","logger"]} #include some features
 #+end_src
 
 then just use the modules in your code:
 #+begin_src rust
-  use rlib::{ctx, logger, kala};
+  use rlib::{logger, kala};
   use rlib::util::Result;
-  #[ctx::main]
-  async fn main() -> Result<()> {
-    logger::flexi("debug")?;
+  fn main() {
+    logger::flexi("debug").expect("logger init failed");
     println!("greetings stranger!");
     kala::cmd::sys::describe_host();
-    Ok(())
   }
 #+end_src
-
-Once our local cargo package registry is complete, instructions will
-be included for how to use this crate from within a =shed= development
-environment.
-
-** Crates
-:PROPERTIES:
-:CUSTOM_ID: rlib-crates
-:END:
-
-=rlib= is split into separate crates with a single [[https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html][workspace]]
-library.
-
-- obj
-  - [[https://docs.rwest.io/rlib/doc/obj][API docs]]
-  =Objects= are pre-defined Rust structs that can easily encode to RON,
-  JSON or Bincode, and tagged with metadata such as an =Id=, for easy
-  indexing. They implement a few traits, namely =Objective= and
-  =Identity= which define common functions.
-
-  Objects can be initialized using the =Objective= methods, which allows
-  all fields in their type definition to be decoded from JSON, RON, or
-  bincode. Some Objects also provide methods used to parse the
-  underlying type itself, such as =Wav= for .wav audio files and =Org=
-  for .org text files.
-- ctx
-  - [[https://docs.rwest.io/rlib/doc/ctx][API docs]]
-  Async runtime context(s).
-- eve
-  - [[https://docs.rwest.io/rlib/doc/eve][API docs]]
-  Async event queue (io_uring). Linux only and very experimental
-- net
-  - [[https://docs.rwest.io/rlib/doc/net][API docs]]
-  Network modules for building clients/servers.
-- db
-  - [[https://docs.rwest.io/rlib/doc/db][API docs]]
-  Database modules
-- alch
-  - [[https://docs.rwest.io/rlib/doc/alch][API docs]]
-  Allocator implementations for the niche.
-- hash
-  - [[https://docs.rwest.io/rlib/doc/hash][API docs]]
-  Hash algorithms. (re-exported in =crypto= too)
-- logger
-  - [[https://docs.rwest.io/rlib/doc/logger][API docs]]
-  Logging essentials including a runtime context and macros from the =log= crate
-- math
-  - [[https://docs.rwest.io/rlib/doc/math][API docs]]
-  TBD
-- flate
-  - [[https://docs.rwest.io/rlib/doc/flate][API docs]]
-  Compression module swiss-army knife built around =zstd=.
-- crypto
-  Crypto /primitives/.
-  - [[https://ed25519.cr.yp.to/][ed25519]] and [[https://github.com/dalek-cryptography/ed25519-dalek][ed25519-dalek]] public-key signatures
-  - [[https://cr.yp.to/snuffle.html][Salsa20]] stream cipher + [[https://cr.yp.to/snuffle/xsalsa-20081128.pdf][XSalsa20]]
-  - [[https://nacl.cr.yp.to/secretbox.html][NaCl]] (TBD)
-  - [[https://docs.rwest.io/rlib/doc/crypto][API docs]]
-- audio
-  - [[https://docs.rwest.io/rlib/doc/audio][API docs]]
-  Cross-platform audio device detection and playback.
-- kala
-  Handy /offline/ functions.
-  - [[https://docs.rwest.io/rlib/doc/kala][API docs]]
-- dmc
-  TBD
-  - [[https://docs.rwest.io/rlib/doc/dmc][API docs]]
-- dts
-  - [[https://docs.rwest.io/rlib/doc/dts][API docs]]
-  Experimental types (Monads and GATs and such)
-- ui
-  - [[https://docs.rwest.io/rlib/doc/ui][API docs]]
-  TBD
-- util
-  - [[https://docs.rwest.io/rlib/doc/util][API docs]]
-  Utilities and development tools designed to reduce boilerplate code
-  for build scripts and binaries. Includes wrappers for =anyhow=,
-  =clap=, =chrono=, and some other useful things.
-
 * tenex                                                            :rust:net:
 :PROPERTIES:
 :CATEGORY: lib
 :CUSTOM_ID: tenex
 :EXPORT_FILE_NAME: ../tenex/readme
 :END:
-+ what -> A Rust HTTP Client library
+A Rust HTTP Client library.
   - ergonomic wrappers for foreign APIs
-  - features -> {google, AWS, discord, openAI, ipapi, NWS}
-+ why -> isolation of vendor-specific network calls
   - apps ->
     - cloud management tools (google_drive, gmail, EC2, discord_bots)
     - basic API requests (IP_info, weather_forecast[US only])
     - async task pools (cross_API_chaining, chatbots_with_triggers, deployment_pipelines)
-    - FFI (WASM/Python/C)
-+ status -- ALPHA
-+ [[src:tenex][src]] <-
-+ [[https://docs.rwest.io/tenex][docs]] <-
 
 #+CALL: meta-make-tbl()
 #+RESULTS:
-| name    | [[https://rwest.io/m#tenex][tenex]]                   |
-| version | alpha-0.1               |
-| vc      | [[https://hg.rwest.io/tenex/rev/0990bf704fee][47:0990bf704fee]], [[https://github.com/richardwesthaver/tenex][github]] |
-| updated | 23 hours ago            |
-| count   | 2955 lines, 5616 words  |
-
-** Features
-:PROPERTIES:
-:CUSTOM_ID: tenex-features
-:END:
-- Clients
-  - [X] NWS (US Weather)
-  - [X] ipapi (public IP lookup)
-  - [ ] openai (beta API)
-  - [ ] Google Cloud
-  - [ ] AWS
-  - [X] SMTPS (smtp.gmail.com)
-- [ ] Authentication
-  - [ ] JWT
-  - [ ] OAuth
-
+| info    |                                 |
+|---------+---------------------------------|
+| name    | [[https://rwest.io/m#tenex][tenex]]                           |
+| version | alpha-0.1                       |
+| vc      | [[https://hg.rwest.io/tenex/rev/1b94e8c0276b][48+:1b94e8c0276b]], [[https://github.com/richardwesthaver/tenex][github]]        |
+| updated | 26 hours ago                    |
+| lines   | 6935 = λ:23290 #:155 _:2136     |
+| langs   | (Markdown Org Python Rust Toml) |
+|---------+---------------------------------|
