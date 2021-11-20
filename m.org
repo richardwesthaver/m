@@ -35,51 +35,46 @@ generate my [[https://rwest.io][website]] and readme files for code hosted at [[
         ("langs" ,lang)
         hline))
 #+end_src
-
 #+RESULTS: meta-make-tbl
 | info    |                          |
 |---------+--------------------------|
 | name    | [[https://rwest.io/m#meta][meta]]                     |
 | version | alpha-0.1                |
-| vc      | [[https://hg.rwest.io/meta/rev/09a7c7a6ad64][73+:09a7c7a6ad64]], [[https://github.com/richardwesthaver/meta][github]] |
-| updated | 26 hours ago             |
-| lines   | 6946 = λ:6440 #:29 _:477 |
+| vc      | [[https://hg.rwest.io/meta/rev/28da45474da5][77+:28da45474da5]], [[https://github.com/richardwesthaver/meta][github]] |
+| updated | 18 hours ago             |
+| lines   | 7076 = λ:6562 #:29 _:485 |
 | langs   | (Org)                    |
 |---------+--------------------------|
 
-
-#+name: _meta-files
-#+begin_src sh :results silent :exports none
-  ls -lh --time-style=long-iso \
+#+name: ls-files-meta-heading
+#+begin_src sh :results silent :exports none :var a=(expand-file-name "~/shed/src") b=(org-sbx org-current-heading-title)
+  ls -lh $a/$b --time-style=long-iso \
     |awk '{if (NR!=1) print $8, $5, $6"-"$7}' \
     |awk 'BEGIN{print "file size updated"}{print $0}'
 #+end_src
 
-#+name: meta-files 
-#+begin_src emacs-lisp :var ft=_meta-files :results table :colnames yes :hlines yes :exports results
-ft
+#+name: meta-files
+#+begin_src emacs-lisp :var src=ls-files-meta-heading() :results table :colnames yes :hlines yes :exports results :eval no-export
+src
 #+end_src
-
 #+RESULTS: meta-files
 | file       | size |          updated |
 |------------+------+------------------|
 | cv.org     | 3.8K | 2021-10-27-20:37 |
 | index.org  | 4.6K | 2021-11-17-23:56 |
-| m.org      | 38K  | 2021-11-18-01:08 |
+| m.org      | 39K  | 2021-11-19-23:57 |
 | n.org      | 229K | 2021-11-14-17:37 |
 | ox.setup   | 580  | 2021-11-14-23:06 |
-| readme.org | 8.7K | 2021-11-18-00:54 |
-
-#+CALL: shc-hg-summary() :eval yes
+| readme.org | 11K  | 2021-11-19-23:40 |
+#+CALL:shc-hg-summary() :eval yes
 #+RESULTS:
-: parent: 73:09a7c7a6ad64 tip
-:  script refinement
+: parent: 77:28da45474da5 tip
+:  readme added
 : branch: default
 : commit: 2 modified
 : update: (current)
 : M m.org
 : M readme.org
-
 ** scripts
 :PROPERTIES:
 :CUSTOM_ID: meta-scripts
@@ -152,7 +147,7 @@ directories.
 #+begin_src emacs-lisp :results silent
   (require 'ox)
   (require 'org-refile)
-  (require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
+  (require 'htmlize "~/shed/data/emacs/lisp/contrib/htmlize/htmlize.el")
   (require 'org-id)
   (setq org-html-validation-link nil
         ;;        org-html-htmlize-output-type 'css
@@ -236,7 +231,7 @@ in all formats.
 #+end_src
 
 
-Next we execute a helper function from my [[#cfg-emacs][emacs config]]. This function
+Next we execute a helper function from my [[#cfg:emacs][emacs config]]. This function
 scans the current file (=m.org=) and generates individual =readme.org=
 files for our projects.
 
@@ -410,7 +405,7 @@ special *elements*:
 :ID:       1b363810-26ea-4dae-b689-6e050756bfae
 :CUSTOM_ID: babel
 :CATEGORY: lib
-:EXPORT_FILE_NAME: ../babel/readme
+:EXPORT_FILE_NAME: ~/shed/src/babel/readme
 :END:
 
 This project is an extension of the [[https://orgmode.org/manual/Library-of-Babel.html][Library of Babel]] - which allows
@@ -429,11 +424,23 @@ using code blocks in various contexts. More on that later.
 |---------+---------------------------------------------------|
 | name    | [[https://rwest.io/m#babel][babel]]                                             |
 | version | alpha-0.1                                         |
-| vc      | [[https://hg.rwest.io/babel/rev/fc31b7ffb5b2][75+:fc31b7ffb5b2]], [[https://github.com/richardwesthaver/babel][github]]                          |
-| updated | 26 hours ago                                      |
-| lines   | 6929 = λ:4712 #:805 _:829                         |
+| vc      | [[https://hg.rwest.io/babel/rev/757c6dccfd53][79+:757c6dccfd53]], [[https://github.com/richardwesthaver/babel][github]]                          |
+| updated | 18 hours ago                                      |
+| lines   | 13786 = λ:4703 #:798 _:828                        |
 | langs   | (Elisp Haskell Makefile Org PowerShell Python Sh) |
 |---------+---------------------------------------------------|
+
+#+CALL: meta-files()
+
+#+RESULTS:
+| file       | size |          updated |
+|------------+------+------------------|
+| babel.el   | 8.0K | 2021-11-17-03:11 |
+| lob.org    | 20K  | 2021-11-19-01:28 |
+| makefile   | 186  | 2021-10-27-02:21 |
+| o          | 54   | 2021-10-27-02:28 |
+| readme.org | 4.3K | 2021-11-19-05:14 |
+| sc         | 730  | 2021-11-19-05:09 |
 
 ** Literate Programming
 :PROPERTIES:
@@ -516,21 +523,35 @@ use often.
 |---------+---------------------------------------|
 | name    | [[https://rwest.io/m#cfg][cfg]]                                   |
 | version | alpha-0.1                             |
-| vc      | [[https://hg.rwest.io/cfg/rev/8649c6171529][41+:8649c6171529]], [[https://github.com/richardwesthaver/cfg][github]]              |
-| updated | 26 hours ago                          |
-| lines   | 6929 = λ:1971 #:445 _:259             |
+| vc      | [[https://hg.rwest.io/cfg/rev/ae5302ec1e29][45+:ae5302ec1e29]], [[https://github.com/richardwesthaver/cfg][github]]              |
+| updated | 18 hours ago                          |
+| lines   | 13786 = λ:1974 #:445 _:259            |
 | langs   | (CHeader Elisp Lua Makefile Org Yaml) |
 |---------+---------------------------------------|
 
 | category | description                            | apps                |
 |----------+----------------------------------------+---------------------|
-| emacs    | the superior editor                    | emacs               |
-| mail     | gmail local setup                      | offlineimap notmuch |
-| shell    | shell profiles and configs             | bash zsh            |
-| term     | terminal emulation and multiplexing    | urxvt tmux kitty    |
-| vc       | version control                        | hg git              |
-| virt     | machine emulation                      | lxc qemu archiso    |
-| wm       | minimal X11 desktop config and widgets | 2bwm conky          |
+| [[#cfg:emacs][emacs]]    | the superior editor                    | emacs               |
+| [[#cfg:mail][mail]]     | gmail local setup                      | offlineimap notmuch |
+| [[#cfg:shell][shell]]    | shell profiles and configs             | bash zsh            |
+| [[#cfg:term][term]]     | terminal emulation and multiplexing    | urxvt tmux kitty    |
+| [[#cfg:vc][vc]]       | version control                        | hg git              |
+| [[#cfg:virt][virt]]     | machine emulation                      | lxc qemu archiso    |
+| [[#cfg:wm][wm]]       | minimal X11 desktop config and widgets | 2bwm conky          |
+
+#+CALL: meta-files()
+
+#+RESULTS:
+| file       | size |          updated |
+|------------+------+------------------|
+| emacs      |   64 | 2021-11-11-18:36 |
+| mail       |   30 | 2021-11-08-16:55 |
+| readme.org | 4.7K | 2021-11-19-05:14 |
+| shell      |   86 | 2021-10-23-19:12 |
+| term       |   28 | 2021-11-08-16:45 |
+| vc         |    8 | 2021-10-23-00:10 |
+| virt       |   20 | 2021-11-08-16:22 |
+| wm         |   50 | 2021-11-13-00:47 |
 
 The top-level makefile can be used for basic local bootstrap but these
 files are generally intended to be loaded into a user environment via
@@ -545,7 +566,7 @@ individual application such as =shell= or =emacs= respectively.
 
 ** emacs
 :PROPERTIES:
-:CUSTOM_ID: cfg-emacs
+:CUSTOM_ID: cfg:emacs
 :END:
 + what -- Configuration for the superior editor.
 + version -- 2.1
@@ -609,52 +630,45 @@ that supports vanilla Emacs.
   [[https://rwest.io/a/img/eww-emacs.png][https://rwest.io/a/img/eww-emacs.png]]
 ** mail
 :PROPERTIES:
-:CUSTOM_ID: cfg-mail
+:CUSTOM_ID: cfg:mail
 :END:
 - notmuch
 - offlineimap
 ** shell
 :PROPERTIES:
-:CUSTOM_ID: cfg-shell
+:CUSTOM_ID: cfg:shell
 :END:
 - bash
 - zsh
 ** term
 :PROPERTIES:
-:CUSTOM_DI: cfg-term
+:CUSTOM_ID: cfg:term
 :END:
 - kitty
 ** tmux
 :PROPERTIES:
-:CUSTOM_ID: cfg-tmux
+:CUSTOM_ID: cfg:tmux
 :END:
 ** vc
 :PROPERTIES:
-:CUSTOM_ID: cfg-vc
+:CUSTOM_ID: cfg:vc
 :END:
 - mercurial
 - git
 ** virt
 :PROPERTIES:
-:CUSTOM_ID: cfg-virt
+:CUSTOM_ID: cfg:virt
 :END:
 - lxc
 - qemu
 - archiso
 ** wm
 :PROPERTIES:
-:CUSTOM_ID: cfg-wm
+:CUSTOM_ID: cfg:wm
 :END:
 - 2bwm
 - conky
 - lemonbar
-** nix                                                 :deprecated:noexport:
-:PROPERTIES:
-:CUSTOM_ID: cfg-nix
-:END:
-Poorman's distributed =nix= config has fallen into disrepair, but I
-keep it around for old-time's sake. It might come in handy in the
-future, depending on how the Nix ecosystem progresses.
 * shed                                                             :rust:dev:
 :PROPERTIES:
 :CUSTOM_ID: shed
@@ -663,15 +677,30 @@ future, depending on how the Nix ecosystem progresses.
 SelfHostED
 #+CALL: meta-make-tbl()
 #+RESULTS:
-| info    |                                                |
-|---------+------------------------------------------------|
-| name    | [[https://rwest.io/m#shed][shed]]                                           |
-| version | alpha-0.1                                      |
-| vc      | [[https://hg.rwest.io/shed/rev/d696a8ae75d5][63+:d696a8ae75d5]], [[https://github.com/richardwesthaver/shed][github]]                       |
-| updated | 26 hours ago                                   |
-| lines   | 6935 = λ:2105 #:102 _:136                      |
-| langs   | (Bash Elisp Makefile Org PowerShell Rust Toml) |
-|---------+------------------------------------------------|
+| info    |                                                          |
+|---------+----------------------------------------------------------|
+| name    | [[https://rwest.io/m#shed][shed]]                                                     |
+| version | alpha-0.1                                                |
+| vc      | [[https://hg.rwest.io/shed/rev/d1517402826d][67+:d1517402826d]], [[https://github.com/richardwesthaver/shed][github]]                                 |
+| updated | 18 hours ago                                             |
+| lines   | 13786 = λ:105202 #:5426 _:9698                           |
+| langs   | (C CHeader Cpp D Elisp LLVM Makefile Org Rust Text Toml) |
+|---------+----------------------------------------------------------|
+
+#+CALL: meta-files()
+
+#+RESULTS:
+| file         | size |          updated |
+|--------------+------+------------------|
+| build.rs     |  809 | 2021-11-05-16:18 |
+| Cargo.lock   | 107K | 2021-11-17-20:15 |
+| Cargo.toml   | 1.4K | 2021-11-11-00:11 |
+| lisp         |   14 | 2021-11-15-00:35 |
+| makefile     |  413 | 2021-11-17-06:13 |
+| readme.org   | 7.9K | 2021-11-19-23:00 |
+| rustfmt.toml |   52 | 2021-10-19-02:45 |
+| src          |  176 | 2021-11-19-23:07 |
+| target       |   66 | 2021-11-19-23:05 |
 
 ** Roadmap
 :PROPERTIES:
@@ -1015,11 +1044,38 @@ own though.
 |---------+---------------------------|
 | name    | [[https://rwest.io/m#rlib][rlib]]                      |
 | version | alpha-0.1                 |
-| vc      | [[https://hg.rwest.io/rlib/rev/c3465cc34930][95+:c3465cc34930]], [[https://github.com/richardwesthaver/rlib][github]]  |
-| updated | 26 hours ago              |
-| lines   | 6946 = λ:6183 #:253 _:952 |
+| vc      | [[https://hg.rwest.io/rlib/rev/ea34d1911b80][99:ea34d1911b80]], [[https://github.com/richardwesthaver/rlib][github]]   |
+| updated | 4 minutes ago             |
+| lines   | 7004 = λ:6182 #:253 _:952 |
 | langs   | (Org RON Rust Text Toml)  |
 |---------+---------------------------|
+
+#+CALL:meta-files()
+#+RESULTS:
+| file         | size |          updated |
+|--------------+------+------------------|
+| alch         |   26 | 2021-10-19-03:16 |
+| audio        |   32 | 2021-10-23-02:42 |
+| Cargo.lock   | 130K | 2021-11-02-23:31 |
+| Cargo.toml   | 1.8K | 2021-11-09-20:32 |
+| crypto       |   54 | 2021-09-26-08:03 |
+| db           |   36 | 2021-11-02-21:42 |
+| eve          |   36 | 2021-11-02-23:00 |
+| flate        |   26 | 2021-11-02-22:27 |
+| fu           |   26 | 2021-10-19-03:16 |
+| hash         |   26 | 2021-09-26-08:03 |
+| kala         |   26 | 2021-11-02-23:11 |
+| logger       |   26 | 2021-10-11-20:24 |
+| math         |   26 | 2021-09-26-08:03 |
+| net          |   26 | 2021-11-02-23:09 |
+| obj          |   46 | 2021-11-02-22:37 |
+| organ        |   42 | 2021-10-19-03:16 |
+| readme.org   | 2.8K | 2021-11-19-05:14 |
+| rustfmt.toml |  105 | 2021-10-31-03:48 |
+| src          |   12 | 2021-11-02-23:31 |
+| tests        |   28 | 2021-11-02-23:00 |
+| ui           |   36 | 2021-10-29-04:03 |
+| util         |   26 | 2021-10-19-03:07 |
 
 ** Usage
 :PROPERTIES:
@@ -1064,8 +1120,20 @@ A Rust HTTP Client library.
 |---------+---------------------------------|
 | name    | [[https://rwest.io/m#tenex][tenex]]                           |
 | version | alpha-0.1                       |
-| vc      | [[https://hg.rwest.io/tenex/rev/1b94e8c0276b][48+:1b94e8c0276b]], [[https://github.com/richardwesthaver/tenex][github]]        |
-| updated | 26 hours ago                    |
-| lines   | 6935 = λ:23290 #:155 _:2136     |
+| vc      | [[https://hg.rwest.io/tenex/rev/c1ee0399d690][52:c1ee0399d690]], [[https://github.com/richardwesthaver/tenex][github]]         |
+| updated | 4 minutes ago                   |
+| lines   | 7004 = λ:23293 #:155 _:2136     |
 | langs   | (Markdown Org Python Rust Toml) |
 |---------+---------------------------------|
+
+#+CALL:meta-files()
+#+RESULTS:
+| file         | size |          updated |
+|--------------+------+------------------|
+| aws          |   26 | 2021-11-08-21:37 |
+| Cargo.lock   |  67K | 2021-11-17-19:05 |
+| Cargo.toml   | 1.3K | 2021-11-08-21:37 |
+| google       |   98 | 2021-11-08-21:37 |
+| readme.org   | 1.6K | 2021-11-19-05:14 |
+| rustfmt.toml |   53 | 2021-11-08-21:37 |
+| src          |   74 | 2021-11-08-21:37 |
