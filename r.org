@@ -1,0 +1,4 @@
+#+TITLE: rambles
+#+SETUPFILE: ox.setup
+* test 1,2
+is this thing on

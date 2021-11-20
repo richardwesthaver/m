@@ -1,3 +1,7 @@
 ^o/
 glob:.#*
 glob:*.*~
+makefile
+index.org
+cv.org
+ox.setup

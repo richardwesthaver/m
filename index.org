@@ -55,30 +55,9 @@
 |---+-------+-----------------------------+------+-----------------+-------+--------------------------+---|
 
 - Stats
-  - Host
-    - Platform
-      #+CALL: rust-target-triple()
-      #+RESULTS:
-      : x86_64-unknown-linux-gnu
-    - Emacs Version
-      #+CALL: get-emacs-version()
-      #+RESULTS:
-      : GNU Emacs 29.0.50 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.24.30, cairo version 1.17.4)
-      :  of 2021-10-29
-      : Org v9.5
+  - Platform
+    #+CALL: rust-target-triple()
+  - Emacs Version
+    #+CALL: get-emacs-version()
   - Weather Forecast
     #+CALL: shc-weather() :exports results :eval yes
-    #+RESULTS:
-    #+begin_example
-    22:00:00-23:00:00 = 54°F :: "Cloudy"
-    23:00:00-00:00:00 = 53°F :: "Cloudy"
-    00:00:00-01:00:00 = 52°F :: "Cloudy"
-    01:00:00-02:00:00 = 52°F :: "Cloudy"
-    02:00:00-03:00:00 = 51°F :: "Cloudy"
-    03:00:00-04:00:00 = 50°F :: "Cloudy"
-    04:00:00-05:00:00 = 50°F :: "Mostly Cloudy"
-    05:00:00-06:00:00 = 50°F :: "Mostly Cloudy"
-    06:00:00-07:00:00 = 51°F :: "Mostly Sunny"
-    07:00:00-08:00:00 = 52°F :: "Mostly Sunny"
-    #+end_example
-
