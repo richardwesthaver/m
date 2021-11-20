@@ -1,4 +1,4 @@
-# Created 2021-11-19 Fri 04:51
+# Created 2021-11-19 Fri 23:59
 #+title: meta
 This project contains documents I've written in plain-text used to
 generate my [[https://rwest.io][website]] and readme files for code hosted at [[https://hg.rwest.io/][hg.rwest.io]].
@@ -8,33 +8,29 @@ generate my [[https://rwest.io][website]] and readme files for code hosted at [[
 |---------+-----------------------------------------------------------------------------------------------------------------------|
 | name    | [[https://rwest.io/m#meta][meta]]                                                                                     |
 | version | alpha-0.1                                                                                                             |
-| vc      | [[https://hg.rwest.io/meta/rev/09a7c7a6ad64][73+:09a7c7a6ad64]], [[https://github.com/richardwesthaver/meta][github]] |
-| updated | 26 hours ago                                                                                                          |
-| lines   | 6946 = λ:6440 #:29 _:477                                                                                              |
+| vc      | [[https://hg.rwest.io/meta/rev/28da45474da5][77+:28da45474da5]], [[https://github.com/richardwesthaver/meta][github]] |
+| updated | 18 hours ago                                                                                                          |
+| lines   | 7076 = λ:6562 #:29 _:485                                                                                              |
 | langs   | (Org)                                                                                                                 |
 |---------+-----------------------------------------------------------------------------------------------------------------------|
-
 
 #+results: meta-files
 | file       | size |          updated |
 |------------+------+------------------|
 | cv.org     | 3.8K | 2021-10-27-20:37 |
 | index.org  | 4.6K | 2021-11-17-23:56 |
-| m.org      | 36K  | 2021-11-19-04:51 |
+| m.org      | 39K  | 2021-11-19-23:57 |
 | n.org      | 229K | 2021-11-14-17:37 |
-| o          | 90   | 2021-11-19-04:51 |
 | ox.setup   | 580  | 2021-11-14-23:06 |
-| readme.org | 11K  | 2021-11-19-04:48 |
-
+| readme.org | 11K  | 2021-11-19-23:40 |
 #+results: 
-: parent: 76:e5937ca23afd tip
-:  meta-commit update
+: parent: 77:28da45474da5 tip
+:  readme added
 : branch: default
-: commit: 1 modified
+: commit: 2 modified
 : update: (current)
-: phases: 1 draft
 : M m.org
-
+: M readme.org
 * scripts
 ** index
 ** deploy
@@ -92,7 +88,7 @@ directories.
 #+begin_src emacs-lisp
   (require 'ox)
   (require 'org-refile)
-  (require 'htmlize "~/shed/src/contrib/el/htmlize/htmlize.el")
+  (require 'htmlize "~/shed/data/emacs/lisp/contrib/htmlize/htmlize.el")
   (require 'org-id)
   (setq org-html-validation-link nil
         ;;        org-html-htmlize-output-type 'css
@@ -176,7 +172,7 @@ in all formats.
 #+end_src
 
 
-Next we execute a helper function from my [[#cfg-emacs][emacs config]]. This function
+Next we execute a helper function from my [[#cfg:emacs][emacs config]]. This function
 scans the current file (=m.org=) and generates individual =readme.org=
 files for our projects.
 
