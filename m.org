@@ -9,7 +9,7 @@ This project contains documents I've written in plain-text used to
 generate my [[https://rwest.io][website]] and readme files for code hosted at [[src:][hg.rwest.io]].
 
 #+name: meta-make-tbl
-#+header: :var name=(org-sbx org-current-heading-title) :var age=hg-log-age()
+#+header: :var name=(org-sbx org-current-heading-title) :var age=hg-log-age(path=(concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title)))
 #+header: :var rev=(org-sbx hg-rev (path (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title))))
 #+header: :var num=(org-sbx hg-id-num (path (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title))))
 #+header: :var lc=(org-sbx wc-dir-lines (dir (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title))))
@@ -17,32 +17,32 @@ generate my [[https://rwest.io][website]] and readme files for code hosted at [[
 #+header: :var cc2=(org-sbx tokei-dir-langs (dir (concat "/home/ellis/shed/src/" (org-sbx org-current-heading-title))))
 #+header: :var ver="alpha-0.1"
 #+begin_src emacs-lisp :exports results :results table :eval no-export
-    (let* ((nf (format "[[https://rwest.io/m#%s][%s]]" name name))
-           (rf (format "[[https://hg.rwest.io/%s/rev/%s][%s:%s]]" name rev num rev))
-           (gf (format "[[https://github.com/richardwesthaver/%s][github]]" name))
-           (vf (format "%s, %s" rf gf))
-           (lsum (org-sbe sum-str-nums ('x 'cc1)))
-           (l (split-string cc1))
-           (lang (split-string cc2))
-           (cf (format "%s = λ:%s #:%s _:%s" lsum (pop l) (pop l) (pop l))))
-      `(("info", "")
-        hline
-        ("name" ,nf)
-        ("version" ,ver)
-        ("vc" ,vf)
-        ("updated" ,age)
-        ("lines" ,cf)
-        ("langs" ,lang)
-        hline))
+  (let* ((nf (format "[[https://rwest.io/m#%s][%s]]" name name))
+         (rf (format "[[https://hg.rwest.io/%s/rev/%s][%s:%s]]" name rev num rev))
+         (gf (format "[[https://github.com/richardwesthaver/%s][github]]" name))
+         (vf (format "%s, %s" rf gf))
+         (lsum (org-sbe sum-str-nums ('x 'cc1)))
+         (l (split-string cc1))
+         (lang (split-string cc2))
+         (cf (format "%s = λ:%s #:%s _:%s" lsum (pop l) (pop l) (pop l))))
+    `(("info", "")
+      hline
+      ("name" ,nf)
+      ("version" ,ver)
+      ("vc" ,vf)
+      ("updated" ,age)
+      ("lines" ,cf)
+      ("langs" ,lang)
+      hline))
 #+end_src
 #+RESULTS: meta-make-tbl
 | info    |                          |
 |---------+--------------------------|
 | name    | [[https://rwest.io/m#meta][meta]]                     |
 | version | alpha-0.1                |
-| vc      | [[https://hg.rwest.io/meta/rev/28da45474da5][77+:28da45474da5]], [[https://github.com/richardwesthaver/meta][github]] |
-| updated | 18 hours ago             |
-| lines   | 7076 = λ:6562 #:29 _:485 |
+| vc      | [[https://hg.rwest.io/meta/rev/267dd04e90d7][78+:267dd04e90d7]], [[https://github.com/richardwesthaver/meta][github]] |
+| updated | 3 hours ago              |
+| lines   | 7069 = λ:6561 #:29 _:479 |
 | langs   | (Org)                    |
 |---------+--------------------------|
 
@@ -68,8 +68,8 @@ src
 | readme.org | 11K  | 2021-11-19-23:40 |
 #+CALL:shc-hg-summary() :eval yes
 #+RESULTS:
-: parent: 77:28da45474da5 tip
-:  readme added
+: parent: 78:267dd04e90d7 tip
+:  meta-files
 : branch: default
 : commit: 2 modified
 : update: (current)
@@ -77,15 +77,190 @@ src
 : M readme.org
 ** scripts
 :PROPERTIES:
-:CUSTOM_ID: meta-scripts
+:CUSTOM_ID: meta:scripts
 :END:
-*** index
+*** setup                                                        :noexport:
 :PROPERTIES:
-:CUSTOM_ID: meta-index
+:CUSTOM_ID: meta:setup
 :END:
+#+begin_src org :tangle ./ox.setup
+#-*- mode: org -*-
+#+OPTIONS: ^:nil toc:t num:nil
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/page.css" />
+#+HTML_HEAD_EXTRA: <script type="text/javascript" language="JavaScript" src="js/org-info.js"></script>
+#+HTML_HEAD_EXTRA: <script type="text/javascript" language="JavaScript">
+#+HTML_HEAD_EXTRA:  org_html_manager.set("VIEW", "overview");
+#+HTML_HEAD_EXTRA:  org_html_manager.set("LINK_HOME", "https://rwest.io");
+#+HTML_HEAD_EXTRA:  org_html_manager.set("LOCAL_TOC", "1");
+#+HTML_HEAD_EXTRA:  org_html_manager.setup ();
+#+HTML_HEAD_EXTRA: </script>
+#+end_src
+*** index                                                        :noexport:
+:PROPERTIES:
+:CUSTOM_ID: meta:index
+:END:
+In this script we build the =index.org= file with the help of
+the [[info:org-element][org-element]] api.
+#+name: index
+#+begin_src org :tangle ./index.org :eval no-export
+  ,#+OPTIONS: ^:nil toc:nil num:nil
+  ,#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/page.css" />
+  |---------+-------------+------------------------------------------|
+  | path    | ?           |                                          |
+  |---------+-------------+------------------------------------------|
+  | /       | <           |                                          |
+  | [[file:m.org][m]]       | metas       | [[[file:m.org::#meta][meta]] [[file:m.org::#babel][babel]] [[file:m.org::#cfg][cfg]] [[file:m.org::#shed][shed]] [[file:m.org::#rlib][rlib]] [[file:m.org::#tenex][tenex]]]         |
+  | [[file:n.org][n]]       | notes       | [[[file:n.org::#art][art]] [[file:n.org::#computers][computers]] [[file:n.org::#economics][econ]] [[file:n.org::#language][lang]] [[file:n.org::#math][math]] [[file:n.org::#philosophy][phil]] [[file:n.org::#misc][misc]]] |
+  | r (TBD) | rambles     |                                          |
+  |         |             |                                          |
+  | [[rw:a][a]]       | attachments | [[[cdn:audio][audio]] [[cdn:doc][doc]] [[cdn:img][img]] [[cdn:video][video]]]                    |
+  | [[rw:x][x]]       | exports     | [[[rw:x/html][html]] [[rw:x/md][md]] [[rw:x/org][org]] [[rw:x/pdf][pdf]] [[rw:x/txt][txt]]]                    |
+  | [[rw:y][y]]       | dist        | [[[rw:y/bin][bin]] [[rw:y/hg][hg]] [[rw:y/iso][iso]] [[rw:y/key.gpg][key.gpg]]]                     |
+  | [[rw:z][z]]       | data        |                                          |
+  |---------+-------------+------------------------------------------|
+  ,* FAQ
+  :PROPERTIES:
+  :CUSTOM_ID: faq
+  :END:
+
+  - /What is this?/
+    - Richard's static website.
+  - /Who's that?/
+    - An American hacker/coder/musician finding a way in a digital
+      world.
+  - /What do you do?/
+    - I flip bits, build software tools, analyze networks, and study
+      sociotechnical systems.
+  - /What's with the favicon?/
+    - That's J.R "Bob" Dobbs, [[http://www.subgenius.com][cult]] icon and OG Slacker.
+  - /Where's the code?/
+    - Code is hosted at [[https://hg.rwest.io][hg.rwest.io]] in Mercurial repositories and
+      mirrored on [[https://github.com/richardwesthaver][github]] for Git die-hards.
+  - /How do I get in contact?/
+    - You can reach me via [[mailto:ellis@rwest.io][email]] and encrypt with my [[rw:y/key.gpg][public key]] if you
+      prefer.
+
+  ,* Info
+  :PROPERTIES:
+  :CUSTOM_ID: info
+  :END:
+
+  ,#+name: meta-info
+  |---+-------+-----------------------------+------+-----------------+-------+--------------------------+---|
+  |   | meta  | info                        |      |                 | stats |                          |   |
+  |---+-------+-----------------------------+------+-----------------+-------+--------------------------+---|
+  | / |       | <                           |      |                 | <     |                          |   |
+  | ! | name  | info                        | type | version         | stats | count                    |   |
+  | # | meta  | project information         | org  | alpha-0.2:%U:%R |       | [l:# f:#, v:#, t:%, d:%] |   |
+  | # | shed  | self-hosted dev environment | rust |                 |       |                          |   |
+  | # | rlib  | Richard's Rust Library      | rust |                 |       |                          |   |
+  | # | tenex | HTTP API clients            | rust |                 |       |                          |   |
+  | # | cfg   | dotfiles                    | etc  |                 |       |                          |   |
+  | # | babel | meta-programming library    | etc  |                 |       |                          |   |
+  |---+-------+-----------------------------+------+-----------------+-------+--------------------------+---|
+
+  - Stats
+    - Platform
+      ,#+CALL: rust-target-triple()
+    - Emacs Version
+      ,#+CALL: get-emacs-version()
+    - Weather Forecast
+      ,#+CALL: shc-weather() :exports results :eval yes
+#+end_src
+*** cv                                                           :noexport:
+:PROPERTIES:
+:CUSTOM_ID: meta:cv
+:END:
+#+begin_src org :tangle cv.org :eval no-export
+  ,#+title: Richard Westhaver
+  ,#+email: ellis@rwest.io
+  ,#+STARTUP: latexpreview
+  ,#+options: toc:nil author:nil timestamp:nil email:nil title:nil num:nil ^:nil
+  ,#+LATEX_HEADER: \usepackage[a4paper,text={6.25in,9in}, truedimen]{geometry}
+  ,#+LATEX_HEADER: \usepackage{nopageno}
+  ,#+LATEX_HEADER: \renewcommand{\large}{\normalsize}
+
+  \begin{huge}\begin{center}\textbf
+  {Richard Westhaver}
+  \end{center}\end{huge}
+
+  ,#+begin_quote
+  Highly motivated software developer and product manager seeking a new
+  role in Tech. I thrive in fast-paced environments and have a passion
+  for innovation in complex systems.
+  ,#+end_quote
+
+  - Location :: : New London, CT
+  - Website :: : [[https://rwest.io][rwest.io]]
+  - Email :: : [[mailto:ellis@rwest.io][ellis@rwest.io]]
+  ,#+begin_center
+  - Education :: : Bachelor of Art Degrees in Philosophy & Economics \\
+        /University of Connecticut – Class of 2016/
+  ,#+end_center
+  - Travel :: : Available to Travel
+  - Schedule :: : No restrictions
+  - Health :: : Excellent
+
+  ,* *Professional Experience*
+  :PROPERTIES:
+  :ID:       cd8a928a-c278-4a9d-9513-a44309ffb378
+  :CUSTOM_ID: professional-experience
+  :END:
+  ,** *Consultant* @ [[https://www.seatronx.com/][Seatronx]] - [2021]
+  :PROPERTIES:
+  :ID:       f08e4cc7-e540-465c-87ac-421387427ba1
+  :CUSTOM_ID: consultant-https-www-seatronx-com-seatronx-2021
+  :END:
+  - Contracted to assist with analysis of hardware and software for new medical scan device launch
+  ,** *Product Owner* @ [[https://www.communitybrands.com/][Community Brands]] - [2017 - 2020] 
+  :PROPERTIES:
+  :ID:       29479f3b-4e52-421f-bfb0-4308b18db4f0
+  :CUSTOM_ID: product-owner-https-www-communitybrands-com-community-brands-2017-2020
+  :END:
+  - Ensured successful delivery of Learning Management System for top clients, resulting in a reinforced relationship and negotiation of a new multi-year platform development project
+  - SAFe certified Product Owner, assisting in development of the product roadmap, internal process improvement, and management of a group of 20+ software engineers
+  - Developed Python programs for automation of various tasks including release notes, QA testing, and reporting
+  - Facilitated Scrum meetings, analytics, feature demos, and client discovery calls
+  - Lead R&D discussions with core developers on topics such as Machine Learning, Progressive Web Apps, and performance optimization at scale
+  ,** *Launch Operator* @ [[http://dodsonboatyard.com/][Dodson's Boatyard]] - [2011 - 2016]
+  :PROPERTIES:
+  :ID:       b7d6f248-846f-4178-8f49-10481e0e38a9
+  :CUSTOM_ID: launch-operator-http-dodsonboatyard-com-dodson-s-boatyard-2011-2016
+  :END:
+  - Coast Guard licensed Merchant Marine Master responsible for the operation of passenger vessels in Eastern Point Bay and Stonington Harbor
+  ,** *Finance Intern* @ [[http://www.gdeb.com/][Electric Boat]] - [2014]
+  :PROPERTIES:
+  :ID:       d83d8fa5-bed3-4a2a-b716-b3d178f8848c
+  :CUSTOM_ID: finance-intern-http-www-gdeb-com-electric-boat-2014
+  :END:
+  - Responsible for reporting and management of large internal datasets for the Ohio Replacement Program
+  ,* *Projects*
+  :PROPERTIES:
+  :ID:       857392f6-6560-428e-b20d-50b809775cdd
+  :CUSTOM_ID: projects
+  :END:
+  ,** [[https://www.virtuosofestival.com][Virtuoso Festivals]]
+  :PROPERTIES:
+  :ID:       b92dd784-1350-4809-9d8d-6442b7f6479b
+  :CUSTOM_ID: https-www-virtuosofestival-com-virtuoso-festivals
+  :END:
+  A live event streaming startup with group/private viewing, chat, social media integrations, and more on an in-house streaming platform.
+  - Multiple music festivals hosted this year
+  - Backend developer and AWS guru since inception in early 2020
+  ,** Open-source software
+  :PROPERTIES:
+  :ID:       49cc3b0e-fd38-44c2-a2e2-ead92ad5d577
+  :CUSTOM_ID: open-source-software
+  :END:
+  I love building things and share most of the code I write. 
+  - [[https://rwest.io][website]]
+     - [[https://rwest.io/m][docs]]
+     - [[https://rwest.io/n][notes]]
+  - [[https://hg.rwest.io][code]]
+#+end_src
 *** deploy
 :PROPERTIES:
-:CUSTOM_ID: meta-deploy
+:CUSTOM_ID: meta:deploy
 :END:
 
 This is the script for deploying metas. It usually takes a few minutes
@@ -117,7 +292,7 @@ of a named code block.
   (org-sbx meta-deploy)
   (org-sbx meta-readme-gen)
   (org-sbx meta-clean)
-;  (org-sbx meta-commit)
+  ;(org-sbx meta-commit)
   (org-sbx meta-mirror)
 #+end_src
 
@@ -302,9 +477,9 @@ back to the [[https://hg-git.github.io/][hg-git]] 'pure' solution soon.
   done
 #+end_src
 
-**** docs                                                       :noexport:
+*** docs                                                         :noexport:
 :PROPERTIES:
-:CUSTOM_ID: meta-prod-docs
+:CUSTOM_ID: meta:prod-docs
 :END:
 Generate API docs for all Rust projects
 #+name: shed-gen-rust-docs
@@ -325,9 +500,9 @@ Generate API docs for all Rust projects
 #+begin_src elisp :results silent
   (copy-file "o/d" "/sshx:hyde:/mnt/w/d" 1)
 #+end_src
-**** makefile                                                   :noexport:
+*** makefile                                                     :noexport:
 :PROPERTIES:
-:CUSTOM_ID: meta-prod-makefile
+:CUSTOM_ID: meta:prod-makefile
 :header-args: :results silent :eval no-export
 :END:
 #+begin_src makefile :tangle makefile :shebang "#!/usr/bin/make -f -j8"
@@ -357,7 +532,7 @@ Generate API docs for all Rust projects
 
 ** syntax
 :PROPERTIES:
-:CUSTOM_ID: meta-syntax
+:CUSTOM_ID: meta:syntax
 :END:
 The source files assume some familiarity with org syntax. Org syntax
 is covered [[https://orgmode.org/worg/dev/org-syntax.html][online]] in detail and high-level info about document
@@ -402,7 +577,6 @@ special *elements*:
 
 * babel                                                            :org:prog:
 :PROPERTIES:
-:ID:       1b363810-26ea-4dae-b689-6e050756bfae
 :CUSTOM_ID: babel
 :CATEGORY: lib
 :EXPORT_FILE_NAME: ~/shed/src/babel/readme
@@ -425,8 +599,8 @@ using code blocks in various contexts. More on that later.
 | name    | [[https://rwest.io/m#babel][babel]]                                             |
 | version | alpha-0.1                                         |
 | vc      | [[https://hg.rwest.io/babel/rev/757c6dccfd53][79+:757c6dccfd53]], [[https://github.com/richardwesthaver/babel][github]]                          |
-| updated | 18 hours ago                                      |
-| lines   | 13786 = λ:4703 #:798 _:828                        |
+| updated | 21 hours ago                                      |
+| lines   | 7069 = λ:4712 #:798 _:829                         |
 | langs   | (Elisp Haskell Makefile Org PowerShell Python Sh) |
 |---------+---------------------------------------------------|
 
@@ -436,15 +610,15 @@ using code blocks in various contexts. More on that later.
 | file       | size |          updated |
 |------------+------+------------------|
 | babel.el   | 8.0K | 2021-11-17-03:11 |
-| lob.org    | 20K  | 2021-11-19-01:28 |
+| lob.org    | 20K  | 2021-11-20-02:35 |
 | makefile   | 186  | 2021-10-27-02:21 |
 | o          | 54   | 2021-10-27-02:28 |
-| readme.org | 4.3K | 2021-11-19-05:14 |
+| readme.org | 4.6K | 2021-11-20-02:55 |
 | sc         | 730  | 2021-11-19-05:09 |
 
 ** Literate Programming
 :PROPERTIES:
-:CUSTOM_ID: babel-lp
+:CUSTOM_ID: babel:lp
 :END:
 Literate Programming (LP) was first introduced by Donald Knuth in 1984 via
 his documentation and programming system =WEB=. The approach involves
@@ -464,7 +638,7 @@ Programming today.
 
 *** Weaving and Tangling
 :PROPERTIES:
-:CUSTOM_ID: lp-weave-tangle
+:CUSTOM_ID: babel:lp:weave-tangle
 :END:
 
 [[https://rwest.io/a/img/literate_c.jpg]]
@@ -497,7 +671,7 @@ machine-readable formats of source blocks.
 
 ** Dependencies
 :PROPERTIES:
-:CUSTOM_ID: babel-deps
+:CUSTOM_ID: babel:deps
 :END:
 - *Emacs 28* \\
   The editor integration doesn't depend on any external packages
@@ -524,8 +698,8 @@ use often.
 | name    | [[https://rwest.io/m#cfg][cfg]]                                   |
 | version | alpha-0.1                             |
 | vc      | [[https://hg.rwest.io/cfg/rev/ae5302ec1e29][45+:ae5302ec1e29]], [[https://github.com/richardwesthaver/cfg][github]]              |
-| updated | 18 hours ago                          |
-| lines   | 13786 = λ:1974 #:445 _:259            |
+| updated | 21 hours ago                          |
+| lines   | 7069 = λ:1985 #:445 _:260             |
 | langs   | (CHeader Elisp Lua Makefile Org Yaml) |
 |---------+---------------------------------------|
 
@@ -546,7 +720,7 @@ use often.
 |------------+------+------------------|
 | emacs      |   64 | 2021-11-11-18:36 |
 | mail       |   30 | 2021-11-08-16:55 |
-| readme.org | 4.7K | 2021-11-19-05:14 |
+| readme.org | 5.3K | 2021-11-20-02:55 |
 | shell      |   86 | 2021-10-23-19:12 |
 | term       |   28 | 2021-11-08-16:45 |
 | vc         |    8 | 2021-10-23-00:10 |
@@ -582,7 +756,7 @@ This section covers my Emacs packages, configurations, and other code
 written in =elisp=.
 *** default.el
 :PROPERTIES:
-:ID:       673fb426-f80c-4b51-b2a7-27e330051da5
+:CUSTOM_ID: cfg:emacs:default
 :END:
 =default.el= provides a package called =default= which is always the
 first package loaded in my init file. Why? because it doesn't require
@@ -594,12 +768,11 @@ that supports vanilla Emacs.
 
 *** hyde.el
 :PROPERTIES:
-:ID:       0366a755-e1c1-4002-a39e-cc9729bd8051
+:CUSTOM_ID: cfg:emacs:hyde
 :END:
 *** config.org
 :PROPERTIES:
-:ID:       6782d0a9-1915-4b3e-85fb-3dd5e7ec917e
-:CUSTOM_ID: config-org
+:CUSTOM_ID: cfg:emacs:literate
 :END:
   #+attr_html: :width 500
   #+attr_latex: :width 500
@@ -677,30 +850,34 @@ that supports vanilla Emacs.
 SelfHostED
 #+CALL: meta-make-tbl()
 #+RESULTS:
-| info    |                                                          |
-|---------+----------------------------------------------------------|
-| name    | [[https://rwest.io/m#shed][shed]]                                                     |
-| version | alpha-0.1                                                |
-| vc      | [[https://hg.rwest.io/shed/rev/d1517402826d][67+:d1517402826d]], [[https://github.com/richardwesthaver/shed][github]]                                 |
-| updated | 18 hours ago                                             |
-| lines   | 13786 = λ:105202 #:5426 _:9698                           |
-| langs   | (C CHeader Cpp D Elisp LLVM Makefile Org Rust Text Toml) |
-|---------+----------------------------------------------------------|
+| info    |                                                                          |
+|---------+--------------------------------------------------------------------------|
+| name    | [[https://rwest.io/m#shed][shed]]                                                                     |
+| version | alpha-0.1                                                                |
+| vc      | [[https://hg.rwest.io/shed/rev/d1517402826d][67+:d1517402826d]], [[https://github.com/richardwesthaver/shed][github]]                                                 |
+| updated | 21 hours ago                                                             |
+| lines   | 7069 = λ:282678 #:15540 _:25172                                          |
+| langs   | (Bash C CHeader Cpp D Elisp LLVM Makefile Org PowerShell Rust Text Toml) |
+|---------+--------------------------------------------------------------------------|
 
 #+CALL: meta-files()
 
 #+RESULTS:
 | file         | size |          updated |
 |--------------+------+------------------|
-| build.rs     |  809 | 2021-11-05-16:18 |
+| build.rs     |  796 | 2021-11-20-02:24 |
 | Cargo.lock   | 107K | 2021-11-17-20:15 |
 | Cargo.toml   | 1.4K | 2021-11-11-00:11 |
 | lisp         |   14 | 2021-11-15-00:35 |
-| makefile     |  413 | 2021-11-17-06:13 |
-| readme.org   | 7.9K | 2021-11-19-23:00 |
+| makefile     |  409 | 2021-11-20-02:06 |
+| o            |   44 | 2021-11-20-02:12 |
+| readme.org   | 9.2K | 2021-11-20-02:55 |
 | rustfmt.toml |   52 | 2021-10-19-02:45 |
-| src          |  176 | 2021-11-19-23:07 |
-| target       |   66 | 2021-11-19-23:05 |
+| _shc         | 6.8K | 2021-11-20-02:26 |
+| shc.bash     |  11K | 2021-11-20-02:26 |
+| _shc.ps1     |  13K | 2021-11-20-02:26 |
+| src          |  176 | 2021-11-20-02:26 |
+| target       |   80 | 2021-11-20-02:06 |
 
 ** Roadmap
 :PROPERTIES:
@@ -1044,9 +1221,9 @@ own though.
 |---------+---------------------------|
 | name    | [[https://rwest.io/m#rlib][rlib]]                      |
 | version | alpha-0.1                 |
-| vc      | [[https://hg.rwest.io/rlib/rev/ea34d1911b80][99:ea34d1911b80]], [[https://github.com/richardwesthaver/rlib][github]]   |
-| updated | 4 minutes ago             |
-| lines   | 7004 = λ:6182 #:253 _:952 |
+| vc      | [[https://hg.rwest.io/rlib/rev/597b9e0018fd][100+:597b9e0018fd]], [[https://github.com/richardwesthaver/rlib][github]] |
+| updated | 2 hours ago               |
+| lines   | 7069 = λ:6196 #:253 _:953 |
 | langs   | (Org RON Rust Text Toml)  |
 |---------+---------------------------|
 
@@ -1070,7 +1247,7 @@ own though.
 | net          |   26 | 2021-11-02-23:09 |
 | obj          |   46 | 2021-11-02-22:37 |
 | organ        |   42 | 2021-10-19-03:16 |
-| readme.org   | 2.8K | 2021-11-19-05:14 |
+| readme.org   | 3.8K | 2021-11-20-02:55 |
 | rustfmt.toml |  105 | 2021-10-31-03:48 |
 | src          |   12 | 2021-11-02-23:31 |
 | tests        |   28 | 2021-11-02-23:00 |
@@ -1120,9 +1297,9 @@ A Rust HTTP Client library.
 |---------+---------------------------------|
 | name    | [[https://rwest.io/m#tenex][tenex]]                           |
 | version | alpha-0.1                       |
-| vc      | [[https://hg.rwest.io/tenex/rev/c1ee0399d690][52:c1ee0399d690]], [[https://github.com/richardwesthaver/tenex][github]]         |
-| updated | 4 minutes ago                   |
-| lines   | 7004 = λ:23293 #:155 _:2136     |
+| vc      | [[https://hg.rwest.io/tenex/rev/c1ee0399d690][52+:c1ee0399d690]], [[https://github.com/richardwesthaver/tenex][github]]        |
+| updated | 21 hours ago                    |
+| lines   | 7069 = λ:23309 #:157 _:2138     |
 | langs   | (Markdown Org Python Rust Toml) |
 |---------+---------------------------------|
 
@@ -1134,6 +1311,6 @@ A Rust HTTP Client library.
 | Cargo.lock   |  67K | 2021-11-17-19:05 |
 | Cargo.toml   | 1.3K | 2021-11-08-21:37 |
 | google       |   98 | 2021-11-08-21:37 |
-| readme.org   | 1.6K | 2021-11-19-05:14 |
+| readme.org   | 2.0K | 2021-11-19-23:59 |
 | rustfmt.toml |   53 | 2021-11-08-21:37 |
 | src          |   74 | 2021-11-08-21:37 |

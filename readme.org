@@ -1,4 +1,4 @@
-# Created 2021-11-19 Fri 23:59
+# Created 2021-11-20 Sat 03:05
 #+title: meta
 This project contains documents I've written in plain-text used to
 generate my [[https://rwest.io][website]] and readme files for code hosted at [[https://hg.rwest.io/][hg.rwest.io]].
@@ -8,9 +8,9 @@ generate my [[https://rwest.io][website]] and readme files for code hosted at [[
 |---------+-----------------------------------------------------------------------------------------------------------------------|
 | name    | [[https://rwest.io/m#meta][meta]]                                                                                     |
 | version | alpha-0.1                                                                                                             |
-| vc      | [[https://hg.rwest.io/meta/rev/28da45474da5][77+:28da45474da5]], [[https://github.com/richardwesthaver/meta][github]] |
-| updated | 18 hours ago                                                                                                          |
-| lines   | 7076 = λ:6562 #:29 _:485                                                                                              |
+| vc      | [[https://hg.rwest.io/meta/rev/267dd04e90d7][78+:267dd04e90d7]], [[https://github.com/richardwesthaver/meta][github]] |
+| updated | 3 hours ago                                                                                                           |
+| lines   | 7069 = λ:6561 #:29 _:479                                                                                              |
 | langs   | (Org)                                                                                                                 |
 |---------+-----------------------------------------------------------------------------------------------------------------------|
 
@@ -24,8 +24,8 @@ generate my [[https://rwest.io][website]] and readme files for code hosted at [[
 | ox.setup   | 580  | 2021-11-14-23:06 |
 | readme.org | 11K  | 2021-11-19-23:40 |
 #+results: 
-: parent: 77:28da45474da5 tip
-:  readme added
+: parent: 78:267dd04e90d7 tip
+:  meta-files
 : branch: default
 : commit: 2 modified
 : update: (current)
@@ -52,14 +52,14 @@ of a named code block.
 
 #+name: meta-deploy-main
 #+begin_src emacs-lisp
-    (org-sbx meta-tmp)
-    (org-sbx meta-pub)
-    (org-sbx meta-pack)
-    (org-sbx meta-deploy)
-    (org-sbx meta-readme-gen)
-    (org-sbx meta-clean)
-  ;  (org-sbx meta-commit)
-    (org-sbx meta-mirror)
+  (org-sbx meta-tmp)
+  (org-sbx meta-pub)
+  (org-sbx meta-pack)
+  (org-sbx meta-deploy)
+  (org-sbx meta-readme-gen)
+  (org-sbx meta-clean)
+  ;(org-sbx meta-commit)
+  (org-sbx meta-mirror)
 #+end_src
 
 First we generate the output directory and copy source files there.
