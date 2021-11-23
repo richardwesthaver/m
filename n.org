@@ -4,14 +4,15 @@
 #+STARTUP: overview
 * Art                                                                   :art:
 :PROPERTIES:
-:ID: a556be07-555e-4cc1-83d1-eaac2b7c4871
 :CUSTOM_ID: art
 :END:
+- by /artform/, we mean the decided /formal/ organization of a work or set
+  of works. An /Album/ is a form of Music, for example. A /Book/ is a
+  form of writing.
 - Art, in my mind, is one of the crowning achievements of humanity. Like
   olives or wine, a taste for it is acquired with time, and although
   /works/ of Art are often consumed by our senses, they are compelling
   for reasons which are much harder to define.
-
 - It has been a fruitless effort, attempting to break down the
   underlying /algorithm/ of which Art is composed. Some of the oldest
   western definitions can be found in the works of Plato, specifically
@@ -20,228 +21,131 @@
   naturally developed, and today there is a vast cluster of
   'definitions', which tends to complicate everyone's understanding of
   what it is that they are talking about, more than anything else.
-
-** Artists
-:PROPERTIES:
-:ID:       932db5b8-54de-41c8-906d-0ed30ffb6749
-:CUSTOM_ID: artists
-:END:
-*** Francis Bacon                                                   :paint:
-:PROPERTIES:
-:ID:       80adf867-5ec6-4a0a-99e3-d98704f89229
-:CUSTOM_ID: francis-bacon
-:END:
-+ [[https://en.wikipedia.org/wiki/Francis_Bacon_(artist)][wiki]] ⇐
-+ ^ ← [[https://artsandculture.google.com/entity/three-studies-for-figures-at-the-base-of-a-crucifixion/m0fn6vr?hl=en][three-studies]], [[https://en.wikipedia.org/wiki/The_Black_Triptychs][black-triptychs]]
-+ life ← [1909-10-28]--[1992-04-28]
-
-- his studio
-  - [[cdn:img/Dublin_Francis_Bacon_Gallery_The_Hugh_Lane749.jpg][https://cdn.rwest.io/img/Dublin_Francis_Bacon_Gallery_The_Hugh_Lane749.jpg]]  
-- significant works 
-   - Three Studies for Figures at the Base of a Crucifixion [^:three-studies]
-   - The Black Triptychs [^:black-triptychs]
-     - created as an 'exorcism' of his sense of loss after the suicide
-       of his former lover George Dyer who died of suicide via
-       overdose in a Paris hotel.
-*** Brad Mehldau                                                    :piano:
-:PROPERTIES:
-:ID:       2288c500-5896-47e8-a2d5-e404330980d3
-:CUSTOM_ID: brad-mehldau
-:END:
+- [[https://en.wikipedia.org/wiki/Techne][techne]] :: the context-specific process of making works of art
+- Francis Bacon
+  - [[https://en.wikipedia.org/wiki/Francis_Bacon_(artist)][wiki]] ⇐
+  - ^ ← [[https://artsandculture.google.com/entity/three-studies-for-figures-at-the-base-of-a-crucifixion/m0fn6vr?hl=en][three-studies]], [[https://en.wikipedia.org/wiki/The_Black_Triptychs][black-triptychs]]
+  - life ← [1909-10-28]--[1992-04-28]
+  - his studio
+    [[cdn:img/Dublin_Francis_Bacon_Gallery_The_Hugh_Lane749.jpg][https://rwest.io/a/img/Dublin_Francis_Bacon_Gallery_The_Hugh_Lane749.jpg]]  
+  - significant works 
+     - Three Studies for Figures at the Base of a Crucifixion [^:three-studies]
+     - The Black Triptychs [^:black-triptychs]
+       - created as an 'exorcism' of his sense of loss after the suicide
+         of his former lover George Dyer who died of suicide via
+         overdose in a Paris hotel.
 - Brad Mehldau Trio -- Toulouse \\
   [[yt:QCJOdpSZkfY]]
-*** Bill Evans                                                      :piano:
-:PROPERTIES:
-:ID:       ea0a921b-da83-42e8-8145-51f793b7d2da
-:CUSTOM_ID: bill-evans
-:END:
-- Live '64 '75 \\
+- Bill Evans -- Live '64 '75 \\
   [[yt:uco5FNbjqv0]]
-*** Dizzy Gillespie                                               :trumpet:
-:PROPERTIES:
-:ID:       7ad0b5b0-aa65-4289-824c-06465f73f081
-:CUSTOM_ID: dizzy-gillespie
-:END:
 - Dizzy Gillespie Quintet 1966 \\
   [[yt:2uLpjp7xkyI]]
-** Forms
-:PROPERTIES:
-:ID:       26bd57ef-2392-4114-8978-d0f1af926039
-:CUSTOM_ID: forms
-:END:
-- by form, we mean the decided /formal/ organization of a work or set
-  of works. An /Album/ is a form of Music, for example. A /Book/ is a
-  form of writing.
-*** Polyptych
-:PROPERTIES:
-:ID:       c6c81234-e152-4d6d-ad96-e8994077fb59
-:CUSTOM_ID: polyptych
-:END:
-+ [[https://en.wikipedia.org/wiki/Polyptych][wiki]] ⇐
-
-- usually refers to a work of art that is divided into a number of
-  panes that can be folded and shut or be displayed open.
-- first appeared in early Christian art and was popularized from the
-  Middle Ages onwards. The classic triptych consists of three carved
-  wooden panes with a larger center pane.
-- This form has been adapted to other mediums such as pendant jewlery
-  and photography - where the form can be applied loosely to a set of
-  photographs sharing a common theme.
-*** Book
-:PROPERTIES:
-:ID:       9ceb5608-dd89-474b-95a3-f364a55f64f2
-:CUSTOM_ID: book
-:END:
-*** Album
-:PROPERTIES:
-:ID:       14368977-1cd4-465e-8cac-13d2e8dbf74f
-:CUSTOM_ID: album
-:END:
-*** Gallery
-:PROPERTIES:
-:ID:       b44d2857-2c57-4088-9d7a-50cde6f6dfe9
-:CUSTOM_ID: gallery
-:END:
-*** Installation
-:PROPERTIES:
-:ID:       0e2bc97d-e9e6-484d-97c3-97d7f5610a42
-:CUSTOM_ID: installation
-:END:
-** Mediums
-:PROPERTIES:
-:ID:       5b13d2b5-43c1-4e3f-a821-aa5be42e8cc9
-:CUSTOM_ID: mediums
-:END:
-*** 2D
-:PROPERTIES:
-:ID:       01060764-8b73-4dbf-9cce-66e7f47113e4
-:CUSTOM_ID: 2d
-:END:
-**** Oil
-:PROPERTIES:
-:ID:       4bc42f1c-d10e-4634-bb97-d87356df48cd
-:CUSTOM_ID: oil
-:END:
-**** Acrylic
-:PROPERTIES:
-:ID:       60a0034e-076f-4ff2-a8b9-0ceaec19390b
-:CUSTOM_ID: acrylic
-:END:
-**** Watercolors
-:PROPERTIES:
-:ID:       21f319d8-600f-4f50-b995-ffea4aaae72f
-:CUSTOM_ID: watercolors
-:END:
-*** 3D
-:PROPERTIES:
-:ID:       68101d5e-ed4a-4ced-af7f-c6402f79e9c5
-:CUSTOM_ID: 3d
-:END:
-*** Performance
-:PROPERTIES:
-:ID:       b0eaa8ae-fe17-4635-9567-4c68aead58cb
-:CUSTOM_ID: performance
-:END:
-*** Sound
-:PROPERTIES:
-:ID:       4db1e82f-fd50-4c6f-8b84-83b63ad036b9
-:CUSTOM_ID: sound
-:END:
-** Techne
-:PROPERTIES:
-:ID:       132b417a-a722-43bb-a484-a1b9a27eb85b
-:CUSTOM_ID: techne
-:END:
-+ [[https://en.wikipedia.org/wiki/Techne][wiki]] ::
-+ what :: the context-specific process of making works of art
-+ why :: to make much more better artz
-+ how :: practice
-*** Music
-:PROPERTIES:
-:ID:       405d038c-0e51-40d5-b548-fad333500128
-:CUSTOM_ID: music
-:END:
-**** Instrument
-:PROPERTIES:
-:ID:       49087f85-386f-46c5-95ea-d21bc29ae271
-:CUSTOM_ID: instrument
-:END:
-***** Drum kit                                                    :drums:
-:PROPERTIES:
-:ID:       ef003f26-af21-4281-9890-193a61830862
-:CUSTOM_ID: drum-kit
-:END:
-- a /shed/ is a drum session. usually involves a couple drum buddies
-  trading solos and cool /chops/ off a single groove. \\
-  [[yt:ct-k91feDp4][shed sessionz vol.1]]
-- a /groove/ refers to a repeated pattern with significant focus on
-  time-keeping and generally holdin' it down \\
-  [[yt:T1j1_aeK6WA][The Purdie Shuffle]]
-  [[yt:Ou70vvjE8k4][50 Ways to Leave Your Lover]]
-  [[yt:ON9vJWBtgHA][Steve Gadd Funky Groove w/Eddie Gomez]]
-- a /chop/ refers to a short phrase or pattern on the drum
-  kit, usually with variations. \\
-  [[yt:LSSIvvwCtVQ][Darion Ja'Von's flam-sweep thang]]
-***** Piano                                                       :piano:
-:PROPERTIES:
-:ID:       368e2e18-02c5-4d75-942e-ebf803fb01a5
-:CUSTOM_ID: piano
-:END:
-- A lesson with Seymour Bernstein \\
+- [[https://en.wikipedia.org/wiki/Polyptych][Polyptych]]
+  - usually refers to a work of art that is divided into a number of
+    panes that can be folded and shut or be displayed open.
+  - first appeared in early Christian art and was popularized from the
+    Middle Ages onwards. The classic triptych consists of three carved
+    wooden panes with a larger center pane.
+  - This form has been adapted to other mediums such as pendant jewlery
+    and photography - where the form can be applied loosely to a set of
+    photographs sharing a common theme.
+- Drum kit chops and slang
+  - a /shed/ is a drum session. usually involves a couple drum buddies
+    trading solos and cool /chops/ off a single groove. \\
+    [[yt:ct-k91feDp4][shed sessionz vol.1]]
+  - a /groove/ refers to a repeated pattern with significant focus on
+    time-keeping and generally holdin' it down \\
+    [[yt:T1j1_aeK6WA][The Purdie Shuffle]]
+    [[yt:Ou70vvjE8k4][50 Ways to Leave Your Lover]]
+    [[yt:ON9vJWBtgHA][Steve Gadd Funky Groove w/Eddie Gomez]]
+  - a /chop/ refers to a short phrase or pattern on the drum
+    kit, usually with variations. \\
+    [[yt:LSSIvvwCtVQ][Darion Ja'Von's flam-sweep thang]]
+- A piano lesson with Seymour Bernstein \\
   - "My fingers always win and what is more, they do everything"
   [[yt:HIFQUrhdT2k]]
-**** Audio Synthesis
-- Prophet Rev 2 patches \\
+- DSI Prophet Rev 2 patches \\
   [[yt:4Ne7LjxOSco]] \\
   [[yt:G2d1OMzwAOs]]
-* Computers                                                         :cs:comp:
+* Computers                                                 :cs:comp:compsci:
 :PROPERTIES:
 :ID:       3321999b-34d2-4c62-a9de-fce29110f068
 :AKA: CS, compsci
 :CUSTOM_ID: computers
 :END:
-#+begin_quote
-Computer science is the study of algorithmic processes, computational
-machines and computation itself.
--- [[https://www.cs.york.ac.uk/undergraduate/what-is-cs/][What is Computer Science? - Computer Science, University of York]]
-#+end_quote
-** Theoretical Computer Science                                  :math:lang:
-:PROPERTIES:
-:ID:       9c451256-11c8-4111-9f36-9b1aaa2ff6ab
-:AKA: TCS
-:CUSTOM_ID: theoretical-computer-science
-:END:
-#+begin_quote
-Theoretical computer science (TCS) is a subset of general computer
-science and mathematics that focuses on mathematical aspects of
-computer science such as the theory of computation, lambda calculus,
-and type theory.
--- [[https://en.wikipedia.org/wiki/Theoretical_computer_science][Wikipedia]]
-#+end_quote
-*** Algorithms                                                       :algo:
+- Computer science is the study of algorithmic processes, computational
+  machines and computation itself.
+  - [[https://www.cs.york.ac.uk/undergraduate/what-is-cs/][What is Computer Science? - Computer Science, University of York]]
+  #+begin_quote
+  Theoretical computer science (TCS) is a subset of general computer
+  science and mathematics that focuses on mathematical aspects of
+  computer science such as the theory of computation, lambda calculus,
+  and type theory.
+  -- [[https://en.wikipedia.org/wiki/Theoretical_computer_science][Wikipedia]]
+  #+end_quote
+- [[https://plato.stanford.edu/entries/computational-linguistics/][Computational Linguistics (Stanford Encyclopedia of Philosophy)]]
+  #+begin_quote
+  Human knowledge is expressed in language. So computational linguistics is very important.
+  -- Mark Steedman, ACL Presidential Address (2007)
+  #+end_quote
+- Computer Programming
+  #+begin_quote
+  Computer programming is the process of designing and building an
+  executable computer program to accomplish a specific computing result
+  or to perform a specific task. Programming involves tasks such as:
+  analysis, generating algorithms, profiling algorithms' accuracy and
+  resource consumption, and the implementation of algorithms in a chosen
+  programming language (commonly referred to as coding).
+  #+end_quote
+  - [[https://en.wikipedia.org/wiki/Computer_programming][wiki]] <-
+- Blogging is common practice in the programming world. It's a great way
+  to learn new things and gain insight.
+  - find a few good bloggers in your field of choice, and take some time
+    to understand what they're doing and why.
+  - [[https://sts10.github.io/][Prevent Default]]
+- It is clear that the future of organized web development is
+  embedded in the Cloud. :(
+  - Github, AWS, Google Cloud, Azure.. are all excellent
+    tools.
+  - These services become a core part of your deployment pipeline,
+    many of them are quite complex. The features you use are likely
+    to be based on a subscription (monthly/yearly fee),
+    pay-as-you-go model (/Gb, /Hr), or even through a third-party
+    extension (/gasp/).
+  - These factors lead to a new level of meta-programming in which
+    you create hacks to support your workflow, reduce costs, and
+    integrate with your internal infrastructure. This is the 10th
+    circle of Hell in which engineers and network specialists need
+    to Read The Docs and become subject matter experts themselves.
+  - Is there a better way?
+    - For conventional orgs, probably not.
+    - For the one-man army or isolated tribe of hackers.. perhaps.
+      - Build it yourself!
+      - Own your data.
+      - Develop in distributed silos or 'labs'.
+      - Self-host services.
+** Algorithms                                                         :algo:
 :PROPERTIES:
 :ID: 74f3683c-e4e8-4d8c-8eea-7b3bb52b41ff
 :CUSTOM_ID: algorithms
 :END:
-
 #+begin_quote
 a process or set of rules to be followed in calculations or other
 problem-solving operations, especially by a computer.
 #+end_quote
-
-**** RNGs                                                           :rand:
+*** RNGs                                                             :rand:
 :PROPERTIES:
 :AKA: Random Number Generator
 :CUSTOM_ID: rngs
 :END:
-***** Permuted Congruential Generator
+**** Permuted Congruential Generator
 :PROPERTIES:
 :ID:       1b56e9c3-d63c-4c87-be67-b8a35dd66729
 :AKA: PCG
 :CUSTOM_ID: permuted-congruential-generator
 :END:
 - [[https://en.wikipedia.org/wiki/Permuted_congruential_generator][wikipedia]]
-**** [[https://en.wikipedia.org/wiki/Binary_search_algorithm][Binary Search]] :search:
+*** [[https://en.wikipedia.org/wiki/Binary_search_algorithm][Binary Search]] :search:
 :PROPERTIES:
 :ID:       c963428d-b5b5-4a9b-9912-ab8b17e3cf46
 :END:
@@ -257,7 +161,7 @@ problem-solving operations, especially by a computer.
   optimal searches, such as Hash Tables
 - [[https://www.hackerearth.com/practice/algorithms/searching/binary-search/tutorial/][Binary Search Tutorials & Notes | Algorithms | HackerEarth]]
 
-**** [[https://en.wikipedia.org/wiki/Merge_sort][Merge sort]]       :sort:
+*** [[https://en.wikipedia.org/wiki/Merge_sort][Merge sort]]         :sort:
 :PROPERTIES:
 :ID:       9319d0fc-ace5-401c-97b2-a3aea287421a
 :END:
@@ -265,7 +169,7 @@ A divide and conquer algorithm for sorting an array. The array is
 split into immutable chunks and then all chunks are merged in sorted
 order.
 - Invented by John von Neumann in 1945
-**** [[https://en.wikipedia.org/wiki/Lubachevsky%E2%80%93Stillinger_algorithm][Lubachevsky–Stillinger algorithm]] :granular_flow:
+*** [[https://en.wikipedia.org/wiki/Lubachevsky%E2%80%93Stillinger_algorithm][Lubachevsky–Stillinger algorithm]] :granular_flow:
   :PROPERTIES:
   :ID:       7e986f85-e6ca-4f76-b667-bea7fe128b8b
   :END:
@@ -280,11 +184,11 @@ usually carried out on a computer.
 
 An acoustic phenomena of interest: [[https://en.wikipedia.org/wiki/Singing_sand][Singing sand]]
 
-**** [[https://github.com/apple/swift/pull/39143][An optimal algorithm for bounded random integers]] :rng:
+*** [[https://github.com/apple/swift/pull/39143][An optimal algorithm for bounded random integers]] :rng:
 :PROPERTIES:
 :ID:       e87c8899-f70f-46f5-ab3c-ace0eabe9ff7
 :END:
-**** [[https://en.wikipedia.org/wiki/ROT13][ROT13]]               :cipher:
+*** [[https://en.wikipedia.org/wiki/ROT13][ROT13]]                 :cipher:
 :PROPERTIES:
 :ID:       f45bc97b-fe13-44db-95ba-f3c9f877e568
 :END:
@@ -293,33 +197,32 @@ by 13 positions. Since the standard alphabet has 26 characters, this
 operation is its own inverse.
 - The canonical example of weak encryption.
 
-**** [[https://en.wikipedia.org/wiki/Selection_algorithm][Selection algorithm - Wikipedia]]
+*** [[https://en.wikipedia.org/wiki/Selection_algorithm][Selection algorithm - Wikipedia]]
 :PROPERTIES:
 :ID:       4193b561-27c7-4fe4-a3e4-7a61b8c659ce
 :END:
-***** [[https://en.wikipedia.org/wiki/Quickselect][Quickselect - Wikipedia]]
+**** [[https://en.wikipedia.org/wiki/Quickselect][Quickselect - Wikipedia]]
 :PROPERTIES:
 :ID:       2761e5d3-df1d-43ff-91b2-a8e60ff0469c
 :END:
-**** [[https://en.wikipedia.org/wiki/Sorting_algorithm][Sorting algorithm - Wikipedia]]
+*** [[https://en.wikipedia.org/wiki/Sorting_algorithm][Sorting algorithm - Wikipedia]]
 :PROPERTIES:
 :ID:       a4805e40-ccdc-4f64-9581-6c80561b0dfc
 :END:
-***** [[https://en.wikipedia.org/wiki/Quicksort][Quicksort - Wikipedia]]
+**** [[https://en.wikipedia.org/wiki/Quicksort][Quicksort - Wikipedia]]
 :PROPERTIES:
 :ID:       5a7a0e4b-2444-4010-861f-35c7711d7a14
 :END:
-**** [[https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm][Divide-and-conquer algorithm - Wikipedia]]
+*** [[https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm][Divide-and-conquer algorithm - Wikipedia]]
 :PROPERTIES:
 :ID:       17baa61c-0dfa-41d4-be69-1541929fcccc
 :END:
 
-*** Data Structures
+** Data Structures                                             :data:struct:
 :PROPERTIES:
 :ID:       3b18c802-d32e-4208-8779-3017c649f1c0
 :CUSTOM_ID: data-structures
 :END:
-+ what -- \\
   #+begin_quote
   An organization of information, usually in memory, for better
   algorithm efficiency, such as queue, stack, linked list, heap,
@@ -328,41 +231,41 @@ operation is its own inverse.
   length of the list or number of nodes in a subtree.
   -- [[https://xlinux.nist.gov/dads/HTML/datastructur.html][xlinux.nist.gov]]
   #+end_quote
-**** Map
+*** Map
 :PROPERTIES:
 :ID:       b9530429-e281-421e-ae08-623bc78cd6bd
 :AKA: dictionary, dict
 :CUSTOM_ID: map
 :END:
-**** List
+*** List
 :PROPERTIES:
 :ID:       2178b6c8-81df-4233-b5cd-eeb5cd7c5c6a
 :CUSTOM_ID: list
 :END:
-**** Array
+*** Array
 :PROPERTIES:
 :ID:       4c5ba40b-6c4e-4320-852b-69da9c2a1ced
 :CUSTOM_ID: array
 :END:
-***** Vector
+**** Vector
 :PROPERTIES:
 :ID:       832bf973-ee96-4a05-b160-a42dbe3017a2
 :AKA: vec
 :CUSTOM_ID: vector
 :END:
-**** Tuple
+*** Tuple
 :PROPERTIES:
 :ID:       93b57a3d-f4d4-49af-b1b5-7671d807cd45
 :CUSTOM_ID: tuple
 :END:
-**** Binary Tree
+*** Binary Tree
 :PROPERTIES:
 :ID:       fdb84754-f736-41a8-88ef-ef122ed84a16
 :AKA: btree
 :CUSTOM_ID: binary-tree
 :END:
 
-**** Radix Trie
+*** Radix Trie
 :PROPERTIES:
 :ID:       13a3d8a4-cd75-4afb-8fe0-b33166302f8e
 :CUSTOM_ID: radix-trie
@@ -371,48 +274,18 @@ operation is its own inverse.
 
 [[cdn:img/Patricia_trie.svg]]
 
-**** Rope
+*** Rope
 :PROPERTIES:
 :ID:       cf085630-073e-47d9-9f5b-8b57d2ae12e1
 :CUSTOM_ID: rope
 :END:
 
-*** Cryptography
+** Cryptography                                                     :crypto:
 :PROPERTIES:
 :ID:       3cb89927-649c-4439-872c-00d7971cba42
 :CATEGORY: crypto
 :AKA: crypto
 :CUSTOM_ID: cryptography
-:END:
-**** Hash                                                    :crypto:hash:
-:PROPERTIES:
-:ID: 99330f0c-bd45-4dc6-942f-4f4c270a0bcf
-:CUSTOM_ID: hash
-:END:
-- https://www.educative.io/edpresso/what-is-hashing
-***** Digital Signatures
-:PROPERTIES:
-:ID:       c68f1319-7d04-434a-b334-1fb27e9b9fec
-:CUSTOM_ID: digital-signatures
-:END:
-- [[https://www.ibm.com/docs/en/SSB23S_1.1.0.14/gtps7/ssldig18.gif][https://www.ibm.com/docs/en/SSB23S_1.1.0.14/gtps7/ssldig18.gif]]
-  - [[https://www.ibm.com/docs/en/ztpf/1.1.0.14?topic=concepts-digital-signatures][Digital Signatures - IBM]]
-****** Code Signing
-:PROPERTIES:
-:ID:       1eb81c2f-9716-412a-ba8c-ed8929fab340
-:CUSTOM_ID: code-signing
-:END:
-+ what -- \\
-  #+begin_quote
-  Code signing is the process of digitally signing executables and
-  scripts to confirm the software author and guarantee that the code has
-  not been altered or corrupted since it was signed. The process employs
-  the use of a cryptographic hash to validate authenticity and
-  integrity.  -- [[https://en.wikipedia.org/wiki/Code_signing][Wikipedia]]
-  #+end_quote
-**** links
-:PROPERTIES:
-:ID:       217894b2-6547-4f38-b379-d96ec31ab681
 :END:
 - [[https://tools.ietf.org/html/rfc8439][RFC 8439 - ChaCha20 and Poly1305 for IETF Protocols]]
 - [[https://en.wikipedia.org/wiki/Salsa20#ChaCha_variant][Salsa20 - Wikipedia]]
@@ -436,7 +309,13 @@ operation is its own inverse.
   - HMAC - often used with MD5, SHA-1, etc, plus a secret shared key.
     Key Hashing
 - [[https://letsencrypt.org/2018/04/04/sct-encoding.html][Engineering deep dive: Encoding of SCTs in certificates - Let's Encrypt - Free SSL/TLS Certificates]]
-*** Automata Theory
+- https://www.educative.io/edpresso/what-is-hashing
+- [[https://www.ibm.com/docs/en/SSB23S_1.1.0.14/gtps7/ssldig18.gif][https://www.ibm.com/docs/en/SSB23S_1.1.0.14/gtps7/ssldig18.gif]]
+  - [[https://www.ibm.com/docs/en/ztpf/1.1.0.14?topic=concepts-digital-signatures][Digital Signatures - IBM]]
+- code signing :: the process of digitally signing executable data as
+  a means of validating authenticity and integrity.
+  - [[https://en.wikipedia.org/wiki/Code_signing][Wikipedia]]
+** Automata Theory                                                   :agent:
 :PROPERTIES:
 :ID:       971bce74-6e41-4caf-8c31-a3cc9871995b
 :CUSTOM_ID: automata-theory
@@ -449,7 +328,7 @@ plural of automaton) comes from the Greek word αὐτόματος, which means
 "self-acting, self-willed, self-moving".
 -- [[https://en.wikipedia.org/wiki/Automata_theory][Wikipedia]]
 #+end_quote
-*** Programming Language Theory                                      :lang:
+** Programming Language Theory                                     :lang:pl:
 :PROPERTIES:
 :ID:       c6cc3ff7-bb41-4887-a948-0d9abaa1fa16
 :AKA: PLT, programming language, pl, lang
@@ -462,88 +341,21 @@ classification of formal languages known as programming languages and
 of their individual features.
 -- [[https://en.wikipedia.org/wiki/Programming_language_theory][Wikipedia]]
 #+end_quote
-**** Concepts
-:PROPERTIES:
-:ID:       bf3b9f52-4826-48be-85d9-33eb9ee55b32
-:END:
-***** Functions                                                      :fn:
-:PROPERTIES:
-:ID:       cd26c769-99c5-4233-adc4-ea50c6804317
-:CUSTOM_ID: functions
-:END:
-
-****** Lambdas
-:PROPERTIES:
-:ID:       81db098f-c5c4-40d0-89e8-b130ac3eba13
-:CUSTOM_ID: lambdas
-:END:
-Anonymous functions
-****** Methods
-:PROPERTIES:
-:ID:       9dd11b83-c6fc-4972-a421-1053cc7a01dd
-:END:
-****** Statics
-:PROPERTIES:
-:ID:       350df744-484e-41f4-ba70-eae9a486dc27
-:CUSTOM_ID: statics
-:END:
-***** Types
-:PROPERTIES:
-:ID:       61e175d2-d398-45a0-8b9d-993ac52354f2
-:CUSTOM_ID: types
-:END:
-****** Primitives
-:PROPERTIES:
-:ID:       37ec4505-43f3-4e05-a322-bf6518bb0535
-:CUSTOM_ID: primitives
-:END:
-****** Generics
-:PROPERTIES:
-:ID:       ce4662ac-d0c8-4a85-9a87-c3480ebb9ceb
-:CUSTOM_ID: generics
-:END:
-****** Complex
-:PROPERTIES:
-:ID:       62cde2c5-03df-4267-b39f-fc8cdb5e39a2
-:CUSTOM_ID: complex
-:END:
-***** Control Structures
-:PROPERTIES:
-:ID:       0bf2e878-1f35-4def-9c46-850b9efa86d3
-:CUSTOM_ID: control-structures
-:END:
-****** Sequence
-:PROPERTIES:
-:ID:       e40a8d5b-56bb-4d3d-9538-5b85285e259a
-:CUSTOM_ID: sequence
-:END:
-the default, line-by-line approach to control flow.
-****** Selection
-:PROPERTIES:
-:ID:       f55e8242-58d7-4c35-9c97-74b2b7a9dc76
-:CUSTOM_ID: selection
-:END:
-in C++:
-- if
-- if/else
-- switch
-****** Iteration
-:PROPERTIES:
-:ID:       f17c89b0-8d4d-4c2b-aeae-4422088eb435
-:CUSTOM_ID: iteration
-:END:
-in C++:
-- while
-- do/while
-- for
-
-**** History                                                     :history:
-:PROPERTIES:
-:ID:       9a2b8cc3-234b-410b-80ed-9115e15f0a12
-:END:
-- [[https://www.csee.umbc.edu/courses/pub/WWW/courses/undergraduate/CMSC331/fall08/0101/notes/02/02history.pdf][The History of Programming Languages]]                                 :deck:
+- Sequence
+  the default, line-by-line approach to control flow.
+- Selection
+  in C++:
+  - if
+  - if/else
+  - switch
+- Iteration
+  in C++:
+  - while
+  - do/while
+  - for
+- [[https://www.csee.umbc.edu/courses/pub/WWW/courses/undergraduate/CMSC331/fall08/0101/notes/02/02history.pdf][The History of Programming Languages]]
   - A wonderful visual history reference
-**** EBNF                                                           :ebnf:
+** EBNF                                                               :ebnf:
 :PROPERTIES:
 :ID:       0f36eac3-f9ba-42db-bb56-c09c5760cc89
 :CUSTOM_ID: ebnf
@@ -557,96 +369,32 @@ formal language such as a computer programming language. They are
 extensions of the basic Backus–Naur form (BNF) metasyntax notation.
 #+end_quote
 
-for more on grammars see:
-- [[https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form][Backus–Naur form - Wikipedia]]
-- [[https://en.wikipedia.org/wiki/Phrase_structure_rules][Phrase structure rules - Wikipedia]]
-- [[https://en.wikipedia.org/wiki/Context-free_grammar][Context-free grammar - Wikipedia]]
-- [[https://lalrpop.github.io/lalrpop/][LALRPOP]]
-***** Operators
-:PROPERTIES:
-:ID:       67d9d46d-b7a6-4a78-84fe-d2b306590074
-:CUSTOM_ID: operators
-:END:
-#+begin_src 
- * repetition-symbol
- - except-symbol
- , concatenate-symbol
- | definition-separator-symbol
- = defining-symbol
- ; terminator-symbol
- . terminator-symbol
-#+end_src
-precedence of operator is listed in descending order, and overriden by the following bracket pairs:
-#+begin_src 
- (* start-comment-symbol          end-comment-symbol *)
- '  first-quote-symbol            first-quote-symbol  '
- (  start-group-symbol              end-group-symbol  )
- [  start-option-symbol            end-option-symbol  ]
- {  start-repeat-symbol            end-repeat-symbol  }
- ?  special-sequence-symbol  special-sequence-symbol  ?
- "  second-quote-symbol          second-quote-symbol  "
-#+end_src
-*** Computational Linguistics                                    :language:
-:PROPERTIES:
-:ID: d614429d-6f19-46e5-87af-91eb591f4307
-:CUSTOM_ID: computational-linguistics
-:END:
-
-- [[https://plato.stanford.edu/entries/computational-linguistics/][Computational Linguistics (Stanford Encyclopedia of Philosophy)]]
-
-#+begin_quote
-Human knowledge is expressed in language. So computational linguistics is very important.
--- Mark Steedman, ACL Presidential Address (2007)
-#+end_quote
-** Computer Programming                                          :prog:lang:
-:PROPERTIES:
-:ID:       3f293465-adc9-43f3-ad75-9a711594ed33
-:CUSTOM_ID: computer-programming
-:END:
-+ what -> \\
-  #+begin_quote
-  Computer programming is the process of designing and building an
-  executable computer program to accomplish a specific computing result
-  or to perform a specific task. Programming involves tasks such as:
-  analysis, generating algorithms, profiling algorithms' accuracy and
-  resource consumption, and the implementation of algorithms in a chosen
-  programming language (commonly referred to as coding).
-  #+end_quote
-+ [[https://en.wikipedia.org/wiki/Computer_programming][wiki]] <-
-
-- Blogging is common practice in the programming world. It's a great way
-  to learn new things and gain insight.
-  - find a few good bloggers in your field of choice, and take some time
-    to understand what they're doing and why.
-  - [[https://sts10.github.io/][Prevent Default]]
-    
-- It is clear that the future of organized web development is
-  embedded in the Cloud. :(
-  - Github, AWS, Google Cloud, Azure.. are all excellent
-    tools.
-  - These services become a core part of your deployment pipeline,
-    many of them are quite complex. The features you use are likely
-    to be based on a subscription (monthly/yearly fee),
-    pay-as-you-go model (/Gb, /Hr), or even through a third-party
-    extension (/gasp/).
-  - These factors lead to a new level of meta-programming in which
-    you create hacks to support your workflow, reduce costs, and
-    integrate with your internal infrastructure. This is the 10th
-    circle of Hell in which engineers and network specialists need
-    to Read The Docs and become subject matter experts themselves.
-  - Is there a better way?
-    - For conventional orgs, probably not.
-    - For the one-man army or isolated tribe of hackers.. perhaps.
-      - Build it yourself!
-      - Own your data.
-      - Develop in distributed silos or 'labs'.
-      - Self-host services.
-*** Programmers
-:PROPERTIES:
-:ID:       2fbd7ab7-069f-468b-8ea4-00e4cc3104c6
-:CUSTOM_ID: programmers
-:END:
-**** Joe Armstrong
+- for more on grammars see:
+  - [[https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form][Backus–Naur form - Wikipedia]]
+  - [[https://en.wikipedia.org/wiki/Phrase_structure_rules][Phrase structure rules - Wikipedia]]
+  - [[https://en.wikipedia.org/wiki/Context-free_grammar][Context-free grammar - Wikipedia]]
+  - [[https://lalrpop.github.io/lalrpop/][LALRPOP]]
+- Operators
+  #+begin_src 
+   * repetition-symbol
+   - except-symbol
+   , concatenate-symbol
+   | definition-separator-symbol
+   = defining-symbol
+   ; terminator-symbol
+   . terminator-symbol
+  #+end_src
+  precedence of operator is listed in descending order, and overriden by the following bracket pairs:
+  #+begin_src 
+   (* start-comment-symbol          end-comment-symbol *)
+   '  first-quote-symbol            first-quote-symbol  '
+   (  start-group-symbol              end-group-symbol  )
+   [  start-option-symbol            end-option-symbol  ]
+   {  start-repeat-symbol            end-repeat-symbol  }
+   ?  special-sequence-symbol  special-sequence-symbol  ?
+   "  second-quote-symbol          second-quote-symbol  "
+  #+end_src
+** Joe Armstrong
 :PROPERTIES:
 :ID:       f3a41870-ec33-4fb9-908d-3adf0ff7d3a8
 :CUSTOM_ID: joe-armstrong
@@ -656,7 +404,7 @@ Human knowledge is expressed in language. So computational linguistics is very i
 + pub -> \\
   - how we program multi-cores \\
     [[yt:bo5WL5IQAd0]]
-**** Arthur Whitney
+** Arthur Whitney
 :PROPERTIES:
 :ID:       8cde1de5-dfef-4f3f-8ce8-59767c3bbbbd
 :CUSTOM_ID: arthur-whitney
@@ -670,7 +418,7 @@ Human knowledge is expressed in language. So computational linguistics is very i
 + K, Q, A, A+
 + co-founder of KXSystems
 + creator of kdb
-**** Donald Knuth
+** Donald Knuth
 :PROPERTIES:
 :ID:       35915e89-a4a2-45ea-8615-b95b4ba60e07
 :CUSTOM_ID: donald-knuth
@@ -678,13 +426,13 @@ Human knowledge is expressed in language. So computational linguistics is very i
 + [[https://en.wikipedia.org/wiki/Donald_Knuth][wiki]] <-
 + pub ->
   - [[https://www-cs-faculty.stanford.edu/~knuth/taocp.html][the Art of Computer Programming]]
-**** Kenneth Iverson
+** Kenneth Iverson
 :PROPERTIES:
 :ID:       4c180058-b147-4f0e-92c8-09796e0a7108
 :CUSTOM_ID: kenneth-iverson
 :END:
 + [[https://en.wikipedia.org/wiki/Kenneth_E._Iverson][wiki]] <-
-**** Guy Steele
+** Guy Steele
 :PROPERTIES:
 :ID:       78291ff7-568e-4986-8404-6aa711f4b2ab
 :CUSTOM_ID: guy-steele
@@ -694,127 +442,70 @@ Human knowledge is expressed in language. So computational linguistics is very i
 - an OG Emacser, designed the original command set for Emacs and first
   to port TeX
 
-*** Paradigms
+** Paradigms
 :PROPERTIES:
 :ID:       22d4609c-a42d-481e-82a2-94a8c10eda64
 :CUSTOM_ID: paradigms
 :END:
-**** Declarative Programming
-:PROPERTIES:
-:ID: 0df5feca-9539-4593-8000-fea3ae88f630
-:CUSTOM_ID: declarative-programming
-:END:
--  https://en.wikipedia.org/wiki/Declarative_programming
+- Declarative
+  https://en.wikipedia.org/wiki/Declarative_programming
+  - Functional
+    https://en.wikipedia.org/wiki/Functional_programming
+- Imperative
+  https://en.wikipedia.org/wiki/Imperative_programming
+  - [[id:5acc4903-a9be-40d6-93cf-15d5fee7d3f2][FORTRAN]]
+  - OOP
+    https://en.wikipedia.org/wiki/Object-oriented_programming
+    Object-oriented Programming (OOP for short) is a programming model
+    that organizes code around /objects/, and emphasizes the focus on
+    objects that we want to manipulate, rather than the functions and
+    logic necessary to manipulate them.
 
-- [[file:functional-programming.org][Functional Programming]]
+    - Objects
+      Objects can be definied as data fields that have /unique attributes
+      and behavior/. They are most often identified through [[https://en.wikipedia.org/wiki/Data_modeling][data modeling]],
+      which is the practice of organizing an Information system by applying
+      a variety of formal techniques.
 
-**** Functional Programming
-:PROPERTIES:
-:ID: f0816d6c-91c4-4aad-a25b-8d699772fd4f
-:CUSTOM_ID: functional-programming
-:END:
-- https://en.wikipedia.org/wiki/Functional_programming
-
-**** Imperative Programming
-:PROPERTIES:
-:ID: 6199a3af-7f64-4acc-892d-0f3d81231640
-:CUSTOM_ID: imperative-programming
-:END:
-- https://en.wikipedia.org/wiki/Imperative_programming
-- [[id:5acc4903-a9be-40d6-93cf-15d5fee7d3f2][FORTRAN]]
-***** Object-oriented Programming
-:PROPERTIES:
-:ID: 546d70b8-e290-466d-97be-d2486519631f
-:CUSTOM_ID: object-oriented-programming
-:END:
-- https://en.wikipedia.org/wiki/Object-oriented_programming
-Object-oriented Programming (OOP for short) is a programming model
-that organizes code around /objects/, and emphasizes the focus on
-objects that we want to manipulate, rather than the functions and
-logic necessary to manipulate them.
-
-****** Object
-:PROPERTIES:
-:ID:       34165563-0d62-4397-a4a9-2dc1671e0bf3
-:CUSTOM_ID: object
-:END:
-Objects can be definied as data fields that have /unique attributes
-and behavior/. They are most often identified through [[https://en.wikipedia.org/wiki/Data_modeling][data modeling]],
-which is the practice of organizing an Information system by applying
-a variety of formal techniques.
-
-****** Principles of OOP
-:PROPERTIES:
-:ID:       ce611680-4fbb-47bf-9bb5-2924a702b2fc
-:CUSTOM_ID: principles-of-oop
-:END:
-
-******* Encapsulation
-:PROPERTIES:
-:ID:       a92b9f7d-8961-4cbe-9f65-3cb9857323dd
-:CUSTOM_ID: encapsulation
-:END:
-
-******* Abstraction
-:PROPERTIES:
-:ID:       a6bc138c-5018-404d-9814-b5e7b7968674
-:CUSTOM_ID: abstraction
-:END:
-
-******* Ineritance
-:PROPERTIES:
-:ID:       bb4dfff6-8afa-4470-99db-6b92e988ed27
-:CUSTOM_ID: ineritance
-:END:
-
-******* Polymorphism
-:PROPERTIES:
-:ID:       1127dc87-b7f2-46f4-9141-593087a8f5c8
-:CUSTOM_ID: polymorphism
-:END:
-**** Array Programming
-:PROPERTIES:
-:ID:       00add2fd-499a-447f-b912-9c4e3032306b
-:CUSTOM_ID: array-programming
-:END:
-#+begin_quote
-In computer science, array programming refers to solutions which allow
-the application of operations to an entire set of values at once. Such
-solutions are commonly used in scientific and engineering settings.
--- [[https://en.wikipedia.org/wiki/Array_programming][Wikipedia]]
-#+end_quote
-- languages include Fortran, APL, J, K, Octave, BQN
-- opposed to scalar languages like C and Pascal with can apply
-  operations only to single values, so need to make use of control
-  structures such as indexing and looping.
-**** Literate Programming
-:PROPERTIES:
-:ID:       a001a57c-f1f6-4c52-af3e-cb67a145ea08
-:CUSTOM_ID: literate-programming
-:END:
-+ what -- The prose programming paradigm
-+ [[http://www.literateprogramming.com/][~]] <-
-+ [[https://en.wikipedia.org/wiki/Literate_programming][wiki]] <-
-
-- literate programming flow \\
-  [[cdn:img/literate_c.jpg]]
-*** Patterns
+    - Principles of OOP
+      - Encapsulation
+      - Abstraction
+      - Inheritance
+      - Polymorphism
+- Array-based
+  #+begin_quote
+  In computer science, array programming refers to solutions which allow
+  the application of operations to an entire set of values at once. Such
+  solutions are commonly used in scientific and engineering settings.
+  -- [[https://en.wikipedia.org/wiki/Array_programming][Wikipedia]]
+  #+end_quote
+  - languages include Fortran, APL, J, K, Octave, BQN
+  - opposed to scalar languages like C and Pascal with can apply
+    operations only to single values, so need to make use of control
+    structures such as indexing and looping.
+- Literate
+  - what -- The prose programming paradigm
+  - [[http://www.literateprogramming.com/][~]]
+  - [[https://en.wikipedia.org/wiki/Literate_programming][wiki]]
+  - literate programming flow \\
+    [[cdn:img/literate_c.jpg]]
+** Patterns
 :PROPERTIES:
 :ID:       ad0031c2-9be9-40cb-8a3e-1c6091537221
 :CUSTOM_ID: patterns
 :END:
-**** Builder
+*** Builder
 :PROPERTIES:
 :ID:       f81d600b-f5c5-43c1-bde9-cef476de4a04
 :CUSTOM_ID: builder-pattern
 :END:
 - [[https://en.wikipedia.org/wiki/Builder_pattern][wikipedia]]
-**** Coroutine
+*** Coroutine
 :PROPERTIES:
 :ID:       7997c51e-13a8-42c3-a9e0-7487b7961183
 :END:
 [[https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html][Coroutines in C]]
-**** Unit Test
+*** Unit Test
 :PROPERTIES:
 :ID: ba479a69-fd34-470d-b278-1f9b2229a487
 :CUSTOM_ID: unit-testing
@@ -849,19 +540,19 @@ the production code base after all..
 
 In my opinion, the most scaleable solution, which is also employed at
 many companies with a strong web presence, is through [[https://en.wikipedia.org/wiki/Systems_architecture][system architecture]].
-**** Async/await
+*** Async/await
 :PROPERTIES:
 :ID:       25c29048-a6b4-47f0-8122-a74b10fe5651
 :CUSTOM_ID: async-await
 :END:
-**** Crash-only Software
+*** Crash-only Software
 :PROPERTIES:
 :ID: 9ecad969-9cfe-4bf9-b2b9-37f48ba301fc
 :CUSTOM_ID: crash-only-software
 :END:
 - [[https://en.wikipedia.org/wiki/Crash-only_software][Crash-only software - Wikipedia]]
 - [[https://www.usenix.org/legacy/events/hotos03/tech/full_papers/candea/candea.pdf][Crash-only Software - George Candea, Armando Fox]]
-**** Incremental TT muncher                                           :rs:
+*** Incremental TT muncher                                             :rs:
 :PROPERTIES:
 :ID:       dff8c441-2da1-492e-b161-eee0f10e3fdd
 :CUSTOM_ID: incremental-tt-muncher
@@ -890,41 +581,31 @@ macro_rules! mixed_rules {
     };
 }
 #+end_src
-*** Models
+** Models
 :PROPERTIES:
 :ID:       0e932ce2-bc13-4a78-b5d7-67d3138908dc
 :END:
 - [[http://www.linfo.org/osi_model.html][OSI reference model definition by The Linux Information Project]]
-**** Agent-based
-:PROPERTIES:
-:ID:       a2c417db-d650-46a3-95ff-0324b2e7907c
-:CUSTOM_ID: agent-based
-:END:
-- [[https://en.wikipedia.org/wiki/Agent-based_model][wikipedia]]
-
-#+begin_quote
-Agent-based models (ABM) are computer programs that define agents,
-virtual entities that imitate the decision-making processes and
-interactions of real people, animals, neurons, computers, or other
-individuals. ABMs have a wide range of applications. For example, an
-ABM can study a flock of birds. The behavior of each virtual bird can
-be as simple as just trying to fly in close proximity to the nearest
-neighbor; the software can show that this birds combine their behavior
-to generate the complex, adaptive patterns of flight of real
-flocks. An ABM can also study economic behavior: in a virtual society,
-sellers of goods set a price based on limited information they have
-about the market, and buyers may bargain based on their own limited
-information about the market. Even with simple rules, an economic ABM
-can generate complex patterns that can be useful to understand real
-macroeconomic trends.
--- [[https://github.com/facorread/rust-agent-based-models][facorread/rust-agent-based-models]]
-#+end_quote
-*** Approaches
-:PROPERTIES:
-:ID:       398ec0b0-227d-41ea-a06d-25042b5176e5
-:CUSTOM_ID: approaches
-:END:
-**** System Programming                                              :sys:
+- Agent-based
+  [[https://en.wikipedia.org/wiki/Agent-based_model][wikipedia]]
+  #+begin_quote
+  Agent-based models (ABM) are computer programs that define agents,
+  virtual entities that imitate the decision-making processes and
+  interactions of real people, animals, neurons, computers, or other
+  individuals. ABMs have a wide range of applications. For example, an
+  ABM can study a flock of birds. The behavior of each virtual bird can
+  be as simple as just trying to fly in close proximity to the nearest
+  neighbor; the software can show that this birds combine their behavior
+  to generate the complex, adaptive patterns of flight of real
+  flocks. An ABM can also study economic behavior: in a virtual society,
+  sellers of goods set a price based on limited information they have
+  about the market, and buyers may bargain based on their own limited
+  information about the market. Even with simple rules, an economic ABM
+  can generate complex patterns that can be useful to understand real
+  macroeconomic trends.
+  -- [[https://github.com/facorread/rust-agent-based-models][facorread/rust-agent-based-models]]
+  #+end_quote
+** System Programming                                                  :sys:
 :PROPERTIES:
 :ID:       2b291c78-676c-4cae-bf17-3e76ca3541ae
 :AKA: systems programming
@@ -948,12 +629,12 @@ raison d'être, or merely a foundation for higher-level concepts,
 system programming is at the heart of all software that we write.
 -- [[https://www.oreilly.com/library/view/linux-system-programming/9781449341527/ch01.html][Linux System Programming, 2nd Edition [Book]​]]
 #+end_quote
-**** Hacking                                                        :hack:
+** Hacking                                                            :hack:
 :PROPERTIES:
 :ID:       c57e016c-cfa4-40f2-a5b5-a4dbacd12fce
 :CUSTOM_ID: hacking
 :END:
-***** Buffer Overflows                                              :mem:
+*** Buffer Overflows                                                  :mem:
    :PROPERTIES:
    :ID:       3b3d3abb-a401-4bc9-abd0-24b0fe7e4b02
    :AKA: buffer overrun
@@ -973,7 +654,7 @@ system programming is at the heart of all software that we write.
       - [[#executable-space-protection][Executable-space Protection]]
         - [[#data-execution-prevention][Data Execution Prevention]]
 
-***** Return-oriented Programming                                   :rop:
+*** Return-oriented Programming                                       :rop:
    :PROPERTIES:
    :ID:       d795cbc0-50e9-45da-8309-b90830951ec4
    :AKA: ROP
@@ -987,7 +668,7 @@ system programming is at the heart of all software that we write.
    #+end_quote
    - go go gadget =pop rdi; ret;=!
 
-***** Cracking                                                     :hash:
+*** Cracking                                                         :hash:
 :PROPERTIES:
 :ID:       0d35be9a-1c65-4eec-87a7-0752f8401b1d
 :CUSTOM_ID: cracking
@@ -1002,11 +683,11 @@ output of a cryptographic algorithm.
 cracking programs for hash-based resources:
 - [[https://github.com/hashcat/hashcat][hashcat]]
 - [[https://www.openwall.com/john/][JohnTheRipper]]
-***** Risk Assessment
+*** Risk Assessment
 :PROPERTIES:
 :ID:       dcbbfd56-1dc7-423b-8fd0-71a49b0162cd
 :END:
-****** Vulnerability Assessment
+**** Vulnerability Assessment
 :PROPERTIES:
 :ID:       abd1de58-e07b-4cf6-b8c8-aae0f202aca4
 :END:
@@ -1034,7 +715,7 @@ cracking programs for hash-based resources:
   cryptographic protocols, and hardware are all fair game. The term
   itself is generic and applies to systems that are far more difficult
   to assess such as energy supply and transportation systems.
-****** Pen Test
+**** Pen Test
 :PROPERTIES:
 :ID:       fa7b9139-c390-43b1-9d65-da1e088521c1
 :END:
@@ -1042,18 +723,18 @@ cracking programs for hash-based resources:
   system used to evaluate the security of the system or part of it.
 - This is very different from a /vulnerability assessment/ which is
   also often the precursor to a pen test.
-***** Simulation                                               :net:virt:
+*** Simulation                                                   :net:virt:
 :PROPERTIES:
 :ID:       a5a7fe9e-7bee-4283-9df5-067a107ca517
 :END:
-***** Leaks                                                        :data:
+*** Leaks                                                            :data:
 :PROPERTIES:
 :ID:       15d8a50a-53a9-40ab-b5e7-3fb3bda3da1b
 :END:
 - [[https://sizeof.cat/post/twitch-leaks/][Twitch leaks - sizeof(cat)]]
   - sourced from the hacker known only as 4chan
     magnet link: ~magnet:?xt=urn:btih:N5BLZ6XECNEHHARHJOVQAS4W7TWRXCSI&dn=twitch-leaks-part-one&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce~
-**** Unix Philosophy                                                :unix:
+** Unix Philosophy                                                    :unix:
 :PROPERTIES:
 :ID:       2c483711-aa5c-4060-9d51-f840e2cae822
 :CUSTOM_ID: unix-philosophy
@@ -1062,19 +743,19 @@ cracking programs for hash-based resources:
 - [[cdn:doc/ugh.pdf][The UNIX-HATERS Handbook]]
   “Two of the most famous products of Berkeley are LSD and Unix.  I
   don’t think that is a coincidence.”
-**** Meta Programming                                                 :mp:
+** Meta Programming                                                     :mp:
 :PROPERTIES:
 :ID:       8196a4dd-8f6a-40ca-9102-32ac66d1dbce
 :CUSTOM_ID: meta-programming
 :END:
 - [[https://www.boost.org/doc/libs/1_39_0/libs/mpl/doc/tutorial/tutorial-metafunctions.html][Metafunctions and Higher-Order Metaprogramming - boost C++]]
 
-*** Formatting                                                        :fmt:
+** Formatting                                                          :fmt:
 :PROPERTIES:
 :ID:       4fc48ec4-51c3-439e-9af7-e775e12ea6f1
 :CUSTOM_ID: formatting
 :END:
-**** Indentation
+*** Indentation
 :PROPERTIES:
 :ID:       835482b7-bb8d-41f4-ad72-fafe9c19a4a9
 :CUSTOM_ID: indentation
@@ -1113,12 +794,12 @@ structure.
     your Makefiles. I go for the former since it has better
     integration with IDEs (which often expect TABs and may warn you
     about invalid syntax, despite the =.RECIPEPREFIX= assignment)
-**** Markup Languages
+*** Markup Languages
 :PROPERTIES:
 :ID:       2fbcff2e-d187-4986-86b1-8725f2681337
 :CUSTOM_ID: markup-languages
 :END:
-***** HTML
+**** HTML
 :PROPERTIES:
 :ID: 36551370-964b-40cf-834b-72d23228fc4f
 :CUSTOM_ID: html
@@ -1139,24 +820,24 @@ HyperText Markup Language
   between implementations of HTML parsers across different programs
   and libraries. Read the docs.
   
-*** Concretes
+** Concretes
 :PROPERTIES:
 :ID:       3ee2d6a3-9c16-4357-9d92-e9ef73a1ac45
 :CUSTOM_ID: concretes
 :END:
-**** Memory                                                          :mem:
+*** Memory                                                            :mem:
 :PROPERTIES:
 :ID:       4c339c03-33be-48cf-95d3-85a0054c1efd
 :AKA: mem
 :CATEGORY: programming
 :CUSTOM_ID: memory
 :END:
-***** Allocation                                                  :alloc:
+**** Allocation                                                    :alloc:
 :PROPERTIES:
 :ID:       4100b13e-69f4-437a-ab41-63340878049d
 :CUSTOM_ID: allocation
 :END:
-****** Arenas
+***** Arenas
 :PROPERTIES:
 :ID:       bada6142-c741-4d7a-8533-19022eb1ae0b
 :CUSTOM_ID: arenas
@@ -1172,12 +853,12 @@ allocated from a contiguous chunk of memory, that improves cache
 coherency when you are traversing the graph.
 -- [[https://aminb.gitbooks.io/rust-for-c/content/graphs/][Rust for C++ Programmers]]
 #+end_quote
-***** Security                                                 :security:
+**** Security                                                   :security:
    :PROPERTIES:
    :ID:       f5ac5bbe-a18d-4cd7-ae33-85782cbae46e
    :CUSTOM_ID: security
    :END:
-****** Address Space Layout Randomization
+***** Address Space Layout Randomization
     :PROPERTIES:
     :ID:       0a438ddb-49ba-47e8-bca0-149de48d7bdc
     :AKA: ASLR
@@ -1187,7 +868,7 @@ coherency when you are traversing the graph.
     ASLR is a runtime security measure that randomizes the memory addresses that programs load data and code into. Usually implemented at the Operating System level, this will change the location of loaded code at each boot for libraries that are nx compliant. ASLR Bypass is typically achieved by exploiting a non nx compliant library in the context of an nx compliant operating system.
     [[https://nets.ec/ASLR][ASLR]]
     #+end_quote
-****** Executable-space Protection
+***** Executable-space Protection
     :PROPERTIES:
     :ID:       5d4796b9-ff44-4553-98bc-bacdfc296740
     :CUSTOM_ID: executable-space-protection
@@ -1196,7 +877,7 @@ coherency when you are traversing the graph.
     In computer security, executable-space protection marks memory regions as non-executable, such that an attempt to execute machine code in these regions will cause an exception. 
     -- [[https://en.wikipedia.org/wiki/Executable_space_protection][Wikipedia]]
     #+end_quote
-******* Data Execution Prevention                             :windows:
+****** Data Execution Prevention                               :windows:
      :PROPERTIES:
      :ID:       b9c33f21-6389-40bc-8cf2-82bc1135a84f
      :AKA: DEP
@@ -1204,7 +885,7 @@ coherency when you are traversing the graph.
      :END:
      - the name for executable-space protection in Windows systems
 
-**** Database
+*** Database
 :PROPERTIES:
 :ID: 737cd881-0f1e-4390-b604-9acc5720dac9
 :CUSTOM_ID: database
@@ -1215,7 +896,7 @@ coherency when you are traversing the graph.
 - [[https://en.wikipedia.org/wiki/Data_mart][Data Mart]]
 - [[https://en.wikipedia.org/wiki/Data_lake][Data Lake]]
 
-**** Binary
+*** Binary
 :PROPERTIES:
 :ID:       eba49197-a5b3-4460-83cd-2904308cc0cf
 :CUSTOM_ID: binary
@@ -1229,14 +910,14 @@ coherency when you are traversing the graph.
     - vector_table is a non-standard section that we use to store the vector (interrupt) table
     - ARM.attributes and the .debug_* sections contain metadata and will not be loaded onto the target when flashing the binary.
 
-*** Programming Languages                                            :lang:
+** Programming Languages                                              :lang:
 :PROPERTIES:
 :ID:       9f3f832c-53e7-46da-968e-858c1637f675
 :CUSTOM_ID: programming-languages
 :END:
 - Growing a Language - Guy Steele [1998] \\
   [[yt:_ahvzDzKdB0][_ahvzDzKdB0]]
-**** C                                                                 :c:
+*** C                                                                   :c:
 :PROPERTIES:
 :ID: 22928e28-f482-40c8-a5ef-0f6857fbd994
 :CUSTOM_ID: c
@@ -1245,7 +926,7 @@ coherency when you are traversing the graph.
 - [[https://docs.microsoft.com/en-us/cpp/c-language/c-language-reference?view=msvc-160][C Language Reference | Microsoft Docs]]
 - [[https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html][The GNU C Reference Manual]]
 - [[https://en.cppreference.com/w/c/language][C language - cppreference.com]]
-**** C++                                                             :cpp:
+*** C++                                                               :cpp:
 :PROPERTIES:
 :ID:       b3d70401-020f-4ae8-bc48-ceee1489bc7c
 :CUSTOM_ID: cpp
@@ -1266,7 +947,7 @@ coherency when you are traversing the graph.
   
   -- Friedrich Nietzsche
   #+end_quote
-***** RocksDB
+**** RocksDB
 :PROPERTIES:
 :ID:       ccd8e770-844d-44ea-8697-4366498eec39
 :CUSTOM_ID: rocksdb
@@ -1276,7 +957,7 @@ RocksDB is a /persistent/ key-value store, where Keys and Values are
 Engineering Team and built as a c++ library. [[https://raw.githubusercontent.com/facebook/rocksdb/gh-pages-old/intro.pdf][The Story of RocksDB]]
 provides some background info and a [[https://github.com/facebook/rocksdb/wiki][wiki]] is provided in the repo.
 
-****** Why RocksDB?
+***** Why RocksDB?
 :PROPERTIES:
 :ID:       592d04b6-465c-460d-8402-5e62acd91345
 :CUSTOM_ID: why-rocksdb
@@ -1285,7 +966,7 @@ provides some background info and a [[https://github.com/facebook/rocksdb/wiki][
   - file system, storage medium, and mostly platform agnostic
   - [[https://github.com/facebook/rocksdb/wiki/Direct-IO][Direct-IO]]
   - caters to a variety of use cases
-****** Exploring Rocks
+***** Exploring Rocks
 :PROPERTIES:
 :ID:       2a1a1b60-f927-4de6-b90a-69bf03edb62d
 :CUSTOM_ID: exploring-rocks
@@ -1346,7 +1027,7 @@ cd ./media/01/rocksdb_options_file_example && ls
   DB [[https://github.com/facebook/rocksdb/wiki/RocksDB-Options-File][Option Files]] are stored in [[https://en.wikipedia.org/wiki/INI_file][INI]] format. There are a looooot of
   options and a lot of information shown in the LOG. Yikes!
 	
-****** Some Code
+***** Some Code
 :PROPERTIES:
 :ID:       6190e8d5-9101-4644-8445-762c4bcfa0e3
 :CUSTOM_ID: some-code
@@ -1415,7 +1096,7 @@ int main() {
     After compiling with ~make~ and running ~./helloworld~ we get some
     files dumped to ~./infodb~ with the same structure as the
     examples.
-****** Column Families
+***** Column Families
 :PROPERTIES:
 :ID:       50580a3f-5e5c-44e7-bda9-ed496c730923
 :CUSTOM_ID: column-families
@@ -1437,7 +1118,7 @@ int main() {
   For now, we'll just take a peek at [[https://github.com/indradb/indradb][IndraDB]] and how Column Families
   are used in their implementation to store [[https://en.wikipedia.org/wiki/Graph_(abstract_data_type)][Graph]] data structures.
 
-******* IndraDB Implementation
+****** IndraDB Implementation
 :PROPERTIES:
 :ID:       4d900f5e-3e00-499b-a352-3e11b8fad418
 :CUSTOM_ID: indradb-implementation
@@ -1509,13 +1190,13 @@ pub struct Edge {
    but with the *outbound and inbound ids swapped*. This allows us to
    create /bidirectional/ edges (as well as support parts of the TAO
    model, but not worth getting into here).
-***** Skia                                                       :2d:gui:
+**** Skia                                                         :2d:gui:
 :PROPERTIES:
 :ID:       5d5c6541-63e5-4783-ae77-9be2ffd6d580
 :CUSTOM_ID: skia
 :END:
 + ref :: [[https://skia.org/][Skia Homepage]]
-**** Rust                                                             :rs:
+*** Rust                                                               :rs:
 :PROPERTIES:
 :ID: b46de918-896e-420d-8cde-09c21ae93ecd
 :CUSTOM_ID: rust
@@ -1598,7 +1279,7 @@ rustc --help
     #+end_example
   :end:
 - [[https://doc.rust-lang.org/cargo][The Cargo Book]]
-***** resources
+**** resources
 :PROPERTIES:
 :ID:       fc5f460d-dd9e-41f5-8d2b-737d15dcf249
 :END:
@@ -1625,7 +1306,7 @@ rustc --help
 - [[https://internals.rust-lang.org/t/traits-that-should-be-in-std-but-arent/3002][Traits that should be in std, but aren't - libs - Rust Internals]]
 - [[https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples][Macros in Rust]]                                                     :macros:
 - [[https://danielkeep.github.io/tlborm/book/README.html][The Little Book of Rust Macros]]                                     :macros:
-****** redox-os book            :os:
+***** redox-os book                                                  :os:
 :PROPERTIES:
 :ID:       a57e76bb-3888-466d-a34e-fc56085f6120
 :END:
@@ -1661,7 +1342,7 @@ Kernel space <                 | Resolve |
              \
 #+end_src
 The kernel is micro-kernel based, which uses the principle of least authority, preferring code to be ran in user space instead of kernel space. This architecture /usually/ leads to a variable level of performance degradation due to the additional context switches between the kernel and user handlers. My current thinking is that there are some clever solutions to the problem of context switching, but I need to further understand where and how often (during which syscalls) they occur, and what the impact is. Anyways in short this 'micro-kernel' is slow, but it is only 16k lines which is insane compared to Linux's 25MILLION
-****** Writing an OS in Rust          :os:
+***** Writing an OS in Rust                                          :os:
 :PROPERTIES:
 :ID:       2312fc0a-0948-43e4-b403-b3c21add34d5
 :END:
@@ -1972,7 +1653,7 @@ pub trait Future {
   - Implementation
     Futures and async/await are no_std compatible, so nothing special to be done in the src.
 
-***** crates                                                        :lib:
+**** crates                                                          :lib:
 :PROPERTIES:
 :ID:       3e36db85-ae02-4bf7-bc2e-3ca044f85d67
 :CUSTOM_ID: crates
@@ -1994,17 +1675,17 @@ on [[https://crates.io][crates.io]] for use by the community. In other words, cr
   - [[https://git.klingt.net/alinz/rosc/src/branch/master/examples/sender.rs][alinz/rosc - examples/sender.rs at master - rosc - Gitea]]
 - [[https://docs.rs/crate/frank_jwt/2.1.0][frank_jwt 2.1.0 - Docs.rs]]                                             :net:
 
-****** Firecracker                                                 :vmm:
+***** Firecracker                                                   :vmm:
 :PROPERTIES:
 :ID:       f169f36c-3cf8-4763-bd88-1d3c10f51ee7
 :CUSTOM_ID: firecracker
 :END:
-******* API                                                      :http:
+****** API                                                        :http:
 :PROPERTIES:
 :ID:       51e90da5-d98d-4d63-86aa-90c718c4802c
 :CUSTOM_ID: api
 :END:
-******** Requests
+******* Requests
 :PROPERTIES:
 :ID:       c4b1fecf-d6a1-478f-9189-92f827ca0aec
 :CUSTOM_ID: requests
@@ -2051,7 +1732,7 @@ curl --unix-socket /tmp/firecracker.socket -i \
 }'
 #+end_src
 
-****** Tokio                                                     :async:
+***** Tokio                                                       :async:
 :PROPERTIES:
 :ID:       cebd5c3f-80a4-485f-aef6-046dce661382
 :CUSTOM_ID: tokio
@@ -2067,7 +1748,7 @@ applications. It gives the flexibility to target a wide range of
 systems, from large servers with dozens of cores to small embedded
 devices.
 #+end_quote
-******* working with UDP
+****** working with UDP
 :PROPERTIES:
 :ID:       f2d3095b-4df4-4b1c-8d39-1122ae8b1e05
 :CUSTOM_ID: working-with-udp
@@ -2088,7 +1769,7 @@ UDP connections are handled similarly to TCP in tokio.
     we just care about the =udp= module which reads and writes from
     stdin to a UDP Frame.
 
-******* [[https://tokio.rs/tokio/tutorial][tokio tutorial]]
+****** [[https://tokio.rs/tokio/tutorial][tokio tutorial]]
 :PROPERTIES:
 :ID:       f2a14b9c-167e-4e65-a2d4-c55b0f38446d
 :END:
@@ -2112,7 +1793,7 @@ roughly an Arc<Vec<u8>> but with some added capabilities.
 
 - parking_lot::Mutex is a faster alternative to std::sync::Mutex.
 
-****** Yew                                                        :wasm:
+***** Yew                                                          :wasm:
 :PROPERTIES:
 :ID:       cec91739-c70c-4b89-838d-7bc7857aa60e
 :CUSTOM_ID: yew
@@ -2168,7 +1849,7 @@ Component-based framework for web UIs. Very similar to React or Elm
   confidently write WASM bindings without interop concerns with
   different platforms.
 
-****** Amethyst                                               :game_dev:
+***** Amethyst                                                 :game_dev:
 :PROPERTIES:
 :ID:       79d51eed-bb65-4bdd-98e0-7cf166564a6b
 :CUSTOM_ID: amethyst
@@ -2176,7 +1857,7 @@ Component-based framework for web UIs. Very similar to React or Elm
 - [[https://github.com/amethyst/amethyst][source code]]
 - [[https://book.amethyst.rs/book/stable/][the book]]
 - [[https://book.amethyst.rs/api/stable/amethyst/][docs]]
-******* features
+****** features
 :PROPERTIES:
 :ID:       e62b4c82-9da0-469e-95d4-b270d7b380d8
 :CUSTOM_ID: features
@@ -2186,13 +1867,13 @@ Component-based framework for web UIs. Very similar to React or Elm
 - Rapid prototyping with RON files for prefabs and an abstract scripting API.
 - Strong focus on encouraging reusability and clean interfaces.
 
-****** procfs
+***** procfs
 :PROPERTIES:
 :ID:       e526c71d-8fb3-4e49-9347-9cf1e2650b46
 :CUSTOM_ID: procfs
 :END:
 - [[https://github.com/eminence/procfs][GitHub - eminence/procfs: Rust library for reading the Linux procfs filesystem]]
-****** rust_pcg
+***** rust_pcg
 :PROPERTIES:
 :ID:       b3c62763-9335-40eb-8f92-efdbf0e3b80d
 :CUSTOM_ID: rust-pcg
@@ -2200,7 +1881,7 @@ Component-based framework for web UIs. Very similar to React or Elm
 - [[https://docs.rs/rand_pcg/0.3.1/rand_pcg/][docs.rs]]
 - see PCG
 
-****** axum                                                        :net:
+***** axum                                                          :net:
 :PROPERTIES:
 :ID:       31610939-ae15-426c-87f9-dd8fdf601c3a
 :CUSTOM_ID: axum
@@ -2208,14 +1889,14 @@ Component-based framework for web UIs. Very similar to React or Elm
 web framework by the [[id:cebd5c3f-80a4-485f-aef6-046dce661382][tokio]] team - thin wrapper around =hyper=.
 + github :: [[https://github.com/tokio-rs/axum][github.com/tokio-rs/axum]]
 + docs :: [[https://docs.rs/axum/][docs.rs/axum]]
-****** pnet                                                        :net:
+***** pnet                                                          :net:
 :PROPERTIES:
 :ID:       c6fd1ab4-8622-4a12-b84e-d5b47d03154b
 :CUSTOM_ID: pnet
 :END:
 - source :: [[https://github.com/libpnet/libpnet][github.com/libpnet/libpnet.git]]
 - low-level C-style network programming in Rust
-****** mio                                                         :net:
+***** mio                                                           :net:
 :PROPERTIES:
 :ID:       3731384a-1561-458a-96fb-f003006bb3d5
 :CUSTOM_ID: mio
@@ -2223,14 +1904,14 @@ web framework by the [[id:cebd5c3f-80a4-485f-aef6-046dce661382][tokio]] team - t
 + source :: [[https://github.com/tokio-rs/mio.git][github.com/tokio-rs/mio.git]]
 - low-level I/O library
 
-****** sample                                                    :audio:
+***** sample                                                      :audio:
 :PROPERTIES:
 :ID:       7558eeea-9e5b-4838-9773-ef246ceb8279
 :CUSTOM_ID: sample
 :END:
 - https://crates.io/crates/sample
 - for PCM-based sampling/DSP
-****** dsp-chain                                                 :audio:
+***** dsp-chain                                                   :audio:
 :PROPERTIES:
 :ID:       5816c557-de7b-41e1-93b7-e2f1381f7e0a
 :CUSTOM_ID: dsp-chain
@@ -2255,13 +1936,13 @@ graph.set_master(Some(synth));
 // Request audio from our Graph.
 graph.audio_requested(&mut buffer, settings);
 #+END_SRC
-****** portaudio                                                 :audio:
+***** portaudio                                                   :audio:
 :PROPERTIES:
 :ID:       f9d362ce-744c-46f2-92fa-1ef05ffdfd62
 :CUSTOM_ID: portaudio
 :END:
 - https://github.com/RustAudio/rust-portaudio
-****** azure-sdk-for-rust
+***** azure-sdk-for-rust
 :PROPERTIES:
 :ID:       3185a065-20bd-44df-8a51-b467c617391c
 :CUSTOM_ID: azure-sdk-for-rust
@@ -2270,23 +1951,23 @@ graph.audio_requested(&mut buffer, settings);
 
 unofficial bindings for the Azure SDK. why does MS not at least have
 autogen bindings? :(
-***** distributing binaries
+**** distributing binaries
 :PROPERTIES:
 :ID:       cbe9cd2a-47ef-487a-997d-1b55500efc7f
 :CUSTOM_ID: distributing-packages
 :END:
-****** pacman guidelines
+***** pacman guidelines
 :PROPERTIES:
 :ID:       decad209-85c2-4634-998e-75fd098e879c
 :CUSTOM_ID: pacman-guidelines
 :END:
 + ref :: [[https://wiki.archlinux.org/title/Rust_package_guidelines][Rust package guidelines - ArchWiki]]
-****** minimizing Rust binary size
+***** minimizing Rust binary size
 :PROPERTIES:
 :ID:       72cad4e5-5245-4779-9d24-8275abb9a61c
 :END:
 [[https://github.com/johnthagen/min-sized-rust][GitHub - johnthagen/min-sized-rust]]
-***** Embedded Rust                                            :embedded:
+**** Embedded Rust                                              :embedded:
 :PROPERTIES:
 :CUSTOM_ID: embedded-rust
 :END:
@@ -2294,7 +1975,7 @@ autogen bindings? :(
 
 - [[https://docs.rust-embedded.org/book/design-patterns/hal/checklist.html][HAL design pattern checklist]]
 
-**** Python                                                           :py:
+*** Python                                                             :py:
 :PROPERTIES:
 :ID:       249c2d3e-9d59-4f1f-9f6f-ad68ab04d1d3
 :CUSTOM_ID: python
@@ -2329,7 +2010,7 @@ It is an [[file:oop.org][OOP]]-based interpretted programming language based on 
   audio files.
 - [[https://www.psycopg.org/docs/][psycopg2]] - PostgreSQL database adapter.
 
-**** Haskell                                                          :hs:
+*** Haskell                                                            :hs:
 :PROPERTIES:
 :ID:       4df9857f-9d1e-4d3a-92b4-c7797296eac5
 :CUSTOM_ID: haskell
@@ -2338,7 +2019,7 @@ It is an [[file:oop.org][OOP]]-based interpretted programming language based on 
 - [[https://www.haskell.org/][Haskell Language]]
 - [[https://blog.akquinet.de/2021/01/03/haskell-is-faster-than-rust-wait-a-sec/][Haskell is Faster than Rust! … Wait a Sec! – akquinet AG – Blog]]
 - [[https://hledger.org/index.html][hledger]]
-**** Erlang                                                          :erl:
+*** Erlang                                                            :erl:
 :PROPERTIES:
 :ID:       5c8b33bd-cb8b-46ed-9c58-93d23f9633bc
 :CUSTOM_ID: erlang
@@ -2348,7 +2029,7 @@ It is an [[file:oop.org][OOP]]-based interpretted programming language based on 
 - [[https://learnyousomeerlang.com/introduction][Introduction | Learn You Some Erlang for Great Good!]]
 - [[https://github.com/erlang/otp][GitHub - erlang/otp: Erlang/OTP]]
 - [[https://matthil.de/b/web_protocol.html][matt's web protocol experiments in erlang]]
-**** Lisp                                                           :lisp:
+*** Lisp                                                             :lisp:
 :PROPERTIES:
 :ID:       e3f31e58-1503-4d9b-a830-3ec62bec4e8a
 :CUSTOM_ID: lisp
@@ -2363,7 +2044,7 @@ have existed over its history. Today, the best-known general-purpose
 Lisp dialects are Racket, Common Lisp, Scheme, and Clojure.
 -- [[https://en.wikipedia.org/wiki/Lisp_(programming_language)][Wikipedia]]
 #+end_quote
-***** Emacs Lisp                                                     :el:
+**** Emacs Lisp                                                       :el:
 :PROPERTIES:
 :ID:       d9c3504b-9d9f-4f96-a844-82371be08da6
 :CUSTOM_ID: emacs-lisp
@@ -2399,7 +2080,7 @@ Lisp dialects are Racket, Common Lisp, Scheme, and Clojure.
   - abbrev
     + [[info:emacs#Abbrevs][info]] <-
   - dabbrev
-****** external libraries
+***** external libraries
 :PROPERTIES:
 :ID:       1a9cdefa-db8c-4058-836d-fcbcfd2332fb
 :CUSTOM_ID: external-libraries
@@ -2410,20 +2091,20 @@ Lisp dialects are Racket, Common Lisp, Scheme, and Clojure.
    - you need this package or [[https://github.com/Fuco1/smartparens][smartparens]] to be productive with lisp
      tbh.
    - [[https://old.reddit.com/r/emacs/comments/60tl6o/tips_on_reading_dense_emacs_lisp_code/dfa92hg/][lispy debug tips]]
-***** Common Lisp                                                    :cl:
+**** Common Lisp                                                      :cl:
 :PROPERTIES:
 :ID:       63cb1352-c79d-41e1-bb10-c05931a3ab6f
 :CUSTOM_ID: common-lisp
 :END:
 - [[https://common-lisp.net/][Welcome to Common-Lisp.net!]]
-**** ALGOL                                                         :algol:
+*** ALGOL                                                           :algol:
 :PROPERTIES:
 :ID:       bda7cf4b-0c06-4701-b8b9-79de1688b1e6
 :CUSTOM_ID: algol
 :END:
 - [[http://www.math.bas.bg/bantchev/place/algol68.html][ALGOL 68]]
 - an old imperative language
-**** Javascript                                                       :js:
+*** Javascript                                                         :js:
 :PROPERTIES:
 :ID: 57eb884b-b22f-47f2-b6cb-e06ff59adb00
 :AKA: JS
@@ -2447,7 +2128,7 @@ standards organization in the ECMA-262 and ECMA-402 specifications.
 - [[https://tc39.es/ecma262/][ECMAScript® 2022 Language Specification]] - the official standard spec for JS
 - [[https://github.com/tc39/ecma262][GitHub - tc39/ecma262: Status, process, and documents for ECMA-262]]
 - [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources][JavaScript language resources - JavaScript | MDN]]
-***** React
+**** React
 :PROPERTIES:
 :ID: b1686ccf-fcb0-4787-8b15-889ce2e1230b
 :CUSTOM_ID: react
@@ -2456,7 +2137,7 @@ React is a declarative, efficient, and flexible JavaScript library for
 building user interfaces. It lets you compose complex UIs from small
 and isolated pieces of code called “components”.
 
-**** Lua                                                             :lua:
+*** Lua                                                               :lua:
 :PROPERTIES:
 :ID: 2a2818ba-2fee-4cf9-87f5-45cb66512265
 :CUSTOM_ID: lua
@@ -2484,12 +2165,12 @@ make all test
   Lua (first edition)]] and covers up to Lua 5.0, but is still
   relevant. The fourth edition covers up to Lua 5.3.
   
-***** Examples
+**** Examples
 :PROPERTIES:
 :ID:       65f97148-06eb-408d-947d-0a7c881e8a54
 :CUSTOM_ID: examples
 :END:
-****** copas tcp echo
+***** copas tcp echo
 :PROPERTIES:
 :ID:       1de6e845-e18d-4326-9647-cd2774ce0212
 :CUSTOM_ID: copas-tcp-echo
@@ -2514,7 +2195,7 @@ heart-warming welcome.  A slightly more advanced example is provided
   )
   copas.loop()
 #+end_src
-****** AwesomeWM rc.lua
+***** AwesomeWM rc.lua
 :PROPERTIES:
 :ID:       9923d0a2-533c-4235-923c-ddea476d7fcf
 :CUSTOM_ID: awesomewm-rc-lua
@@ -2527,19 +2208,19 @@ flexible and supports features of the Lua language.
 The default configuration can be found at [[https://awesomewm.org/doc/api/sample%20files/rc.lua.html][Script rc.lua - awesome API
 documentation]].
 
-**** FORTH                                                         :forth:
+*** FORTH                                                           :forth:
 :PROPERTIES:
 :ID:       8395200c-f135-4329-aecf-9f6cc9996d6f
 :CUSTOM_ID: forth
 :END:
 + [[https://www.forth.com/forth/][~]] <-
-**** io                                                               :io:
+*** io                                                                 :io:
 :PROPERTIES:
 :ID:       784d60d0-87c5-4850-b35a-787ea9b9f42f
 :CUSTOM_ID: io
 :END:
 + [[https://iolanguage.org/index.html][~]] <-
-**** SQL                                                             :sql:
+*** SQL                                                               :sql:
 :PROPERTIES:
 :ID: a0e844c9-ec8d-4f27-b9fd-7c7dfb88df7f
 :AKA: structured query language
@@ -2548,7 +2229,7 @@ documentation]].
 - http://www.sqlcourse.com/intro.html
 
 The ANSI standard language for relational [[file:database.org][Database]] management systems.
-**** Max/MSP                                                         :max:
+*** Max/MSP                                                           :max:
 :PROPERTIES:
 :ID:       f5665f32-f11e-483b-930a-6de74d0bf207
 :AKA: MSP, Jitter
@@ -2564,7 +2245,7 @@ languages as PureData (Pd).
 - Developed and maintained by Cycling '74, bundled with Ableton
   distributions.
 - [[https://www.researchgate.net/publication/221494064_Emergent_Rhythms_through_Multi-agency_in_MaxMSP][Emergent Rhythms through Multi-agency in Max/MSP | researchgate]]
-**** SuperCollider                                                 :audio:
+*** SuperCollider                                                   :audio:
 :PROPERTIES:
 :ID:       46d3f7c8-f5f5-481e-94ff-0a7b491a59b3
 :CUSTOM_ID: supercollider
@@ -2592,7 +2273,7 @@ Three major components:
   Quarks.
 
 - *scide* is an editor for sclang with an integrated help system.
-**** Stan                                                           :stan:
+*** Stan                                                             :stan:
 :PROPERTIES:
 :ID:       e08189d6-370d-4f96-8b17-3704efe670fa
 :CUSTOM_ID: stan
@@ -2601,7 +2282,7 @@ Three major components:
 + what -- a platform for statistical modeling and high-performance
   statistical computation.
 - [[https://mc-stan.org/docs/2_28/stan-users-guide/index.html][user guide]]
-**** ML                                                             :lisp:
+*** ML                                                               :lisp:
 :PROPERTIES:
 :ID: 041b902b-3032-400e-bd42-53a0253f0839
 :AKA: Meta Language
@@ -2609,7 +2290,7 @@ Three major components:
 :END:
 "Lisp with types"
 
-**** FORTRAN                                                     :fortran:
+*** FORTRAN                                                       :fortran:
 :PROPERTIES:
 :ID:       5acc4903-a9be-40d6-93cf-15d5fee7d3f2
 :CUSTOM_ID: fortran
@@ -2645,7 +2326,7 @@ C AREA OF THE TRIANGLE
       STOP
       END
   #+end_src
-**** COBOL                                                         :cobol:
+*** COBOL                                                           :cobol:
 :PROPERTIES:
 :ID: 82eae0d0-bec2-4c70-b003-f43c1ca1c781
 :AKA: Common Business Oriented Language
@@ -2653,7 +2334,7 @@ C AREA OF THE TRIANGLE
 :END:
 - https://en.wikipedia.org/wiki/COBOL
 
-**** APL                                                             :apl:
+*** APL                                                               :apl:
 :PROPERTIES:
 :ID:       8d8f9182-6fed-42d2-87c0-cb75ae66329c
 :CUSTOM_ID: apl
@@ -2679,7 +2360,7 @@ C AREA OF THE TRIANGLE
 - [[https://tryapl.org/][TryAPL]]
 - some great youtube tutorials and problem walkthroughs available from [[https://www.youtube.com/channel/UC1kBxkk2bcG78YBX7LMl9pQ][code_report]]
 - [[https://code.jsoftware.com/wiki/Essays/Incunabulum][Essays/Incunabulum - J Wiki]]
-***** Dyalog                                                     :dyalog:
+**** Dyalog                                                       :dyalog:
 :PROPERTIES:
 :ID:       27e7caab-127e-4956-9415-e4a9b4013952
 :CUSTOM_ID: dyalog
@@ -2687,7 +2368,7 @@ C AREA OF THE TRIANGLE
 - home :: [[https://www.dyalog.com/][dyalog.com]]
 - an APL-based development environment
 - [[https://www.dyalog.com/getting-started/tips.htm][Dyalog - Tips]]
-**** BQN                                                             :bqn:
+*** BQN                                                               :bqn:
 :PROPERTIES:
 :ID:       46bfb5a5-0933-4a17-9e99-01a5fadf2e07
 :CUSTOM_ID: bqn
@@ -2871,7 +2552,7 @@ C AREA OF THE TRIANGLE
   π‿∞‿@↩←⇐→,⋄  𝕨𝕩𝔽𝔾𝕎𝕏𝕗𝕘𝕊𝕤ℝ𝕣⦃⦄⟨⟩
   #+end_example
   See [[https://github.com/mlochbaum/BQN/blob/master/src/glyphs.bqn][glyphs.bqn]]
-**** K                                                                 :k:
+*** K                                                                   :k:
 :PROPERTIES:
 :ID:       1aa00dc0-2712-40fb-a3ba-57b0173f80d6
 :CUSTOM_ID: k
@@ -2909,13 +2590,13 @@ C AREA OF THE TRIANGLE
 - [[https://mlochbaum.github.io/BQN/implementation/kclaims.html][BQN: Wild claims about K performance]]
 - [[https://hackmd.io/@kelas/By2QFCkH_][k crash course - HackMD]]
   latest update of kcc from [[https://github.com/kparc/kcc][github]]
-***** ngn/k                                                        :ngnk:
+**** ngn/k                                                          :ngnk:
 :PROPERTIES:
 :ID:       71892548-a530-4136-8147-e7ed5294fe3e
 :CUSTOM_ID: ngn-k
 :END:
 + source :: [[https://codeberg.org/ngn/k][codeberg.org/ngn/k]]
-***** shakti                                                         :k9:
+**** shakti                                                           :k9:
 :PROPERTIES:
 :ID:       95d05cc5-b1b0-4836-a96d-ecb9d0351169
 :CUSTOM_ID: shakti
@@ -2931,12 +2612,12 @@ C AREA OF THE TRIANGLE
   - As far as I know, Arthur is working more heavily on the DB side -
     kdb+ has web APIs, FFI (for Rust too!), IPC, ML, you name
     it. shakti playes well with these.
-*** Standards
+** Standards
 :PROPERTIES:
 :ID:       d11cad66-1eba-4eb2-b1bc-ebca6aeeaa33
 :CUSTOM_ID: standards
 :END:
-**** POSIX
+*** POSIX
 :PROPERTIES:
 :ID:       89e4b741-a241-4e80-8f86-d1c69fd49230
 :CUSTOM_ID: posix
@@ -2952,39 +2633,39 @@ systems.
 -- [[https://en.wikipedia.org/wiki/POSIX][Wikipedia]]
 #+end_quote
 - [[https://drewdevault.com/2018/02/05/Introduction-to-POSIX-shell.html][Introduction to POSIX shell]]
-**** Data Interchange Formats                                       :data:
+*** Data Interchange Formats                                         :data:
 :PROPERTIES:
 :ID:       8eb2380a-f97d-4dcb-88c5-9707cfa595e3
 :CUSTOM_ID: data-interchange-formats
 :END:
-**** X Window System                                                 :x11:
+*** X Window System                                                   :x11:
 :PROPERTIES:
 :ID:       8e714746-e11c-4e77-982e-82fd544d6f2a
 :CUSTOM_ID: x-window-system
 :END:
-***** EWMH
+**** EWMH
 :PROPERTIES:
 :ID:       8cbfdfb5-f98a-48fc-ae27-022a313eec1f
 :CUSTOM_ID: ewmh
 :END:
 + [[https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints][wiki]] ←
 - Extended Window Manager Hints
-*** Software
+** Software
 :PROPERTIES:
 :ID: 375d49a0-05c9-4937-9efe-7385f354f8ac
 :CUSTOM_ID: software
 :END:
-**** Licensing                                                       :law:
+*** Licensing                                                         :law:
 :PROPERTIES:
 :ID:       cc00c927-a481-44da-9875-0a06898b9592
 :CUSTOM_ID: licensing
 :END:
-***** Free Software
+**** Free Software
 :PROPERTIES:
 :ID:       1304abf5-3760-4f8e-919b-1ea0ed353140
 :CUSTOM_ID: free-software
 :END:
-***** Freeware
+**** Freeware
 :PROPERTIES:
 :ID:       29bd2367-1771-4633-8a9d-42e544f74ad3
 :CUSTOM_ID: freeware
@@ -2994,24 +2675,24 @@ systems.
 - It is important to distinguish Freeware from truly Free Software, as
   the terms carry very different connotations. All Free Software is
   also Freeware, but not all Freeware is Free Software.
-***** Proprietary Software
+**** Proprietary Software
 :PROPERTIES:
 :ID:       ab28c699-cb83-47e6-87d0-7e7e806d07aa
 :CUSTOM_ID: proprietary-software
 :END:
 
-**** Programs                                                        :bin:
+*** Programs                                                          :bin:
 :PROPERTIES:
 :ID: 279e2f53-ca83-44f4-b679-165fd8aabd24
 :CUSTOM_ID: programs
 :END:
 - https://en.wikipedia.org/wiki/Computer_program
-***** GNU Emacs
+**** GNU Emacs
 :PROPERTIES:
 :ID:       0f13e326-614c-4df9-8344-e257eb165d8c
 :CUSTOM_ID: gnu-emacs
 :END:
-****** Building from Source
+***** Building from Source
 :PROPERTIES:
 :ID:       d92c3412-0e3b-4c07-842c-638c0eef4df1
 :CUSTOM_ID: building-from-source
@@ -3047,7 +2728,7 @@ Here are some of the other configuration flags worth investigating:
 - --without-x
 - --without-dbus --without-gconf --without-gsettings
 
-****** built-ins
+***** built-ins
 :PROPERTIES:
 :CUSTOM_ID: built-ins
 :END:
@@ -3056,7 +2737,7 @@ Here are some of the other configuration flags worth investigating:
 :END
 - remember
   + [[info:remember#Top][info]] <-
-******* org                                                       :org:
+****** org                                                         :org:
 :PROPERTIES:
 :ID: 0b4c27b4-3c1a-41c3-afcd-048f2cf15030
 :CUSTOM_ID: org
@@ -3082,36 +2763,36 @@ My usage of org-mode revolves around the following principles:
   at my current workflow from afar, and jot down a list of things that
   work, and things that don't. Good habit to get into for serious
   usage.
-******** Research
+******* Research
 :PROPERTIES:
 :ID:       623dab31-4864-4a25-809e-b9ed9fde6a32
 :CUSTOM_ID: research
 :END:
 - [[cdn:media/doc/][A Multi-Language Computing Environment for Literate Programming and Reproducible Research]]
-******** Tutorials
+******* Tutorials
 :PROPERTIES:
 :ID:       8b9a818b-b0b1-4335-9344-d4d7d8da3470
 :END:
-********* Getting Started with Org 
+******** Getting Started with Org 
 :PROPERTIES:
 :ID:       fb954e05-c80c-4a92-ab6e-7001807d5e3f
 :CUSTOM_ID: getting-started-with-org-mode-harry-schwartz
 :END:
 [[yt:SzA2YODtgK4][Getting Started With Org Mode]]
 
-******* skeleton                                                :babel:
+****** skeleton                                                  :babel:
 :PROPERTIES:
 :ID:       f08a38cb-7ca1-40ff-949c-547000792a03
 :CUSTOM_ID: skeleton
 :END:
 + [[https://www.emacswiki.org/emacs/SkeletonMode][wiki]] <-
 + [[info:autotype#Top][info]] <- 
-****** media
+***** media
 :PROPERTIES:
 :CUSTOM_ID: media
 :END:
 [[yt:43Dg5zYPHTU][Emacs completion frameworks (Embark, Consult, Orderless + Minibuffer)]]
-****** straight.el
+***** straight.el
 :PROPERTIES:
 :ID: 9711fba3-2682-400e-9c72-54bdc07a15d5
 :CUSTOM_ID: straight-el
@@ -3140,7 +2821,7 @@ makes it easy to define custom package /recipes/.
   (load bootstrap-file nil 'nomessage))
   #+end_src
 
-****** yasnippets
+***** yasnippets
 :PROPERTIES:
 :ID:       e4bb1e33-0288-4610-8dcc-64fc1c0f0ade
 :CUSTOM_ID: yasnippets
@@ -3181,7 +2862,7 @@ makes it easy to define custom package /recipes/.
 - [[http://cachestocaches.com/2016/9/my-workflow-org-agenda/][My Workflow with Org-Agenda]]                                           :org:
   - A classic emacs beginner read
 - [[https://orgmode.org/manual/HTML-Export.html#HTML-Export][Emacs Org HTML Export]]                                                 :org:
-***** GNU Make
+**** GNU Make
 :PROPERTIES:
 :ID: c93b85e8-4b50-4477-b121-486271ea50d6
 :CUSTOM_ID: gnu-make
@@ -3194,7 +2875,7 @@ makes it easy to define custom package /recipes/.
       system.
   - There is also a [[info:make#Guile Integration][Guile Integration]] which can be used for scripting
     among other things.
-****** Additional References
+***** Additional References
 :PROPERTIES:
 :ID:       60830ee9-5424-433c-9b76-7bf4e8b825c5
 :CUSTOM_ID: additional-references
@@ -3202,7 +2883,7 @@ makes it easy to define custom package /recipes/.
 - [[https://www.gnu.org/software/make/manual/html_node/Quick-Reference.html][Quick Reference]]
 - [[https://devhints.io/makefile][Makefile cheatsheet]]  
 
-***** Nix
+**** Nix
 :PROPERTIES:
 :ID: 6f670ab4-bf9a-4475-8f41-b08e16021074
 :CUSTOM_ID: nix
@@ -3216,7 +2897,7 @@ reproducible package builds.  NixOS is a Linux distribution built on
 top of Nix with a completely declarative configuration.  There are
 many other cool features contained in the Nix ecosystem, such as
 NixOps node2nix crate2nix Disnix and Home-manager.
-****** What I think I can find in Nix                          :opinion:
+***** What I think I can find in Nix                            :opinion:
 :PROPERTIES:
 :ID:       d768181a-d4f2-49f4-828a-988ed12be2b5
 :CUSTOM_ID: what-i-think-i-can-find-in-nix
@@ -3232,7 +2913,7 @@ The core functions we want:
 - run - run a package (nix-shell run)
 - monitor
 - ssh
-***** Bash                                                        :shell:
+**** Bash                                                          :shell:
 :PROPERTIES:
 :ID:       52d04515-6aeb-4a23-8ca3-31fa5f3a85e0
 :AKA: bash
@@ -3254,7 +2935,7 @@ modification.
 - [[https://stackoverflow.com/questions/16365130/what-is-the-difference-between-usr-bin-env-bash-and-usr-bin-bash/16365367#16365367][linux - What is the difference between "#!/usr/bin/env bash" and "#!/usr/bin/bash"? - Stack Overflow]]
 - [[https://github.com/dylanaraps/pure-bash-bible][pure bash bible]]                                                        :sh:
 - [[https://wiki.bash-hackers.org/][the bash hacker's wiki]]                                                 :sh:
-***** Conky                                                     :lua:cpp:
+**** Conky                                                       :lua:cpp:
 :PROPERTIES:
 :ID: ee68a953-f9b3-447d-a531-ef301ca1e0d9
 :CATEGORY: bin
@@ -3265,7 +2946,7 @@ widgets from Lua config files.
 - Built with C++.
 - [[https://wiki.archlinux.org/title/conky][Conky - ArchWiki]]
 - [[https://github.com/brndnmtthws/conky][GitHub - brndnmtthws/conky: Light-weight system monitor for X.]]
-****** Arch Linux desktop example
+***** Arch Linux desktop example
 :PROPERTIES:
 :ID:       4898be7c-465f-4f17-b451-8ec451f70399
 :CUSTOM_ID: arch-linux-desktop-example
@@ -3419,7 +3100,7 @@ $hr
 ]]
   #+end_src
 
-***** QEMU                                                         :virt:
+**** QEMU                                                           :virt:
 :PROPERTIES:
 :ID: 9f374d07-e188-4b40-8109-9253e6c88a6a
 :CUSTOM_ID: qemu
@@ -3429,7 +3110,7 @@ $hr
 QEMU is a generic and open source machine emulator and virtualizer.
   -- [[https://www.qemu.org/][QEMU homepage]]
 #+end_quote
-***** Maude                                                       :logic:
+**** Maude                                                         :logic:
 :PROPERTIES:
 :ID:       6e0ffd4c-a76b-4696-a39a-fbf6901e82a8
 :AKA: Maude System
@@ -3437,7 +3118,7 @@ QEMU is a generic and open source machine emulator and virtualizer.
 :END:
 [[https://en.wikipedia.org/wiki/Maude_system][Maude System]]
 An implementation of [[https://en.wikipedia.org/wiki/Rewriting][rewriting]] logic.
-***** Roam                                                  :web:service:
+**** Roam                                                    :web:service:
 :PROPERTIES:
 :ID: d4532480-589d-434e-81bd-45fa7b8008ec
 :CUSTOM_ID: roam
@@ -3457,22 +3138,22 @@ with a focus on research.
 
 This is a paid web-based service, so not something we're interested
 in, but overall a good continuation of the mind-mapping framework.
-***** Systemd                                               :sys:service:
+**** Systemd                                                 :sys:service:
 :PROPERTIES:
 :ID: a2c2925f-960d-43b5-b0cd-da5a86d4a744
 :CUSTOM_ID: systemd
 :END:
-****** systemd-nspawn
+***** systemd-nspawn
 :PROPERTIES:
 :ID:       e5232eb5-854c-416c-a25d-190bfa794d10
 :CUSTOM_ID: systemd-nspawn
 :END:
-******* machinectl
+****** machinectl
 :PROPERTIES:
 :ID:       fdaaa759-73f0-4cf6-b2f4-99c4bd836acd
 :CUSTOM_ID: machinectl
 :END:
-***** links
+**** links
 :PROPERTIES:
 :ID:       512510b9-6bcc-4f38-8cc9-059111d25cfe
 :END:
@@ -3486,20 +3167,20 @@ in, but overall a good continuation of the mind-mapping framework.
 	 :CREATED:  [2020-06-26 Fri]
    :ID:       2f96c91e-d79a-4663-bc45-9f56ff6da29f
 	 :END:
-***** Memcached                                                     :kvs:
+**** Memcached                                                       :kvs:
 :PROPERTIES:
 :CUSTOM_ID: memcached
 :END:
 + what -- FOSS, high-performance, distributed memory object caching system
   - (in-mem key:val store)
-**** Operating Systems                                                :os:
+*** Operating Systems                                                  :os:
 :PROPERTIES:
 :ID: 3bf219b5-6ad8-4355-8d68-29bd483f2671
 :CUSTOM_ID: operating-systems
 :END:
 An Operating System or "OS" is software that communicates with
 Applications and interacts with computer hardware.
-***** Unix                                                         :unix:
+**** Unix                                                           :unix:
 :PROPERTIES:
 :ID:       998c177b-980e-49ed-a196-cf3739f140bc
 :CUSTOM_ID: unix
@@ -3507,7 +3188,7 @@ Applications and interacts with computer hardware.
 + [[https://en.wikipedia.org/wiki/Unix][wiki]] ::
 + < :: ⟨[[id:3bf219b5-6ad8-4355-8d68-29bd483f2671][OS]]⟩
 + > :: ⟨[[id:2c483711-aa5c-4060-9d51-f840e2cae822][Unix Philosophy]]⟩
-***** GNU/Linux                                                   :linux:
+**** GNU/Linux                                                     :linux:
 :PROPERTIES:
 :ID: 134e2505-cc34-4dc2-b7a4-b3b71c331f07
 :AKA: linux
@@ -3518,12 +3199,12 @@ Applications and interacts with computer hardware.
 - https://en.wikipedia.org/wiki/Linux
 - [[https://sysprog21.github.io/lkmpg/][The Linux Kernel Module Programming Guide]]
 - [[https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/net/ipv4][linux kernel ipv4 stack]]
-****** Distros
+***** Distros
 :PROPERTIES:
 :ID:       80908ff8-aeeb-4429-8f87-e34660faea48
 :CUSTOM_ID: distros
 :END:
-******* Arch Linux
+****** Arch Linux
 :PROPERTIES:
 :ID: 212133b4-f2dc-4735-b383-b0fda10833af
 :CUSTOM_ID: arch-linux
@@ -3534,11 +3215,11 @@ A lightweight and flexible Linux distribution that tries to Keep It
 Simple.
 #+end_quote
 
-******** Prepping ArchISO from MacOS
+******* Prepping ArchISO from MacOS
 :PROPERTIES:
 :CUSTOM_ID: prepping-archiso-from-macos
 :END:
-********* GUI
+******** GUI
 :PROPERTIES:
 :CUSTOM_ID: gui
 :END:
@@ -3547,7 +3228,7 @@ typescript-based, cross-platform app for flashing OS images to
 SD/USB drives.  The process from there is very intuitive - just
 start the app, select your ISO image and target, click 'Flash'.
 (Don't forget to eject the newly flashed drive :) )
-********* CLI
+******** CLI
 :PROPERTIES:
 :CUSTOM_ID: cli
 :END:
@@ -3566,18 +3247,18 @@ sudo dd if=~/Downloads/target.img of=/dev/rdiskN bs=1m
 diskutil eject /dev/diskN
 #+end_src
 
-******** Installation Notes
+******* Installation Notes
 :PROPERTIES:
 :ID:       b98b89bf-1bb7-46d6-b27b-9990a0efc647
 :CUSTOM_ID: installation-notes
 :END:
-********* VERIFY
+******** VERIFY
 :PROPERTIES:
 :ID:       05f3c4d6-a12d-4d9a-bd50-db3f56622fdc
 :CUSTOM_ID: verify
 :END:
 we should verify image signatures and md5 sums on pre-install.
-********** Pre-boot verify
+********* Pre-boot verify
 :PROPERTIES:
 :ID:       9911c315-e3e4-41db-9f7a-a711c51b46d3
 :CUSTOM_ID: pre-boot-verify
@@ -3587,7 +3268,7 @@ gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.
 #+END_SRC
 where 'version' is a date in the format 'YYYY.MM.DD'
 
-********** Post-boot verify
+********* Post-boot verify
 :PROPERTIES:
 :ID:       959df534-5209-4850-a4d7-6f150fadecc4
 :CUSTOM_ID: post-boot-verify
@@ -3596,7 +3277,7 @@ where 'version' is a date in the format 'YYYY.MM.DD'
 pacman-key -v archlinux-version-x86_64.iso.sig
 #+END_SRC
 not recommended, especially if ISO image was downloaded via [[file:http.org][HTTP]] mirror
-********** find device names
+********* find device names
 :PROPERTIES:
 :ID:       b9d69686-3b4c-4407-8538-5fed693efbe3
 :CUSTOM_ID: find-device-names
@@ -3604,7 +3285,7 @@ not recommended, especially if ISO image was downloaded via [[file:http.org][HTT
 #+BEGIN_SRC sh
 lsblk
 #+END_SRC
-********** write archlinux ISO to device
+********* write archlinux ISO to device
 :PROPERTIES:
 :ID:       d93a09eb-9926-4025-9ce5-d0af28400619
 :CUSTOM_ID: write-archlinux-iso-to-device
@@ -3612,7 +3293,7 @@ lsblk
 #+BEGIN_SRC sh
 sudo dd if=/home/neocode/iso/archlinux-2015.09.01-dual.iso /dev/sdb1
 #+END_SRC
-********** ping internet
+********* ping internet
 :PROPERTIES:
 :ID:       e6b22ba2-27a9-4a58-b284-2a82e7d6eac7
 :CUSTOM_ID: ping-internet
@@ -3620,17 +3301,17 @@ sudo dd if=/home/neocode/iso/archlinux-2015.09.01-dual.iso /dev/sdb1
 #+BEGIN_SRC sh
 ping -c 3 google.com
 #+END_SRC
-********* PARTITION
+******** PARTITION
 :PROPERTIES:
 :ID:       8bb83e76-9890-44ba-a5b0-75b5b0c26b7f
 :CUSTOM_ID: partition
 :END:
-********** fdisk
+********* fdisk
 :PROPERTIES:
 :ID:       2ea9d4cf-041f-4a3e-8de7-a03caa7a9fdb
 :CUSTOM_ID: fdisk
 :END:
-********** format partitions
+********* format partitions
 :PROPERTIES:
 :ID:       b2c778e5-91cd-4f33-b28e-2a9a3438d415
 :CUSTOM_ID: format-partitions
@@ -3638,7 +3319,7 @@ ping -c 3 google.com
 #+BEGIN_SRC sh
 mkfs.ext4 /dev/sda1
 #+END_SRC
-********** make swap partitions
+********* make swap partitions
 :PROPERTIES:
 :ID:       ccbf3d88-926f-40b6-ba3a-c57f6e08aca0
 :CUSTOM_ID: make-swap-partitions
@@ -3647,7 +3328,7 @@ mkfs.ext4 /dev/sda1
 mkswap /dev/sda2
 swapon /dev/sda2
 #+END_SRC
-********* MOUNT
+******** MOUNT
 :PROPERTIES:
 :ID:       b1615282-40fb-4eca-92c4-508de30fa2a1
 :CUSTOM_ID: mount
@@ -3655,12 +3336,12 @@ swapon /dev/sda2
 #+BEGIN_SRC sh
 mount /dev/sda1 /mnt
 #+END_SRC
-********* PROVISION
+******** PROVISION
 :PROPERTIES:
 :ID:       7706593d-411f-4439-b866-1085a338199c
 :CUSTOM_ID: provision
 :END:
-********** pacstrap
+********* pacstrap
 :PROPERTIES:
 :ID:       f23e94b7-1775-4121-b810-0dfd1b46d559
 :CUSTOM_ID: pacstrap
@@ -3668,12 +3349,12 @@ mount /dev/sda1 /mnt
 #+BEGIN_SRC sh
 pacstrap -i /mnt base base-devel
 #+END_SRC
-********* CONFIG
+******** CONFIG
 :PROPERTIES:
 :ID:       bc26702c-548a-4022-93ab-bca8dc7558b9
 :CUSTOM_ID: config
 :END:
-********** Generate fstab file
+********* Generate fstab file
 :PROPERTIES:
 :ID:       8890dab8-fe14-4f54-a6d6-613c827f07c1
 :CUSTOM_ID: generate-fstab-file
@@ -3686,7 +3367,7 @@ test with:
 #+BEGIN_SRC sh
 cat /mnt/etc/fstab
 #+END_SRC
-********** chroot into fresh install
+********* chroot into fresh install
 :PROPERTIES:
 :ID:       15e4bbba-1aee-40da-9461-f0e2f7592f98
 :CUSTOM_ID: chroot-into-fresh-install
@@ -3694,7 +3375,7 @@ cat /mnt/etc/fstab
 #+BEGIN_SRC sh
 arch-chroot /mnt
 #+END_SRC
-********** Configure network
+********* Configure network
 :PROPERTIES:
 :ID:       4afe7a9a-be20-4a6e-be9b-1b0d5db6d2cb
 :CUSTOM_ID: configure-network
@@ -3703,7 +3384,7 @@ arch-chroot /mnt
 ip link
 # systemctl enable dhcpcd@enp0s3.service
 #+END_SRC
-********** Set locale
+********* Set locale
 :PROPERTIES:
 :ID:       ab330c12-37e0-4051-bc8c-77b9bb9ef54b
 :CUSTOM_ID: set-locale
@@ -3714,7 +3395,7 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 ln -s /usr/share/zoneinfo/America/New_York > /etc/localtime
 #+END_SRC
-********** Set Clock to UTC
+********* Set Clock to UTC
 :PROPERTIES:
 :ID:       0f0381cf-85cc-4b97-8a4d-da7dedba3fd3
 :CUSTOM_ID: set-clock-to-utc
@@ -3722,7 +3403,7 @@ ln -s /usr/share/zoneinfo/America/New_York > /etc/localtime
 #+BEGIN_SRC sh
 hwclock --systohc --utc
 #+END_SRC
-********** Update Archlinux Repository
+********* Update Archlinux Repository
 :PROPERTIES:
 :ID:       2274e479-c437-4f97-abff-3f90c7d78cbe
 :CUSTOM_ID: update-archlinux-repository
@@ -3731,16 +3412,16 @@ hwclock --systohc --utc
 pacman -Sy
 #+END_SRC
 
-******** Links
+******* Links
 :PROPERTIES:
 :ID:       328ce6ac-c4e4-47e6-9942-018561e7c630
 :END:
-********* Dual boot with Windows
+******** Dual boot with Windows
 :PROPERTIES:
 :ID:       0278d93e-d254-4494-b401-aa38277ad838
 :END:
 + [[https://wiki.archlinux.org/title/Dual_boot_with_Windows][wiki]] <-
-******* Pentoo
+****** Pentoo
 :PROPERTIES:
 :ID: 8db0a4c6-b265-4d92-83ff-095899ca72e6
 :CUSTOM_ID: pentoo
@@ -3764,16 +3445,16 @@ available in layman so all you have to do is layman -L and layman -a
 pentoo.
   #+end_quote
 
-****** Concepts
+***** Concepts
 :PROPERTIES:
 :ID:       395796de-ac63-4063-8fa7-94d4adace195
 :END:
-******* Filesystems
+****** Filesystems
 :PROPERTIES:
 :ID:       96b3bec4-1673-419e-8900-c33bf12aa34f
 :CUSTOM_ID: filesystems
 :END:
-******** proc
+******* proc
 :PROPERTIES:
 :ID:       d695b072-a8fc-44cf-b37f-9a0465b8dacc
 :CUSTOM_ID: proc
@@ -3781,7 +3462,7 @@ pentoo.
 - process information pseudo-filesystem
 - [[https://man7.org/linux/man-pages/man5/proc.5.html][proc(5) - Linux manual page]]
 - Rust interface is available via procfs
-******** /etc/skel
+******* /etc/skel
 :PROPERTIES:
 :ID:       5bd7664e-6f6e-436e-9f28-f7961ca8c724
 :CUSTOM_ID: etc-skel
@@ -3795,36 +3476,36 @@ administrator.
 -- [[https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html][The Linux Documentation Project]]
 #+end_quote
 
-***** Windows                                                       :win:
+**** Windows                                                         :win:
 :PROPERTIES:
 :ID: 63c71a03-6f35-476f-b58b-8c6f3f52e485
 :CUSTOM_ID: windows
 :END:
 - https://en.wikipedia.org/wiki/Microsoft_Windows
-****** MBR2GPT - Windows Deployment
+***** MBR2GPT - Windows Deployment
 :PROPERTIES:
 :ID:       1b58ee7d-4aac-4a43-bb25-a9ff80d2ffa1
 :END:
 + [[https://docs.microsoft.com/en-us/windows/deployment/mbr-to-gpt][src]] <-
-***** MacOS                                                      :darwin:
+**** MacOS                                                        :darwin:
 :PROPERTIES:
 :ID: 80928580-61a4-489d-885b-0f273070fd91
 :CUSTOM_ID: macos
 :END:
 - https://en.wikipedia.org/wiki/MacOS
 
-**** Progressive Web Apps                                :app:web:wasm:js:
+*** Progressive Web Apps                                  :app:web:wasm:js:
 :PROPERTIES:
 :ID: ef3ecaf7-ff7c-49c1-a915-c034a7bfeb5a
 :AKA: PWA
 :CUSTOM_ID: progressive-web-apps
 :END:
-***** PWAs Today - 
+**** PWAs Today - 
 :PROPERTIES:
 :ID:       1ecb433e-f44b-4ec1-a2d5-e3507dab72fa
 :CUSTOM_ID: pwas-today
 :END:
-****** What is a PWA and Why Should You Care?
+***** What is a PWA and Why Should You Care?
 :PROPERTIES:
 :ID:       dc6ac195-2534-403c-874c-a0d3bd28d85b
 :END:
@@ -3832,25 +3513,25 @@ administrator.
 - gives the basic highlights
   - read "Why we need PWAs and what are their features?" section for tl;dr
 - DemoTime: [[https://www.fidgetspin.xyz/][Fidget Spinner]] --> F12 goto 'Applications' tab
-****** PWAs - Google Dev
+***** PWAs - Google Dev
 :PROPERTIES:
 :ID:       789d2efc-0b29-4b24-be52-8a669227970e
 :END:
 + [[https://developers.google.com/web/progressive-web-apps/][src]] <-
 - need manifest.json, service worker with offline capabilities
 - to trigger install-prompt in chrome - need to have some kind of initial engagment with the app
-****** Connecting the dots
+***** Connecting the dots
 :PROPERTIES:
 :ID:       e4572f0b-6a89-4f69-ac95-562d57c65b24
 :END:
 - [[https://uxdesign.cc/pwas-are-the-future-d51aae1f3af7][UX Perspective]]
-***** PWAs Tomorrow
+**** PWAs Tomorrow
 :PROPERTIES:
 :ID:       4df30bd9-e834-4a65-8414-c15ce796f6c6
 :CUSTOM_ID: pwas-tomorrow
 :END:
   - some of this might get rather technical
-****** PWAs have dependencies
+***** PWAs have dependencies
 :PROPERTIES:
 :ID:       bd2b322e-88c5-4447-adc1-6c00c2dde4ed
 :END:
@@ -3858,7 +3539,7 @@ administrator.
 - this is an old post so nothing to worry about in the short term, but the PWA ecosystem is highly dependent on gatekeepers
 - gatekeepers make the rules and set prescribed tech through the manifest.json approval process
 - potential for support for systems tech to be dropped - large tech debt to overcome
-****** quick note on this article
+***** quick note on this article
 :PROPERTIES:
 :ID:       9fa067ce-4835-4901-9d47-728771e08319
 :END:
@@ -3866,12 +3547,12 @@ administrator.
    #+begin_quote
    Because the service worker is not blocking (it's designed to be fully asynchronous) synchronous XHR and localStorage cannot be used in a service worker.
    #+end_quote
-***** QA Automation checklist: 
+**** QA Automation checklist: 
 :PROPERTIES:
 :ID:       ba2f1962-ae85-4576-8b3b-9b55cb8f1529
 :END:
 - [[https://developers.google.com/web/progressive-web-apps/checklist][PWA Checklist]]
-**** Version Control                                                  :vc:
+*** Version Control                                                    :vc:
 :PROPERTIES:
 :ID: 8ebdc53e-37cf-4f9a-8b4a-ad2e834f5ed3
 :AKA: VC
@@ -3888,7 +3569,7 @@ The 'Version' in Version Control refers to a specific state of the
 identify these 'Versions' in a given Version Control System.
 
 
-***** Mercurial                                                      :hg:
+**** Mercurial                                                        :hg:
 :PROPERTIES:
 :ID:       4e71c4b3-d55d-437b-af0b-79797f091418
 :AKA: hg
@@ -3901,7 +3582,7 @@ Mercurial is a free, distributed source control management tool. It
 efficiently handles projects of any size and offers an easy and
 intuitive interface.
 #+end_quote
-****** Mercurial <--> Git interop
+***** Mercurial <--> Git interop
   :PROPERTIES:
   :ID:       e8b605d5-8642-401f-bd8e-b84591e261ed
   :CUSTOM_ID: mercurial-git-interop
@@ -3919,33 +3600,33 @@ intuitive interface.
     GitHub Sites and treat it as the default branch in the resulting
     clone. To make the repo usable you need to update to the 'master'
     bookmark, and use that as default
-****** HgWeb
+***** HgWeb
 :PROPERTIES:
 :ID:       855028ee-b28b-433d-a5bb-016fe72cefe2
 :CUSTOM_ID: hgweb
 :END:
-****** Mercurial Guide
+***** Mercurial Guide
 :PROPERTIES:
 :ID:       6abd2991-b6f0-4686-9620-93185ea19b1d
 :END:
 + [[https://www.mercurial-scm.org/guide][src]] <-
-****** Dealing with Repository and Dirstate Corruption
+***** Dealing with Repository and Dirstate Corruption
 :PROPERTIES:
 :ID:       99282960-dc18-4db3-ae06-6a293914d0ec
 :END:
 + [[https://www.mercurial-scm.org/wiki/RepositoryCorruption][src]] <-
-****** Mozilla Version Control Tools
+***** Mozilla Version Control Tools
 :PROPERTIES:
 :ID:       9f2b607c-0c3a-4fed-8c56-f42f1f42651c
 :END:
 + [[https://mozilla-version-control-tools.readthedocs.io/en/latest/index.html][src]] <-
-****** Mercurialology
+***** Mercurialology
 :PROPERTIES:
 :created:  <2021-08-14 Sat 23:49>
 :ID:       ecc1f606-b6c2-4431-9bfe-adfe75ca3437
 :CUSTOM_ID: mercurialology
 :END:
-******* Why Mercurial?
+****** Why Mercurial?
 :PROPERTIES:
 :ID:       92359f36-6395-4864-9f3a-18fc15892b5e
 :CUSTOM_ID: why-mercurial
@@ -3974,7 +3655,7 @@ to build things faster using it.
   there were less rules to follow with Mercurial. This is a far-cry from my first
   experience with it, where I felt the complete opposite.
 
-******* Web Hosting
+****** Web Hosting
 :PROPERTIES:
 :ID:       90aeedf8-86d9-4ef7-81e1-b22417ba58d9
 :CUSTOM_ID: web-hosting
@@ -4118,7 +3799,7 @@ you plan on exposing a Mercurial server to the public.
     #+caption: hgweb browser view
     #+attr_html: :width 600
     [[https://cdn.rwest.io/img/hgweb-browse-frontend.png][https://cdn.rwest.io/img/hgweb-browse-frontend.png]]
-******* Bundles
+****** Bundles
 :PROPERTIES:
 :ID:       e2ab9e3c-eb6f-4f4a-897d-c68a724827c4
 :CUSTOM_ID: bundles
@@ -4140,7 +3821,7 @@ value specified in manifest.
   - manifest.json
 - Hosting
   - https://pkg.rwest.io/hg/
-******* Scripts
+****** Scripts
 :PROPERTIES:
 :ID:       6466330f-3028-4a9e-96fb-aea6320c1e8c
 :CUSTOM_ID: scripts
@@ -4225,7 +3906,7 @@ tar -xvf $WD/$BUNDLE_NAME.tar -C $PKG_DIR
 rm -rf $WD/$BUNDLE_NAME.tar.zst $WD/$BUNDLE_NAME.tar
 echo "Done."
   #+end_src
-******* Further Reading
+****** Further Reading
 :PROPERTIES:
 :ID:       d33ea2ff-cac6-4b75-bc43-7fbc65e49c33
 :CUSTOM_ID: further-reading
@@ -4233,7 +3914,7 @@ echo "Done."
 - [[https://blog.nrwl.io/misconceptions-about-monorepos-monorepo-monolith-df1250d4b03c][Misconceptions about Monorepos: Monorepo != Monolith]] - Victor Savkin 2019
 - [[https://research.google/pubs/pub45424/][Why Google Stores Billions of Lines of Code in a Single Repository]] - Josh Levenberg, 2016
 
-***** Git                                                           :git:
+**** Git                                                             :git:
 :PROPERTIES:
 :ID:       cd04e50c-1de3-46d7-b0ab-47f36962fc0a
 :CUSTOM_ID: git
@@ -4255,25 +3936,25 @@ staging areas, and multiple workflows.
 -- https://git-scm.com/
 #+end_quote
 
-***** Darcs
+**** Darcs
 :PROPERTIES:
 :ID:       cad6c8cf-1cd4-462b-8270-28d0ec4497c8
 :CUSTOM_ID: darcs
 :END:
-***** Eden
+**** Eden
 :PROPERTIES:
 :ID:       5905558f-eddb-4eb4-988b-70a0a0452716
 :CUSTOM_ID: eden
 :END:
 A new SCM attempt by Facebook, with the goal of improving on the
 Mercurial platform, and optimizing for use with Monolithic code bases.
-***** Subversion                                                    :svn:
+**** Subversion                                                      :svn:
 :PROPERTIES:
 :ID:       545af3a6-f096-46a2-a053-1795b0972535
 :AKA: svn
 :CUSTOM_ID: subversion
 :END:
-**** Virtualization                                                 :virt:
+*** Virtualization                                                   :virt:
 :PROPERTIES:
 :ID: 045133dd-0b52-47bb-b982-6fc586c8fbcd
 :CUSTOM_ID: virtualization
@@ -4293,7 +3974,7 @@ long way to go before we get it right, but the increase in popularity
 that is likely due to the use of virtualization in microservice/web
 based apps has made it more approachable in the tech community, and
 accepted as a core components of DevOps.
-**** Embedded Systems
+*** Embedded Systems
 :PROPERTIES:
 :ID: 8162fa8b-f79d-4a87-8d4e-82ef993e08f2
 :CUSTOM_ID: embedded-systems
@@ -4304,7 +3985,7 @@ accepted as a core components of DevOps.
 - [[https://github.com/MabezDev/idf2svd][GitHub - MabezDev/idf2svd]]
   - generates SVD files for ESP32 based devices.. rather messy
 - [[https://en.wikipedia.org/wiki/ESP32][ESP32 - Wikipedia]]
-***** Software Defined Radio                                        :sdr:
+**** Software Defined Radio                                          :sdr:
 :PROPERTIES:
 :ID: de73cf8a-d39f-4bdb-8ec9-009288e77d19
 :AKA: SDR
@@ -4312,12 +3993,12 @@ accepted as a core components of DevOps.
 :END:
 - https://en.wikipedia.org/wiki/Software-defined_radio
 
-******* Cognitive Radio
+****** Cognitive Radio
 :PROPERTIES:
 :ID:       8d69e21e-cc67-42cb-a048-098d6dd4545f
 :END:
 + [[https://www.wikiwand.com/en/Cognitive_radio?fbclid=IwAR2ix1x1HHC9rimSUr_NkdRQERtKKm4_IBvH25Vb05Oh6svQ3mKegV0bKz0][wiki]] <-
-******* RF Front End
+****** RF Front End
 :PROPERTIES:
 :ID:       04dc64b3-40cb-4903-af15-8d4f495cf61d
 :END:
@@ -4337,29 +4018,29 @@ The mixer, which mixes the incoming signal with the signal from the local oscill
 - imagine fx processing on radio signals. SDR plguins. encryption, ids, etc
 
 
-******** [[https://www.wikiwand.com/en/Band-pass_filter][band-pass filter]]
+******* [[https://www.wikiwand.com/en/Band-pass_filter][band-pass filter]]
 :PROPERTIES:
 :ID:       23edba57-5a45-4dcc-9ef7-5f84fe795269
 :END:
-******** [[https://www.wikiwand.com/en/Amplifier][RF amplifier]]
+******* [[https://www.wikiwand.com/en/Amplifier][RF amplifier]]
 :PROPERTIES:
 :ID:       cf0c0033-3f95-4ffd-b262-7680350bead9
 :END:
-******** [[https://www.wikiwand.com/en/Local_oscillator][local oscillator]]
+******* [[https://www.wikiwand.com/en/Local_oscillator][local oscillator]]
 :PROPERTIES:
 :ID:       cf102eb2-dfc0-4309-a0cf-bb8525276382
 :END:
-******** [[https://www.wikiwand.com/en/Frequency_mixer][mixer]]
+******* [[https://www.wikiwand.com/en/Frequency_mixer][mixer]]
 :PROPERTIES:
 :ID:       7a669da9-7a06-47f4-bfd2-c569d7f8baeb
 :END:
-********* [[https://www.wikiwand.com/en/Heterodyne][Heterodyne]]
+******** [[https://www.wikiwand.com/en/Heterodyne][Heterodyne]]
 :PROPERTIES:
 :ID:       840586af-2bfa-46ca-b8c6-82903d5a7bc7
 :END:
 creates new frequencies by combining or mixing two frequencies.
 
-******* Antennai
+****** Antennai
 :PROPERTIES:
 :ID:       97113225-512b-4760-bfbc-cb8592557c27
 :CUSTOM_ID: antennai
@@ -4371,11 +4052,11 @@ creates new frequencies by combining or mixing two frequencies.
   [[yt:vQtLms02PFM]]
 - [[https://www.analog.com/en/analog-dialogue/articles/high-definition-low-delay-sdr-based-video-transmission-in-uav-applications.html#][High Definition, Low Delay, SDR-Based Video Transmission in UAV Applications | Analog Devices]]
 - [[https://liquidsdr.org/][liquidsdr.org]]
-*** links
+** links
 :PROPERTIES:
 :ID:       4085c001-3c70-45b5-9fca-cd989bf02cf0
 :END:
-**** unsorted
+*** unsorted
 :PROPERTIES:
 :ID:       6dcfe91d-ecfa-4889-8432-fbccbc6e06b5
 :CUSTOM_ID: unsorted
@@ -4434,12 +4115,12 @@ creates new frequencies by combining or mixing two frequencies.
 - [[https://tools.ietf.org/html/rfc2119][RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels]]
 - [[https://tools.ietf.org/html/rfc8174][RFC 8174 - Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words]]
 - [[https://en.wikipedia.org/wiki/Spanning_tree][Spanning tree - Wikipedia]]
-**** Talks
+*** Talks
 :PROPERTIES:
 :ID: 1ba5fd10-a4a2-465b-a224-012c736214ef
 :CUSTOM_ID: talks
 :END:
-***** The Mess We're In
+**** The Mess We're In
 :PROPERTIES:
 :CREATED:  [2020-06-24 Wed]
 :ID: c6dfbf4b-1c22-4502-abef-0945a364edca
@@ -4689,19 +4370,19 @@ HTTP/S is often used as a blanket statement for both HTTP and HTTPS.
 - https://www.chromium.org/quic
 
  Transport-layer network protocol, part of the Chromium project.
- - Leverages the benefits of building on top of UDP instead of TCP
- - Designed as a re-implementation of TCP+TLS+HTTP/2
- - Great documentation (ty Mr. Google) + has Rust implementations
-   (yay!) which leads us to:
- - [[https://crates.io/crates/quinn][Quinn]]
-   - Rust implementation of the QUIC protocol.
-   - Super awesome-cool
-   - provides an API built with tokio
-   - provides the core /deterministic state machine/ of the protocol
-     via [[https://github.com/djc/quinn/tree/master/quinn-proto][=quinn-proto=]]
- - [[https://www.chromium.org/quic/playing-with-quic][Playing With QUIC]] provides documentation on how to set up a test
-   client/server from the chromium source, a bit verbose for our needs
-   but relevant
+  - Leverages the benefits of building on top of UDP instead of TCP
+  - Designed as a re-implementation of TCP+TLS+HTTP/2
+  - Great documentation (ty Mr. Google) + has Rust implementations
+    (yay!) which leads us to:
+  - [[https://crates.io/crates/quinn][Quinn]]
+    - Rust implementation of the QUIC protocol.
+    - Super awesome-cool
+    - provides an API built with tokio
+    - provides the core /deterministic state machine/ of the protocol
+      via [[https://github.com/djc/quinn/tree/master/quinn-proto][=quinn-proto=]]
+  - [[https://www.chromium.org/quic/playing-with-quic][Playing With QUIC]] provides documentation on how to set up a test
+    client/server from the chromium source, a bit verbose for our needs
+    but relevant
 ***** QUIC at 10,000 feet :net:
 :PROPERTIES:
 :ID:       51a999ce-19fc-40e6-af4e-09cab193c9ac
@@ -4953,210 +4634,76 @@ model.
 :ID: fba82c1e-94d9-45ce-84d6-144268803965
 :CUSTOM_ID: economics
 :END:
-** Microeconomics
-:PROPERTIES:
-:ID:       2b057bae-745e-43e2-ac2a-ab3d48a5294a
-:CUSTOM_ID: microeconomics
-:END:
+- Disciplines
+  - Micro
+  - Macro
+  - Agents
+  - Risk
+  - Games
+  - Behavior
+- Finance
+  https://en.wikipedia.org/wiki/Finance
+  - Systems
+    - Markets
+  - Money
+    - The word money derives from the Latin word moneta with the meaning
+      "coin" via French monnaie
+    - Currency
+- YNAB
+  - https://www.youneedabudget.com
+  The core principles of the [[https://www.youneedabudget.com/the-four-rules/][YNAB system]] are:
+  - Give every dollar a job
+  - Embrace your true expenses
+  - Roll with the punches
+  - Age your money
+  Posts on YNAB:
+  - https://emacs.cafe/ledger/emacs/ynab/budgeting/2018/06/12/elbank-ynab.html
+  - https://sachachua.com/blog/tag/ledger/
 
-** Macroeconomics
-:PROPERTIES:
-:ID:       7aaa5608-2e25-49e4-8634-7ad266827760
-:CUSTOM_ID: macroeconomics
-:END:
-** Agents
-:PROPERTIES:
-:ID:       aa38cd76-e6b6-43ab-80ad-85dc60635da6
-:CUSTOM_ID: agents
-:END:
-** Risk
-:PROPERTIES:
-:ID:       c15c4136-3854-47c5-adae-a435324bc7d7
-:CUSTOM_ID: risk
-:END:
-** Game Theory
-:PROPERTIES:
-:ID:       75d88f2e-01c6-44ff-949e-8a346d83b0f5
-:CUSTOM_ID: game-theory
-:END:
-
-** Behavioral Economics
-:PROPERTIES:
-:ID: ef331026-8c91-4eeb-91fb-32b9d74164f7
-:CUSTOM_ID: behavioral-economics
-:END:
-Daniel Kahneman - Thinking, Fast and Slow
-Conway's Game of Life
-** Finance
-:PROPERTIES:
-:ID: e6cf4dca-f6ce-45e0-9504-1c3ad2b238da
-:CUSTOM_ID: finance
-:END:
-- https://en.wikipedia.org/wiki/Finance
-*** Financial Systems
-:PROPERTIES:
-:ID:       74dbba76-9691-4c25-89bd-95f2bb35e54a
-:CUSTOM_ID: financial-systems
-:END:
-**** Markets
-:PROPERTIES:
-:ID:       16e964d2-b520-40f4-9924-e611076b4c3b
-:CUSTOM_ID: markets
-:END:
-*** Money
-:PROPERTIES:
-:ID:       aba5e852-11a7-4375-abbf-077a8ecbf518
-:CUSTOM_ID: money
-:END:
-- The word money derives from the Latin word moneta with the meaning
-  "coin" via French monnaie
-**** Currency
-:PROPERTIES:
-:ID:       73a8345c-6e30-48ba-918e-8851e8890454
-:CUSTOM_ID: currency
-:END:
-*** Methods
-:PROPERTIES:
-:ID:       e372386f-de12-4162-ad4e-bf0ade0f684f
-:END:
-**** You Need A Budget
-:PROPERTIES:
-:ID: b762bc91-9ff8-4a90-b7af-dbb8b1a7d2ad
-:AKA: YNAB
-:CUSTOM_ID: you-need-a-budget
-:END:
-- https://www.youneedabudget.com
-The core principles of the [[https://www.youneedabudget.com/the-four-rules/][YNAB system]] are:
-- Give every dollar a job
-- Embrace your true expenses
-- Roll with the punches
-- Age your money
-
-Posts on YNAB:
-- https://emacs.cafe/ledger/emacs/ynab/budgeting/2018/06/12/elbank-ynab.html
-- https://sachachua.com/blog/tag/ledger/
-* History                                                  :history:noexport:
-:PROPERTIES:
-:ID: 57fbaf47-0e20-4f48-8402-6163bac5b90b
-:END:
-#+begin_quote
-Progress, far from consisting in change, depends on
-retentiveness. When change is absolute there remains no being to
-improve and no direction is set for possible improvement: and when
-experience is not retained, as among savages, infancy is perpetual.
-Those who cannot remember the past are condemned to repeat it.
--- /George Santayana, 1905/
-#+end_quote
-#+name: infoHistory
-| event                                         | date        | link |
-|-----------------------------------------------+-------------+------|
-| Signing of the US Declaration of Independence | 1776-07-04  |      |
-| Birth of Albert Einstein                      | 1879-03-14  |      |
-| Victorian Era                                 | 1837 ~ 1901 |      |
-| Romantic Era                                  | 1800 ~ 1890 |      |
-| Industrial Revolution                         | 1760 ~ 1840 |      |
-| Renaissance                                   | 1300 ~ 1600 |      |
-* Language                                                         :language:
-:PROPERTIES:
-:ID:       53f722e8-178b-44bc-934c-b646f1892b90
-:CUSTOM_ID: language
-:END:
-** Lexicon                                                           :vocab:
+* Language                                                       :vocab:lang:
 :PROPERTIES:
 :ID:       470a1282-e0ed-4eac-8093-05ceef9c0e39
 :CUSTOM_ID: lexicon
 :END:
-+ field :: lexicography
-*** Lexeme
-:PROPERTIES:
-:ID:       33ffdfb7-3796-4454-bf03-b2b2a1865d74
-:CUSTOM_ID: lexeme
-:END:
-#+begin_quote
-A lexeme is a unit of lexical meaning that underlies a set of words that are
-related through inflection. It is a basic abstract unit of meaning.
--- [[https://en.wikipedia.org/wiki/Lexeme][Wikipedia]]
-#+end_quote
-*** Lexical Items
-:PROPERTIES:
-:ID:       0b7420f6-bd85-4fdc-bbf8-ed96f81e3277
-:CUSTOM_ID: lexical-items
-:END:
-#+begin_quote
-In lexicography, a lexical item (or lexical unit / LU, lexical entry)
-is a single word, a part of a word, or a chain of words (catena) that
-forms the basic elements of a language's lexicon (≈ vocabulary).
--- [[https://en.wikipedia.org/wiki/Lexical_item][Wikipedia]]
-#+end_quote
-**** Morpheme
-:PROPERTIES:
-:ID:       dcc2746c-8524-4583-85d5-b539e22a49fc
-:CUSTOM_ID: morpheme
-:END:
-#+begin_quote
-A morpheme is the smallest meaningful lexical item in a language. A
-morpheme is not necessarily the same as a word. The main difference
-between a morpheme and a word is that a morpheme sometimes does not
-stand alone, but a word, by definition, always stands alone.
--- [[https://en.wikipedia.org/wiki/Morpheme][Wikipedia]]
-#+end_quote
-
-** Grammar                                                         :grammar:
-:PROPERTIES:
-:ID:       4b49fb65-c265-4cb2-919a-2e80b6bc3f4f
-:CATEGORY: language
-:CUSTOM_ID: grammar
-:END:
-*** Punctuation
-:PROPERTIES:
-:ID:       c34be150-2d92-4150-a2de-a9f91b18246a
-:CUSTOM_ID: punctuation
-:END:
-**** The Commas That Cost Companies Millions
-:PROPERTIES:
-:ID:       d3bcaf89-ed5f-48f6-92a0-11de0ee05ecc
-:END:
-+ [[https://getpocket.com/explore/item/the-commas-that-cost-companies-millions][src]] <-
-** Natural Language
-:PROPERTIES:
-:ID:       e73aa96e-dce4-482e-928e-c91de7f3a80f
-:AKA: ordinary language
-:CUSTOM_ID: natural-language
-:END:
-*** Russian                                                      :language:
-:PROPERTIES:
-:ID:       72d5fa25-d1d9-477a-be75-3451bfdeb2ea
-:AKA: русский
-:CUSTOM_ID: russian
-:END:
-**** Slang
-:PROPERTIES:
-:ID:       fe9947e7-002c-4762-8c3d-b417dddc1302
-:CUSTOM_ID: slang
-:END:
-***** Tech Slang and Humour
-:PROPERTIES:
-:ID:       7c2985f1-0359-4f00-b6b0-a39d5a148d81
-:CUSTOM_ID: tech-slang-and-humour
-:END:
-- quotes courtesy of slidercrank on ##russkij
-  - device is a girl :) why? the Latin 'c' is pronounced 'ц'
-    in Russian. So if you transliterate device, you'll get девице
-    which sounds close to девица (girl)
-    - how can it be a boy if you get 'abort/retry'? you girls
-      can abort
-  - someone who writes in C (пишет на С) is called насильник
-    (С is pronounced СИ, so it's на СИ + льник. ник means the same
-    as 'er' or 'ist' in English). насильник = raper
-  - sometimes программировать is jokingly said/written as
-    погроммировать (from the word 'pogrom'). basically "to cause a
-    mess"
-    - pogrom - An organized massacre of a particular ethnic group, in
-      particular that of Jewish people in Russia or eastern Europe in
-      the late 19th and early 20th centuries.
-  - Погромисты is partially sounds like routers in Russian
-  - someone who writes in ALGOL (Алго́л) is an alcoholic
-    (алкого́лик)
+- Lexicon
+  - field of study = lexicography
+  #+begin_quote
+  A lexeme is a unit of lexical meaning that underlies a set of words that are
+  related through inflection. It is a basic abstract unit of meaning.
+  -- [[https://en.wikipedia.org/wiki/Lexeme][Wikipedia]]
+  #+end_quote
+  #+begin_quote
+  In lexicography, a lexical item (or lexical unit / LU, lexical entry)
+  is a single word, a part of a word, or a chain of words (catena) that
+  forms the basic elements of a language's lexicon (≈ vocabulary).
+  -- [[https://en.wikipedia.org/wiki/Lexical_item][Wikipedia]]
+  #+end_quote
+  #+begin_quote
+  A morpheme is the smallest meaningful lexical item in a language. A
+  morpheme is not necessarily the same as a word. The main difference
+  between a morpheme and a word is that a morpheme sometimes does not
+  stand alone, but a word, by definition, always stands alone.
+  -- [[https://en.wikipedia.org/wiki/Morpheme][Wikipedia]]
+  #+end_quote
+- [[https://getpocket.com/explore/item/the-commas-that-cost-companies-millions][The Commas That Cost Companies Millions]]
+- Russian programmer slang
+    - device is a girl :) why? the Latin 'c' is pronounced 'ц'
+      in Russian. So if you transliterate device, you'll get девице
+      which sounds close to девица (girl)
+      - how can it be a boy if you get 'abort/retry'? you girls
+        can abort
+    - someone who writes in C (пишет на С) is called насильник
+      (С is pronounced СИ, so it's на СИ + льник. ник means the same
+      as 'er' or 'ist' in English). насильник = raper
+    - sometimes программировать is jokingly said/written as
+      погроммировать (from the word 'pogrom'). basically "to cause a
+      mess"
+      - pogrom - An organized massacre of a particular ethnic group, in
+        particular that of Jewish people in Russia or eastern Europe in
+        the late 19th and early 20th centuries.
+    - Погромисты is partially sounds like routers in Russian
+    - someone who writes in ALGOL (Алго́л) is an alcoholic
+      (алкого́лик)
 * Math                                                                 :math:
 :PROPERTIES:
 :ID: 4aaf7257-3900-46ca-8f2b-f284bce6d4d0
@@ -5169,238 +4716,90 @@ stand alone, but a word, by definition, always stands alone.
      which just means that you build off your experience. By solving
      one, you learn something that helps you solve another.. then
      another.. and so on. It adds up.
-** Notation                                                             :sym:
-   :PROPERTIES:
-   :ID:       15347545-b97a-405a-acfa-ce15a022f531
-   :CUSTOM_ID: notation
-   :END:
-   - [[https://www.cs.man.ac.uk/~pjj/cs212/fix.html][Infix, Postfix, and Prefix]]
-** links
-:PROPERTIES:
-:ID:       e81fae72-c07b-41e1-9c49-43c97217ab9b
-:END:
-*** Haversine formula
-:PROPERTIES:
-:ID: 6d0b5076-98c6-45c0-9b95-6e9b540d5796
-:END:
-+ [[https://en.wikipedia.org/wiki/Haversine_formula][wiki]] <-
-*** Basic Concepts & Short Tricks of Fictitious Symbol questions
-:PROPERTIES:
-:ID:       6d2f9279-9e4a-4e4d-846f-8e3285af4811
-:END:
-+ [[https://byjusexamprep.com/solve-mathematical-operators-in-reasoning-i-081aea6a-d162-11e5-bfd2-ffbcfe7b24bd][src]] <-
-** Algebra                                                              :alg:
-:PROPERTIES:
-:ID:       894b7ce1-6e9b-4395-8ecc-b3d145047f1a
-:CUSTOM_ID: algebra
-:END:
-+ [[https://en.wikipedia.org/wiki/Algebra][wiki]] ::
-
-** Number Systems                                                       :num:
-:PROPERTIES:
-:ID:       9b7387eb-a627-4623-a3a2-deb098e6d45e
-:CUSTOM_ID: number-systems
-:END:
-*** Surreal Numbers
-:PROPERTIES:
-:ID:       8e4ea5a3-bfe4-4255-8165-f28d24ba20ef
-:CUSTOM_ID: surreal-numbers
-:END:
-#+begin_quote
-In mathematics, the surreal number system is a totally ordered proper
-class containing the real numbers as well as infinite and
-infinitesimal numbers, respectively larger or smaller in absolute
-value than any positive real number.
--- [[https://en.wikipedia.org/wiki/Surreal_number][Wikipedia]]
-#+end_quote
-
-- [[cdn:media/doc/surreal_numbers.pdf][how two ex-students turned on to pure mathematics and found total happiness]]
-  - D.E. Knuth
-
-** Graph Theory                                                       :graph:
-:PROPERTIES:
-:ID:       63579fea-7b88-4427-aa14-4f2203df6f09
-:CUSTOM_ID: graph-theory
-:END:
-*** Graphs 
-:PROPERTIES:
-:ID:       f02f117d-9bd0-46aa-a011-1855701ce88f
-:CUSTOM_ID: graphs
-:END:
-**** Directed
-:PROPERTIES:
-:ID:       5d77d18d-d99c-42b3-805a-3a045a08172f
-:CUSTOM_ID: directed
-:END:
-***** DAG
-:PROPERTIES:
-:ID:       edd294c8-5958-45c0-951a-c885c23f98bb
-:CUSTOM_ID: dag
-:END:
-+ [[https://en.wikipedia.org/wiki/Directed_graph][wiki]] ::
-*** Network Theory
-:PROPERTIES:
-:ID:       550dd206-bc49-490b-bd74-fd917b4e38c5
-:CUSTOM_ID: network-theory
-:END:
-    
-** Geometry                                                           :shape:
-:PROPERTIES:
-:ID:       41753703-1ea2-4778-8985-2bafb666d58a
-:CUSTOM_ID: geometry
-:END:
-One of the oldest branches of mathematics. Concermed with properties
-of space related to distance, shape, size, and relative position of
-figures.
-
-*** Taxicab geometry
-:PROPERTIES:
-:ID:       7db8c7e8-97f6-41de-a303-acd7ef44b89e
-:CUSTOM_ID: taxicab-geometry
-:END:
-a form of geometry in which the metric for the distance between two
-points is replaced by the sum of the /absolute differences/ of their
-Cartesian coordinates, known as the taxicab metric, or Manhattan
-Distance.
+- [[https://www.cs.man.ac.uk/~pjj/cs212/fix.html][Infix, Postfix, and Prefix]]
+- [[https://en.wikipedia.org/wiki/Haversine_formula][Harvesine Formula]]
+- [[https://byjusexamprep.com/solve-mathematical-operators-in-reasoning-i-081aea6a-d162-11e5-bfd2-ffbcfe7b24bd][Basic Concepts & Short Tricks of Fictitious Symbol questions]]
+- [[https://en.wikipedia.org/wiki/Algebra][algebra]]
+- Surreal Numbers
+  #+begin_quote
+  In mathematics, the surreal number system is a totally ordered proper
+  class containing the real numbers as well as infinite and
+  infinitesimal numbers, respectively larger or smaller in absolute
+  value than any positive real number.
+  -- [[https://en.wikipedia.org/wiki/Surreal_number][Wikipedia]]
+  #+end_quote
+  - [[cdn:media/doc/surreal_numbers.pdf][how two ex-students turned on to pure mathematics and found total happiness]]
+    - D.E. Knuth
+- [[https://en.wikipedia.org/wiki/Directed_graph][DAG]]
+- gemoetry ::
+  One of the oldest branches of mathematics. Concermed with properties
+  of space related to distance, shape, size, and relative position of
+  figures.
+    - taxicab geometry ::
+      a form of geometry in which the metric for the distance between
+      two points is replaced by the sum of the /absolute differences/
+      of their Cartesian coordinates, known as the taxicab metric, or
+      Manhattan Distance.
 * Philosophy                                                             :ph:
 :PROPERTIES:
 :ID: 022b63ff-b010-44dc-bb21-89498769d3e0
 :CUSTOM_ID: philosophy
 :END:
-** Logic
-:PROPERTIES:
-:ID:       699e4731-8fd8-46f7-877f-cf6e13a98f9a
-:CUSTOM_ID: logic
-:END:
-*** XOR
-:PROPERTIES:
-:CREATED:  [2021-02-13 Sat 01:01]
-:ID:       801b2499-d1cb-4c37-87b4-c009eff70bd7
-:END:
-+ [[https://en.wikipedia.org/wiki/Exclusive_or][wiki]] <-
-** Epistemology
-:PROPERTIES:
-:ID:       d148f093-0014-48e5-94a1-244248792df4
-:CUSTOM_ID: epistemology
-:END:
-+ [[https://en.wikipedia.org/wiki/Epistemology][wiki]] ::
-*** Knowledge
-:PROPERTIES:
-:ID:       adc8fcdc-2734-4c88-b585-dcf7127680a0
-:CUSTOM_ID: knowledge
-:END:
-- pursuit of knowledge ~= intrinsic good IMO
-- knowledge systems are used to build and manage knowledge
-- random thoughts on knowledge ::
-  First of all, what the hell is /Knowledge/? Why it is something we
-  know, of course! /But seriously/.. it depends on who you talk to.
-  - The lawyer will say it's an understanding of a thing
-  - The economist will say it's information about a thing
-  - The philosopher will say they don't know
-
-  At least Plato had a catchy definition for us: a "justified true
-  belief". However, it is well understood nowadays that this one-liner
-  doesn't suffice. Some smug epistemologist may tell you it's a
-  "cluster concept", or that it is simply an artifact of natural
-  language, referring only to a degree of conviction. Both excellent
-  ways of dodging the question.
-
-  In pursuit of practicality let's ignore the philosopher and focus on
-  the remaining definitions..
-  - an understanding of a thing
-  - information about a thing
-  Nice, and now - a magic trick:
-  - an understanding of a /thing/ we have information about
+- Logic
+  - [[https://en.wikipedia.org/wiki/Exclusive_or][XOR]]
+- Epistemology
+  [[https://en.wikipedia.org/wiki/Epistemology][wiki]] 
+- Knowledge
+  - pursuit of knowledge ~= intrinsic good IMO
+  - knowledge systems are used to build and manage knowledge
+  - random thoughts on knowledge ::
+    First of all, what the hell is /Knowledge/? Why it is something we
+    know, of course! /But seriously/.. it depends on who you talk to.
+    - The lawyer will say it's an understanding of a thing
+    - The economist will say it's information about a thing
+    - The philosopher will say they don't know
   
-  Information is cultivated to develop Knowledge. This knowledge can be
-  used to develop even more Knowledge, or revise existing Knowledge.
+    At least Plato had a catchy definition for us: a "justified true
+    belief". However, it is well understood nowadays that this one-liner
+    doesn't suffice. Some smug epistemologist may tell you it's a
+    "cluster concept", or that it is simply an artifact of natural
+    language, referring only to a degree of conviction. Both excellent
+    ways of dodging the question.
+  
+    In pursuit of practicality let's ignore the philosopher and focus on
+    the remaining definitions..
+    - an understanding of a thing
+    - information about a thing
+    Nice, and now - a magic trick:
+    - an understanding of a /thing/ we have information about
+    
+    Information is cultivated to develop Knowledge. This knowledge can be
+    used to develop even more Knowledge, or revise existing Knowledge.
+  
+    This is our lazy compromise between the two - composed of an output
+    (an understanding) and an input (information). We'll refer to this
+    definition when talking about /Knowledge Management/, which is simply
+    a process of turning our input into an output and looping over that
+    output.
+- Truth
+- Belief
+  - Theology
 
-  This is our lazy compromise between the two - composed of an output
-  (an understanding) and an input (information). We'll refer to this
-  definition when talking about /Knowledge Management/, which is simply
-  a process of turning our input into an output and looping over that
-  output.
-*** Truth
-:PROPERTIES:
-:ID:       dac768dd-dec6-40c7-b1a8-fedcdad26a76
-:CUSTOM_ID: truth
-:END:
-*** Belief
-:PROPERTIES:
-:ID:       f9429728-9938-401f-a606-cf426192984b
-:CUSTOM_ID: belief
-:END:
-**** Theology
-:PROPERTIES:
-:ID:       b120511e-5d57-4109-a66c-5280925efe93
-:CUSTOM_ID: theology
-:END:
-*** Information                                                      :info:
-:PROPERTIES:
-:ID:       0463a92e-99d0-4bd1-aa6d-b8ebba4207d7
-:AKA: info
-:CUSTOM_ID: information
-:END:
-+ [[https://en.wikipedia.org/wiki/Information][wiki]] ::
-- Information is in essence, data that enables decision making.
-- "knowledge obtained from investigation, study, or instruction."
-**** Disinformation
-:PROPERTIES:
-:ID:       10ec6938-67dc-4075-a0f5-d2de09eb9197
-:CUSTOM_ID: disinformation
-:END:
-false information which is intended to mislead
-**** Misinformation
-:PROPERTIES:
-:ID:       10a7ef9e-4339-40b9-8921-e1fdf08be481
-:CUSTOM_ID: misinformation
-:END:
-#+begin_quote
-Misinformation is false, inaccurate, or misleading information that is communicated regardless of an intention to deceive.
-
--- [[https://en.wikipedia.org/wiki/Misinformation][Wikipedia]]
-#+end_quote
-
-**** Uncertainty
-:PROPERTIES:
-:ID:       571c820d-835f-4988-b428-0dc77df7be65
-:CUSTOM_ID: uncertainty
-:END:
-+ [[https://en.wikipedia.org/wiki/Uncertainty][wiki]] ::
-- see also [[id:c15c4136-3854-47c5-adae-a435324bc7d7][Risk]]
-** Metaphysics
-:PROPERTIES:
-:ID: 3f27a782-c8e8-4794-b641-f46d49b7036a
-:CUSTOM_ID: metaphysics
-:END:
-- https://plato.stanford.edu/entries/metaphysics/
-
-** Philosophy of Mind
-:PROPERTIES:
-:ID:       7b3679a3-9240-42be-8d67-43a6ae774aef
-:CUSTOM_ID: philosophy-of-mind
-:END:
-** Aesthetics
-:PROPERTIES:
-:ID:       d5eb5c00-f2f4-449a-bd99-ada562f96d9c
-:CUSTOM_ID: aesthetics
-:END:
-+ [[https://en.wikipedia.org/wiki/Aesthetics][wiki]] ::
-- [[https://aesthetics.fandom.com/wiki/List_of_Aesthetics]["list of aesthetics"]]
-*** Philosophy of Art
-:PROPERTIES:
-:ID: fb919b7b-57ed-4962-b9e9-6a0fbe30c02c
-:CUSTOM_ID: philosophy-of-art
-:END:
-- This document pertains to the /philosophy/ of [[id:a556be07-555e-4cc1-83d1-eaac2b7c4871][Art]]
-- [[https://plato.stanford.edu/entries/art-definition/][The Definition of Art (Stanford Encyclopedia of Philosophy)]]
-- a member of /Applied/ aesthetics
-
-** Ethics
-:PROPERTIES:
-:ID:       cf392120-3c24-4fa3-a8a6-f40d3a473e6a
-:CUSTOM_ID: ethics
-:END:
+- [[https://en.wikipedia.org/wiki/Information][Information]]
+  - Information is in essence, data that enables decision making.
+  - "knowledge obtained from investigation, study, or instruction."
+  - disinformation :: false information which is intended to mislead
+  - misinformation :: false, inaccurate, or misleading information
+    that is communicated regardless of an intention to deceive.
+  - [[https://en.wikipedia.org/wiki/Uncertainty][uncertainty]]
+- [[https://plato.stanford.edu/entries/metaphysics/][Metaphysics]]
+- Philosophy of Mind
+- [[https://en.wikipedia.org/wiki/Aesthetics][Aesthetics]]
+  - [[https://aesthetics.fandom.com/wiki/List_of_Aesthetics]["list of aesthetics"]]
+  - Philosophy of Art
+    - [[https://plato.stanford.edu/entries/art-definition/][The Definition of Art (Stanford Encyclopedia of Philosophy)]]
+    - a member of /Applied/ aesthetics
+- Ethics
 
 * misc
 :PROPERTIES:

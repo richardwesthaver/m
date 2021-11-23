@@ -1,4 +1,73 @@
 #+TITLE: rambles
 #+SETUPFILE: ox.setup
-* test 1,2
-is this thing on
+* OUTLINE Org-mode Workflows                                   :org:noexport:
+:PROPERTIES:
+:CUSTOM_ID: org-mode-workflows
+:END:
+* Demo Scripts                                                         :meta:
+:PROPERTIES:
+:CUSTOM_ID: demo-scripts
+:END:
+As some of my [[src:shed][tools]] are coming along, I need to start planning how to
+convey what they do and why. Most of that work is trivial - just need
+to write it down. Even better, most of our tools have simple CLIs. We
+can embed their input and output as text. For example, here's how to
+print a weather forecast:
+#+begin_src shell :results pp :exports both
+shc s -w
+#+end_src
+#+RESULTS:
+#+begin_example
+23:00:00-00:00:00 = 51°F :: "Scattered Rain Showers"
+00:00:00-01:00:00 = 51°F :: "Chance Rain Showers"
+01:00:00-02:00:00 = 52°F :: "Chance Rain Showers"
+02:00:00-03:00:00 = 52°F :: "Chance Rain Showers"
+03:00:00-04:00:00 = 52°F :: "Chance Rain Showers"
+04:00:00-05:00:00 = 51°F :: "Rain Showers"
+05:00:00-06:00:00 = 51°F :: "Rain Showers"
+06:00:00-07:00:00 = 52°F :: "Rain Showers"
+07:00:00-08:00:00 = 52°F :: "Rain Showers"
+08:00:00-09:00:00 = 47°F :: "Rain Showers"
+#+end_example
+
+These sort of 'snippet demos' are important because they are
+self-contained and make documentation portable. We can render them
+anywhere that text is rendered, and they're easy to include thanks to
+org-mode's [[https://orgmode.org/worg/org-contrib/babel/][babel]]. The problem is that they can only help us with
+/text-based/ interfaces, and need additional context to convey how
+those commands work and why. All that extra reading can make large
+projects more intimidating than they need to be to newcomers.
+
+For when such verbosity isn't appropriate, a good solution is to make
+use of a visual medium - image or video. Up until this point I've
+tried a variety of tools for this - namely [[https://asciinema.org/][asciinema]], [[https://github.com/sassman/t-rec-rs][t-rec]], and
+[[https://github.com/resurrecting-open-source-projects/scrot][scrot]]. 
+
+=asciinema= is a particularly novel approach, utilizing a [[https://linux.die.net/man/7/pty][pty]] to
+capture input/output and record it to a JSON [[https://github.com/asciinema/asciinema/blob/master/doc/asciicast-v1.md][format]]. This format is
+then uploaded to https://asciinema.org where it's rendered and hosted
+via unique URL. I'm sure there are offline rendering capabilities
+(without uploading to server) somewhere so that I could avoid using
+the cloud service, but we don't need this intermediate JSON data
+anyways - we just want the rendered (video) data. Since it's dependent
+on a =pty= it also doesn't cover non-terminal apps or show the mouse
+cursor.
+
+=t-rec= uses the traditional approach of wrapping a lower-level
+library - most often [[https://ffmpeg.org/][ffmpeg]]. This work as you would expect - wrapping
+the complex options of =ffmpeg= into a higher-level interface. It
+encodes directly to a video format so no IR to worry about. It's great
+for quick screen recordings, but It's not really built for
+scripting/automation which we'll need shortly.
+
+=scrot= is actually the oldest of the tools I've mentioned so far,
+beating =ffmpeg= to an initial release by less than 2 months (10/26 vs
+12/20) late in 2000. It wraps a library called [[https://sourceforge.net/projects/enlightenment/files/imlib2-src/][imlib2]] to grab and save
+images (and images only). Despite the lack of video support, it is a
+flexible tool which can be built into a larger script quite easily.
+
+I have made the executive decision to discard =asciinema= and the
+=asciicast= format since I want a general-purpose solution and plan to
+record non-TUI apps. =t-rec= isn't great for scripting, and =scrot=
+only supports images. What's left? =ffmpeg= seems to be the most
+promising.
